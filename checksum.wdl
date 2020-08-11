@@ -21,8 +21,6 @@ File inputFile
 String outname = basename(inputFile) + ".md5"
 }
 
-Int diskSize = ceil(size(inputFile,"GB")) + 15
-
 command <<<
 gsutil hash -m ~{inputFile} | grep -E 'Hash \(md5\):\s' | cut -f4 > ~{outname}
 >>>
@@ -35,6 +33,6 @@ runtime {
 docker: "google/cloud-sdk:slim"
 cpu: 1
 memory: "3.75 GB"
-disks: "local-disk " + diskSize + " HDD"
+disks: "local-disk 10GB HDD"
 }
 }
