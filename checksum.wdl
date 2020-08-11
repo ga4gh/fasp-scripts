@@ -18,7 +18,7 @@ String md5 = calculateMd5Sum.md5
 task calculateMd5Sum {
 input {
 File inputFile
-String outname = basename(inputFile) + ".md5"
+String outname = "output.md5"
 }
 
 command <<<
