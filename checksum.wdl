@@ -33,6 +33,6 @@ runtime {
 docker: "google/cloud-sdk:slim"
 cpu: 1
 memory: "3.75 GB"
-disks: "local-disk 10GB HDD"
+disks: "local-disk 10 HDD"
 }
 }
