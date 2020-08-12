@@ -1,1 +1,7 @@
 started	status	type	note	id	output
+08/12/2020, 14:51:48		sh		paste here	case_1b703058-e596-45bc-80fe-8b98d545c2e2.txt
+08/12/2020, 14:51:48		sh		paste here	case_a6edb6ca-ae9f-4da7-8ebe-92d83d2987fb.txt
+08/12/2020, 14:51:48		sh		paste here	case_a947a945-4721-45cc-bc45-13b8ea41c10e.txt
+08/12/2020, 14:51:49		sh		paste here	HG02284_demo.txt
+08/12/2020, 14:51:50		sh		paste here	HG02317_demo.txt
+08/12/2020, 14:51:51		sh		paste here	HG01879_demo.txt

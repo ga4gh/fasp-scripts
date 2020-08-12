@@ -1,5 +1,6 @@
 import requests
 import json
+import os.path
 
 
 class Gen3DRSClient:
@@ -7,16 +8,21 @@ class Gen3DRSClient:
     
     # Initialize a DRS Client for the service at the specified url base
     # and with the REST resource to provide an access key 
-    def __init__(self, api_url_base,  access_token_resource):
+    def __init__(self, api_url_base,  access_token_resource_path, api_key_path):
     	self.api_url_base = api_url_base
-    	self.access_token_resource = access_token_resource
+    	self.access_token_resource_path = access_token_resource_path
+    	full_key_path = os.path.expanduser(api_key_path)
+    	with open(full_key_path) as f:
+    		self.api_key = json.load(f)
+    	self.updateAccessToken()
+			
 
     # Obtain an access_token using the provided Fence API key.
     # The client object will retain the access key for subsequent calls
-    def getAccessToken(self, api_key):
+    def updateAccessToken(self):
         headers = {'Content-Type': 'application/json'}
-        api_url = '{0}{1}'.format(self.api_url_base, self.access_token_resource)
-        response = requests.post(api_url, headers=headers, json=api_key)
+        api_url = '{0}{1}'.format(self.api_url_base, self.access_token_resource_path)
+        response = requests.post(api_url, headers=headers, json=self.api_key)
 
         if response.status_code == 200:
             #access_token['access_token']
