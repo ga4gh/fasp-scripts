@@ -1,7 +1,7 @@
 # FASPclient
  Scripts and clients for GA4GH Federated Analysis Systems Project
 
-**Prerequisites to run**
+### **Prerequisites to run**
 
 - Python 3
 - A folder in your home directory called .keys containing
@@ -10,7 +10,7 @@
 - Google Life Sciences API enabled for your GCP account
 - BigQuery python libraries
 
-**FASPScript1.py**
+#### **FASPScript1.py**
 
 A script to 
 
@@ -22,9 +22,9 @@ A script to
 
 - Submit a computes on each of the files
 
-  Currently submits directly to aGCP Life Sciences pipeline. This will be substituted by a submission to a WES 
+  Currently submits directly to aGCP Life Sciences pipeline. This will be substituted by a submission to a WES server
 
-**FASPScript2.py**
+#### **FASPScript2.py**
 
 As above except it performs two queries as follows 
 
@@ -36,17 +36,21 @@ As above except it performs two queries as follows
 
   Currently submits directly to aGCP Life Sciences pipeline. This will be substituted by a submission to a WES 
 
-**Supporting clients**
+### Other demos and tests
 
-**Gen3DRSClient.py**
+**testSearchPagination.py** - demonstrates how query results are returned over several pages
+
+### **Supporting clients**
+
+#### **Gen3DRSClient.py**
 
 This is a python wrapper for the two DRS functions. It also handles Gen3 authentication using Fence. This is necessary until RAS/Passport support is in place.
 
-**GCPLSsamtools**
+#### **GCPLSsamtools.py**
 
 Wrapper to prepare a job to run samtools as a GCP Life Sciences pipeline. This will be substituted by a submission to a WES server.
 
-**Workflows**
+### **Workflows**
 
 checksum.wdl - a simple workflow for testing WES submission - calculates a checksum
 
