@@ -1,15 +1,17 @@
 import requests
+import os
+import json
 
 class WESClient:
 
     
-    def __init__(self, api_url_base,  access_token_path):
-    	self.api_url_base = api_url_base
-    	full_key_path = os.path.expanduser(access_token_path)
-    	with open(full_key_path) as f:
-    		self.accessToken = json.load(f)
+	def __init__(self, api_url_base,  access_token_path):
+		self.api_url_base = api_url_base
+		full_key_path = os.path.expanduser(access_token_path)
+		with open(full_key_path) as f:
+			self.accessToken = json.load(f)
 
-	def runWorkflow()
+	def runWorkflow():
 		payload = {'workflow_url': 'checksum.wdl'}
 		files = [
 			('workflow_params', open('../wes/inputs.json','rb')),
@@ -25,7 +27,7 @@ class WESClient:
 		print(response.text.encode('utf8'))
 		
 if __name__ == "__main__":
-	myClient = DiscoverySearchClient('https://ddap-wes-service.prod.dnastack.com/ga4gh/wes/v1/runs', '~/.keys/DNAStackWESkey.json')
+	myClient = WESClient('https://ddap-wes-service.prod.dnastack.com/ga4gh/wes/v1/runs', '~/.keys/DNAStackWESkey.json')
 
-	res = myClient.runWorkflow()
-	print (res)
+	#res = myClient.runWorkflow()
+	#print (res)
