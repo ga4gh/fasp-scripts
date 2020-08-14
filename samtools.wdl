@@ -2,7 +2,6 @@ version 1.0
 task samtools_stats {
   input {
     File bam
-    File bam_index
   }
   String output_name = bam + ".stats"
   command <<<
@@ -20,12 +19,10 @@ task samtools_stats {
 workflow run_samtools_stats {
   input {
     File bam
-    File bam_index
   }
   call samtools_stats {
     input:
       bam = bam,
-      bam_index = bam_index
   }
   output {
     File stats = samtools_stats.stats
