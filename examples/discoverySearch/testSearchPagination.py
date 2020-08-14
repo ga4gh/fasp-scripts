@@ -2,7 +2,11 @@ import requests
 import pprint
 
 
-query = "{\"query\":\"with brca_genes as (select gene_symbol, count(*) as brca_count from search_cloud.brca_exchange.v32 group by gene_symbol) select bg.*, cv.* from brca_genes bg inner join search_cloud.clinvar.allele_gene cv on bg.gene_symbol=cv.symbol limit 1000\"}"
+#query = "{\"query\":\"with brca_genes as (select gene_symbol, count(*) as brca_count from search_cloud.brca_exchange.v32 group by gene_symbol) select bg.*, cv.* from brca_genes bg inner join search_cloud.clinvar.allele_gene cv on bg.gene_symbol=cv.symbol limit 1000\"}"
+
+query = "{\"query\":\"select submitter_id, 'bdc:'||read_drs_id drsid from thousand_genomes.onek_genomes.ssd_drs where population = 'BEB' limit 3\"}"
+
+
 headers = {
   'content-type': 'application/json'
 }
@@ -20,8 +24,11 @@ while next_url != None :
 	result = (response.json())
 	#pprint.pprint(result) 
 	next_url = result['pagination']['next_page_url']
-	last_model = {"a":"1"}
-	print ("has {} data rows".format(len(result['data'])))
+	#last_model = {"a":"1"}
+	rowCount = len(result['data'])
+	print ("has {} data rows".format(rowCount))
+	if rowCount > 0:
+		print(result['data'])
 	if "properties" in result['data_model']:
 		dm = result['data_model']
 		print ("has {} data model properties".format(len(dm['properties'])))

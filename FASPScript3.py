@@ -1,5 +1,4 @@
 #  IMPORTS
-from google.cloud import bigquery
 import sys, getopt, os
 import json
 import datetime
@@ -7,6 +6,7 @@ import subprocess
 
 from Gen3DRSClient import Gen3DRSClient
 from GCPLSsamtools import GCPLSsamtools
+from DiscoverySearchClient import DiscoverySearchClient
 
 
 
@@ -14,24 +14,12 @@ def main(argv):
 
 	# Step 1 - Discovery
 	# query for relevant DRS objects
-	bqclient = bigquery.Client()
-# 	query = """
-#      	SELECT subject_id, read_drs_id
-#      	FROM `isbcgc-216220.COPDGene.phenotype_drs`
-#      	where weight_kg between 91.8 and 93.0
-#      	LIMIT 1"""
-	query = """
-		SELECT submitter_id, read_drs_id
-		FROM `isbcgc-216220.onek_genomes.ssd_drs`
-		where population = 'BEB'
-		LIMIT 1"""
+	searchClient = DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com/')
+	query = "select submitter_id, read_drs_id drsid from thousand_genomes.onek_genomes.ssd_drs where population = 'BEB' limit 3"
+	query_job = searchClient.runQuery(query)
 
-	query_job = bqclient.query(query)  # Send the query
-	
 	# Step 2 - DRS - set up a DRS Client
 	# CRDC
-	#drsClient = Gen3DRSClient('https://nci-crdc.datacommons.io/', 'user/credentials/api/access_token')
-	# BioDataCatalyst
 	drsClient = Gen3DRSClient('https://gen3.biodatacatalyst.nhlbi.nih.gov/', 'user/credentials/cdis/access_token',
 	'~/.keys/BDCcredentials.json')
 	
@@ -67,7 +55,7 @@ def main(argv):
 		commands.append(mysam.statsCommandLine(url, outfile))
 		via = 'sh'
 		pipeline_id = 'paste here'
-		note = ''
+		note = 'Discovery Search'
 
 		time = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
 		me = os.path.basename(__file__)

@@ -77,7 +77,9 @@ def main(argv):
 		# get the prefix
 		prefix, drsid = row[1].split(":", 1)
 		url = drsClients[prefix].getAccessURL(drsid, 'gs')
-		
+		objInfo = drsClients[prefix].getObject(drsid)
+		fileSize = objInfo['size']
+				
 		# Step 3 - Run a pipeline on the file at the drs url
 		outfile = "{}.txt".format(row[0])
 		#This should have allowed us to submit a pipeline - but the pipelines fail
@@ -92,7 +94,8 @@ def main(argv):
 		note = ''
 
 		time = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
-		logline = '{}\t\t{}\t{}\t{}\t{}'.format(time, via, note, pipeline_id, outfile)
+		me = os.path.basename(__file__)
+		logline = '{}\t\t{}\t{}\t{}\t{}\t{}\t{}'.format(time, via, me, note, pipeline_id, outfile, fileSize)
 		pipelineLog.write(logline)
 
 		pipelineLog.write("\n")

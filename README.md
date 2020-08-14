@@ -4,6 +4,7 @@
 ### **Prerequisites to run**
 
 - Python 3
+  - See the code for the modules required
 - A folder in your home directory called .keys containing
   - BDCcredentials.json - api_key file [obtained from BioDataCatalyst](https://gen3.biodatacatalyst.nhlbi.nih.gov/identity)
   - CRDCAPIKey.json - api_key file [obtained from Cancer Research Data Commons](https://nci-crdc.datacommons.io/identity)
@@ -36,9 +37,18 @@ As above except it performs two queries as follows
 
   Currently submits directly to aGCP Life Sciences pipeline. This will be substituted by a submission to a WES 
 
-### Other demos and tests
+#### FASPScript3.py**
+
+Same as FASPScript1.py except 
+
+- Uses the public DNAStack Discovery Search server - two down - one to go
+
+
+#### Other demos and tests
 
 **testSearchPagination.py** - demonstrates how query results are returned over several pages
+
+**examples** - examples of using individual APIs used in the main examples 
 
 ### **Supporting clients**
 
@@ -48,7 +58,15 @@ This is a python wrapper for the two DRS functions. It also handles Gen3 authent
 
 #### **GCPLSsamtools.py**
 
-Wrapper to prepare a job to run samtools as a GCP Life Sciences pipeline. This will be substituted by a submission to a WES server.
+Wrapper to prepare a job to run samtools as a GCP Life Sciences pipeline. This will be substituted by a submission to a WES server (See WESClient.py).
+
+#### DiscoveryClient.py**
+
+Wrapper to call a DiscoveryClient and return results of a query.
+
+#### WESClient.py**
+
+Wrapper to make a WES call . 
 
 ### **Workflows**
 

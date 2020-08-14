@@ -3,6 +3,9 @@ import pprint
 
 
 query = "{\"query\":\"with brca_genes as (select gene_symbol, count(*) as brca_count from search_cloud.brca_exchange.v32 group by gene_symbol) select bg.*, cv.* from brca_genes bg inner join search_cloud.clinvar.allele_gene cv on bg.gene_symbol=cv.symbol limit 1000\"}"
+
+query = "{\"query\":\"select id, population, read_drs_id from thousand_genomes.onek_genomes.ssd_drs limit 1000\"}"
+
 headers = {
   'content-type': 'application/json'
 }
