@@ -18,6 +18,7 @@ class DiscoverySearchClient:
 
 		pageCount = 0
 		resultRows = []
+		print ("_Retrieving the query_"
 		while next_url != None :
 			pageCount += 1
 			print ("____Page{}_______________".format(pageCount))

@@ -37,12 +37,17 @@ As above except it performs two queries as follows
 
   Currently submits directly to aGCP Life Sciences pipeline. This will be substituted by a submission to a WES 
 
-#### FASPScript3.py**
+#### FASPScript3.py
 
 Same as FASPScript1.py except 
 
-- Uses the public DNAStack Discovery Search server - two down - one to go
+- Uses the public DNAStack Discovery Search server
 
+#### FASPScript4.py
+
+Same as FASPScript1.py except 
+
+- Uses both the public DNAStack Discovery Search server and WES server. All three steps use GA4GH APIs.
 
 #### Other demos and tests
 
@@ -60,13 +65,13 @@ This is a python wrapper for the two DRS functions. It also handles Gen3 authent
 
 Wrapper to prepare a job to run samtools as a GCP Life Sciences pipeline. This will be substituted by a submission to a WES server (See WESClient.py).
 
-#### DiscoveryClient.py**
+#### DiscoveryClient.py
 
 Wrapper to call a DiscoveryClient and return results of a query.
 
-#### WESClient.py**
+#### WESClient.py
 
-Wrapper to make a WES call . 
+Wrapper to make a WES call. Currently does an MD5 checksum, plan is to use samtools and eventually a GWAS workflow. 
 
 ### **Workflows**
 
