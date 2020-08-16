@@ -44,7 +44,7 @@ class sdlDRSClient(DRSClient):
 		files = {'ngc': open(self.ngc_file_path, 'rb')}
 		response = requests.post(api_url, files=files)
 		print('--- retrieve response ---')
-		print(response)
+		print(response.text)
 		print('--------------------------')
 		if response.status_code == 200:
 			return json.loads(response.content.decode('utf-8'))
