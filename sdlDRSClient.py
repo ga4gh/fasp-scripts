@@ -30,13 +30,16 @@ class sdlDRSClient(DRSClient):
 		jwt_req_headers = {'Metadata-Flavor': 'Google'} 
 		jwt_req_url ='http://metadata/computeMetadata/v1/instance/service-accounts/default/identity?audience=https://www.ncbi.nlm.nih.gov&amp;format=full'
 		jwt_response = requests.post(jwt_req_url, headers=jwt_req_headers)
+		jwt = jwt_response.text
 		print('--- jwt token response ---')
-		print(jwt_response)
+		print(jwt)
 		print('--------------------------')
 	
 	#    locationType = 'gcp_jwt'
 	#    api_url = '{0}retrieve?acc={1}&location={2}&filetype={3}'.format(self.api_url_base, accession, location, fileType)
-		api_url = '{0}retrieve?acc={1}&location={2}'.format(self.api_url_base, accession, location)
+		location = jwt
+		#api_url = '{0}retrieve?acc={1}&location={2}'.format(self.api_url_base, accession, location)
+		api_url = '{0}retrieve?acc={1}&location-type=gcp_jwt&location={2}'.format(self.api_url_base, accession, jwt)
 		print('url for retrieve: {}'.format(api_url))
 		files = {'ngc': open(self.ngc_file_path, 'rb')}
 		response = requests.post(api_url, files=files)
