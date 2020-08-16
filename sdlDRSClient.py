@@ -89,6 +89,9 @@ if __name__ == "__main__":
 	myClient = sdlDRSClient('~/.keys/prj_11218_D17199.ngc')
 
 	res = myClient.getObject('SRR1999478.bam')
-	#res = myClient.getAccessURL('SRR7274638.cram','gs.us')
+	print('--Get Info--')
+	print (res)
+	print('--Get a URL--')
+	res = myClient.getAccessURL('SRR1999478.bam','gs.us')
 	print (res)
 

@@ -2,7 +2,7 @@ import datetime
 import os
 
 
-from BigQuerySearchClient import BigQuerySearchClient
+from DNAStackWESClient import DNAStackWESClient
 
 class FASPLogger:
 
