@@ -28,7 +28,7 @@ class sdlDRSClient(DRSClient):
 	def sdl_retrieve(self, accession, location, fileType=None):
 	
 		jwt_req_headers = {'Metadata-Flavor': 'Google'} 
-		jwt_req_url ='http://metadata/computeMetadata/v1/instance/service-accounts/default/identity?audience=https://www.ncbi.nlm.nih.gov&amp;format=full'
+		jwt_req_url ='http://metadata/computeMetadata/v1/instance/service-accounts/default/identity?audience=https://www.ncbi.nlm.nih.gov&format=full'
 		jwt_response = requests.post(jwt_req_url, headers=jwt_req_headers)
 		jwt = jwt_response.text
 		print('--- jwt token response ---')
