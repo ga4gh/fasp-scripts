@@ -120,7 +120,7 @@ if __name__ == "__main__":
 # 	res = client1.getAccessURL('SRR1999478.bam','gs.us')
 # 	print (res)
 # 	print ('-----------------')
-	client2 = sdlDRSClient('~/.keys/prj_11218_D17199.ngc', debug=False)
+	client2 = sdlDRSClient('~/.keys/prj_11218_D17199.ngc', debug=True)
 	res = client2.getObject('SRR5368359.bam')
 	print('--Get Info--')
 	print (res)
