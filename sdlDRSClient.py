@@ -49,7 +49,8 @@ class sdlDRSClient(DRSClient):
 		api_url = '{0}retrieve?acc={1}&location-type=gcp_jwt&location={2}'.format(self.api_url_base, accession, jwt)
 		
 		#api_url = '{0}retrieve?acc={1}'.format(self.api_url_base, accession)
-		print('url for retrieve: {}'.format(api_url))
+		if self.debug:
+			print('url for retrieve: {}'.format(api_url))
 		files = {'ngc': open(self.ngc_file_path, 'rb')}
 		response = requests.post(api_url, files=files, headers=self.headers)
 		if self.debug:
@@ -118,7 +119,7 @@ if __name__ == "__main__":
 # 	res = client1.getAccessURL('SRR1999478.bam','gs.us')
 # 	print (res)
 # 	print ('-----------------')
-	client2 = sdlDRSClient('~/.keys/prj_11218_D17199.ngc', debug=False)
+	client2 = sdlDRSClient('~/.keys/prj_11218_D17199.ngc', debug=True)
 	res = client2.getObject('SRR5368359.bam')
 	print('--Get Info--')
 	print (res)
