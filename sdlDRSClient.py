@@ -29,7 +29,7 @@ class sdlDRSClient(DRSClient):
 	#    locationType = 'gcp_jwt'
 	#    api_url = '{0}retrieve?acc={1}&location={2}&filetype={3}'.format(self.api_url_base, accession, location, fileType)
 		api_url = '{0}retrieve?acc={1}&location={2}'.format(self.api_url_base, accession, location)
-		#print(api_url)
+		print('url for retrieve: {}'.format(api_url))
 		files = {'ngc': open(self.ngc_file_path, 'rb')}
 		response = requests.post(api_url, files=files)
 		if response.status_code == 200:
@@ -86,21 +86,27 @@ class sdlDRSClient(DRSClient):
 
 
 if __name__ == "__main__":
-	client1 = sdlDRSClient('~/.keys/prj_14565.ngc')
-	res = client1.getObject('SRR1999478.bam')
-	print('--Get Info--')
-	print (res)
-	print('--Get a URL--')
-	res = client1.getAccessURL('SRR1999478.bam','gs.us')
-	print (res)
-	print ('-----------------')
-# 	client2 = sdlDRSClient('~/.keys/prj_11218_D17199.ngc')
+# 	client1 = sdlDRSClient('~/.keys/prj_14565.ngc')
+# 	res = client1.getObject('SRR1999478.bam')
+# 	print('--Get Info--')
+# 	print (res)
+# 	print('--Get a URL--')
+# 	res = client1.getAccessURL('SRR1999478.bam','gs.us')
+# 	print (res)
+# 	print ('-----------------')
+	client2 = sdlDRSClient('~/.keys/prj_11218_D17199.ngc')
 # 	res = client2.getObject('SRR1999478.bam')
 # 	print('--Get Info--')
 # 	print (res)
 # 	print('--Get a URL--')
 # 	res = client2.getAccessURL('SRR1999478.bam','gs.us')
 # 	print (res)
+	res = client2.getObject('SRR5368359.bam')
+	print('--Get Info--')
+	print (res)
+	print('--Get a URL--')
+	res = client2.getAccessURL('SRR5368359.bam','gs.us')
+	print (res)
 
 
 
