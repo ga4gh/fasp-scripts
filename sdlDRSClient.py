@@ -37,10 +37,11 @@ class sdlDRSClient(DRSClient):
 	
 	#    locationType = 'gcp_jwt'
 	#    api_url = '{0}retrieve?acc={1}&location={2}&filetype={3}'.format(self.api_url_base, accession, location, fileType)
-		location = jwt
+		#location = jwt
 		#api_url = '{0}retrieve?acc={1}&location={2}'.format(self.api_url_base, accession, location)
 		#api_url = '{0}retrieve?acc={1}&location-type=gcp_jwt&location={2}'.format(self.api_url_base, accession, jwt)
-		api_url = '{0}retrieve?acc={1}$filetype=bam&location-type=gcp_jwt&location={2}'.format(self.api_url_base, accession, jwt)
+		#api_url = '{0}retrieve?acc={1}$filetype=bam&location-type=gcp_jwt&location={2}'.format(self.api_url_base, accession, jwt)
+		api_url = '{0}retrieve?acc={1}$filetype=bam&location={2}'.format(self.api_url_base, accession, location)
 		
 		#api_url = '{0}retrieve?acc={1}'.format(self.api_url_base, accession)
 		print('url for retrieve: {}'.format(api_url))
