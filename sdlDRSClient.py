@@ -15,8 +15,8 @@ class sdlDRSClient(DRSClient):
 
 	#    api_url = '{0}locality?acc={1}&filetype={2}'.format(self.api_url_base, accession, fileType)
 		api_url = '{0}locality?acc={1}'.format(self.api_url_base, accession)
-		if fileType:
-			api_url += '&filetype=' + fileType
+		#if fileType:
+		#	api_url += '&filetype=' + fileType
 		#print (api_url)   
 		response = requests.get(api_url, headers=self.headers)
 
@@ -125,7 +125,7 @@ if __name__ == "__main__":
 	print('--Get Info--')
 	print (res)
 	print('--Get a URL--')
-	res = client2.getAccessURL('SRR5368359.bam','gs.us')
+	res = client2.getAccessURL('SRR5368359.sra','gs.us')
 	print (res)
 
 
