@@ -6,7 +6,7 @@ from DRSClient import DRSClient
 
 class sdlDRSClient(DRSClient):
 
-	def __init__(self, ngc_file):
+	def __init__(self, ngc_file, debug=False):
 		self.api_url_base = 'https://locate.ncbi.nlm.nih.gov/sdl/2/'
 		self.headers = {'Content-Type': 'application/json'}
 		self.ngc_file_path = os.path.expanduser(ngc_file)
@@ -21,7 +21,8 @@ class sdlDRSClient(DRSClient):
 		response = requests.get(api_url, headers=self.headers)
 
 		if response.status_code == 200:
-			print(response.content.decode('utf-8'))
+			if debug:
+				print(response.content.decode('utf-8'))
 			return json.loads(response.content.decode('utf-8'))
 		else:
 			return None
@@ -32,9 +33,10 @@ class sdlDRSClient(DRSClient):
 		jwt_req_url ='http://metadata/computeMetadata/v1/instance/service-accounts/default/identity?audience=https://www.ncbi.nlm.nih.gov&format=full'
 		jwt_response = requests.post(jwt_req_url, headers=jwt_req_headers)
 		jwt = jwt_response.text
-		print('--- jwt token response ---')
-		print(jwt)
-		print('--------------------------')
+		if debug:
+			print('--- jwt token response ---')
+			print(jwt)
+			print('--------------------------')
 	
 	#    locationType = 'gcp_jwt'
 	#    api_url = '{0}retrieve?acc={1}&location={2}&filetype={3}'.format(self.api_url_base, accession, location, fileType)
@@ -49,9 +51,10 @@ class sdlDRSClient(DRSClient):
 		print('url for retrieve: {}'.format(api_url))
 		files = {'ngc': open(self.ngc_file_path, 'rb')}
 		response = requests.post(api_url, files=files, headers=self.headers)
-		print('--- retrieve response ---')
-		print(response.text)
-		print('--------------------------')
+		if debug:
+			print('--- retrieve response ---')
+			print(response.text)
+			print('--------------------------')
 		if response.status_code == 200:
 			return json.loads(response.content.decode('utf-8'))
 		else:
@@ -114,13 +117,7 @@ if __name__ == "__main__":
 # 	res = client1.getAccessURL('SRR1999478.bam','gs.us')
 # 	print (res)
 # 	print ('-----------------')
-	client2 = sdlDRSClient('~/.keys/prj_11218_D17199.ngc')
-# 	res = client2.getObject('SRR1999478.bam')
-# 	print('--Get Info--')
-# 	print (res)
-# 	print('--Get a URL--')
-# 	res = client2.getAccessURL('SRR1999478.bam','gs.us')
-# 	print (res)
+	client2 = sdlDRSClient('~/.keys/prj_11218_D17199.ngc', debug=False)
 	res = client2.getObject('SRR5368359.bam')
 	print('--Get Info--')
 	print (res)
