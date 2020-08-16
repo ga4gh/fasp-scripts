@@ -21,6 +21,7 @@ class sdlDRSClient(DRSClient):
 		response = requests.get(api_url, headers=self.headers)
 
 		if response.status_code == 200:
+			print(response.content.decode('utf-8'))
 			return json.loads(response.content.decode('utf-8'))
 		else:
 			return None
@@ -40,9 +41,9 @@ class sdlDRSClient(DRSClient):
 		#location = jwt
 		#api_url = '{0}retrieve?acc={1}&location={2}'.format(self.api_url_base, accession, location)
 		#api_url = '{0}retrieve?acc={1}&location-type=gcp_jwt&location={2}'.format(self.api_url_base, accession, jwt)
-		#api_url = '{0}retrieve?acc={1}&filetype=bam&location-type=gcp_jwt&location={2}'.format(self.api_url_base, accession, jwt)
 		#api_url = '{0}retrieve?acc={1}&filetype=bam&location={2}'.format(self.api_url_base, accession, location)
-		api_url = '{0}retrieve?acc={1}&location-type=forced&location={2}'.format(self.api_url_base, accession, location)
+		#api_url = '{0}retrieve?acc={1}&location-type=forced&location={2}'.format(self.api_url_base, accession, location)
+		api_url = '{0}retrieve?acc={1}&location-type=gcp_jwt&location={2}'.format(self.api_url_base, accession, jwt)
 		
 		#api_url = '{0}retrieve?acc={1}'.format(self.api_url_base, accession)
 		print('url for retrieve: {}'.format(api_url))
@@ -87,8 +88,12 @@ class sdlDRSClient(DRSClient):
 		p = object_id.split('.')
 		accession = p[0]
 		fileext = p[-1]
-		retrieve_info = self.sdl_retrieve(accession, access_id, fileext)
-		print(json.dumps(retrieve_info, indent=2))
+		r
+		
+		
+		
+		etrieve_info = self.sdl_retrieve(accession, access_id, fileext)
+		#print(json.dumps(retrieve_info, indent=2))
 	
 		am_parts = access_id.split('.')
 		service = am_parts[0]
