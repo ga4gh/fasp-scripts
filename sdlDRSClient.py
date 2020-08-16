@@ -86,12 +86,21 @@ class sdlDRSClient(DRSClient):
 
 
 if __name__ == "__main__":
-	myClient = sdlDRSClient('~/.keys/prj_11218_D17199.ngc')
-
+	client1 = sdlDRSClient('~/.keys/prj_14565.ngc')
 	res = myClient.getObject('SRR1999478.bam')
 	print('--Get Info--')
 	print (res)
 	print('--Get a URL--')
 	res = myClient.getAccessURL('SRR1999478.bam','gs.us')
 	print (res)
+	print ('-----------------')
+# 	client2 = sdlDRSClient('~/.keys/prj_11218_D17199.ngc')
+# 	res = myClient.getObject('SRR1999478.bam')
+# 	print('--Get Info--')
+# 	print (res)
+# 	print('--Get a URL--')
+# 	res = myClient.getAccessURL('SRR1999478.bam','gs.us')
+# 	print (res)
+
+
 

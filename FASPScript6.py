@@ -23,7 +23,7 @@ def main(argv):
 
 	# Step 2 - DRS - set up a DRS Client
 	# CRDC
-	drsClient = sdlDRSClient('~/.keys/prj_11218_D17199.ngc')
+	drsClient = sdlDRSClient('~/.keys/prj_14565.ngc')
 	
 	
 	# Step 3 - set up a class that run a compute for us
