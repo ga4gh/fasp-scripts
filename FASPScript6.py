@@ -23,8 +23,7 @@ def main(argv):
 
 	# Step 2 - DRS - set up a DRS Client
 	# CRDC
-	drsClient = sdlDRSClient('~/.keys/prj_14565.ngc')
-	
+	drsClient = sdlDRSClient('~/.keys/prj_11218_D17199.ngc')
 	
 	# Step 3 - set up a class that run a compute for us
 	wesClient = DNAStackWESClient('~/.keys/DNAStackWESkey.json')
@@ -38,12 +37,14 @@ def main(argv):
 		print("subject={}, drsID={}".format(row[0], row[1]))
 		
 		# Step 2 - Use DRS to get the URL
-		objInfo = drsClient.getObject(row[1])
+		#objInfo = drsClient.getObject(row[1])
+		# for testing
+		acc = 'SRR5368359.sra'
+		objInfo = drsClient.getObject(acc)
 		fileSize = objInfo['size']
 		# we've predetermined we want to use the gs copy in this case
-		url = drsClient.getAccessURL(row[1], 'gs')
-		res = myClient.getObject('SRR1999478.bam')
-		res = myClient.getAccessURL('SRR1999478.bam','gs.us')
+		#url = drsClient.getAccessURL(row[1], 'gs')
+		res = drsClient.getAccessURL(acc,'gs.us')
 		url = res['url']
 		print(url)
 		# Step 3 - Run a pipeline on the file at the drs url
@@ -53,7 +54,7 @@ def main(argv):
 		print('submitted:{}'.format(pipeline_id))
 		
 		via = 'WES'
-		note = 'WES MD5 on sdl drs'
+		note = 'WES MD5 on NCBI SDL'
 
 		time = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
 		pipelineLogger.logRun(time, via, note,  pipeline_id, outfile, str(fileSize),
