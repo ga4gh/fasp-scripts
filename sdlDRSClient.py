@@ -52,7 +52,8 @@ class sdlDRSClient(DRSClient):
 		if self.debug:
 			print('url for retrieve: {}'.format(api_url))
 		files = {'ngc': open(self.ngc_file_path, 'rb')}
-		response = requests.post(api_url, files=files, headers=self.headers)
+		#response = requests.post(api_url, files=files, headers=self.headers)
+		response = requests.get(api_url)
 		if self.debug:
 			print('--- retrieve response ---')
 			print(response.text)
@@ -119,7 +120,7 @@ if __name__ == "__main__":
 # 	res = client1.getAccessURL('SRR1999478.bam','gs.us')
 # 	print (res)
 # 	print ('-----------------')
-	client2 = sdlDRSClient('~/.keys/prj_11218_D17199.ngc', debug=True)
+	client2 = sdlDRSClient('~/.keys/prj_11218_D17199.ngc', debug=False)
 	res = client2.getObject('SRR5368359.bam')
 	print('--Get Info--')
 	print (res)
