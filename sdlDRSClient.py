@@ -10,7 +10,8 @@ class sdlDRSClient(DRSClient):
 		self.api_url_base = 'https://locate.ncbi.nlm.nih.gov/sdl/2/'
 		self.headers = {'Content-Type': 'application/json'}
 		self.ngc_file_path = os.path.expanduser(ngc_file)
-
+		self.debug = debug
+		
 	def sdl_locality(self, accession, fileType=None):
 
 	#    api_url = '{0}locality?acc={1}&filetype={2}'.format(self.api_url_base, accession, fileType)
@@ -21,7 +22,7 @@ class sdlDRSClient(DRSClient):
 		response = requests.get(api_url, headers=self.headers)
 
 		if response.status_code == 200:
-			if debug:
+			if self.debug:
 				print(response.content.decode('utf-8'))
 			return json.loads(response.content.decode('utf-8'))
 		else:
@@ -33,7 +34,7 @@ class sdlDRSClient(DRSClient):
 		jwt_req_url ='http://metadata/computeMetadata/v1/instance/service-accounts/default/identity?audience=https://www.ncbi.nlm.nih.gov&format=full'
 		jwt_response = requests.post(jwt_req_url, headers=jwt_req_headers)
 		jwt = jwt_response.text
-		if debug:
+		if self.debug:
 			print('--- jwt token response ---')
 			print(jwt)
 			print('--------------------------')
@@ -51,7 +52,7 @@ class sdlDRSClient(DRSClient):
 		print('url for retrieve: {}'.format(api_url))
 		files = {'ngc': open(self.ngc_file_path, 'rb')}
 		response = requests.post(api_url, files=files, headers=self.headers)
-		if debug:
+		if self.debug:
 			print('--- retrieve response ---')
 			print(response.text)
 			print('--------------------------')
