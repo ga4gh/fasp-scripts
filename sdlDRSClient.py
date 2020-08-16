@@ -39,11 +39,11 @@ class sdlDRSClient(DRSClient):
 	#    api_url = '{0}retrieve?acc={1}&location={2}&filetype={3}'.format(self.api_url_base, accession, location, fileType)
 		location = jwt
 		#api_url = '{0}retrieve?acc={1}&location={2}'.format(self.api_url_base, accession, location)
-		#api_url = '{0}retrieve?acc={1}&location-type=gcp_jwt&location={2}'.format(self.api_url_base, accession, jwt)
-		api_url = '{0}retrieve?acc={1}'.format(self.api_url_base, accession)
+		api_url = '{0}retrieve?acc={1}&location-type=gcp_jwt&location="{2}"'.format(self.api_url_base, accession, jwt)
+		#api_url = '{0}retrieve?acc={1}'.format(self.api_url_base, accession)
 		print('url for retrieve: {}'.format(api_url))
 		files = {'ngc': open(self.ngc_file_path, 'rb')}
-		response = requests.post(api_url, files=files)
+		response = requests.post(api_url, files=files, headers=self.headers)
 		print('--- retrieve response ---')
 		print(response.text)
 		print('--------------------------')
