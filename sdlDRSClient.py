@@ -88,11 +88,7 @@ class sdlDRSClient(DRSClient):
 		p = object_id.split('.')
 		accession = p[0]
 		fileext = p[-1]
-		r
-		
-		
-		
-		etrieve_info = self.sdl_retrieve(accession, access_id, fileext)
+		retrieve_info = self.sdl_retrieve(accession, access_id, fileext)
 		#print(json.dumps(retrieve_info, indent=2))
 	
 		am_parts = access_id.split('.')
