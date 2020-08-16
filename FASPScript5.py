@@ -9,26 +9,36 @@ from FASPLogger import FASPLogger
 
 # The implementations we're using
 from Gen3DRSClient import Gen3DRSClient
-from DiscoverySearchClient import DiscoverySearchClient
-from DNAStackWESClient import DNAStackWESClient
+from samtoolsSBClient import samtoolsSBClient
+from BigQuerySearchClient import BigQuerySearchClient
+
+
 
 
 def main(argv):
 
 	# Step 1 - Discovery
 	# query for relevant DRS objects
-	searchClient = DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com/')
-	query = "select submitter_id, read_drs_id drsid from thousand_genomes.onek_genomes.ssd_drs where population = 'ACB' limit 1"
-	query_job = searchClient.runQuery(query)
+	searchClient = BigQuerySearchClient()
 
+	query = """
+     	SELECT 'case_'||associated_entities__case_gdc_id , file_id
+		FROM `isb-cgc.GDC_metadata.rel24_fileData_active` 
+		where data_format = 'BAM' 
+		and project_disease_type = 'Breast Invasive Carcinoma'
+		limit 3"""
+
+	query_job = searchClient.runQuery(query)  # Send the query
+	
 	# Step 2 - DRS - set up a DRS Client
-	# CRDC
-	drsClient = Gen3DRSClient('https://gen3.biodatacatalyst.nhlbi.nih.gov/', 'user/credentials/cdis/access_token',
-	'~/.keys/BDCcredentials.json')
+	crdcBase = 'https://nci-crdc.datacommons.io/'
+	drsClient = Gen3DRSClient(crdcBase, 'user/credentials/api/access_token',
+	'~/.keys/CRDCAPIKey.json')
+
 	
 	
-	# Step 3 - set up a class that run a compute for us
-	wesClient = DNAStackWESClient('~/.keys/DNAStackWESkey.json')
+	# Step 3 - set up a class that runs samtools for us
+	mysam = samtoolsSBClient('cgc','forei/gecco')
 	
 	# A log is helpful to keep track of the computes we've submitted
 	pipelineLogger = FASPLogger("./pipelineLog.txt", os.path.basename(__file__))
@@ -42,20 +52,17 @@ def main(argv):
 		objInfo = drsClient.getObject(row[1])
 		fileSize = objInfo['size']
 		# we've predetermined we want to use the gs copy in this case
-		url = drsClient.getAccessURL(row[1], 'gs')
+		url = drsClient.getAccessURL(row[1], 's3')
 		
 		# Step 3 - Run a pipeline on the file at the drs url
 		outfile = "{}.txt".format(row[0])
-		resp = wesClient.runWorkflow(url)
-		pipeline_id = resp.json()['run_id']
-		print('submitted:{}'.format(pipeline_id))
-		
-		via = 'WES'
-		note = 'WES MD5 from Discovery Search'
+		task = mysam.runWorkflow(url)
+		via = 'py'
+		note = 'Discovery Search-SBG-cgc compute w looger'
 
 		time = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
-		pipelineLogger.logRun(time, via, note,  pipeline_id, outfile, str(fileSize),
-			searchClient, drsClient, wesClient)
+		pipelineLogger.logRun(time, via, note,  task.id, outfile, str(fileSize),
+			searchClient, drsClient, mysam)
 
 	
 	pipelineLogger.close()
