@@ -14,7 +14,6 @@ from BigQuerySearchClient import BigQuerySearchClient
 
 
 
-
 def main(argv):
 
 	# Step 1 - Discovery

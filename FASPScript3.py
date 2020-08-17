@@ -4,6 +4,10 @@ import json
 import datetime
 import subprocess 
 
+# a utility 
+from FASPLogger import FASPLogger
+
+# The implementations we're using
 from Gen3DRSClient import Gen3DRSClient
 from GCPLSsamtools import GCPLSsamtools
 from DiscoverySearchClient import DiscoverySearchClient
@@ -32,7 +36,7 @@ def main(argv):
 	commands = []
 	
 	# A log is helpful to keep track of the computes we've submitted
-	pipelineLog = open("./pipelineLog.txt", "a")
+	pipelineLogger = FASPLogger("./pipelineLog.txt", os.path.basename(__file__))
 	
 	# repeat steps 2 and 3 for each row of the query
 	for row in query_job:
@@ -59,9 +63,8 @@ def main(argv):
 
 		time = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
 		me = os.path.basename(__file__)
-		logline = '{}\t\t{}\t{}\t{}\t{}\t{}\t{}'.format(time, via, me, note, pipeline_id, outfile, fileSize)
-		pipelineLog.write(logline)
-		pipelineLog.write("\n")
+		pipelineLogger.logRun(time, via, note,  pipeline_id, outfile, str(fileSize),
+			searchClient, drsClient, mysam)
 
 	# Submit the jobs using our workaround
 	shellscriptPath = "./workaround.sh"
@@ -73,7 +76,7 @@ def main(argv):
 	# finally! submit all our hard work
 	subprocess.call(['sh', shellscriptPath])
 	
-	pipelineLog.close()
+	pipelineLogger.close()
     
 if __name__ == "__main__":
     main(sys.argv[1:])

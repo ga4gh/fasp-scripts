@@ -1,29 +1,27 @@
 #  IMPORTS
-from google.cloud import bigquery
+#from google.cloud import bigquery
 import sys, getopt
 import os.path
 import json
 import datetime
 import subprocess 
 
-from Gen3DRSClient import Gen3DRSClient
-from GCPLSsamtools import GCPLSsamtools
-from MyMetaResolver import MyMetaResolver
+# a utility 
+from FASPLogger import FASPLogger
 
-def runQuery(query):
-	bqclient = bigquery.Client()
-	query_job = bqclient.query(query)  # Send the query
-	queryResults = []
-	for row in query_job:
-		queryResults.append(row)
-		print("subject={}, drsID={}".format(row[0], row[1]))
-	return queryResults
-	
+# The implementations we're using
+from Gen3DRSClient import crdcDRSClient
+from Gen3DRSClient import bdcDRSClient
+from GCPLSsamtools import GCPLSsamtools
+from BigQuerySearchClient import BigQuerySearchClient
+
+
 
 def main(argv):
 
 	# Step 1 - Discovery
 	# query for relevant DRS objects
+	searchClient = BigQuerySearchClient()
 
 	crdcquery = """
      	SELECT 'case_'||associated_entities__case_gdc_id , 'crdc:'||file_id
@@ -37,8 +35,8 @@ def main(argv):
       	where population = 'ACB'
       	LIMIT 3"""
 
-	results = runQuery(crdcquery)  # Send the query
-	results += runQuery(bdcquery)  
+	results = searchClient.runQuery(crdcquery)  # Send the query
+	results += searchClient.runQuery(bdcquery)  
 	
 
 	# Step 2 - DRS - set up DRS Clients
@@ -46,18 +44,9 @@ def main(argv):
 	# For later!
 	# mr = MyMetaResolver()
 	
-	# CRDC
-	crdcBase = 'https://nci-crdc.datacommons.io/'
-	crdcdrsClient = Gen3DRSClient(crdcBase, 'user/credentials/api/access_token',
-	'~/.keys/CRDCAPIKey.json')
-	# BioDataCatalyst
-	bdcBase = 'https://gen3.biodatacatalyst.nhlbi.nih.gov/'
-	bdcdrsClient = Gen3DRSClient(bdcBase, 'user/credentials/cdis/access_token',
-	'~/.keys/BDCcredentials.json')
-	
 	drsClients = {
-		"crdc": crdcdrsClient,
-		"bdc": bdcdrsClient
+		"crdc": crdcDRSClient('~/.keys/CRDCAPIKey.json'),
+		"bdc": bdcDRSClient('~/.keys/BDCcredentials.json')
 	}
 	
 	# Step 3 - set up a class that runs samtools for us
@@ -65,8 +54,8 @@ def main(argv):
 	mysam = GCPLSsamtools('gs://isbcgc-216220-life-sciences/fasand/')
 	
 	# A log is helpful to keep track of the computes we've submitted
-	pipelineLog = open("./pipelineLog.txt", "a")
-
+	pipelineLogger = FASPLogger("./pipelineLog.txt", os.path.basename(__file__))
+	
 	# repeat steps 2 and 3 for each row of the query
 	commands = []
 	for row in results:
@@ -77,7 +66,8 @@ def main(argv):
 		# get the prefix
 		prefix, drsid = row[1].split(":", 1)
 		url = drsClients[prefix].getAccessURL(drsid, 'gs')
-		objInfo = drsClients[prefix].getObject(drsid)
+		drsClient = drsClients[prefix]
+		objInfo = drsClient.getObject(drsid)
 		fileSize = objInfo['size']
 				
 		# Step 3 - Run a pipeline on the file at the drs url
@@ -90,16 +80,11 @@ def main(argv):
 		commands.append(mysam.statsCommandLine(url, outfile))
 		via = 'sh'
 		pipeline_id = 'paste here'
-		
-		note = ''
-
+		note = 'Two sources'
 		time = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
-		me = os.path.basename(__file__)
-		logline = '{}\t\t{}\t{}\t{}\t{}\t{}\t{}'.format(time, via, me, note, pipeline_id, outfile, fileSize)
-		pipelineLog.write(logline)
-
-		pipelineLog.write("\n")
-
+		pipelineLogger.logRun(time, via, note,  pipeline_id, outfile, fileSize,
+			searchClient, drsClient, mysam)
+			
 	# Submit the jobs using our workaround
 	shellscriptPath = "./workaround.sh"
 	shellScript = open(shellscriptPath, "w")
@@ -108,14 +93,9 @@ def main(argv):
   		shellScript.write("\n")
 	shellScript.close()
 	subprocess.call(['sh', shellscriptPath])
-	
-	pipelineLog.close()
 
-	# workaround - see below
-	commands = []
-	
-	
 
+	pipelineLogger.close()
     
 if __name__ == "__main__":
     main(sys.argv[1:])

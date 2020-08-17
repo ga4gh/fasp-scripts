@@ -1,12 +1,16 @@
 #  IMPORTS
-from google.cloud import bigquery
 import sys, getopt, os
 import json
 import datetime
 import subprocess 
 
+# a utility 
+from FASPLogger import FASPLogger
+
+# The implementations we're using
 from Gen3DRSClient import Gen3DRSClient
 from GCPLSsamtools import GCPLSsamtools
+from BigQuerySearchClient import BigQuerySearchClient
 
 
 
@@ -14,7 +18,7 @@ def main(argv):
 
 	# Step 1 - Discovery
 	# query for relevant DRS objects
-	bqclient = bigquery.Client()
+	searchClient = BigQuerySearchClient()
 # 	query = """
 #      	SELECT subject_id, read_drs_id
 #      	FROM `isbcgc-216220.COPDGene.phenotype_drs`
@@ -26,7 +30,7 @@ def main(argv):
 		where population = 'BEB'
 		LIMIT 1"""
 
-	query_job = bqclient.query(query)  # Send the query
+	query_job = searchClient.runQuery(query)  # Send the query
 	
 	# Step 2 - DRS - set up a DRS Client
 	# CRDC
@@ -44,7 +48,7 @@ def main(argv):
 	commands = []
 	
 	# A log is helpful to keep track of the computes we've submitted
-	pipelineLog = open("./pipelineLog.txt", "a")
+	pipelineLogger = FASPLogger("./pipelineLog.txt", os.path.basename(__file__))
 	
 	# repeat steps 2 and 3 for each row of the query
 	for row in query_job:
@@ -70,10 +74,8 @@ def main(argv):
 		note = ''
 
 		time = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
-		me = os.path.basename(__file__)
-		logline = '{}\t\t{}\t{}\t{}\t{}\t{}\t{}'.format(time, via, me, note, pipeline_id, outfile, fileSize)
-		pipelineLog.write(logline)
-		pipelineLog.write("\n")
+		pipelineLogger.logRun(time, via, note,  pipeline_id, outfile, str(fileSize),
+			searchClient, drsClient, mysam)
 
 	# Submit the jobs using our workaround
 	shellscriptPath = "./workaround.sh"
@@ -85,7 +87,7 @@ def main(argv):
 	# finally! submit all our hard work
 	subprocess.call(['sh', shellscriptPath])
 	
-	pipelineLog.close()
+	pipelineLogger.close()
     
 if __name__ == "__main__":
     main(sys.argv[1:])
