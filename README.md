@@ -49,13 +49,23 @@ The other two scripts were proof of concept using direct APIs from different sta
 Script: [FASPScript2.py](https://github.com/ianfore/FASPclient/blob/master/FASPScript2.py)
 
 
-- Query COPDGene data in BioDataCatalyst
+- Query COPDGene data in BigQuery, exported from BioDataCatalyst via PFB.
 
-- Query TCGA data in the CRDC/GDC
+- Query TCGA data in the ISB-CGC tables in BigQuery,
 
 - Both queries use an appropriate prefix to identify which DRS server should be called to obtain a url to the file.
 
   Currently submits directly to aGCP Life Sciences pipeline. This will be substituted by a submission to a WES Server.
+  
+  Both datasets are contolled access data. Access is controlled by the respective Fence access tokens on the CRDC and BioDataCatalyst DRS servers. The COPD data in BigQuery is under GCP IAM access control.
+
+
+
+
+- Possible to do's
+
+  - Add additional dbGaP datasets.
+  - Move query to Discovery Search - requires access control on Discovery Search.
 
 #### Compute on AWS via different stack 
 
