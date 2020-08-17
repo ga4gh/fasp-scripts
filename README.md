@@ -86,12 +86,20 @@ Script: [FASPScript6.py](https://github.com/ianfore/FASPclient/blob/master/FASPS
 Script: [FASPScript7.py](https://github.com/ianfore/FASPclient/blob/master/FASPScript7.py)
 
 
-- Uses the ISB-CGC BigQuery tables to query for subjects with variants in the JMJD1C gene.  This is the gene in the example shared by Anne Deslattes Mays.
-- This script also introduces a FASPRunner1 class to hide the underlying
+- Uses the ISB-CGC BigQuery tables to query for subjects from TCGA with variants in the JMJD1C gene.  This is the gene in the example shared by Anne Deslattes Mays. This illustrates the kind of query 
+
+- This script also introduces a FASPRunner1 class to hide the underlying steps and allow focus on the query
+
 - Possible to do's
 
+
   - Substitute in SRA DRS server
+
+  - Identify other GA4GH data sources that might contain relevant data for this disease.
+
   - Refactor FASPRunner1 to an abstract FASPRunner class. The abstract class could be configured dynamically to use the clients of choice for each step of the FASP sequence.
+
+    
 
 ####  Simulate identifiers.org/n2t.net - 
 
@@ -113,7 +121,7 @@ Script: [MyMetaResolver.py](https://github.com/ianfore/FASPclient/blob/master/FA
 
 #### DiscoverySearchClient.py
 
-Wrapper to call a DiscoveryClient and return results of a query.
+Wrapper to call the DNAStack DiscoveryClient and return results of a query.
 
 #### BigQuerySearchClient
 
@@ -133,8 +141,8 @@ This is a python wrapper for the two DRS functions. It also handles Gen3 authent
 
 There are two clients for specific Gen3 DRS servers
 
-**crdcDRSClient** - client for Cancer Research Data Commons DRS server
-**bdcDRSClient** - client for BioDataCatalyst DRS server
+- **crdcDRSClient** - client for Cancer Research Data Commons DRS server
+- **bdcDRSClient** - client for BioDataCatalyst DRS server
 
 #### SBDRSClient.py
 
@@ -142,7 +150,7 @@ A DRS client for Seven Bridges DRS services. Handles SB specific authentication
 
 #### sdlDRSClient.py
 
-A DRS-like wrapper around the SRA Data Locator
+A DRS-like wrapper around the SRA Data Locator. Uses standard dbGaP/SRA authentication (.ngc file)
 
 ------
 
