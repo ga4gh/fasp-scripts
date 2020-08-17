@@ -1,3 +1,6 @@
+# provide DRS like interface to SRA Data Locator (SDL) v2
+# SDL documented here https://www.ncbi.nlm.nih.gov/Traces/sdl/2/
+
 import json
 import requests
 import os
@@ -16,9 +19,9 @@ class sdlDRSClient(DRSClient):
 
 	#    api_url = '{0}locality?acc={1}&filetype={2}'.format(self.api_url_base, accession, fileType)
 		api_url = '{0}locality?acc={1}'.format(self.api_url_base, accession)
-		#if fileType:
-		#	api_url += '&filetype=' + fileType
-		#print (api_url)   
+		if fileType:
+			api_url += '&filetype=' + fileType
+		print (api_url)   
 		response = requests.get(api_url, headers=self.headers)
 
 		if response.status_code == 200:
@@ -39,16 +42,12 @@ class sdlDRSClient(DRSClient):
 			print(jwt)
 			print('--------------------------')
 	
-	#    locationType = 'gcp_jwt'
-	#    api_url = '{0}retrieve?acc={1}&location={2}&filetype={3}'.format(self.api_url_base, accession, location, fileType)
-		#location = jwt
+
 		#api_url = '{0}retrieve?acc={1}&location={2}'.format(self.api_url_base, accession, location)
-		#api_url = '{0}retrieve?acc={1}&location-type=gcp_jwt&location={2}'.format(self.api_url_base, accession, jwt)
 		#api_url = '{0}retrieve?acc={1}&filetype=bam&location={2}'.format(self.api_url_base, accession, location)
 		#api_url = '{0}retrieve?acc={1}&location-type=forced&location={2}'.format(self.api_url_base, accession, location)
 		api_url = '{0}retrieve?acc={1}&location-type=gcp_jwt&location={2}'.format(self.api_url_base, accession, jwt)
 		
-		#api_url = '{0}retrieve?acc={1}'.format(self.api_url_base, accession)
 		if self.debug:
 			print('url for retrieve: {}'.format(api_url))
 		files = {'ngc': open(self.ngc_file_path, 'rb')}
@@ -126,7 +125,8 @@ if __name__ == "__main__":
 	print (res)
 	print('--Get a URL--')
 	res = client2.getAccessURL('SRR5368359.sra','gs.us')
-	print (res)
+	print (json.dumps(res, indent=2))
+	#print (res)
 
 
 
