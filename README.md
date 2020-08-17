@@ -49,7 +49,7 @@ The other two scripts were proof of concept using direct APIs from different sta
 Script: [FASPScript2.py](https://github.com/ianfore/FASPclient/blob/master/FASPScript2.py)
 
 
-- Query 1000 Genomes data based on data from BioDataCatalyst
+- Query COPDGene data in BioDataCatalyst
 
 - Query TCGA data in the CRDC/GDC
 

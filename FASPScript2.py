@@ -30,11 +30,12 @@ def main(argv):
 		and project_disease_type = 'Breast Invasive Carcinoma'
 		limit 3"""
 	bdcquery = """
-  		SELECT submitter_id, 'bdc:'||read_drs_id
-  		FROM `isbcgc-216220.1000Genomes.ssd_drs_table`
-      	where population = 'ACB'
+  		SELECT SUBJECT_ID, 'bdc:'||read_drs_id
+  		FROM `isbcgc-216220.COPDGene.phenotype_drs`
+      	where Weight_KG between 92.5 and 93.0
       	LIMIT 3"""
-
+  		#FROM `isbcgc-216220.1000Genomes.ssd_drs_table`
+  		
 	results = searchClient.runQuery(crdcquery)  # Send the query
 	results += searchClient.runQuery(bdcquery)  
 	
