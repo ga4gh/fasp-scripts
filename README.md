@@ -26,17 +26,17 @@ This queries Thousand Genomes data on subjects and specimens which was exported 
 Scripts: FASPScript1.py, FASPScript3.py, FASPScript4.py
 
 - All three scripts perform the following
--- Query for files according to subject and specimen data and obtain their DRS ids
--- Get URLs for the files from the relevant DRS server
--- Submit a compute on each of the files
+ - Query for files according to subject and specimen data and obtain their DRS ids
+ - Get URLs for the files from the relevant DRS server
+ - Submit a compute on each of the files
 - [FASPScript4](https://github.com/ianfore/FASPclient/blob/master/FASPScript4.py) uses the following GA4GH APIs to perform each step
--- Discovery Search Server (DNA Stack) - Presto on BigQuery
--- DRS server (BioDataCatalyst)
--- WES Server (DNA Stack)
+ - Discovery Search Server (DNA Stack) - Presto on BigQuery
+ - DRS server (BioDataCatalyst)
+ - WES Server (DNA Stack)
 
 The other two scripts were proof of concept using direct APIs from different stacks
--- [FASPScript1](https://github.com/ianfore/FASPclient/blob/master/FASPScript1.py) uses BigQuery for the query and directly submits a GCP Life Sciences pipeline for the compute. This compute uses samtools stats.
--- [FASPScript3](https://github.com/ianfore/FASPclient/blob/master/FASPScript3.py) is the same as but substitutes in public DNAStack Discovery Search server for search
+ - [FASPScript1](https://github.com/ianfore/FASPclient/blob/master/FASPScript1.py) uses BigQuery for the query and directly submits a GCP Life Sciences pipeline for the compute. This compute uses samtools stats.
+ - [FASPScript3](https://github.com/ianfore/FASPclient/blob/master/FASPScript3.py) is the same as but substitutes in public DNAStack Discovery Search server for search
 
 - Possible to do's
 
