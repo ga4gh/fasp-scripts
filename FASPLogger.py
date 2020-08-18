@@ -9,8 +9,17 @@ class FASPLogger:
     
 	def __init__(self,  filePath, program):
 		self.program = program
-		
-		self.log = open(filePath, "a")
+		full_path = os.path.expanduser(filePath)
+		if os.path.exists(full_path):
+			self.log = open(full_path, "a")
+		else:
+			self.log = open(full_path, "w")
+			# write a header
+			header = '{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}'.format('time','status','via',
+			'script', 'note', 'pipeline_id', 'outfile', 'fileSize',
+			'ssearchClient','drsClient','wesClient')
+			self.log.write(header)
+			self.log.write("\n")
 
 
 	def logRun(self, time, via, note, pipeline_id, outfile, fileSize, 

@@ -55,9 +55,9 @@ Script: [FASPScript2.py](https://github.com/ianfore/FASPclient/blob/master/FASPS
 
 - Both queries use an appropriate prefix to identify which DRS server should be called to obtain a url to the file.
 
-  Currently submits directly to aGCP Life Sciences pipeline. This will be substituted by a submission to a WES Server.
+  Currently submits directly to a GCP Life Sciences pipeline. This will be substituted by a submission to a WES Server.
   
-  Both datasets are contolled access data. Access is controlled by the respective Fence access tokens on the CRDC and BioDataCatalyst DRS servers. The COPD data in BigQuery is under GCP IAM access control.
+  Both datasets are controlled access data. Access is controlled by the respective Fence access tokens on the CRDC and BioDataCatalyst DRS servers. The COPD data in BigQuery is under GCP IAM access control.
 
 
 
@@ -73,10 +73,10 @@ Script: [FASPScript5.py](https://github.com/ianfore/FASPclient/blob/master/FASPS
 
 
 - Some of the files returned from DRS for the queries above have files on AWS. This script used the Seven Bridges API to run samtools stats on those files.
-- Though the tasks are submitted, they fail with a "Protocol not supprted" error.  See [issue](https://github.com/ga4gh/cloud-interop-testing/issues/109).
+- ~~Though the tasks are submitted, they fail with a "Protocol not supprted" error.  See [issue](https://github.com/ga4gh/cloud-interop-testing/issues/109).~~
 - Possible to do's
 
-  - Update samtools docker image to one that can use a url.
+  - ~~Update samtools docker image to one that can use a url.~~ Done with help from SB Tech Support.
   - Use a Seven Bridges WES implementation which can either accept the signed URL, or take DRS ids.
 
 #### Compute on SRA urls 
@@ -85,7 +85,7 @@ Script: [FASPScript6.py](https://github.com/ianfore/FASPclient/blob/master/FASPS
 
 
 - This script demonstrates that the DNAStack WES Server can perform a compute on the urls returned by the SRA Data Locator. The SDL is a place holder for the NCBI DRS service.
-- A checksum was computed on the sra format file for which a URL could be obtained. Though GetObject showed there are BAM files with an access_id of gs.us URLs to these could not be obtained.
+- A checksum was computed by the DNAStack WES implementation on the sra format file for which a URL could be obtained. Though GetObject showed there are BAM files with an access_id of gs.us URLs to these could not be obtained.
 - Possible to do's
 
   - Substitute in SRA DRS server
@@ -96,36 +96,36 @@ Script: [FASPScript6.py](https://github.com/ianfore/FASPclient/blob/master/FASPS
 Script: [FASPScript7.py](https://github.com/ianfore/FASPclient/blob/master/FASPScript7.py)
 
 
-- Uses the ISB-CGC BigQuery tables to query for subjects from TCGA with variants in the JMJD1C gene.  This is the gene in the example shared by Anne Deslattes Mays. This illustrates the kind of query 
+- Uses the ISB-CGC BigQuery tables to query for subjects from TCGA with variants in the JMJD1C gene.  This is the gene in the example shared by Anne Deslattes Mays. This illustrates the kind of query that could be used fro the workflows Anne wants to perform.
 
-- This script also introduces a FASPRunner1 class to hide the underlying steps and allow focus on the query
+- This script also introduces a FASPRunner1 class to hide the underlying steps and allow focus on the query.
 
 - Possible to do's
 
 
-  - Substitute in SRA DRS server
+    - 4Substitute in SRA DRS server
 
-  - Identify other GA4GH data sources that might contain relevant data for this disease.
+    - Identify other GA4GH data sources that might contain relevant data for this disease.
 
-  - Refactor FASPRunner1 to an abstract FASPRunner class. The abstract class could be configured dynamically to use the clients of choice for each step of the FASP sequence.
+    - Refactor FASPRunner1 to an abstract FASPRunner class. The abstract class could be configured dynamically to use the clients of choice for each step of the FASP sequence.
 
-    
+  
 
-####  Simulate identifiers.org/n2t.net - 
+####  Simulate identifiers.org/n2t.net 
 
 Script: [MyMetaResolver.py](https://github.com/ianfore/FASPclient/blob/master/FASPScript7.py)
 
 
-- Simulates how compact identifier prefixing can be used to redirect DRS GetObject calls to the right DRS Server.
+- Simulates how compact identifier prefixing can be used to redirect DRS GetObject calls to the relevant DRS Server.
 - Possible to do's
 
-  - Do trial registration of DRS server prefixes
-  - Provide feedback on spec.
+  - Do trial registration with nt2/identifers of DRS server prefixes
+  - Provide feedback on prefixing elements of spec.
   - Explore prefixing best practices.
 
 ------
 
-### **Supporting clients**
+### **Clients used in above examples**
 
 ### **Search clients**
 
@@ -143,7 +143,7 @@ Perform searches via BigQuery
 
 #### DRSClient.py
 
-Super class for DRS Clients
+Superclass for DRS Clients
 
 #### **Gen3DRSClient.py**
 
@@ -156,7 +156,10 @@ There are two clients for specific Gen3 DRS servers
 
 #### SBDRSClient.py
 
-A DRS client for Seven Bridges DRS services. Handles SB specific authentication
+A DRS client for Seven Bridges DRS services. Handles SB specific authentication. Two specific classes are provided.
+
+- **sbcgcDRSClient** - client for Seven Bridges Cancer Genomics Cloud DRS server 
+- **cavaticaDRSClient**  - client for Cavatica DRS Server
 
 #### sdlDRSClient.py
 

@@ -26,19 +26,19 @@ class samtoolsSBClient:
 #		except SbgError as e:
 #			print (e.message)
 
-	def runWorkflow(self, bamURL):
+	def runWorkflow(self, bamURL, outfile):
 		api = self.api
 		# Task name in my project
-		name = 'test_samtools_via_url'
+		name = 'samtools_test'
 
 		# App I want to use to run a task
 		app = 'forei/gecco/samtools-stats-1-8-url'
-		#app = 'forei/gecco/samtools-stats-1-8'
 
 		# Inputs
 		inputs = {}
 		
 		inputs['alignment_file_url'] = bamURL
+		inputs['output_file_path'] = outfile
 		# statis for now
 		inputs['reference_file'] = api.files.get('5bad6c83e4b0abc138917143')
 

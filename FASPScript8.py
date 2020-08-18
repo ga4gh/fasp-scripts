@@ -10,6 +10,7 @@ from FASPLogger import FASPLogger
 # The implementations we're using
 from Gen3DRSClient import Gen3DRSClient
 from samtoolsSBClient import samtoolsSBClient
+from GCPLSsamtools import GCPLSsamtools
 from BigQuerySearchClient import BigQuerySearchClient
 
 
@@ -37,12 +38,14 @@ def main(argv):
 	
 	
 	# Step 3 - set up a class that runs samtools for us
-	mysam = samtoolsSBClient('cgc','forei/gecco')
+	mysams = {'s3':samtoolsSBClient('cgc','forei/gecco'),
+				'gs': GCPLSsamtools('gs://isbcgc-216220-life-sciences/tcgatest/')}
 	
 	# A log is helpful to keep track of the computes we've submitted
 	pipelineLogger = FASPLogger("./output/pipelineLog.txt", os.path.basename(__file__))
 	
 	# repeat steps 2 and 3 for each row of the query
+	commands = []
 	for row in query_job:
 
 		print("subject={}, drsID={}".format(row[0], row[1]))
@@ -50,20 +53,33 @@ def main(argv):
 		# Step 2 - Use DRS to get the URL
 		objInfo = drsClient.getObject(row[1])
 		fileSize = objInfo['size']
-		# we've predetermined we want to use the gs copy in this case
-		url = drsClient.getAccessURL(row[1], 's3')
-		
-		# Step 3 - Run a pipeline on the file at the drs url
 		outfile = "{}.txt".format(row[0])
-		print(outfile)
-		task = mysam.runWorkflow(url, outfile)
-		via = 'py'
-		note = 'Discovery Search-SBG-cgc compute w looger'
+		# submit to both aws and gcp
+		for cl, mysam in mysams.items():
+			url = drsClient.getAccessURL(row[1], cl)
+			# Step 3 - Run a pipeline on the file at the drs url
+			if cl == 'gs':
+				commands.append(mysam.statsCommandLine(url, outfile))
+				task_id = 'paste here'
+			else:
+				task = mysam.runWorkflow(url, outfile)
+				task_id = task.id
+			via = 'py'
+			note = 'double submit'
 
-		time = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
-		pipelineLogger.logRun(time, via, note,  task.id, outfile, str(fileSize),
+			time = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
+			pipelineLogger.logRun(time, via, note,  task_id, outfile, str(fileSize),
 			searchClient, drsClient, mysam)
 
+	# Submit the jobs using our workaround
+	shellscriptPath = "./workaround.sh"
+	shellScript = open(shellscriptPath, "w")
+	for line in commands:
+  		shellScript.write(line)
+  		shellScript.write("\n")
+	shellScript.close()
+	# finally! submit all our hard work
+	subprocess.call(['sh', shellscriptPath])
 	
 	pipelineLogger.close()
     

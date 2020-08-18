@@ -1,9 +1,8 @@
 import json
 
-from Gen3DRSClient import crdcDRSClient
-from Gen3DRSClient import bdcDRSClient
+from Gen3DRSClient import crdcDRSClient, bdcDRSClient
 from sdlDRSClient import sdlDRSClient
-from SBDRSClient import sbcgcDRSClient
+from SBDRSClient import sbcgcDRSClient, cavaticaDRSClient
 
 
 class MyMetaResolver:
@@ -17,7 +16,8 @@ class MyMetaResolver:
 			"crdc": crdcDRSClient('~/.keys/CRDCAPIKey.json'),
 			"bdc": bdcDRSClient('~/.keys/BDCcredentials.json'),
 			"insdc": sdlDRSClient('~/.keys/prj_11218_D17199.ngc'),
-			"sbcgc": sbcgcDRSClient('~/.keys/sevenbridges_keys.json')
+			"sbcgc": sbcgcDRSClient('~/.keys/sevenbridges_keys.json'),
+			"sbcav": cavaticaDRSClient('~/.keys/sevenbridges_keys.json')
 		}
 
 	def getObject(self, colonPrefixedID):
@@ -37,7 +37,8 @@ if __name__ == "__main__":
 	mixedIDs = ['insdc:SRR5368359.sra',
 				'bdc:dg.4503/66eeec21-aad0-4a77-8de5-621f05e2d301',
 				'crdc:f360253c-d7d7-47cb-947a-b26e0b41b800',
-				'sbcgc:5baa9d00e4b0abc1388b8ce0']
+				'sbcgc:5baa9d00e4b0abc1388b8ce0',
+				'sbcav:5772b6ed507c1752674486fc']
 	
 	for id in mixedIDs:
 		print('-------------------------------')
