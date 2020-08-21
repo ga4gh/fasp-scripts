@@ -40,14 +40,14 @@ def main(argv):
 	
 	# repeat steps 2 and 3 for each row of the query
 	for row in query_job:
-
-		print("subject={}, drsID={}".format(row[0], row[1]))
+		drs_id = row[1]
+		print("csvfile={}, drsID={}".format(row[0], drs_id))
 		
 		# Step 2 - Use DRS to get the URL
-		objInfo = drsClient.getObject(row[1])
+		objInfo = drsClient.getObject(drs_id)
 		fileSize = objInfo['size']
 
-		url = drsClient.getAccessURL(row[1], 's3')
+		url = drsClient.getAccessURL(drs_id, 's3')
 		
 		# Step 3 - Run a pipeline on the file at the drs url
 		outfile = "{}.txt".format(row[0])
