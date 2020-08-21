@@ -22,16 +22,18 @@ while next_url != None :
 	else:
 		response = requests.request("GET", next_url)
 	result = (response.json())
-	#pprint.pprint(result) 
-	next_url = result['pagination']['next_page_url']
-	#last_model = {"a":"1"}
+	pprint.pprint(result) 
+	if 'next_page_url' in result['pagination']:
+		next_url = result['pagination']['next_page_url']	#last_model = {"a":"1"}
+	else:
+		next_url = None
 	rowCount = len(result['data'])
 	print ("has {} data rows".format(rowCount))
 	if rowCount > 0:
 		print(result['data'])
-	if "properties" in result['data_model']:
-		dm = result['data_model']
-		print ("has {} data model properties".format(len(dm['properties'])))
+# 	if "properties" in result['data_model']:
+# 		dm = result['data_model']
+# 		print ("has {} data model properties".format(len(dm['properties'])))
 # 		for prop in dm['properties'].keys():
 # 			print (prop)
 # 		if last_model == dm:

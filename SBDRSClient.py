@@ -33,18 +33,17 @@ class SBDRSClient(DRSClient):
     	    
     # Get a URL for fetching bytes. 
     # See https://ga4gh.github.io/data-repository-service-schemas/preview/develop/docs/#_getaccessurl
-#     def getAccessURL(self, object_id, access_id):
-#          auth_token = self.auth_token['auth_token']
-#          headers = {'Content-Type': 'application/json',
-#          'Authorization': 'Bearer {0}'.format(auth_token)}
-#          api_url = '{0}/ga4gh/drs/v1/objects/{1}/access/{2}'.format(self.api_url_base, object_id, access_id)
-#          response = requests.get(api_url, headers=headers)
-#          if response.status_code == 200:
-#             resp = response.content.decode('utf-8')
-#             return json.loads(resp)['url']
-#          else:
-#             print (response)
-#             return None
+	def getAccessURL(self, object_id, access_id):
+		headers = {'Content-Type': 'application/json',
+		'Authorization': 'Bearer {0}'.format(self.auth_token)}
+		api_url = '{0}/ga4gh/drs/v1/objects/{1}/access/{2}'.format(self.api_url_base, object_id, access_id)
+		response = requests.get(api_url, headers=headers)
+		if response.status_code == 200:
+			resp = response.content.decode('utf-8')
+			return json.loads(resp)['url']
+		else:
+			print (response)
+			return None
 
 class sbcgcDRSClient(SBDRSClient):
     
@@ -64,6 +63,9 @@ if __name__ == "__main__":
 	print ("Cancer Genomics Cloud")
 	sbClient = sbcgcDRSClient('~/.keys/sevenbridges_keys.json')
 	res = sbClient.getObject('5baa9d00e4b0abc1388b8ce0')
+	# Thousand Genomes meta csv file - no guarantee this will be there in future!
+	#res = sbClient.getObject('5f404097e4b0bf4ad1323012')
+
 	print (res)
 	print ("______________________")
 	print ("Cavatica")

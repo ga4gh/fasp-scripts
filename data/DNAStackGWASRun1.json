@@ -1,0 +1,33 @@
+{
+    "run_id": "5788cf45-4520-49fc-8d8d-0e408eb95a23",
+    "request": {
+        "workflow_params": {
+            "gwas.vcf": "gs://fc-56ac46ea-efc4-4683-b6d5-6d95bed41c5e/CCDG_13607/Project_CCDG_13607_B01_GRM_WGS.JGVariants.2019-04-04/CCDG_13607_B01_GRM_WGS_2019-02-19_chr21.recalibrated_variants.vcf.gz",
+            "gwas.metadata_csv": "https://cgc-main.s3.amazonaws.com/0babbfac-e30d-4286-96e8-60755075e0e4%2Bthousand_genomes_meta.csv?x-username=forei&x-env=cgc&x-requestId=c2958d9c-f3cc-492b-a8ce-8c8822720eb9&x-project=forei%2Fdrs-work&response-content-disposition=attachment%3Bfilename%3Dthousand_genomes_meta.csv&response-content-type=application%2Foctet-stream&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20200821T230931Z&X-Amz-SignedHeaders=host&X-Amz-Expires=172800&X-Amz-Credential=AKIAJQD4ZMI5SNVG2A2A%2F20200821%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=c1b79877cdaada8d10f705d0600638e914e0369a955ae40bb63a5aaa872a29ad"
+        },
+        "workflow": "WDL",
+        "tags": {
+            "user_id": "dam_6342b188cc2c448489f522adb7",
+            "cromwell-workflow-id": "cromwell-5788cf45-4520-49fc-8d8d-0e408eb95a23"
+        },
+        "workflow_engine_parameters": {
+            "workflow_root": "gs://dnastack-cromwell-workflows-bucket/gwas/5788cf45-4520-49fc-8d8d-0e408eb95a23/"
+        },
+        "workflow_url": "gwas.wdl"
+    },
+    "state": "RUNNING",
+    "run_log": {
+        "name": "gwas",
+        "start_time": "2020-08-21T23:09:32.421Z[UTC]"
+    },
+    "task_logs": [
+        {
+            "name": "gwas.parse_metadata",
+            "cmd": "# generate covariates file using Super_Population column\necho \"FID IID Super_Population\" > covariates.txt\nawk -vFPAT='[^,]*|\"[^\"]*\"' 'NR > 1 {print $2,$1,$61}' /cromwell_root/cgc-main.s3.amazonaws.com/0babbfac-e30d-4286-96e8-60755075e0e4%2Bthousand_genomes_meta.csv?x-username=forei&x-env=cgc&x-requestId=c2958d9c-f3cc-492b-a8ce-8c8822720eb9&x-project=forei%2Fdrs-work&response-content-disposition=attachment%3Bfilename%3Dthousand_genomes_meta.csv&response-content-type=application%2Foctet-stream&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20200821T230931Z&X-Amz-SignedHeaders=host&X-Amz-Expires=172800&X-Amz-Credential=AKIAJQD4ZMI5SNVG2A2A%2F20200821%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=c1b79877cdaada8d10f705d0600638e914e0369a955ae40bb63a5aaa872a29ad >> covariates.txt\n## recode covariates to numerical\nsed -i -e 's/AFR$/1/g' -e 's/AMR$/2/g' -e 's/EAS$/3/g' -e 's/EUR$/4/g' -e 's/SAS$/5/g' covariates.txt\n\n# generate phenotypes file; assume phenotype is in the last column\necho \"FID IID Simulated_disease\" > phenotypes.txt\nawk -vFPAT='[^,]*|\"[^\"]*\"' 'NR > 1 {print $2,$1,$NF}' /cromwell_root/cgc-main.s3.amazonaws.com/0babbfac-e30d-4286-96e8-60755075e0e4%2Bthousand_genomes_meta.csv?x-username=forei&x-env=cgc&x-requestId=c2958d9c-f3cc-492b-a8ce-8c8822720eb9&x-project=forei%2Fdrs-work&response-content-disposition=attachment%3Bfilename%3Dthousand_genomes_meta.csv&response-content-type=application%2Foctet-stream&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20200821T230931Z&X-Amz-SignedHeaders=host&X-Amz-Expires=172800&X-Amz-Credential=AKIAJQD4ZMI5SNVG2A2A%2F20200821%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=c1b79877cdaada8d10f705d0600638e914e0369a955ae40bb63a5aaa872a29ad >> phenotypes.txt\n\n# generate sex file\necho \"FID IID Sex\" > sex.txt\nawk -vFPAT='[^,]*|\"[^\"]*\"' 'NR > 1 {{if ($5==\"female\") sex=2; else if ($5==\"male\") sex=1; else sex=0} {print $2,$1,sex}}' /cromwell_root/cgc-main.s3.amazonaws.com/0babbfac-e30d-4286-96e8-60755075e0e4%2Bthousand_genomes_meta.csv?x-username=forei&x-env=cgc&x-requestId=c2958d9c-f3cc-492b-a8ce-8c8822720eb9&x-project=forei%2Fdrs-work&response-content-disposition=attachment%3Bfilename%3Dthousand_genomes_meta.csv&response-content-type=application%2Foctet-stream&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20200821T230931Z&X-Amz-SignedHeaders=host&X-Amz-Expires=172800&X-Amz-Credential=AKIAJQD4ZMI5SNVG2A2A%2F20200821%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=c1b79877cdaada8d10f705d0600638e914e0369a955ae40bb63a5aaa872a29ad >> sex.txt\n\n# generate ID update file\necho \"OLD_FID OLD_IID NEW_FID NEW_IID\" > ids.txt\nawk -vFPAT='[^,]*|\"[^\"]*\"' 'NR > 1 {print $1,$1,$2,$1}' /cromwell_root/cgc-main.s3.amazonaws.com/0babbfac-e30d-4286-96e8-60755075e0e4%2Bthousand_genomes_meta.csv?x-username=forei&x-env=cgc&x-requestId=c2958d9c-f3cc-492b-a8ce-8c8822720eb9&x-project=forei%2Fdrs-work&response-content-disposition=attachment%3Bfilename%3Dthousand_genomes_meta.csv&response-content-type=application%2Foctet-stream&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20200821T230931Z&X-Amz-SignedHeaders=host&X-Amz-Expires=172800&X-Amz-Credential=AKIAJQD4ZMI5SNVG2A2A%2F20200821%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=c1b79877cdaada8d10f705d0600638e914e0369a955ae40bb63a5aaa872a29ad >> ids.txt",
+            "start_time": "2020-08-21T23:09:34.586Z[UTC]",
+            "stdout": "gs://dnastack-cromwell-workflows-bucket/gwas/5788cf45-4520-49fc-8d8d-0e408eb95a23/call-parse_metadata/stdout",
+            "stderr": "gs://dnastack-cromwell-workflows-bucket/gwas/5788cf45-4520-49fc-8d8d-0e408eb95a23/call-parse_metadata/stderr"
+        }
+    ],
+    "outputs": {}
+}

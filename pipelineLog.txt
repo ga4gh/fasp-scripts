@@ -1,0 +1,17 @@
+time	status	via	script	note	pipeline_id	outfile	fileSize	ssearchClient	drsClient	wesClient
+08/18/2020, 18:36:50		sh	FASPScript1a.py		paste here	HG03594_demo.txt	17019635647	BigQuerySearchClient	Gen3DRSClient	GCPLSsamtools
+08/18/2020, 18:38:00		sh	FASPScript1a.py		paste here	HG03594_demo.txt	17019635647	BigQuerySearchClient	Gen3DRSClient	GCPLSsamtools
+08/18/2020, 18:42:52		sh	FASPScript1a.py		paste here	HG03594_demo.txt	17019635647	BigQuerySearchClient	Gen3DRSClient	GCPLSsamtools
+08/18/2020, 18:44:00		sh	FASPScript1a.py		paste here	HG03594_demo.txt	17019635647	BigQuerySearchClient	Gen3DRSClient	GCPLSsamtools
+08/18/2020, 18:44:35		sh	FASPScript1a.py		paste here	HG03594_demo.txt	17019635647	BigQuerySearchClient	Gen3DRSClient	GCPLSsamtools
+08/18/2020, 22:40:39		sh	FASPScript1a.py		paste here	HG03594_demo.txt	17019635647	BigQuerySearchClient	Gen3DRSClient	GCPLSsamtools
+08/18/2020, 22:41:56		sh	FASPScript1a.py		paste here	HG03594_demo.txt	17019635647	BigQuerySearchClient	Gen3DRSClient	GCPLSsamtools
+08/18/2020, 22:44:09		sh	FASPScript1a.py		paste here	HG03594_demo.txt	17019635647	BigQuerySearchClient	Gen3DRSClient	GCPLSsamtools
+08/18/2020, 22:44:57		sh	FASPScript1a.py		paste here	HG03594_demo.txt	17019635647	BigQuerySearchClient	Gen3DRSClient	GCPLSsamtools
+08/18/2020, 22:59:44		sh	FASPScript1a.py		paste here	HG03594_demo.txt	17019635647	BigQuerySearchClient	Gen3DRSClient	GCPLSsamtools
+08/18/2020, 23:00:20		sh	FASPScript1a.py		paste here	HG03594_demo.txt	17019635647	BigQuerySearchClient	Gen3DRSClient	GCPLSsamtools
+08/18/2020, 23:01:05		sh	FASPScript1a.py		paste here	HG03594_demo.txt	17019635647	BigQuerySearchClient	Gen3DRSClient	GCPLSsamtools
+08/19/2020, 07:00:58		sh	FASPScript1.py		paste here	HG03594_demo.txt	17019635647	BigQuerySearchClient	Gen3DRSClient	GCPLSsamtools
+08/19/2020, 08:24:19		sh	FASPScript1.py		paste here	HG03594_demo.txt	17019635647	BigQuerySearchClient	Gen3DRSClient	GCPLSsamtools
+08/21/2020, 18:55:15		WES	FASPScript4.py	WES MD5 from Discovery Search	8812daf4-c227-4cf0-a8f4-3576139e89b7	HG01988_demo.txt	14752069285	DiscoverySearchClient	Gen3DRSClient	DNAStackWESClient
+08/21/2020, 19:09:30		WES	FASPScriptGWAS.py	GWAS	5788cf45-4520-49fc-8d8d-0e408eb95a23	1k_csv.txt	780047	BigQuerySearchClient	sbcgcDRSClient	DNAStackWESClient

@@ -28,8 +28,11 @@ class DiscoverySearchClient:
 			else:
 				 response = requests.request("GET", next_url)
 			result = (response.json())
-			#pprint.pprint(result) 
-			next_url = result['pagination']['next_page_url']
+			#pprint.pprint(result)
+			if 'next_page_url' in result['pagination']:
+				next_url = result['pagination']['next_page_url']
+			else:
+				next_url = None
 			rowCount = len(result['data'])
 # 			if rowCount > 0:
 # 				resultRows.append(result['data'])

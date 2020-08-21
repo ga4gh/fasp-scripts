@@ -35,6 +35,30 @@ class DNAStackWESClient(WESClient):
 
 		return response
 		
+	def runGWASWorkflow(self, fileurl):
+		csvfileurl = fileurl
+		vcfFileurl = "gs://fc-56ac46ea-efc4-4683-b6d5-6d95bed41c5e/CCDG_13607/Project_CCDG_13607_B01_GRM_WGS.JGVariants.2019-04-04/CCDG_13607_B01_GRM_WGS_2019-02-19_chr21.recalibrated_variants.vcf.gz"
+
+		# use a temporary file to write out the input file
+		inputJson = {"gwas.metadata_csv":csvfileurl, "gwas.vcf": vcfFileurl}
+		with tempfile.TemporaryFile() as fp:
+			fp.write(json.dumps(inputJson).encode('utf-8'))
+			fp.seek(0)
+			payload = {'workflow_url': 'gwas.wdl'}
+			files = {
+				'workflow_params': ('inputs.gwas.json', fp, 'application/json'),
+				'workflow_attachment': ('gwas.wdl', open('./wes/gwas.wdl', 'rb'), 'text/plain')
+			}
+
+		
+			headers = {
+  				'Authorization': 'Bearer {}'.format(self.accessToken)
+			}
+
+			response = requests.request("POST", self.api_url_base, headers=headers, data = payload, files = files)
+
+		return response
+		
 if __name__ == "__main__":
 	myClient = WESClient('~/.keys/DNAStackWESkey.json')
 

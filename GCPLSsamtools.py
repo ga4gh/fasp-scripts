@@ -14,6 +14,8 @@ BEFORE RUNNING:
    `pip install --upgrade google-api-python-client`
 """
 from pprint import pprint
+import tempfile
+import subprocess
 
 from googleapiclient import discovery
 from oauth2client.client import GoogleCredentials
@@ -99,13 +101,25 @@ class GCPLSsamtools:
 		response = request.execute()
 
 		return(response)
-		
+
 	def statsCommandLine(self, bamURL, outfile):
 		cline = "gcloud beta lifesciences pipelines run --command-line 'samtools stats ${BAM} > ${STATS}' "
 		cline += "--docker-image \"gcr.io/genomics-tools/samtools\" --regions us-east1 " 
 		cline += "--inputs BAM=\"" + bamURL + "\" "
 		cline += "--outputs  STATS=" + self.outdir + outfile
+		print (cline)
 		return cline
-    
+
+	def runWorkflow(self, bamURL, outfile):
+		#runStats above should have allowed us to submit a pipeline - but the pipelines fail
+		# This is the workaround - just create a shell script		
+		cline = self.statsCommandLine(bamURL, outfile)
+		with tempfile.NamedTemporaryFile(mode='w') as shellScript:
+			shellScript.write(cline)
+			shellScript.write("\n")
+			shellScript.flush()
+			#res = subprocess.run(['sh', shellScript.name])
+		return ''
+
     
 		

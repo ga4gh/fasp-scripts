@@ -1,0 +1,37 @@
+{
+    "run_id": "8812daf4-c227-4cf0-a8f4-3576139e89b7",
+    "request": {
+        "workflow_params": {
+            "md5Sum.inputFile": "https://storage.googleapis.com/fc-56ac46ea-efc4-4683-b6d5-6d95bed41c5e/CCDG_13607/Project_CCDG_13607_B01_GRM_WGS.cram.2019-02-06/Sample_HG01988/analysis/HG01988.final.cram?GoogleAccessId=forei-968@dcpstage-210518.iam.gserviceaccount.com&Expires=1598054115&Signature=kPwKwS1BpF93YvclsBGYgz1dczsdfpTY214ira9TmbLm8hdIpwH9DXomNuv6G5AxjXJ5%2FSnG126AGRZOQ7mwlSTF8BefStTOM%2FzslcpJGZHeRd8acHMNfZHXXCXDYLz5fxFVsPOotM7KK7ZteKaELEkqr10IA%2B%2BO8%2FzRiqwu0JjDY1fqE7Bl7j1HF2GqVbR4v7UjQ%2FrrDNW8MuKRAD5ZeEWJsu6JBC0xxIvVwkcKMG5ZdsRNBV5g6pRL8wga%2BmCHTc634bEKibwSaWbfAT4q4Kwn6Ujl14USnmw34c0b5Moq8MBS%2F%2BHHiw%2B5SHcqDDC5rZRWA4zTaZ4266Jy%2FEBQYg==&userProject=dcpstage-billing"
+        },
+        "workflow": "WDL",
+        "tags": {
+            "user_id": "dam_6342b188cc2c448489f522adb7",
+            "cromwell-workflow-id": "cromwell-8812daf4-c227-4cf0-a8f4-3576139e89b7"
+        },
+        "workflow_engine_parameters": {
+            "workflow_root": "gs://dnastack-cromwell-workflows-bucket/md5Sum/8812daf4-c227-4cf0-a8f4-3576139e89b7/"
+        },
+        "workflow_url": "checksum.wdl"
+    },
+    "state": "COMPLETE",
+    "run_log": {
+        "name": "md5Sum",
+        "start_time": "2020-08-21T22:55:17.386Z[UTC]",
+        "end_time": "2020-08-21T22:58:33.557Z[UTC]"
+    },
+    "task_logs": [
+        {
+            "name": "md5Sum.calculateMd5Sum",
+            "cmd": "gsutil hash -m /cromwell_root/storage.googleapis.com/fc-56ac46ea-efc4-4683-b6d5-6d95bed41c5e/CCDG_13607/Project_CCDG_13607_B01_GRM_WGS.cram.2019-02-06/Sample_HG01988/analysis/HG01988.final.cram?GoogleAccessId=forei-968@dcpstage-210518.iam.gserviceaccount.com&Expires=1598054115&Signature=kPwKwS1BpF93YvclsBGYgz1dczsdfpTY214ira9TmbLm8hdIpwH9DXomNuv6G5AxjXJ5%2FSnG126AGRZOQ7mwlSTF8BefStTOM%2FzslcpJGZHeRd8acHMNfZHXXCXDYLz5fxFVsPOotM7KK7ZteKaELEkqr10IA%2B%2BO8%2FzRiqwu0JjDY1fqE7Bl7j1HF2GqVbR4v7UjQ%2FrrDNW8MuKRAD5ZeEWJsu6JBC0xxIvVwkcKMG5ZdsRNBV5g6pRL8wga%2BmCHTc634bEKibwSaWbfAT4q4Kwn6Ujl14USnmw34c0b5Moq8MBS%2F%2BHHiw%2B5SHcqDDC5rZRWA4zTaZ4266Jy%2FEBQYg==&userProject=dcpstage-billing | grep -E 'Hash \\(md5\\):\\s' | cut -f4 > output.md5",
+            "start_time": "2020-08-21T22:55:19.515Z[UTC]",
+            "end_time": "2020-08-21T22:58:32.445Z[UTC]",
+            "stdout": "gs://dnastack-cromwell-workflows-bucket/md5Sum/8812daf4-c227-4cf0-a8f4-3576139e89b7/call-calculateMd5Sum/stdout",
+            "stderr": "gs://dnastack-cromwell-workflows-bucket/md5Sum/8812daf4-c227-4cf0-a8f4-3576139e89b7/call-calculateMd5Sum/stderr",
+            "exit_code": 0
+        }
+    ],
+    "outputs": {
+        "md5Sum.md5": ""
+    }
+}

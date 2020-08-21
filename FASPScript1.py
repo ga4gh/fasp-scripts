@@ -12,8 +12,6 @@ from Gen3DRSClient import Gen3DRSClient
 from GCPLSsamtools import GCPLSsamtools
 from BigQuerySearchClient import BigQuerySearchClient
 
-
-
 def main(argv):
 
 	# Step 1 - Discovery
