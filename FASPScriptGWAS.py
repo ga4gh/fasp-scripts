@@ -8,7 +8,7 @@ import subprocess
 from FASPLogger import FASPLogger
 
 # The implementations we're using
-from SBDRSClient import sbcgcDRSClient
+from Gen3DRSClient import bdcDRSClient
 from BigQuerySearchClient import BigQuerySearchClient
 from DNAStackWESClient import DNAStackWESClient
 
@@ -22,14 +22,14 @@ def main(argv):
 	query = """
      	SELECT file, drs_id
 		FROM `isbcgc-216220.onek_genomes.onek_drs` 
-		where file = '1k_csv' 
+		where file = 'tutorial-synthetic_data_set_1' 
 		"""
 
 	query_job = searchClient.runQuery(query)  # Send the query
 
 	# Step 2 - DRS - set up a DRS Client
 	# CRDC
-	drsClient = sbcgcDRSClient('~/.keys/sevenbridges_keys.json')
+	drsClient = bdcDRSClient('~/.keys/BDCcredentials.json')
 	
 	
 	# Step 3 - set up a class that run a compute for us
@@ -41,21 +41,21 @@ def main(argv):
 	# repeat steps 2 and 3 for each row of the query
 	for row in query_job:
 		drs_id = row[1]
-		print("csvfile={}, drsID={}".format(row[0], drs_id))
+		print("vcffile={}, drsID={}".format(row[0], drs_id))
 		
 		# Step 2 - Use DRS to get the URL
 		objInfo = drsClient.getObject(drs_id)
 		fileSize = objInfo['size']
 
-		url = drsClient.getAccessURL(drs_id, 's3')
+		vcfurl = drsClient.getAccessURL(drs_id, 'gs')
 		
 		# Step 3 - Run a pipeline on the file at the drs url
-		outfile = "{}.txt".format(row[0])
-		resp = wesClient.runGWASWorkflow(url)
+		resp = wesClient.runGWASWorkflow(vcfurl, 'gs://dnastack-public-bucket/thousand_genomes_meta.csv')
 		print (resp)
 		pipeline_id = resp.json()['run_id']
 		print('submitted:{}'.format(pipeline_id))
 		
+		outfile = ''
 		via = 'WES'
 		note = 'GWAS'
 

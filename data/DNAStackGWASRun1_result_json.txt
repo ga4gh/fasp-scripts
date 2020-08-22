@@ -1,0 +1,41 @@
+{
+    "run_id": "56d45bee-0022-4a00-ac4d-88e4bb274978",
+    "request": {
+        "workflow_params": {
+            "gwas.vcf": "https://storage.googleapis.com/fc-56ac46ea-efc4-4683-b6d5-6d95bed41c5e/CCDG_13607/Project_CCDG_13607_B01_GRM_WGS.JGVariants.2019-04-04/CCDG_13607_B01_GRM_WGS_2019-02-19_chr21.recalibrated_variants.vcf.gz?GoogleAccessId=forei-968@dcpstage-210518.iam.gserviceaccount.com&Expires=1598100769&Signature=G3d3SOrsDpVJY0n3Bzwos9Ebk87VUUDhsTCV4h1VgsjWC7iT3LRnvQUzgKs%2BfXV%2F9nYhejgHyT6dKF5EHtMQUm1Cnk8%2FXLoY56RFF1w48OBr5MOPcM8mthOOHslYiEMz4jsAMo7RBxWuaRIJyx85RRdPn1ufeOgZU3oZ3ZNuZ9qrTbJ6h7Rvvv%2FHMAPPLnlObxZG0tQ7v2FH8yEEV0%2B9ppi93k2SEfmTMknV2DuAsXeV02jzqpUrGdeQkPSQw6ykOEB1aBd3Ufs0veXZ9NtbHq%2FK8ACjzc%2F53Z3EbnnPWj%2FbMhNv8%2F3AqNGgNlbMN824Xk6qe0ayYTZuJQiyJ%2BI13w==&userProject=dcpstage-billing",
+            "gwas.metadata_csv": "gs://dnastack-public-bucket/thousand_genomes_meta.csv"
+        },
+        "workflow": "WDL",
+        "tags": {
+            "user_id": "dam_6342b188cc2c448489f522adb7",
+            "cromwell-workflow-id": "cromwell-56d45bee-0022-4a00-ac4d-88e4bb274978"
+        },
+        "workflow_engine_parameters": {
+            "workflow_root": "gs://dnastack-cromwell-workflows-bucket/gwas/56d45bee-0022-4a00-ac4d-88e4bb274978/"
+        },
+        "workflow_url": "gwas.wdl"
+    },
+    "state": "EXECUTOR_ERROR",
+    "run_log": {
+        "name": "gwas",
+        "start_time": "2020-08-22T11:52:55.015Z[UTC]",
+        "end_time": "2020-08-22T11:56:39.585Z[UTC]"
+    },
+    "task_logs": [
+        {
+            "name": "gwas.parse_metadata",
+            "cmd": "# generate covariates file using Super_Population column\necho \"FID IID Super_Population\" > covariates.txt\nawk -vFPAT='[^,]*|\"[^\"]*\"' 'NR > 1 {print $2,$1,$61}' /cromwell_root/dnastack-public-bucket/thousand_genomes_meta.csv >> covariates.txt\n## recode covariates to numerical\nsed -i -e 's/AFR$/1/g' -e 's/AMR$/2/g' -e 's/EAS$/3/g' -e 's/EUR$/4/g' -e 's/SAS$/5/g' covariates.txt\n\n# generate phenotypes file; assume phenotype is in the last column\necho \"FID IID Simulated_disease\" > phenotypes.txt\nawk -vFPAT='[^,]*|\"[^\"]*\"' 'NR > 1 {print $2,$1,$NF}' /cromwell_root/dnastack-public-bucket/thousand_genomes_meta.csv >> phenotypes.txt\n\n# generate sex file\necho \"FID IID Sex\" > sex.txt\nawk -vFPAT='[^,]*|\"[^\"]*\"' 'NR > 1 {{if ($5==\"female\") sex=2; else if ($5==\"male\") sex=1; else sex=0} {print $2,$1,sex}}' /cromwell_root/dnastack-public-bucket/thousand_genomes_meta.csv >> sex.txt\n\n# generate ID update file\necho \"OLD_FID OLD_IID NEW_FID NEW_IID\" > ids.txt\nawk -vFPAT='[^,]*|\"[^\"]*\"' 'NR > 1 {print $1,$1,$2,$1}' /cromwell_root/dnastack-public-bucket/thousand_genomes_meta.csv >> ids.txt",
+            "start_time": "2020-08-22T11:52:57.166Z[UTC]",
+            "end_time": "2020-08-22T11:56:37.440Z[UTC]",
+            "stdout": "gs://dnastack-cromwell-workflows-bucket/gwas/56d45bee-0022-4a00-ac4d-88e4bb274978/call-parse_metadata/stdout",
+            "stderr": "gs://dnastack-cromwell-workflows-bucket/gwas/56d45bee-0022-4a00-ac4d-88e4bb274978/call-parse_metadata/stderr",
+            "exit_code": 0
+        },
+        {
+            "name": "gwas.run_gwas",
+            "start_time": "2020-08-22T11:56:38.564Z[UTC]",
+            "end_time": "2020-08-22T11:56:38.787Z[UTC]"
+        }
+    ],
+    "outputs": {}
+}
