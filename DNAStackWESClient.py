@@ -39,8 +39,8 @@ class DNAStackWESClient(WESClient):
 
 		payload = {'workflow_url': 'gwas.wdl'}
 		files = {
-			'workflow_params': ('inputs.gwas.json', open('./wes/gwas/inputs.gwas.json', 'rb'), 'application/json'),
-			'workflow_attachment': ('gwas.wdl', open('./wes/gwas/gwas.wdl', 'rb'), 'text/plain')
+			'workflow_params': ('inputs.gwas.json', open('../plenary-resources-2020/workflows/inputs.gwas.json', 'rb'), 'application/json'),
+			'workflow_attachment': ('gwas.wdl', open('../plenary-resources-2020/workflows/gwas.wdl', 'rb'), 'text/plain')
 		}
 
 		headers = {
