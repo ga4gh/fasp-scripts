@@ -76,7 +76,6 @@ class DNAStackWESClient(WESClient):
 if __name__ == "__main__":
 	myClient = DNAStackWESClient('~/.keys/DNAStackWESkey.json')
 
-	#res = myClient.runWorkflow('https://storage.googleapis.com/gdc-tcga-phs000178-controlled/f360253c-d7d7-47cb-947a-b26e0b41b800/C499.TCGA-E8-A436-01A-12D-A23U-08.4_gdc_realn.bam?GoogleAccessId=forei-2417@dcf-prod.iam.gserviceaccount.com&Expires=1597432863&Signature=K66pAScp2DYFnaeCdthW8lRkMRODexHHVhe3h5aSBB47X9w2NhVSeDTFF76MQ4x3XWxDTYb3PUZUIKVUGTl753mwQEMI2r0dHP0JdWdG0CcZktZa8l6AuQgl%2BH1oAFraiAUwjNTt7XL1vOriNd2rrNelCYIUusfhW6avklyR3jMssOeeR3LfNLRZzb%2FxRP4eo%2BjXQqpWf63bKJ23PGyOAfNDA8pGuHLT7q98nIHApB5kJjlTnzZ50P0LzCQIkYx%2F4Se1bhRQ3%2FvCOgZX6MYbxDDIjkbKQ7JRDAnY%2FKTE4y9PAU79vJNcw%2FJPnvIi%2FxZ%2By5i2eXwwHo%2BSzScUnJnYlA==')
 	res = myClient.runGWASWorkflowTest()
 	#res = myClient.runGWASWorkflow('gs://fc-56ac46ea-efc4-4683-b6d5-6d95bed41c5e/CCDG_13607/Project_CCDG_13607_B01_GRM_WGS.JGVariants.2019-04-04/CCDG_13607_B01_GRM_WGS_2019-02-19_chr21.recalibrated_variants.vcf.gz',
 	#	'gs://dnastack-public-bucket/thousand_genomes_meta.csv')
