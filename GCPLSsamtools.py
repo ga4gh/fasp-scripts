@@ -107,7 +107,7 @@ class GCPLSsamtools:
 		cline += "--docker-image \"gcr.io/genomics-tools/samtools\" --regions us-east1 " 
 		cline += "--inputs BAM=\"" + bamURL + "\" "
 		cline += "--outputs  STATS=" + self.outdir + outfile
-		print (cline)
+		#print (cline)
 		return cline
 
 	def runWorkflow(self, bamURL, outfile):
@@ -118,8 +118,8 @@ class GCPLSsamtools:
 			shellScript.write(cline)
 			shellScript.write("\n")
 			shellScript.flush()
-			#res = subprocess.run(['sh', shellScript.name])
-		return ''
+			res = subprocess.run(['sh', shellScript.name])
+		return 'paste here'
 
     
 		

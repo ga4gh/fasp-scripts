@@ -9,7 +9,7 @@ from FASPLogger import FASPLogger
 
 # The implementations we're using
 from Gen3DRSClient import bdcDRSClient
-from BigQuerySearchClient import BigQuerySearchClient
+from DiscoverySearchClient import DiscoverySearchClient
 from DNAStackWESClient import DNAStackWESClient
 
 
@@ -17,19 +17,16 @@ def main(argv):
 
 	# Step 1 - Discovery
 	# query for relevant DRS objects
-	searchClient = BigQuerySearchClient()
+	#searchClient = BigQuerySearchClient()
+	searchClient = DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com/')
 
-	query = """
-     	SELECT file, drs_id
-		FROM `isbcgc-216220.onek_genomes.onek_drs` 
-		where file = 'tutorial-synthetic_data_set_1' 
-		"""
+	query = "SELECT file, drs_id FROM thousand_genomes.onek_genomes.onek_drs where file = 'tutorial-synthetic_data_set_1'" 
 
 	query_job = searchClient.runQuery(query)  # Send the query
 
 	# Step 2 - DRS - set up a DRS Client
 	# CRDC
-	drsClient = bdcDRSClient('~/.keys/BDCcredentials.json')
+	drsClient = bdcDRSClient('~/.keys/BDCcredentials.json', 'gs')
 	
 	
 	# Step 3 - set up a class that run a compute for us
@@ -48,10 +45,8 @@ def main(argv):
 		fileSize = objInfo['size']
 
 		vcfurl = drsClient.getAccessURL(drs_id, 'gs')
-		
 		# Step 3 - Run a pipeline on the file at the drs url
 		resp = wesClient.runGWASWorkflow(vcfurl, 'gs://dnastack-public-bucket/thousand_genomes_meta.csv')
-		print (resp)
 		pipeline_id = resp.json()['run_id']
 		print('submitted:{}'.format(pipeline_id))
 		

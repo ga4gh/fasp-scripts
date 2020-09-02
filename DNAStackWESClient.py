@@ -14,7 +14,7 @@ class DNAStackWESClient(WESClient):
 		with open(full_key_path) as f:
 			self.accessToken = json.load(f)['access_token']
 
-	def runWorkflow(self, fileurl):
+	def runWorkflow(self, fileurl, outfile):
 		# use a temporary file to write out the input file
 		inputJson = {"md5Sum.inputFile":fileurl}
 		with tempfile.TemporaryFile() as fp:
@@ -33,7 +33,7 @@ class DNAStackWESClient(WESClient):
 
 			response = requests.request("POST", self.api_url_base, headers=headers, data = payload, files = files)
 
-		return response
+		return response.json()['run_id']
 		
 	def runGWASWorkflowTest(self):
 
@@ -49,7 +49,7 @@ class DNAStackWESClient(WESClient):
 
 		response = requests.request("POST", self.api_url_base, headers=headers, data = payload, files = files)
 
-		return response
+		return response.json()['run_id']
 
 	def runGWASWorkflow(self, vcfFileurl, csvfileurl):
 
@@ -61,7 +61,7 @@ class DNAStackWESClient(WESClient):
 			payload = {'workflow_url': 'gwas.wdl'}
 			files = {
 				'workflow_params': ('inputs.gwas.json', fp, 'application/json'),
-				'workflow_attachment': ('gwas.wdl', open('./wes/gwas/gwas.wdl', 'rb'), 'text/plain')
+				'workflow_attachment': ('gwas.wdl', open('../plenary-resources-2020/workflows/gwas.wdl', 'rb'), 'text/plain')
 			}
 
 		
@@ -76,8 +76,8 @@ class DNAStackWESClient(WESClient):
 if __name__ == "__main__":
 	myClient = DNAStackWESClient('~/.keys/DNAStackWESkey.json')
 
-	res = myClient.runGWASWorkflowTest()
+	#res = myClient.runGWASWorkflowTest()
+	res = myClient.runWorkflow('gs://dnastack-public-bucket/thousand_genomes_meta.csv', '')
 	#res = myClient.runGWASWorkflow('gs://fc-56ac46ea-efc4-4683-b6d5-6d95bed41c5e/CCDG_13607/Project_CCDG_13607_B01_GRM_WGS.JGVariants.2019-04-04/CCDG_13607_B01_GRM_WGS_2019-02-19_chr21.recalibrated_variants.vcf.gz',
 	#	'gs://dnastack-public-bucket/thousand_genomes_meta.csv')
-	print(res.text.encode('utf8'))
-	print (res.json()['run_id'])
+	print(res)

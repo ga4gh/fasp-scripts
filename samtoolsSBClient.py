@@ -39,11 +39,11 @@ class samtoolsSBClient:
 		
 		inputs['alignment_file_url'] = bamURL
 		inputs['output_file_path'] = outfile
-		# statis for now
+		# static for now
 		inputs['reference_file'] = api.files.get('5bad6c83e4b0abc138917143')
 
 		task = api.tasks.create(name=name, project=self.project_id, app=app, inputs=inputs, run=True)
-		return task
+		return task.id
 
 
 if __name__ == "__main__":
@@ -54,8 +54,6 @@ if __name__ == "__main__":
 
 	drsurl = "s3://sddp-phs001554/117438.recal.cram"
 	task = myClient.runWorkflow(drsurl)
-	print('task.name: {}'.format(task.name))
-	print('task.id: {}'.format(task.id))
-	print('task.status: {}'.format(task.status))
+	print('task.id: {}'.format(task))
 
 

@@ -1,5 +1,0 @@
-{
-  "gwas.metadata_csv": "gs://dnastack-public-bucket/thousand_genomes_meta.csv",
-  "gwas.vcf": "gs://fc-56ac46ea-efc4-4683-b6d5-6d95bed41c5e/CCDG_13607/Project_CCDG_13607_B01_GRM_WGS.JGVariants.2019-04-04/CCDG_13607_B01_GRM_WGS_2019-02-19_chr21.recalibrated_variants.vcf.gz"
-}
-

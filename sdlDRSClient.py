@@ -20,10 +20,8 @@ class sdlDRSClient(DRSClient):
 	#    api_url = '{0}locality?acc={1}&filetype={2}'.format(self.api_url_base, accession, fileType)
 		api_url = '{0}locality?acc={1}'.format(self.api_url_base, accession)
 		if fileType:
-			api_url += '&filetype=' + fileType
-		print (api_url)   
+			api_url += '&filetype=' + fileType 
 		response = requests.get(api_url, headers=self.headers)
-
 		if response.status_code == 200:
 			if self.debug:
 				print(response.content.decode('utf-8'))
@@ -72,7 +70,6 @@ class sdlDRSClient(DRSClient):
 		#print(json.dumps(locality_info, indent=2))
 
 		sdlresp = locality_info[0]
-		#print (sdlresp['accession'])
 		fileList = sdlresp['files']
 		for file in fileList:
 	#		if file['name'].endswith(fileext):
@@ -94,7 +91,7 @@ class sdlDRSClient(DRSClient):
 		accession = p[0]
 		fileext = p[-1]
 		retrieve_info = self.sdl_retrieve(accession, access_id, fileext)
-		#print(json.dumps(retrieve_info, indent=2))
+		print(json.dumps(retrieve_info, indent=2))
 	
 		am_parts = access_id.split('.')
 		service = am_parts[0]

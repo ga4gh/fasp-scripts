@@ -42,6 +42,7 @@ def main(argv):
 		acc = 'SRR5368359.sra'
 		objInfo = drsClient.getObject(acc)
 		fileSize = objInfo['size']
+		print(fileSize)
 		# we've predetermined we want to use the gs copy in this case
 		#url = drsClient.getAccessURL(row[1], 'gs')
 		res = drsClient.getAccessURL(acc,'gs.us')

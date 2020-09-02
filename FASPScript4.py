@@ -4,8 +4,7 @@ import json
 import datetime
 import subprocess 
 
-# a utility 
-from FASPLogger import FASPLogger
+from FASPRunner import FASPRunner
 
 # The implementations we're using
 from Gen3DRSClient import Gen3DRSClient
@@ -19,46 +18,23 @@ def main(argv):
 	# query for relevant DRS objects
 	searchClient = DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com/')
 	query = "select submitter_id, read_drs_id drsid from thousand_genomes.onek_genomes.ssd_drs where population = 'ACB' limit 1"
-	query_job = searchClient.runQuery(query)
 
 	# Step 2 - DRS - set up a DRS Client
-	# CRDC
+	# BDC
 	drsClient = Gen3DRSClient('https://gen3.biodatacatalyst.nhlbi.nih.gov/', 'user/credentials/cdis/access_token',
-	'~/.keys/BDCcredentials.json')
+	'~/.keys/BDCcredentials.json', 'gs')
 	
 	
 	# Step 3 - set up a class that run a compute for us
 	wesClient = DNAStackWESClient('~/.keys/DNAStackWESkey.json')
 	
-	# A log is helpful to keep track of the computes we've submitted
-	pipelineLogger = FASPLogger("./pipelineLog.txt", os.path.basename(__file__))
+	# Use this to find out the name of this file, so we can log what ran the pipeline
+	thisScript =  os.path.basename(__file__)
 	
-	# repeat steps 2 and 3 for each row of the query
-	for row in query_job:
-
-		print("subject={}, drsID={}".format(row[0], row[1]))
+	faspRunner = FASPRunner(thisScript, searchClient,
+		drsClient, wesClient, "./pipelineLog.txt")
 		
-		# Step 2 - Use DRS to get the URL
-		objInfo = drsClient.getObject(row[1])
-		fileSize = objInfo['size']
-		# we've predetermined we want to use the gs copy in this case
-		url = drsClient.getAccessURL(row[1], 'gs')
-		
-		# Step 3 - Run a pipeline on the file at the drs url
-		outfile = "{}.txt".format(row[0])
-		resp = wesClient.runWorkflow(url)
-		pipeline_id = resp.json()['run_id']
-		print('submitted:{}'.format(pipeline_id))
-		
-		via = 'WES'
-		note = 'WES MD5 from Discovery Search'
-
-		time = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
-		pipelineLogger.logRun(time, via, note,  pipeline_id, outfile, str(fileSize),
-			searchClient, drsClient, wesClient)
-
-	
-	pipelineLogger.close()
+	faspRunner.runQuery(query, 'One k query using Search and WES')
     
 if __name__ == "__main__":
     main(sys.argv[1:])
