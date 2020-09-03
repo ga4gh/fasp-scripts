@@ -9,12 +9,12 @@ from DRSClient import DRSClient
 
 
 
-class MyMetaResolver:
+class DRSMetaResolver:
 # simulate identifiers.ord and n2t.net metaresolver capability
   
 	# Initialize a DRS Client for the service at the specified url base
 	# and with the REST resource to provide an access key 
-	def __init__(self):
+	def __init__(self, debug=False):
 		self.mysdl = sdlDRSClient('~/.keys/prj_11218_D17199.ngc')
 		self.drsClients = { 
 			"crdc": crdcDRSClient('~/.keys/CRDCAPIKey.json','s3'),
@@ -24,6 +24,7 @@ class MyMetaResolver:
 			"sbcav": cavaticaDRSClient('~/.keys/sevenbridges_keys.json','s3')
 		}
 		self.registeredClients = []
+		self.debug = debug
 
 	def getObject(self, colonPrefixedID):
 		idParts = colonPrefixedID.split(":", 1)
@@ -47,9 +48,11 @@ class MyMetaResolver:
 			if serviceType['artifact'] == 'drs':
 				print('__________________________')
 				print("id:{}".format(service['id']))
-				#pprint.pprint(service)
+				if self.debug:
+					pprint.pprint(service)
 				serviceURL = service['url']
-				drsClient = DRSClient(serviceURL)
+				drsClient = DRSClient.fromRegistryEntry(service)
+				print (drsClient.id, drsClient.name)
 				print("url:{}".format(serviceURL))
 				self.registeredClients.append(drsClient)
 		return None
@@ -59,7 +62,8 @@ class MyMetaResolver:
 				'bdc:dg.4503/66eeec21-aad0-4a77-8de5-621f05e2d301',
 				'crdc:f360253c-d7d7-47cb-947a-b26e0b41b800',
 				'sbcgc:5baa9d00e4b0abc1388b8ce0',
-				'sbcav:5772b6ed507c1752674486fc']
+				'sbcav:5772b6ed507c1752674486fc',
+				'dg.ANV0/895c5a81-b985-4559-bc8e-cecece550756']
 	
 		for id in mixedIDs:
 			print('-------------------------------')
@@ -67,7 +71,7 @@ class MyMetaResolver:
 			print(json.dumps(res, indent=2))	
 
 if __name__ == "__main__":
-	mr = MyMetaResolver()
+	mr = DRSMetaResolver(debug=False)
 	#mr.checkResolution()
 	mr.getRegisteredDRSServices()
 	
