@@ -37,6 +37,25 @@ class GCPLSsamtools:
 		self.outdir = outdir
 
 
+	def getTaskStatus(self, run_id):
+		# The name of the operation resource.
+		name = 'projects/isbcgc-216220/locations/us-central1/operations/'+ str(run_id)
+
+		request = service.projects().locations().operations().get(name=name)
+		response = request.execute()
+		
+# 		result = service.projects().locations().operations().get(
+# 		    project='isbcgc-216220',
+# 		    zone='us-central1',
+# 		    operation=run_id).execute()
+		if response['done'] == True:
+			if 'response' in response.keys():
+				return 'Completed'
+			else:
+				return 'Failed'
+		else:
+			return 'running'
+
 	def runStats(self, bamURL, outfile):
 		samtools = {
 		  "imageUri": "gcr.io/genomics-tools/samtools",
@@ -107,13 +126,13 @@ class GCPLSsamtools:
 		cline += "--docker-image \"gcr.io/genomics-tools/samtools\" --regions us-east1 " 
 		cline += "--inputs BAM=\"" + bamURL + "\" "
 		cline += "--outputs  STATS=" + self.outdir + outfile
-		#print (cline)
 		return cline
 
 	def runWorkflow(self, bamURL, outfile):
 		#runStats above should have allowed us to submit a pipeline - but the pipelines fail
 		# This is the workaround - just create a shell script		
 		cline = self.statsCommandLine(bamURL, outfile)
+		#print (cline)
 		with tempfile.NamedTemporaryFile(mode='w') as shellScript:
 			shellScript.write(cline)
 			shellScript.write("\n")

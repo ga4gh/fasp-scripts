@@ -26,6 +26,51 @@ class samtoolsSBClient:
 #		except SbgError as e:
 #			print (e.message)
 
+	def getTaskStatus(self, task_id):
+		api = self.api
+
+		try:
+			task = api.tasks.get(id=task_id)
+			return task.status 
+		except sbg.NotFound as e:
+			return 'Task not found'
+		except sbg.SbgError as e:
+			print(e.__class__)
+			print (e.message)
+
+	def getTaskOutputs(self, task_id, ddir):
+		api = self.api
+
+		try:
+			task = api.tasks.get(id=task_id)
+			if task.status != 'COMPLETED':
+				print ('Task status:{}'.format(task.status))
+				sys.exit()
+
+			for okey, oitem in task.outputs.items():
+				print (okey)
+				if oitem.__class__ == sbg.File:
+					print(oitem.id)
+					print(oitem.name)
+				
+					drsClient = sbcgcDRSClient('~/.keys/sevenbridges_keys.json')
+					drsResponse = drsClient.getObject(oitem.id)
+					print(drsResponse) 
+					drsURL = drsClient.getAccessURL(oitem.id, 's3')
+					dPath = os.path.expanduser(ddir+oitem.name)
+					if ddir != None:
+						download(drsURL, dPath)
+				
+				else:
+					print(oitem)
+
+		except sbg.NotFound as e:
+			print('Task not found')
+		except sbg.SbgError as e:
+			print(e.__class__)
+			print (e.message)
+
+
 	def runWorkflow(self, bamURL, outfile):
 		api = self.api
 		# Task name in my project

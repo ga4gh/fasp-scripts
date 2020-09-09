@@ -10,7 +10,7 @@ class Gen3DRSClient(DRSClient):
     # Initialize a DRS Client for the service at the specified url base
     # and with the REST resource to provide an access key 
     def __init__(self, api_url_base,  access_token_resource_path, api_key_path,
-    access_id):
+    access_id=None):
     	super().__init__(api_url_base, access_id)
     	self.access_token_resource_path = access_token_resource_path
     	full_key_path = os.path.expanduser(api_key_path)
@@ -40,14 +40,14 @@ class Gen3DRSClient(DRSClient):
 class crdcDRSClient(Gen3DRSClient):
     
     # Mostly done by the Gen3DRSClient, this just deals with url and end point specifics
-    def __init__(self, api_key_path, access_id):
+    def __init__(self, api_key_path,  access_id=None):
     	super().__init__('https://nci-crdc.datacommons.io/', 'user/credentials/api/access_token',
     		api_key_path, access_id)
 
 class bdcDRSClient(Gen3DRSClient):
     
     # Mostly done by the Gen3DRSClient, this just deals with url and end point specifics
-    def __init__(self, api_key_path, access_id):
+    def __init__(self, api_key_path, access_id=None):
     	super().__init__('https://gen3.biodatacatalyst.nhlbi.nih.gov/', 'user/credentials/cdis/access_token',
     		api_key_path, access_id)
 
