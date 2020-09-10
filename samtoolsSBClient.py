@@ -20,11 +20,11 @@ class samtoolsSBClient:
 		self.project_id = project
 		config = sbg.Config(profile=instance)
 		self.api = sbg.Api(config=config)
-#		try:
-		project = self.api.projects.get(id=self.project_id)
-		print ("Found " + project.name)
-#		except SbgError as e:
-#			print (e.message)
+		try:
+			project = self.api.projects.get(id=self.project_id)
+			#print ("Found " + project.name)
+		except sbg.SbgError as e:
+			print (e.message)
 
 	def getTaskStatus(self, task_id):
 		api = self.api

@@ -33,17 +33,17 @@ def main(argv):
 		join `isbcgc-216220.scr_GECCO_CRC_Susceptibility.sb_drs_index` di on di.sample_id = sm.sample_id
 		where AGE between 45 and 55
 		and sex = 'Female'
-		and file_type = 'crax'
+		and file_type = 'cram'
 		limit 3"""
 		
 	bdcquery = """
 		SELECT sp.dbGaP_Subject_ID,  'bdc:'||read_drs_id
 		FROM `isbcgc-216220.COPDGene.Subject_MULTI` sm
 		join `isbcgc-216220.COPDGene.Subject_Phenotypes_HMB` sp on sp.dbgap_subject_id = sm.dbgap_subject_id
-		join `isbcgc-216220.COPDGene.COPD_DRS` drs on drs.su_submitter_id = sm.subject_id"""
-# 		where gender = '2'
-# 		and Age_Enroll between 45 and 55
-# 		LIMIT 3"""
+		join `isbcgc-216220.COPDGene.COPD_DRS` drs on drs.su_submitter_id = sm.subject_id
+ 		where gender = '2'
+ 		and Age_Enroll between 45 and 55
+ 		LIMIT 3"""
 		
 
 	results = searchClient.runQuery(crdcquery)  # Send the query
@@ -87,13 +87,12 @@ def main(argv):
 		if url != None:
 			outfile = "{}.txt".format(row[0])
 			mysam = samClients[prefix]
-			#mysam.runWorkflow(url, outfile)
+			run_id = mysam.runWorkflow(url, outfile)
 			via = 'sh'
-			pipeline_id = 'paste here'
 			note = 'Two dbGaP sources'
 			time = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
-			#pipelineLogger.logRun(time, via, note,  pipeline_id, outfile, fileSize,
-			#	searchClient, drsClient, mysam)
+			pipelineLogger.logRun(time, via, note,  run_id, outfile, fileSize,
+				searchClient, drsClient, mysam)
 			resRow.append('OK')
 		else:
 			print('could not get DRS url')

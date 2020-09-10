@@ -48,6 +48,8 @@ class GCPLSsamtools:
 # 		    project='isbcgc-216220',
 # 		    zone='us-central1',
 # 		    operation=run_id).execute()
+		if 'done' not in response.keys():
+			return 'running'
 		if response['done'] == True:
 			if 'response' in response.keys():
 				return 'Completed'
