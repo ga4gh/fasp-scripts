@@ -24,14 +24,14 @@ class DRSClient:
     # Get info about a DrsObject
     # See https://ga4gh.github.io/data-repository-service-schemas/preview/develop/docs/#_getobject
 	def getObject(self, object_id):
-	     headers = {'Content-Type': 'application/json'}
-	     api_url = '{0}/ga4gh/drs/v1/objects/{1}'.format(self.api_url_base, object_id)
-	     response = requests.get(api_url, headers=headers)
-	     if response.status_code == 200:
-	        resp = response.content.decode('utf-8')
-	        return json.loads(resp)
-	     else:
-	        return None
+		headers = {'Content-Type': 'application/json'}
+		api_url = '{0}/ga4gh/drs/v1/objects/{1}'.format(self.api_url_base, object_id)
+		response = requests.get(api_url, headers=headers)
+		if response.status_code == 200:
+			resp = response.content.decode('utf-8')
+			return json.loads(resp)
+		else:
+			return response.status_code
 
 	# Get a URL for fetching bytes. 
 	# See https://ga4gh.github.io/data-repository-service-schemas/preview/develop/docs/#_getaccessurl

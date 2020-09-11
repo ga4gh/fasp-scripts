@@ -1,5 +1,6 @@
 import json
 import os.path
+import requests
 
 from DRSClient import DRSClient
 
@@ -14,6 +15,21 @@ class SBDRSClient(DRSClient):
 		with open(full_key_path) as f:
 			auth_content = json.load(f)
 		self.access_token = auth_content[instance]['auth_token']
+
+    # Need to override this method as Get object requires auth on Seven Bridges services
+    # Get info about a DrsObject
+    # See https://ga4gh.github.io/data-repository-service-schemas/preview/develop/docs/#_getobject
+	def getObject(self, object_id):
+		headers = {'Content-Type': 'application/json',
+		'Authorization': 'Bearer {0}'.format(self.access_token)}
+		api_url = '{0}/ga4gh/drs/v1/objects/{1}'.format(self.api_url_base, object_id)
+		response = requests.get(api_url, headers=headers)
+		if response.status_code == 200:
+			resp = response.content.decode('utf-8')
+			return json.loads(resp)
+		else:
+			return response.status_code
+
 
 
 class sbcgcDRSClient(SBDRSClient):

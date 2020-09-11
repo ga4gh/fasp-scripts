@@ -3,24 +3,32 @@ import sys, getopt
 import json
 import datetime
 import os
-
-# a utility 
+import json
 from FASPLogger import FASPLogger
+from DemoCredits import DemoCredits, SilentCreditor
 
 class FASPRunner:
 
-	def __init__(self, program, searchClient, drsClient, workClient, pipelineLogFile):
+	def __init__(self, program, searchClient, drsClient, workClient, pipelineLogFile, showCredits=None):
+		with open(os.path.expanduser('./FASPSettings.json')) as json_file:
+   			 settings = json.load(json_file)		
 		# A log is helpful to keep track of the computes we've submitted
 		self.searchClient = searchClient
 		self.drsClient = drsClient
 		self.workClient = workClient
 		self.pipelineLogger = FASPLogger(pipelineLogFile, program)
-		
+		if showCredits == None:
+			showCredits = (settings['showCredits'] == 'True')
+		if showCredits:
+			self.creditor = DemoCredits('~/credits.json', speak=True, pauseSecs=1)
+		else:
+			self.creditor =  SilentCreditor()
+					
 	def runQuery(self, query, note):
-
+		creditor = self.creditor
 		# Step 1 - Discovery
 		query_job = self.searchClient.runQuery(query)  # Send the query
-	
+		creditor.creditClass(self.searchClient)
 		# repeat steps 2 and 3 for each row of the query
 		for row in query_job:
 
@@ -28,6 +36,7 @@ class FASPRunner:
 		
 			# Step 2 - Use DRS to get the URL
 			objInfo = self.drsClient.getObject(row[1])
+			creditor.creditClass(self.drsClient)
 			fileSize = objInfo['size']
 			# we've predetermined we want to use the gs copy in this case
 			url = self.drsClient.getAccessURL(row[1])
@@ -35,6 +44,7 @@ class FASPRunner:
 			# Step 3 - Run a pipeline on the file at the drs url
 			outfile = "{}.txt".format(row[0])
 			pipeline_id = self.workClient.runWorkflow(url,  outfile)
+			creditor.creditClass(self.workClient)
 			via = 'sh'
 			#pipeline_id = 'paste here'
 

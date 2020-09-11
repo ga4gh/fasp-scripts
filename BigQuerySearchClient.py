@@ -7,8 +7,8 @@ class BigQuerySearchClient:
 
 
 	def runQuery(self, query):
-	
-		query_job = self.bqclient.query(query)  # Send the query
+		bqclient = bigquery.Client()
+		query_job = bqclient.query(query)  # Send the query
 		queryResults = []
 		for row in query_job:
 			queryResults.append(row)

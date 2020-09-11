@@ -58,6 +58,15 @@ class GCPLSsamtools:
 		else:
 			return 'running'
 
+	def getTaskDetails(self, run_id):
+		# The name of the operation resource.
+		name = 'projects/isbcgc-216220/locations/us-central1/operations/'+ str(run_id)
+
+		request = service.projects().locations().operations().get(name=name)
+		response = request.execute()
+
+		print(json.dumps(response, indent = 2, ensure_ascii=True))
+
 	def runStats(self, bamURL, outfile):
 		samtools = {
 		  "imageUri": "gcr.io/genomics-tools/samtools",
@@ -142,5 +151,10 @@ class GCPLSsamtools:
 			res = subprocess.run(['sh', shellScript.name])
 		return 'paste here'
 
-    
+if __name__ == "__main__":
+	print ('______________________________________')
+	print ('BDC')
+	client = GCPLSsamtools('')
+	client.getTaskDetails('14348543543279356571')
+ 
 		
