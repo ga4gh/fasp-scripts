@@ -1,12 +1,30 @@
 import json
 import requests
 import pprint
+import sys, getopt
 
-from Gen3DRSClient import crdcDRSClient, bdcDRSClient
+from Gen3DRSClient import crdcDRSClient, bdcDRSClient, Gen3DRSClient
 from sdlDRSClient import sdlDRSClient
 from SBDRSClient import sbcgcDRSClient, cavaticaDRSClient
 from DRSClient import DRSClient
 
+
+class GA4GHRegistry:
+
+	def __init__(self):
+		self.hostURL = 'https://registry.ga4gh.org/v1'
+	
+	# Look for registered DRS services
+	def getRegisteredServices(self, type=None):
+		servicesURL = "{}/services".format(self.hostURL)
+		if type == None:
+			type = 'all'
+		else:
+			registryURL = 'https://registry.ga4gh.org/v1/services?type={}:*'.format(type)
+		print('Searching the GA4GH registry for {} services'.format(type))
+		response = requests.get(registryURL)
+		services = response.json()
+		return services
 
 
 class DRSMetaResolver:
@@ -19,6 +37,7 @@ class DRSMetaResolver:
 			"insdc": sdlDRSClient('~/.keys/prj_11218_D17199.ngc'),
 			"crdc": crdcDRSClient('~/.keys/CRDCAPIKey.json','s3'),
 			"bdc": bdcDRSClient('~/.keys/BDCcredentials.json','gs'),
+			"anv": Gen3DRSClient('https://gen3.theanvil.io','/user/credentials/api/access_token', '~/.keys/anvil_credentials.json', 'gs'),
 			"insdc": sdlDRSClient('~/.keys/prj_11218_D17199.ngc'),
 			"sbcgc": sbcgcDRSClient('~/.keys/sevenbridges_keys.json','s3'),
 			"sbcav": cavaticaDRSClient('~/.keys/sevenbridges_keys.json','s3')
@@ -57,7 +76,7 @@ class DRSMetaResolver:
 			return None
 			
 	def getObject2(self, hostURID):
-		client = self.getClient()
+		client = self.getClient2(hostURID)
 		idParts = hostURID.split("/",3)
 		id = idParts[3]
 		
@@ -88,11 +107,9 @@ class DRSMetaResolver:
 			
 	# Look for registered DRS services
 	def getRegisteredDRSServices(self):
-		print('Searching the GA4GH registry for DRS services')
-		registryURL = 'https://registry.ga4gh.org/v1/services?type=org.ga4gh:drs:*'
-		response = requests.get(registryURL)
-		services = response.json()
-		for service in services:
+		reg = GA4GHRegistry()
+		drsServices = reg.getRegisteredServices('org.ga4gh:drs')
+		for service in drsServices:
 			if self.debug:
 				pprint.pprint(service)
 			serviceURL = service['url']
@@ -121,7 +138,7 @@ class DRSMetaResolver:
 		for id in mixedIDs:
 			print('-------------------------------')
 			print(id)
-			res = mr.getObject(id)
+			res = self.getObject(id)
 			idParts = id.split(":", 1)
 			if res == 404:
 				testResults[idParts[0]] = 'id not found:{}'.format(id)
@@ -151,12 +168,33 @@ class DRSMetaResolver:
 		for id in mixedIDs:
 			print('-------------------------------')
 			print(id)
-			res = mr.getObject2(id)
+			res = self.getObject2(id)
 			print(json.dumps(res, indent=2))	
 
+def usage():
+	print (sys.argv[0] +' -l listTables -c listCatalog -t tableInfo -r registeredServices')
+
+def main(argv):
+
+	mr = DRSMetaResolver()
+
+	try:
+		opts, args = getopt.getopt(argv, "hcu", ["help", "checkCompactResolution", "checkURIResolution"])
+	except getopt.GetoptError:
+		usage()
+		sys.exit(2)
+	for opt, arg in opts:
+	    if opt in ("-h", "--help"):
+	        usage()
+	        sys.exit()
+	    elif opt in ("-c", "--checkCompactResolution"):
+	        mr.checkResolution()
+	    elif opt in ("-u", "--checkURIResolution"):
+	        mr.getRegisteredDRSServices()
+	        mr.checkHostURIResolution()
+
+
+			
 if __name__ == "__main__":
-	mr = DRSMetaResolver(debug=False)
-	#mr.checkResolution()
-	mr.getRegisteredDRSServices()
-	#mr.checkHostURIResolution()
-	#mr.checkResolution()
+    main(sys.argv[1:])
+

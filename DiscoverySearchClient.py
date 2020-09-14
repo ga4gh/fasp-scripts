@@ -3,6 +3,8 @@ import pprint
 import sys
 import getopt
 
+from DRSMetaResolver import GA4GHRegistry 
+
 class DiscoverySearchClient:
 
 	def __init__(self, hostURL, debug=False ):
@@ -14,12 +16,9 @@ class DiscoverySearchClient:
 
 	# Look for registered search services
 	@classmethod
-	def getRegisteredSearchServices(cls, type='org.ga4gh:search'):
-		print('Searching the GA4GH registry for {} services'.format(type))
-		registryURL = 'https://registry.ga4gh.org/v1/services'
-		params = {'type': type+':*'}
-		response = requests.get(registryURL, params=params)
-		services = response.json()
+	def getRegisteredSearchServices(cls):
+		reg = GA4GHRegistry()
+		services = reg.getRegisteredServices('org.ga4gh:search')
 		for service in services:
 			serviceType=service['type']
 			pprint.pprint(service)
