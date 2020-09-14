@@ -10,19 +10,14 @@ from DemoCredits import DemoCredits, SilentCreditor
 class FASPRunner:
 
 	def __init__(self, program, searchClient, drsClient, workClient, pipelineLogFile, showCredits=None):
-		with open(os.path.expanduser('./FASPSettings.json')) as json_file:
-   			 settings = json.load(json_file)		
+		#with open(os.path.expanduser('./FASPSettings.json')) as json_file:
+   			 #settings = json.load(json_file)		
 		# A log is helpful to keep track of the computes we've submitted
 		self.searchClient = searchClient
 		self.drsClient = drsClient
 		self.workClient = workClient
 		self.pipelineLogger = FASPLogger(pipelineLogFile, program)
-		if showCredits == None:
-			showCredits = (settings['showCredits'] == 'True')
-		if showCredits:
-			self.creditor = DemoCredits('~/credits.json', speak=True, pauseSecs=1)
-		else:
-			self.creditor =  SilentCreditor()
+		self.creditor = Creditor.creditorFactory()
 					
 	def runQuery(self, query, note):
 		creditor = self.creditor

@@ -9,6 +9,7 @@ import pandas as pd
 
 # a utility 
 from FASPLogger import FASPLogger
+from DemoCredits import Creditor
 
 # The implementations we're using
 from Gen3DRSClient import crdcDRSClient
@@ -22,6 +23,10 @@ from BigQuerySearchClient import BigQuerySearchClient
 
 def main(argv):
 
+
+	# create a creditor to credit the services being called
+	creditor = Creditor.creditorFactory()
+	
 	# Step 1 - Discovery
 	# query for relevant DRS objects
 	searchClient = BigQuerySearchClient()
@@ -47,7 +52,9 @@ def main(argv):
 		
 
 	results = searchClient.runQuery(crdcquery)  # Send the query
-	results += searchClient.runQuery(bdcquery)  
+	creditor.creditFromList('dbGapSSD')
+	results += searchClient.runQuery(bdcquery) 
+	creditor.creditFromList('BDCData')
 	
 
 	# Step 2 - DRS - set up DRS Clients	
@@ -55,7 +62,9 @@ def main(argv):
 		"sb": sbcgcDRSClient('~/.keys/sevenbridges_keys.json', 's3'),
 		"bdc": bdcDRSClient('~/.keys/BDCcredentials.json', 'gs')
 	}
-	
+	print('setting credentials ')
+	creditor.creditFromList('dbGaPFence')
+		
 	# Step 3 - set up a class that runs samtools for us
 	# providing the location for the results
 	samClients = {
@@ -68,7 +77,6 @@ def main(argv):
 	pipelineLogger = FASPLogger("./pipelineLog.txt", os.path.basename(__file__))
 	
 	# repeat steps 2 and 3 for each row of the query
-	resTable = []
 	for row in results:
 
 		print("subject={}, drsID={}".format(row[0], row[1]))
@@ -77,6 +85,7 @@ def main(argv):
 		# get the prefix
 		prefix, drsid = row[1].split(":", 1)
 		drsClient = drsClients[prefix]
+		creditor.creditClass(drsClient)
 		url = drsClient.getAccessURL(drsid)
 		#objInfo = drsClient.getObject(drsid)
 		#print (objInfo)
@@ -87,19 +96,18 @@ def main(argv):
 		if url != None:
 			outfile = "{}.txt".format(row[0])
 			mysam = samClients[prefix]
-			run_id = mysam.runWorkflow(url, outfile)
+			creditor.creditClass(mysam)
 			via = 'sh'
 			note = 'Two dbGaP sources'
 			time = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
-			pipelineLogger.logRun(time, via, note,  run_id, outfile, fileSize,
-				searchClient, drsClient, mysam)
+			#run_id = mysam.runWorkflow(url, outfile)
+			#pipelineLogger.logRun(time, via, note,  run_id, outfile, fileSize,
+			#	searchClient, drsClient, mysam)
 			resRow.append('OK')
 		else:
 			print('could not get DRS url')
 			resRow.append('unauthorized')
-		resTable.append(resRow)
-		df = pd.DataFrame (resTable,columns=['subj','obj','result'])
-		df.to_csv('bdc_ids2.txt', sep='\t', index=False)
+
 			
 	pipelineLogger.close()
     

@@ -89,26 +89,24 @@ class DRSMetaResolver:
 	# Look for registered DRS services
 	def getRegisteredDRSServices(self):
 		print('Searching the GA4GH registry for DRS services')
-		registryURL = 'https://registry.ga4gh.org/v1/services'
+		registryURL = 'https://registry.ga4gh.org/v1/services?type=org.ga4gh:drs:*'
 		response = requests.get(registryURL)
 		services = response.json()
 		for service in services:
-			serviceType=service['type']
-			if serviceType['artifact'] == 'drs':
-				if self.debug:
-					pprint.pprint(service)
-				serviceURL = service['url']
-				prefix = service['curiePrefix']
-				drsClient = self.DRSClientFromRegistryEntry(service, prefix)
-				hostname = serviceURL.split("/")[2]
-				self.registeredClients.append(drsClient)
-				self.hostNameIndex[hostname] = drsClient
-				self.drsClients[prefix] = drsClient
-				print('__________________________')
-				print("id:{}".format(service['id']))
-				print (drsClient.id, drsClient.name)
-				print("url:{}".format(serviceURL))
-				print("prefix:{}".format(prefix))
+			if self.debug:
+				pprint.pprint(service)
+			serviceURL = service['url']
+			prefix = service['curiePrefix']
+			drsClient = self.DRSClientFromRegistryEntry(service, prefix)
+			hostname = serviceURL.split("/")[2]
+			self.registeredClients.append(drsClient)
+			self.hostNameIndex[hostname] = drsClient
+			self.drsClients[prefix] = drsClient
+			print('__________________________')
+			print("id:{}".format(service['id']))
+			print (drsClient.id, drsClient.name)
+			print("url:{}".format(serviceURL))
+			print("prefix:{}".format(prefix))
 		return None
 	
 	def checkResolution(self):
@@ -161,4 +159,4 @@ if __name__ == "__main__":
 	#mr.checkResolution()
 	mr.getRegisteredDRSServices()
 	#mr.checkHostURIResolution()
-	mr.checkResolution()
+	#mr.checkResolution()
