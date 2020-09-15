@@ -3,6 +3,7 @@ import os
 import json
 import tempfile
 import pandas as pd
+import sys
 
 from WESClient import WESClient 
 
@@ -42,8 +43,13 @@ class DNAStackWESClient(WESClient):
 
 		
 			response = requests.request("POST", self.api_url_base, headers=self.headers, data = payload, files = files)
+			if response.status_code == 200:
+				return response.json()['run_id']
+			else:
+				print("WES server authentication failed")
+				sys.exit(1)
 
-		return response.json()['run_id']
+				
 		
 	def runGWASWorkflowTest(self):
 

@@ -5,7 +5,7 @@ import datetime
 import os
 import json
 from FASPLogger import FASPLogger
-from DemoCredits import DemoCredits, SilentCreditor
+from DemoCredits import DemoCredits, Creditor
 
 class FASPRunner:
 
