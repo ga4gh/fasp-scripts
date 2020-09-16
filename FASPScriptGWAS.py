@@ -17,7 +17,6 @@ def main(argv):
 
 	# Step 1 - Discovery
 	# query for relevant DRS objects
-	#searchClient = BigQuerySearchClient()
 	searchClient = DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com/')
 
 	query = "SELECT file, drs_id FROM thousand_genomes.onek_genomes.onek_drs where file = 'tutorial-synthetic_data_set_1'" 

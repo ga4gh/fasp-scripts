@@ -10,19 +10,21 @@ class Creditor():
 		return
 		
 	@classmethod
-	def creditorFactory(cls, showCredits=None):
+	def creditorFactory(cls, showCredits=None, pauseSecs=1):
+		"""Instantiate a class that will issue credits for the steps of a FASP run."""
 		with open(os.path.expanduser('./FASPSettings.json')) as json_file:
    			 settings = json.load(json_file)		
 		if showCredits == None:
-			showCredits = (settings['showCredits'] == 'True')
+			showCredits = (settings['showCredits'])
 		if showCredits:
-			return DemoCredits('~/newCredits.json', speak=True, pauseSecs=1)
+			return DemoCredits('~/newCredits.json', speak=True, pauseSecs=pauseSecs)
 		else:
 			return  SilentCreditor()
 
 
 class SilentCreditor(Creditor):
-
+	"""Most examples should use this implementation of Creditor"""
+	
 	def giveCredit(self, image, credit, speak=False, pauseSecs=0, voice=None):
 		return
 
@@ -33,6 +35,7 @@ class SilentCreditor(Creditor):
 		return
 
 class DemoCredits(Creditor):
+	"""Created for Sept 2020 plenary demos. Not written to have any general use beyond that. Dependent on local machine specifics. Beware!"""
 	
 	def __init__(self, creditsFile, voice='Victoria', speak=False, pauseSecs=0):
 		with open(os.path.expanduser(creditsFile)) as json_file:
@@ -61,6 +64,13 @@ class DemoCredits(Creditor):
 		proc = subprocess.Popen(["osascript"] + args ,stdout=subprocess.PIPE )
 		progname = proc.stdout.read().strip()
 		sys.stdout.write(str(progname))
+		
+	def formatCells(self, style):
+		script = """
+					set style object of (cell 2 of row 3 of sheet 1 of workbook "DemoBanner.xlsx") to style "{}" of workbook "DemoBanner.xlsx"
+				""".format(style)
+		r = applescript.tell.app("Microsoft Excel", script)
+
 
 	def giveCredit(self, credit, speak=False, pauseSecs=0, voice=None):
 		if voice == None:
@@ -75,6 +85,23 @@ class DemoCredits(Creditor):
 		for k in  ['Work Stream','Driver Project']:
 			if k in credit:
 				print('{}:{}'.format(k, credit[k]))
+		
+		# show some text
+		if 'Driver Project' in credit:
+			script = 'set value of cell 2 of row 1 of sheet 1 of workbook "DemoBanner.xlsx" to "{}"'.format(credit['Driver Project'])
+			r= applescript.tell.app("Microsoft Excel", script)
+		if 'Work Stream' in credit:
+			script = 'set value of cell 2 of row 2 of sheet 1 of workbook "DemoBanner.xlsx" to "{}"'.format(credit['Work Stream'])
+			r= applescript.tell.app("Microsoft Excel", script)
+		if 'Implementation' in credit:
+			script = 'set value of cell 2 of row 3 of sheet 1 of workbook "DemoBanner.xlsx" to "{}"'.format(credit['Implementation'])
+			r= applescript.tell.app("Microsoft Excel", script)
+			if credit['g4ghStd']:
+				self.formatCells('GA4GHStd')
+			else:
+				self.formatCells('GeneralAPI')				
+
+
 		
 		# speak the credit if asked
 		if speak:
@@ -93,6 +120,9 @@ class DemoCredits(Creditor):
 		
 		# move on
 		r= applescript.tell.app("Preview", 'close window 1')
+		r= applescript.tell.app("Microsoft Excel", 'set value of range "B1:B3" of sheet 1 of workbook "DemoBanner.xlsx" to ""')
+		#r = applescript.run('/Users/forei/dev/FASPClient/scripts/clearStyle.applescript')
+		self.formatCells('gaPlain')
 
 	def creditFromList(self, what, voice=None):
 		if what in self.issuedCredits:

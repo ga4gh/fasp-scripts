@@ -45,10 +45,13 @@ class DNAStackWESClient(WESClient):
 			response = requests.request("POST", self.api_url_base, headers=self.headers, data = payload, files = files)
 			if response.status_code == 200:
 				return response.json()['run_id']
-			else:
+			elif response.status_code == 401:
 				print("WES server authentication failed")
 				sys.exit(1)
-
+			else:
+				print("WES run submission failed. Response status:{}".format(response.status_code))
+				sys.exit(1)
+				
 				
 		
 	def runGWASWorkflowTest(self):
@@ -60,6 +63,14 @@ class DNAStackWESClient(WESClient):
 		}
 
 		response = requests.request("POST", self.api_url_base, headers=self.headers, data = payload, files = files)
+		if response.status_code == 200:
+			return response.json()['run_id']
+		elif response.status_code == 401:
+			print("WES server authentication failed")
+			sys.exit(1)
+		else:
+			print("WES run submission failed. Response status:{}".format(response.status_code))
+			sys.exit(1)
 
 		return response.json()['run_id']
 

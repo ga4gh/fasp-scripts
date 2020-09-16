@@ -1,3 +1,4 @@
 {
-	"showCredits" : "False"
+	"showCredits" : true,
+	"test" : true
 }

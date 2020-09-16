@@ -100,9 +100,9 @@ def main(argv):
 			via = 'sh'
 			note = 'Two dbGaP sources'
 			time = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
-			#run_id = mysam.runWorkflow(url, outfile)
-			#pipelineLogger.logRun(time, via, note,  run_id, outfile, fileSize,
-			#	searchClient, drsClient, mysam)
+			run_id = mysam.runWorkflow(url, outfile)
+			pipelineLogger.logRun(time, via, note,  run_id, outfile, fileSize,
+				searchClient, drsClient, mysam)
 			resRow.append('OK')
 		else:
 			print('could not get DRS url')

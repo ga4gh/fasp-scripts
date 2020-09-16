@@ -28,7 +28,7 @@ def main(argv):
 		SELECT submitter_id, read_drs_id
 		FROM `isbcgc-216220.onek_genomes.ssd_drs`
 		where population = 'BEB'
-		LIMIT 1"""
+		LIMIT 3"""
 
 	# CRDC
 	#drsClient = Gen3DRSClient('https://nci-crdc.datacommons.io/', 'user/credentials/api/access_token')
@@ -39,7 +39,7 @@ def main(argv):
 	mysam = GCPLSsamtools('gs://isbcgc-216220-life-sciences/fasand/')
 	
 	faspRunner = FASPRunner('FASPScript1', searchClient,
-		drsClient, mysam, "./pipelineLog.txt")
+		drsClient, mysam, "./pipelineLog.txt", pauseSecs=0)
 		
 	faspRunner.runQuery(query, 'One k  query ')
 	    
