@@ -45,6 +45,7 @@ class FASPRunner:
 			outfile = "{}.txt".format(row[0])
 			if self.live:
 				pipeline_id = self.workClient.runWorkflow(url,  outfile)
+				print('workflow submitted, run:{}'.format(pipeline_id))
 			creditor.creditClass(self.workClient)
 			via = 'sh'
 			#pipeline_id = 'paste here'
