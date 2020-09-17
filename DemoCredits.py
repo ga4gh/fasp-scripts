@@ -45,7 +45,7 @@ class DemoCredits(Creditor):
 		self.speak = speak
 		self.pauseSecs = pauseSecs
 		self.voice = voice
-		self.debug = True
+		self.debug = False
 		
 		self.issuedCredits = []
 		#self.updateCreditsFile()
