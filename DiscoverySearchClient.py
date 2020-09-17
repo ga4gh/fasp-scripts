@@ -80,7 +80,7 @@ class DiscoverySearchClient:
 				 response = requests.request("GET", next_url)
 			result = (response.json())
 			if self.debug: pprint.pprint(result)
-			if 'next_page_url' in result['pagination']:
+			if 'pagination' in result and 'next_page_url' in result['pagination']:
 				next_url = result['pagination']['next_page_url']
 			else:
 				next_url = None

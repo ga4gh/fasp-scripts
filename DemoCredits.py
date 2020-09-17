@@ -17,7 +17,7 @@ class Creditor():
 		if showCredits == None:
 			showCredits = (settings['showCredits'])
 		if showCredits:
-			return DemoCredits('~/newCredits.json', speak=True, pauseSecs=pauseSecs)
+			return DemoCredits('./credits/credits.json', speak=True, pauseSecs=pauseSecs)
 		else:
 			return  SilentCreditor()
 
@@ -45,7 +45,8 @@ class DemoCredits(Creditor):
 		self.speak = speak
 		self.pauseSecs = pauseSecs
 		self.voice = voice
-
+		self.debug = True
+		
 		self.issuedCredits = []
 		#self.updateCreditsFile()
 
@@ -77,7 +78,10 @@ class DemoCredits(Creditor):
 			voice = self.voice
 		
 		# Show a picture	
-		script = 'set x to open file "{}:{}"'.format(self.imageDir, credit['imageFile'])
+		imagePath = os.path.expanduser('{}/{}'.format(self.imageDir, credit['imageFile']))
+		script = 'set x to open POSIX file "{}"'.format(imagePath)
+		if self.debug:
+			print(script)
 		r= applescript.tell.app("Preview", script)
 		
 		# show some text
@@ -106,10 +110,11 @@ class DemoCredits(Creditor):
 		# speak the credit if asked
 		if speak:
 			#command = '/usr/bin/say "{}"'.format(credit)
-			script = 'say "{}" using "{}"'.format(credit['phoneticCredit'], voice)
 			#os.system(command)
-			#print (script)
-			#r= applescript.run(script)
+			script = 'say "{}" using "{}"'.format(credit['phoneticCredit'], voice)
+			if self.debug:
+				print (script)
+			r= applescript.run(script)
 			self.runAppleScript(script)
 			
 		# hold as requested
@@ -142,8 +147,7 @@ class DemoCredits(Creditor):
 
 
 if __name__ == "__main__":
-	creditor = DemoCredits('./credits.json', speak=True, pauseSecs=1)
-
+	creditor = Creditor.creditorFactory(showCredits=True, pauseSecs=1)
 	voices = ["Victoria", "Alex", "Karen","Veena","Fiona", "Moira","Daniel"]
 	for credit in creditor.credits.keys():
 		creditor.creditFromList(credit, voice=random.choice(voices))

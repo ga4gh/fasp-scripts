@@ -1,0 +1,129 @@
+{
+    "imageDir": "/Users/forei/dev/FASPClient/credits/images",
+    "credits": {
+        "generic": {
+            "imageFile": "IMG_2159.jpg",
+            "textCredit": "I dont know how to give credit for that",
+            "phoneticCredit": "I dont know how to give credit for that"
+        },
+        "DURI": {
+            "imageFile": "IMG_2159.jpg",
+            "textCredit": "Data Use and Researcher Identity (DURI), Dataset access by the dbGap team and members of the NCI Data Access Committee, Vivian Ota Wang and Freddie Pruitt ",
+            "phoneticCredit": "Data Use and Researcher Identity (DURI), Dataset access by the dbGap team and members of the NCI Data Access Committee, Vivian Ota Wang and Freddie Pruitt ",
+            "Work Stream": "Data Use and Researcher Identity",
+            "Driver Project": "Cancer Research Data Commons",
+            "g4ghStd": true
+        },
+        "Registry": {
+            "imageFile": "IMG_2159.jpg",
+            "textCredit": "Discovery Registry by Jeremy Adams",
+            "phoneticCredit": "Discovery Registry by Jeremy Adams",
+            "Work Stream": "Discovery",
+            "g4ghStd": true
+        },
+        "DiscoverySearchClient": {
+            "imageFile": "DiscoverySearch.jpg",
+            "textCredit": "Discovery Search by Sharvari Kapadia and Jonathan Fuerth",
+            "phoneticCredit": "Discovery Search by Sharvari Kapadia and Jonathan Fuerth",
+            "Work Stream": "Discovery",
+            "Implementation": "DNAStack Search",
+            "g4ghStd": true
+        },
+        "bdcDRSClient": {
+            "imageFile": "Gen3BioDataCatalyst.jpg",
+            "textCredit": "BioDataCatalyst Data Repository Service by Alessandro Culotti",
+            "phoneticCredit": "BioDataCatalyst Data Repository Service by Alessandro [[inpt PHON]] kUWlAOtIY [[inpt TEXT]]",
+            "Work Stream": "Cloud",
+            "Driver Project": "NHLBI TopMed",
+            "Implementation": "BioDataCatalyst DRS",
+            "g4ghStd": true
+        },
+        "crdcDRSClient": {
+            "imageFile": "crdcDRSClient.jpg",
+            "textCredit": "Cancer Research Data Commons Data Repository Service by Michael Lukowski",
+            "phoneticCredit": "Cancer Research Data Commons Data Repository Service by Michael Lukowski",
+            "Work Stream": "Cloud",
+            "Driver Project": "NCI Cancer Research Data Commons",
+            "g4ghStd": true
+        },
+        "sbcgcDRSClient": {
+            "imageFile": "sbcgcDRSClient.jpg",
+            "textCredit": "Seven Bridges Cancer Genomics Cloud Data Repository Service",
+            "phoneticCredit": "Seven Bridges Cancer Genomics Cloud Data Repository Service",
+            "Work Stream": "Cloud",
+            "Driver Project": "NCI Cancer Research Data Commons",
+            "g4ghStd": true
+        },
+        "DNAStackWESClient": {
+            "imageFile": "DNAStackWES.jpg",
+            "textCredit": "DNAStack Workflow Execution Service implementation by Max Barkley and Patrick Magee",
+            "phoneticCredit": "DNAStack Workflow Execution Service implementation by Max Barkley and Patrick Magee",
+            "Work Stream": "Cloud",
+            "Implementation": "DNAStack WES",
+           "g4ghStd": true
+        },
+        "samtoolsSBClient": {
+            "imageFile": "samtoolsSBClient.jpg",
+            "textCredit": "Seven Bridges Cancer Genomics Cloud API",
+            "phoneticCredit": "Seven Bridges Cancer Genomics Cloud API",
+            "Work Stream": "Cloud",
+            "Driver Project": "NCI Cancer Research Data Commons",
+            "g4ghStd": false
+        },
+        "ISBGDCData": {
+            "imageFile": "ISBGDCData.jpg",
+            "textCredit": "Institute for Systems Biology Big Query Tables, David Pot, Kawther Abdilleh and the ISB CGC team",
+            "phoneticCredit": "Institute for Systems Biology Big Query Tables, David Pot, Kawther Abdilleh and the ISB CGC team",
+            "Work Stream": "Discovery",
+            "Driver Project": "Cancer Research Data Commons",
+            "g4ghStd": false
+        },
+        "dbGapSSD": {
+            "imageFile": "dbGapSSD.jpg",
+            "textCredit": "dbGaP Subject and Sample Data, Mike Feolo and the dbGaP team",
+            "phoneticCredit": "DB gap Subject and Sample Data, Mike Feolo and the DB gap team",
+            "Work Stream": "Discovery",
+            "g4ghStd": false
+        },
+        "BDCData": {
+            "imageFile": "BDCData.jpg",
+            "textCredit": "Gen3 BioDataCatalyst Data Query",
+            "phoneticCredit": "Gen3 BioDataCatalyst Data Query",
+            "Driver Project": "NHLBI TopMed",
+            "Work Stream": "Discovery",
+            "g4ghStd": false
+        },
+        "GCPLSsamtools": {
+            "imageFile": "GCPL.jpg",
+            "textCredit": "Google Cloud Life Sciences Pipeline",
+            "phoneticCredit": "Google Cloud Life Sciences Pipeline",
+            "Work Stream": "Cloud",
+            "Implementation": "Google Life Sciences API",
+            "g4ghStd": false
+        },
+        "BigQuerySearchClient": {
+            "imageFile": "BigQuerySearchClient.jpg",
+            "textCredit": "Big Query Search Client",
+            "phoneticCredit": "Big Query Search Client",
+            "Driver Project": "Cancer Research Data Commons",
+            "Work Stream": "Discovery",
+            "Implementation": "Google BiqQuery API",
+            "g4ghStd": false
+        },
+        "sdlDRSClient": {
+            "imageFile": "sdlDRSClient.jpg",
+            "textCredit": "SRA Data Locator, Kurt Rodarmer and the SRA Team",
+            "phoneticCredit": "SRA Data Locator, Kurt Rodarmer and the SRA Team",
+            "Work Stream": "Cloud",
+            "g4ghStd": false
+        },
+        "dbGaPFence": {
+            "imageFile": "dbGaPFence.jpg",
+            "textCredit": "Access to datasets is authorized by the dbGap database, the respective Data Access Committees, and Gen3 Fence services",
+            "phoneticCredit": "Access to datasets is authorized by the dbGap database, the respective Data Access Committees, and Gen3 Fence services",
+            "Work Stream": "DURI",
+            "Driver Project": "Cancer Research Data Commons",
+            "g4ghStd": false
+        }
+    }
+}
