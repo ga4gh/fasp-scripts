@@ -10,12 +10,13 @@ from WESClient import WESClient
 class DNAStackWESClient(WESClient):
 
     
-	def __init__(self,  access_token_path):
+	def __init__(self,  access_token_path, debug=False):
 		self.api_url_base = 'https://ddap-wes-service.prod.dnastack.com/ga4gh/wes/v1/runs'
 		full_key_path = os.path.expanduser(access_token_path)
 		with open(full_key_path) as f:
 			self.accessToken = json.load(f)['access_token']
 		self.headers = { 'Authorization': 'Bearer {}'.format(self.accessToken)}
+		self.debug = debug
 		
 		
 	def getTaskStatus(self, run_id):
@@ -43,6 +44,8 @@ class DNAStackWESClient(WESClient):
 
 		
 			response = requests.request("POST", self.api_url_base, headers=self.headers, data = payload, files = files)
+			if self.debug:
+				print(response)
 			if response.status_code == 200:
 				return response.json()['run_id']
 			elif response.status_code == 401:
@@ -89,8 +92,18 @@ class DNAStackWESClient(WESClient):
 
 		
 			response = requests.request("POST", self.api_url_base, headers=self.headers, data = payload, files = files)
+			if self.debug:
+				print(response)
+			if response.status_code == 200:
+				return response.json()['run_id']
+			elif response.status_code == 401:
+				print("WES server authentication failed")
+				sys.exit(1)
+			else:
+				print("WES run submission failed. Response status:{}".format(response.status_code))
+				sys.exit(1)
 
-		return response
+		return response.json()['run_id']
 		
 		
 	def addRun(self, run_id, runsdf):

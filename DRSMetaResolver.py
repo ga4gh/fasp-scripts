@@ -47,22 +47,36 @@ class DRSMetaResolver:
 		self.debug = debug
 
 	def getObject(self, colonPrefixedID):
-		client = self.getClient(colonPrefixedID)
-		idParts = colonPrefixedID.split(":", 1)
+		client, id = self.getClient(colonPrefixedID)
 		if client != None:
-			print ('Prefix:{}'.format(idParts[0]))
-			print ('id:{}'.format(idParts[1]))
+			print ('id:{}'.format(id))
 			print('sending to: {}'.format(client.__class__.__name__))
-			return client.getObject(idParts[1])
+			return client.getObject(id)
 		else:
 			return "prefix unrecognized"
-			
+
+	def getAccessURL(self, colonPrefixedID, access_id=None):
+		client, id = self.getClient(colonPrefixedID)
+		if client != None:
+			return client.getAccessURL(id, access_id)
+		else:
+			return "prefix unrecognized"
+							
 	def getClient(self, colonPrefixedID):
 		idParts = colonPrefixedID.split(":", 1)
 		prefix = idParts[0]
 		
 		if prefix in self.drsClients.keys():
-			return self.drsClients[prefix]
+			return [self.drsClients[prefix] , idParts[1]]
+		else:
+			return None
+			
+	def getRegisteredClient(self, colonPrefixedID):
+		idParts = colonPrefixedID.split(":", 1)
+		prefix = idParts[0]
+		
+		if prefix in self.registeredClients.keys():
+			return [self.registeredClients[prefix] , idParts[1]]
 		else:
 			return None
 			

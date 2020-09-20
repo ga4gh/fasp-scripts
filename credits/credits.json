@@ -44,6 +44,7 @@
             "phoneticCredit": "Cancer Research Data Commons Data Repository Service by Michael Lukowski",
             "Work Stream": "Cloud",
             "Driver Project": "NCI Cancer Research Data Commons",
+           "Implementation": "CRDC DRS",
             "g4ghStd": true
         },
         "sbcgcDRSClient": {
@@ -123,6 +124,23 @@
             "phoneticCredit": "Access to datasets is authorized by the dbGap database, the respective Data Access Committees, and Gen3 Fence services",
             "Work Stream": "DURI",
             "Driver Project": "Cancer Research Data Commons",
+            "g4ghStd": false
+        },
+        "FASPScript2_sdrf": {
+            "imageFile": "FASPScript2_sdrf.png",
+            "textCredit": "Workflow diagram using SDRF2Graph",
+            "phoneticCredit": "Workflow diagram using SDRF to Graph",
+            "Work Stream": "",
+            "Driver Project": "",
+            "g4ghStd": false
+        }
+,
+        "FASPScript8_sdrf": {
+            "imageFile": "FASPScript8_sdrf.png",
+            "textCredit": "Workflow diagram using SDRF2Graph",
+            "phoneticCredit": "Workflow diagram using SDRF to Graph",
+            "Work Stream": "",
+            "Driver Project": "",
             "g4ghStd": false
         }
     }

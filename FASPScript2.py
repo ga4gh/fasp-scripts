@@ -90,6 +90,7 @@ def main(argv):
 			searchClient, drsClient, mysam)
 			
 	pipelineLogger.close()
+	creditor.creditFromList('FASPScript2_sdrf', closeImage=False)
     
 if __name__ == "__main__":
     main(sys.argv[1:])

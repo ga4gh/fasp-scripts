@@ -73,7 +73,7 @@ class DemoCredits(Creditor):
 		r = applescript.tell.app("Microsoft Excel", script)
 
 
-	def giveCredit(self, credit, speak=False, pauseSecs=0, voice=None):
+	def giveCredit(self, credit, speak=False, pauseSecs=0, voice=None, closeImage=True):
 		if voice == None:
 			voice = self.voice
 		
@@ -124,12 +124,13 @@ class DemoCredits(Creditor):
 			time.sleep(pauseSecs)
 		
 		# move on
-		r= applescript.tell.app("Preview", 'close window 1')
+		if closeImage:
+			r= applescript.tell.app("Preview", 'close window 1')
 		r= applescript.tell.app("Microsoft Excel", 'set value of range "B1:B3" of sheet 1 of workbook "DemoBanner.xlsx" to ""')
 		#r = applescript.run('/Users/forei/dev/FASPClient/scripts/clearStyle.applescript')
 		self.formatCells('gaPlain')
 
-	def creditFromList(self, what, voice=None):
+	def creditFromList(self, what, voice=None, closeImage=True):
 		if what in self.issuedCredits:
 			return
 		if what in self.credits:
@@ -137,7 +138,7 @@ class DemoCredits(Creditor):
 		else:
 			genericMessage = 'I don\'t know how to give credit for {}'.format(what)
 			credit = [self.credits['generic'],genericMessage]
-		self.giveCredit(credit, speak=self.speak, pauseSecs=self.pauseSecs, voice=voice)
+		self.giveCredit(credit, speak=self.speak, pauseSecs=self.pauseSecs, voice=voice, closeImage=closeImage)
 		self.issuedCredits.append(what)
 			
 		
