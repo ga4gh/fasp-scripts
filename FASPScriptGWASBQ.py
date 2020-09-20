@@ -25,13 +25,12 @@ def main(argv):
 	query = """SELECT file_name, compact_drs_id from 
 	`isbcgc-216220.onek_genomes.onek_recal_variants_drs` 
 	where chromosome = 'chr21' and annotated = false"""
-
+	print(query)
+	
 	query_job = searchClient.runQuery(query)  # Send the query
 	creditor.creditClass(searchClient)
 	
-	# Step 2 - DRS - set up a DRS Client
-	# CRDC
-	#drsClient = bdcDRSClient('~/.keys/BDCcredentials.json', 'gs')
+	# Step 2 - DRS - use the MetaResolver send drs ids to the right service
 	drsResolver = DRSMetaResolver()	
 	
 	# Step 3 - set up a class that run a compute for us
@@ -41,6 +40,7 @@ def main(argv):
 	pipelineLogger = FASPLogger("./pipelineLog.txt", os.path.basename(__file__))
 	
 	# repeat steps 2 and 3 for each row of the query
+	# this example should find id's for the same file in both BioDataCatalyst and Anvil
 	for row in query_job:
 		drs_id = row[1]
 		print("vcffile={}, drsID={}".format(row[0], drs_id))
