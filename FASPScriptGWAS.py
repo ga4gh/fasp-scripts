@@ -22,7 +22,7 @@ def main(argv):
 	# query for relevant DRS objects
 	searchClient = DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com/', debug=False)
 
-	query = "SELECT file_name, compact_drs_id from thousand_genomes.onek_genomes.onek_recal_variants_drs where chromosome = 'chr21' and annotated = false"
+	query = "SELECT file_name, compact_drs_id, hostbased_drs_id, drs_id from thousand_genomes.onek_genomes.onek_recal_variants_drs where chromosome = 'chr21' and annotated = false"
 	print(query)
 	
 	query_job = searchClient.runQuery(query)  # Send the query
@@ -41,7 +41,7 @@ def main(argv):
 	# this example should find id's for the same file in both BioDataCatalyst and Anvil
 	for row in query_job:
 		drs_id = row[1]
-		print("vcffile={}, drsID={}".format(row[0], drs_id))
+		print("vcffile={}, compact drsID={}".format(row[0], drs_id))
 		
 		# Step 2 - Use DRS to get the URL
 		objInfo = drsResolver.getObject(drs_id)
