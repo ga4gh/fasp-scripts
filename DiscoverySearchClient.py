@@ -33,7 +33,6 @@ class DiscoverySearchClient:
 			next_url = self.hostURL + "/tables"
 		else:
 			next_url = "{}{}{}".format(self.hostURL,'/tables/catalog/',catalog)
-		print(next_url)
 		pageCount = 0
 		resultRows = []
 		print ("_Retrieving the table list_")
