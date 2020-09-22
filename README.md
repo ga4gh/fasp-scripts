@@ -11,24 +11,20 @@
 
 - Python 3
   - See the code for the modules required
-- A folder in your home directory called .keys containing
+- A folder in your home directory called .keys containing keys for various services. Not all  keys required for all scripts.
   - BDCcredentials.json - api_key file [obtained from BioDataCatalyst](https://gen3.biodatacatalyst.nhlbi.nih.gov/identity)
   - CRDCAPIKey.json - api_key file [obtained from Cancer Research Data Commons](https://nci-crdc.datacommons.io/identity)
+  - anvil_credentials.json - api_key file [obtained from Anvil](https://gen3.theanvil.io)
+  - sevenbridges_keys.json - keys for cgc and or cavatica
 - Google Life Sciences API enabled for your GCP account
-- BigQuery python libraries
+- BigQuery python libraries - for scripts that use BigQuery
 
 ------
 
-#### Thousand Genomes FASP
+#### Thousand Genomes FASP - FASPScript4.py
 
-This queries Thousand Genomes data on subjects and specimens which was exported from BioDataCatalyst and loaded into BigQuery.
+This script queries Thousand Genomes data on subjects and specimens which was exported from BioDataCatalyst and loaded into BigQuery.
 
-Scripts: FASPScript1.py, FASPScript3.py, FASPScript4.py
-
-- All three scripts perform the following
-   - Query for files according to subject and specimen data and obtain their DRS ids
-   - Get URLs for the files from the relevant DRS server
-   - Submit a compute on each of the files
 - [FASPScript4](https://github.com/ianfore/FASPclient/blob/master/FASPScript4.py) uses the following GA4GH APIs to perform each step
    - Discovery Search Server (DNA Stack) - Presto on BigQuery
    - DRS server (BioDataCatalyst)
@@ -41,8 +37,15 @@ The other two scripts were proof of concept using direct APIs from different sta
 - Possible to do's
 
   - Troubleshoot samtools stats workflow on DNAStack WES server 
-  - Configure additional tables on DNAStack Search server 
-  - Add compute on Seven Bridges platform - see below
+
+#### GWAS workflow 
+
+Script: [FASPScriptGWAS.py](https://github.com/ianfore/FASPclient/blob/master/FASPScriptGWAS.py)
+
+
+- Queries Discovery Search for Thousand Genomes non-annotated recalibrated vcf file for Chromosome 21, obtaining prefixed DRS ids for the file. 
+- Resolves which DRS server needs to be called to obtain a URL to access the file.
+- Submits the GWAS WDL workflow to the DNAStack WES Server using the URL provided by DRS.
 
 #### Demonstration of Search and compute from multiple sources 
 
@@ -56,7 +59,7 @@ Script: [FASPScript2.py](https://github.com/ianfore/FASPclient/blob/master/FASPS
 - Both queries use an appropriate prefix to identify which DRS server should be called to obtain a url to the file.
 
   Currently submits directly to a GCP Life Sciences pipeline. This will be substituted by a submission to a WES Server.
-  
+
   Both datasets are controlled access data. Access is controlled by the respective Fence access tokens on the CRDC and BioDataCatalyst DRS servers. The COPD data in BigQuery is under GCP IAM access control.
 
 
@@ -67,19 +70,16 @@ Script: [FASPScript2.py](https://github.com/ianfore/FASPclient/blob/master/FASPS
   - Add additional dbGaP datasets.
   - Move query to Discovery Search - requires access control on Discovery Search.
 
-#### Compute on AWS via different stack 
+#### Reproducibility across stacks 
 
-Script: [FASPScript5.py](https://github.com/ianfore/FASPclient/blob/master/FASPScript5.py)
+Script: [FASPScript8.py](https://github.com/ianfore/FASPclient/blob/master/FASPScript8.py)
 
 
-- Some of the files returned from DRS for the queries above have files on AWS. This script used the Seven Bridges API to run samtools stats on those files.
-- ~~Though the tasks are submitted, they fail with a "Protocol not supprted" error.  See [issue](https://github.com/ga4gh/cloud-interop-testing/issues/109).~~
-- Possible to do's
+- Queries TCGA data via BigQuery to obtain DRS ids
+- Uses DRS to identify files for these cases are on both Google Cloud and AWS
+- Runs samtools stats on Google Cloud and Seven Bridges (AWS)
 
-  - ~~Update samtools docker image to one that can use a url.~~ Done with help from SB Tech Support.
-  - Use a Seven Bridges WES implementation which can either accept the signed URL, or take DRS ids.
-
-#### Compute on SRA urls 
+#### Compute on SRA (NCBI Sequence Read Archive) urls 
 
 Script: [FASPScript6.py](https://github.com/ianfore/FASPclient/blob/master/FASPScript6.py)
 
@@ -96,32 +96,28 @@ Script: [FASPScript6.py](https://github.com/ianfore/FASPclient/blob/master/FASPS
 Script: [FASPScript7.py](https://github.com/ianfore/FASPclient/blob/master/FASPScript7.py)
 
 
-- Uses the ISB-CGC BigQuery tables to query for subjects from TCGA with variants in the JMJD1C gene.  This is the gene in the example shared by Anne Deslattes Mays. This illustrates the kind of query that could be used fro the workflows Anne wants to perform.
-
-- This script also introduces a FASPRunner1 class to hide the underlying steps and allow focus on the query.
+- Uses the ISB-CGC BigQuery tables to query for subjects from TCGA with variants in the JMJD1C gene.  This is the gene in the example shared by Anne Deslattes Mays. This illustrates the kind of query that could be used for the workflows Anne wants to perform.
 
 - Possible to do's
 
 
-    - 4Substitute in SRA DRS server
-
+    - Substitute in SRA DRS server
+    
     - Identify other GA4GH data sources that might contain relevant data for this disease.
-
-    - Refactor FASPRunner1 to an abstract FASPRunner class. The abstract class could be configured dynamically to use the clients of choice for each step of the FASP sequence.
+    
 
   
 
+
 ####  Simulate identifiers.org/n2t.net 
 
-Script: [MyMetaResolver.py](https://github.com/ianfore/FASPclient/blob/master/FASPScript7.py)
+Script: [DRSMetaResolver.py](https://github.com/ianfore/FASPclient/blob/master/DRSMetaResolver.py)
 
 
 - Simulates how compact identifier prefixing can be used to redirect DRS GetObject calls to the relevant DRS Server.
 - Possible to do's
 
   - Do trial registration with nt2/identifers of DRS server prefixes
-  - Provide feedback on prefixing elements of spec.
-  - Explore prefixing best practices.
 
 ------
 

@@ -67,7 +67,7 @@ class DRSMetaResolver:
 		prefix = idParts[0]
 		
 		if prefix in self.drsClients.keys():
-			return [self.drsClients[prefix] , idParts[1]]
+			return self.drsClients[prefix] , idParts[1]
 		else:
 			return None
 			

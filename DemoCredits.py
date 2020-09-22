@@ -25,10 +25,10 @@ class Creditor():
 class SilentCreditor(Creditor):
 	"""Most examples should use this implementation of Creditor"""
 	
-	def giveCredit(self, image, credit, speak=False, pauseSecs=0, voice=None):
+	def giveCredit(self, image, credit, speak=False, pauseSecs=0, voice=None, closeImage=True):
 		return
 
-	def creditFromList(self, what, voice=None):
+	def creditFromList(self, what, voice=None, closeImage=True):
 		return
 		
 	def creditClass(self, classToCredit, voice=None):

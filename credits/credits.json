@@ -53,6 +53,16 @@
             "phoneticCredit": "Seven Bridges Cancer Genomics Cloud Data Repository Service",
             "Work Stream": "Cloud",
             "Driver Project": "NCI Cancer Research Data Commons",
+            "Implementation": "Seven Bridges DRS",
+            "g4ghStd": true
+        },
+        "Gen3DRSClient": {
+            "imageFile": "anvilDRSClient.jpg",
+            "textCredit": "Anvil Data Repository Service",
+            "phoneticCredit": "Anvil Data Repository Service",
+            "Work Stream": "Cloud",
+            "Driver Project": "NCI Cancer Research Data Commons",
+            "Implementation": "Anvil DRS",
             "g4ghStd": true
         },
         "DNAStackWESClient": {

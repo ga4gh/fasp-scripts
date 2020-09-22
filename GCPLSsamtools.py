@@ -69,7 +69,7 @@ class GCPLSsamtools:
 
 	def runStats(self, bamURL, outfile):
 		samtools = {
-		  "imageUri": "gcr.io/genomics-tools/samtools",
+		  "imageUri": "us.gcr.io/isbcgc-216220/samtools",
 		  "commands": [
 			"-c, samtools stats ${BAM} > ${STATS}"
 		  ],
@@ -134,14 +134,16 @@ class GCPLSsamtools:
 
 	def statsCommandLine(self, bamURL, outfile):
 		cline = "gcloud beta lifesciences pipelines run --command-line 'samtools stats ${BAM} > ${STATS}' "
-		cline += "--docker-image \"gcr.io/genomics-tools/samtools\" --regions us-east1 " 
+		# note original used gcr.io/genomics-tools/samtools
+		cline += "--docker-image \"us.gcr.io/isbcgc-216220/samtools\" --regions us-east1 " 
 		cline += "--inputs BAM=\"" + bamURL + "\" "
 		cline += "--outputs  STATS=" + self.outdir + outfile
 		return cline
 
 	def runWorkflow(self, bamURL, outfile):
 		#runStats above should have allowed us to submit a pipeline - but the pipelines fail
-		# This is the workaround - just create a shell script		
+		# This is the workaround - just create a shell script
+		#r = self.runStats(bamURL, outfile)		
 		cline = self.statsCommandLine(bamURL, outfile)
 		#print (cline)
 		with tempfile.NamedTemporaryFile(mode='w') as shellScript:
@@ -149,6 +151,7 @@ class GCPLSsamtools:
 			shellScript.write("\n")
 			shellScript.flush()
 			res = subprocess.run(['sh', shellScript.name])
+
 		return 'paste here'
 
 if __name__ == "__main__":

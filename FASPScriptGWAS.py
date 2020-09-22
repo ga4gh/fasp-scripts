@@ -45,7 +45,8 @@ def main(argv):
 		
 		# Step 2 - Use DRS to get the URL
 		objInfo = drsResolver.getObject(drs_id)
-		drsClient = drsResolver.getClient(drs_id)
+		drsClient, id = drsResolver.getClient(drs_id)
+		print(drsClient)
 		creditor.creditClass(drsClient)
 		fileSize = objInfo['size']
 
