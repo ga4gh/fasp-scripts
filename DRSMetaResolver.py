@@ -27,7 +27,7 @@ class GA4GHRegistry:
 		return services
 
 
-class DRSMetaResolver:
+class DRSMetaResolver(DRSClient):
 # simulate identifiers.ord and n2t.net metaresolver capability
   
 	# Initialize a DRS Client for the service at the specified url base

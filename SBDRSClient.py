@@ -49,15 +49,19 @@ class cavaticaDRSClient(SBDRSClient):
 if __name__ == "__main__":
 	print ("Cancer Genomics Cloud")
 	sbClient = sbcgcDRSClient('~/.keys/sevenbridges_keys.json', 's3')
-	res = sbClient.getObject('5baa9d00e4b0abc1388b8ce0')
+	#res = sbClient.getObject('5bb22646e4b0db6385b3a119')
+	#res = sbClient.getObject('5ba0025ce4b0f7470b2289bc')
+	res = sbClient.getObject('5ba0025ce4b0f7470b228a9a')
+	#res = sbClient.getAccessURL('5ba0025ce4b0f7470b2289bc')
+	print(res)
 	# Thousand Genomes meta csv file - no guarantee this will be there in future!
 	#res = sbClient.getObject('5f404097e4b0bf4ad1323012')
 
-	print (res)
 	print ("______________________")
 	print ("Cavatica")
 	sbClient = cavaticaDRSClient('~/.keys/sevenbridges_keys.json', 'gs')
 	res = sbClient.getObject('578cf947507c17681a3117d1')
+
 	print (res)
 
            

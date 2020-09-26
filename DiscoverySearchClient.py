@@ -27,12 +27,12 @@ class DiscoverySearchClient:
 
 		return None
 
-	def listTables(self, catalog=None):
+	def listTables(self, requestedCatalog=None):
 		
-		if catalog == None:
+		if requestedCatalog == None:
 			next_url = self.hostURL + "/tables"
 		else:
-			next_url = "{}{}{}".format(self.hostURL,'/tables/catalog/',catalog)
+			next_url = "{}{}{}".format(self.hostURL,'/tables/catalog/',requestedCatalog)
 		pageCount = 0
 		resultRows = []
 		print ("_Retrieving the table list_")
@@ -42,13 +42,24 @@ class DiscoverySearchClient:
 			response = requests.get(next_url, headers=self.headers)
 			result = (response.json())
 			#pprint.pprint(result)
-			if catalog == None and 'pagination' in result and 'next_page_url' in result['pagination']:
+			if requestedCatalog == None and 'pagination' in result and 'next_page_url' in result['pagination']:
 				next_url = result['pagination']['next_page_url']
 			else:
 				next_url = None
 			for t in result['tables']:
 				print(t['name'])
 		return 
+			
+	def listCatalogs(self):
+		url = self.hostURL + "/tables"
+
+		print ("_Retrieving the catalog list_")
+		response = requests.get(url, headers=self.headers)
+		result = (response.json())
+		for t in result['index']:
+			print(t['description'])
+		return 
+
 			
 	def listCatalog(self, catalog):
 		self.listTables(catalog)
@@ -100,7 +111,7 @@ def main(argv):
 	table = ''
 
 	try:
-		opts, args = getopt.getopt(argv, "hlc:t:r", ["help", "listTables", "tableInfo", "registeredServices"])
+		opts, args = getopt.getopt(argv, "hlc:t:ra", ["help", "listTables", "tableInfo", "registeredServices","catalogs"])
 	except getopt.GetoptError:
 		usage()
 		sys.exit(2)
@@ -114,6 +125,8 @@ def main(argv):
 	        searchClient.listCatalog(arg)
 	    elif opt in ("-t", "--table"):
 	        searchClient.listTableInfo(arg)
+	    elif opt in ("-a", "--catalogs"):
+	        searchClient.listCatalogs()
 	    elif opt in ("-r", "--registeredServices"):
 	        DiscoverySearchClient.getRegisteredSearchServices()
 

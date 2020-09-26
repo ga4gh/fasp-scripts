@@ -18,6 +18,7 @@ from SBDRSClient import sbcgcDRSClient
 from GCPLSsamtools import GCPLSsamtools
 from samtoolsSBClient import samtoolsSBClient
 from BigQuerySearchClient import BigQuerySearchClient
+from DiscoverySearchClient import DiscoverySearchClient
 
 
 
@@ -29,18 +30,15 @@ def main(argv):
 	
 	# Step 1 - Discovery
 	# query for relevant DRS objects
-	searchClient = BigQuerySearchClient()
+	discoveryClients = {
+		"sb": DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com/'),
+		"bdc": BigQuerySearchClient()
+	}
 
-	crdcquery = """
-		SELECT sp.dbGaP_Subject_ID,  'sb:'||sb_drs_id
-		FROM `isbcgc-216220.scr_GECCO_CRC_Susceptibility.Subject_Phenotypes_MULTI` sp
-		join `isbcgc-216220.scr_GECCO_CRC_Susceptibility.Sample_MULTI` sm on sm.dbgap_subject_id = sp.dbgap_subject_id
-		join `isbcgc-216220.scr_GECCO_CRC_Susceptibility.sb_drs_index` di on di.sample_id = sm.sample_id
-		where AGE between 45 and 55
-		and sex = 'Female'
-		and file_type = 'cram'
-		limit 3"""
+	crdcquery = "SELECT sp.dbGaP_Subject_ID,  'sb:'||sb_drs_id FROM dbgap_demo.scr_gecco_susceptibility.subject_phenotypes_multi sp join dbgap_demo.scr_gecco_susceptibility.sample_multi sm on sm.dbgap_subject_id = sp.dbgap_subject_id join dbgap_demo.scr_gecco_susceptibility.sb_drs_index di on di.sample_id = sm.sample_id where AGE between 45 and 55 and sex = 'Female' and file_type = 'cram' limit 3"
 		
+
+
 	bdcquery = """
 		SELECT sp.dbGaP_Subject_ID,  'bdc:'||read_drs_id
 		FROM `isbcgc-216220.COPDGene.Subject_MULTI` sm
@@ -51,9 +49,10 @@ def main(argv):
  		LIMIT 3"""
 		
 
-	results = searchClient.runQuery(crdcquery)  # Send the query
+	results = discoveryClients['sb'].runQuery(crdcquery)  # Send the query
 	creditor.creditFromList('dbGapSSD')
-	results += searchClient.runQuery(bdcquery) 
+	creditor.creditClass(discoveryClients['sb'])
+	results += discoveryClients['bdc'].runQuery(bdcquery) 
 	creditor.creditFromList('BDCData')
 	
 
@@ -85,6 +84,7 @@ def main(argv):
 		# get the prefix
 		prefix, drsid = row[1].split(":", 1)
 		drsClient = drsClients[prefix]
+		searchClient = discoveryClients[prefix]
 		creditor.creditClass(drsClient)
 		url = drsClient.getAccessURL(drsid)
 		#objInfo = drsClient.getObject(drsid)
