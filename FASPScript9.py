@@ -21,6 +21,9 @@ from DiscoverySearchClient import DiscoverySearchClient
 def main(argv):
 
 
+	# set your Seven Bridges CGC project name here
+	sbProject = 'id/project'
+	
 	# create a creditor to credit the services being called
 	creditor = Creditor.creditorFactory()
 	
@@ -63,7 +66,7 @@ def main(argv):
 	# Step 3 - set up a class that runs samtools for us
 	# providing the location for the results
 	samClients = {
-		"sb": samtoolsSBClient('cgc', 'forei/gecco'),
+		"sb": samtoolsSBClient('cgc', sbProject),
 		"bdc": GCPLSsamtools('gs://isbcgc-216220-life-sciences/fasand/')
 	}
 

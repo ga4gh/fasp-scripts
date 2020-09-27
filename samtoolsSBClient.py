@@ -94,7 +94,7 @@ class samtoolsSBClient:
 
 if __name__ == "__main__":
 	sbApp = 'cgc'	# NCI Cancer Genomics Cloud
-	project = 'forei/gecco'
+	project = 'id/project'
 	
 	myClient = samtoolsSBClient(sbApp, project)
 

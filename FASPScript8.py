@@ -15,6 +15,9 @@ from BigQuerySearchClient import BigQuerySearchClient
 
 
 def main(argv):
+	
+	# set your Seven Bridges CGC project name here
+	sbProject = 'id/project'
 
 	# create a creditor to credit the services being called
 	creditor = Creditor.creditorFactory()
@@ -28,7 +31,7 @@ def main(argv):
 	drsClient = crdcDRSClient('~/.keys/CRDCAPIKey.json', 's3')
 
 	# Step 3 - set up a class that runs samtools for us
-	mysams = {'s3':samtoolsSBClient('cgc','forei/gecco'),
+	mysams = {'s3':samtoolsSBClient('cgc', sbProject),
 				'gs': GCPLSsamtools('gs://isbcgc-216220-life-sciences/tcgatest/')}
 	
 	# A log is helpful to keep track of the computes we've submitted

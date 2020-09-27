@@ -13,6 +13,9 @@ from BigQuerySearchClient import BigQuerySearchClient
 
 def main(argv):
 
+	# set your Seven Bridges CGC project name here
+	sbProject = 'id/project'
+
 	# Step 1 - Discovery
 	# query for relevant DRS objects
 	searchClient = BigQuerySearchClient()
@@ -29,7 +32,7 @@ def main(argv):
 	
 	
 	# Step 3 - set up a class that runs samtools for us
-	mysam = samtoolsSBClient('cgc','forei/gecco')
+	mysam = samtoolsSBClient('cgc', sbProject)
 	
 	# Use this to find out the name of this file, so we can log what ran the pipeline
 	thisScript =  os.path.basename(__file__)
