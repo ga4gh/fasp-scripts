@@ -88,6 +88,7 @@ class samtoolsSBClient:
 		inputs['reference_file'] = api.files.get('5bad6c83e4b0abc138917143')
 
 		task = api.tasks.create(name=name, project=self.project_id, app=app, inputs=inputs, run=True)
+		print("Submitted task:{}".format(task.id))
 		return task.id
 
 

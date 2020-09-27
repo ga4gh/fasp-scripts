@@ -1,16 +1,10 @@
 #  IMPORTS
-import sys, getopt, os
-import json
-import datetime
-import subprocess 
+import sys 
 
 from FASPRunner import FASPRunner
-# a utility 
-from FASPLogger import FASPLogger
 
 # The implementations we're using
 from Gen3DRSClient import bdcDRSClient
-from Gen3DRSClient import Gen3DRSClient
 from GCPLSsamtools import GCPLSsamtools
 from BigQuerySearchClient import BigQuerySearchClient
 
@@ -31,7 +25,6 @@ def main(argv):
 		LIMIT 3"""
 
 	# CRDC
-	#drsClient = Gen3DRSClient('https://nci-crdc.datacommons.io/', 'user/credentials/api/access_token')
 	# BioDataCatalyst
 	drsClient = bdcDRSClient('~/.keys/BDCcredentials.json', 'gs')
 	

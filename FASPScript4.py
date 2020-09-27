@@ -1,8 +1,5 @@
 #  IMPORTS
-import sys, getopt, os
-import json
-import datetime
-import subprocess 
+import sys, os
 
 from FASPRunner import FASPRunner
 
@@ -17,7 +14,7 @@ def main(argv):
 	# Step 1 - Discovery
 	# query for relevant DRS objects
 	searchClient = DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com/')
-	query = "select submitter_id, read_drs_id drsid from thousand_genomes.onek_genomes.ssd_drs where population = 'ACB' limit 1"
+	query = "select submitter_id, read_drs_id drsid from thousand_genomes.onek_genomes.ssd_drs where population = 'ACB' limit 3"
 	
 	# Step 2 - DRS - set up a DRS Client
 	# BDC

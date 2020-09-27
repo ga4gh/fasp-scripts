@@ -1,8 +1,6 @@
 #  IMPORTS
-import sys, getopt, os
-import json
+import sys, os
 import datetime
-import subprocess 
 
 # a utility 
 from FASPLogger import FASPLogger

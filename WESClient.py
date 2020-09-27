@@ -1,8 +1,4 @@
-import requests
-import os
-import json
-import tempfile
-
+''' base class for a WES Client'''
 class WESClient:
 
     

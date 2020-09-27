@@ -45,11 +45,7 @@ def main(argv):
 	results += searchClient.runQuery(bdcquery)  
 	creditor.creditFromList('BDCData')
 
-	# Step 2 - DRS - set up DRS Clients
-	
-	# For later!
-	# mr = MyMetaResolver()
-	
+	# Step 2 - DRS - set up DRS Clients	
 	drsClients = {
 		"crdc": crdcDRSClient('~/.keys/CRDCAPIKey.json', ''),
 		"bdc": bdcDRSClient('~/.keys/BDCcredentials.json', '')

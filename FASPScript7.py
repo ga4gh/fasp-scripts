@@ -1,3 +1,4 @@
+''' Query to illustrate Anne's use case for variants related to a gene involved in a rare pediatric brain cancer'''
 #  IMPORTS
 import os
 

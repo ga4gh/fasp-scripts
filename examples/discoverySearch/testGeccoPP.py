@@ -4,6 +4,7 @@ import pprint
 query = "select id from sample_phenopackets.ga4gh_tables.gecco_phenopackets where json_extract_scalar(phenopacket, '$.subject.sex') = 'MALE' limit 3"
 
 payload = "{\"query\":\"" + query + "\"}"
+payload = {'query':query}
 
 headers = {
   'content-type': 'application/json'
@@ -16,7 +17,9 @@ while next_url != None :
 	pageCount += 1
 	print ("____Page{}_______________".format(pageCount))
 	if pageCount == 1:
-		response = requests.request("POST", next_url, headers=headers, data=payload)
+        requests.post(next_url, json=payload)
+		#response = requests.request("POST", next_url, headers=headers, data=payload)
+        
 	else:
 		response = requests.get(next_url)
 	result = (response.json())

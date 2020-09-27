@@ -1,3 +1,4 @@
+''' update the pipeline log by querying workflow service for status'''
 #  IMPORTS
 import sys
 import pandas as pd
@@ -10,7 +11,11 @@ def main(argv):
 
 	logTable = pd.read_table("./pipelineLog.txt")
 	
-	wesClients = { 'samtoolsSBClient':samtoolsSBClient('cgc', 'forei/gecco'),
+	# edit these to indicate your 
+	sbSystem = 'cgc'
+	sbProject = 'id/project'
+	
+	wesClients = { 'samtoolsSBClient':samtoolsSBClient(sbSystem, sbProject),
 					'DNAStackWESClient':DNAStackWESClient('~/.keys/DNAStackWESkey.json'),
 					'GCPLSsamtools':GCPLSsamtools('gs://isbcgc-216220-life-sciences/fasand/')}
 	

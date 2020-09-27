@@ -1,11 +1,7 @@
 #  IMPORTS
 #from google.cloud import bigquery
-import sys, getopt
-import os.path
-import json
+import sys
 import datetime
-import subprocess 
-import pandas as pd
 
 # a utility 
 from FASPLogger import FASPLogger

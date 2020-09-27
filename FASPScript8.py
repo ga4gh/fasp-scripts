@@ -1,8 +1,6 @@
 #  IMPORTS
-import sys, getopt, os
-import json
+import sys, os
 import datetime
-import subprocess 
 
 # a utility 
 from FASPLogger import FASPLogger
@@ -34,7 +32,7 @@ def main(argv):
 				'gs': GCPLSsamtools('gs://isbcgc-216220-life-sciences/tcgatest/')}
 	
 	# A log is helpful to keep track of the computes we've submitted
-	pipelineLogger = FASPLogger("./output/pipelineLog.txt", os.path.basename(__file__))
+	pipelineLogger = FASPLogger("./pipelineLog.txt", os.path.basename(__file__))
 	
 
 	query = """
