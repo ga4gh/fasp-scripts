@@ -1,3 +1,7 @@
+''' Discovery Search - get the first occurrence of the model in returned results.
+    The business rule is that the model will be the same throughout the result set.
+    The dev team is working on a fix for that
+'''
 import requests
 import pprint
 

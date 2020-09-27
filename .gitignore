@@ -3,6 +3,8 @@ examples/workflow/SBsamtools.py
 examples/workflow/Dockerfile
 workaround.sh
 output/pipelineLog.txt
+.project
+.pydevproject
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
