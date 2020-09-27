@@ -35,7 +35,9 @@ class SilentCreditor(Creditor):
 		return
 
 class DemoCredits(Creditor):
-	"""Created for Sept 2020 plenary demos. Not written to have any general use beyond that. Dependent on local machine specifics. Beware!"""
+	'''Created for Sept 2020 plenary demos. Not written to have any general use beyond that. Dependent on local machine specifics. Beware!
+	This is a candidate for generalization if it would prove useful to others
+	'''
 	
 	def __init__(self, creditsFile, voice='Victoria', speak=False, pauseSecs=0):
 		with open(os.path.expanduser(creditsFile)) as json_file:
@@ -127,7 +129,6 @@ class DemoCredits(Creditor):
 		if closeImage:
 			r= applescript.tell.app("Preview", 'close window 1')
 		r= applescript.tell.app("Microsoft Excel", 'set value of range "B1:B3" of sheet 1 of workbook "DemoBanner.xlsx" to ""')
-		#r = applescript.run('/Users/forei/dev/FASPClient/scripts/clearStyle.applescript')
 		self.formatCells('gaPlain')
 
 	def creditFromList(self, what, voice=None, closeImage=True):

@@ -77,7 +77,7 @@ class samtoolsSBClient:
 		name = 'samtools_test'
 
 		# App I want to use to run a task
-		app = 'forei/gecco/samtools-stats-1-8-url'
+		app = sbProject + '/samtools-stats-1-8-url'
 
 		# Inputs
 		inputs = {}
