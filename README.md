@@ -9,7 +9,7 @@
 
 Script summary
 
-![scriptGrid](credits/images/scriptGrid.png)
+![scriptGrid](credits/images/scriptgrid.png)
 
 ### **Prerequisites to run**
 
