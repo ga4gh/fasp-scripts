@@ -1,4 +1,4 @@
-''' Compares gecco data from Biosample Phenopackets with dbGap Gecco Subject_phenotype'''
+''' Compares gecco data from Biosamples Phenopackets with dbGap Gecco Subject_phenotype'''
 #  IMPORTS
 import sys, getopt, os
 import json

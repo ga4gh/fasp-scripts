@@ -7,6 +7,10 @@
 
 ------
 
+Script summary
+
+![scriptGrid](./credits/images/scriptGrid.png)
+
 ### **Prerequisites to run**
 
 - Python 3
@@ -104,9 +108,9 @@ Script: [FASPScript7.py](https://github.com/ianfore/FASPclient/blob/master/FASPS
     - Substitute in SRA DRS server
     
     - Identify other GA4GH data sources that might contain relevant data for this disease.
-    
 
-  
+
+
 
 
 ####  Simulate identifiers.org/n2t.net 
