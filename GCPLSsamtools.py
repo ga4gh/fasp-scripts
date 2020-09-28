@@ -134,7 +134,8 @@ class GCPLSsamtools:
 
 	def statsCommandLine(self, bamURL, outfile):
 		cline = "gcloud beta lifesciences pipelines run --command-line 'samtools stats ${BAM} > ${STATS}' "
-		# note original used gcr.io/genomics-tools/samtools
+		# note original used gcr.io/genomics-tools/samtools which is samtools 1.6. It may suit your purposes.
+        # The following is a deployment of a custom docker image containing samtools 1.8 which is also deployed on Seven Bridges
 		cline += "--docker-image \"us.gcr.io/isbcgc-216220/samtools\" --regions us-east1 " 
 		cline += "--inputs BAM=\"" + bamURL + "\" "
 		cline += "--outputs  STATS=" + self.outdir + outfile
