@@ -48,8 +48,7 @@ def main(argv):
 		print(url)
 		# Step 3 - Run a pipeline on the file at the drs url
 		outfile = "{}.txt".format(row[0])
-		resp = wesClient.runWorkflow(url, outfile)
-		pipeline_id = resp.json()['run_id']
+		pipeline_id = wesClient.runWorkflow(url, outfile)
 		print('submitted:{}'.format(pipeline_id))
 		
 		via = 'WES'
