@@ -28,8 +28,8 @@ class GA4GHRegistry:
 
 
 class DRSMetaResolver(DRSClient):
-# simulate identifiers.ord and n2t.net metaresolver capability
-  
+'''simulate identifiers.ord and n2t.net metaresolver capability.
+Prefixes used are not official. For demonstration purpposes only'''
 	# Initialize a DRS Client for the service at the specified url base
 	# and with the REST resource to provide an access key 
 	def __init__(self, debug=False):
@@ -41,7 +41,7 @@ class DRSMetaResolver(DRSClient):
 			"insdc": sdlDRSClient('~/.keys/prj_11218_D17199.ngc'),
 			"sbcgc": sbcgcDRSClient('~/.keys/sevenbridges_keys.json','s3'),
 			"sbcav": cavaticaDRSClient('~/.keys/sevenbridges_keys.json','s3'),
-			"srapub": DRSClient('https://locate.ncbi.nlm.nih.gov', debug=True)
+			"srapub": DRSClient('https://locate.ncbi.nlm.nih.gov')
 		}
 		self.registeredClients = []
 		self.hostNameIndex = {}
