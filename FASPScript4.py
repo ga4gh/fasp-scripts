@@ -17,10 +17,8 @@ def main(argv):
 	query = "select submitter_id, read_drs_id drsid from thousand_genomes.onek_genomes.ssd_drs where population = 'ACB' limit 3"
 	
 	# Step 2 - DRS - set up a DRS Client
-	# BDC
 	drsClient = bdcDRSClient('~/.keys/BDCcredentials.json', 'gs')
 
-	
 	# Step 3 - set up a class that run a compute for us
 	wesClient = DNAStackWESClient('~/.keys/DNAStackWESkey.json')
 	

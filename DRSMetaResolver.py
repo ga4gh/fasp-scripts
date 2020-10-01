@@ -40,7 +40,8 @@ class DRSMetaResolver(DRSClient):
 			"anv": Gen3DRSClient('https://gen3.theanvil.io','/user/credentials/api/access_token', '~/.keys/anvil_credentials.json', 'gs'),
 			"insdc": sdlDRSClient('~/.keys/prj_11218_D17199.ngc'),
 			"sbcgc": sbcgcDRSClient('~/.keys/sevenbridges_keys.json','s3'),
-			"sbcav": cavaticaDRSClient('~/.keys/sevenbridges_keys.json','s3')
+			"sbcav": cavaticaDRSClient('~/.keys/sevenbridges_keys.json','s3'),
+			"srapub": DRSClient('https://locate.ncbi.nlm.nih.gov', debug=True)
 		}
 		self.registeredClients = []
 		self.hostNameIndex = {}
@@ -146,20 +147,26 @@ class DRSMetaResolver(DRSClient):
 				'crdc:f360253c-d7d7-47cb-947a-b26e0b41b800',
 				'sbcgc:5baa9d00e4b0abc1388b8ce0',
 				'sbcav:5772b6ed507c1752674486fc',
-				'anv:dg.ANV0/895c5a81-b985-4559-bc8e-cecece550756']
+				'anv:dg.ANV0/895c5a81-b985-4559-bc8e-cecece550756',
+				'srapub:72ff6ff882ec447f12df018e6183de59']
+
 	
 		testResults = {}
 		for id in mixedIDs:
 			print('-------------------------------')
-			print(id)
-			res = self.getObject(id)
+			print('sending: {}'.format(id))
+			res = self.getObject(id),
 			idParts = id.split(":", 1)
+			if res == 400:
+				testResults[idParts[0]] = 'request error'.format(id)
 			if res == 404:
 				testResults[idParts[0]] = 'id not found:{}'.format(id)
 			elif res == 401:
 				testResults[idParts[0]] = 'Unauthorized'
 			elif res == 500:
 				testResults[idParts[0]] = 'server error - may be unauthorized'
+			elif res == 502:
+				testResults[idParts[0]] = 'proxy error 502'
 			elif res.__class__.__name__ != int:
 				testResults[idParts[0]] = 'Success'
 				print(json.dumps(res, indent=2))
@@ -186,7 +193,7 @@ class DRSMetaResolver(DRSClient):
 			print(json.dumps(res, indent=2))	
 
 def usage():
-	print (sys.argv[0] +' -l listTables -c listCatalog -t tableInfo -r registeredServices')
+	print (sys.argv[0] +' -h -c -u')
 
 def main(argv):
 

@@ -98,8 +98,8 @@ if __name__ == "__main__":
 	
 	myClient = samtoolsSBClient(sbApp, project)
 
-	drsurl = "s3://sddp-phs001554/117438.recal.cram"
-	task = myClient.runWorkflow(drsurl, '117438.recal_stats.txt')
+	bamurl = "s3://sddp-phs001554/117438.recal.cram"
+	task = myClient.runWorkflow(bamurl, '117438.recal_stats.txt')
 	print('task.id: {}'.format(task))
 
 

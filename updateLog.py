@@ -9,8 +9,7 @@ from GCPLSsamtools import GCPLSsamtools
 
 def main(argv):
 
-	logTable = pd.read_table("./pipelineLog.txt")
-	
+	logTable = pd.read_table("./pipelineLog.txt" , dtype={'status':str})
 	# edit these to indicate your 
 	sbSystem = 'cgc'
 	sbProject = 'id/project'
@@ -24,7 +23,7 @@ def main(argv):
 		run_id = row["pipeline_id"]
 		#print(run_id, wesClientClassName)
 		if run_id == 'paste here':
-			logTable.at[i, 'status'] = 'no id'
+			logTable.at[i, 'status'] = 0
 		else:
 			if pd.isna(row["status"]) or row["status"].lower() == 'running':
 				wc = wesClients[wesClientClassName]

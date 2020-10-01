@@ -17,8 +17,8 @@ while next_url != None :
 	pageCount += 1
 	print ("____Page{}_______________".format(pageCount))
 	if pageCount == 1:
-        requests.post(next_url, json=payload)
-		#response = requests.request("POST", next_url, headers=headers, data=payload)
+		#requests.post(next_url, json=payload)
+		response = requests.request("POST", next_url, headers=headers, data=payload)
         
 	else:
 		response = requests.get(next_url)

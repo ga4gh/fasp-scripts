@@ -12,22 +12,38 @@
             "phoneticCredit": "Data Use and Researcher Identity (DURI), Dataset access by the dbGap team and members of the NCI Data Access Committee, Vivian Ota Wang and Freddie Pruitt ",
             "Work Stream": "Data Use and Researcher Identity",
             "Driver Project": "Cancer Research Data Commons",
-            "g4ghStd": true
+            "g4ghStd": true,
+            "people": [
+                {
+                    "name": "Vivian Ota Wang",
+                    "orcid": "orcid:0000-0003-3918-3695"
+                },
+                "Freddie Pruitt"
+            ]
         },
         "Registry": {
             "imageFile": "IMG_2159.jpg",
             "textCredit": "Discovery Registry by Jeremy Adams",
             "phoneticCredit": "Discovery Registry by Jeremy Adams",
             "Work Stream": "Discovery",
-            "g4ghStd": true
+            "g4ghStd": true,
+            "people": ["Jeremy Adams"]
         },
         "DiscoverySearchClient": {
             "imageFile": "DiscoverySearch.jpg",
             "textCredit": "Discovery Search by Sharvari Kapadia and Jonathan Fuerth",
-            "phoneticCredit": "Discovery Search by Sharvari Kapadia and Jonathan Fuerth",
+            "phoneticCredit": "Discovery Search by Sharvari Kapadia and ",
             "Work Stream": "Discovery",
             "Implementation": "DNAStack Search",
-            "g4ghStd": true
+            "g4ghStd": true,
+            "people": [
+                "Sharvari Kapadia",
+                "Jonathan Fuerth",
+                {
+                    "name": "Marc Fiume",
+                    "orcid": "orcid:0000-0002-9769-375X"
+                }
+            ]
         },
         "bdcDRSClient": {
             "imageFile": "Gen3BioDataCatalyst.jpg",
@@ -36,7 +52,8 @@
             "Work Stream": "Cloud",
             "Driver Project": "NHLBI TopMed",
             "Implementation": "BioDataCatalyst DRS",
-            "g4ghStd": true
+            "g4ghStd": true,
+            "people": ["Alessandro Culotti"]
         },
         "crdcDRSClient": {
             "imageFile": "crdcDRSClient.jpg",
@@ -44,8 +61,9 @@
             "phoneticCredit": "Cancer Research Data Commons Data Repository Service by Michael Lukowski",
             "Work Stream": "Cloud",
             "Driver Project": "NCI Cancer Research Data Commons",
-           "Implementation": "CRDC DRS",
-            "g4ghStd": true
+            "Implementation": "CRDC DRS",
+            "g4ghStd": true,
+            "people": ["Michael Lukowski"]
         },
         "sbcgcDRSClient": {
             "imageFile": "sbcgcDRSClient.jpg",
@@ -54,7 +72,8 @@
             "Work Stream": "Cloud",
             "Driver Project": "NCI Cancer Research Data Commons",
             "Implementation": "Seven Bridges DRS",
-            "g4ghStd": true
+            "g4ghStd": true,
+            "people": []
         },
         "Gen3DRSClient": {
             "imageFile": "anvilDRSClient.jpg",
@@ -63,7 +82,8 @@
             "Work Stream": "Cloud",
             "Driver Project": "NCI Cancer Research Data Commons",
             "Implementation": "Anvil DRS",
-            "g4ghStd": true
+            "g4ghStd": true,
+            "people": []
         },
         "DNAStackWESClient": {
             "imageFile": "DNAStackWES.jpg",
@@ -71,7 +91,11 @@
             "phoneticCredit": "DNAStack Workflow Execution Service implementation by Max Barkley and Patrick Magee",
             "Work Stream": "Cloud",
             "Implementation": "DNAStack WES",
-           "g4ghStd": true
+            "g4ghStd": true,
+            "people": [
+                "Max Barkley",
+                "Patrick Magee"
+            ]
         },
         "samtoolsSBClient": {
             "imageFile": "samtoolsSBClient.jpg",
@@ -87,14 +111,26 @@
             "phoneticCredit": "Institute for Systems Biology Big Query Tables, David Pot, Kawther Abdilleh and the ISB CGC team",
             "Work Stream": "Discovery",
             "Driver Project": "Cancer Research Data Commons",
-            "g4ghStd": false
+            "g4ghStd": false,
+            "people": [
+                {
+                    "name": "David Pot",
+                    "orcid": "orcid:0000-0002-1480-9826"
+                },
+                "Kawther Abdilleh",
+                "The ISB CGC team"
+            ]
         },
         "dbGapSSD": {
             "imageFile": "dbGapSSD.jpg",
             "textCredit": "dbGaP Subject and Sample Data, Mike Feolo and the dbGaP team",
             "phoneticCredit": "DB gap Subject and Sample Data, Mike Feolo and the DB gap team",
             "Work Stream": "Discovery",
-            "g4ghStd": false
+            "g4ghStd": false,
+            "people": [
+                "Mike Feolo",
+                "The DB gap team"
+            ]
         },
         "BDCData": {
             "imageFile": "BDCData.jpg",
@@ -126,7 +162,11 @@
             "textCredit": "SRA Data Locator, Kurt Rodarmer and the SRA Team",
             "phoneticCredit": "SRA Data Locator, Kurt Rodarmer and the SRA Team",
             "Work Stream": "Cloud",
-            "g4ghStd": false
+            "g4ghStd": false,
+            "people": [
+                "Kurt Rodarmer",
+                "The SRA Team"
+            ]
         },
         "dbGaPFence": {
             "imageFile": "dbGaPFence.jpg",
@@ -134,7 +174,11 @@
             "phoneticCredit": "Access to datasets is authorized by the dbGap database, the respective Data Access Committees, and Gen3 Fence services",
             "Work Stream": "DURI",
             "Driver Project": "Cancer Research Data Commons",
-            "g4ghStd": false
+            "g4ghStd": false,
+            "people": [
+                "Vivian Ota-Wang",
+                "Steve Sherry"
+            ]
         },
         "FASPScript2_sdrf": {
             "imageFile": "FASPScript2_sdrf.png",
@@ -143,8 +187,7 @@
             "Work Stream": "",
             "Driver Project": "",
             "g4ghStd": false
-        }
-,
+        },
         "FASPScript8_sdrf": {
             "imageFile": "FASPScript8_sdrf.png",
             "textCredit": "Workflow diagram using SDRF2Graph",
