@@ -10,6 +10,8 @@ from BigQuerySearchClient import BigQuerySearchClient
 
 def main(argv):
 
+
+	faspRunner = FASPRunner("./pipelineLog.txt", pauseSecs=0)
 	# Step 1 - Discovery
 	# query for relevant DRS objects
 	searchClient = BigQuerySearchClient()
@@ -24,15 +26,13 @@ def main(argv):
 		where population = 'BEB'
 		LIMIT 3"""
 
-	# CRDC
 	# BioDataCatalyst
 	drsClient = bdcDRSClient('~/.keys/BDCcredentials.json', 'gs')
+		
+	mysam = GCPLSsamtools(faspRunner.settings['GCPOutputBucket'])
 	
-	
-	mysam = GCPLSsamtools('gs://isbcgc-216220-life-sciences/fasand/')
-	
-	faspRunner = FASPRunner('FASPScript1', searchClient,
-		drsClient, mysam, "./pipelineLog.txt", pauseSecs=0)
+
+	faspRunner.configure(searchClient, drsClient, mysam)
 		
 	faspRunner.runQuery(query, 'One k  query ')
 	    

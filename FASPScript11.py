@@ -1,9 +1,8 @@
-#  IMPORTS
 import sys, os
 import datetime
 
 # a utility 
-from FASPLogger import FASPLogger
+from FASPRunner import FASPRunner
 
 # The implementations we're using
 from sdlDRSClient import sdlDRSClient
@@ -13,6 +12,10 @@ from DNAStackWESClient import DNAStackWESClient
 
 def main(argv):
 
+	faspRunner = FASPRunner("./pipelineLog.txt", pauseSecs=0)
+	creditor = faspRunner.creditor
+	settings = faspRunner.settings
+	
 	# Step 1 - Discovery
 	# query for relevant DRS objects
 	searchClient = BigQuerySearchClient()
@@ -30,9 +33,6 @@ def main(argv):
 	
 	# Step 3 - set up a class that run a compute for us
 	wesClient = DNAStackWESClient('~/.keys/DNAStackWESkey.json')
-	
-	# A log is helpful to keep track of the computes we've submitted
-	pipelineLogger = FASPLogger("./pipelineLog.txt", os.path.basename(__file__))
 	
 	# repeat steps 2 and 3 for each row of the query
 	for row in query_job:
@@ -57,28 +57,10 @@ def main(argv):
 		note = 'WES MD5 on NCBI SDL'
 
 		time = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
-		pipelineLogger.logRun(time, via, note,  pipeline_id, outfile, str(fileSize),
+		faspRunner.logRun(time, via, note,  pipeline_id, outfile, str(fileSize),
 			searchClient, drsClient, wesClient)
 
-	
-	pipelineLogger.close()
-    
+
 if __name__ == "__main__":
     main(sys.argv[1:])
     
-
-
-	
-	
-
-	
-	
-
-
-
-
-
-
-
-
-

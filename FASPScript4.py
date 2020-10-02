@@ -1,5 +1,5 @@
 #  IMPORTS
-import sys, os
+import sys 
 
 from FASPRunner import FASPRunner
 
@@ -10,6 +10,8 @@ from DNAStackWESClient import DNAStackWESClient
 
 
 def main(argv):
+
+	faspRunner = FASPRunner("./pipelineLog.txt", pauseSecs=0)
 
 	# Step 1 - Discovery
 	# query for relevant DRS objects
@@ -22,11 +24,7 @@ def main(argv):
 	# Step 3 - set up a class that run a compute for us
 	wesClient = DNAStackWESClient('~/.keys/DNAStackWESkey.json')
 	
-	# Use this to find out the name of this file, so we can log what ran the pipeline
-	thisScript =  os.path.basename(__file__)
-	
-	faspRunner = FASPRunner(thisScript, searchClient,
-		drsClient, wesClient, "./pipelineLog.txt")
+	faspRunner.configure(searchClient, drsClient, wesClient)
 		
 	faspRunner.runQuery(query, 'One k query using Search and WES')
     

@@ -21,6 +21,9 @@ class FASPLogger:
 			self.log.write(header)
 			self.log.write("\n")
 
+	def __del__(self):
+		self.log.close()
+
 
 	def logRun(self, time, via, note, pipeline_id, outfile, fileSize, 
 		searcher, finder, computer):

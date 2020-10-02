@@ -1,5 +1,5 @@
 #  IMPORTS
-import sys, os
+import sys
 import datetime
 
 # a utility 
@@ -27,7 +27,7 @@ def main(argv):
 	wesClient = DNAStackWESClient('~/.keys/DNAStackWESkey.json')
 	
 	# A log is helpful to keep track of the computes we've submitted
-	pipelineLogger = FASPLogger("./pipelineLog.txt", os.path.basename(__file__))
+	faspRunner = FASPRunner("./pipelineLog.txt")
 	
 	# repeat steps 2 and 3 for each row of the query
 	for row in query_job:
@@ -55,11 +55,9 @@ def main(argv):
 		note = 'WES MD5 on NCBI SDL'
 
 		time = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
-		pipelineLogger.logRun(time, via, note,  pipeline_id, outfile, str(fileSize),
+		faspRunner.logRun(time, via, note,  pipeline_id, outfile, str(fileSize),
 			searchClient, drsClient, wesClient)
 
-	
-	pipelineLogger.close()
     
 if __name__ == "__main__":
     main(sys.argv[1:])

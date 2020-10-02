@@ -9,19 +9,18 @@ from GCPLSsamtools import GCPLSsamtools
 
 def main(argv):
 
-	logTable = pd.read_table("./pipelineLog.txt" , dtype={'status':str})
-	# edit these to indicate your 
-	sbSystem = 'cgc'
-	sbProject = 'id/project'
-	
+	faspRunner = FASPRunner("./pipelineLog.txt")
+	logTable = pd.read_table(faspRunner.pipelineLogFile , dtype={'status':str})
+	sbSystem = faspRunner.settings['SevenBridgesInstance']
+	sbProject = faspRunner.settings['SevenBridgesProject']
+
 	wesClients = { 'samtoolsSBClient':samtoolsSBClient(sbSystem, sbProject),
 					'DNAStackWESClient':DNAStackWESClient('~/.keys/DNAStackWESkey.json'),
-					'GCPLSsamtools':GCPLSsamtools('gs://isbcgc-216220-life-sciences/fasand/')}
+					'GCPLSsamtools':GCPLSsamtools(faspRunner.settings['GCPOutputBucket'])}
 	
 	for i, row in logTable.iterrows(): 
 		wesClientClassName = row["wesClient"]
 		run_id = row["pipeline_id"]
-		#print(run_id, wesClientClassName)
 		if run_id == 'paste here':
 			logTable.at[i, 'status'] = 0
 		else:

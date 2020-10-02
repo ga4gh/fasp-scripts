@@ -7,8 +7,7 @@ import datetime
 import subprocess 
 
 # a utility 
-from FASPLogger import FASPLogger
-from DemoCredits import Creditor
+from FASPRunner import FASPRunner
 
 # The implementations we're using
 from Gen3DRSClient import crdcDRSClient
@@ -20,20 +19,24 @@ from BigQuerySearchClient import BigQuerySearchClient
 
 def main(argv):
 
-	# create a creditor to credit the services being called
-	creditor = Creditor.creditorFactory()
+	
+	faspRunner = FASPRunner("./pipelineLog.txt", pauseSecs=0)
+	creditor = faspRunner.creditor
+	settings = faspRunner.settings
 	
 	# Step 1 - Discovery
 	# query for relevant DRS objects
 	searchClient = BigQuerySearchClient()
 
+	# TCGA Query - CRDC
 	crdcquery = """
      	SELECT 'case_'||associated_entities__case_gdc_id , 'crdc:'||file_id
 		FROM `isb-cgc.GDC_metadata.rel24_fileData_active` 
 		where data_format = 'BAM' 
 		and project_disease_type = 'Breast Invasive Carcinoma'
 		limit 3"""
-		
+	
+	#COPD query - Topmed	
 	bdcquery = """
   		SELECT SUBJECT_ID, 'bdc:'||read_drs_id
   		FROM `isbcgc-216220.COPDGene.phenotype_drs`
@@ -55,10 +58,8 @@ def main(argv):
 	
 	# Step 3 - set up a class that runs samtools for us
 	# providing the location for the results
-	mysam = GCPLSsamtools('gs://isbcgc-216220-life-sciences/fasand/')
-	
-	# A log is helpful to keep track of the computes we've submitted
-	pipelineLogger = FASPLogger("./pipelineLog.txt", os.path.basename(__file__))
+	mysam = GCPLSsamtools(settings['GCPOutputBucket'])
+
 	
 	# repeat steps 2 and 3 for each row of the query
 	for row in results:
@@ -82,10 +83,9 @@ def main(argv):
 		pipeline_id = 'paste here'
 		note = 'Two sources'
 		time = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
-		pipelineLogger.logRun(time, via, note,  pipeline_id, outfile, fileSize,
+		faspRunner.logRun(time, via, note,  pipeline_id, outfile, fileSize,
 			searchClient, drsClient, mysam)
 			
-	pipelineLogger.close()
 	creditor.creditFromList('FASPScript2_sdrf', closeImage=False)
     
 if __name__ == "__main__":

@@ -3,8 +3,7 @@ import sys, os
 import datetime
 
 # a utility 
-from FASPLogger import FASPLogger
-from DemoCredits import Creditor
+from FASPRunner import FASPRunner
 
 # The implementations we're using
 from Gen3DRSClient import crdcDRSClient
@@ -15,13 +14,16 @@ from BigQuerySearchClient import BigQuerySearchClient
 
 
 def main(argv):
-	
-	# set your Seven Bridges CGC project name here
-	sbProject = 'id/project'
 
-	# create a creditor to credit the services being called
-	creditor = Creditor.creditorFactory()
 	
+	faspRunner = FASPRunner("./pipelineLog.txt", pauseSecs=0)
+	creditor = faspRunner.creditor
+	settings = faspRunner.settings
+	
+	# set your Seven Bridges CGC project using what you have put in FASP Settings
+	sbProject = settings['SevenBridgesProject']
+	sbInstance = settings['SevenBridgesInstance']
+
 	# Step 1 - Discovery
 	# query for relevant DRS objects
 	searchClient = BigQuerySearchClient()
@@ -31,13 +33,9 @@ def main(argv):
 	drsClient = crdcDRSClient('~/.keys/CRDCAPIKey.json', 's3')
 
 	# Step 3 - set up a class that runs samtools for us
-	mysams = {'s3':samtoolsSBClient('cgc', sbProject),
-				'gs': GCPLSsamtools('gs://isbcgc-216220-life-sciences/tcgatest/')}
+	mysams = {'s3':samtoolsSBClient(sbInstance, sbProject),
+				'gs': GCPLSsamtools(settings['GCPOutputBucket'])}
 	
-	# A log is helpful to keep track of the computes we've submitted
-	pipelineLogger = FASPLogger("./pipelineLog.txt", os.path.basename(__file__))
-	
-
 	query = """
      	SELECT 'case_'||associated_entities__case_gdc_id , file_id
 		FROM `isb-cgc.GDC_metadata.rel24_fileData_active` 
@@ -71,11 +69,10 @@ def main(argv):
 			note = 'double submit'
 
 			time = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
-			pipelineLogger.logRun(time, via, note,  task_id, outfile, str(fileSize),
+			faspRunner.logRun(time, via, note,  task_id, outfile, str(fileSize),
 			searchClient, drsClient, mysam)
 
-	
-	pipelineLogger.close()
+
 	creditor.creditFromList('FASPScript8_sdrf', closeImage=False)
     
 if __name__ == "__main__":

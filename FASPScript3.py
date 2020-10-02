@@ -1,6 +1,5 @@
 #  IMPORTS
-import sys, os
-
+import sys 
 
 from FASPRunner import FASPRunner
 
@@ -9,9 +8,10 @@ from Gen3DRSClient import bdcDRSClient
 from GCPLSsamtools import GCPLSsamtools
 from DiscoverySearchClient import DiscoverySearchClient
 
-
-
 def main(argv):
+
+
+	faspRunner = FASPRunner("./pipelineLog.txt", pauseSecs=0)
 
 	# Step 1 - Discovery
 	# query for relevant DRS objects
@@ -25,13 +25,10 @@ def main(argv):
 	
 	# Step 3 - set up a class that runs samtools for us
 	# providing the location where we the results to go
-	mysam = GCPLSsamtools('gs://isbcgc-216220-life-sciences/fasand/')
+	mysam = GCPLSsamtools(faspRunner.settings['GCPOutputBucket'])
 	
-	# Use this to find out the name of this file, so we can log what ran the pipeline
-	thisScript =  os.path.basename(__file__)
-	
-	faspRunner = FASPRunner(thisScript, searchClient,
-		drsClient, mysam, "./pipelineLog.txt")
+
+	faspRunner.configure(searchClient, drsClient, mysam)
 		
 	faspRunner.runQuery(query, 'One k query using Search')
 	    

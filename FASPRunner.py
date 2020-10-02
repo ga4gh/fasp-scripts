@@ -4,25 +4,48 @@ import json
 import datetime
 import os
 import json
+import inspect
 from FASPLogger import FASPLogger
 from DemoCredits import DemoCredits, Creditor
 
 class FASPRunner:
 
-	def __init__(self, program, searchClient, drsClient, workClient, pipelineLogFile, showCredits=None, pauseSecs=1, test=None):
-		with open(os.path.expanduser('./FASPSettings.json')) as json_file:
-   			 settings = json.load(json_file)		
-		self.searchClient = searchClient
-		self.drsClient = drsClient
-		self.workClient = workClient
+	def __init__(self, pipelineLogFile, showCredits=None, pauseSecs=1, test=None):
+		with open(os.path.expanduser(os.environ['FASP_SETTINGS'])) as json_file:
+   			 self.settings = json.load(json_file)		
+		self.searchClient = None
+		self.drsClient = None
+		self.workClient = None
+		
+		# what module are we running this for?
+		frm = inspect.stack()[1]
+		program = inspect.getsourcefile(frm[0]) 
+		print("Running {}".format(program))
+		self.pipelineLogFile = pipelineLogFile
 		self.pipelineLogger = FASPLogger(pipelineLogFile, program)
-		self.creditor = Creditor.creditorFactory(pauseSecs=pauseSecs)
+		self.creditor = Creditor.creditorFactory(self.settings, pauseSecs=pauseSecs)
+		
 		if test != None:
 			self.live = not test
 		else:
-			self.live = not settings['test']
+			self.live = not self.settings['test']
+
+    					
+	def configure(self, searchClient, drsClient, workClient):
+		self.searchClient = searchClient
+		self.drsClient = drsClient
+		self.workClient = workClient
+
+	def logRun(self, time, via, note, pipeline_id, outfile, fileSize, 
+		searcher, finder, computer):
+		
+		self.pipelineLogger.logRun(time, via, note, pipeline_id, outfile, fileSize, 
+		searcher, finder, computer)
 					
 	def runQuery(self, query, note):
+		if None in [self.searchClient, self.drsClient, self.workClient]:
+			print ("FASPRunner was not configured")
+			sys.exit()
 		creditor = self.creditor
 		# Step 1 - Discovery
 		print("Running query")

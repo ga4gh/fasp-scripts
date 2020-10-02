@@ -1,10 +1,9 @@
 #  IMPORTS
-import sys, os
+import sys 
 
 from FASPRunner import FASPRunner
 
 # The implementations we're using
-from Gen3DRSClient import bdcDRSClient
 from DRSMetaResolver import DRSMetaResolver
 from DiscoverySearchClient import DiscoverySearchClient
 from DNAStackWESClient import DNAStackWESClient
@@ -12,6 +11,7 @@ from DNAStackWESClient import DNAStackWESClient
 
 def main(argv):
 
+	faspRunner = FASPRunner("./pipelineLog.txt", pauseSecs=0)
 
 
 	pp_dbgap_join = "SELECT sp.dbGaP_Subject_ID,  'sbcgc:'||sb_drs_id FROM dbgap_demo.scr_gecco_susceptibility.subject_phenotypes_multi sp join dbgap_demo.scr_gecco_susceptibility.sample_multi sm on sm.dbgap_subject_id = sp.dbgap_subject_id join dbgap_demo.scr_gecco_susceptibility.sb_drs_index di on di.sample_id = sm.sample_id join sample_phenopackets.ga4gh_tables.gecco_phenopackets pp on pp.id = sm.biosample_accession where  json_extract_scalar(pp.phenopacket, '$.subject.sex') = 'MALE' and file_type = 'cram' limit 3"
@@ -26,11 +26,7 @@ def main(argv):
 	# Step 3 - set up a class that run a compute for us
 	wesClient = DNAStackWESClient('~/.keys/DNAStackWESkey.json')
 	
-	# Use this to find out the name of this file, so we can log what ran the pipeline
-	thisScript =  os.path.basename(__file__)
-	
-	faspRunner = FASPRunner(thisScript, searchClient,
-		drsClient, wesClient, "./pipelineLog.txt")
+	faspRunner.configure(searchClient, drsClient, wesClient)
 		
 	faspRunner.runQuery(pp_dbgap_join, 'Phenopacket Gecco')
     

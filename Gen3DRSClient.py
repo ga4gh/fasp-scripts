@@ -16,7 +16,12 @@ class Gen3DRSClient(DRSClient):
     	full_key_path = os.path.expanduser(api_key_path)
     	with open(full_key_path) as f:
     		self.api_key = json.load(f)
-    	self.updateAccessToken()
+    	code = self.updateAccessToken()
+    	if code == 401:
+    		print('Invalid access token in {}'.format(full_key_path))
+    	elif code != 200:
+    		print('Error {} getting Access token for {}'.format(code, api_url_base))
+    		print('Using {}'.format(full_key_path))
 
 
     # Obtain an access_token using the provided Fence API key.
@@ -29,11 +34,7 @@ class Gen3DRSClient(DRSClient):
         if response.status_code == 200:
             resp = json.loads(response.content.decode('utf-8'))
             self.access_token = resp['access_token']
-            return (self.access_token)
-        elif response.status_code == 401:
-        	print('Invalid api_key')
-        else:
-            return None
+        return response.status_code
         
 
 

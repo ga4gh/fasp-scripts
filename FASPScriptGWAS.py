@@ -5,8 +5,7 @@ import datetime
 import subprocess 
 
 # a utility 
-from FASPLogger import FASPLogger
-from DemoCredits import Creditor
+from FASPRunner import FASPRunner
 
 # The implementations we're using
 from DRSMetaResolver import DRSMetaResolver
@@ -15,8 +14,10 @@ from DNAStackWESClient import DNAStackWESClient
 
 
 def main(argv):
-	# create a creditor to credit the services being called
-	creditor = Creditor.creditorFactory()
+
+	faspRunner = FASPRunner("./pipelineLog.txt", pauseSecs=0)
+	creditor = faspRunner.creditor
+	settings = faspRunner.settings
 	
 	# Step 1 - Discovery
 	# query for relevant DRS objects
@@ -32,10 +33,7 @@ def main(argv):
 	drsResolver = DRSMetaResolver()	
 	
 	# Step 3 - set up a class that run a compute for us
-	wesClient = DNAStackWESClient('~/.keys/DNAStackWESkey.json', debug=False)
-	
-	# A log is helpful to keep track of the computes we've submitted
-	pipelineLogger = FASPLogger("./pipelineLog.txt", os.path.basename(__file__))
+	wesClient = DNAStackWESClient('~/.keys/DNAStackWESkey.json')
 	
 	# repeat steps 2 and 3 for each row of the query
 	# this example should find id's for the same file in both BioDataCatalyst and Anvil
@@ -61,11 +59,9 @@ def main(argv):
 		note = 'GWAS'
 
 		time = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
-		pipelineLogger.logRun(time, via, note,  pipeline_id, outfile, str(fileSize),
+		faspRunner.logRun(time, via, note,  pipeline_id, outfile, str(fileSize),
 			searchClient, drsClient, wesClient)
 
-	
-	pipelineLogger.close()
     
 if __name__ == "__main__":
     main(sys.argv[1:])

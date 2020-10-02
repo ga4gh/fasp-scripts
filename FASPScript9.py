@@ -4,8 +4,7 @@ import sys
 import datetime
 
 # a utility 
-from FASPLogger import FASPLogger
-from DemoCredits import Creditor
+from FASPRunner import FASPRunner
 
 # The implementations we're using
 from Gen3DRSClient import crdcDRSClient
@@ -20,13 +19,15 @@ from DiscoverySearchClient import DiscoverySearchClient
 
 def main(argv):
 
+	
+	faspRunner = FASPRunner("./pipelineLog.txt", pauseSecs=0)
+	creditor = faspRunner.creditor
+	settings = faspRunner.settings
+	
+	# set your Seven Bridges CGC project using what you have put in FASP Settings
+	sbProject = settings['SevenBridgesProject']
+	sbInstance = settings['SevenBridgesInstance']
 
-	# set your Seven Bridges CGC project name here
-	sbProject = 'id/project'
-	
-	# create a creditor to credit the services being called
-	creditor = Creditor.creditorFactory()
-	
 	# Step 1 - Discovery
 	# query for relevant DRS objects
 	discoveryClients = {
@@ -66,13 +67,10 @@ def main(argv):
 	# Step 3 - set up a class that runs samtools for us
 	# providing the location for the results
 	samClients = {
-		"sb": samtoolsSBClient('cgc', sbProject),
-		"bdc": GCPLSsamtools('gs://isbcgc-216220-life-sciences/fasand/')
+		"sb": samtoolsSBClient(sbInstance, sbProject),
+		"bdc": GCPLSsamtools(settings['GCPOutputBucket'])
 	}
 
-	
-	# A log is helpful to keep track of the computes we've submitted
-	pipelineLogger = FASPLogger("./pipelineLog.txt", os.path.basename(__file__))
 	
 	# repeat steps 2 and 3 for each row of the query
 	for row in results:
@@ -100,15 +98,12 @@ def main(argv):
 			note = 'Two dbGaP sources'
 			time = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
 			run_id = mysam.runWorkflow(url, outfile)
-			pipelineLogger.logRun(time, via, note,  run_id, outfile, fileSize,
+			faspRunner.logRun(time, via, note,  run_id, outfile, fileSize,
 				searchClient, drsClient, mysam)
 			resRow.append('OK')
 		else:
 			print('could not get DRS url')
 			resRow.append('unauthorized')
-
-			
-	pipelineLogger.close()
     
 if __name__ == "__main__":
     main(sys.argv[1:])

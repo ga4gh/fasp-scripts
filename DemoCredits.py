@@ -10,10 +10,11 @@ class Creditor():
 		return
 		
 	@classmethod
-	def creditorFactory(cls, showCredits=None, pauseSecs=1):
+	def creditorFactory(cls, settings=None, showCredits=None, pauseSecs=1):
 		"""Instantiate a class that will issue credits for the steps of a FASP run."""
-		with open(os.path.expanduser('./FASPSettings.json')) as json_file:
-   			 settings = json.load(json_file)		
+		if settings == None:
+			with open(os.path.expanduser('./FASPSettings.json')) as json_file:
+   				settings = json.load(json_file)		
 		if showCredits == None:
 			showCredits = (settings['showCredits'])
 		if showCredits:

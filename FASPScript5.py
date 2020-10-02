@@ -1,5 +1,5 @@
 #  IMPORTS
-import sys, os
+import sys 
 
 # a utility 
 from FASPRunner import FASPRunner
@@ -13,8 +13,7 @@ from BigQuerySearchClient import BigQuerySearchClient
 
 def main(argv):
 
-	# set your Seven Bridges CGC project name here
-	sbProject = 'id/project'
+	faspRunner = FASPRunner("./pipelineLog.txt", pauseSecs=0)
 
 	# Step 1 - Discovery
 	# query for relevant DRS objects
@@ -29,16 +28,12 @@ def main(argv):
 	
 	drsClient = crdcDRSClient('~/.keys/CRDCAPIKey.json', 's3')
 
-	
-	
 	# Step 3 - set up a class that runs samtools for us
-	mysam = samtoolsSBClient('cgc', sbProject)
+	sbProject = faspRunner.settings['SevenBridgesProject']
+	sbInst = faspRunner.settings['SevenBridgesInstance']
+	mysam = samtoolsSBClient(sbInst, sbProject)
 	
-	# Use this to find out the name of this file, so we can log what ran the pipeline
-	thisScript =  os.path.basename(__file__)
-	
-	faspRunner = FASPRunner(thisScript, searchClient,
-		drsClient, mysam, "./pipelineLog.txt")
+	faspRunner.configure(searchClient, drsClient, mysam)
 		
 	faspRunner.runQuery(query, 'GDC query SB compute')
 	    

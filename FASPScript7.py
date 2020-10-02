@@ -1,6 +1,6 @@
 ''' Query to illustrate Anne's use case for variants related to a gene involved in a rare pediatric brain cancer'''
 #  IMPORTS
-import os
+import sys 
 
 from FASPRunner import FASPRunner
 
@@ -10,15 +10,13 @@ from GCPLSsamtools import GCPLSsamtools
 from BigQuerySearchClient import BigQuerySearchClient
 
 
+faspRunner = FASPRunner("./pipelineLog.txt", pauseSecs=0)
+
 searchClient = BigQuerySearchClient()
 drsClient = crdcDRSClient('~/.keys/CRDCAPIKey.json','gs')
-mysam = GCPLSsamtools('gs://isbcgc-216220-life-sciences/fasand/')
+mysam = GCPLSsamtools(faspRunner.settings['GCPOutputBucket'])
 
-# Use this to find out the name of this file, so we can log what ran the pipeline
-thisScript =  os.path.basename(__file__)
-	
-faspRunner = FASPRunner(thisScript, searchClient,
-	drsClient, mysam, "./pipelineLog.txt")
+faspRunner.configure(searchClient, drsClient, mysam)
 
 query = """
 SELECT mut.case_barcode subject, meta.file_gdc_id as drs_id, 
