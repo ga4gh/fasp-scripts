@@ -3,10 +3,10 @@ import requests
 import pprint
 import sys, getopt
 
-from Gen3DRSClient import crdcDRSClient, bdcDRSClient, Gen3DRSClient
-from sdlDRSClient import sdlDRSClient
-from SBDRSClient import sbcgcDRSClient, cavaticaDRSClient
-from DRSClient import DRSClient
+from loc import crdcDRSClient, bdcDRSClient, Gen3DRSClient
+from loc import sdlDRSClient
+from loc import sbcgcDRSClient, cavaticaDRSClient
+from loc import DRSClient
 
 
 class GA4GHRegistry:
@@ -116,7 +116,7 @@ class DRSMetaResolver(DRSClient):
 			elif prefix == "sbcav": 
 				drsClient = cavaticaDRSClient('~/.keys/sevenbridges_keys.json','s3')
 			else: 
-				drsClient = drsClient = DRSClient.fromRegistryEntry(service)
+				drsClient = DRSClient.fromRegistryEntry(service)
 			return drsClient
 
 			

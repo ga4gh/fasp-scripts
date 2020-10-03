@@ -2,9 +2,10 @@
 #  IMPORTS
 import sys
 import pandas as pd
-from samtoolsSBClient import samtoolsSBClient 
-from DNAStackWESClient import DNAStackWESClient 
-from GCPLSsamtools import GCPLSsamtools 
+from workflow import samtoolsSBClient 
+from workflow import DNAStackWESClient 
+from workflow import GCPLSsamtools 
+from runner import FASPRunner 
 
 
 def main(argv):

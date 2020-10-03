@@ -1,12 +1,12 @@
 #  IMPORTS
 import sys 
 
-from FASPRunner import FASPRunner
+from runner import FASPRunner
 
 # The implementations we're using
-from DRSMetaResolver import DRSMetaResolver
-from DiscoverySearchClient import DiscoverySearchClient
-from DNAStackWESClient import DNAStackWESClient
+from loc import DRSMetaResolver
+from search import DiscoverySearchClient
+from workflow import DNAStackWESClient
 
 
 def main(argv):
@@ -29,23 +29,6 @@ def main(argv):
 	faspRunner.configure(searchClient, drsClient, wesClient)
 		
 	faspRunner.runQuery(pp_dbgap_join, 'Phenopacket Gecco')
-    
+
 if __name__ == "__main__":
-    main(sys.argv[1:])
-    
-
-
-	
-	
-
-	
-	
-
-
-
-
-
-
-
-
-
+	main(sys.argv[1:])

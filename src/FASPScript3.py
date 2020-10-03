@@ -1,12 +1,12 @@
 #  IMPORTS
 import sys 
 
-from FASPRunner import FASPRunner
+from runner import FASPRunner
 
 # The implementations we're using
-from Gen3DRSClient import bdcDRSClient
-from GCPLSsamtools import GCPLSsamtools
-from DiscoverySearchClient import DiscoverySearchClient
+from loc import bdcDRSClient
+from workflow import GCPLSsamtools
+from search import DiscoverySearchClient
 
 def main(argv):
 

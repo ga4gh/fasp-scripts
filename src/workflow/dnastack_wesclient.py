@@ -5,18 +5,18 @@ import tempfile
 import pandas as pd
 import sys
 
-from WESClient import WESClient 
+from workflow import WESClient
 
 class DNAStackWESClient(WESClient):
 
-    
-	def __init__(self,  access_token_path, debug=False):
+	def __init__(self,  access_token_path, debug=False, wdlPath='../../plenary-resources-2020/workflows/'):
 		self.api_url_base = 'https://ddap-wes-service.prod.dnastack.com/ga4gh/wes/v1/runs'
 		full_key_path = os.path.expanduser(access_token_path)
 		with open(full_key_path) as f:
 			self.accessToken = json.load(f)['access_token']
 		self.headers = { 'Authorization': 'Bearer {}'.format(self.accessToken)}
 		self.debug = debug
+		self.wdlPath = wdlPath
 		
 		
 	def getTaskStatus(self, run_id):
@@ -36,10 +36,10 @@ class DNAStackWESClient(WESClient):
 		with tempfile.TemporaryFile() as fp:
 			fp.write(json.dumps(inputJson).encode('utf-8'))
 			fp.seek(0)
-			payload = {'workflow_url': 'checksum.wdl'}
+			payload = {'workflow_url': 'checksum.wdl'} 
 			files = {
 				'workflow_params': ('inputs.json', fp, 'application/json'),
-				'workflow_attachment': ('checksum.wdl', open('./wes/checksum.wdl', 'rb'), 'text/plain')
+				'workflow_attachment': ('checksum.wdl', open('./workflow/wes/checksum.wdl', 'rb'), 'text/plain')
 			}
 
 		
@@ -61,8 +61,8 @@ class DNAStackWESClient(WESClient):
 
 		payload = {'workflow_url': 'gwas.wdl'}
 		files = {
-			'workflow_params': ('inputs.gwas.json', open('../plenary-resources-2020/workflows/inputs.gwas.json', 'rb'), 'application/json'),
-			'workflow_attachment': ('gwas.wdl', open('../plenary-resources-2020/workflows/gwas.wdl', 'rb'), 'text/plain')
+			'workflow_params': ('inputs.gwas.json', open(self.wdlPath+'inputs.gwas.json', 'rb'), 'application/json'),
+			'workflow_attachment': ('gwas.wdl', open(self.wdlPath+'gwas.wdl', 'rb'), 'text/plain')
 		}
 
 		response = requests.request("POST", self.api_url_base, headers=self.headers, data = payload, files = files)
@@ -87,7 +87,7 @@ class DNAStackWESClient(WESClient):
 			payload = {'workflow_url': 'gwas.wdl'}
 			files = {
 				'workflow_params': ('inputs.gwas.json', fp, 'application/json'),
-				'workflow_attachment': ('gwas.wdl', open('../plenary-resources-2020/workflows/gwas.wdl', 'rb'), 'text/plain')
+				'workflow_attachment': ('gwas.wdl', open(self.wdlPath+'gwas.wdl', 'rb'), 'text/plain')
 			}
 
 		

@@ -2,12 +2,12 @@
 import sys 
 
 # a utility 
-from FASPRunner import FASPRunner
+from runner import FASPRunner
 
 # The implementations we're using
-from Gen3DRSClient import crdcDRSClient
-from samtoolsSBClient import samtoolsSBClient
-from BigQuerySearchClient import BigQuerySearchClient
+from loc import crdcDRSClient
+from workflow import samtoolsSBClient
+from search import BigQuerySearchClient
 
 
 
@@ -36,10 +36,9 @@ def main(argv):
 	faspRunner.configure(searchClient, drsClient, mysam)
 		
 	faspRunner.runQuery(query, 'GDC query SB compute')
-	    
+	
 if __name__ == "__main__":
-    main(sys.argv[1:])
-    
+	main(sys.argv[1:])
 
 
 	

@@ -5,7 +5,7 @@ import json
 import requests
 import os
 
-from DRSClient import DRSClient
+from loc import DRSClient
 
 class sdlDRSClient(DRSClient):
 

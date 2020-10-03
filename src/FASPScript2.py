@@ -7,13 +7,12 @@ import datetime
 import subprocess 
 
 # a utility 
-from FASPRunner import FASPRunner
+from runner import FASPRunner
 
 # The implementations we're using
-from Gen3DRSClient import crdcDRSClient
-from Gen3DRSClient import bdcDRSClient
-from GCPLSsamtools import GCPLSsamtools
-from BigQuerySearchClient import BigQuerySearchClient
+from loc import crdcDRSClient, bdcDRSClient
+from workflow import GCPLSsamtools
+from search import BigQuerySearchClient
 
 
 

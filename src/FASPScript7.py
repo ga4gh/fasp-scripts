@@ -2,12 +2,12 @@
 #  IMPORTS
 import sys 
 
-from FASPRunner import FASPRunner
+from runner import FASPRunner
 
 # The implementations we're using
-from Gen3DRSClient import crdcDRSClient
-from GCPLSsamtools import GCPLSsamtools
-from BigQuerySearchClient import BigQuerySearchClient
+from loc import crdcDRSClient
+from workflow import GCPLSsamtools
+from search import BigQuerySearchClient
 
 
 faspRunner = FASPRunner("./pipelineLog.txt", pauseSecs=0)

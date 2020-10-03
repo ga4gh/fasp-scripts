@@ -1,12 +1,12 @@
 #  IMPORTS
 import sys 
 
-from FASPRunner import FASPRunner
+from runner import FASPRunner
 
 # The implementations we're using
-from Gen3DRSClient import bdcDRSClient
-from DiscoverySearchClient import DiscoverySearchClient
-from DNAStackWESClient import DNAStackWESClient
+from loc import bdcDRSClient
+from search import DiscoverySearchClient
+from workflow import DNAStackWESClient
 
 
 def main(argv):

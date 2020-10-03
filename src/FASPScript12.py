@@ -1,12 +1,13 @@
 import sys, os
 import datetime
 
-# The implementations we're using
+# a utility 
+from runner import FASPRunner
 
-from DiscoverySearchClient import DiscoverySearchClient
-from DNAStackWESClient import DNAStackWESClient
+from search import DiscoverySearchClient
+from workflow import DNAStackWESClient
+from workflow import GCPLSsamtools
 
-from FASPLogger import FASPLogger
 
 import pyega3.pyega3 as ega
 
@@ -31,23 +32,22 @@ class EGAhtsget():
 
 def main(argv):
 
-    # Step 1 - Discovery
+    faspRunner = FASPRunner("./pipelineLog.txt", pauseSecs=0)
+    creditor = faspRunner.creditor
+    settings = faspRunner.settings
+	
+	# Step 1 - Discovery
     # query for relevant files
     searchClient = DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com/')
-    query = "SELECT sample_submitter_id, fileid, filename FROM dbgap_demo.scr_ega.scr_egapancreatic_sample_multi p join dbgap_demo.scr_ega.scr_egapancreatic_files f on f.sample_primary_id = p.sample_primary_id where phenotype = 'pancreatic adenocarcinoma'"
+    query = "SELECT sample_submitter_id, fileid, filename FROM dbgap_demo.scr_ega.scr_egapancreatic_sample_multi p join dbgap_demo.scr_ega.scr_egapancreatic_files f on f.sample_primary_id = p.sample_primary_id where phenotype = 'pancreatic adenocarcinoma' limit 3"
     query_job = searchClient.runQuery(query)
     
     # Step 2 - Use htsget at EGA
     htsgetClient = EGAhtsget('~/.keys/ega.credentials')
     
     # Step 3 - set up a class that run a compute for us
-    wesClient = GCPLSsamtools('gs://isbcgc-216220-life-sciences/pancreatic/')
-    
-    # Use this to find out the name of this file, so we can log what ran the pipeline
-    thisScript =  os.path.basename(__file__)
-    
-    # A log is helpful to keep track of the computes we've submitted
-    pipelineLogger = FASPLogger("./pipelineLog.txt", os.path.basename(__file__))
+    wesClient = GCPLSsamtools(settings['GCPOutputBucket'])
+
     
     # repeat steps 2 and 3 for each row of the query
     for row in query_job:
@@ -59,18 +59,20 @@ def main(argv):
         print(fileSize)
         # we've predetermined we want to use the gs copy in this case
         #url = drsClient.getAccessURL(row[1], 'gs')
-        htsgetClient.htsget(row[1], 'chr1', 100000, 102000, 'BAM', row[2])
-
+        #htsgetClient.htsget(row[1], 'chr1', 100000, 102000, 'BAM', row[2])
+		
+        localfile = 'NA19377.unmapped.ILLUMINA.bwa.LWK.low_coverage.20120522.bam'
+		#row[2]
         # Step 3 - Run a pipeline on the file at the drs url
         outfile = "{}.txt".format(row[0])
-        pipeline_id = wesClient.runWorkflow(row[2], outfile)
+        pipeline_id = wesClient.runWorkflow(localfile, outfile)
         #print('submitted:{}'.format(pipeline_id))
         
         via = 'local'
         note = 'samtools on htsget BAM'
 
         time = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
-        pipelineLogger.logRun(time, via, note,  pipeline_id, outfile, str(fileSize),
+        faspRunner.logRun(time, via, note,  pipeline_id, outfile, str(fileSize),
             searchClient, htsgetClient, wesClient)
         
     

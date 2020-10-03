@@ -4,16 +4,12 @@ import sys
 import datetime
 
 # a utility 
-from FASPRunner import FASPRunner
+from runner import FASPRunner
 
 # The implementations we're using
-from Gen3DRSClient import crdcDRSClient
-from Gen3DRSClient import bdcDRSClient
-from SBDRSClient import sbcgcDRSClient
-from GCPLSsamtools import GCPLSsamtools
-from samtoolsSBClient import samtoolsSBClient
-from BigQuerySearchClient import BigQuerySearchClient
-from DiscoverySearchClient import DiscoverySearchClient
+from loc import bdcDRSClient,sbcgcDRSClient
+from workflow import GCPLSsamtools, samtoolsSBClient
+from search import BigQuerySearchClient, DiscoverySearchClient
 
 
 
@@ -104,23 +100,6 @@ def main(argv):
 		else:
 			print('could not get DRS url')
 			resRow.append('unauthorized')
-    
+
 if __name__ == "__main__":
-    main(sys.argv[1:])
-    
-
-
-	
-	
-
-	
-	
-
-
-
-
-
-
-
-
-
+	main(sys.argv[1:])

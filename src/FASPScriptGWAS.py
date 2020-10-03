@@ -1,23 +1,21 @@
 #  IMPORTS
-import sys, getopt, os
-import json
+import sys
 import datetime
-import subprocess 
+
 
 # a utility 
-from FASPRunner import FASPRunner
+from runner import FASPRunner
 
 # The implementations we're using
-from DRSMetaResolver import DRSMetaResolver
-from DiscoverySearchClient import DiscoverySearchClient
-from DNAStackWESClient import DNAStackWESClient
+from search import DiscoverySearchClient
+from loc import DRSMetaResolver
+from workflow import DNAStackWESClient
 
 
 def main(argv):
 
 	faspRunner = FASPRunner("./pipelineLog.txt", pauseSecs=0)
 	creditor = faspRunner.creditor
-	settings = faspRunner.settings
 	
 	# Step 1 - Discovery
 	# query for relevant DRS objects
@@ -43,7 +41,7 @@ def main(argv):
 		
 		# Step 2 - Use DRS to get the URL
 		objInfo = drsResolver.getObject(drs_id)
-		drsClient, id = drsResolver.getClient(drs_id)
+		drsClient, localid = drsResolver.getClient(drs_id)
 		print(drsClient)
 		creditor.creditClass(drsClient)
 		fileSize = objInfo['size']
@@ -62,10 +60,10 @@ def main(argv):
 		faspRunner.logRun(time, via, note,  pipeline_id, outfile, str(fileSize),
 			searchClient, drsClient, wesClient)
 
-    
+
 if __name__ == "__main__":
-    main(sys.argv[1:])
-    
+	main(sys.argv[1:])
+
 
 
 	

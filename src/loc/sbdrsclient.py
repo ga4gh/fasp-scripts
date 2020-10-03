@@ -2,7 +2,7 @@ import json
 import os.path
 import requests
 
-from DRSClient import DRSClient
+from loc import DRSClient
 
 
 class SBDRSClient(DRSClient):

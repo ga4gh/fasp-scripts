@@ -2,7 +2,8 @@ import datetime
 import os
 
 
-from DNAStackWESClient import DNAStackWESClient
+from workflow import DNAStackWESClient
+from search import BigQuerySearchClient
 
 class FASPLogger:
 
@@ -43,7 +44,7 @@ class FASPLogger:
 		
 
 if __name__ == "__main__":
-	dummy = searchClient = BigQuerySearchClient()		
+	dummy = BigQuerySearchClient()		
 	fl = FASPLogger( './testlog.txt', 'me')
 	via = 'py'
 	note = 'testing'

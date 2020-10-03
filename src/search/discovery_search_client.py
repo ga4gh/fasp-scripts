@@ -3,7 +3,7 @@ import pprint
 import sys
 import getopt
 
-from DRSMetaResolver import GA4GHRegistry 
+from loc import GA4GHRegistry 
 
 class DiscoverySearchClient:
 

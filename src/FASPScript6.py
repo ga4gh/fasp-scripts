@@ -1,51 +1,49 @@
-import sys, os
+#  IMPORTS
+import sys
 import datetime
 
 # a utility 
-from FASPRunner import FASPRunner
+from runner import FASPRunner
 
 # The implementations we're using
-from sdlDRSClient import sdlDRSClient
-from BigQuerySearchClient import BigQuerySearchClient
-from DNAStackWESClient import DNAStackWESClient
+from loc import sdlDRSClient
+from search import DiscoverySearchClient
+from workflow import DNAStackWESClient
 
 
 def main(argv):
 
-	faspRunner = FASPRunner("./pipelineLog.txt", pauseSecs=0)
-	creditor = faspRunner.creditor
-	settings = faspRunner.settings
-	
 	# Step 1 - Discovery
 	# query for relevant DRS objects
-	searchClient = BigQuerySearchClient()
-	query = """SELECT sra.biosample, sra.acc||'.cram'
-		FROM `isbcgc-216220.GECCO_CRC_Susceptibility.Subject_Phenotypes` sp
-		join `isbcgc-216220.GECCO_CRC_Susceptibility.Sample_MULTI` sm on
-		sm.dbgap_subject_id = sp.dbgap_subject_id
-		join `nih-sra-datastore.sra.metadata` sra on sm.BioSample_Accession = sra.biosample
-		where AGE between 45 and 55 and sex = 'Female' limit 3"""
+	searchClient = DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com/')
+	query = "select submitter_id, read_drs_id drsid from thousand_genomes.onek_genomes.ssd_drs where population = 'ACB' limit 1"
 	query_job = searchClient.runQuery(query)
-	
+
 	# Step 2 - DRS - set up a DRS Client
 	# CRDC
-	drsClient = sdlDRSClient('~/.keys/prj_14565.ngc', True)
+	drsClient = sdlDRSClient('~/.keys/prj_11218_D17199.ngc')
 	
 	# Step 3 - set up a class that run a compute for us
 	wesClient = DNAStackWESClient('~/.keys/DNAStackWESkey.json')
 	
+	# A log is helpful to keep track of the computes we've submitted
+	faspRunner = FASPRunner("./pipelineLog.txt")
+	
 	# repeat steps 2 and 3 for each row of the query
 	for row in query_job:
 
-		print("sample={}, drsID={}".format(row[0], row[1]))
+		print("subject={}, drsID={}".format(row[0], row[1]))
 		
 		# Step 2 - Use DRS to get the URL
-		objInfo = drsClient.getObject(row[1])
+		#objInfo = drsClient.getObject(row[1])
+		# for testing
+		acc = 'SRR5368359.sra'
+		objInfo = drsClient.getObject(acc)
 		fileSize = objInfo['size']
 		print(fileSize)
 		# we've predetermined we want to use the gs copy in this case
 		#url = drsClient.getAccessURL(row[1], 'gs')
-		res = drsClient.getAccessURL(row[1],'gs.us')
+		res = drsClient.getAccessURL(acc,'gs.us')
 		url = res['url']
 		print(url)
 		# Step 3 - Run a pipeline on the file at the drs url
@@ -60,7 +58,6 @@ def main(argv):
 		faspRunner.logRun(time, via, note,  pipeline_id, outfile, str(fileSize),
 			searchClient, drsClient, wesClient)
 
-
+	    
 if __name__ == "__main__":
-    main(sys.argv[1:])
-    
+	main(sys.argv[1:])

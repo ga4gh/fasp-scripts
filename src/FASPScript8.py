@@ -1,15 +1,14 @@
 #  IMPORTS
-import sys, os
+import sys
 import datetime
 
 # a utility 
-from FASPRunner import FASPRunner
+from runner import FASPRunner
 
 # The implementations we're using
-from Gen3DRSClient import crdcDRSClient
-from samtoolsSBClient import samtoolsSBClient
-from GCPLSsamtools import GCPLSsamtools
-from BigQuerySearchClient import BigQuerySearchClient
+from loc import crdcDRSClient
+from workflow import samtoolsSBClient, GCPLSsamtools
+from search import BigQuerySearchClient
 
 
 
@@ -74,23 +73,6 @@ def main(argv):
 
 
 	creditor.creditFromList('FASPScript8_sdrf', closeImage=False)
-    
+
 if __name__ == "__main__":
-    main(sys.argv[1:])
-    
-
-
-	
-	
-
-	
-	
-
-
-
-
-
-
-
-
-
+	main(sys.argv[1:])
