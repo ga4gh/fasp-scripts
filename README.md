@@ -9,7 +9,7 @@
 
 Script summary
 
-![scriptGrid](credits/images/scriptgrid.png)
+![scriptGrid](fasp/runner/credits/images/scriptgrid.png)
 
 ### **Prerequisites to run**
 
