@@ -20,8 +20,10 @@ Script summary
   - CRDCAPIKey.json - api_key file [obtained from Cancer Research Data Commons](https://nci-crdc.datacommons.io/identity)
   - anvil_credentials.json - api_key file [obtained from Anvil](https://gen3.theanvil.io)
   - sevenbridges_keys.json - keys for cgc and or cavatica
-- Google Life Sciences API enabled for your GCP account
-- BigQuery python libraries - for scripts that use BigQuery
+- The following modules are used by different scripts. All scripts are unlikely to be relevant to all users these modules are not installed with the fasp package. Please install those needed for the scripts you will run.
+  - Google Life Sciences API enabled for your GCP account
+  - BigQuery python libraries - for scripts that use BigQuery
+  - [pyega3](https://pypi.org/project/pyega3/) - EGA client libraries for download. See also [EGA documentation for client API](https://ega-archive.org/download/downloader-quickguide-APIv3). 
 
 ------
 
@@ -76,7 +78,7 @@ Script: [FASPScript2.py](https://github.com/ianfore/FASPclient/blob/master/FASPS
 
 #### Reproducibility across stacks 
 
-Script: [FASPScript8.py](https://github.com/ianfore/FASPclient/blob/master/FASPScript8.py)
+Script: [FASPScript8.py](https://github.com/ianfore/fasp-scripts/blob/master/fasp/scripts/FASPScript8.py)
 
 
 - Queries TCGA data via BigQuery to obtain DRS ids
@@ -85,7 +87,7 @@ Script: [FASPScript8.py](https://github.com/ianfore/FASPclient/blob/master/FASPS
 
 #### Compute on SRA (NCBI Sequence Read Archive) urls 
 
-Script: [FASPScript6.py](https://github.com/ianfore/FASPclient/blob/master/FASPScript6.py)
+Script: [FASPScript6.py](https://github.com/ianfore/fasp-scripts/blob/master/fasp/scripts/FASPScript6.py)
 
 
 - This script demonstrates that the DNAStack WES Server can perform a compute on the urls returned by the SRA Data Locator. The SDL is a place holder for the NCBI DRS service.
@@ -97,7 +99,7 @@ Script: [FASPScript6.py](https://github.com/ianfore/FASPclient/blob/master/FASPS
 
 ####  JMJD1C variants - 
 
-Script: [FASPScript7.py](https://github.com/ianfore/FASPclient/blob/master/FASPScript7.py)
+Script: [FASPScript7.py](https://github.com/ianfore/fasp-scripts/blob/master/fasp/scripts/FASPScript7.py)
 
 
 - Uses the ISB-CGC BigQuery tables to query for subjects from TCGA with variants in the JMJD1C gene.  This is the gene in the example shared by Anne Deslattes Mays. This illustrates the kind of query that could be used for the workflows Anne wants to perform.
@@ -115,7 +117,7 @@ Script: [FASPScript7.py](https://github.com/ianfore/FASPclient/blob/master/FASPS
 
 ####  Simulate identifiers.org/n2t.net 
 
-Script: [DRSMetaResolver.py](https://github.com/ianfore/FASPclient/blob/master/DRSMetaResolver.py)
+Script: [DRSMetaResolver.py](https://github.com/ianfore/fasp-scripts/blob/master/fasp/loc/DRSMetaResolver.py)
 
 
 - Simulates how compact identifier prefixing can be used to redirect DRS GetObject calls to the relevant DRS Server.
