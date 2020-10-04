@@ -1,2 +1,0 @@
-from search.discovery_search_client import DiscoverySearchClient
-from search.BigQuerySearchClient import BigQuerySearchClient
