@@ -8,9 +8,11 @@
         for questions contact: Ian Fore
 """
 
-import time
+import time, sys, os
 import json
 import sevenbridges as sbg
+
+from loc import sbcgcDRSClient
 
 
 class samtoolsSBClient:

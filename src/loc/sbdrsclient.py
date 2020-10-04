@@ -1,3 +1,7 @@
+'''
+'A DRS client for Seven Bridges DRS services. Handles SB specific authentication.
+'''
+
 import json
 import os.path
 import requests
@@ -6,7 +10,7 @@ from loc import DRSClient
 
 
 class SBDRSClient(DRSClient):
-    
+
     # Initialize a DRS Client for the service at the specified url base
     # and with the REST resource to provide an access key 
 	def __init__(self, api_url_base, api_key_path, instance, access_id):
@@ -33,14 +37,15 @@ class SBDRSClient(DRSClient):
 
 
 class sbcgcDRSClient(SBDRSClient):
+    '''client for Seven Bridges Cancer Genomics Cloud DRS server'''
     
     # Mostly done by the SBDRSClient, this just deals with url and end point specifics
     def __init__(self, api_key_path, access_id):
     	super().__init__('https://cgc-ga4gh-api.sbgenomics.com', api_key_path, 'cgc', access_id)
 
 class cavaticaDRSClient(SBDRSClient):
-    
-    # Mostly done by the SBDRSClient, this just deals with url and end point specifics
+    '''client for Cavatica DRS Server'''    
+    # init mostly done by the SBDRSClient, this just deals with url and end point specifics
     def __init__(self, api_key_path, access_id):
     	super().__init__('https://cavatica-ga4gh-api.sbgenomics.com', api_key_path, 'cavatica', access_id)
 

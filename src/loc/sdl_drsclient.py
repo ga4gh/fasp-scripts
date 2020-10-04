@@ -1,5 +1,7 @@
-# provide DRS like interface to SRA Data Locator (SDL) v2
-# SDL documented here https://www.ncbi.nlm.nih.gov/Traces/sdl/2/
+'''
+provide DRS like interface to SRA Data Locator (SDL) v2
+SDL documented here https://www.ncbi.nlm.nih.gov/Traces/sdl/2/
+'''
 
 import json
 import requests

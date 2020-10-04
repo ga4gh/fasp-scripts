@@ -1,8 +1,3 @@
-'''
-Created on Oct 3, 2020
-
-@author: forei
-'''
 import requests
 import json
 import os.path
@@ -11,6 +6,7 @@ from loc import DRSClient
 
 
 class Gen3DRSClient(DRSClient):
+    '''Handles Gen3 specific authentication using Fence'''
     
     # Initialize a DRS Client for the service at the specified url base
     # and with the REST resource to provide an access key 

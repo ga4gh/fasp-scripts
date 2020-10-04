@@ -2,10 +2,10 @@ import requests
 import json
 
 class DRSClient:
-    
-	# Initialize a DRS Client for the service at the specified url base
-	# and with the REST resource to provide an access key 
+	'''Basic DRS functions, no bundle handling'''    
+
 	def __init__(self, api_url_base, access_id=None, debug=False):
+		'''Initialize a DRS Client for the service at the specified url base'''
 		self.api_url_base = api_url_base
 		self.access_id = access_id
 		self.id = None

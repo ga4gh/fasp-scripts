@@ -1,5 +1,7 @@
-"""
-BEFORE RUNNING:
+'''
+Wrapper to prepare a job to run samtools as a GCP Life Sciences pipeline.
+'''
+'''BEFORE RUNNING:
 ---------------
 1. If not already done, enable the Cloud Life Sciences API
    and check the quota for your project at
@@ -12,7 +14,8 @@ BEFORE RUNNING:
    https://developers.google.com/identity/protocols/application-default-credentials
 3. Install the Python client library for Google APIs by running
    `pip install --upgrade google-api-python-client`
-"""
+'''
+
 from pprint import pprint
 import tempfile
 import subprocess

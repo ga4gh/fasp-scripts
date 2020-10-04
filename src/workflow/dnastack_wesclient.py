@@ -1,3 +1,7 @@
+'''
+Client for DNAStack WES Service
+'''
+
 import requests
 import os
 import json
