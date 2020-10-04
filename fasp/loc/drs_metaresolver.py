@@ -41,7 +41,7 @@ class DRSMetaResolver(DRSClient):
 			"insdc": sdlDRSClient('~/.keys/prj_11218_D17199.ngc'),
 			"sbcgc": sbcgcDRSClient('~/.keys/sevenbridges_keys.json','s3'),
 			"sbcav": cavaticaDRSClient('~/.keys/sevenbridges_keys.json','s3'),
-			"srapub": DRSClient('https://locate.ncbi.nlm.nih.gov')
+			"srapub": DRSClient('https://locate.ncbi.nlm.nih.gov', debug=False)
 		}
 		self.registeredClients = []
 		self.hostNameIndex = {}
