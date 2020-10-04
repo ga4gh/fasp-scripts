@@ -1,0 +1,8 @@
+{
+	"showCredits" :  false,
+	"test" : false,
+	"SevenBridgesInstance" : "cgc",
+	"SevenBridgesProject" : "id/project",
+	"GCPProject" : "project_id",
+	"GCPOutputBucket" : "gs://bucket_id/folder/"
+}
