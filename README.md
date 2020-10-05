@@ -31,14 +31,14 @@ Script summary
 
 This script queries Thousand Genomes data on subjects and specimens which was exported from BioDataCatalyst and loaded into BigQuery.
 
-- [FASPScript4](https://github.com/ianfore/FASPclient/blob/master/FASPScript4.py) uses the following GA4GH APIs to perform each step
+- [FASPScript4](https://github.com/ga4gh/fasp-scripts/blob/master/fasp/scripts/FASPScript4.py) uses the following GA4GH APIs to perform each step
    - Discovery Search Server (DNA Stack) - Presto on BigQuery
    - DRS server (BioDataCatalyst)
    - WES Server (DNA Stack)
-
+fasp-scripts/blob/master/fasp/scripts
 The other two scripts were proof of concept using direct APIs from different stacks
- - [FASPScript1](https://github.com/ianfore/FASPclient/blob/master/FASPScript1.py) uses BigQuery for the query and directly submits a GCP Life Sciences pipeline for the compute. This compute uses samtools stats.
- - [FASPScript3](https://github.com/ianfore/FASPclient/blob/master/FASPScript3.py) is the same as but substitutes in public DNAStack Discovery Search server for search
+ - [FASPScript1](https://github.com/ga4gh/fasp-scripts/blob/master/fasp/scripts/FASPScript1.py) uses BigQuery for the query and directly submits a GCP Life Sciences pipeline for the compute. This compute uses samtools stats.
+ - [FASPScript3](https://github.com/ianfore/fasp-scripts/blob/master/fasp/scripts//FASPScript3.py) is the same as but substitutes in public DNAStack Discovery Search server for search
 
 - Possible to do's
 
@@ -46,7 +46,7 @@ The other two scripts were proof of concept using direct APIs from different sta
 
 #### GWAS workflow 
 
-Script: [FASPScriptGWAS.py](https://github.com/ianfore/FASPclient/blob/master/FASPScriptGWAS.py)
+Script: [FASPScriptGWAS.py](https://github.com/ga4gh/fasp-scripts/blob/master/fasp/scripts/FASPScriptGWAS.py)
 
 
 - Queries Discovery Search for Thousand Genomes non-annotated recalibrated vcf file for Chromosome 21, obtaining prefixed DRS ids for the file. 
@@ -55,7 +55,7 @@ Script: [FASPScriptGWAS.py](https://github.com/ianfore/FASPclient/blob/master/FA
 
 #### Demonstration of Search and compute from multiple sources 
 
-Script: [FASPScript2.py](https://github.com/ianfore/FASPclient/blob/master/FASPScript2.py)
+Script: [FASPScript2.py](https://github.com/ga4gh/fasp-scripts/blob/master/fasp/scripts//FASPScript2.py)
 
 
 - Query COPDGene data in BigQuery, exported from BioDataCatalyst via PFB.
@@ -78,7 +78,7 @@ Script: [FASPScript2.py](https://github.com/ianfore/FASPclient/blob/master/FASPS
 
 #### Reproducibility across stacks 
 
-Script: [FASPScript8.py](https://github.com/ianfore/fasp-scripts/blob/master/fasp/scripts/FASPScript8.py)
+Script: [FASPScript8.py](https://github.com/ga4gh/fasp-scripts/blob/master/fasp/scripts/FASPScript8.py)
 
 
 - Queries TCGA data via BigQuery to obtain DRS ids
@@ -87,7 +87,7 @@ Script: [FASPScript8.py](https://github.com/ianfore/fasp-scripts/blob/master/fas
 
 #### Compute on SRA (NCBI Sequence Read Archive) urls 
 
-Script: [FASPScript6.py](https://github.com/ianfore/fasp-scripts/blob/master/fasp/scripts/FASPScript6.py)
+Script: [FASPScript6.py](https://github.com/ga4gh/fasp-scripts/blob/master/fasp/scripts/FASPScript6.py)
 
 
 - This script demonstrates that the DNAStack WES Server can perform a compute on the urls returned by the SRA Data Locator. The SDL is a place holder for the NCBI DRS service.
@@ -99,7 +99,7 @@ Script: [FASPScript6.py](https://github.com/ianfore/fasp-scripts/blob/master/fas
 
 ####  JMJD1C variants - 
 
-Script: [FASPScript7.py](https://github.com/ianfore/fasp-scripts/blob/master/fasp/scripts/FASPScript7.py)
+Script: [FASPScript7.py](https://github.com/ga4gh/fasp-scripts/blob/master/fasp/scripts/FASPScript7.py)
 
 
 - Uses the ISB-CGC BigQuery tables to query for subjects from TCGA with variants in the JMJD1C gene.  This is the gene in the example shared by Anne Deslattes Mays. This illustrates the kind of query that could be used for the workflows Anne wants to perform.
@@ -117,7 +117,7 @@ Script: [FASPScript7.py](https://github.com/ianfore/fasp-scripts/blob/master/fas
 
 ####  Simulate identifiers.org/n2t.net 
 
-Script: [DRSMetaResolver.py](https://github.com/ianfore/fasp-scripts/blob/master/fasp/loc/DRSMetaResolver.py)
+Script: [DRSMetaResolver.py](https://github.com/ga4gh/fasp-scripts/blob/master/fasp/loc/DRSMetaResolver.py)
 
 
 - Simulates how compact identifier prefixing can be used to redirect DRS GetObject calls to the relevant DRS Server.
