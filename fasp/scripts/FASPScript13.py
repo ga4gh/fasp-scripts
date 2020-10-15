@@ -27,15 +27,14 @@ def main(argv):
 		and att.k = 'population_sam' and att.v = 'JPT' 
 		LIMIT 3"""
 
-	# BioDataCatalyst
 	#drsClient = DRSMetaResolver()
-	drsClient = DRSClient('https://locate.ncbi.nlm.nih.gov',access_id='2' ,debug=True, public=True)
+	drsClient = DRSClient('https://locate.ncbi.nlm.nih.gov',access_id='2', public=True)
 	location = 'projects/{}/locations/{}'.format(settings['GCPProject'], settings['GCPPipelineRegion'])
 	mysam = GCPLSsamtools(location, settings['GCPOutputBucket'])
 
 	faspRunner.configure(searchClient, drsClient, mysam)
 		
 	faspRunner.runQuery(query, 'One k query SRA DRS')
-	    
+	
 if __name__ == "__main__":
-    main(sys.argv[1:])
+	main(sys.argv[1:])
