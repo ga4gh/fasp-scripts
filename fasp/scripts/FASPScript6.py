@@ -27,7 +27,7 @@ def main(argv):
 	wesClient = DNAStackWESClient('~/.keys/DNAStackWESkey.json')
 	
 	# A log is helpful to keep track of the computes we've submitted
-	faspRunner = FASPRunner("./pipelineLog.txt")
+	faspRunner = FASPRunner()
 	
 	# repeat steps 2 and 3 for each row of the query
 	for row in query_job:

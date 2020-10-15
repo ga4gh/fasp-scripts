@@ -15,7 +15,7 @@ from fasp.search import BigQuerySearchClient
 def main(argv):
 
 	
-	faspRunner = FASPRunner("./pipelineLog.txt", pauseSecs=0)
+	faspRunner = FASPRunner(pauseSecs=0)
 	creditor = faspRunner.creditor
 	settings = faspRunner.settings
 	
@@ -32,8 +32,10 @@ def main(argv):
 	drsClient = crdcDRSClient('~/.keys/CRDCAPIKey.json', 's3')
 
 	# Step 3 - set up a class that runs samtools for us
+	location = 'projects/{}/locations/{}'.format(settings['GCPProject'], settings['GCPPipelineRegion'])
+	sam2 = GCPLSsamtools(location, settings['GCPOutputBucket'])
 	mysams = {'s3':samtoolsSBClient(sbInstance, sbProject),
-				'gs': GCPLSsamtools(settings['GCPOutputBucket'])}
+				'gs': sam2}
 	
 	query = """
      	SELECT 'case_'||associated_entities__case_gdc_id , file_id

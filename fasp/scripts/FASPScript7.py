@@ -10,11 +10,13 @@ from fasp.workflow import GCPLSsamtools
 from fasp.search import BigQuerySearchClient
 
 
-faspRunner = FASPRunner("./pipelineLog.txt", pauseSecs=0)
+faspRunner = FASPRunner(pauseSecs=0)
+settings = faspRunner.settings
 
 searchClient = BigQuerySearchClient()
 drsClient = crdcDRSClient('~/.keys/CRDCAPIKey.json','gs')
-mysam = GCPLSsamtools(faspRunner.settings['GCPOutputBucket'])
+location = 'projects/{}/locations/{}'.format(settings['GCPProject'], settings['GCPPipelineRegion'])
+mysam = GCPLSsamtools(location, settings['GCPOutputBucket'])	
 
 faspRunner.configure(searchClient, drsClient, mysam)
 

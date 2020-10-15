@@ -10,9 +10,9 @@ from fasp.runner.DemoCredits import DemoCredits, Creditor
 
 class FASPRunner:
 
-	def __init__(self, pipelineLogFile, showCredits=None, pauseSecs=1, test=None):
+	def __init__(self, pipelineLogFile=None, showCredits=None, pauseSecs=1, test=None):
 		with open(os.path.expanduser(os.environ['FASP_SETTINGS'])) as json_file:
-   			 self.settings = json.load(json_file)		
+			self.settings = json.load(json_file)		
 		self.searchClient = None
 		self.drsClient = None
 		self.workClient = None
@@ -21,16 +21,18 @@ class FASPRunner:
 		frm = inspect.stack()[1]
 		program = inspect.getsourcefile(frm[0]) 
 		print("Running {}".format(program))
-		self.pipelineLogFile = pipelineLogFile
-		self.pipelineLogger = FASPLogger(pipelineLogFile, program)
+		if pipelineLogFile == None:
+			self.pipelineLogFile = self.settings['PipelineLog']
+		else:
+			self.pipelineLogFile = pipelineLogFile
+		self.pipelineLogger = FASPLogger(self.pipelineLogFile, program)
 		self.creditor = Creditor.creditorFactory(self.settings, pauseSecs=pauseSecs)
 		
 		if test != None:
 			self.live = not test
 		else:
 			self.live = not self.settings['test']
-
-    					
+								
 	def configure(self, searchClient, drsClient, workClient):
 		self.searchClient = searchClient
 		self.drsClient = drsClient

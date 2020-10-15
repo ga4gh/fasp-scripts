@@ -16,7 +16,7 @@ from fasp.search import BigQuerySearchClient, DiscoverySearchClient
 def main(argv):
 
 	
-	faspRunner = FASPRunner("./pipelineLog.txt", pauseSecs=0)
+	faspRunner = FASPRunner(pauseSecs=0)
 	creditor = faspRunner.creditor
 	settings = faspRunner.settings
 	
@@ -62,9 +62,11 @@ def main(argv):
 		
 	# Step 3 - set up a class that runs samtools for us
 	# providing the location for the results
+	location = 'projects/{}/locations/{}'.format(settings['GCPProject'], settings['GCPPipelineRegion'])
+	sam2 = GCPLSsamtools(location, settings['GCPOutputBucket'])
 	samClients = {
 		"sb": samtoolsSBClient(sbInstance, sbProject),
-		"bdc": GCPLSsamtools(settings['GCPOutputBucket'])
+		"bdc": sam2
 	}
 
 	

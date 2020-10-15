@@ -4,7 +4,7 @@ import json
 class DRSClient:
 	'''Basic DRS functions, no bundle handling'''    
 
-	def __init__(self, api_url_base, access_id=None, debug=False):
+	def __init__(self, api_url_base, access_id=None, debug=False, public=False):
 		'''Initialize a DRS Client for the service at the specified url base'''
 		self.api_url_base = api_url_base
 		self.access_id = access_id
@@ -12,6 +12,7 @@ class DRSClient:
 		self.name = None
 		self.version = None
 		self.debug = debug
+		self.public = public
 
 	@classmethod
 	def fromRegistryEntry(cls, registryEntry):
@@ -44,8 +45,9 @@ class DRSClient:
 	def getAccessURL(self, object_id, access_id=None):
 		if access_id == None:
 			access_id = self.access_id
-		headers = {'Content-Type': 'application/json',
-		'Authorization': 'Bearer {0}'.format(self.access_token)}
+		headers = {'Content-Type': 'application/json'}
+		if not self.public:
+			headers['Authorization'] = 'Bearer {0}'.format(self.access_token)
 		api_url = '{0}/ga4gh/drs/v1/objects/{1}/access/{2}'.format(self.api_url_base, object_id, access_id)
 		response = requests.get(api_url, headers=headers)
 		if response.status_code == 200:

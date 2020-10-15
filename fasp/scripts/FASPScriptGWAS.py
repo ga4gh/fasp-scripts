@@ -14,7 +14,7 @@ from fasp.workflow import DNAStackWESClient
 
 def main(argv):
 
-	faspRunner = FASPRunner("./pipelineLog.txt", pauseSecs=0)
+	faspRunner = FASPRunner(pauseSecs=0)
 	creditor = faspRunner.creditor
 	
 	# Step 1 - Discovery

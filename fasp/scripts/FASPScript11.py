@@ -12,7 +12,7 @@ from fasp.workflow import DNAStackWESClient
 
 def main(argv):
 
-	faspRunner = FASPRunner("./pipelineLog.txt", pauseSecs=0)
+	faspRunner = FASPRunner(pauseSecs=0)
 	
 	# Step 1 - Discovery
 	# query for relevant DRS objects

@@ -32,7 +32,7 @@ class EGAhtsget():
 
 def main(argv):
 
-    faspRunner = FASPRunner("./pipelineLog.txt", pauseSecs=0)
+    faspRunner = FASPRunner(pauseSecs=0)
     creditor = faspRunner.creditor
     settings = faspRunner.settings
 	
@@ -46,7 +46,9 @@ def main(argv):
     htsgetClient = EGAhtsget('~/.keys/ega.credentials')
     
     # Step 3 - set up a class that run a compute for us
-    wesClient = GCPLSsamtools(settings['GCPOutputBucket'])
+    location = 'projects/{}/locations/{}'.format(settings['GCPProject'], settings['GCPPipelineRegion'])
+    wesClient = GCPLSsamtools(location, settings['GCPOutputBucket'])
+
 
     
     # repeat steps 2 and 3 for each row of the query

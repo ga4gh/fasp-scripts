@@ -11,8 +11,8 @@ from fasp.search import DiscoverySearchClient
 def main(argv):
 
 
-	faspRunner = FASPRunner("./pipelineLog.txt", pauseSecs=0)
-
+	faspRunner = FASPRunner(pauseSecs=0)
+	settings =faspRunner.settings
 	# Step 1 - Discovery
 	# query for relevant DRS objects
 	searchClient = DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com/')
@@ -25,8 +25,8 @@ def main(argv):
 	
 	# Step 3 - set up a class that runs samtools for us
 	# providing the location where we the results to go
-	mysam = GCPLSsamtools(faspRunner.settings['GCPOutputBucket'])
-	
+	location = 'projects/{}/locations/{}'.format(settings['GCPProject'], settings['GCPPipelineRegion'])
+	mysam = GCPLSsamtools(location, settings['GCPOutputBucket'])	
 
 	faspRunner.configure(searchClient, drsClient, mysam)
 		
