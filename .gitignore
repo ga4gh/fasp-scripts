@@ -5,6 +5,7 @@ workaround.sh
 output/pipelineLog.txt
 .project
 .pydevproject
+scratch/**
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

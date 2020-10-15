@@ -11,7 +11,8 @@ from fasp.search import BigQuerySearchClient
 def main(argv):
 
 
-	faspRunner = FASPRunner("./pipelineLog.txt", pauseSecs=0)
+	faspRunner = FASPRunner(pauseSecs=0)
+	settings = faspRunner.settings
 	# Step 1 - Discovery
 	# query for relevant DRS objects
 	searchClient = BigQuerySearchClient()
@@ -24,13 +25,12 @@ def main(argv):
 		SELECT submitter_id, read_drs_id
 		FROM `isbcgc-216220.onek_genomes.ssd_drs`
 		where population = 'BEB'
-		LIMIT 3"""
+		LIMIT 1"""
 
 	# BioDataCatalyst
 	drsClient = bdcDRSClient('~/.keys/BDCcredentials.json', 'gs')
-		
-	mysam = GCPLSsamtools(faspRunner.settings['GCPOutputBucket'])
-	
+	location = 'projects/{}/locations/{}'.format(settings['GCPProject'], settings['GCPPipelineRegion'])
+	mysam = GCPLSsamtools(location, settings['GCPOutputBucket'])
 
 	faspRunner.configure(searchClient, drsClient, mysam)
 		
@@ -38,20 +38,3 @@ def main(argv):
 	    
 if __name__ == "__main__":
     main(sys.argv[1:])
-    
-
-
-	
-	
-
-	
-	
-
-
-
-
-
-
-
-
-

@@ -16,41 +16,30 @@ Wrapper to prepare a job to run samtools as a GCP Life Sciences pipeline.
    `pip install --upgrade google-api-python-client`
 '''
 
-from pprint import pprint
 import tempfile
 import subprocess
+import re
 
 from googleapiclient import discovery
 from oauth2client.client import GoogleCredentials
 
 import json
 
-credentials = GoogleCredentials.get_application_default()
-
-service = discovery.build('lifesciences', 'v2beta', credentials=credentials)
-#service = discovery.build('lifesciences', 'v2beta')
-
-# The project and location that this request should be executed against.
-parent = 'projects/isbcgc-216220/locations/us-central1'  # TODO: Update placeholder value.
-
-
 class GCPLSsamtools:
 
-	def __init__(self, outdir ):
+	def __init__(self, projectLocation, outdir ):
+		self.projectLocation = projectLocation
 		self.outdir = outdir
-
+		credentials = GoogleCredentials.get_application_default()
+		self.service = discovery.build('lifesciences', 'v2beta', credentials=credentials)
 
 	def getTaskStatus(self, run_id):
 		# The name of the operation resource.
-		name = 'projects/isbcgc-216220/locations/us-central1/operations/'+ str(run_id)
+		name = self.projectLocation + '/operations/' + str(run_id)
 
-		request = service.projects().locations().operations().get(name=name)
+		request = self.service.projects().locations().operations().get(name=name)
 		response = request.execute()
 		
-# 		result = service.projects().locations().operations().get(
-# 		    project='isbcgc-216220',
-# 		    zone='us-central1',
-# 		    operation=run_id).execute()
 		if 'done' not in response.keys():
 			return 'running'
 		if response['done'] == True:
@@ -63,9 +52,9 @@ class GCPLSsamtools:
 
 	def getTaskDetails(self, run_id):
 		# The name of the operation resource.
-		name = 'projects/isbcgc-216220/locations/us-central1/operations/'+ str(run_id)
+		name = self.projectLocation + '/operations/' + str(run_id)
 
-		request = service.projects().locations().operations().get(name=name)
+		request = self.service.projects().locations().operations().get(name=name)
 		response = request.execute()
 
 		print(json.dumps(response, indent = 2, ensure_ascii=True))
@@ -130,7 +119,7 @@ class GCPLSsamtools:
 		  }
 		}
 		print (run_pipeline_request_body)
-		request = service.projects().locations().pipelines().run(parent=parent, body=run_pipeline_request_body)
+		request = self.service.projects().locations().pipelines().run(parent=self.projectLocation, body=run_pipeline_request_body)
 		response = request.execute()
 
 		return(response)
@@ -154,14 +143,12 @@ class GCPLSsamtools:
 			shellScript.write(cline)
 			shellScript.write("\n")
 			shellScript.flush()
-			res = subprocess.run(['sh', shellScript.name])
+			res = subprocess.run(['sh', shellScript.name], capture_output=True, text=True)
+			parts = re.split('/|].', res.stderr)
+			run_id = parts[-2]
 
-		return 'paste here'
+		return run_id
 
 if __name__ == "__main__":
-	print ('______________________________________')
-	print ('BDC')
-	client = GCPLSsamtools('')
+	client = GCPLSsamtools('projects/isbcgc-216220/locations/us-central1','')
 	client.getTaskDetails('14348543543279356571')
- 
-		

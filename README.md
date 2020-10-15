@@ -38,7 +38,7 @@ This script queries Thousand Genomes data on subjects and specimens which was ex
 fasp-scripts/blob/master/fasp/scripts
 The other two scripts were proof of concept using direct APIs from different stacks
  - [FASPScript1](https://github.com/ga4gh/fasp-scripts/blob/master/fasp/scripts/FASPScript1.py) uses BigQuery for the query and directly submits a GCP Life Sciences pipeline for the compute. This compute uses samtools stats.
- - [FASPScript3](https://github.com/ianfore/fasp-scripts/blob/master/fasp/scripts//FASPScript3.py) is the same as but substitutes in public DNAStack Discovery Search server for search
+ - [FASPScript3](https://github.com/ga4gh/fasp-scripts/blob/master/fasp/scripts//FASPScript3.py) is the same as but substitutes in public DNAStack Discovery Search server for search
 
 - Possible to do's
 
