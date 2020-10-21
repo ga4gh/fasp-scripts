@@ -33,22 +33,20 @@ class sdlDRSClient(DRSClient):
 		
 	def sdl_retrieve(self, accession, location, fileType=None):
 	
-		#=======================================================================
-		# jwt_req_headers = {'Metadata-Flavor': 'Google'} 
-		# jwt_req_url ='http://metadata/computeMetadata/v1/instance/service-accounts/default/identity?audience=https://www.ncbi.nlm.nih.gov&format=full'
-		# jwt_response = requests.post(jwt_req_url, headers=jwt_req_headers)
-		# jwt = jwt_response.text
-		# if self.debug:
-		# 	print('--- jwt token response ---')
-		# 	print(jwt)
-		# 	print('--------------------------')
-		#=======================================================================
+		jwt_req_headers = {'Metadata-Flavor': 'Google'} 
+		jwt_req_url ='http://metadata/computeMetadata/v1/instance/service-accounts/default/identity?audience=https://www.ncbi.nlm.nih.gov&format=full'
+		jwt_response = requests.post(jwt_req_url, headers=jwt_req_headers)
+		jwt = jwt_response.text
+		if self.debug:
+			print('--- jwt token response ---')
+			print(jwt)
+			print('--------------------------')
 	
 
-		api_url = '{0}retrieve?acc={1}&location={2}'.format(self.api_url_base, accession, location)
+		#api_url = '{0}retrieve?acc={1}&location={2}'.format(self.api_url_base, accession, location)
 		#api_url = '{0}retrieve?acc={1}&filetype={2}&location={3}'.format(self.api_url_base, accession, fileType, location)
 		#api_url = '{0}retrieve?acc={1}&location-type=forced&location={2}'.format(self.api_url_base, accession, location)
-		#api_url = '{0}retrieve?acc={1}&filetype={2}&location-type=gcp_jwt&location={3}'.format(self.api_url_base, accession, fileType, jwt)
+		api_url = '{0}retrieve?acc={1}&filetype={2}&location-type=gcp_jwt&location={3}'.format(self.api_url_base, accession, fileType, jwt)
 		
 		if self.debug:
 			print('url for retrieve: {}'.format(api_url))
