@@ -16,7 +16,7 @@ class localSearchClient:
 	
 	def __init__(self):
 		# edit the following for yuor local copy of the manifest file
-		dataFile = '/users/forei/fasp/gtex/SRR.breast.cram.txt'
+		dataFile = '../data/gtex/SRR.breast.cram.txt'
 		self.dataTable = pd.read_table(dataFile )
 			
 	def runQuery(self, query):
@@ -40,7 +40,7 @@ def main(argv):
 	searchClient = localSearchClient()
 	query_job = searchClient.runQuery('')
 
-	drsClient =  drsClient = sdlDRSClient(credentials_file)
+	drsClient =  drsClient = sdlDRSClient(credentials_file, debug=True)
 
 	location = 'projects/{}/locations/{}'.format(settings['GCPProject'], settings['GCPPipelineRegion'])
 	mysam = GCPLSsamtools(location, settings['GCPOutputBucket'], debug=True)
