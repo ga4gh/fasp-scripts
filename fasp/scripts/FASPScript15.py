@@ -27,6 +27,8 @@ class localSearchClient:
 
 def main(argv):
 
+	# edit the following line for where you put your credentials file from anvil
+	credentials_file = '~/.keys/anvil_credentials.json'
 
 	faspRunner = FASPRunner(pauseSecs=0)
 	settings = faspRunner.settings
@@ -35,7 +37,8 @@ def main(argv):
 	searchClient = localSearchClient()
 
 	#drsClient = DRSMetaResolver()
-	drsClient = Gen3DRSClient('https://gen3.theanvil.io','/user/credentials/api/access_token', '~/.keys/anvil_credentials.json', 'gs')
+
+	drsClient = Gen3DRSClient('https://gen3.theanvil.io','/user/credentials/api/access_token', credentials_file, 'gs')
 	location = 'projects/{}/locations/{}'.format(settings['GCPProject'], settings['GCPPipelineRegion'])
 	mysam = GCPLSsamtools(location, settings['GCPOutputBucket'], debug=True)
 
