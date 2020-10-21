@@ -34,7 +34,8 @@ def main(argv):
 				print('Updated run:{} status:{}'.format(run_id, status))
 				logTable.at[i, 'status'] = status
 			
-	logTable.to_csv('pipeline_w_status.txt', sep='\t', index=False)
+	#logTable.to_csv('pipeline_w_status.txt', sep='\t', index=False)
+	logTable.to_csv(faspRunner.pipelineLogFile, sep='\t', index=False)
     
 if __name__ == "__main__":
     main(sys.argv[1:])
