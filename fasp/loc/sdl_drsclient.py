@@ -30,23 +30,48 @@ class sdlDRSClient(DRSClient):
 			return json.loads(response.content.decode('utf-8'))
 		else:
 			return None
+
+#===============================================================================
+# To get a signed URL to download the cram/crai files you will need to do the following:
+# 1)	Call SDL retrieve with NGC
+# 2)	Parse  output to get redirector link
+# 3)	Call the redirector link
+# 4)	Grab the header output and parse output to get signed URL
+#  
+# Here are the examples for each step:
+# 1)	curl -s -X POST -F ngc="@prj_phs710EA_test.ngc" https://locate.ncbi.nlm.nih.gov/sdl/2/retrieve?acc=SRR2043623&location=%20gs.us&location-type=forced
+# 2)	The link comes in two types 
+# a.	A redirect link (SDLR) which needs a “ident” attribute attached to it along with the generated cloud identity token 
+# b.	a HTTP accessible path on our local servers then it can be used directly. 
+# 3)	You would make the next curl call to the SDLR link which returns only headers. Within the returned header is the signed URL to the file. 
+# 4)	Run curl/wget on the signed URL
+#===============================================================================
+ 
 		
 	def sdl_retrieve(self, accession, location, fileType=None):
 	
-		jwt_req_headers = {'Metadata-Flavor': 'Google'} 
-		jwt_req_url ='http://metadata/computeMetadata/v1/instance/service-accounts/default/identity?audience=https://www.ncbi.nlm.nih.gov&format=full'
-		jwt_response = requests.post(jwt_req_url, headers=jwt_req_headers)
-		jwt = jwt_response.text
-		if self.debug:
-			print('--- jwt token response ---')
-			print(jwt)
-			print('--------------------------')
 	
 
 		#api_url = '{0}retrieve?acc={1}&location={2}'.format(self.api_url_base, accession, location)
 		#api_url = '{0}retrieve?acc={1}&filetype={2}&location={3}'.format(self.api_url_base, accession, fileType, location)
 		#api_url = '{0}retrieve?acc={1}&location-type=forced&location={2}'.format(self.api_url_base, accession, location)
-		api_url = '{0}retrieve?acc={1}&filetype={2}&location-type=gcp_jwt&location={3}'.format(self.api_url_base, accession, fileType, jwt)
+		
+		#=======================================================================
+		# jwt_req_headers = {'Metadata-Flavor': 'Google'} 
+		# jwt_req_url ='http://metadata/computeMetadata/v1/instance/service-accounts/default/identity?audience=https://www.ncbi.nlm.nih.gov&format=full'
+		# jwt_response = requests.post(jwt_req_url, headers=jwt_req_headers)
+		# jwt = jwt_response.text
+		# if self.debug:
+		# 	print('--- jwt token response ---')
+		# 	print(jwt)
+		# 	print('--------------------------')
+		#=======================================================================
+		
+		#api_url = '{0}retrieve?acc={1}&filetype={2}&location-type=gcp_jwt&location={3}'.format(self.api_url_base, accession, fileType, jwt)
+
+		# 1)	curl -s -X POST -F ngc="@prj_phs710EA_test.ngc" https://locate.ncbi.nlm.nih.gov/sdl/2/retrieve?acc=SRR2043623&location=%20gs.us&location-type=forced		
+		loc = 'gs.us'
+		api_url = '{0}retrieve?acc={1}&filetype={2}&location={3}&location-type=forced'.format(self.api_url_base, accession, fileType, loc)
 		
 		if self.debug:
 			print('url for retrieve: {}'.format(api_url))
@@ -124,8 +149,8 @@ if __name__ == "__main__":
 	print (res)
 	print('--Get a URL--')
 	res = client2.getAccessURL('SRR5368359.sra','gs.us')
-	print (json.dumps(res, indent=2))
-	#print (res)
+	#print (json.dumps(res, indent=2))
+	print (res['url'])
 
 
 
