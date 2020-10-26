@@ -53,6 +53,13 @@ class bdcDRSClient(Gen3DRSClient):
         super().__init__('https://gen3.biodatacatalyst.nhlbi.nih.gov', '/user/credentials/cdis/access_token',
             api_key_path, access_id)
 
+class anvilDRSClient(Gen3DRSClient):
+	
+		def __init__(self, api_key_path, access_id=None):
+			super().__init__('https://gen3.theanvil.io','/user/credentials/api/access_token', api_key_path, access_id)
+    
+    # Mostly done by the Gen3DRSClient, this just deals with url and end point specifics
+
 
 if __name__ == "__main__":
     print ('______________________________________')

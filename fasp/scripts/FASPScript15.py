@@ -8,6 +8,7 @@ from fasp.runner import FASPRunner
 # The implementations we're using
 from fasp.loc import Gen3DRSClient
 from fasp.workflow import GCPLSsamtools
+from fasp.loc.gen3drsclient import anvilDRSClient
 
 
 class localSearchClient:
@@ -38,11 +39,11 @@ def main(argv):
 
 	#drsClient = DRSMetaResolver()
 
-	drsClient = Gen3DRSClient('https://gen3.theanvil.io','/user/credentials/api/access_token', credentials_file, 'gs')
+	drsClient = anvilDRSClient(credentials_file, 'gs')
 	location = 'projects/{}/locations/{}'.format(settings['GCPProject'], settings['GCPPipelineRegion'])
-	mysam = GCPLSsamtools(location, settings['GCPOutputBucket'], debug=True)
+	workflowClient = GCPLSsamtools(location, settings['GCPOutputBucket'], debug=True)
 
-	faspRunner.configure(searchClient, drsClient, mysam)
+	faspRunner.configure(searchClient, drsClient, workflowClient)
 		
 	faspRunner.runQuery('', 'Anvil GTEX Test')
 	
