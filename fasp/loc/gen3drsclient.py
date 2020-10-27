@@ -75,7 +75,7 @@ class anvilDRSClient(Gen3DRSClient):
 if __name__ == "__main__":
     print ('______________________________________')
     print ('BDC')
-    bdcClient = bdcDRSClient('~/.keys/BDCcredentials.json', 'gs')
+    bdcClient = bdcDRSClient('~/.keys/bdc_credentials.json', 'gs')
     id = 'dg.4503/dbd55e76-1100-40b3-b420-0eaeee478fbc'
     res = bdcClient.getObject(id)
     print('GetObject')
@@ -85,7 +85,7 @@ if __name__ == "__main__":
     print (url)
     print ('______________________________________')
     print ('CRDC')
-    crdcClient = crdcDRSClient('~/.keys/CRDCAPIKey.json', 's3')
+    crdcClient = crdcDRSClient('~/.keys/crdc_credentials.json', 's3')
     id = 'f360253c-d7d7-47cb-947a-b26e0b41b800'
     res = crdcClient.getObject(id)
     print('GetObject')

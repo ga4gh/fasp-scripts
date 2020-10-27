@@ -49,8 +49,8 @@ def main(argv):
 
 	# Step 2 - DRS - set up DRS Clients	
 	drsClients = {
-		"crdc": crdcDRSClient('~/.keys/CRDCAPIKey.json', ''),
-		"bdc": bdcDRSClient('~/.keys/BDCcredentials.json', '')
+		"crdc": crdcDRSClient('~/.keys/crdc_credentials.json', ''),
+		"bdc": bdcDRSClient('~/.keys/bdc_credentials.json', '')
 	}
 	print('setting credentials ')
 	creditor.creditFromList('dbGaPFence')

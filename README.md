@@ -13,11 +13,13 @@ Script summary
 
 ### **Prerequisites to run**
 
+- Settings file
+  - The examples directory contains a template settings file with a number of parameters for the FASP scripts. Place a copy of this file in your file system and set the environment variable FASP_SETTINGS to point to it. Edit the settings as appropriate.
 - Python 3
   - See the code for the modules required
 - A folder in your home directory called .keys containing keys for various services. Not all  keys required for all scripts.
-  - BDCcredentials.json - api_key file [obtained from BioDataCatalyst](https://gen3.biodatacatalyst.nhlbi.nih.gov/identity)
-  - CRDCAPIKey.json - api_key file [obtained from Cancer Research Data Commons](https://nci-crdc.datacommons.io/identity)
+  - bdc_credentials.json - api_key file [obtained from BioDataCatalyst](https://gen3.biodatacatalyst.nhlbi.nih.gov/identity)
+  - crdc_credentials.json - api_key file [obtained from Cancer Research Data Commons](https://nci-crdc.datacommons.io/identity)
   - anvil_credentials.json - api_key file [obtained from Anvil](https://gen3.theanvil.io)
   - sevenbridges_keys.json - keys for cgc and or cavatica
 - The following modules are used by different scripts. All scripts are unlikely to be relevant to all users these modules are not installed with the fasp package. Please install those needed for the scripts you will run.

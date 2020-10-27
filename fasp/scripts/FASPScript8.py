@@ -29,7 +29,7 @@ def main(argv):
 
 
 	# Step 2 - DRS - set up a DRS Client
-	drsClient = crdcDRSClient('~/.keys/CRDCAPIKey.json', 's3')
+	drsClient = crdcDRSClient('~/.keys/crdc_credentials.json', 's3')
 
 	# Step 3 - set up a class that runs samtools for us
 	location = 'projects/{}/locations/{}'.format(settings['GCPProject'], settings['GCPPipelineRegion'])

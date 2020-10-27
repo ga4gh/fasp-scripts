@@ -20,7 +20,7 @@ def main(argv):
 
 	# Step 2 - DRS - set up a DRS Client
 	# CRDC
-	drsClient = bdcDRSClient('~/.keys/BDCcredentials.json', 'gs')
+	drsClient = bdcDRSClient('~/.keys/bdc_credentials.json', 'gs')
 
 	
 	# Step 3 - set up a class that runs samtools for us
