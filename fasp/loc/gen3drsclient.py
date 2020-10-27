@@ -55,11 +55,22 @@ class bdcDRSClient(Gen3DRSClient):
 
 class anvilDRSClient(Gen3DRSClient):
 	
-		def __init__(self, api_key_path, access_id=None):
-			super().__init__('https://gen3.theanvil.io','/user/credentials/api/access_token', api_key_path, access_id)
-    
-    # Mostly done by the Gen3DRSClient, this just deals with url and end point specifics
+	
+	def __init__(self, api_key_path, userProject='', access_id=None):
+		super().__init__('https://gen3.theanvil.io','/user/credentials/api/access_token', api_key_path, access_id)
+		self.userProject = userProject
 
+	# Get a URL for fetching bytes. 
+	# Anvil requires you to provide the userAccount to which charges will be accrued
+	# That user account must grant serviceusage.services.use access to your anvil service account
+	# e.g. to user-123@anvilprod.iam.gserviceaccount.com
+	def getAccessURL(self, object_id, access_id=None):
+		result = super().getAccessURL(object_id, access_id)
+
+		if result != None:
+			return '{}&userProject={}'.format(result, self.userProject)
+		else:
+			return None
 
 if __name__ == "__main__":
     print ('______________________________________')

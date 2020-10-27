@@ -154,4 +154,4 @@ class GCPLSsamtools:
 
 if __name__ == "__main__":
 	client = GCPLSsamtools('projects/isbcgc-216220/locations/us-central1','')
-	client.getTaskDetails('14348543543279356571')
+	client.getTaskDetails('3564549389844003381')

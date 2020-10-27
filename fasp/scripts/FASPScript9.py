@@ -82,6 +82,7 @@ def main(argv):
 		searchClient = discoveryClients[prefix]
 		creditor.creditClass(drsClient)
 		url = drsClient.getAccessURL(drsid)
+		print(url)
 		#objInfo = drsClient.getObject(drsid)
 		#print (objInfo)
 		#fileSize = objInfo['size']
