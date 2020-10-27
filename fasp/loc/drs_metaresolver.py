@@ -35,8 +35,8 @@ class DRSMetaResolver(DRSClient):
 	def __init__(self, debug=False):
 		self.drsClients = { 
 			"insdc": sdlDRSClient('~/.keys/prj_11218_D17199.ngc'),
-			"crdc": crdcDRSClient('~/.keys/CRDCAPIKey.json','s3'),
-			"bdc": bdcDRSClient('~/.keys/BDCcredentials.json','gs'),
+			"crdc": crdcDRSClient('~/.keys/crdc_credentials.json','s3'),
+			"bdc": bdcDRSClient('~/.keys/bdc_credentials.json','gs'),
 			"anv": Gen3DRSClient('https://gen3.theanvil.io','/user/credentials/api/access_token', '~/.keys/anvil_credentials.json', 'gs'),
 			"insdc": sdlDRSClient('~/.keys/prj_11218_D17199.ngc'),
 			"sbcgc": sbcgcDRSClient('~/.keys/sevenbridges_keys.json','s3'),
@@ -106,9 +106,9 @@ class DRSMetaResolver(DRSClient):
 	def DRSClientFromRegistryEntry(self, service, prefix):
 		
 			if prefix == "crdc": 
-				drsClient = crdcDRSClient('~/.keys/CRDCAPIKey.json','s3')
+				drsClient = crdcDRSClient('~/.keys/crdc_credentials.json','s3')
 			elif prefix == "bdc": 
-				drsClient = bdcDRSClient('~/.keys/BDCcredentials.json','gs')
+				drsClient = bdcDRSClient('~/.keys/bdc_credentials.json','gs')
 			elif prefix == "insdc": 
 				drsClient = sdlDRSClient('~/.keys/prj_11218_D17199.ngc')
 			elif prefix == "sbcgc": 

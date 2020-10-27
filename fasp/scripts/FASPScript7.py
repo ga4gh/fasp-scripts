@@ -14,7 +14,7 @@ faspRunner = FASPRunner(pauseSecs=0)
 settings = faspRunner.settings
 
 searchClient = BigQuerySearchClient()
-drsClient = crdcDRSClient('~/.keys/CRDCAPIKey.json','gs')
+drsClient = crdcDRSClient('~/.keys/crdc_credentials.json','gs')
 location = 'projects/{}/locations/{}'.format(settings['GCPProject'], settings['GCPPipelineRegion'])
 mysam = GCPLSsamtools(location, settings['GCPOutputBucket'])	
 
