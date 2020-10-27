@@ -53,11 +53,29 @@ class bdcDRSClient(Gen3DRSClient):
         super().__init__('https://gen3.biodatacatalyst.nhlbi.nih.gov', '/user/credentials/cdis/access_token',
             api_key_path, access_id)
 
+class anvilDRSClient(Gen3DRSClient):
+	
+	
+	def __init__(self, api_key_path, userProject='', access_id=None):
+		super().__init__('https://gen3.theanvil.io','/user/credentials/api/access_token', api_key_path, access_id)
+		self.userProject = userProject
+
+	# Get a URL for fetching bytes. 
+	# Anvil requires you to provide the userAccount to which charges will be accrued
+	# That user account must grant serviceusage.services.use access to your anvil service account
+	# e.g. to user-123@anvilprod.iam.gserviceaccount.com
+	def getAccessURL(self, object_id, access_id=None):
+		result = super().getAccessURL(object_id, access_id)
+
+		if result != None:
+			return '{}&userProject={}'.format(result, self.userProject)
+		else:
+			return None
 
 if __name__ == "__main__":
     print ('______________________________________')
     print ('BDC')
-    bdcClient = bdcDRSClient('~/.keys/BDCcredentials.json', 'gs')
+    bdcClient = bdcDRSClient('~/.keys/bdc_credentials.json', 'gs')
     id = 'dg.4503/dbd55e76-1100-40b3-b420-0eaeee478fbc'
     res = bdcClient.getObject(id)
     print('GetObject')
@@ -67,7 +85,7 @@ if __name__ == "__main__":
     print (url)
     print ('______________________________________')
     print ('CRDC')
-    crdcClient = crdcDRSClient('~/.keys/CRDCAPIKey.json', 's3')
+    crdcClient = crdcDRSClient('~/.keys/crdc_credentials.json', 's3')
     id = 'f360253c-d7d7-47cb-947a-b26e0b41b800'
     res = crdcClient.getObject(id)
     print('GetObject')

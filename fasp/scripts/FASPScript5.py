@@ -26,7 +26,7 @@ def main(argv):
 		and project_disease_type = 'Breast Invasive Carcinoma'
 		limit 3"""
 	
-	drsClient = crdcDRSClient('~/.keys/CRDCAPIKey.json', 's3')
+	drsClient = crdcDRSClient('~/.keys/crdc_credentials.json', 's3')
 
 	# Step 3 - set up a class that runs samtools for us
 	sbProject = faspRunner.settings['SevenBridgesProject']

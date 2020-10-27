@@ -28,7 +28,7 @@ def main(argv):
 		LIMIT 1"""
 
 	# BioDataCatalyst
-	drsClient = bdcDRSClient('~/.keys/BDCcredentials.json', 'gs')
+	drsClient = bdcDRSClient('~/.keys/bdc_credentials.json', 'gs')
 	location = 'projects/{}/locations/{}'.format(settings['GCPProject'], settings['GCPPipelineRegion'])
 	mysam = GCPLSsamtools(location, settings['GCPOutputBucket'])
 

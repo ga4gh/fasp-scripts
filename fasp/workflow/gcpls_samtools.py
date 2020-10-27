@@ -27,11 +27,12 @@ import json
 
 class GCPLSsamtools:
 
-	def __init__(self, projectLocation, outdir ):
+	def __init__(self, projectLocation, outdir, debug=False ):
 		self.projectLocation = projectLocation
 		self.outdir = outdir
 		credentials = GoogleCredentials.get_application_default()
 		self.service = discovery.build('lifesciences', 'v2beta', credentials=credentials)
+		self.debug = debug
 
 	def getTaskStatus(self, run_id):
 		# The name of the operation resource.
@@ -130,6 +131,7 @@ class GCPLSsamtools:
         # The following is a deployment of a custom docker image containing samtools 1.8 which is also deployed on Seven Bridges
 		cline += "--docker-image \"us.gcr.io/isbcgc-216220/samtools\" --regions us-east1 " 
 		cline += "--inputs BAM=\"" + bamURL + "\" "
+		#cline += "--billing-project=\"isbcgc-216220\"  "
 		cline += "--outputs  STATS=" + self.outdir + outfile
 		return cline
 
@@ -138,7 +140,8 @@ class GCPLSsamtools:
 		# This is the workaround - just create a shell script
 		#r = self.runStats(bamURL, outfile)		
 		cline = self.statsCommandLine(bamURL, outfile)
-		#print (cline)
+		if self.debug:
+			print (cline)
 		with tempfile.NamedTemporaryFile(mode='w') as shellScript:
 			shellScript.write(cline)
 			shellScript.write("\n")
@@ -151,4 +154,4 @@ class GCPLSsamtools:
 
 if __name__ == "__main__":
 	client = GCPLSsamtools('projects/isbcgc-216220/locations/us-central1','')
-	client.getTaskDetails('14348543543279356571')
+	client.getTaskDetails('3564549389844003381')
