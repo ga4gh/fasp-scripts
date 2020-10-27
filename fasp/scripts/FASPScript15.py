@@ -14,8 +14,8 @@ from fasp.loc.gen3drsclient import anvilDRSClient
 class localSearchClient:
 	
 	def __init__(self):
-		# edit the following for yuor local copy of the manifest file
-		with open('/users/forei/fasp/gtex/gtex-cram-manifest.json') as f:
+		# edit the following for your local copy of the manifest file
+		with open('../data/gtex/gtex-cram-manifest.json') as f:
 			self.data = json.load(f)
 			
 	def runQuery(self, query):
@@ -39,7 +39,7 @@ def main(argv):
 
 	#drsClient = DRSMetaResolver()
 
-	drsClient = anvilDRSClient(credentials_file, 'gs')
+	drsClient = anvilDRSClient(credentials_file, settings['GCPProject'], 'gs')
 	location = 'projects/{}/locations/{}'.format(settings['GCPProject'], settings['GCPPipelineRegion'])
 	workflowClient = GCPLSsamtools(location, settings['GCPOutputBucket'], debug=True)
 
