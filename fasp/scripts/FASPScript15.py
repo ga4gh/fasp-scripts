@@ -8,7 +8,7 @@ from fasp.runner import FASPRunner
 # The implementations we're using
 from fasp.loc import Gen3DRSClient
 from fasp.workflow import GCPLSsamtools
-from fasp.loc.gen3drsclient import anvilDRSClient
+from fasp.loc import anvilDRSClient
 
 
 class localSearchClient:
