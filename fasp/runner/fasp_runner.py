@@ -1,12 +1,11 @@
 #  IMPORTS
-import sys, getopt
+import sys
 import json
 import datetime
 import os
-import json
 import inspect
 from fasp.runner.fasp_logger import FASPLogger
-from fasp.runner.DemoCredits import DemoCredits, Creditor
+from fasp.runner.DemoCredits import Creditor
 
 class FASPRunner:
 
@@ -81,4 +80,3 @@ class FASPRunner:
 					self.searchClient, self.drsClient, self.workClient)
 
 		self.pipelineLogger.close()
-    
