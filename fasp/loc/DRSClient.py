@@ -57,4 +57,5 @@ class DRSClient:
 			return None
 		else:
 			print (response)
+			print (response.content)
 			return None

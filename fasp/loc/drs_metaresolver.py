@@ -3,7 +3,7 @@ import requests
 import pprint
 import sys, getopt
 
-from fasp.loc import crdcDRSClient, bdcDRSClient, Gen3DRSClient
+from fasp.loc import crdcDRSClient, bdcDRSClient, Gen3DRSClient, anvilDRSClient
 from fasp.loc import sdlDRSClient
 from fasp.loc import sbcgcDRSClient, cavaticaDRSClient
 from fasp.loc import DRSClient
@@ -37,7 +37,7 @@ class DRSMetaResolver(DRSClient):
 			"insdc": sdlDRSClient('~/.keys/prj_11218_D17199.ngc'),
 			"crdc": crdcDRSClient('~/.keys/crdc_credentials.json','s3'),
 			"bdc": bdcDRSClient('~/.keys/bdc_credentials.json','gs'),
-			"anv": Gen3DRSClient('https://gen3.theanvil.io','/user/credentials/api/access_token', '~/.keys/anvil_credentials.json', 'gs'),
+			"anv": anvilDRSClient('~/.keys/anvil_credentials.json', '', 'gs'),
 			"insdc": sdlDRSClient('~/.keys/prj_11218_D17199.ngc'),
 			"sbcgc": sbcgcDRSClient('~/.keys/sevenbridges_keys.json','s3'),
 			"sbcav": cavaticaDRSClient('~/.keys/sevenbridges_keys.json','s3'),
