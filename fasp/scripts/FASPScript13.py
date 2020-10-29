@@ -6,7 +6,6 @@ from fasp.runner import FASPRunner
 
 # The implementations we're using
 from fasp.loc import DRSClient
-from fasp.loc import DRSMetaResolver
 from fasp.workflow import GCPLSsamtools
 from fasp.search import BigQuerySearchClient
 

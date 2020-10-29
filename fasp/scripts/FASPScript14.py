@@ -20,8 +20,6 @@ def main(argv):
 
 	query = "SELECT s.su_submitter_id, drs_id FROM thousand_genomes.onek_genomes.ssd_drs s join thousand_genomes.onek_genomes.sra_drs_files f on f.sample_name = s.su_submitter_id where filetype = 'bam' and mapped = 'mapped' and sequencing_type ='exome' and  population = 'JPT' LIMIT 3"
 
-	# BioDataCatalyst
-	#drsClient = DRSMetaResolver()
 	drsClient = DRSClient('https://locate.ncbi.nlm.nih.gov',access_id='2' ,debug=True, public=True)
 	location = 'projects/{}/locations/{}'.format(settings['GCPProject'], settings['GCPPipelineRegion'])
 	mysam = GCPLSsamtools(location, settings['GCPOutputBucket'])

@@ -22,7 +22,7 @@ class localSearchClient:
 		# return the first three records
 		# edit this once your ready to run this on all the files
 		results = []
-		for f in self.data[:1]:
+		for f in self.data[10:11]:
 			results.append([f['file_name'],f['object_id']])
 		return  results
 
