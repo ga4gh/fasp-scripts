@@ -1,21 +1,10 @@
 ''' Query Search SRA BigQuery tables for 1K Genomes data, access files via SRA DRS ids'''
-#  IMPORTS
-import sys 
 
-from fasp.runner import FASPRunner
-
-# The implementations we're using
-from fasp.loc import DRSClient
-from fasp.workflow import GCPLSsamtools
 from fasp.search import BigQuerySearchClient
 
-def main(argv):
+def main():
 
 
-	faspRunner = FASPRunner(pauseSecs=0)
-	settings = faspRunner.settings
-	# Step 1 - Discovery
-	# query for relevant DRS objects
 	searchClient = BigQuerySearchClient()
 
 	query = """
@@ -26,14 +15,7 @@ def main(argv):
 		and att.k = 'population_sam' and att.v = 'JPT' 
 		LIMIT 3"""
 
-	#drsClient = DRSMetaResolver()
-	drsClient = DRSClient('https://locate.ncbi.nlm.nih.gov',access_id='2', public=True)
-	location = 'projects/{}/locations/{}'.format(settings['GCPProject'], settings['GCPPipelineRegion'])
-	mysam = GCPLSsamtools(location, settings['GCPOutputBucket'])
-
-	faspRunner.configure(searchClient, drsClient, mysam)
-		
-	faspRunner.runQuery(query, 'One k query SRA DRS')
+	searchClient.runQuery(query)
 	
 if __name__ == "__main__":
-	main(sys.argv[1:])
+	main()

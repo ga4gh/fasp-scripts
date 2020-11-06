@@ -1,14 +1,8 @@
 #  IMPORTS
 #from google.cloud import bigquery
 import sys
-import datetime
 
-# a utility 
-from fasp.runner import FASPRunner
 
-# The implementations we're using
-from fasp.loc import bdcDRSClient,sbcgcDRSClient
-from fasp.workflow import GCPLSsamtools, samtoolsSBClient
 from fasp.search import BigQuerySearchClient, DiscoverySearchClient
 
 
@@ -16,14 +10,6 @@ from fasp.search import BigQuerySearchClient, DiscoverySearchClient
 def main(argv):
 
 	
-	faspRunner = FASPRunner(pauseSecs=0)
-	creditor = faspRunner.creditor
-	settings = faspRunner.settings
-	
-	# set your Seven Bridges CGC project using what you have put in FASP Settings
-	sbProject = settings['SevenBridgesProject']
-	sbInstance = settings['SevenBridgesInstance']
-
 	# Step 1 - Discovery
 	# query for relevant DRS objects
 	discoveryClients = {
@@ -46,63 +32,15 @@ def main(argv):
 		
 
 	results = discoveryClients['sb'].runQuery(crdcquery)  # Send the query
-	creditor.creditFromList('dbGapSSD')
-	creditor.creditClass(discoveryClients['sb'])
 	results += discoveryClients['bdc'].runQuery(bdcquery) 
-	creditor.creditFromList('BDCData')
 	
 
-	# Step 2 - DRS - set up DRS Clients	
-	drsClients = {
-		"sb": sbcgcDRSClient('~/.keys/sevenbridges_keys.json', 's3'),
-		"bdc": bdcDRSClient('~/.keys/bdc_credentials.json', 'gs')
-	}
-	print('setting credentials ')
-	creditor.creditFromList('dbGaPFence')
-		
-	# Step 3 - set up a class that runs samtools for us
-	# providing the location for the results
-	location = 'projects/{}/locations/{}'.format(settings['GCPProject'], settings['GCPPipelineRegion'])
-	sam2 = GCPLSsamtools(location, settings['GCPOutputBucket'])
-	samClients = {
-		"sb": samtoolsSBClient(sbInstance, sbProject),
-		"bdc": sam2
-	}
 
 	
 	# repeat steps 2 and 3 for each row of the query
 	for row in results:
 
 		print("subject={}, drsID={}".format(row[0], row[1]))
-		resRow = [row[0], row[1]]
-		# Step 2 - Use DRS to get the URL
-		# get the prefix
-		prefix, drsid = row[1].split(":", 1)
-		drsClient = drsClients[prefix]
-		searchClient = discoveryClients[prefix]
-		creditor.creditClass(drsClient)
-		url = drsClient.getAccessURL(drsid)
-		print(url)
-		#objInfo = drsClient.getObject(drsid)
-		#print (objInfo)
-		#fileSize = objInfo['size']
-		fileSize = 0
-				
-		# Step 3 - Run a pipeline on the file at the drs url
-		if url != None:
-			outfile = "{}.txt".format(row[0])
-			mysam = samClients[prefix]
-			creditor.creditClass(mysam)
-			via = 'sh'
-			note = 'Two dbGaP sources'
-			time = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
-			run_id = mysam.runWorkflow(url, outfile)
-			faspRunner.logRun(time, via, note,  run_id, outfile, fileSize,
-				searchClient, drsClient, mysam)
-			resRow.append('OK')
-		else:
-			print('could not get DRS url')
-			resRow.append('unauthorized')
 
 if __name__ == "__main__":
 	main(sys.argv[1:])

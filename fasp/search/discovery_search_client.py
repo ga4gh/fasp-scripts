@@ -3,7 +3,7 @@ import pprint
 import sys
 import getopt
 
-from fasp.loc import GA4GHRegistry 
+#from fasp.loc import GA4GHRegistry 
 
 class DiscoverySearchClient:
 
@@ -14,16 +14,18 @@ class DiscoverySearchClient:
 			'content-type': 'application/json'
 		}
 
-	# Look for registered search services
-	@classmethod
-	def getRegisteredSearchServices(cls):
-		reg = GA4GHRegistry()
-		services = reg.getRegisteredServices('org.ga4gh:search')
-		for service in services:
-			serviceType=service['type']
-			pprint.pprint(service)
-			serviceURL = service['url']
-			hostname = serviceURL.split("/")[2]
+	#===========================================================================
+	# # Look for registered search services
+	# @classmethod
+	# def getRegisteredSearchServices(cls):
+	# 	reg = GA4GHRegistry()
+	# 	services = reg.getRegisteredServices('org.ga4gh:search')
+	# 	for service in services:
+	# 		serviceType=service['type']
+	# 		pprint.pprint(service)
+	# 		serviceURL = service['url']
+	# 		hostname = serviceURL.split("/")[2]
+	#===========================================================================
 
 		return None
 
