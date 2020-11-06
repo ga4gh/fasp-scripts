@@ -1,4 +1,0 @@
-file	System	drs_id
-dnastack_1k_csv	sb	sb:5f404097e4b0bf4ad1323012
-CCDG_13607_B01_GRM_WGS_2019-02-19_chr21.recalibrated_variants.vcf.gz	bdcat	dg.4503/dbd55e76-1100-40b3-b420-0eaeee478fbc
-CCDG_13607_B01_GRM_WGS_2019-02-19_chr21.recalibrated_variants.vcf.gz	anvil	dg.ANV0/737247da-f5da-49a7-86ec-737978eb8293
