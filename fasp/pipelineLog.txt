@@ -1,1 +1,0 @@
-time	status	via	script	note	pipeline_id	outfile	fileSize	ssearchClient	drsClient	wesClient
