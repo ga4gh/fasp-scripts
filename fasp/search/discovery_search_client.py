@@ -4,6 +4,7 @@ import sys
 import getopt
 
 #from fasp.loc import GA4GHRegistry
+import pandas as pd
 
 class DiscoverySearchClient:
 
@@ -101,17 +102,18 @@ class DiscoverySearchClient:
 
 		pageCount = 0
 		resultRows = []
-		print ("_Retrieving the query_")
+		#print ("_Retrieving the query_")
 		while next_url != None :
 			pageCount += 1
-			print ("____Page{}_______________".format(pageCount))
+			#print ("____Page{}_______________".format(pageCount))
 			if pageCount == 1:
 				response = requests.request("POST", next_url,
 				 headers=self.headers, data = query2)
 			else:
 				 response = requests.request("GET", next_url)
 			result = (response.json())
-			if self.debug: pprint.pprint(result)
+			if self.debug:
+				pprint.pprint(result)
 			if 'pagination' in result and 'next_page_url' in result['pagination']:
 				next_url = result['pagination']['next_page_url']
 			else:
@@ -121,7 +123,9 @@ class DiscoverySearchClient:
 # 				resultRows.append(result['data'])
 			for r in result['data']:
 				resultRows.append([*r.values()])
-		return resultRows
+
+		df = pd.DataFrame(resultRows, columns=query_list, index=None)
+		return df
 
 def usage():
 	print (sys.argv[0] +' -l listTables -c listCatalog -t tableInfo -r registeredServices')
