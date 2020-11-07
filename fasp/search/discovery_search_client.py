@@ -3,7 +3,7 @@ import pprint
 import sys
 import getopt
 
-#from fasp.loc import GA4GHRegistry 
+#from fasp.loc import GA4GHRegistry
 
 class DiscoverySearchClient:
 
@@ -30,7 +30,7 @@ class DiscoverySearchClient:
 		return None
 
 	def listTables(self, requestedCatalog=None):
-		
+
 		if requestedCatalog == None:
 			next_url = self.hostURL + "/tables"
 		else:
@@ -50,8 +50,8 @@ class DiscoverySearchClient:
 				next_url = None
 			for t in result['tables']:
 				print(t['name'])
-		return 
-			
+		return
+
 	def listCatalogs(self):
 		url = self.hostURL + "/tables"
 
@@ -60,24 +60,28 @@ class DiscoverySearchClient:
 		result = (response.json())
 		for t in result['index']:
 			print(t['description'])
-		return 
+		return
 
-			
+
 	def listCatalog(self, catalog):
 		self.listTables(catalog)
-			
+
 	def listTableInfo(self, table):
 		url = "{}/table/{}/info".format(self.hostURL,table)
 		print ("_Schema for table{}_".format(table))
 		response = requests.get(url, headers=self.headers)
 		result = (response.json())
 		pprint.pprint(result)
-			
-	def runQuery(self, query):
-	
-		query2 = "{\"query\":\""+query+"\"}"
 
-		next_url = self.hostURL + "search"
+	def runQuery(self, query_list, table, results):
+		query_string = ", ".join(query_list)
+
+		query = "select {query_string} from {table} limit {results}".format(params=query_parameters,
+																table=table, results=results)
+
+		query2 = "{\"query\":\"%s\"}" % query
+
+		next_url = self.hostURL + "/search"
 
 		pageCount = 0
 		resultRows = []
@@ -108,7 +112,7 @@ def usage():
 
 def main(argv):
 	searchClient = DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com')
-	
+
 	catalog = ''
 	table = ''
 
@@ -132,7 +136,7 @@ def main(argv):
 	    elif opt in ("-r", "--registeredServices"):
 	        DiscoverySearchClient.getRegisteredSearchServices()
 
-			
+
 if __name__ == "__main__":
     main(sys.argv[1:])
 
