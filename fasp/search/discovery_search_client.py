@@ -77,7 +77,7 @@ class DiscoverySearchClient:
 	
 		query2 = "{\"query\":\""+query+"\"}"
 
-		next_url = self.hostURL + "search"
+		next_url = self.hostURL + '/search'
 
 		pageCount = 0
 		resultRows = []
