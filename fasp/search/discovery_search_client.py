@@ -8,11 +8,12 @@ import getopt
 class DiscoverySearchClient:
 
 	def __init__(self, hostURL, debug=False ):
-		self.hostURL = hostURL
+		self.hostURL = self._url_format(hostURL)
 		self.debug = debug
 		self.headers = {
 			'content-type': 'application/json'
 		}
+		self.tables = self.listTables(verbose=False)
 
 	#===========================================================================
 	# # Look for registered search services
@@ -91,7 +92,7 @@ class DiscoverySearchClient:
 	def runQuery(self, query_list, table, results):
 		query_string = ", ".join(query_list)
 
-		query = "select {query_string} from {table} limit {results}".format(params=query_parameters,
+		query = "select {queries} from {table} limit {results}".format(queries=query_string,
 																table=table, results=results)
 
 		query2 = "{\"query\":\"%s\"}" % query
