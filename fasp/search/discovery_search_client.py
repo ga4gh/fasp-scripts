@@ -35,7 +35,9 @@ class DiscoverySearchClient:
 			url = url[:-1]
 		return url
 
-	def listTables(self, requestedCatalog=None):
+	def listTables(self, requestedCatalog=None, verbose=True):
+
+		tables = {}
 
 		if requestedCatalog == None:
 			next_url = self.hostURL + "/tables"
@@ -43,10 +45,13 @@ class DiscoverySearchClient:
 			next_url = "{}{}{}".format(self.hostURL,'/tables/catalog/',requestedCatalog)
 		pageCount = 0
 		resultRows = []
-		print ("_Retrieving the table list_")
+		if verbose:
+			print("_Retrieving the table list_")
 		while next_url != None :
 			pageCount += 1
-			print ("____Page{}_______________".format(pageCount))
+			tableCount = 0
+			if verbose:
+				print ("____Page{}_______________".format(pageCount))
 			response = requests.get(next_url, headers=self.headers)
 			result = (response.json())
 			#pprint.pprint(result)
@@ -55,8 +60,12 @@ class DiscoverySearchClient:
 			else:
 				next_url = None
 			for t in result['tables']:
-				print(t['name'])
-		return
+				if verbose:
+					print(t['name'])
+				tableCount += 1
+				key = "table" + str(tableCount)
+				tables[key] = t['name']
+		return tables
 
 	def listCatalogs(self):
 		url = self.hostURL + "/tables"
