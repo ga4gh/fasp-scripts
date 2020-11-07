@@ -29,6 +29,12 @@ class DiscoverySearchClient:
 
 		return None
 
+	def _url_format(self, url):
+		url = str(url)
+		if url.endswith('/'):
+			url = url[:-1]
+		return url
+
 	def listTables(self, requestedCatalog=None):
 
 		if requestedCatalog == None:
