@@ -13,7 +13,7 @@ def main(argv):
 	# Step 1 - Discovery
 	# query for relevant DRS objects
 	discoveryClients = {
-		"sb": DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com/'),
+		"sb": DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com'),
 		"bdc": BigQuerySearchClient()
 	}
 

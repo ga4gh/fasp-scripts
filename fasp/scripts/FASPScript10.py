@@ -12,7 +12,7 @@ def main(argv):
 		
 	# Step 1 - Discovery
 	# query for relevant DRS objects
-	searchClient = DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com/', debug=True)
+	searchClient = DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com', debug=False)
 
 	results = searchClient.runQuery(pp_dbgap_join)
 	
