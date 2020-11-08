@@ -23,7 +23,7 @@ def main(argv):
 	
 	
 	query = 'select accession, biosample, genus, species from coronavirus_dnastack_curated.covid_cloud_production.sequences limit 10'
-	res = searchClient.runQuery(query)
+	res = searchClient.runQuery(query, returnType='dataframe')
 	print(res)
 	
 
