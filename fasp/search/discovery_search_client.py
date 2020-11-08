@@ -94,11 +94,10 @@ class DiscoverySearchClient:
 
 		query = "select {columns} from {table} limit {results}".format(columns=col_string,
 																table=table, results=limit)
-		resultRows = self.runQuery(query)
-		df = pd.DataFrame(resultRows, columns=column_list, index=None)
-		return df
+		res = resultRows = self.runQuery(query, returnType='dataframe')
+		return res
 
-	def runQuery(self, query):
+	def runQuery(self, query, returnType=None):
 
 		query2 = "{\"query\":\"%s\"}" % query
 
@@ -124,8 +123,17 @@ class DiscoverySearchClient:
 				next_url = None
 			for r in result['data']:
 				resultRows.append([*r.values()])
+			
+			
+		if 'data_model' in result:
+			column_list = result['data_model']['properties'].keys()
+		
+		if returnType == 'dataframe':
+			df = pd.DataFrame(resultRows, columns=column_list, index=None)
+			return df
+		else:
+			return resultRows
 
-		return resultRows
 
 def usage():
 	print (sys.argv[0] +' -l listTables -c listCatalog -t tableInfo -r registeredServices')
