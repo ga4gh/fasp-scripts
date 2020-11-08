@@ -1,14 +1,11 @@
 # imports
-import sys
-
 from fasp.search  import DiscoverySearchClient
 
 
 
-searchClient = DiscoverySearchClient('https://search-presto-public-covid19.prod.dnastack.com/')
+searchClient = DiscoverySearchClient('https://search-presto-public-covid19.prod.dnastack.com')
 
-queries = ['accession', 'biosample', 'genus', 'species']
-
-res = searchClient.runQuery(query_list=queries, table=searchClient.tables['table42'],
-						  results=15)
+res = searchClient.runOneTableQuery(column_list=['accession', 'biosample', 'genus', 'species'], 
+									table='coronavirus_dnastack_curated.covid_cloud_production.sequences',
+						  			limit=15)
 print(res)
