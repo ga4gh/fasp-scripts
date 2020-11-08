@@ -105,7 +105,8 @@ class DiscoverySearchClient:
 
 		pageCount = 0
 		resultRows = []
-		#print ("_Retrieving the query_")
+		column_list = []
+		print ("_Retrieving the query_")
 		while next_url != None :
 			pageCount += 1
 			#print ("____Page{}_______________".format(pageCount))
@@ -123,11 +124,11 @@ class DiscoverySearchClient:
 				next_url = None
 			for r in result['data']:
 				resultRows.append([*r.values()])
-			
-			
-		if 'data_model' in result:
-			column_list = result['data_model']['properties'].keys()
-		
+				
+			if 'data_model' in result:
+				print('found data model')
+				column_list = result['data_model']['properties'].keys()
+
 		if returnType == 'dataframe':
 			df = pd.DataFrame(resultRows, columns=column_list, index=None)
 			return df
