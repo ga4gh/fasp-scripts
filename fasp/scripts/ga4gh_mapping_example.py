@@ -10,7 +10,7 @@ def getMapping(searchClient, table, column):
 	return mapDict
 	
 
-searchClient = DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com', debug=True)
+searchClient = DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com', debug=False)
 
 table_name = 'search_cloud.cshcodeathon.organoid_profiling_pc_subject_phenotypes_gru'
 map_col = 'sex'
