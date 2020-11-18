@@ -99,6 +99,7 @@ class DiscoverySearchClient:
 
 	def runQuery(self, query, returnType=None):
 
+		query = query.replace("\n", " ").replace("\t", " ")
 		query2 = "{\"query\":\"%s\"}" % query
 
 		next_url = self.hostURL + "/search"
