@@ -13,10 +13,8 @@ from fasp.search  import DiscoverySearchClient
 def main(argv):
 
 	searchClient = DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com')
-
 	
-	
-	query = 'select * from kidsfirst.ga4gh_tables.ncpi_disease limit 10000'
+	query = 'select id, disease from kidsfirst.ga4gh_tables.ncpi_disease'
 	res = searchClient.runQuery(query)
 
 	diseases = {}

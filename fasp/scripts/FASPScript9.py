@@ -17,7 +17,11 @@ def main(argv):
 		"bdc": BigQuerySearchClient()
 	}
 
-	crdcquery = "SELECT sp.dbGaP_Subject_ID,  'sb:'||sb_drs_id FROM dbgap_demo.scr_gecco_susceptibility.subject_phenotypes_multi sp join dbgap_demo.scr_gecco_susceptibility.sample_multi sm on sm.dbgap_subject_id = sp.dbgap_subject_id join dbgap_demo.scr_gecco_susceptibility.sb_drs_index di on di.sample_id = sm.sample_id where AGE between 45 and 55 and sex = 'Female' and file_type = 'cram' limit 3"
+	crdcquery = """SELECT sp.dbGaP_Subject_ID,  'sb:'||sb_drs_id 
+	FROM dbgap_demo.scr_gecco_susceptibility.subject_phenotypes_multi sp 
+	join dbgap_demo.scr_gecco_susceptibility.sample_multi sm on sm.dbgap_subject_id = sp.dbgap_subject_id 
+	join dbgap_demo.scr_gecco_susceptibility.sb_drs_index di on di.sample_id = sm.sample_id 
+	where AGE between 45 and 55 and sex = 'Female' and file_type = 'cram' limit 3"""
 		
 
 

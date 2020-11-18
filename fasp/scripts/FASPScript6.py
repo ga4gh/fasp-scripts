@@ -10,7 +10,9 @@ def main(argv):
 	# query for relevant DRS objects
 	searchClient = DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com')
 	
-	query = "select submitter_id, read_drs_id drsid from thousand_genomes.onek_genomes.ssd_drs where population = 'ACB' limit 1"
+	query = """select submitter_id, read_drs_id drsid 
+	from thousand_genomes.onek_genomes.ssd_drs 
+	where population = 'ACB' limit 1"""
 	
 	query_job = searchClient.runQuery(query)
 

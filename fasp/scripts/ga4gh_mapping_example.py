@@ -2,7 +2,11 @@
 from fasp.search  import DiscoverySearchClient
 
 def getMapping(searchClient, table, column):
-	query = "select valueString, maptoValue  from search_cloud.cshcodeathon.md_value_map where table_name = '{}' and column_name='{}'".format(table,column)
+	
+	query = """select valueString, maptoValue  
+	from search_cloud.cshcodeathon.md_value_map 
+	where table_name = '{}' and column_name='{}'".format(table,column)"""
+	
 	mapping = searchClient.runQuery(query)
 	mapDict = {}
 	for row in mapping:
