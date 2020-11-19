@@ -47,7 +47,6 @@ class DiscoverySearchClient:
 			print("_Retrieving the table list_")
 		while next_url != None :
 			pageCount += 1
-			tableCount = 0
 			if verbose:
 				print ("____Page{}_______________".format(pageCount))
 			response = requests.get(next_url, headers=self.headers)
@@ -61,6 +60,7 @@ class DiscoverySearchClient:
 				if verbose:
 					print(t['name'])
 				tables.append(t['name'])
+
 		return tables
 
 	def listCatalogs(self):
@@ -76,18 +76,24 @@ class DiscoverySearchClient:
 
 	def listCatalog(self, catalog):
 		self.listTables(catalog)
+
+	def listTableInfo(self, table, verbose=True):
 		url = "{}/table/{}/info".format(self.hostURL,table)
-		print ("_Schema for table{}_".format(table))
 		response = requests.get(url, headers=self.headers)
 		result = (response.json())
-		pprint.pprint(result)
+		if verbose:
+			print ("_Schema for table{}_".format(table))
+			pprint.pprint(result)
+		else:
+			return result
+			
 
 	def runOneTableQuery(self, column_list, table, limit):
 		col_string = ", ".join(column_list)
 
 		query = "select {columns} from {table} limit {results}".format(columns=col_string,
 																table=table, results=limit)
-		res = resultRows = self.runQuery(query, returnType='dataframe')
+		res = self.runQuery(query, returnType='dataframe')
 		return res
 
 	def runQuery(self, query, returnType=None):
