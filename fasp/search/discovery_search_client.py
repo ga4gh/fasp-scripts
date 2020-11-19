@@ -27,18 +27,22 @@ class DiscoverySearchClient:
 
 		return None
 
-	def listTables(self, requestedCatalog=None):
-		
+	def listTables(self, requestedCatalog=None, verbose=True):
+
+		tables = []
+
 		if requestedCatalog == None:
 			next_url = self.hostURL + "/tables"
 		else:
 			next_url = "{}{}{}".format(self.hostURL,'/tables/catalog/',requestedCatalog)
 		pageCount = 0
-		resultRows = []
-		print ("_Retrieving the table list_")
+		if verbose:
+			print("_Retrieving the table list_")
 		while next_url != None :
 			pageCount += 1
-			print ("____Page{}_______________".format(pageCount))
+			tableCount = 0
+			if verbose:
+				print ("____Page{}_______________".format(pageCount))
 			response = requests.get(next_url, headers=self.headers)
 			result = (response.json())
 			#pprint.pprint(result)
@@ -47,9 +51,11 @@ class DiscoverySearchClient:
 			else:
 				next_url = None
 			for t in result['tables']:
-				print(t['name'])
-		return 
-			
+				if verbose:
+					print(t['name'])
+				tables.append(t['name'])
+		return tables
+
 	def listCatalogs(self):
 		url = self.hostURL + "/tables"
 
@@ -64,18 +70,21 @@ class DiscoverySearchClient:
 	def listCatalog(self, catalog):
 		self.listTables(catalog)
 			
-	def listTableInfo(self, table):
+	def listTableInfo(self, table, verbose=True):
 		url = "{}/table/{}/info".format(self.hostURL,table)
-		print ("_Schema for table{}_".format(table))
 		response = requests.get(url, headers=self.headers)
 		result = (response.json())
-		pprint.pprint(result)
+		if verbose:
+			print ("_Schema for table{}_".format(table))
+			pprint.pprint(result)
+		else:
+			return result
 			
 	def runQuery(self, query):
 	
 		query2 = "{\"query\":\""+query+"\"}"
 
-		next_url = self.hostURL + "search"
+		next_url = self.hostURL + "/search"
 
 		pageCount = 0
 		resultRows = []
