@@ -1,10 +1,24 @@
 ''' Query to illustrate Anne's use case for variants related to a gene involved in a rare pediatric brain cancer'''
 #  IMPORTS
+import sys 
 
+from fasp.runner import FASPRunner
+
+# The implementations we're using
+from fasp.loc import crdcDRSClient
+from fasp.workflow import GCPLSsamtools
 from fasp.search import BigQuerySearchClient
 
 
+faspRunner = FASPRunner(pauseSecs=0)
+settings = faspRunner.settings
+
 searchClient = BigQuerySearchClient()
+drsClient = crdcDRSClient('~/.keys/crdc_credentials.json','gs')
+location = 'projects/{}/locations/{}'.format(settings['GCPProject'], settings['GCPPipelineRegion'])
+mysam = GCPLSsamtools(location, settings['GCPOutputBucket'])	
+
+faspRunner.configure(searchClient, drsClient, mysam)
 
 query = """
 SELECT mut.case_barcode subject, meta.file_gdc_id as drs_id, 
@@ -22,5 +36,22 @@ where mut.Hugo_Symbol = "JMJD1C"
 order by meta.file_gdc_id
 limit 3"""
 
-searchClient.runQuery(query)
+faspRunner.runQuery(query, 'JMJD1C query ')
+
+    
+
+
+	
+	
+
+	
+	
+
+
+
+
+
+
+
+
 

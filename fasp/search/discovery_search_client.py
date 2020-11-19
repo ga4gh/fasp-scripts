@@ -3,39 +3,29 @@ import pprint
 import sys
 import getopt
 
-#from fasp.loc import GA4GHRegistry
-import pandas as pd
+from fasp.loc import GA4GHRegistry 
 
 class DiscoverySearchClient:
 
 	def __init__(self, hostURL, debug=False ):
-		self.hostURL = self._url_format(hostURL)
+		self.hostURL = hostURL
 		self.debug = debug
 		self.headers = {
 			'content-type': 'application/json'
 		}
-		#self.tables = self.listTables(verbose=False)
 
-	#===========================================================================
-	# # Look for registered search services
-	# @classmethod
-	# def getRegisteredSearchServices(cls):
-	# 	reg = GA4GHRegistry()
-	# 	services = reg.getRegisteredServices('org.ga4gh:search')
-	# 	for service in services:
-	# 		serviceType=service['type']
-	# 		pprint.pprint(service)
-	# 		serviceURL = service['url']
-	# 		hostname = serviceURL.split("/")[2]
-	#===========================================================================
+	# Look for registered search services
+	@classmethod
+	def getRegisteredSearchServices(cls):
+		reg = GA4GHRegistry()
+		services = reg.getRegisteredServices('org.ga4gh:search')
+		for service in services:
+			serviceType=service['type']
+			pprint.pprint(service)
+			serviceURL = service['url']
+			hostname = serviceURL.split("/")[2]
 
 		return None
-
-	def _url_format(self, url):
-		url = str(url)
-		if url.endswith('/'):
-			url = url[:-1]
-		return url
 
 	def listTables(self, requestedCatalog=None, verbose=True):
 
@@ -64,7 +54,6 @@ class DiscoverySearchClient:
 				if verbose:
 					print(t['name'])
 				tables.append(t['name'])
-
 		return tables
 
 	def listCatalogs(self):
@@ -75,12 +64,12 @@ class DiscoverySearchClient:
 		result = (response.json())
 		for t in result['index']:
 			print(t['description'])
-		return
+		return 
 
-
+			
 	def listCatalog(self, catalog):
 		self.listTables(catalog)
-
+			
 	def listTableInfo(self, table, verbose=True):
 		url = "{}/table/{}/info".format(self.hostURL,table)
 		response = requests.get(url, headers=self.headers)
@@ -91,61 +80,42 @@ class DiscoverySearchClient:
 		else:
 			return result
 			
-
-	def runOneTableQuery(self, column_list, table, limit):
-		col_string = ", ".join(column_list)
-
-		query = "select {columns} from {table} limit {results}".format(columns=col_string,
-																table=table, results=limit)
-		res = resultRows = self.runQuery(query, returnType='dataframe')
-		return res
-
-	def runQuery(self, query, returnType=None):
-
-		query = query.replace("\n", " ").replace("\t", " ")
-		query2 = "{\"query\":\"%s\"}" % query
+	def runQuery(self, query):
+	
+		query2 = "{\"query\":\""+query+"\"}"
 
 		next_url = self.hostURL + "/search"
 
 		pageCount = 0
 		resultRows = []
-		column_list = []
 		print ("_Retrieving the query_")
 		while next_url != None :
 			pageCount += 1
-			#print ("____Page{}_______________".format(pageCount))
+			print ("____Page{}_______________".format(pageCount))
 			if pageCount == 1:
 				response = requests.request("POST", next_url,
 				 headers=self.headers, data = query2)
 			else:
-				response = requests.request("GET", next_url)
+				 response = requests.request("GET", next_url)
 			result = (response.json())
-			if self.debug:
-				pprint.pprint(result)
+			if self.debug: pprint.pprint(result)
 			if 'pagination' in result and 'next_page_url' in result['pagination']:
 				next_url = result['pagination']['next_page_url']
 			else:
 				next_url = None
+			rowCount = len(result['data'])
+# 			if rowCount > 0:
+# 				resultRows.append(result['data'])
 			for r in result['data']:
 				resultRows.append([*r.values()])
-				
-			if 'data_model' in result:
-				print('found data model')
-				column_list = result['data_model']['properties'].keys()
-
-		if returnType == 'dataframe':
-			df = pd.DataFrame(resultRows, columns=column_list, index=None)
-			return df
-		else:
-			return resultRows
-
+		return resultRows
 
 def usage():
 	print (sys.argv[0] +' -l listTables -c listCatalog -t tableInfo -r registeredServices')
 
 def main(argv):
 	searchClient = DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com')
-
+	
 	catalog = ''
 	table = ''
 
@@ -169,7 +139,7 @@ def main(argv):
 	    elif opt in ("-r", "--registeredServices"):
 	        DiscoverySearchClient.getRegisteredSearchServices()
 
-
+			
 if __name__ == "__main__":
     main(sys.argv[1:])
 

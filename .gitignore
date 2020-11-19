@@ -1,4 +1,8 @@
 
+examples/workflow/SBsamtools.py
+examples/workflow/Dockerfile
+workaround.sh
+output/pipelineLog.txt
 .project
 .pydevproject
 scratch/**
