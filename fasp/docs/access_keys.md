@@ -11,5 +11,5 @@ In the user interface  go to Profile and click on “create API Key”. You can 
 | Anvil                        | [https://gen3.theanvil.io](https://gen3.theanvil.io/) | anvil_credentials.json    |
 | BioDataCatalyst              | https://gen3.biodatacatalyst.nhlbi.nih.gov            | bdc_credentials.json      |
 | Cancer Research Data Commons | https://nci-crdc.datacommons.io                       | crdc_credentials.json     |
-|                              |                                                       |                           |
+| Kids First                   | https://data.kidsfirstdrc.org                         | kf_credentials.json       |
 
