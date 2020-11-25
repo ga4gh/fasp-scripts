@@ -66,9 +66,13 @@ class anvilDRSClient(Gen3DRSClient):
 	# e.g. to user-123@anvilprod.iam.gserviceaccount.com
 	def getAccessURL(self, object_id, access_id=None):
 		result = super().getAccessURL(object_id, access_id)
-
+		if access_id == None:
+			access_id = self.access_id
 		if result != None:
-			return '{}&userProject={}'.format(result, self.userProject)
+			if access_id == 's3':
+				return result
+			else:
+				return '{}&userProject={}'.format(result, self.userProject)
 		else:
 			return None
 
