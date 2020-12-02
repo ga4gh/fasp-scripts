@@ -18,6 +18,7 @@ Wrapper to prepare a job to run samtools as a GCP Life Sciences pipeline.
 
 import tempfile
 import subprocess
+import sys
 import re
 
 from googleapiclient import discovery
@@ -64,7 +65,7 @@ class GCPLSsamtools:
 		samtools = {
 		  "imageUri": "us.gcr.io/isbcgc-216220/samtools",
 		  "commands": [
-			"-c, samtools stats ${BAM} > ${STATS}"
+			"-c", "samtools stats ${BAM} > ${STATS}"
 		  ],
 		  "entrypoint": "bash",
 		  "mounts": [
@@ -75,12 +76,10 @@ class GCPLSsamtools:
 		  ]
 		}
 		
-		copyCommand = '/bin/sh, -c, gsutil -m -q cp ${STATS} '+ self.outdir + outfile
+		copyCommands = ['/bin/sh', '-c', 'gsutil -m -q cp ${STATS} '+ self.outdir + outfile]
 		copy = {
 		  "imageUri": "google/cloud-sdk:slim",
-		  "commands": [
-			copyCommand
-		  ],
+		  "commands": copyCommands ,
 		  "mounts": [
 		  {
 			"disk": "gcloud-shared",
@@ -122,9 +121,14 @@ class GCPLSsamtools:
 		print (run_pipeline_request_body)
 		request = self.service.projects().locations().pipelines().run(parent=self.projectLocation, body=run_pipeline_request_body)
 		response = request.execute()
+		run_id = response['name'].split('/')[-1]
+		return(run_id)
 
-		return(response)
+	def runWorkflow(self, bamURL, outfile):
+		run_id = self.runStats(bamURL, outfile)		
+		return run_id
 
+	''' build a gloud command line to run samtools '''
 	def statsCommandLine(self, bamURL, outfile):
 		cline = "gcloud beta lifesciences pipelines run --command-line 'samtools stats ${BAM} > ${STATS}' "
 		# note original used gcr.io/genomics-tools/samtools which is samtools 1.6. It may suit your purposes.
@@ -135,10 +139,8 @@ class GCPLSsamtools:
 		cline += "--outputs  STATS=" + self.outdir + outfile
 		return cline
 
-	def runWorkflow(self, bamURL, outfile):
-		#runStats above should have allowed us to submit a pipeline - but the pipelines fail
-		# This is the workaround - just create a shell script
-		#r = self.runStats(bamURL, outfile)		
+	''' Run a workflow by submitting a gloud command as a shell script '''
+	def runWorkflowviaGcloud(self, bamURL, outfile):
 		cline = self.statsCommandLine(bamURL, outfile)
 		if self.debug:
 			print (cline)
@@ -154,4 +156,4 @@ class GCPLSsamtools:
 
 if __name__ == "__main__":
 	client = GCPLSsamtools('projects/isbcgc-216220/locations/us-central1','')
-	client.getTaskDetails('3564549389844003381')
+	client.getTaskDetails(sys.argv[1])
