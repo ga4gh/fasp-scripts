@@ -41,7 +41,6 @@ class GCPLSsamtools:
 
 		request = self.service.projects().locations().operations().get(name=name)
 		response = request.execute()
-		
 		if 'done' not in response.keys():
 			return 'running'
 		if response['done'] == True:
