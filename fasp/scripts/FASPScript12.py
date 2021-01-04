@@ -26,6 +26,7 @@ class EGAhtsget():
         display_file_name, file_name, file_size, check_sum = ega.get_file_name_size_md5(self.token, identifier) 
         genomic_range_args = (ref, check_sum, start, end, type)
         print(display_file_name)
+        print(genomic_range_args)
         ega.download_file_retry(self.credentials, identifier, display_file_name, file_name, file_size, check_sum, 3, self.key,
         saveTo, genomic_range_args, -1, 10)
 
@@ -56,21 +57,18 @@ def main(argv):
 
         print("sample={}, EGAFileID={}".format(row[0], row[1]))
         
-        # Step 2 - Use DRS to get the URL
+        # Step 2 - Use htsget to access the file
         fileSize = htsgetClient.getSize(row[1])
-        print(fileSize)
-        # we've predetermined we want to use the gs copy in this case
-        #url = drsClient.getAccessURL(row[1], 'gs')
-        #htsgetClient.htsget(row[1], 'chr1', 100000, 102000, 'BAM', row[2])
+        print("File size:{}".format(fileSize))
+        localfile = row[2]
+        htsgetClient.htsget(row[1], 'chr1', 100000, 102000, 'BAM', localfile)
 		
-        localfile = 'NA19377.unmapped.ILLUMINA.bwa.LWK.low_coverage.20120522.bam'
-		#row[2]
-        # Step 3 - Run a pipeline on the file at the drs url
+        # Step 3 - Run a pipeline on the file 
         outfile = "{}.txt".format(row[0])
         pipeline_id = wesClient.runWorkflow(localfile, outfile)
         #print('submitted:{}'.format(pipeline_id))
         
-        via = 'local'
+        via = 'lsapi'
         note = 'samtools on htsget BAM'
 
         time = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
