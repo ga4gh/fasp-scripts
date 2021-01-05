@@ -24,7 +24,7 @@ class sbWESClient(WESClient):
 		self.headers = { 'Authorization': 'Bearer {}'.format(self.accessToken)}
 		self.debug = debug
 		self.modulePath = os.path.dirname(os.path.abspath(__file__))
-		self.wdlPath = self.modulePath + '/plenary-resources-2020/workflows'
+		self.wdlPath = self.modulePath + '../../plenary-resources-2020/workflows'
 		
 	def getTaskStatus(self, run_id):
 		runURL = "{}/{}".format(self.api_url_base, run_id)
