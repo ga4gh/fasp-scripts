@@ -84,8 +84,7 @@ class DiscoverySearchClient:
 		if verbose:
 			print ("_Schema for table{}_".format(table))
 			pprint.pprint(result)
-		else:
-			return result
+		return result
 			
 
 	def runOneTableQuery(self, column_list, table, limit):
@@ -159,7 +158,7 @@ def main(argv):
 	    elif opt in ("-c", "--listCatalog"):
 	        searchClient.listCatalog(arg)
 	    elif opt in ("-t", "--table"):
-	        searchClient.listTableInfo(arg)
+	        ti = searchClient.listTableInfo(arg)
 	    elif opt in ("-a", "--catalogs"):
 	        searchClient.listCatalogs()
 	    elif opt in ("-r", "--registeredServices"):
