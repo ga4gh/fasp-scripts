@@ -21,47 +21,10 @@ class sbWESClient(WESClient):
 		full_key_path = os.path.expanduser(access_token_path)
 		with open(full_key_path) as f:
 			self.accessToken = json.load(f)['access_token']
-		self.headers = { 'Authorization': 'Bearer {}'.format(self.accessToken)}
+		self.headers = { 'X-SBG-Auth-Token': self.accessToken}
 		self.debug = debug
 		self.modulePath = os.path.dirname(os.path.abspath(__file__))
 		self.wdlPath = self.modulePath + '../../plenary-resources-2020/workflows'
-		
-	def getTaskStatus(self, run_id):
-		runURL = "{}/{}".format(self.api_url_base, run_id)
-		runResp = requests.get(runURL, headers=self.headers)
-		if runResp.status_code == 200:
-			run = runResp.json()
-			return run['state']
-		if runResp.status_code == 400:
-			return 'task not found'
-
-
-				
-	def runWorkflow(self, fileurl, outfile):
-		# use a temporary file to write out the input file
-		inputJson = {"md5Sum.inputFile":fileurl}
-		with tempfile.TemporaryFile() as fp:
-			fp.write(json.dumps(inputJson).encode('utf-8'))
-			fp.seek(0)
-			payload = {'workflow_url': 'checksum.wdl'} 
-			files = {
-				'workflow_params': ('inputs.json', fp, 'application/json'),
-				'workflow_attachment': ('checksum.wdl', open(self.modulePath+'/wes/checksum.wdl', 'rb'), 'text/plain')
-			}
-
-		
-			response = requests.request("POST", self.api_url_base, headers=self.headers, data = payload, files = files)
-			if self.debug:
-				print(response)
-			if response.status_code == 200:
-				return response.json()['run_id']
-			elif response.status_code == 401:
-				print("WES server authentication failed")
-				sys.exit(1)
-			else:
-				print("WES run submission failed. Response status:{}".format(response.status_code))
-				sys.exit(1)
-				
 				
 		
 	def runGWASWorkflowTest(self):
@@ -156,9 +119,9 @@ class sbWESClient(WESClient):
 
 		
 if __name__ == "__main__":
-	myClient = DNAStackWESClient('~/.keys/DNAStackWESkey.json')
-
-	res = myClient.runGWASWorkflowTest()
+	myClient = sbWESClient('cgc','forei/gecco','~/.keys/sbcgc_key.json')
+	res = myClient.getTaskStatus('7c35c271-6916-4215-8942-9e0977342fbc', verbose=True)
+	#res = myClient.runGWASWorkflowTest()
 	#res = myClient.runWorkflow('gs://dnastack-public-bucket/thousand_genomes_meta.csv', '')
 
 
