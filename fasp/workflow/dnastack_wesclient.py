@@ -23,16 +23,6 @@ class DNAStackWESClient(WESClient):
 		self.modulePath = os.path.dirname(os.path.abspath(__file__))
 		self.wdlPath = self.modulePath + '../../plenary-resources-2020/workflows'
 		
-	def getTaskStatus(self, run_id):
-		runURL = "{}/{}".format(self.api_url_base, run_id)
-		runResp = requests.get(runURL, headers=self.headers)
-		if runResp.status_code == 200:
-			run = runResp.json()
-			return run['state']
-		if runResp.status_code == 400:
-			return 'task not found'
-
-
 				
 	def runWorkflow(self, fileurl, outfile):
 		# use a temporary file to write out the input file
