@@ -3,11 +3,6 @@ import requests
 import pprint
 import sys, getopt
 
-from Gen3DRSClient import crdcDRSClient, bdcDRSClient, Gen3DRSClient
-from sdlDRSClient import sdlDRSClient
-from SBDRSClient import sbcgcDRSClient, cavaticaDRSClient
-from DRSClient import DRSClient
-
 
 class GA4GHRegistryClient:
 
@@ -15,13 +10,13 @@ class GA4GHRegistryClient:
 		self.hostURL = 'https://registry.ga4gh.org/v1'
 	
 	# Look for registered DRS services
-	def getRegisteredServices(self, type=None):
+	def getRegisteredServices(self, serviceType=None):
 		servicesURL = "{}/services".format(self.hostURL)
-		if type == None:
-			type = 'all'
+		if serviceType == None:
+			serviceType = 'all'
 		else:
-			servicesURL = 'https://registry.ga4gh.org/v1/services?type={}:*'.format(type)
-		print('Searching the GA4GH registry for {} services'.format(type))
+			servicesURL = '{}/services?type={}:*'.format(self.hostURL, serviceType)
+		print('Searching the GA4GH registry for {} services'.format(serviceType))
 		response = requests.get(servicesURL)
 		services = response.json()
 		return services

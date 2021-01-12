@@ -16,7 +16,7 @@ class GA4GHRegistry:
 	
 	# Look for registered DRS services
 	def getRegisteredServices(self, type=None):
-		servicesURL = "{}/services".format(self.hostURL)
+		registryURL = "{}/services".format(self.hostURL)
 		if type == None:
 			type = 'all'
 		else:
