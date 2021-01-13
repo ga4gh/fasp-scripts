@@ -24,9 +24,7 @@ class WESClient:
 	def runWorkflow(self, body, verbose=False):
 		if verbose: print("sending to {}".format( self.api_url_base))
 		
-		headers = self.headers
-		headers['Content-Type'] = 'application/json'
-		response = requests.post(self.api_url_base, headers=headers, data = json.dumps(body).encode('utf-8'))
+		response = requests.request('POST', self.api_url_base, headers=self.headers,  files=body)
 		if verbose:
 			print(response.text)
 			print(response)
