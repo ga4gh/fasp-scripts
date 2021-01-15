@@ -13,8 +13,8 @@ class SBDRSClient(DRSClient):
 
     # Initialize a DRS Client for the service at the specified url base
     # and with the REST resource to provide an access key 
-	def __init__(self, api_url_base, api_key_path, instance, access_id):
-		super().__init__(api_url_base, access_id)
+	def __init__(self, api_url_base, api_key_path, instance, access_id, debug=False):
+		super().__init__(api_url_base, access_id, debug=debug)
 		full_key_path = os.path.expanduser(api_key_path)
 		with open(full_key_path) as f:
 			auth_content = json.load(f)
@@ -24,8 +24,9 @@ class SBDRSClient(DRSClient):
     # Get info about a DrsObject
     # See https://ga4gh.github.io/data-repository-service-schemas/preview/develop/docs/#_getobject
 	def getObject(self, object_id):
-		headers = {'Content-Type': 'application/json',
-		'Authorization': 'Bearer {0}'.format(self.access_token)}
+		headers = self.getHeaders()
+		headers['Content-Type'] = 'application/json'
+
 		api_url = '{0}/ga4gh/drs/v1/objects/{1}'.format(self.api_url_base, object_id)
 		response = requests.get(api_url, headers=headers)
 		if response.status_code == 200:
@@ -34,20 +35,22 @@ class SBDRSClient(DRSClient):
 		else:
 			return response.status_code
 
+	def getHeaders(self): 
+		return {'X-SBG-Auth-Token' : self.access_token }
 
 
 class sbcgcDRSClient(SBDRSClient):
     '''client for Seven Bridges Cancer Genomics Cloud DRS server'''
     
     # Mostly done by the SBDRSClient, this just deals with url and end point specifics
-    def __init__(self, api_key_path, access_id):
-    	super().__init__('https://cgc-ga4gh-api.sbgenomics.com', api_key_path, 'cgc', access_id)
+    def __init__(self, api_key_path, access_id, debug=False):
+    	super().__init__('https://cgc-ga4gh-api.sbgenomics.com', api_key_path, 'cgc', access_id, debug=debug)
 
 class cavaticaDRSClient(SBDRSClient):
     '''client for Cavatica DRS Server'''    
     # init mostly done by the SBDRSClient, this just deals with url and end point specifics
-    def __init__(self, api_key_path, access_id):
-    	super().__init__('https://cavatica-ga4gh-api.sbgenomics.com', api_key_path, 'cavatica', access_id)
+    def __init__(self, api_key_path, access_id, debug=False):
+    	super().__init__('https://cavatica-ga4gh-api.sbgenomics.com', api_key_path, 'cavatica', access_id, debug=debug)
 
 
 

@@ -45,11 +45,17 @@ class DRSClient:
 	def getAccessURL(self, object_id, access_id=None):
 		if access_id == None:
 			access_id = self.access_id
-		headers = {'Content-Type': 'application/json'}
+		
 		if not self.public:
-			headers['Authorization'] = 'Bearer {0}'.format(self.access_token)
+			headers = self.getHeaders()
+		else:
+			headers ={}
+		headers['Content-Type'] = 'application/json'
 		api_url = '{0}/ga4gh/drs/v1/objects/{1}/access/{2}'.format(self.api_url_base, object_id, access_id)
+		if self.debug:
+			print(api_url)
 		response = requests.get(api_url, headers=headers)
+		if self.debug: print(response)
 		if response.status_code == 200:
 			resp = response.content.decode('utf-8')
 			return json.loads(resp)['url']
@@ -59,3 +65,6 @@ class DRSClient:
 			print (response)
 			print (response.content)
 			return None
+	
+	def getHeaders(self): 
+		return {'Authorization' : 'Bearer {0}'.format(self.access_token) }
