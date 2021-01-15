@@ -11,8 +11,8 @@ from fasp.loc import DRSClient
 
 class GA4GHRegistry:
 
-	def __init__(self):
-		self.hostURL = 'https://registry.ga4gh.org/v1'
+	def __init__(self, url):
+		self.hostURL = url
 	
 	# Look for registered DRS services
 	def getRegisteredServices(self, type=None):
@@ -28,7 +28,7 @@ class GA4GHRegistry:
 
 
 class DRSMetaResolver(DRSClient):
-	'''simulate identifiers.ord and n2t.net metaresolver capability.
+	'''simulate identifiers.org and n2t.net metaresolver capability.
 	Prefixes used are not official. For demonstration purpposes only'''
 	# Initialize a DRS Client for the service at the specified url base
 	# and with the REST resource to provide an access key 
