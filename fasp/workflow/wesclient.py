@@ -33,7 +33,7 @@ class WESClient:
 			return 'task not found'
 		print(runResp)
 		
-	def runWorkflow(self, body, verbose=False):
+	def runGenericWorkflow(self, body, verbose=False):
 		if verbose: print("sending to {}".format( self.api_url_base))
 		
 		response = requests.request('POST', self.api_url_base, headers=self.headers,  files=body)
@@ -46,6 +46,11 @@ class WESClient:
 			print("WES server authentication failed")
 			sys.exit(1)
 		else:
+			print("Full response status:\n{}".format(response))
 			print("WES run submission failed. Response status:{}".format(response.status_code))
+
 			sys.exit(1)
+		
+
+		
 		

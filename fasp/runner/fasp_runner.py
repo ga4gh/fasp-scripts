@@ -9,17 +9,19 @@ from fasp.runner.DemoCredits import Creditor
 
 class FASPRunner:
 
-	def __init__(self, pipelineLogFile=None, showCredits=None, pauseSecs=1, test=None):
+	def __init__(self, pipelineLogFile=None, showCredits=None, pauseSecs=1, program=None, test=None):
 		with open(os.path.expanduser(os.environ['FASP_SETTINGS'])) as json_file:
 			self.settings = json.load(json_file)		
 		self.searchClient = None
 		self.drsClient = None
 		self.workClient = None
 		
-		# what module are we running this for?
-		frm = inspect.stack()[1]
-		program = inspect.getsourcefile(frm[0]) 
-		print("Running {}".format(program))
+		if program == None:
+			# what module are we running this for?
+			frm = inspect.stack()[1]
+			program = inspect.getsourcefile(frm[0]) 
+			print("Running {}".format(program))
+			
 		if pipelineLogFile == None:
 			self.pipelineLogFile = self.settings['PipelineLog']
 		else:
@@ -79,4 +81,3 @@ class FASPRunner:
 				self.pipelineLogger.logRun(time, via, note,  pipeline_id, outfile, str(fileSize),
 					self.searchClient, self.drsClient, self.workClient)
 
-		self.pipelineLogger.close()
