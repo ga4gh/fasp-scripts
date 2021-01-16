@@ -3,7 +3,7 @@
 from setuptools import setup
 
 setup(name='fasp',
-      version='1.0',
+      version='1.1',
       packages=['fasp',
                 'fasp.runner',
                 'fasp.search',

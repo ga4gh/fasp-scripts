@@ -8,6 +8,6 @@ from fasp.loc.sbdrsclient import sbcgcDRSClient, cavaticaDRSClient, SBDRSClient
 
 from fasp.loc.sdl_drsclient import sdlDRSClient
 
-from fasp.loc.drs_metaresolver import DRSMetaResolver
-from fasp.loc.drs_metaresolver import GA4GHRegistry
+from fasp.loc.ga4gh_registry_client import GA4GHRegistryClient
 
+from fasp.loc.drs_metaresolver import DRSMetaResolver
