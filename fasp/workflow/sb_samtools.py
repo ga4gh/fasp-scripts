@@ -60,8 +60,8 @@ class samtoolsSBClient:
 					print(drsResponse) 
 					drsURL = drsClient.getAccessURL(oitem.id, 's3')
 					dPath = os.path.expanduser(ddir+oitem.name)
-					if ddir != None:
-						download(drsURL, dPath)
+					#if ddir != None:
+						#download(drsURL, dPath)
 				
 				else:
 					print(oitem)

@@ -11,7 +11,7 @@ from fasp.loc import DRSClient
 
 class GA4GHRegistry:
 
-	def __init__(self, url):
+	def __init__(self, url='https://registry.ga4gh.org/v1'):
 		self.hostURL = url
 	
 	# Look for registered DRS services
@@ -50,8 +50,7 @@ class DRSMetaResolver(DRSClient):
 	def getObject(self, colonPrefixedID):
 		client, id = self.getClient(colonPrefixedID)
 		if client != None:
-			print ('id:{}'.format(id))
-			print('sending to: {}'.format(client.__class__.__name__))
+			print('sending id {} to: {}'.format(id, client.__class__.__name__))
 			return client.getObject(id)
 		else:
 			return "prefix unrecognized"

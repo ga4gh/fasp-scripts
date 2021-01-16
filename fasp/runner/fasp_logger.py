@@ -2,28 +2,22 @@ import datetime
 import os
 
 
-from fasp.workflow import DNAStackWESClient
 from fasp.search import BigQuerySearchClient
 
 class FASPLogger:
 
-    
+
 	def __init__(self,  filePath, program):
 		self.program = program
-		full_path = os.path.expanduser(filePath)
-		if os.path.exists(full_path):
-			self.log = open(full_path, "a")
-		else:
-			self.log = open(full_path, "w")
+		self.full_path = os.path.expanduser(filePath)
+		if not os.path.exists(self.full_path):
+			log = open(self.full_path, "w")
 			# write a header
 			header = '{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}'.format('time','status','via',
 			'script', 'note', 'pipeline_id', 'outfile', 'fileSize',
 			'ssearchClient','drsClient','wesClient')
-			self.log.write(header)
-			self.log.write("\n")
-
-	def __del__(self):
-		self.log.close()
+			log.write(header)
+			log.write("\n")
 
 
 	def logRun(self, time, via, note, pipeline_id, outfile, fileSize, 
@@ -33,15 +27,15 @@ class FASPLogger:
 		drsClass = finder.__class__.__name__
 		computeClass = computer.__class__.__name__
 		
+		log = open(self.full_path, "a")
+		
 		logline = '{}\t\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}'.format(time, via,
 			self.program, note, pipeline_id, outfile, fileSize,
 			searchClass, drsClass, computeClass)
-		self.log.write(logline)
-		self.log.write("\n")
-		
-	def close(self):
-		self.log.close()
-		
+		log.write(logline)
+		log.write("\n")
+		log.close()
+				
 
 if __name__ == "__main__":
 	dummy = BigQuerySearchClient()		

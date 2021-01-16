@@ -24,31 +24,54 @@ class sbWESClient(WESClient):
 		self.headers = { 'X-SBG-Auth-Token': self.accessToken}
 		self.debug = debug
 		self.modulePath = os.path.dirname(os.path.abspath(__file__))
-		self.wdlPath = self.modulePath + '../../plenary-resources-2020/workflows'
-				
+
+	def runWorkflow(self, fileurl, outfile):
+		# App I want to use to run a task
 		
-	def runGWASWorkflowTest(self):
 
-		payload = {'workflow_url': 'gwas.wdl'}
-		files = {
-			'workflow_params': ('inputs.gwas.json', open(self.wdlPath+'/inputs.gwas.json', 'rb'), 'application/json'),
-			'workflow_attachment': ('gwas.wdl', open(self.wdlPath+'/gwas.wdl', 'rb'), 'text/plain')
+		#app = 'sbg://{}/samtools-stats-1-8/10'.format(self.project_id)
+		app = 'sbg://{}/samtools-stats-1-8-url'.format(self.project_id)
+		if self.debug: print("app:{}".format(app))
+
+		params = {
+		   	"project": self.project_id,
+		    "inputs": {
+		      "alignment_file_url": fileurl,
+		      "reference_file": {
+				"path": "drs://cgc-ga4gh-api.sbgenomics.com/5bad6c83e4b0abc138917143",
+				"name": "references-hs37d5-hs37d5.fasta",
+		        "class": "File"
+		      },
+		      "output_file_path": outfile
+		    }
+		 }
+		
+		
+		body = {
+		  "workflow_params": (None, json.dumps(params), 'application/json'),
+		  "workflow_type": "CWL",
+		  "workflow_type_version": "sbg:draft-2",
+		  "workflow_url": app
 		}
-
-		response = requests.request("POST", self.api_url_base, headers=self.headers, data = payload, files = files)
+	
+		response = requests.request("POST", self.api_url_base, headers=self.headers, files = body)
+		
+		if self.debug:
+			print(response)
 		if response.status_code == 200:
 			return response.json()['run_id']
 		elif response.status_code == 401:
 			print("WES server authentication failed")
 			sys.exit(1)
 		else:
+			print("Full response content:\n{}".format(response.content))
 			print("WES run submission failed. Response status:{}".format(response.status_code))
 			sys.exit(1)
 
-		return response.json()['run_id']
+					
 
 	def runGWASWorkflow(self, vcfFileurl, csvfileurl):
-
+		''' run the plenary GWAS Workflow '''
 		# use a temporary file to write out the input file
 		inputJson = {"gwas.metadata_csv": csvfileurl, "gwas.vcf": vcfFileurl   }
 		with tempfile.TemporaryFile() as fp:

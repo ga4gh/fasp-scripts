@@ -108,7 +108,7 @@ class DiscoverySearchClient:
 		print ("_Retrieving the query_")
 		while next_url != None :
 			pageCount += 1
-			#print ("____Page{}_______________".format(pageCount))
+			print ("____Page{}_______________".format(pageCount))
 			if pageCount == 1:
 				response = requests.request("POST", next_url,
 				 headers=self.headers, data = query2)
@@ -125,7 +125,7 @@ class DiscoverySearchClient:
 				resultRows.append([*r.values()])
 				
 			if 'data_model' in result:
-				print('found data model')
+				if self.debug: print('found data model')
 				column_list = result['data_model']['properties'].keys()
 
 		if returnType == 'dataframe':
