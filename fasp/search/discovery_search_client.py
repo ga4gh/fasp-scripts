@@ -3,7 +3,7 @@ import pprint
 import sys
 import getopt
 
-from fasp.loc import GA4GHRegistry
+from fasp.loc import GA4GHRegistryClient
 import pandas as pd
 
 class DiscoverySearchClient:
@@ -18,7 +18,7 @@ class DiscoverySearchClient:
 	# Look for registered search services
 	@classmethod
 	def getRegisteredSearchServices(cls):
-		reg = GA4GHRegistry()
+		reg = GA4GHRegistryClient()
 		services = reg.getRegisteredServices('org.ga4gh:search')
 		for service in services:
 			serviceType=service['type']
