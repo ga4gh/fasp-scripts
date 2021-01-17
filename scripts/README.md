@@ -59,7 +59,7 @@ The table below indicates for each script where a GA4GH API could be used (blue)
 
 
 
-#### Thousand Genomes FASP - FASPScript4.py
+### Thousand Genomes FASP - FASPScript4.py
 
 This script queries Thousand Genomes data on subjects and specimens which was exported from BioDataCatalyst and loaded into BigQuery.
 
@@ -76,7 +76,7 @@ The other two scripts were proof of concept using direct APIs from different sta
 
   - Troubleshoot samtools stats workflow on DNAStack WES server 
 
-#### GWAS workflow 
+### GWAS workflow 
 
 Script: [FASPScriptGWAS.py](https://github.com/ga4gh/fasp-scripts/blob/master/fasp/scripts/FASPScriptGWAS.py)
 
@@ -86,7 +86,7 @@ Script: [FASPScriptGWAS.py](https://github.com/ga4gh/fasp-scripts/blob/master/fa
 - Resolves which DRS server needs to be called to obtain a URL to access the file.
 - Submits the GWAS WDL workflow to the DNAStack WES Server using the URL provided by DRS.
 
-#### Demonstration of Search and compute from multiple sources 
+### Demonstration of Search and compute from multiple sources 
 
 Script: [FASPScript2.py](https://github.com/ga4gh/fasp-scripts/blob/master/fasp/scripts//FASPScript2.py)
 
@@ -109,7 +109,7 @@ Script: [FASPScript2.py](https://github.com/ga4gh/fasp-scripts/blob/master/fasp/
   - Add additional dbGaP datasets.
   - Move query to Discovery Search - requires access control on Discovery Search.
 
-#### Reproducibility across stacks 
+### Reproducibility across stacks 
 
 Script: [FASPScript8.py](https://github.com/ga4gh/fasp-scripts/blob/master/fasp/scripts/FASPScript8.py)
 
@@ -118,7 +118,7 @@ Script: [FASPScript8.py](https://github.com/ga4gh/fasp-scripts/blob/master/fasp/
 - Uses DRS to identify files for these cases are on both Google Cloud and AWS
 - Runs samtools stats on Google Cloud and Seven Bridges (AWS)
 
-#### Compute on SRA (NCBI Sequence Read Archive) urls 
+### Compute on SRA (NCBI Sequence Read Archive) urls 
 
 Script: [FASPScript6.py](https://github.com/ga4gh/fasp-scripts/blob/master/fasp/scripts/FASPScript6.py)
 
@@ -130,7 +130,7 @@ Script: [FASPScript6.py](https://github.com/ga4gh/fasp-scripts/blob/master/fasp/
   - Substitute in SRA DRS server
   - Identify why BAM file URLS are not returned by SDL.
 
-####  JMJD1C variants - 
+###  JMJD1C variants - 
 
 Script: [FASPScript7.py](https://github.com/ga4gh/fasp-scripts/blob/master/fasp/scripts/FASPScript7.py)
 
