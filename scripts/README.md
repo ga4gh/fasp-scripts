@@ -7,11 +7,37 @@
 
 ------
 
-Script summary
+## Horizontal Demo
 
-![scriptGrid](fasp/runner/credits/images/scriptgrid.png)
+The materials for the Horizontal Demo from the GA4GH 2020 Plenary are under plenary-resources-2020. That folder contains  the files necessary for the workflow used by each of the four platforms participating in the Horizontal Demo. See  the 
 
-## **Prerequisites to run**
+[ReadMe]: ./plenary-resources-2020/README.md
+
+in that directory for details.  for more details.
+
+## FASPScripts
+
+These Python scripts were originally created for the Cross-Platform Demo at the 2020 Plenary. Additional scripts have been added as additional data sources and GA4GH implementations have become available. 
+
+They follow a basic three step pattern used throughout FASP. Each step corresponds to a different GA4GH API as outlined here
+
+- Search - to identify subjects and samples of interest based on attrinutes of those subjects and samples
+- Data Repository Service DRS - to obtain authorized access to files (genomic sequences)
+- Workflow Execution Service - WES -  to perform a workflow on those files
+
+In any script more than one implementation of the given API may be used at each step where different data sources need to be searched, where files are in different cloud locations, or where workflow needs to be performed local to those files.
+
+Some scripts use a non GA4GH API which performs equivalent functionality. The driver for each script was to search particular datasets together in a federated way. Where those data were not available through a GA4GH API a proprietary API was used. In some cases the data sources used in scripts were created for purposes of demo/exploration. In some cases this was necessary to create scrambled versions of controlled access datasets. In other cases controlled access subject and specimen data were searched but were accessed from private stores maintained under access control.
+
+In all cases where controlled access sequence data was used it remains under the access control of the repositories that make it available (EGA, NIH Cloud Platforms).
+
+The table below indicates for each script where a GA4GH API could be used (blue) and where a proprietary API (grey) was used.
+
+
+
+![scriptGrid](../fasp/runner/credits/images/scriptgrid.png)
+
+### **Prerequisites to run scripts**
 
 - fasp package - install (e.g. pip) from fasp-scripts directory
 - Settings file
@@ -31,7 +57,7 @@ Script summary
 
 ------
 
-## Scripts
+
 
 #### Thousand Genomes FASP - FASPScript4.py
 
@@ -55,6 +81,7 @@ The other two scripts were proof of concept using direct APIs from different sta
 Script: [FASPScriptGWAS.py](https://github.com/ga4gh/fasp-scripts/blob/master/fasp/scripts/FASPScriptGWAS.py)
 
 
+- Runs the same workflow as the Horizontal Demo
 - Queries Discovery Search for Thousand Genomes non-annotated recalibrated vcf file for Chromosome 21, obtaining prefixed DRS ids for the file. 
 - Resolves which DRS server needs to be called to obtain a URL to access the file.
 - Submits the GWAS WDL workflow to the DNAStack WES Server using the URL provided by DRS.
