@@ -9,11 +9,7 @@
 
 ## Horizontal Demo
 
-The materials for the Horizontal Demo from the GA4GH 2020 Plenary are under plenary-resources-2020. That folder contains  the files necessary for the workflow used by each of the four platforms participating in the Horizontal Demo. See  the 
-
-[ReadMe]: ./plenary-resources-2020/README.md
-
-in that directory for details.  for more details.
+The materials for the Horizontal Demo from the GA4GH 2020 Plenary are under plenary-resources-2020. That folder contains  the files necessary for the workflow used by each of the four platforms participating in the Horizontal Demo. See  the [ReadMe](./plenary-resources-2020/README.md) in that directory for details.  for more details.
 
 ## FASPScripts
 
