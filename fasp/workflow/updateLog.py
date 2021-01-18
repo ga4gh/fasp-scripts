@@ -5,6 +5,7 @@ import pandas as pd
 from fasp.workflow import samtoolsSBClient 
 from fasp.workflow import DNAStackWESClient 
 from fasp.workflow import GCPLSsamtools 
+from fasp.workflow import sbWESClient 
 from fasp.runner import FASPRunner 
 
 
@@ -20,7 +21,8 @@ def main(argv):
 	gcsam = GCPLSsamtools(location, settings['GCPOutputBucket'])
 	wesClients = { 'samtoolsSBClient':samtoolsSBClient(sbSystem, sbProject),
 					'DNAStackWESClient':DNAStackWESClient('~/.keys/DNAStackWESkey.json'),
-					'GCPLSsamtools': gcsam}
+					'GCPLSsamtools': gcsam,
+					'sbWESClient':sbWESClient(sbSystem,sbProject,'~/.keys/sbcgc_key.json')}
 	
 	for i, row in logTable.iterrows(): 
 		wesClientClassName = row["wesClient"]
@@ -28,7 +30,7 @@ def main(argv):
 		if run_id == 'paste here':
 			logTable.at[i, 'status'] = 0
 		else:
-			if pd.isna(row["status"]) or row["status"].lower() == 'running':
+			if pd.isna(row["status"]) or row["status"].lower() in ['running','initializing']:
 				wc = wesClients[wesClientClassName]
 				status = wc.getTaskStatus(row["pipeline_id"])
 				print('Updated run:{} status:{}'.format(run_id, status))

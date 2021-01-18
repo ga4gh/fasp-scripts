@@ -1,0 +1,5456 @@
+[
+  {
+    "object_id": "anv:dg.ANV0/76bb893d-12da-41ca-8828-ff89551d3e15",
+    "md5sum": "95674c0a787f1d1aa39fef32c044f981",
+    "file_name": "GTEX-1GTWX-0001-SM-7J3A5.cram",
+    "file_size": 37613965305
+  },
+  {
+    "object_id": "anv:dg.ANV0/66352de8-4b50-4cae-881d-b76d03df5ac8",
+    "md5sum": "1972af470ae31eb164673dfa64b777d7",
+    "file_name": "GTEX-14PQA-0003-SM-7DLH4.cram",
+    "file_size": 36956970820
+  },
+  {
+    "object_id": "anv:dg.ANV0/ed9ac9ae-02da-4e97-93da-ad86aa77d227",
+    "md5sum": "cfd2f4cde4aa3e0cf9f726f0c1255fcd",
+    "file_name": "GTEX-1B98T-0004-SM-7J38T.cram",
+    "file_size": 38379493977
+  },
+  {
+    "object_id": "anv:dg.ANV0/07c789f9-93f6-42e7-aa30-d723d65bfa7f",
+    "md5sum": "2955450c80544d0f62edb66b80764c09",
+    "file_name": "GTEX-ZTPG-0003-SM-6WBSO.cram",
+    "file_size": 48752368823
+  },
+  {
+    "object_id": "anv:dg.ANV0/c461e507-ebb7-41d4-84c3-a7a8a9031de2",
+    "md5sum": "496ec098e92a6874a3b253b172c1c6e7",
+    "file_name": "GTEX-NL3H-0009-SM-5JK37.cram",
+    "file_size": 68125069455
+  },
+  {
+    "object_id": "anv:dg.ANV0/3242a70c-5e49-4b4d-9353-9fa7d376c5fd",
+    "md5sum": "682047e5b0f392def3ef6ea841e4b854",
+    "file_name": "GTEX-14E6D-0002-SM-7DROV.cram",
+    "file_size": 40647784468
+  },
+  {
+    "object_id": "anv:dg.ANV0/fd877d19-9360-47e9-b1e4-815967819223",
+    "md5sum": "579c1af88d6705fa09d6c5ec7c18c2c8",
+    "file_name": "GTEX-169BO-0003-SM-6UH2W.cram",
+    "file_size": 50550607931
+  },
+  {
+    "object_id": "anv:dg.ANV0/54b28938-1a63-47f5-b89c-283eed8ffb4f",
+    "md5sum": "fa29ff53bd8e138f236c32a60c4b5527",
+    "file_name": "GTEX-1QW4Y-0003-SM-DLIQP.cram",
+    "file_size": 41322645964
+  },
+  {
+    "object_id": "anv:dg.ANV0/906604b6-577e-4ad7-bf98-d72e48055374",
+    "md5sum": "9c70e5bb90489a81e45d1833afb99580",
+    "file_name": "GTEX-132QS-0003-SM-7DROZ.cram",
+    "file_size": 41785521324
+  },
+  {
+    "object_id": "anv:dg.ANV0/fb34b7af-56bd-4092-85c1-6b88012e714d",
+    "md5sum": "08f003815c35713bb35ae033fb40826f",
+    "file_name": "GTEX-15D1Q-0004-SM-7DLFO.cram",
+    "file_size": 31443768858
+  },
+  {
+    "object_id": "anv:dg.ANV0/b44551bc-6aae-4db2-9a6b-446997c9bf8a",
+    "md5sum": "ab053ce5c48516713dbc1ad3fc63c42e",
+    "file_name": "GTEX-18465-0002-SM-DJWXW.cram",
+    "file_size": 41425001826
+  },
+  {
+    "object_id": "anv:dg.ANV0/7390be2f-ba8b-4ab0-8821-c26e66ef2e9a",
+    "md5sum": "0cd64bc171bd2a1e440bce1e358db19d",
+    "file_name": "GTEX-1PBJI-0003-SM-DJWWV.cram",
+    "file_size": 45279833176
+  },
+  {
+    "object_id": "anv:dg.ANV0/9c200355-f9cc-4870-ad36-064f17b00249",
+    "md5sum": "28bbe71aaf15b056e235b2ec2902d2c6",
+    "file_name": "GTEX-XUW1-0002-SM-5JK4P.cram",
+    "file_size": 75913387399
+  },
+  {
+    "object_id": "anv:dg.ANV0/0b889889-0f87-4a30-929e-e436d58906a7",
+    "md5sum": "d675e6bbe35ab979d6592542680f0058",
+    "file_name": "GTEX-16AAH-0003-SM-6UH2V.cram",
+    "file_size": 48044413849
+  },
+  {
+    "object_id": "anv:dg.ANV0/21a1e072-3074-4c7f-8ffe-66345f3ebc87",
+    "md5sum": "823abd2576c9233eaf56604f2c3311d9",
+    "file_name": "GTEX-WYVS-0002-SM-5URCN.cram",
+    "file_size": 70643783091
+  },
+  {
+    "object_id": "anv:dg.ANV0/8972bac8-c675-4a10-92d7-e46e9d2385fa",
+    "md5sum": "7fd45ff8bf00fc3ce62c31888cea3457",
+    "file_name": "GTEX-13PLJ-0003-SM-6WSCN.cram",
+    "file_size": 48655450692
+  },
+  {
+    "object_id": "anv:dg.ANV0/54405636-f3fc-467f-9421-3331b3793e56",
+    "md5sum": "53b6e3c3b4461b3b517de04ec9c2a4d5",
+    "file_name": "GTEX-1GZHY-0001-SM-7J3AC.cram",
+    "file_size": 36365345320
+  },
+  {
+    "object_id": "anv:dg.ANV0/7d910a95-7a5b-4d2b-82b9-a2643c8d2914",
+    "md5sum": "52faf1a5ccdafa7c4bf7da21026fc298",
+    "file_name": "GTEX-14ASI-0001-SM-7DROX.cram",
+    "file_size": 80906038092
+  },
+  {
+    "object_id": "anv:dg.ANV0/cec29912-0723-41ae-a1b9-9cfb822f7061",
+    "md5sum": "3820738075a7ef557300f7bb089e6620",
+    "file_name": "GTEX-1F48J-0003-SM-7J3AS.cram",
+    "file_size": 39372276626
+  },
+  {
+    "object_id": "anv:dg.ANV0/8bd06623-25da-47ce-984f-d596bdcc285f",
+    "md5sum": "62cd366b1442f9dab0f2be835f413a21",
+    "file_name": "GTEX-VUSG-0002-SM-DLIPX.cram",
+    "file_size": 43098848626
+  },
+  {
+    "object_id": "anv:dg.ANV0/8a2b56ce-e4c5-4853-a4ee-8b6e17dc183e",
+    "md5sum": "4398d39dd17641c301179aae3902a81c",
+    "file_name": "GTEX-Z9EW-0002-SM-6UH37.cram",
+    "file_size": 49446316166
+  },
+  {
+    "object_id": "anv:dg.ANV0/d7029ec3-0e2c-45c9-a9af-2ca8409c073d",
+    "md5sum": "6fafc546342968745a36b66235f9b308",
+    "file_name": "GTEX-12ZZY-0004-SM-6WSCC.cram",
+    "file_size": 50545671911
+  },
+  {
+    "object_id": "anv:dg.ANV0/08e22c30-ec01-4f1f-a8c1-90461751e2d5",
+    "md5sum": "ee93f97ffc84039c8c1f08e5dc4ff1c3",
+    "file_name": "GTEX-13NYB-0004-SM-6WSC1.cram",
+    "file_size": 51438104347
+  },
+  {
+    "object_id": "anv:dg.ANV0/1f365172-24fb-495a-8312-2b0b62652e47",
+    "md5sum": "4e0c228f45a04555ffd6ecab4883afaa",
+    "file_name": "GTEX-N7MS-0009-SM-5JK3E.cram",
+    "file_size": 71015388497
+  },
+  {
+    "object_id": "anv:dg.ANV0/ff4377e0-b283-4d30-8e93-2ed183bdf261",
+    "md5sum": "6b54403c54394e2c302aba1610b386fb",
+    "file_name": "GTEX-13W3W-0004-SM-6WSCQ.cram",
+    "file_size": 49309695407
+  },
+  {
+    "object_id": "anv:dg.ANV0/2d194dbf-1354-4de9-be87-91e9c14451e6",
+    "md5sum": "d0d4cec1eb7dccd4f83a0054fb14f6c3",
+    "file_name": "GTEX-T6MN-0003-SM-5URB7.cram",
+    "file_size": 59099462988
+  },
+  {
+    "object_id": "anv:dg.ANV0/62679492-f151-4966-a36d-d813db1c73c9",
+    "md5sum": "53295cf06aecaabb2aabdd169507300c",
+    "file_name": "GTEX-U4B1-0001-SM-5URC2.cram",
+    "file_size": 56330254517
+  },
+  {
+    "object_id": "anv:dg.ANV0/765484b9-c956-45e6-8c12-32a81cd43fdd",
+    "md5sum": "2bac6880e74cefefbde31987cb849edb",
+    "file_name": "GTEX-17MF6-0002-SM-6UH21.cram",
+    "file_size": 48857234446
+  },
+  {
+    "object_id": "anv:dg.ANV0/6ec537ae-c277-4ae1-8744-9fda37012a8f",
+    "md5sum": "568bbdb8eebfa2ec74a27d18ce371986",
+    "file_name": "GTEX-1P4AB-0001-SM-DJWXJ.cram",
+    "file_size": 39263873790
+  },
+  {
+    "object_id": "anv:dg.ANV0/9245f612-2e97-4430-8731-8e0e260d1e84",
+    "md5sum": "9fb3128ef12ec0f4928f40ba278d63ce",
+    "file_name": "GTEX-15UKP-0003-SM-6UH1I.cram",
+    "file_size": 50090472478
+  },
+  {
+    "object_id": "anv:dg.ANV0/24ba0365-81e8-45c4-8bf6-56d59b14a97f",
+    "md5sum": "5d7b32d01716be8824199c8233185755",
+    "file_name": "GTEX-PX3G-0004-SM-5JK53.cram",
+    "file_size": 41455263960
+  },
+  {
+    "object_id": "anv:dg.ANV0/f9551d9b-55ba-4890-8bec-71a3dd06223a",
+    "md5sum": "dbb4ecde1e33a2e54b9947bafd364513",
+    "file_name": "GTEX-1314G-0003-SM-7DRPN.cram",
+    "file_size": 42249024671
+  },
+  {
+    "object_id": "anv:dg.ANV0/6bd661a6-3857-43c2-af84-1454f82ce914",
+    "md5sum": "4aa93a3c6cad7ca2ab55053f078a2bda",
+    "file_name": "GTEX-13S86-0003-SM-6WSCT.cram",
+    "file_size": 51000941338
+  },
+  {
+    "object_id": "anv:dg.ANV0/e95d01fd-ed29-412e-8f76-d737e657c922",
+    "md5sum": "06fbb4a60f0b57fcf32bca82625fddf6",
+    "file_name": "GTEX-117YX-0001-SM-7DRQ6.cram",
+    "file_size": 32114315821
+  },
+  {
+    "object_id": "anv:dg.ANV0/f409fefc-50f4-4ef6-b426-c66ce5eff25b",
+    "md5sum": "339cfe963593e24b7d0ad7c307fb8fef",
+    "file_name": "GTEX-ZTX8-0004-SM-6WBSE.cram",
+    "file_size": 48456841888
+  },
+  {
+    "object_id": "anv:dg.ANV0/bff1ca5b-3712-411b-9f00-35bd9d7bdb9f",
+    "md5sum": "e5952de2b64ad7cc2ecad5f60e29ca28",
+    "file_name": "GTEX-13FTW-0003-SM-6WSBY.cram",
+    "file_size": 54210412720
+  },
+  {
+    "object_id": "anv:dg.ANV0/151190e8-8980-4286-8e55-e68daf82b9ab",
+    "md5sum": "e635503640cc1d6566f07798525926ab",
+    "file_name": "GTEX-ZVE2-0002-SM-6WBSQ.cram",
+    "file_size": 52409478335
+  },
+  {
+    "object_id": "anv:dg.ANV0/2df18ea7-083a-46e0-aa52-cbaee1bb7197",
+    "md5sum": "931fe96a49a2e90f95833a028dd9bd36",
+    "file_name": "GTEX-POMQ-0003-SM-5JK46.cram",
+    "file_size": 73868691001
+  },
+  {
+    "object_id": "anv:dg.ANV0/a959e9fe-2228-42e2-a20f-f05b13f53ae9",
+    "md5sum": "3e69b501381997f2eb235e4b925b8de6",
+    "file_name": "GTEX-11GS4-0004-SM-6WBTL.cram",
+    "file_size": 59484315380
+  },
+  {
+    "object_id": "anv:dg.ANV0/811daa39-068c-4a6b-ad3e-328c872dbbf6",
+    "md5sum": "275eaa96f6b2ff73e735919ea8ff817b",
+    "file_name": "GTEX-QEG5-0003-SM-5URCP.cram",
+    "file_size": 59818674156
+  },
+  {
+    "object_id": "anv:dg.ANV0/af46b101-853e-41f4-b4b3-9820c6fad504",
+    "md5sum": "4f8a543f28e7e980b4a349971e80b3ff",
+    "file_name": "GTEX-SIU8-0002-SM-5JK47.cram",
+    "file_size": 75737522507
+  },
+  {
+    "object_id": "anv:dg.ANV0/eb294da4-abd8-4f1f-b0dd-57a501a777d9",
+    "md5sum": "04d3f3ec827d4bdc6d1b9d7031c42aea",
+    "file_name": "GTEX-RN64-0004-SM-5URBC.cram",
+    "file_size": 63434404928
+  },
+  {
+    "object_id": "anv:dg.ANV0/3aa5e14c-1c32-45a7-8a7e-4676fb49ca9e",
+    "md5sum": "d33030de36b8a3cd519fbb1404e536d9",
+    "file_name": "GTEX-1GMR3-0001-SM-7J3AM.cram",
+    "file_size": 36403256810
+  },
+  {
+    "object_id": "anv:dg.ANV0/cfd4657d-c08e-40f2-b41e-e7b6db5ec653",
+    "md5sum": "0f2cfa14561a645ff293e1540776f178",
+    "file_name": "GTEX-13OVG-0003-SM-6WSAV.cram",
+    "file_size": 49603666826
+  },
+  {
+    "object_id": "anv:dg.ANV0/1923f983-67aa-4197-8375-6fa862a0a9d5",
+    "md5sum": "9c09ac4299d2c261bc3c0c068c94b9a7",
+    "file_name": "GTEX-S32W-0001-SM-5JK4N.cram",
+    "file_size": 65626585085
+  },
+  {
+    "object_id": "anv:dg.ANV0/a8d754ce-758f-4146-8c5d-b4ad9433c99a",
+    "md5sum": "e593360a5c7b10ee9825a41547645428",
+    "file_name": "GTEX-ZVTK-0002-SM-6WBSA.cram",
+    "file_size": 49621569223
+  },
+  {
+    "object_id": "anv:dg.ANV0/a76e8aff-370d-4149-a266-70905486a4bd",
+    "md5sum": "80c6bc00c2923c2be42dbd9efb316284",
+    "file_name": "GTEX-1LG7Z-0002-SM-DJWY1.cram",
+    "file_size": 43739313160
+  },
+  {
+    "object_id": "anv:dg.ANV0/7bde1d40-43ed-4b6e-a432-52bef01bcd8c",
+    "md5sum": "d7a9d0034992bc882d6160ab96f33b37",
+    "file_name": "GTEX-14LZ3-0003-SM-7DLGY.cram",
+    "file_size": 35567256192
+  },
+  {
+    "object_id": "anv:dg.ANV0/15b754bd-c1e5-4ec8-af3d-2e29921b6267",
+    "md5sum": "13373866fc3f5796fb168f35768ab656",
+    "file_name": "GTEX-RTLS-0004-SM-7DLGV.cram",
+    "file_size": 37574203658
+  },
+  {
+    "object_id": "anv:dg.ANV0/0a01d221-8942-4867-b2e8-0368a92ccd1d",
+    "md5sum": "d0122949eee4ba4dd8cbccba075b2954",
+    "file_name": "GTEX-18A7A-0002-SM-6UH2A.cram",
+    "file_size": 48423998122
+  },
+  {
+    "object_id": "anv:dg.ANV0/0e80a7c1-c19e-4401-af54-60b953d07fe1",
+    "md5sum": "8fa976ca667e6d21251ea900a3a1de9a",
+    "file_name": "GTEX-1S3DN-0001-SM-DJWXL.cram",
+    "file_size": 40520531092
+  },
+  {
+    "object_id": "anv:dg.ANV0/10b27792-4394-46ce-a00d-9d7b49c641c9",
+    "md5sum": "2c918d09812ac03c4345daa81fd52fdd",
+    "file_name": "GTEX-11ONC-1326-SM-DLIPJ.cram",
+    "file_size": 48083079607
+  },
+  {
+    "object_id": "anv:dg.ANV0/16de3a4d-73a0-44f2-8ef6-c56d9a693aef",
+    "md5sum": "fc6b90e3d746c0e6985363909ccc2904",
+    "file_name": "GTEX-OHPL-2626-SM-DO3X3.cram",
+    "file_size": 44639926857
+  },
+  {
+    "object_id": "anv:dg.ANV0/193f4471-20e3-4d3d-96ff-8fcfb5d08bd6",
+    "md5sum": "7467d23ed997289fcf7e95a8868d7bec",
+    "file_name": "GTEX-P44H-1126-SM-CLTFW.cram",
+    "file_size": 45097695180
+  },
+  {
+    "object_id": "anv:dg.ANV0/80ced03e-f1f0-460d-983c-9701340a8413",
+    "md5sum": "4c095f15b08e56eeebe63f2d53e657c7",
+    "file_name": "GTEX-16YQH-0004-SM-6UH22.cram",
+    "file_size": 48846596301
+  },
+  {
+    "object_id": "anv:dg.ANV0/6eb89406-60a5-4177-9978-22023a318a98",
+    "md5sum": "1471a5353eab16915be1cb8478649ed2",
+    "file_name": "GTEX-13W46-0003-SM-6WSAK.cram",
+    "file_size": 52367927515
+  },
+  {
+    "object_id": "anv:dg.ANV0/43f734e4-2468-45f7-9283-218b300d1325",
+    "md5sum": "27d866ca4d4a1332a54d7dfadd75b7ba",
+    "file_name": "GTEX-RU1J-0002-SM-5URDF.cram",
+    "file_size": 64024373172
+  },
+  {
+    "object_id": "anv:dg.ANV0/f3137ecb-768d-4389-ab23-6eea60ffea0e",
+    "md5sum": "d891828c38f8b9b5aeb96fa27727a062",
+    "file_name": "GTEX-13O61-0003-SM-6WSAT.cram",
+    "file_size": 48023666501
+  },
+  {
+    "object_id": "anv:dg.ANV0/f9b76592-163a-47a0-9c95-30d4157751ba",
+    "md5sum": "5e91403ae67464dc34a5e9e278627b8d",
+    "file_name": "GTEX-15DCE-0003-SM-7DLFB.cram",
+    "file_size": 36277045690
+  },
+  {
+    "object_id": "anv:dg.ANV0/2ed5a581-e51b-426d-b42a-47f73e7d877e",
+    "md5sum": "082232d1559d6c8ff626344a7012d17b",
+    "file_name": "GTEX-1269C-2026-SM-DLIOA.cram",
+    "file_size": 44868770981
+  },
+  {
+    "object_id": "anv:dg.ANV0/aaf6df31-fb88-45ba-ba2a-2413e4c57607",
+    "md5sum": "acee482b827c20ad1284b143846d944e",
+    "file_name": "GTEX-1AX9I-0002-SM-7J39K.cram",
+    "file_size": 32123798816
+  },
+  {
+    "object_id": "anv:dg.ANV0/8f3bce57-ece4-4327-bfaf-d45930b2ca9a",
+    "md5sum": "001d81b5eb1d536f0ceb52737a87e1b1",
+    "file_name": "GTEX-1B97J-0003-SM-7J39S.cram",
+    "file_size": 52486443513
+  },
+  {
+    "object_id": "anv:dg.ANV0/64fe9a7a-0346-4e70-bdfe-59531534d293",
+    "md5sum": "b0c22e8d91a41faf5f6bc1cc9945673b",
+    "file_name": "GTEX-1QP67-0004-SM-DLIP9.cram",
+    "file_size": 40946655867
+  },
+  {
+    "object_id": "anv:dg.ANV0/ee65946f-dc4e-4432-85ec-9dbded941cd6",
+    "md5sum": "2bb21b8cd2937fea0e41f4ed26545ab4",
+    "file_name": "GTEX-1AX9K-0001-SM-7J39L.cram",
+    "file_size": 33746094390
+  },
+  {
+    "object_id": "anv:dg.ANV0/afe54a99-f950-4e0a-9fc1-63bdb177d829",
+    "md5sum": "72bf8d25b585537f6d5f014a6e4873d7",
+    "file_name": "GTEX-145MI-0001-SM-7DRO7.cram",
+    "file_size": 33993272324
+  },
+  {
+    "object_id": "anv:dg.ANV0/0751c6c3-d390-4f38-b7e8-05c457d80945",
+    "md5sum": "c2677bad0181678fd62f3343b365f3b7",
+    "file_name": "GTEX-14A5H-0004-SM-7DRO9.cram",
+    "file_size": 76368603248
+  },
+  {
+    "object_id": "anv:dg.ANV0/dc1ccf77-0ee7-4385-b063-b1bf91a2af9e",
+    "md5sum": "f08a7a4ea633e0d50f1879695496f310",
+    "file_name": "GTEX-15CHS-0001-SM-7DLFY.cram",
+    "file_size": 38648867340
+  },
+  {
+    "object_id": "anv:dg.ANV0/0fa711d2-5056-420e-8163-98c32140e28b",
+    "md5sum": "23f20aa10d639dd3fbcc97be3d77bc90",
+    "file_name": "GTEX-1NHNU-0004-SM-DJWXE.cram",
+    "file_size": 51671980160
+  },
+  {
+    "object_id": "anv:dg.ANV0/b90bfa9d-7c5d-4b55-9db8-4535f86c1ba7",
+    "md5sum": "9048b4047eaa35cb7ff11bad22e1e983",
+    "file_name": "GTEX-1PPH8-0003-SM-DLIPC.cram",
+    "file_size": 45784548088
+  },
+  {
+    "object_id": "anv:dg.ANV0/e9083fa8-bb04-4015-812d-ca550ba4da57",
+    "md5sum": "2b15e5e1762df4010a6a1a902f53df05",
+    "file_name": "GTEX-XQ3S-0002-SM-5JK42.cram",
+    "file_size": 71436855458
+  },
+  {
+    "object_id": "anv:dg.ANV0/5bc146a0-1107-41f4-a27f-5d7549bee86c",
+    "md5sum": "978d7e8ba225c903dedec23b81ad9fa9",
+    "file_name": "GTEX-1R9PO-0004-SM-DLIQO.cram",
+    "file_size": 39192373672
+  },
+  {
+    "object_id": "anv:dg.ANV0/2e7b0ba6-fae0-44a1-b0fe-da7f09eda222",
+    "md5sum": "d831dcc93303729b9af90a0c3e3511f9",
+    "file_name": "GTEX-11ZVC-0004-SM-6WBU9.cram",
+    "file_size": 51236633176
+  },
+  {
+    "object_id": "anv:dg.ANV0/8125173f-ef20-479d-9b8b-d7c661b4740a",
+    "md5sum": "ea20358378155014624ff05424230abd",
+    "file_name": "GTEX-1CB4F-0826-SM-DLL3M.cram",
+    "file_size": 38434986407
+  },
+  {
+    "object_id": "anv:dg.ANV0/c1dbd8e2-bd5b-4514-8a11-c51346ddbe95",
+    "md5sum": "68f40a73812becaea7350d1f2dc023cd",
+    "file_name": "GTEX-QV31-0003-SM-5URDH.cram",
+    "file_size": 67910714354
+  },
+  {
+    "object_id": "anv:dg.ANV0/353fe06d-974d-422b-b842-1d6ba6de757a",
+    "md5sum": "e40a497b4b67e972447fd53e18262cf1",
+    "file_name": "GTEX-Q734-0001-SM-5JK3N.cram",
+    "file_size": 71802682353
+  },
+  {
+    "object_id": "anv:dg.ANV0/65a00cf2-62c5-4a53-aece-c3c56e05442f",
+    "md5sum": "98334d41a76a5137d43725d4e3cba281",
+    "file_name": "GTEX-1RAZA-0002-SM-DLIQ6.cram",
+    "file_size": 51939846124
+  },
+  {
+    "object_id": "anv:dg.ANV0/ce02a41b-6679-4efc-8398-303b01b8eb45",
+    "md5sum": "d128425e513f87c3d919744e162d5132",
+    "file_name": "GTEX-1I6K7-0003-SM-DCCZI.cram",
+    "file_size": 37424451955
+  },
+  {
+    "object_id": "anv:dg.ANV0/840ad2c1-c72c-4803-bbfb-f5856839df27",
+    "md5sum": "006666c155c81d4a4cb9c8b8538c16e2",
+    "file_name": "GTEX-12WS9-0001-SM-7DRQ3.cram",
+    "file_size": 33351556836
+  },
+  {
+    "object_id": "anv:dg.ANV0/e6e0a729-9196-403f-95e2-bba4234ad68f",
+    "md5sum": "0849c5829713419fe7f71eb4f78cd188",
+    "file_name": "GTEX-12WSA-0001-SM-7DRQ8.cram",
+    "file_size": 39854719697
+  },
+  {
+    "object_id": "anv:dg.ANV0/d327f3ca-442b-4242-814c-428156938c70",
+    "md5sum": "64aa5447688dc000d817221ab832cdb6",
+    "file_name": "GTEX-XMD2-0001-SM-7DLGS.cram",
+    "file_size": 34003559021
+  },
+  {
+    "object_id": "anv:dg.ANV0/3e4b864f-d07a-4cae-8cb9-09a068b207bf",
+    "md5sum": "623cfa92d56313afdf6a6c23b1dfbd16",
+    "file_name": "GTEX-V1D1-0001-SM-5SOE2.cram",
+    "file_size": 58932980752
+  },
+  {
+    "object_id": "anv:dg.ANV0/2bf609eb-f0bc-434f-8b1d-a416715779b2",
+    "md5sum": "9be81758f928f58239b9b14948c37c99",
+    "file_name": "GTEX-XUYS-0001-SM-DLIPV.cram",
+    "file_size": 44863951346
+  },
+  {
+    "object_id": "anv:dg.ANV0/e75ae4c6-2503-4429-8f2e-dfaa8da96b76",
+    "md5sum": "d9dc552fe5b2547825ae089d3cd93b21",
+    "file_name": "GTEX-1PPH7-0004-SM-DLIPD.cram",
+    "file_size": 40609970372
+  },
+  {
+    "object_id": "anv:dg.ANV0/40919b5e-fbb4-48dc-8db9-7b2aa0c4b4f6",
+    "md5sum": "f6ee024b600748870c9a6a298f88b07a",
+    "file_name": "GTEX-1R9JW-0005-SM-DLIPE.cram",
+    "file_size": 46779785524
+  },
+  {
+    "object_id": "anv:dg.ANV0/d3212adf-c472-425a-991d-644a2d97cc79",
+    "md5sum": "95361ac2e6d013575c7bbc880038d091",
+    "file_name": "GTEX-U8XE-0004-SM-5URB8.cram",
+    "file_size": 63613589826
+  },
+  {
+    "object_id": "anv:dg.ANV0/8c1eb5b9-091b-489c-ad36-c2b9811717e3",
+    "md5sum": "33e6673400efd711ab2b7fc958c52bee",
+    "file_name": "GTEX-R55C-0003-SM-5URCJ.cram",
+    "file_size": 58400538058
+  },
+  {
+    "object_id": "anv:dg.ANV0/ba430bc7-f2f8-41e6-a2dd-b071676d11a5",
+    "md5sum": "6f32c31e51ff37f5aa549e08229dadc2",
+    "file_name": "GTEX-1399T-2526-SM-DLIPI.cram",
+    "file_size": 40522001230
+  },
+  {
+    "object_id": "anv:dg.ANV0/31cb1108-4e29-4261-8a1b-3104787f114d",
+    "md5sum": "79c24acbafc1f0e9d89bba3e5ace6ffc",
+    "file_name": "GTEX-12C56-0003-SM-7DRPT.cram",
+    "file_size": 35883993648
+  },
+  {
+    "object_id": "anv:dg.ANV0/bd06cc03-6610-4195-a0e6-c0cba5350fda",
+    "md5sum": "2db74414d1ba61ad5b0fd63a0b663ee8",
+    "file_name": "GTEX-1R9PM-0001-SM-DLIQD.cram",
+    "file_size": 43696914496
+  },
+  {
+    "object_id": "anv:dg.ANV0/fdddf79b-6b87-437c-a293-5df6c692375d",
+    "md5sum": "252106329f47295df677374c88162b24",
+    "file_name": "GTEX-14A5I-0004-SM-7DRO1.cram",
+    "file_size": 79341888825
+  },
+  {
+    "object_id": "anv:dg.ANV0/a3fba84e-b969-4728-b75e-099d797644ef",
+    "md5sum": "0dac814ed017754f432014e80afbad5b",
+    "file_name": "GTEX-14ABY-0003-SM-7DRQD.cram",
+    "file_size": 37399623578
+  },
+  {
+    "object_id": "anv:dg.ANV0/cd857b96-e878-4f55-acdf-442f15366da6",
+    "md5sum": "8275b69fb260ede4a4ed7b333e682b85",
+    "file_name": "GTEX-1GN73-0002-SM-7J3AZ.cram",
+    "file_size": 31397689435
+  },
+  {
+    "object_id": "anv:dg.ANV0/1340b932-307a-4af1-afed-6642d77c4c16",
+    "md5sum": "a7174860e2a7cf7004cd12c000256ad6",
+    "file_name": "GTEX-S4P3-0004-SM-5JK4R.cram",
+    "file_size": 72760000636
+  },
+  {
+    "object_id": "anv:dg.ANV0/cec33037-02cc-4295-84ab-231184f7524b",
+    "md5sum": "8eccf054ca50837b33dbe2cfe070fff6",
+    "file_name": "GTEX-1GF9V-0004-SM-7J3AE.cram",
+    "file_size": 38672192649
+  },
+  {
+    "object_id": "anv:dg.ANV0/06afe28f-e9e6-4143-8c19-ed16a3850a5f",
+    "md5sum": "61827f43eec5aff44d196fc4452f6678",
+    "file_name": "GTEX-1F5PL-0002-SM-7J3AU.cram",
+    "file_size": 41497713491
+  },
+  {
+    "object_id": "anv:dg.ANV0/120a0364-216c-4f01-9c5e-e116fa0c86b6",
+    "md5sum": "d6da013224fc81dd155d56e691a89b6c",
+    "file_name": "GTEX-1EH9U-0001-SM-7J3AD.cram",
+    "file_size": 43621765848
+  },
+  {
+    "object_id": "anv:dg.ANV0/744e6d45-b151-4a95-a343-16c557457c73",
+    "md5sum": "b1a23edabd0a5d7a09304db1391bd7b1",
+    "file_name": "GTEX-OOBJ-0008-SM-DO3X5.cram",
+    "file_size": 44103560146
+  },
+  {
+    "object_id": "anv:dg.ANV0/d94aef8d-9cf3-448a-ba97-359827fe4430",
+    "md5sum": "a83a5444dcc19457c40eaaae729d19be",
+    "file_name": "GTEX-1K2DA-0002-SM-AYROF.cram",
+    "file_size": 36173340676
+  },
+  {
+    "object_id": "anv:dg.ANV0/720baf99-4025-498d-9ade-d479e2e58a74",
+    "md5sum": "08f22bbbd477ea65991609dd3ea2aa60",
+    "file_name": "GTEX-1F75W-0004-SM-7J3AH.cram",
+    "file_size": 38586077952
+  },
+  {
+    "object_id": "anv:dg.ANV0/0a4a3360-c222-4038-9ad6-295a92359306",
+    "md5sum": "5f0eefb9216f4a9d8f28e30aaa559a83",
+    "file_name": "GTEX-17F96-0002-SM-6UH1K.cram",
+    "file_size": 50174833154
+  },
+  {
+    "object_id": "anv:dg.ANV0/0947e5e2-3770-45d8-8ded-c64acbb9503c",
+    "md5sum": "c6c4ab4d202afad648d3e001f3592a0e",
+    "file_name": "GTEX-1QCLY-0002-SM-DLIQA.cram",
+    "file_size": 47848480982
+  },
+  {
+    "object_id": "anv:dg.ANV0/0c8e5aee-787d-4c38-888e-4262e71f886d",
+    "md5sum": "77332d4c003c1be7a54afc13c19f552c",
+    "file_name": "GTEX-14JG1-0002-SM-7DRNT.cram",
+    "file_size": 34198068963
+  },
+  {
+    "object_id": "anv:dg.ANV0/8eca5219-dce6-407a-be0c-50cf2eeb1bd5",
+    "md5sum": "36c91a8d48516256e0ad134ee288d72b",
+    "file_name": "GTEX-OHPM-0003-SM-5JK4I.cram",
+    "file_size": 68405550688
+  },
+  {
+    "object_id": "anv:dg.ANV0/c61bb6b1-f8b8-44b7-8cef-79ed623f8e62",
+    "md5sum": "7f7f976de31217ebec1c7f0286c2cfec",
+    "file_name": "GTEX-1GMRU-0004-SM-7J38O.cram",
+    "file_size": 34425557776
+  },
+  {
+    "object_id": "anv:dg.ANV0/b025c645-454f-4f91-b690-ee01464a1ecc",
+    "md5sum": "f198d58aaa9a3662674b77c12603dbe4",
+    "file_name": "GTEX-UPJH-0002-SM-5SOE9.cram",
+    "file_size": 58067569765
+  },
+  {
+    "object_id": "anv:dg.ANV0/48bacd05-c948-4390-bcae-ebaf044ed31d",
+    "md5sum": "7fda6fe273fff1ca2306ea15434105a0",
+    "file_name": "GTEX-16NPX-0002-SM-6UH1Y.cram",
+    "file_size": 49054730576
+  },
+  {
+    "object_id": "anv:dg.ANV0/0e24b31e-dc35-4ff2-90b6-c4225e21623a",
+    "md5sum": "56ff610e7d3269cd4c218202a545eeea",
+    "file_name": "GTEX-WWYW-0004-SM-5URDN.cram",
+    "file_size": 64545021531
+  },
+  {
+    "object_id": "anv:dg.ANV0/7127dec9-fbd4-440f-9bfa-9f853c6cd18c",
+    "md5sum": "89c7bd66d65066283548554d30f70529",
+    "file_name": "GTEX-145MH-0001-SM-7DRP2.cram",
+    "file_size": 33186556920
+  },
+  {
+    "object_id": "anv:dg.ANV0/c66462e6-08ff-44a0-b5eb-9277feeb2da8",
+    "md5sum": "0c899e608dd07edfbb4cc405d398626c",
+    "file_name": "GTEX-XV7Q-0004-SM-5JK3G.cram",
+    "file_size": 74188900496
+  },
+  {
+    "object_id": "anv:dg.ANV0/e2cfdee6-25dc-438c-b436-6a4d4af565cf",
+    "md5sum": "258792d2a2cdfcee7b5fc81acc28cbb8",
+    "file_name": "GTEX-1PIIG-2026-SM-DLT2G.cram",
+    "file_size": 41092689978
+  },
+  {
+    "object_id": "anv:dg.ANV0/b4f14158-92df-4e4a-bfee-8063f93b6c36",
+    "md5sum": "e99dc86b954708387260ce1dc0bcac65",
+    "file_name": "GTEX-WYBS-0126-SM-CLTFZ.cram",
+    "file_size": 43162979856
+  },
+  {
+    "object_id": "anv:dg.ANV0/0edcbbea-440f-4246-bfa9-c581a7926c8c",
+    "md5sum": "5afd6a6181f93f098d0687aad37e8b03",
+    "file_name": "GTEX-WH7G-0004-SM-5URCL.cram",
+    "file_size": 72976448142
+  },
+  {
+    "object_id": "anv:dg.ANV0/4e4054b2-5d8f-4800-a7fd-a8e65a9ecf99",
+    "md5sum": "665b1ab444d009e069e4d8f483ae165c",
+    "file_name": "GTEX-14PK6-0003-SM-7DRPF.cram",
+    "file_size": 37666786327
+  },
+  {
+    "object_id": "anv:dg.ANV0/dcd79f42-086c-4ba2-8ec3-b3415f95a8fc",
+    "md5sum": "f80f76e04142e1f79f6e8fbca3cc503e",
+    "file_name": "GTEX-1JMLX-0826-SM-DLT2I.cram",
+    "file_size": 39223807378
+  },
+  {
+    "object_id": "anv:dg.ANV0/6d127480-ff03-4a9d-958d-481cdc661e2e",
+    "md5sum": "63a835fd61e168019f847d4eda1b3e1c",
+    "file_name": "GTEX-OIZG-0003-SM-5JK3W.cram",
+    "file_size": 78332525254
+  },
+  {
+    "object_id": "anv:dg.ANV0/f4e2112a-6a26-462d-bd20-4bf33894b589",
+    "md5sum": "d88aefb2314c8272a45527350bfc8399",
+    "file_name": "GTEX-13FXS-0004-SM-6WSB8.cram",
+    "file_size": 49081632189
+  },
+  {
+    "object_id": "anv:dg.ANV0/d1482469-2e3c-4461-a2d5-18ffa5fa7a73",
+    "md5sum": "8048f9378a323f34a66ab022ef2c6de7",
+    "file_name": "GTEX-WRHU-0003-SM-CLTFY.cram",
+    "file_size": 34877020036
+  },
+  {
+    "object_id": "anv:dg.ANV0/7a6b8943-eab5-4702-94f5-595e046425c6",
+    "md5sum": "31dc6588871681b01a328d405239c833",
+    "file_name": "GTEX-13CIG-0004-SM-6WSC9.cram",
+    "file_size": 53789256146
+  },
+  {
+    "object_id": "anv:dg.ANV0/63856ed6-f98f-4b36-980e-bd9bc080e0e1",
+    "md5sum": "9a3656ee1b3a74e13e1bcb1b1d2e453e",
+    "file_name": "GTEX-12ZZX-0001-SM-6WSBV.cram",
+    "file_size": 52968843345
+  },
+  {
+    "object_id": "anv:dg.ANV0/6575d425-d434-414d-87f1-0bbb693e1bbc",
+    "md5sum": "8807f7f757aaaa159cf8ba1a8b914f8e",
+    "file_name": "GTEX-111YS-0004-SM-6WBTN.cram",
+    "file_size": 55790590808
+  },
+  {
+    "object_id": "anv:dg.ANV0/23efa14e-9c2c-473c-a7ba-9ae82afa956f",
+    "md5sum": "3cf567fcf34d86c8e1b5ab69e00fdd4e",
+    "file_name": "GTEX-1S82Z-0003-SM-DJWXY.cram",
+    "file_size": 59925136607
+  },
+  {
+    "object_id": "anv:dg.ANV0/40944724-31c7-4551-8581-2f0fe82f1d9c",
+    "md5sum": "32b566767cab46b6b2f55faeb227b613",
+    "file_name": "GTEX-13OW6-0002-SM-6WSAM.cram",
+    "file_size": 49855246247
+  },
+  {
+    "object_id": "anv:dg.ANV0/700c91e6-6add-47eb-881c-ab3792a9bc04",
+    "md5sum": "881dbcb70351b1992a24bd0a863163ed",
+    "file_name": "GTEX-13FHP-0004-SM-6WSAX.cram",
+    "file_size": 53117376120
+  },
+  {
+    "object_id": "anv:dg.ANV0/7a1d2f00-750e-473b-acd6-b2ef5ff1f148",
+    "md5sum": "27006979ef19f8c9d5827de1da430d4a",
+    "file_name": "GTEX-ZYFC-0001-SM-6WBT4.cram",
+    "file_size": 45796630770
+  },
+  {
+    "object_id": "anv:dg.ANV0/4f0b6bce-c4cb-43e5-9cd1-9032168ba957",
+    "md5sum": "d97671ac015d55c1e7aa86d2260330a3",
+    "file_name": "GTEX-13N11-0003-SM-6WSCJ.cram",
+    "file_size": 49469342099
+  },
+  {
+    "object_id": "anv:dg.ANV0/6ba9d0e3-a568-4377-a7cc-0a14c157178b",
+    "md5sum": "6ff91f61ab4db287b980f693b9da03e1",
+    "file_name": "GTEX-13QJ3-0002-SM-6WSD6.cram",
+    "file_size": 49040930627
+  },
+  {
+    "object_id": "anv:dg.ANV0/2cada579-2945-4835-aecf-90c2dd753fe9",
+    "md5sum": "12fb399d6ee1e74f00d6c74d891b1aae",
+    "file_name": "GTEX-ZG7Y-0001-SM-7FG68.cram",
+    "file_size": 39619939197
+  },
+  {
+    "object_id": "anv:dg.ANV0/3b65dc6a-4191-4b2e-8652-903d5a3d4a3b",
+    "md5sum": "7aaee76223dfd0c4f84a92730a31fb0d",
+    "file_name": "GTEX-13FLW-0003-SM-6WSC2.cram",
+    "file_size": 45632391628
+  },
+  {
+    "object_id": "anv:dg.ANV0/c2649913-f3bc-41c0-bf50-123b1a0e0c36",
+    "md5sum": "739fe433ea2e872cad6c8322408e8c11",
+    "file_name": "GTEX-1LSVX-0003-SM-DJWYB.cram",
+    "file_size": 46221448402
+  },
+  {
+    "object_id": "anv:dg.ANV0/8cc4a1f4-1fc6-4ceb-bcc9-af963e8a9413",
+    "md5sum": "3a2ca2b89d78fb4680955be4984e7a90",
+    "file_name": "GTEX-WOFM-0003-SM-5JK3H.cram",
+    "file_size": 60458390581
+  },
+  {
+    "object_id": "anv:dg.ANV0/752535a0-72a8-4885-8221-57beb5c700b7",
+    "md5sum": "1cc35bc30051ae523e85bb4b6de2cf12",
+    "file_name": "GTEX-1PWST-2926-SM-DLT2H.cram",
+    "file_size": 40572748943
+  },
+  {
+    "object_id": "anv:dg.ANV0/59ab8b1f-3df4-48c4-a301-67d787f66471",
+    "md5sum": "ee301d5931f5c98cf38cc637b81f36d9",
+    "file_name": "GTEX-17HHE-0002-SM-6UH1N.cram",
+    "file_size": 48725635925
+  },
+  {
+    "object_id": "anv:dg.ANV0/ad5b53f5-1459-495d-9052-6b6ca84e4d9d",
+    "md5sum": "c6cbf7fdc56985e33d31b6d6f8461e77",
+    "file_name": "GTEX-QDT8-0926-SM-CLTFX.cram",
+    "file_size": 40934291678
+  },
+  {
+    "object_id": "anv:dg.ANV0/d874476d-878e-407b-8053-913146bbf904",
+    "md5sum": "28ed12c93fa9fe01c22b0e59dbddd07a",
+    "file_name": "GTEX-178AV-0004-SM-6UH1M.cram",
+    "file_size": 48388062503
+  },
+  {
+    "object_id": "anv:dg.ANV0/5295753f-f52c-4cc7-84b0-53f55a44380c",
+    "md5sum": "fb2e3d79a936f608a48b914b1aeb61a1",
+    "file_name": "GTEX-1ICLZ-0003-SM-DCCZP.cram",
+    "file_size": 44128509488
+  },
+  {
+    "object_id": "anv:dg.ANV0/e5dfdfdd-3aa1-4df9-98cb-50f215489168",
+    "md5sum": "466f68a69f6d27be1e9c5198a918d6b6",
+    "file_name": "GTEX-14PJ6-0001-SM-7DLF2.cram",
+    "file_size": 39007699505
+  },
+  {
+    "object_id": "anv:dg.ANV0/3843e4ba-8b76-4c8a-a2c7-faa3d5becff8",
+    "md5sum": "28fdaaa0319e9ab25e4a04071b4a6cf0",
+    "file_name": "GTEX-XMD3-0003-SM-7DRQ7.cram",
+    "file_size": 34220739333
+  },
+  {
+    "object_id": "anv:dg.ANV0/4d264914-4571-46ab-aa67-016eba9d8347",
+    "md5sum": "e4c2a759f776cad18843f473e38150b2",
+    "file_name": "GTEX-13VXT-0003-SM-6WSCL.cram",
+    "file_size": 49484543519
+  },
+  {
+    "object_id": "anv:dg.ANV0/f01d2bce-5775-471e-ade5-72f7c274e45f",
+    "md5sum": "4eed5914c6f5bca6edb2970a79faed10",
+    "file_name": "GTEX-UTHO-0003-SM-5SOE4.cram",
+    "file_size": 72449546666
+  },
+  {
+    "object_id": "anv:dg.ANV0/d3e98912-300b-4c1e-b791-f1c3d6104af3",
+    "md5sum": "bf85b7ddab91869f66abd5e6de3b7976",
+    "file_name": "GTEX-1211K-0003-SM-CLTG2.cram",
+    "file_size": 46587565821
+  },
+  {
+    "object_id": "anv:dg.ANV0/82fbfa70-ab8b-4bb0-a54e-3aefbe77b93d",
+    "md5sum": "2208ce3d3388784d15f1a8e1caedbdcf",
+    "file_name": "GTEX-ZYFD-0001-SM-6WBT3.cram",
+    "file_size": 46535850867
+  },
+  {
+    "object_id": "anv:dg.ANV0/5175cccc-5509-4efd-baac-5db36cc6d5f1",
+    "md5sum": "fe9b8dfc515514a6a917839b828dc7ef",
+    "file_name": "GTEX-131YS-0003-SM-7DRPE.cram",
+    "file_size": 68212188863
+  },
+  {
+    "object_id": "anv:dg.ANV0/0b450652-813e-4398-bafa-7bb89e673dc9",
+    "md5sum": "3bde0aab2a4ffebee450db802aead1c2",
+    "file_name": "GTEX-P4QT-0003-SM-5JK2P.cram",
+    "file_size": 68170346763
+  },
+  {
+    "object_id": "anv:dg.ANV0/d4fa7b4f-226d-41db-b149-fd8d87f13cb7",
+    "md5sum": "280b0212f82f535e1a8510eb81a5df0d",
+    "file_name": "GTEX-12126-0001-SM-6WBU6.cram",
+    "file_size": 48667611387
+  },
+  {
+    "object_id": "anv:dg.ANV0/52fc38a2-a115-4559-8a6f-e3b4af547266",
+    "md5sum": "b4352aafc6dd18966cc8b8428c744870",
+    "file_name": "GTEX-15RIG-0003-SM-6UH2M.cram",
+    "file_size": 52608049926
+  },
+  {
+    "object_id": "anv:dg.ANV0/7ab73378-1124-4958-bd29-ff7a5e12f322",
+    "md5sum": "bf54068f7e96de60ae0b6bd0b1e3469b",
+    "file_name": "GTEX-14PII-0004-SM-7DROO.cram",
+    "file_size": 39373435309
+  },
+  {
+    "object_id": "anv:dg.ANV0/870da97c-3e6a-4ec0-9df2-b4887b8f7599",
+    "md5sum": "ad50ae8cdfd5ac84f1e36fc5f8a4248e",
+    "file_name": "GTEX-1MA7X-0003-SM-DJWWD.cram",
+    "file_size": 39541085995
+  },
+  {
+    "object_id": "anv:dg.ANV0/9e267ae6-2ba6-4883-a7a9-035baf1769f7",
+    "md5sum": "86dea50258699b97832d6c6b78da0a3b",
+    "file_name": "GTEX-139UW-0003-SM-6WSC8.cram",
+    "file_size": 50750274584
+  },
+  {
+    "object_id": "anv:dg.ANV0/5d7e7bfd-52ca-41a1-bf7a-5c485525416d",
+    "md5sum": "c6d16d060dd588cfca4cb495c428d055",
+    "file_name": "GTEX-QVUS-0001-SM-5URDT.cram",
+    "file_size": 69549043341
+  },
+  {
+    "object_id": "anv:dg.ANV0/f1df04ef-00da-494e-9496-b669c66a39ed",
+    "md5sum": "1854a0eea2168643c2a7c2e91a75dc67",
+    "file_name": "GTEX-Y3IK-0004-SM-6UH1D.cram",
+    "file_size": 47664809847
+  },
+  {
+    "object_id": "anv:dg.ANV0/2a3e61c4-2d92-4ca9-849d-e703c935313f",
+    "md5sum": "cf7d8a008e3101d0cb1ade493e546a0c",
+    "file_name": "GTEX-16XZZ-0001-SM-6UH1U.cram",
+    "file_size": 50608557420
+  },
+  {
+    "object_id": "anv:dg.ANV0/42987bdc-0d67-406d-944d-67a69ef260b7",
+    "md5sum": "fc739f70615c22ba41cbacbcfe505e9f",
+    "file_name": "GTEX-S4Q7-0001-SM-5JK3A.cram",
+    "file_size": 64815059931
+  },
+  {
+    "object_id": "anv:dg.ANV0/87800071-12a7-487c-98fc-878b1968357f",
+    "md5sum": "e426a853102a4c1116fcbd4068369e64",
+    "file_name": "GTEX-12WSD-0002-SM-6WSCG.cram",
+    "file_size": 60206414066
+  },
+  {
+    "object_id": "anv:dg.ANV0/e81f7f91-dd0f-4f25-8cad-1dbf950b8a70",
+    "md5sum": "5c896266759db9033ba41dff5ddc01af",
+    "file_name": "GTEX-145MO-0001-SM-7DROL.cram",
+    "file_size": 77775163447
+  },
+  {
+    "object_id": "anv:dg.ANV0/dca3b926-8eb2-4da7-b653-52c15b5e0013",
+    "md5sum": "b8aad0dc58f1475be1c920bda28983dc",
+    "file_name": "GTEX-WHPG-0002-SM-5URBH.cram",
+    "file_size": 58970789608
+  },
+  {
+    "object_id": "anv:dg.ANV0/e63dc9c9-8fbc-47c6-a663-2b2c18530305",
+    "md5sum": "a33550ec05678beb5629a88550c2f4cb",
+    "file_name": "GTEX-1OZHM-0003-SM-DJWYU.cram",
+    "file_size": 48446014844
+  },
+  {
+    "object_id": "anv:dg.ANV0/e5ad0b91-2d7f-4cf1-95e2-0788c466a9f8",
+    "md5sum": "6e459e968b41d723fc44372c3991a4cf",
+    "file_name": "GTEX-1B97I-0004-SM-7J39N.cram",
+    "file_size": 35486285082
+  },
+  {
+    "object_id": "anv:dg.ANV0/7afd4ae8-e816-4516-ba7e-fd6d462ba0b0",
+    "md5sum": "e196fc3c5b2d0925bde15e3ec6f67977",
+    "file_name": "GTEX-QMR6-1926-SM-7DRQ1.cram",
+    "file_size": 42530390958
+  },
+  {
+    "object_id": "anv:dg.ANV0/9ecb3bc6-7491-41ac-b2fe-d5602d09b205",
+    "md5sum": "b6a338da9ba946fb00916535eb8fb813",
+    "file_name": "GTEX-1LGRB-0003-SM-AYROG.cram",
+    "file_size": 34350549281
+  },
+  {
+    "object_id": "anv:dg.ANV0/bd2350bd-d912-454b-ab73-f14f16d469dc",
+    "md5sum": "929b3091e76e0e4477ad96427450cea4",
+    "file_name": "GTEX-WK11-0002-SM-5SOET.cram",
+    "file_size": 55684713151
+  },
+  {
+    "object_id": "anv:dg.ANV0/8e3485b5-a555-48b2-8be7-19f1988b73e2",
+    "md5sum": "06bf8687ab6a3caa1a48360414bf8abd",
+    "file_name": "GTEX-13FTX-0004-SM-6WSC4.cram",
+    "file_size": 47723048332
+  },
+  {
+    "object_id": "anv:dg.ANV0/39bfae65-56df-4a14-9196-5038a206f3fb",
+    "md5sum": "2d61e56d13a4d5da13153fee5c92b342",
+    "file_name": "GTEX-XXEK-0001-SM-5JK35.cram",
+    "file_size": 65118584705
+  },
+  {
+    "object_id": "anv:dg.ANV0/1a86c554-e16c-47a3-ab88-d29359487f3b",
+    "md5sum": "8a7e6bbe1d302f21f7db99e7e843c46c",
+    "file_name": "GTEX-1S5VW-0001-SM-DJWXN.cram",
+    "file_size": 37493121585
+  },
+  {
+    "object_id": "anv:dg.ANV0/cf9fcafe-8b36-4fe1-aef8-2bc286ff0b37",
+    "md5sum": "7d1cb9a7d8370143ca76c2dbf5b213f6",
+    "file_name": "GTEX-16A39-0004-SM-6UH2P.cram",
+    "file_size": 53481991740
+  },
+  {
+    "object_id": "anv:dg.ANV0/b0d70f29-2f42-41d4-acaa-6b7f63c26be5",
+    "md5sum": "6a6566f77e9b1e8cede8980094ec533a",
+    "file_name": "GTEX-15DCD-0001-SM-7DLGT.cram",
+    "file_size": 36287599345
+  },
+  {
+    "object_id": "anv:dg.ANV0/1f969cdc-b88f-48eb-a9c9-6e7ad7e39f0e",
+    "md5sum": "4b8a4c82d5d79c3cc852335ca5a7afdc",
+    "file_name": "GTEX-13N2G-0001-SM-6WSC5.cram",
+    "file_size": 50052539751
+  },
+  {
+    "object_id": "anv:dg.ANV0/95ee8117-2069-4baf-b1db-9bbaa4e80e6c",
+    "md5sum": "105fb15a17cdc31a464039815258aeb6",
+    "file_name": "GTEX-14PJN-0002-SM-7DRP3.cram",
+    "file_size": 35142002794
+  },
+  {
+    "object_id": "anv:dg.ANV0/0cc297b7-4183-4bd4-87f4-1059fb5e567c",
+    "md5sum": "f4f3d29b485e5d21df83781d1cc5a8ea",
+    "file_name": "GTEX-ZVE1-0001-SM-6WBSP.cram",
+    "file_size": 47351847420
+  },
+  {
+    "object_id": "anv:dg.ANV0/8e3bdc02-e6c5-4a87-80b1-32bee742db99",
+    "md5sum": "17ffee5be794c3ae9f52b2d3146ed294",
+    "file_name": "GTEX-1KD5A-0001-SM-DJWXF.cram",
+    "file_size": 39419165181
+  },
+  {
+    "object_id": "anv:dg.ANV0/998386ac-a41b-4865-8de3-07995bb6672b",
+    "md5sum": "52565c3b09ead7fb2fa32b8478a79b59",
+    "file_name": "GTEX-1F52S-0004-SM-7J3AY.cram",
+    "file_size": 36236331034
+  },
+  {
+    "object_id": "anv:dg.ANV0/cb40b1ec-f604-4c8a-a4e7-4eb118c2f878",
+    "md5sum": "cde429ef435441469c6603e091c34d92",
+    "file_name": "GTEX-1QP6S-0001-SM-DLIQM.cram",
+    "file_size": 52524079697
+  },
+  {
+    "object_id": "anv:dg.ANV0/bb531572-af49-4728-8034-07d08e626645",
+    "md5sum": "3342a2e48b8ba3631c3f48c4f6a334ab",
+    "file_name": "GTEX-1GF9X-0003-SM-7J3A6.cram",
+    "file_size": 34925577841
+  },
+  {
+    "object_id": "anv:dg.ANV0/c2d9f79c-45ad-4053-87ba-47940602a2cf",
+    "md5sum": "830044771457a19223da3eac4a5b4f16",
+    "file_name": "GTEX-1QPFJ-0004-SM-DLIQN.cram",
+    "file_size": 47045072568
+  },
+  {
+    "object_id": "anv:dg.ANV0/d4827bf2-b838-41d0-a263-c2a777e1cff9",
+    "md5sum": "915b7cc17e615f1ef25657e5a7e92efc",
+    "file_name": "GTEX-1GF9U-0004-SM-7J3A8.cram",
+    "file_size": 35127318309
+  },
+  {
+    "object_id": "anv:dg.ANV0/6012a294-05c8-4120-8495-82aa893e3cc3",
+    "md5sum": "3578e1a7feb6cf6fceff456878dd2695",
+    "file_name": "GTEX-SNMC-0426-SM-DMRPY.cram",
+    "file_size": 58056582983
+  },
+  {
+    "object_id": "anv:dg.ANV0/99c59807-62cf-4b47-90d6-946315d3f756",
+    "md5sum": "2205fbb0bfd906e9b96f9862a0d04371",
+    "file_name": "GTEX-1QP9N-0004-SM-DLIP4.cram",
+    "file_size": 41028322695
+  },
+  {
+    "object_id": "anv:dg.ANV0/33029271-5b06-421a-bbf9-83fc4971d41d",
+    "md5sum": "d6ca2b8dc6a7bc081bc19dd6a4612a23",
+    "file_name": "GTEX-1R46S-0003-SM-DLIQ7.cram",
+    "file_size": 39682898068
+  },
+  {
+    "object_id": "anv:dg.ANV0/7b1423eb-0e14-4e94-9f94-6d7bd1d97199",
+    "md5sum": "ea4ec299ef32f5a35450f8f860274fdc",
+    "file_name": "GTEX-1B8SF-0003-SM-7J38X.cram",
+    "file_size": 39780213841
+  },
+  {
+    "object_id": "anv:dg.ANV0/01e44db2-e3aa-49b1-836d-2fcfeb099c49",
+    "md5sum": "eb7fc218824a5ce92a7a571ab36c7e4b",
+    "file_name": "GTEX-1QMI2-0004-SM-DLIQH.cram",
+    "file_size": 43402948841
+  },
+  {
+    "object_id": "anv:dg.ANV0/1c18269d-7276-419e-bdd2-29b9a110644d",
+    "md5sum": "2cd6014b972b07dfe33edfb87456664a",
+    "file_name": "GTEX-1S831-0002-SM-DJWYA.cram",
+    "file_size": 42301930216
+  },
+  {
+    "object_id": "anv:dg.ANV0/50443f4f-ec44-47e0-9ff4-530c1fa16c7d",
+    "md5sum": "fbffa70a4ca9015a66c8ff01979765e5",
+    "file_name": "GTEX-11VI4-0003-SM-6WBUJ.cram",
+    "file_size": 50924266653
+  },
+  {
+    "object_id": "anv:dg.ANV0/b68fac88-3431-4157-9424-8df9e3380fd1",
+    "md5sum": "58bee557c9c34ac01c9125cce0b5d679",
+    "file_name": "GTEX-QV44-0003-SM-5SOEM.cram",
+    "file_size": 56542409011
+  },
+  {
+    "object_id": "anv:dg.ANV0/ece94488-3e86-43b7-b11a-525aeb3ccd75",
+    "md5sum": "865704d14df3b001986bf4fa57fa84dc",
+    "file_name": "GTEX-ZP4G-0002-SM-6WBSI.cram",
+    "file_size": 45655053893
+  },
+  {
+    "object_id": "anv:dg.ANV0/202916e9-a26e-4d03-b207-629337a80d39",
+    "md5sum": "c532a34b0b4494e3465e2a0564d3c252",
+    "file_name": "GTEX-13SLX-0003-SM-6WSAO.cram",
+    "file_size": 54509900242
+  },
+  {
+    "object_id": "anv:dg.ANV0/d9e5e3ee-43e7-4965-8ea3-d98d504ed6fc",
+    "md5sum": "9beea284a7b590af4132d33dd9c81729",
+    "file_name": "GTEX-14A6H-0003-SM-7DROY.cram",
+    "file_size": 39885044639
+  },
+  {
+    "object_id": "anv:dg.ANV0/693d2229-f962-45dc-9a54-16c42e28f5c9",
+    "md5sum": "c1eec025bd1604e4fe8cd83f4b4d1d0c",
+    "file_name": "GTEX-OHPL-0003-SM-5JK38.cram",
+    "file_size": 47216663395
+  },
+  {
+    "object_id": "anv:dg.ANV0/169f2218-4897-4076-b46a-650b0bf8f625",
+    "md5sum": "9a3a57ffc3f7cf9a8d224576a7b5e3e1",
+    "file_name": "GTEX-11P82-0003-SM-6WBSX.cram",
+    "file_size": 53160158678
+  },
+  {
+    "object_id": "anv:dg.ANV0/174a5789-fac2-4ff1-bfee-f75116cfd512",
+    "md5sum": "b0909bbeb3d1f2ca1ead543cafc8726d",
+    "file_name": "GTEX-14C38-0003-SM-7DRO3.cram",
+    "file_size": 36022406081
+  },
+  {
+    "object_id": "anv:dg.ANV0/c05b08a3-19c7-439d-a9e2-ee7d8774f796",
+    "md5sum": "5ca7ac4c830078400d4196dbf7769794",
+    "file_name": "GTEX-XYKS-0003-SM-5JK4D.cram",
+    "file_size": 71622556905
+  },
+  {
+    "object_id": "anv:dg.ANV0/4a8836e1-6aee-4144-8b0f-d586d9ffc3ae",
+    "md5sum": "e78c220ccd642a47e3e1631982eb6c9b",
+    "file_name": "GTEX-111CU-0003-SM-6WBUD.cram",
+    "file_size": 47037775969
+  },
+  {
+    "object_id": "anv:dg.ANV0/58f06ae0-a3f2-475e-9472-571156e79dba",
+    "md5sum": "7b1489a893cc4d858ef6ee0dd3472657",
+    "file_name": "GTEX-WY7C-0002-SM-7FG6L.cram",
+    "file_size": 46197085611
+  },
+  {
+    "object_id": "anv:dg.ANV0/ad57c84f-a8e2-4685-a9a7-d968574ac466",
+    "md5sum": "6c9b5826e060cb98d21121a9e90f8371",
+    "file_name": "GTEX-1RMOY-0003-SM-DLIQE.cram",
+    "file_size": 45358589842
+  },
+  {
+    "object_id": "anv:dg.ANV0/00b11161-3e72-4f03-957a-f8983b0df837",
+    "md5sum": "224d8f1dea9c6a7a0968a85ea659d565",
+    "file_name": "GTEX-131XH-0003-SM-7DRPA.cram",
+    "file_size": 78108425945
+  },
+  {
+    "object_id": "anv:dg.ANV0/9f8d9161-a8c8-4a71-a8f3-0150d7d04c14",
+    "md5sum": "6bc59160ed0b34ec84c7813d907b0be9",
+    "file_name": "GTEX-OIZH-0003-SM-5JK41.cram",
+    "file_size": 68299764655
+  },
+  {
+    "object_id": "anv:dg.ANV0/f40f466c-dc93-42b1-9ffe-6ec92021c471",
+    "md5sum": "9ec2a900ff84d2b3edf1017a2cbcba74",
+    "file_name": "GTEX-OHPN-0004-SM-5JK2V.cram",
+    "file_size": 105014767038
+  },
+  {
+    "object_id": "anv:dg.ANV0/bc1d8a01-6af7-45b4-af66-113d076314e6",
+    "md5sum": "bde550c0994a76ffa85c8736b7bec115",
+    "file_name": "GTEX-1RNTQ-0003-SM-DLIQF.cram",
+    "file_size": 36615826498
+  },
+  {
+    "object_id": "anv:dg.ANV0/2ea6f855-6c2b-488e-8e68-14ecc2ca50b7",
+    "md5sum": "de672fbaa4cc9e4c5d5dc6e48c1a3228",
+    "file_name": "GTEX-17KNJ-0003-SM-6UH1P.cram",
+    "file_size": 52573299634
+  },
+  {
+    "object_id": "anv:dg.ANV0/5e4befda-6d94-49e5-b6d9-825f469bc0f8",
+    "md5sum": "7342026fddd1a1e2eb426da3d70f2588",
+    "file_name": "GTEX-1F6I4-0004-SM-7J3AG.cram",
+    "file_size": 35967108492
+  },
+  {
+    "object_id": "anv:dg.ANV0/72ce23ab-7ad7-4f30-8746-eca5b8a7263f",
+    "md5sum": "29aaf17102d2250ab25086d9ecd77763",
+    "file_name": "GTEX-13PL6-0002-SM-6WSCU.cram",
+    "file_size": 47152198514
+  },
+  {
+    "object_id": "anv:dg.ANV0/84e0692d-55d2-4d50-9804-d1bd4001e5d9",
+    "md5sum": "858a3772c486f2a1b5f484cb1d380713",
+    "file_name": "GTEX-ZDTS-0002-SM-6UH3E.cram",
+    "file_size": 48826308657
+  },
+  {
+    "object_id": "anv:dg.ANV0/c17261fd-5f88-4c9c-8082-2c342550e893",
+    "md5sum": "775b3ecbc87f3402bcb92e7b79e90745",
+    "file_name": "GTEX-QEL4-0826-SM-DMRPX.cram",
+    "file_size": 44541280650
+  },
+  {
+    "object_id": "anv:dg.ANV0/319b0591-de43-47dc-9dbf-a9962caf66cd",
+    "md5sum": "7ffd8bf929d984c4f5680405bd58cb45",
+    "file_name": "GTEX-PLZ5-0003-SM-5JK3C.cram",
+    "file_size": 74815838598
+  },
+  {
+    "object_id": "anv:dg.ANV0/d681ed61-78ec-4375-8385-69cc24087001",
+    "md5sum": "073e50cf780419cf5683473f443f91de",
+    "file_name": "GTEX-1JKYN-0004-SM-AYROE.cram",
+    "file_size": 31192271287
+  },
+  {
+    "object_id": "anv:dg.ANV0/17430808-c847-4dcf-9126-02980e6733a1",
+    "md5sum": "a1d243c9bda2723a81f593c357f55cc5",
+    "file_name": "GTEX-Y8LW-0004-SM-6UH3N.cram",
+    "file_size": 45425010335
+  },
+  {
+    "object_id": "anv:dg.ANV0/ebb04304-9a55-4323-adbe-6d2db7e1fb2c",
+    "md5sum": "f35abe07336bd9cf0c905fb4dad19fb2",
+    "file_name": "GTEX-13O21-0003-SM-6WSB5.cram",
+    "file_size": 49312434236
+  },
+  {
+    "object_id": "anv:dg.ANV0/aa507fc7-f3be-4237-ad85-edce4dbd9a9f",
+    "md5sum": "e857e187b3c1b58672cf227b2f1ea5e4",
+    "file_name": "GTEX-13NZA-0003-SM-6WSBM.cram",
+    "file_size": 54590649768
+  },
+  {
+    "object_id": "anv:dg.ANV0/25cd229c-fb03-4881-bef0-d01fc57d1739",
+    "md5sum": "285f742d67f02cd15610c6027eeb5ea1",
+    "file_name": "GTEX-VUSH-0002-SM-5SOEH.cram",
+    "file_size": 54008263364
+  },
+  {
+    "object_id": "anv:dg.ANV0/45c1f2cb-8f71-4ef8-9831-27a2e1471699",
+    "md5sum": "9c629310e91278ca9243857fcfc6d059",
+    "file_name": "GTEX-15ER7-0002-SM-7DLFM.cram",
+    "file_size": 73227054956
+  },
+  {
+    "object_id": "anv:dg.ANV0/e9935ebd-d641-4427-8a8d-c2fd7ca85e55",
+    "md5sum": "022a3da1e172219ec7475503010f08b5",
+    "file_name": "GTEX-14C5O-0002-SM-7DRQF.cram",
+    "file_size": 34080845434
+  },
+  {
+    "object_id": "anv:dg.ANV0/977d8e2e-0114-4832-934f-53350f48729a",
+    "md5sum": "62cf20f0f28d6116d20e0739b767f26c",
+    "file_name": "GTEX-NL4W-0009-SM-5JK3O.cram",
+    "file_size": 76269249667
+  },
+  {
+    "object_id": "anv:dg.ANV0/adc1b023-9f3f-4c49-bfeb-7d048fb23111",
+    "md5sum": "e4a6b7c6af63aa868da85be1c14de40e",
+    "file_name": "GTEX-13S7M-0003-SM-6WSAH.cram",
+    "file_size": 51303449625
+  },
+  {
+    "object_id": "anv:dg.ANV0/2d44246a-6529-479d-9fe3-5558328355b9",
+    "md5sum": "f848defc939c73dc4e5c496b440b21f0",
+    "file_name": "GTEX-NPJ8-0004-SM-5JK3D.cram",
+    "file_size": 82599866240
+  },
+  {
+    "object_id": "anv:dg.ANV0/ab79a41c-8bcc-4811-bee4-c8923b12caea",
+    "md5sum": "75933ff8b7c86be55fc9f73afa8bbd9c",
+    "file_name": "GTEX-ZPCL-0001-SM-6WBS6.cram",
+    "file_size": 49823598680
+  },
+  {
+    "object_id": "anv:dg.ANV0/32c2efa9-b399-4c35-bb3b-0fdf4c54913c",
+    "md5sum": "40a40c4c8933e2d829f084b9e08dc3f1",
+    "file_name": "GTEX-13OVI-0003-SM-6WSCW.cram",
+    "file_size": 53114834821
+  },
+  {
+    "object_id": "anv:dg.ANV0/118a0b24-dea6-4cc8-be7e-fd71911ad3ee",
+    "md5sum": "bd289fc32c7472909da643a57b6d43ef",
+    "file_name": "GTEX-1OKEX-0003-SM-DJWXH.cram",
+    "file_size": 36869412032
+  },
+  {
+    "object_id": "anv:dg.ANV0/bb14ec10-6037-4402-a6dc-a3ed19ffe4c8",
+    "md5sum": "2a9dba847d49ae4707f1334be6ecc371",
+    "file_name": "GTEX-XMK1-0003-SM-5URB9.cram",
+    "file_size": 56766634341
+  },
+  {
+    "object_id": "anv:dg.ANV0/fee9acab-44b0-482f-b6bc-cad3f4db4b6b",
+    "md5sum": "e686f4f135777bc443cafdb0119cf751",
+    "file_name": "GTEX-P78B-0004-SM-5JK48.cram",
+    "file_size": 77699643326
+  },
+  {
+    "object_id": "anv:dg.ANV0/421619ed-a54b-4946-83d5-86af0a6e5354",
+    "md5sum": "30647f25c78bdbc4dc3d89d003b39ede",
+    "file_name": "GTEX-13RTK-0003-SM-6WSCZ.cram",
+    "file_size": 55249492479
+  },
+  {
+    "object_id": "anv:dg.ANV0/c73b1d29-cb07-49fa-aa1b-e262bfe21ee3",
+    "md5sum": "6bd3a4d1bce9bb7f2ec91c40711b7e9a",
+    "file_name": "GTEX-144GM-0226-SM-DLL3K.cram",
+    "file_size": 41172268626
+  },
+  {
+    "object_id": "anv:dg.ANV0/b39a7b39-c4b6-41d1-8050-4a7aabef563a",
+    "md5sum": "5b133f66193a56ecc648cc2f1705a0b5",
+    "file_name": "GTEX-ZAKK-0001-SM-DLIO8.cram",
+    "file_size": 36434916960
+  },
+  {
+    "object_id": "anv:dg.ANV0/3ea83483-c5c5-4f64-b59d-9b65c060cba4",
+    "md5sum": "2c96fe03e124f0b35ce063c07036321e",
+    "file_name": "GTEX-ZTTD-0002-SM-6WBSH.cram",
+    "file_size": 50338475412
+  },
+  {
+    "object_id": "anv:dg.ANV0/63b0fa38-ff5c-49f0-a98b-5114d424d13f",
+    "md5sum": "148ecc6d6f9bd804c11b737e83507c06",
+    "file_name": "GTEX-15DCZ-0426-SM-DLL4Q.cram",
+    "file_size": 42579860432
+  },
+  {
+    "object_id": "anv:dg.ANV0/9aee7343-0875-4604-afe8-632ef171b8b7",
+    "md5sum": "6decc18e4149b8ba20ddc123a9e9f212",
+    "file_name": "GTEX-XUYS-0001-SM-5JK2T.cram",
+    "file_size": 60942345599
+  },
+  {
+    "object_id": "anv:dg.ANV0/6c8709e4-2eae-4434-be59-e18f582f05a6",
+    "md5sum": "f019c341c2d5ccedea9eec9bdbb71200",
+    "file_name": "GTEX-ZQG8-0003-SM-6WBSG.cram",
+    "file_size": 53458971671
+  },
+  {
+    "object_id": "anv:dg.ANV0/387f9d70-cc6a-4c0c-bcfb-21ff28106734",
+    "md5sum": "be940aba194348f478e140ec0746468e",
+    "file_name": "GTEX-POYW-1226-SM-CLTGA.cram",
+    "file_size": 41447125398
+  },
+  {
+    "object_id": "anv:dg.ANV0/e18ffe96-7948-4e86-93cf-a24234e76710",
+    "md5sum": "6b3d2f8ee85aa61f6f7c5c504a14e3f7",
+    "file_name": "GTEX-12584-0004-SM-7DRPH.cram",
+    "file_size": 41232306883
+  },
+  {
+    "object_id": "anv:dg.ANV0/770fdc5c-d5be-429e-a8ac-3cde0630285b",
+    "md5sum": "6c3eec0b17143bbe819ee31c62172fe8",
+    "file_name": "GTEX-VJYA-0003-SM-5SOED.cram",
+    "file_size": 56350567458
+  },
+  {
+    "object_id": "anv:dg.ANV0/3ef74908-8a29-48cd-80e9-cf5e98a34473",
+    "md5sum": "cc620ebb2d2f5e9a36d1ef041bb25474",
+    "file_name": "GTEX-X8HC-0003-SM-5URDI.cram",
+    "file_size": 60174381932
+  },
+  {
+    "object_id": "anv:dg.ANV0/7e4027af-a63c-42c0-88ea-802bfc055629",
+    "md5sum": "9b7827a95ba9a837715ad6e42ec4a0d1",
+    "file_name": "GTEX-1R7EU-0003-SM-DLIQ4.cram",
+    "file_size": 35216109037
+  },
+  {
+    "object_id": "anv:dg.ANV0/26234ab4-5f20-489d-b6a2-1f3bff9adade",
+    "md5sum": "d7467230cb49d00797469b210d49177f",
+    "file_name": "GTEX-14PJO-0003-SM-7DRON.cram",
+    "file_size": 42277405795
+  },
+  {
+    "object_id": "anv:dg.ANV0/f8a14ae4-4998-48e3-8a5e-b70b90534fcc",
+    "md5sum": "62b6ea7b34c8f63007d16cd7ca07165e",
+    "file_name": "GTEX-YBZK-0001-SM-DLIPP.cram",
+    "file_size": 42429784190
+  },
+  {
+    "object_id": "anv:dg.ANV0/b83e2e9a-d6dd-492a-9b7f-142b392068b4",
+    "md5sum": "95ecc59bfd3f60ba3c3e2f6c71a18a05",
+    "file_name": "GTEX-15SB6-0002-SM-6UH1J.cram",
+    "file_size": 54084654964
+  },
+  {
+    "object_id": "anv:dg.ANV0/ef925275-8667-439d-9ed1-10e926db9eb7",
+    "md5sum": "cabdbc49c99c5e75e72c5098617aed45",
+    "file_name": "GTEX-1F88E-2126-SM-DLL3I.cram",
+    "file_size": 47250675478
+  },
+  {
+    "object_id": "anv:dg.ANV0/0190c5ed-2a9f-42e5-9953-d674f82bf9c9",
+    "md5sum": "9847cf80d059e05c79c42972b21c9ac6",
+    "file_name": "GTEX-RWS6-0004-SM-5JK3Z.cram",
+    "file_size": 77182241862
+  },
+  {
+    "object_id": "anv:dg.ANV0/8b2d68e8-15ae-4b9d-9fd0-e990b4d2b33d",
+    "md5sum": "1345a59b81d6f455c40e454b722a5cd5",
+    "file_name": "GTEX-1GN1U-0002-SM-7J3A7.cram",
+    "file_size": 37637777826
+  },
+  {
+    "object_id": "anv:dg.ANV0/7ee7ab7a-3c89-460e-885f-de042b1bbf4e",
+    "md5sum": "33a43e832e139f75a2b52d9e0f3b0a43",
+    "file_name": "GTEX-15G1A-0001-SM-7J38P.cram",
+    "file_size": 36387252800
+  },
+  {
+    "object_id": "anv:dg.ANV0/98ea7756-70b3-4b53-b464-f7076e349170",
+    "md5sum": "f18b43a1ad4b94351ae26da8aa09c863",
+    "file_name": "GTEX-1N7R6-0003-SM-DJWYN.cram",
+    "file_size": 41627770827
+  },
+  {
+    "object_id": "anv:dg.ANV0/0d18475c-0af2-49cc-ac72-bcdd6748a1ba",
+    "md5sum": "3fbaf1ee02a7939e54eef51d1b3f38d2",
+    "file_name": "GTEX-1QP2A-0626-SM-DLT2L.cram",
+    "file_size": 41547122680
+  },
+  {
+    "object_id": "anv:dg.ANV0/5e9c8519-1184-4f1d-9393-f3b807ce3f99",
+    "md5sum": "1cf6510d3ae4e9ab42df57cf03d0b43c",
+    "file_name": "GTEX-YEC4-0006-SM-6UH3M.cram",
+    "file_size": 47467654069
+  },
+  {
+    "object_id": "anv:dg.ANV0/6670daa8-2b58-469f-a23d-4b1b9951d644",
+    "md5sum": "2de23255668539eacc75ce9165ada74b",
+    "file_name": "GTEX-SUCS-0001-SM-5URDQ.cram",
+    "file_size": 62420407772
+  },
+  {
+    "object_id": "anv:dg.ANV0/0c94627a-e7fa-4484-af40-fc9a798816c6",
+    "md5sum": "84843f2a7f20d4bd8a7b986ab7e14859",
+    "file_name": "GTEX-12WSB-0001-SM-7DRQC.cram",
+    "file_size": 43110998210
+  },
+  {
+    "object_id": "anv:dg.ANV0/45f440c5-19d8-4c14-9ab6-d8016d251350",
+    "md5sum": "2e5f948968dfeab98ed6a5fc0362b72b",
+    "file_name": "GTEX-1F6RS-0004-SM-7J3AR.cram",
+    "file_size": 42708946906
+  },
+  {
+    "object_id": "anv:dg.ANV0/4dd0e5d6-6220-4328-aa39-e23f6fdd7862",
+    "md5sum": "974f0a467bf8cd5596d72cedbe057115",
+    "file_name": "GTEX-P4PQ-0003-SM-5JK3Q.cram",
+    "file_size": 72050551585
+  },
+  {
+    "object_id": "anv:dg.ANV0/9e52ccbe-088d-4f63-8620-6b0caa317328",
+    "md5sum": "0b5ddd5689b844e30a38052779c0ee6d",
+    "file_name": "GTEX-13YAN-1326-SM-DLIPO.cram",
+    "file_size": 65574110605
+  },
+  {
+    "object_id": "anv:dg.ANV0/aac55c94-c930-4f6d-9649-97ebd3ba34de",
+    "md5sum": "dddf789d25c7070dab35c24a683dee08",
+    "file_name": "GTEX-145MG-0002-SM-7DROJ.cram",
+    "file_size": 38482014699
+  },
+  {
+    "object_id": "anv:dg.ANV0/c2fc44b8-543c-4930-92b6-48203da5586d",
+    "md5sum": "6b1f086bebd9415bf880f2572eab5a85",
+    "file_name": "GTEX-1GL5R-0002-SM-7J3A9.cram",
+    "file_size": 33198870667
+  },
+  {
+    "object_id": "anv:dg.ANV0/1bc5a6f3-aa29-4d80-ab54-4679e1b41e35",
+    "md5sum": "9d4267e8938588f2f709327d2ea8c4b2",
+    "file_name": "GTEX-1GN1W-0001-SM-7J3B1.cram",
+    "file_size": 37828265641
+  },
+  {
+    "object_id": "anv:dg.ANV0/d2c69ae8-1c98-4607-b742-044ecc0942c0",
+    "md5sum": "8f0b5f6168efc55077384b1d484551a4",
+    "file_name": "GTEX-11TTK-0002-SM-6WBTX.cram",
+    "file_size": 53426404725
+  },
+  {
+    "object_id": "anv:dg.ANV0/ec12b76e-81bf-45f5-a484-49c541b0a7f9",
+    "md5sum": "2ccb13210b96cf7d8c30c9ffbf15d03b",
+    "file_name": "GTEX-OHPK-0003-SM-5JK4Z.cram",
+    "file_size": 58986613163
+  },
+  {
+    "object_id": "anv:dg.ANV0/5b9ae4c0-862b-4406-b8d3-482c0391740f",
+    "md5sum": "c98d51ee8ca2c565f9b188b29d0b8648",
+    "file_name": "GTEX-13RTJ-0003-SM-6WSCV.cram",
+    "file_size": 49799889302
+  },
+  {
+    "object_id": "anv:dg.ANV0/35c25ae7-c7d0-4f6f-9e6b-6e943986609c",
+    "md5sum": "d6c5f370d65a9525e367f192da087252",
+    "file_name": "GTEX-S3LF-0001-SM-DLIOS.cram",
+    "file_size": 42557768978
+  },
+  {
+    "object_id": "anv:dg.ANV0/02f09b4e-7c7a-448f-9560-807fd7db0b10",
+    "md5sum": "5625a7a9c3e97351b48660dab2ebae20",
+    "file_name": "GTEX-RVPU-0001-SM-7DLFD.cram",
+    "file_size": 33062774270
+  },
+  {
+    "object_id": "anv:dg.ANV0/916a7443-8c20-4ce6-a8f8-28f963c230a3",
+    "md5sum": "ac62563d704e300db56ebd95ada98c4f",
+    "file_name": "GTEX-1399R-2226-SM-DLIQ5.cram",
+    "file_size": 47647280057
+  },
+  {
+    "object_id": "anv:dg.ANV0/550be297-40a1-43e5-bff4-2b39d74a8e4a",
+    "md5sum": "486ee676d38d11e07ca8a8d51aa154b1",
+    "file_name": "GTEX-QXCU-0004-SM-5URDS.cram",
+    "file_size": 71360734399
+  },
+  {
+    "object_id": "anv:dg.ANV0/080db8d3-348e-4547-8a20-d2ab88b9b545",
+    "md5sum": "7feeb17ae167fb47e4d2dcf61b56dcac",
+    "file_name": "GTEX-NPJ7-0009-SM-5JK4M.cram",
+    "file_size": 76245543180
+  },
+  {
+    "object_id": "anv:dg.ANV0/a567ddd8-aa12-473a-bc5f-515fae2d625d",
+    "md5sum": "daeb5576195f763908e91a5ecf7e420a",
+    "file_name": "GTEX-W5X1-0002-SM-5URBS.cram",
+    "file_size": 59140876018
+  },
+  {
+    "object_id": "anv:dg.ANV0/2892f951-7420-4e22-a2bf-2ad8d40d0ffc",
+    "md5sum": "ab7ca38504e2a38b23a4adec5362aaab",
+    "file_name": "GTEX-YB5K-0002-SM-AYRPK.cram",
+    "file_size": 32236341916
+  },
+  {
+    "object_id": "anv:dg.ANV0/58502bf7-218a-4d1d-8f2c-ee7275dabad0",
+    "md5sum": "4b53efcdabe9ba3536e52cc233493077",
+    "file_name": "GTEX-1N2DV-0003-SM-DJWXC.cram",
+    "file_size": 38071074446
+  },
+  {
+    "object_id": "anv:dg.ANV0/28debc2d-c1f4-41d3-9570-10308c6a41e0",
+    "md5sum": "9383e1fa2fc3eb579c29ac10f595cf19",
+    "file_name": "GTEX-1497J-0004-SM-7DRPQ.cram",
+    "file_size": 39618934730
+  },
+  {
+    "object_id": "anv:dg.ANV0/0a449558-4dd8-4d55-bae3-5e404814d404",
+    "md5sum": "580af008f975e5747a23c1b372de5a4a",
+    "file_name": "GTEX-113JC-0001-SM-6WBTD.cram",
+    "file_size": 47962206125
+  },
+  {
+    "object_id": "anv:dg.ANV0/037e5ece-09fd-4123-9e6e-c97c5866c4c6",
+    "md5sum": "6795004141040e1fce8bbd548541cecf",
+    "file_name": "GTEX-17EVP-0004-SM-6UH1L.cram",
+    "file_size": 48918012070
+  },
+  {
+    "object_id": "anv:dg.ANV0/5672a62d-fe54-4d99-8abd-4c62314803ea",
+    "md5sum": "f7dada6d3874547b565cd9cd84cdf689",
+    "file_name": "GTEX-TSE9-0002-SM-5URBA.cram",
+    "file_size": 58013938810
+  },
+  {
+    "object_id": "anv:dg.ANV0/33cbb8c2-06ba-44b1-8ec8-34efdee4648b",
+    "md5sum": "02173eff526b444d3eb46813d03abe2d",
+    "file_name": "GTEX-1JJ6O-0001-SM-DLIOO.cram",
+    "file_size": 40273323070
+  },
+  {
+    "object_id": "anv:dg.ANV0/747e0ae4-c268-4f8d-886e-eca510b1129f",
+    "md5sum": "193d942a491f3eed1f28c1840dd901ff",
+    "file_name": "GTEX-15EOM-0004-SM-7DLFA.cram",
+    "file_size": 36301528210
+  },
+  {
+    "object_id": "anv:dg.ANV0/098a77f2-eb3f-4ba6-9b7d-91b41771932f",
+    "md5sum": "6043eb5e5180b5eb92d3fc102fe5ef3c",
+    "file_name": "GTEX-146FQ-0003-SM-6WSCH.cram",
+    "file_size": 48530984022
+  },
+  {
+    "object_id": "anv:dg.ANV0/6980a62d-c2e3-46ca-a627-136f5d7ebdd4",
+    "md5sum": "74d181fdf4f1f5e76993601dc7142933",
+    "file_name": "GTEX-15SDE-0001-SM-6UH2N.cram",
+    "file_size": 49208696096
+  },
+  {
+    "object_id": "anv:dg.ANV0/67583c26-a500-4871-9539-50f157ca690b",
+    "md5sum": "83b27fda074fac06134a3dd75c37ea7e",
+    "file_name": "GTEX-1CB4G-0002-SM-DLIOL.cram",
+    "file_size": 45292341723
+  },
+  {
+    "object_id": "anv:dg.ANV0/d22c2e5f-abe5-4bfa-8f1a-1d588752514e",
+    "md5sum": "24b9caa7079e56d51db9819804626d20",
+    "file_name": "GTEX-147F3-0002-SM-6WSBE.cram",
+    "file_size": 51632607921
+  },
+  {
+    "object_id": "anv:dg.ANV0/8b97dd86-b17b-431a-b82c-61490ff22e97",
+    "md5sum": "c349a0196c86e6df54c3b458d77b4a27",
+    "file_name": "GTEX-13PVR-0003-SM-7DRNW.cram",
+    "file_size": 38001377568
+  },
+  {
+    "object_id": "anv:dg.ANV0/4e1f3a64-1931-417c-a7dd-d5baa6e0c6ff",
+    "md5sum": "835e5d9122210349c27ae4081f96d4f1",
+    "file_name": "GTEX-1JMQI-0002-SM-DJWWH.cram",
+    "file_size": 46660168447
+  },
+  {
+    "object_id": "anv:dg.ANV0/01782884-258e-46f3-91a9-ab637dae893b",
+    "md5sum": "0acf2cccfa1f2fe8b8b53e41574bcd15",
+    "file_name": "GTEX-RUSQ-0001-SM-5JK34.cram",
+    "file_size": 84815658070
+  },
+  {
+    "object_id": "anv:dg.ANV0/a5f8d8a6-f824-4ecf-94ee-3350af179ef2",
+    "md5sum": "982408969575aac20a688cf865551ddb",
+    "file_name": "GTEX-ZUA1-0001-SM-6WBSL.cram",
+    "file_size": 52215090880
+  },
+  {
+    "object_id": "anv:dg.ANV0/2698e370-9f3c-44c6-8774-1eb8a65fea1e",
+    "md5sum": "54a6423892ad2d09c6dcaf7f9369c8fc",
+    "file_name": "GTEX-XLM4-2426-SM-DO3WY.cram",
+    "file_size": 39232854377
+  },
+  {
+    "object_id": "anv:dg.ANV0/5c9acb5a-c5a9-4654-a9d0-0e5d7073b794",
+    "md5sum": "0a87b18d8dd2ceee2444dc24f8a1485c",
+    "file_name": "GTEX-17HHY-0002-SM-6UH1X.cram",
+    "file_size": 49698841296
+  },
+  {
+    "object_id": "anv:dg.ANV0/65488a53-876d-4fe9-9750-02d973eef529",
+    "md5sum": "65d36e09d60e6af72bc055cbd4d43ae7",
+    "file_name": "GTEX-12WSF-0002-SM-6WSCI.cram",
+    "file_size": 51642207167
+  },
+  {
+    "object_id": "anv:dg.ANV0/fddef54a-6e74-401d-91d7-66eb1b97ebe2",
+    "md5sum": "43d40095974c9faa52fe460e1871424c",
+    "file_name": "GTEX-132Q8-0004-SM-7DRQB.cram",
+    "file_size": 46976721918
+  },
+  {
+    "object_id": "anv:dg.ANV0/b7e30a50-b059-4801-af71-fa1780d807d4",
+    "md5sum": "029b5dcd45a410f10f0fbc2aa7f8b0e7",
+    "file_name": "GTEX-13JVG-0003-SM-6WSBH.cram",
+    "file_size": 49750255896
+  },
+  {
+    "object_id": "anv:dg.ANV0/15d6de4a-f3f7-4c42-bd27-86909874c51c",
+    "md5sum": "476ecf59396e93edf6a3298d85bbf0f7",
+    "file_name": "GTEX-146FR-0004-SM-6WSBD.cram",
+    "file_size": 48248159683
+  },
+  {
+    "object_id": "anv:dg.ANV0/6f317e86-427a-443b-b198-14442ffd64d1",
+    "md5sum": "a0510f2d62ad3c5bf765979fa0125f1c",
+    "file_name": "GTEX-11ZTS-0001-SM-6WBU5.cram",
+    "file_size": 50071765437
+  },
+  {
+    "object_id": "anv:dg.ANV0/0dd37fa4-5c0e-41be-ad22-8f9d15e122b8",
+    "md5sum": "635303c33dcb98da6bb926c683702849",
+    "file_name": "GTEX-13JUV-0001-SM-6WSB6.cram",
+    "file_size": 45960595492
+  },
+  {
+    "object_id": "anv:dg.ANV0/9b20cff3-9940-4646-952c-7241462ce26d",
+    "md5sum": "9121e232426f140d7f48f3e7dc5709da",
+    "file_name": "GTEX-12WSH-0001-SM-6WSBP.cram",
+    "file_size": 46852286821
+  },
+  {
+    "object_id": "anv:dg.ANV0/d16b8fab-bc8e-4416-8df9-edfc6618c860",
+    "md5sum": "76c004101509bfee4dc4aef32dfc2e46",
+    "file_name": "GTEX-15SHU-0001-SM-6UH2J.cram",
+    "file_size": 50006920980
+  },
+  {
+    "object_id": "anv:dg.ANV0/61b7011e-f364-47e7-b676-d7b984d946ae",
+    "md5sum": "520b21955abb44d5f1295212405a9c00",
+    "file_name": "GTEX-1445S-1326-SM-DLIOE.cram",
+    "file_size": 42802356850
+  },
+  {
+    "object_id": "anv:dg.ANV0/b6102dd0-0a06-49c3-b4ac-e716d17c1338",
+    "md5sum": "4ca7f55366e4c2b5852b789d55ecf15e",
+    "file_name": "GTEX-13OW7-0001-SM-6WSD2.cram",
+    "file_size": 56814279131
+  },
+  {
+    "object_id": "anv:dg.ANV0/9162d89f-9346-4509-9c83-2d8483dd17fa",
+    "md5sum": "a2baa0394ab352ee3c6a779ad4b8d22d",
+    "file_name": "GTEX-1JMQJ-0003-SM-DJWY9.cram",
+    "file_size": 38201227728
+  },
+  {
+    "object_id": "anv:dg.ANV0/803ee8f3-525b-4190-b692-7ea0c18f9398",
+    "md5sum": "afd598a5f046d8d810b73ac73741e4f3",
+    "file_name": "GTEX-1R9K5-0002-SM-DLIP5.cram",
+    "file_size": 40941847361
+  },
+  {
+    "object_id": "anv:dg.ANV0/6e590c1e-fddd-4d72-bf90-edbe2e0f0c54",
+    "md5sum": "3dff8cab1c1e60042b32cf2e4f7bce67",
+    "file_name": "GTEX-XPVG-0003-SM-6UH19.cram",
+    "file_size": 50277954092
+  },
+  {
+    "object_id": "anv:dg.ANV0/2829b508-a6ff-4415-869c-1452e172d08d",
+    "md5sum": "f8e7f6e2b97738a64ab026639e119e12",
+    "file_name": "GTEX-RU72-0004-SM-5SOEJ.cram",
+    "file_size": 55363301526
+  },
+  {
+    "object_id": "anv:dg.ANV0/0fb48a53-c03d-4314-93dd-e38ee0abbf9d",
+    "md5sum": "765993b92f52119ce75faf3b759228af",
+    "file_name": "GTEX-1B933-0003-SM-7J3A4.cram",
+    "file_size": 37542730145
+  },
+  {
+    "object_id": "anv:dg.ANV0/4ddad576-f212-49ac-8a13-5192805aedf4",
+    "md5sum": "bd3fdaa624a5169462e769415d4558a0",
+    "file_name": "GTEX-U3ZG-0002-SM-5SOEN.cram",
+    "file_size": 57020951686
+  },
+  {
+    "object_id": "anv:dg.ANV0/c4223c95-059e-4a5c-b0f7-c5cbb1d6a4ab",
+    "md5sum": "f8a55de0efd526a743dc372324b7d2c4",
+    "file_name": "GTEX-1O97I-0004-SM-DJWYL.cram",
+    "file_size": 44797901655
+  },
+  {
+    "object_id": "anv:dg.ANV0/1fc41057-e61e-4722-84df-df26215348ed",
+    "md5sum": "657d8c51f688e442a85de49ad76d0071",
+    "file_name": "GTEX-1A3MV-0002-SM-7J39R.cram",
+    "file_size": 39063548197
+  },
+  {
+    "object_id": "anv:dg.ANV0/715d3f4b-1e0d-47f3-99c4-9a249e82b59d",
+    "md5sum": "a9616d03616c7ef5c44d24994e4a993d",
+    "file_name": "GTEX-XUZC-0002-SM-5JK3R.cram",
+    "file_size": 41929321869
+  },
+  {
+    "object_id": "anv:dg.ANV0/945b87ce-73ab-4de3-ae3f-d2dcda96fa34",
+    "md5sum": "2bb68ee247c5a19a1f151ff72db895fa",
+    "file_name": "GTEX-QESD-0001-SM-5URC9.cram",
+    "file_size": 60299388830
+  },
+  {
+    "object_id": "anv:dg.ANV0/e8438e82-9616-4fc3-baf2-0ebd71baab57",
+    "md5sum": "3993e6b1fa1f12e757026eed87d9cddf",
+    "file_name": "GTEX-139TS-1526-SM-DLIO9.cram",
+    "file_size": 50936118031
+  },
+  {
+    "object_id": "anv:dg.ANV0/56d5e7e4-128c-40ee-b28a-cc02cd565fa1",
+    "md5sum": "cf8b02ae26c54c94715bfd6d91f27383",
+    "file_name": "GTEX-ZLV1-0003-SM-7DRPD.cram",
+    "file_size": 32769418776
+  },
+  {
+    "object_id": "anv:dg.ANV0/e4639ced-0b5a-4821-823c-27d561450f61",
+    "md5sum": "8bdb2dd1fb79148cf4beb72a99b03bf4",
+    "file_name": "GTEX-1S82U-0004-SM-DJWY5.cram",
+    "file_size": 41171678721
+  },
+  {
+    "object_id": "anv:dg.ANV0/72e6fc22-0450-4ec8-b2b3-5a0b8c75ff73",
+    "md5sum": "14f0b6e8084752ca22ec1b75143b6537",
+    "file_name": "GTEX-ZYVF-0004-SM-6WBSC.cram",
+    "file_size": 49256703866
+  },
+  {
+    "object_id": "anv:dg.ANV0/4bdf138d-94da-4d5d-8b5e-0ac100b71e08",
+    "md5sum": "1c1cd208003058f54e55a0e105bb0612",
+    "file_name": "GTEX-1GMR8-0003-SM-7J38N.cram",
+    "file_size": 37258232398
+  },
+  {
+    "object_id": "anv:dg.ANV0/65b10a48-7a9c-4f63-840a-217a7d6aa12d",
+    "md5sum": "57065ac14e4454b894580f5db4a97289",
+    "file_name": "GTEX-148VJ-0002-SM-7DRO4.cram",
+    "file_size": 39438356971
+  },
+  {
+    "object_id": "anv:dg.ANV0/a8a12663-17c3-4965-86e7-703ba328b9f5",
+    "md5sum": "352f343f1fbf4e3c6d5f9081df734a00",
+    "file_name": "GTEX-ZF29-0004-SM-6UH18.cram",
+    "file_size": 54167827565
+  },
+  {
+    "object_id": "anv:dg.ANV0/c24ab5c6-482b-4b3a-ab3a-363b37a9202b",
+    "md5sum": "6fb8b699393f3f0b253c3db2b5934d4c",
+    "file_name": "GTEX-1EKGG-0004-SM-DLIOP.cram",
+    "file_size": 42254208951
+  },
+  {
+    "object_id": "anv:dg.ANV0/821dc26c-9c0f-4e0e-80f4-42a37d320e1c",
+    "md5sum": "4036fe0498232cc95317cc072d5d8500",
+    "file_name": "GTEX-UPK5-0002-SM-5SOE3.cram",
+    "file_size": 62421391179
+  },
+  {
+    "object_id": "anv:dg.ANV0/92b6c6f1-22c7-4bb5-bd67-a2dcef2b0870",
+    "md5sum": "b763a2060e616eb21c990078613bb6e6",
+    "file_name": "GTEX-13O3Q-0003-SM-6WSCX.cram",
+    "file_size": 53955928543
+  },
+  {
+    "object_id": "anv:dg.ANV0/d946b83a-72f7-4ed5-9a93-919e3ac7f0d0",
+    "md5sum": "52092abe689531d5f5aaa9d1bf0ff85e",
+    "file_name": "GTEX-11TUW-0004-SM-6WBU1.cram",
+    "file_size": 46485677738
+  },
+  {
+    "object_id": "anv:dg.ANV0/b4971e14-63e9-4e94-a0de-771b3f0d766e",
+    "md5sum": "5bcbe55d352de0f5f4d51f5eebf9e786",
+    "file_name": "GTEX-1C2JI-0003-SM-7J39E.cram",
+    "file_size": 37145357368
+  },
+  {
+    "object_id": "anv:dg.ANV0/21d2b9ac-1625-4c0d-bf38-ef6325bb7724",
+    "md5sum": "fae37ddd1d5777cae1b7701cbe145194",
+    "file_name": "GTEX-SN8G-0002-SM-5JK4B.cram",
+    "file_size": 75678475090
+  },
+  {
+    "object_id": "anv:dg.ANV0/71f49d8a-6155-4450-b9b7-6691c614edb2",
+    "md5sum": "b42719d664bf4c5f14ae650cee40a92e",
+    "file_name": "GTEX-11EM3-0004-SM-6WBUK.cram",
+    "file_size": 51435260260
+  },
+  {
+    "object_id": "anv:dg.ANV0/247b2f82-8c90-4a82-89c1-058cb39bfdc8",
+    "md5sum": "8157170b4df3e5da6c3467713b27078d",
+    "file_name": "GTEX-ZEX8-0001-SM-6UH17.cram",
+    "file_size": 50997383440
+  },
+  {
+    "object_id": "anv:dg.ANV0/2274405f-07ac-42e2-b3e4-0e200dc6fc66",
+    "md5sum": "a7157aeda43c3a8e6898946f24be754a",
+    "file_name": "GTEX-YF7O-0002-SM-6UH3Q.cram",
+    "file_size": 52741036003
+  },
+  {
+    "object_id": "anv:dg.ANV0/54c74f4c-f239-4800-b686-28aec337b69e",
+    "md5sum": "07ac33dacc48cfb7f1724ee04d202bca",
+    "file_name": "GTEX-P4QS-0003-SM-5JK4U.cram",
+    "file_size": 77199638195
+  },
+  {
+    "object_id": "anv:dg.ANV0/ac2a622c-8881-4391-a66e-d84b0f3cd205",
+    "md5sum": "2d28e784b499d61270d5146ffc039a28",
+    "file_name": "GTEX-ZZ64-0004-SM-6WBT6.cram",
+    "file_size": 50325792269
+  },
+  {
+    "object_id": "anv:dg.ANV0/b0745d15-fff2-4381-a805-163e401f28e6",
+    "md5sum": "21fbdcc82eda28c2db7c604ace532824",
+    "file_name": "GTEX-13OVK-0001-SM-6WSCS.cram",
+    "file_size": 47876696949
+  },
+  {
+    "object_id": "anv:dg.ANV0/2571e2d6-fde7-4b2e-8f7d-7db14ac538b2",
+    "md5sum": "0f395df6004f99bc4dcee582c554bfe4",
+    "file_name": "GTEX-14ICK-0004-SM-7DROB.cram",
+    "file_size": 44424287064
+  },
+  {
+    "object_id": "anv:dg.ANV0/a775567e-5f22-4a60-a9d5-d13219a2de8b",
+    "md5sum": "015921babf9b3524ac83e1339116741d",
+    "file_name": "GTEX-PWN1-0004-SM-5JK3S.cram",
+    "file_size": 65081148972
+  },
+  {
+    "object_id": "anv:dg.ANV0/93dfbe80-b3f6-4ced-8f4c-a52c5767fd8c",
+    "md5sum": "855b60b59aeaa9cd3e36b359a8e00bf2",
+    "file_name": "GTEX-1GZ4I-0002-SM-DLIP8.cram",
+    "file_size": 46820029680
+  },
+  {
+    "object_id": "anv:dg.ANV0/bb275cf2-d816-4c67-924a-2ba88a9783c5",
+    "md5sum": "096e05cda2d167be007471bbbc70c1be",
+    "file_name": "GTEX-ZAB4-0001-SM-6UH36.cram",
+    "file_size": 44592997108
+  },
+  {
+    "object_id": "anv:dg.ANV0/1dd5531c-262f-4017-ba4d-57bf92ea657b",
+    "md5sum": "78d36eb88c22ccae92edab1e45b4eebe",
+    "file_name": "GTEX-144GL-0426-SM-DLIOC.cram",
+    "file_size": 39175584112
+  },
+  {
+    "object_id": "anv:dg.ANV0/3371a139-9a46-49c4-a016-3bc3e4e8da99",
+    "md5sum": "3a13fd15dbdc2a5a8670c3c4804b4762",
+    "file_name": "GTEX-QDVJ-0003-SM-5URC5.cram",
+    "file_size": 69387411750
+  },
+  {
+    "object_id": "anv:dg.ANV0/c779561b-cc55-42e6-98c2-a24bb8b6a65e",
+    "md5sum": "0aedfb5651afe07709e4179d02751f5c",
+    "file_name": "GTEX-XMD1-0004-SM-7DLGN.cram",
+    "file_size": 35025426534
+  },
+  {
+    "object_id": "anv:dg.ANV0/e6dd231f-69a4-4582-84ac-caeb8bcb2cf2",
+    "md5sum": "518f471b5573ea9bcc2d88e14c81fa0d",
+    "file_name": "GTEX-1F7RK-0004-SM-7J3AF.cram",
+    "file_size": 40776777653
+  },
+  {
+    "object_id": "anv:dg.ANV0/60a87daf-f168-4426-a43b-94a790a459ae",
+    "md5sum": "4d62038adbb2c1db7c82ea549a3f4237",
+    "file_name": "GTEX-1LSNM-0004-SM-DJWY7.cram",
+    "file_size": 33558143350
+  },
+  {
+    "object_id": "anv:dg.ANV0/50900acc-9c7d-4c08-9358-c176895b8450",
+    "md5sum": "20c4a0feb043094f369557e2c36003b4",
+    "file_name": "GTEX-139D8-0001-SM-7DROC.cram",
+    "file_size": 41927096777
+  },
+  {
+    "object_id": "anv:dg.ANV0/03abe36e-a868-46e1-aa1d-56f595458d4d",
+    "md5sum": "ebfedd74d9967c697d30675c59fb1d52",
+    "file_name": "GTEX-1R7EV-0002-SM-DLIQ9.cram",
+    "file_size": 35120188227
+  },
+  {
+    "object_id": "anv:dg.ANV0/f421fa1b-0b8d-4afe-8cfa-515cf97fc96c",
+    "md5sum": "505fcba55626d30649dbee26fbd1af71",
+    "file_name": "GTEX-Y9LG-0003-SM-6UH3O.cram",
+    "file_size": 51752087060
+  },
+  {
+    "object_id": "anv:dg.ANV0/51493110-8e83-44d1-9537-30b3bd73e7b8",
+    "md5sum": "ddc71c13035e7dd4ef77cb929a86c2b3",
+    "file_name": "GTEX-UJHI-0001-SM-5SOEU.cram",
+    "file_size": 55714482691
+  },
+  {
+    "object_id": "anv:dg.ANV0/abb2b1ca-15bd-452e-bd7e-97808a9cd719",
+    "md5sum": "22f6e19f6351292cf380e2f5127a120d",
+    "file_name": "GTEX-X4LF-0001-SM-7DRQ5.cram",
+    "file_size": 34358165909
+  },
+  {
+    "object_id": "anv:dg.ANV0/21c9fbe2-211a-4e22-be30-c8a42b9964e6",
+    "md5sum": "a1e7664240caf62ddbb2019ccad3d173",
+    "file_name": "GTEX-OXRO-0003-SM-5JK2R.cram",
+    "file_size": 85755459901
+  },
+  {
+    "object_id": "anv:dg.ANV0/003fd965-da16-4cb7-bd3a-71efbf47663d",
+    "md5sum": "252c082cda664babf5eba8d64b140eab",
+    "file_name": "GTEX-XUJ4-0001-SM-5JK4T.cram",
+    "file_size": 86402543143
+  },
+  {
+    "object_id": "anv:dg.ANV0/8f825731-abd5-4e29-b2dd-e4869fa60c1f",
+    "md5sum": "6da0606e53b358735aa519e22c9128c1",
+    "file_name": "GTEX-S7PM-0926-SM-CLTGC.cram",
+    "file_size": 35350030654
+  },
+  {
+    "object_id": "anv:dg.ANV0/b267efb7-af02-4ecc-b8a7-bd837c16763f",
+    "md5sum": "70f858e07c3bb893127a5cb6a909b6c5",
+    "file_name": "GTEX-13CZU-0003-SM-6WSC3.cram",
+    "file_size": 57676792091
+  },
+  {
+    "object_id": "anv:dg.ANV0/08f31d53-e585-4731-b776-cea1eaccc2d2",
+    "md5sum": "a8cc8aed8e2eca28aeab7f1e7fc278d9",
+    "file_name": "GTEX-11GSO-0003-SM-6WBTR.cram",
+    "file_size": 50009210793
+  },
+  {
+    "object_id": "anv:dg.ANV0/0cd37ca7-5573-4829-88b4-cf2edb26f892",
+    "md5sum": "f63a4d322a693973306b6bbccb7e07cc",
+    "file_name": "GTEX-ZYFG-0004-SM-6WBT5.cram",
+    "file_size": 53356304110
+  },
+  {
+    "object_id": "anv:dg.ANV0/d94e6680-c938-499d-91c9-4bc7115fac2f",
+    "md5sum": "1f53e142bfc3ce677d3af1d6e55b66a3",
+    "file_name": "GTEX-1A8G7-0003-SM-7J38W.cram",
+    "file_size": 37603473637
+  },
+  {
+    "object_id": "anv:dg.ANV0/14fa101f-b30d-490e-b8a3-0d6ec2440936",
+    "md5sum": "49055b096170afc4c604470710032707",
+    "file_name": "GTEX-1AMFI-0001-SM-7J39V.cram",
+    "file_size": 42392344636
+  },
+  {
+    "object_id": "anv:dg.ANV0/c455d2ba-057f-49ce-8390-265495c34989",
+    "md5sum": "1484fc1b7afbe0e5e7a52395ff3b3ae1",
+    "file_name": "GTEX-13QJC-0003-SM-6WSAQ.cram",
+    "file_size": 50609219715
+  },
+  {
+    "object_id": "anv:dg.ANV0/1eda4407-8f81-46b8-9179-4a0ecab5736d",
+    "md5sum": "5e00e70d28d77a357ca3466dabdf76e1",
+    "file_name": "GTEX-1IDJE-0001-SM-DCCZG.cram",
+    "file_size": 45881350401
+  },
+  {
+    "object_id": "anv:dg.ANV0/712c3fb7-9070-43d1-84a7-e38784f4684c",
+    "md5sum": "e8729e903729af7102b98d39ad0669d6",
+    "file_name": "GTEX-11DXX-0004-SM-6WBT9.cram",
+    "file_size": 50763270315
+  },
+  {
+    "object_id": "anv:dg.ANV0/edf83d21-c786-49b0-bbc7-0b3fddacdfa0",
+    "md5sum": "8926491fbd4cabea4f979cc703eaa085",
+    "file_name": "GTEX-11TUW-0004-SM-7FG6E.cram",
+    "file_size": 42444598520
+  },
+  {
+    "object_id": "anv:dg.ANV0/e2b7fd59-89be-4338-b885-b243e0dc3f11",
+    "md5sum": "634628d02cef091a57b52e0122353033",
+    "file_name": "GTEX-13VXU-0004-SM-6WSAS.cram",
+    "file_size": 50491254187
+  },
+  {
+    "object_id": "anv:dg.ANV0/e5a8f88b-ff1e-4048-bd91-2d785a5b88b6",
+    "md5sum": "ab3863a752c6334034c9628df786c3bf",
+    "file_name": "GTEX-1KANB-0003-SM-DJWWC.cram",
+    "file_size": 35944323553
+  },
+  {
+    "object_id": "anv:dg.ANV0/099fa37b-a8ad-43b5-b884-cac700d52f1f",
+    "md5sum": "82c64b077991d3352236fef2928c1c79",
+    "file_name": "GTEX-11P7K-0002-SM-6WBUI.cram",
+    "file_size": 47255109076
+  },
+  {
+    "object_id": "anv:dg.ANV0/906ae39c-e038-4f3a-8701-5b9342d6a195",
+    "md5sum": "07edd43ce7b0cf86ed8459178875de7b",
+    "file_name": "GTEX-11NUK-0004-SM-6WBTU.cram",
+    "file_size": 53912995602
+  },
+  {
+    "object_id": "anv:dg.ANV0/8f35ecee-e6dc-433a-8b6b-7cb71df86067",
+    "md5sum": "63ae49995fd4360c33843be16d31888f",
+    "file_name": "GTEX-14PHW-0002-SM-7DROQ.cram",
+    "file_size": 58220648148
+  },
+  {
+    "object_id": "anv:dg.ANV0/7727f9ad-9aa2-428f-a70f-725028c74287",
+    "md5sum": "93ed34349351339b3611bd7cbaab030f",
+    "file_name": "GTEX-12WSM-0001-SM-6WSBS.cram",
+    "file_size": 47192100126
+  },
+  {
+    "object_id": "anv:dg.ANV0/87cd221a-3a37-4a91-b9dc-b8debad7848e",
+    "md5sum": "dd63b5d47bfdcc48594096f2ef47d665",
+    "file_name": "GTEX-14JG6-0004-SM-7DRNR.cram",
+    "file_size": 35977700740
+  },
+  {
+    "object_id": "anv:dg.ANV0/98d7e0d4-7661-4e1e-9205-c51aa786ac83",
+    "md5sum": "d22d84de95686da7399cf0fe8575c258",
+    "file_name": "GTEX-TKQ1-0002-SM-6WBRZ.cram",
+    "file_size": 49150343468
+  },
+  {
+    "object_id": "anv:dg.ANV0/41453925-5c8a-4660-ab50-c86dfec0aefd",
+    "md5sum": "14631a36aa06c81762950b51f6bc1c2c",
+    "file_name": "GTEX-RN5K-0001-SM-DLIOT.cram",
+    "file_size": 47909404407
+  },
+  {
+    "object_id": "anv:dg.ANV0/b41efd85-b298-47ba-9a9a-e6209cb94d1c",
+    "md5sum": "fa15e54fbd83c42870d3f633dcfe2513",
+    "file_name": "GTEX-139T6-0826-SM-DO3X4.cram",
+    "file_size": 39092575767
+  },
+  {
+    "object_id": "anv:dg.ANV0/2ca21d73-75b9-45ca-b932-43ee56492a0d",
+    "md5sum": "319c1b7ad7c5e449fa5e54fb10f5cf63",
+    "file_name": "GTEX-16XZY-0002-SM-6UH26.cram",
+    "file_size": 52163103787
+  },
+  {
+    "object_id": "anv:dg.ANV0/b08097c8-f6ac-4b4b-af78-8ceb5c9a9905",
+    "md5sum": "54e9a30d48c60348484b2058b99237a8",
+    "file_name": "GTEX-X638-0004-SM-DLIPT.cram",
+    "file_size": 40225330561
+  },
+  {
+    "object_id": "anv:dg.ANV0/d6bc4365-8c40-4f6d-8ae3-f292b867a0e1",
+    "md5sum": "f3ae0e6c45e60133e14b2cb47ec9ec46",
+    "file_name": "GTEX-15SHW-0004-SM-6UH2L.cram",
+    "file_size": 44138755901
+  },
+  {
+    "object_id": "anv:dg.ANV0/f75d0e8f-4b85-4b80-b13a-4282f2b7033e",
+    "md5sum": "0bb0b52146b9c392696e1b3d301187f0",
+    "file_name": "GTEX-117YW-0003-SM-6WBSY.cram",
+    "file_size": 52949403114
+  },
+  {
+    "object_id": "anv:dg.ANV0/f98655a6-652d-46b7-a46f-df8960adfb5a",
+    "md5sum": "838d90d0b39883a15977fb41e7765b86",
+    "file_name": "GTEX-R55D-0926-SM-7DRPI.cram",
+    "file_size": 38701626764
+  },
+  {
+    "object_id": "anv:dg.ANV0/9bfce408-3f67-47e1-87e7-3c8b9d295d37",
+    "md5sum": "23fd5ef38cd580052d88825f04b27c89",
+    "file_name": "GTEX-1S5ZA-0004-SM-DJWYF.cram",
+    "file_size": 43245260346
+  },
+  {
+    "object_id": "anv:dg.ANV0/657f048a-4381-447b-b9df-beabbce44457",
+    "md5sum": "1594b750567d55ab74217d6c9f4614a4",
+    "file_name": "GTEX-11WQC-0003-SM-6WBU8.cram",
+    "file_size": 49274916794
+  },
+  {
+    "object_id": "anv:dg.ANV0/210d625d-cadf-4c67-a02f-a45469ef9136",
+    "md5sum": "13ad3bc8cad11f5d19f9cea263144c90",
+    "file_name": "GTEX-18A7B-0004-SM-DJWXU.cram",
+    "file_size": 38741418069
+  },
+  {
+    "object_id": "anv:dg.ANV0/2b269e56-0788-4d32-a76c-e77a9044ed2c",
+    "md5sum": "ad971872f221747095303d80534055a1",
+    "file_name": "GTEX-1EX96-0004-SM-7J3AP.cram",
+    "file_size": 37430315677
+  },
+  {
+    "object_id": "anv:dg.ANV0/f983bd1c-3963-4267-934c-b7205a1116c5",
+    "md5sum": "0cbec322a3f44358eeeac982961ae3bb",
+    "file_name": "GTEX-1GPI7-0002-SM-DLIOU.cram",
+    "file_size": 48376130806
+  },
+  {
+    "object_id": "anv:dg.ANV0/49319fe7-713e-4d29-8970-44dfd8a4960e",
+    "md5sum": "54e3444e6fe3e88069318baa983d11c5",
+    "file_name": "GTEX-RVPV-0003-SM-6UH3S.cram",
+    "file_size": 47875409647
+  },
+  {
+    "object_id": "anv:dg.ANV0/701eacd5-2a30-44c9-922c-1e3ede23db49",
+    "md5sum": "1fd1158cb0692f20e38da21867cfbecb",
+    "file_name": "GTEX-13G51-0004-SM-6WSBK.cram",
+    "file_size": 49777613915
+  },
+  {
+    "object_id": "anv:dg.ANV0/dedc276b-ab29-4819-a53e-ff5b5d9c2338",
+    "md5sum": "c87d4707515ff2b81e230d8809fa670c",
+    "file_name": "GTEX-S33H-0004-SM-5JK2W.cram",
+    "file_size": 42788716757
+  },
+  {
+    "object_id": "anv:dg.ANV0/176d4fb8-4c17-4b28-a7e3-96979c956020",
+    "md5sum": "988c9d0d1d900cc4c3fb452c9d202068",
+    "file_name": "GTEX-ZDTT-0002-SM-6UH3D.cram",
+    "file_size": 49313817267
+  },
+  {
+    "object_id": "anv:dg.ANV0/f14980cd-b717-4e65-b81a-08c33de762ef",
+    "md5sum": "a5ce9ec3890717d982e2253b56804a27",
+    "file_name": "GTEX-Q2AH-0004-SM-5JK52.cram",
+    "file_size": 67067660304
+  },
+  {
+    "object_id": "anv:dg.ANV0/ddc87b0b-b5e2-4971-aa15-fa394827b312",
+    "md5sum": "9c3c94df2f9c4817b622a5060dd000ad",
+    "file_name": "GTEX-14PJ5-0001-SM-7DROP.cram",
+    "file_size": 30750918220
+  },
+  {
+    "object_id": "anv:dg.ANV0/fd7d35b4-13e6-4fe9-a600-2be9a970328c",
+    "md5sum": "22cc6a5ea95a0ad939e9111afae1c1e4",
+    "file_name": "GTEX-WYJK-0001-SM-5URBR.cram",
+    "file_size": 52940985168
+  },
+  {
+    "object_id": "anv:dg.ANV0/579159fe-c256-4c1b-aafa-33110eab1834",
+    "md5sum": "5714f8a00a7f33c128212a28f70c18a2",
+    "file_name": "GTEX-13X6I-0002-SM-6WSAR.cram",
+    "file_size": 46244003550
+  },
+  {
+    "object_id": "anv:dg.ANV0/2c24ff8b-9e33-44dc-a801-365ef4768831",
+    "md5sum": "5e3eb3385e1187224522181d5a4cea47",
+    "file_name": "GTEX-PW2O-0004-SM-5JK3M.cram",
+    "file_size": 77340395529
+  },
+  {
+    "object_id": "anv:dg.ANV0/ac2504b4-1ce3-4fbf-b71d-286788195e3b",
+    "md5sum": "12668d07ab2342bb986f0702151628d6",
+    "file_name": "GTEX-145MF-0004-SM-7DRP1.cram",
+    "file_size": 31934158063
+  },
+  {
+    "object_id": "anv:dg.ANV0/50106567-425a-4ea0-85ec-978c5ac60291",
+    "md5sum": "6f11e6d06ff108daabb8b649484cd28b",
+    "file_name": "GTEX-ZWKS-0002-SM-6WBUM.cram",
+    "file_size": 51080409278
+  },
+  {
+    "object_id": "anv:dg.ANV0/d12c5244-3147-426e-a101-e7044143f09a",
+    "md5sum": "24fed0be432291ade5ab4ee997ccdc5b",
+    "file_name": "GTEX-XOTO-0002-SM-5URC7.cram",
+    "file_size": 59996975657
+  },
+  {
+    "object_id": "anv:dg.ANV0/e8476dbf-d001-4325-88eb-370fd5a33f96",
+    "md5sum": "d62295fafa9c8493af891bfb1d356f20",
+    "file_name": "GTEX-117XS-0001-SM-6WBTA.cram",
+    "file_size": 52293099046
+  },
+  {
+    "object_id": "anv:dg.ANV0/31c3129d-dc1f-4051-a309-6b076852c31e",
+    "md5sum": "dcf620dd997cc48191560970adc13dbf",
+    "file_name": "GTEX-1128S-0001-SM-6WBUH.cram",
+    "file_size": 54609637828
+  },
+  {
+    "object_id": "anv:dg.ANV0/45f28df7-94ca-4dd2-b670-74951263d5c9",
+    "md5sum": "db5547107310b53c10290bbe2a731215",
+    "file_name": "GTEX-T5JC-0002-SM-5SOER.cram",
+    "file_size": 54483817893
+  },
+  {
+    "object_id": "anv:dg.ANV0/51d3fff6-9dd5-48f0-b65d-52689f9391cd",
+    "md5sum": "2c7109d2354c73e71448e18cd9047ed6",
+    "file_name": "GTEX-SIU7-0002-SM-5JK4G.cram",
+    "file_size": 79469054419
+  },
+  {
+    "object_id": "anv:dg.ANV0/906881db-2172-44d7-a180-6e9a1a754058",
+    "md5sum": "298f07ab6b8ea57604caa7e8bd0624ea",
+    "file_name": "GTEX-1IDJF-0002-SM-DCCZD.cram",
+    "file_size": 44698346345
+  },
+  {
+    "object_id": "anv:dg.ANV0/f73fddb5-08af-4685-a9f8-9242365cfa4f",
+    "md5sum": "fb7edbd9db52da97058439b336519b1d",
+    "file_name": "GTEX-14BIM-0002-SM-7DROA.cram",
+    "file_size": 40580327499
+  },
+  {
+    "object_id": "anv:dg.ANV0/75000646-04ba-4b6a-be59-91ebcb0d12da",
+    "md5sum": "e4b3416213944777ec504a4eb0b1d8d9",
+    "file_name": "GTEX-11UD2-0001-SM-6WBTW.cram",
+    "file_size": 51302070915
+  },
+  {
+    "object_id": "anv:dg.ANV0/b63587ad-75cb-4108-80b4-179cf2a05301",
+    "md5sum": "d92b2e7875576854be8219588f7d5c9b",
+    "file_name": "GTEX-1MGNQ-0001-SM-DJWXI.cram",
+    "file_size": 38741189777
+  },
+  {
+    "object_id": "anv:dg.ANV0/323be171-6596-49de-8f68-032e9251c06e",
+    "md5sum": "eceeb05bf903de423facc3c83fd935a5",
+    "file_name": "GTEX-XPT6-0004-SM-5URDL.cram",
+    "file_size": 53186455444
+  },
+  {
+    "object_id": "anv:dg.ANV0/8ec73109-6baa-4ee7-9537-fd397a5d1421",
+    "md5sum": "efc0fc19d8b2e3199bd05131d3f086ef",
+    "file_name": "GTEX-ZA64-0003-SM-6UH38.cram",
+    "file_size": 52744699176
+  },
+  {
+    "object_id": "anv:dg.ANV0/33dabb97-d116-4457-8276-c0cf53ab6d3d",
+    "md5sum": "744bf698c4c8d563502bb9f50cc4891d",
+    "file_name": "GTEX-17MFQ-0003-SM-6UH24.cram",
+    "file_size": 48263711115
+  },
+  {
+    "object_id": "anv:dg.ANV0/5f742340-b9fc-43d0-8a76-f171bb65b765",
+    "md5sum": "241ded56a01b5a05e717dc3348a9980f",
+    "file_name": "GTEX-1A8FM-0004-SM-7J39J.cram",
+    "file_size": 53072678883
+  },
+  {
+    "object_id": "anv:dg.ANV0/e2063324-2f9d-453f-9a25-e4924117a61b",
+    "md5sum": "0926db97b2f40e047c49df72eececde3",
+    "file_name": "GTEX-ZDXO-0001-SM-6UH3F.cram",
+    "file_size": 48741523656
+  },
+  {
+    "object_id": "anv:dg.ANV0/c4151ba4-81f4-49bf-8934-86b2a395a36b",
+    "md5sum": "30a1c838ac4f20cb6add3c7a6afd6bd6",
+    "file_name": "GTEX-Y5V6-0001-SM-6UH32.cram",
+    "file_size": 44286528328
+  },
+  {
+    "object_id": "anv:dg.ANV0/699f36a4-d3c3-4608-8835-6c634fc207b7",
+    "md5sum": "359dce789495f630f4c4ad5ecc29057d",
+    "file_name": "GTEX-ZTSS-0003-SM-6WBSU.cram",
+    "file_size": 52148653227
+  },
+  {
+    "object_id": "anv:dg.ANV0/8d7c6171-ba44-423b-a80b-b002a122fe26",
+    "md5sum": "4e553cd08064ad2ab7ed953a28e466d5",
+    "file_name": "GTEX-1NSGN-0001-SM-DJWYW.cram",
+    "file_size": 36855534806
+  },
+  {
+    "object_id": "anv:dg.ANV0/e0f49000-8700-4607-8c3f-781195aece4d",
+    "md5sum": "3bac7a95a9bbac08fd81ea29064357a3",
+    "file_name": "GTEX-WFG7-0002-SM-5SOEQ.cram",
+    "file_size": 60721507684
+  },
+  {
+    "object_id": "anv:dg.ANV0/925b23aa-e6cb-4896-ba71-81c6ae6242e3",
+    "md5sum": "c4b025c911651700abae4e7a9f3f1d58",
+    "file_name": "GTEX-T2YK-0003-SM-5URCD.cram",
+    "file_size": 56105067671
+  },
+  {
+    "object_id": "anv:dg.ANV0/52dc470a-663e-43cd-b640-c56606b7c7bd",
+    "md5sum": "ff1cfc5e7e13f5038fc85cec8f9f11d0",
+    "file_name": "GTEX-1KWVE-0003-SM-DJWWN.cram",
+    "file_size": 40809667974
+  },
+  {
+    "object_id": "anv:dg.ANV0/67e6594a-a0b9-4799-a980-6df947696805",
+    "md5sum": "223ed931c60d91882e7e3e99e7fa3eb2",
+    "file_name": "GTEX-PVOW-1026-SM-CLTG9.cram",
+    "file_size": 34721240513
+  },
+  {
+    "object_id": "anv:dg.ANV0/730cb618-cd86-4dd8-a74f-d6a7a253bd65",
+    "md5sum": "3542a35d64ebf3afd17ef973058b7690",
+    "file_name": "GTEX-O5YW-0003-SM-5JK2Y.cram",
+    "file_size": 65712000385
+  },
+  {
+    "object_id": "anv:dg.ANV0/b0c54cb7-7dfe-4f3c-aaf3-644f9f6aa834",
+    "md5sum": "2a229699464076882cb356a5e3508038",
+    "file_name": "GTEX-13O3O-0003-SM-6WSCO.cram",
+    "file_size": 53054197266
+  },
+  {
+    "object_id": "anv:dg.ANV0/8f1397d9-2995-4047-9f47-1a0b2b02b0d5",
+    "md5sum": "8014aeaced209a081ca0066bf54862c1",
+    "file_name": "GTEX-1GZ4H-0001-SM-7J3B8.cram",
+    "file_size": 36723647123
+  },
+  {
+    "object_id": "anv:dg.ANV0/a4814447-8822-4aea-8df9-e8393eb429a5",
+    "md5sum": "e84d375ec1e44bec5a683065fed645b9",
+    "file_name": "GTEX-TMKS-0002-SM-DLIOM.cram",
+    "file_size": 38130317810
+  },
+  {
+    "object_id": "anv:dg.ANV0/47219b8f-7c2a-47d7-ba53-a492e3b20c91",
+    "md5sum": "0c3822e104feb0b409492d85651c440d",
+    "file_name": "GTEX-1NUQO-0003-SM-DJWXG.cram",
+    "file_size": 43863148061
+  },
+  {
+    "object_id": "anv:dg.ANV0/cd9fa1b6-73a7-4792-9c91-27f81aa81973",
+    "md5sum": "cd6a6dc2ab4ff6f91ea0612fee356033",
+    "file_name": "GTEX-1F75I-0004-SM-7OO5C.cram",
+    "file_size": 40862852030
+  },
+  {
+    "object_id": "anv:dg.ANV0/a94a1f9b-d2f0-4228-bff6-83d979c86d81",
+    "md5sum": "f6390b4617ab27c841061c9e8e2dfd63",
+    "file_name": "GTEX-132NY-0001-SM-7DRPZ.cram",
+    "file_size": 39778608792
+  },
+  {
+    "object_id": "anv:dg.ANV0/2622d1f4-ee84-4a66-b136-9327317f3113",
+    "md5sum": "c0069a7007e4c6443036c5ee925290bf",
+    "file_name": "GTEX-1IDJD-0003-SM-DCCZJ.cram",
+    "file_size": 38390783706
+  },
+  {
+    "object_id": "anv:dg.ANV0/9fa377c6-d50d-429b-ab85-7fed95d85714",
+    "md5sum": "f1fd375b98c4bb8cd6986bdca40be545",
+    "file_name": "GTEX-183WM-0004-SM-6UH1T.cram",
+    "file_size": 52692821482
+  },
+  {
+    "object_id": "anv:dg.ANV0/75b5f830-4921-4ca2-a3fa-ca362056020c",
+    "md5sum": "cef2fe12b612e14830fe1433a89c82f0",
+    "file_name": "GTEX-ZT9W-0002-SM-6WBSS.cram",
+    "file_size": 50040725596
+  },
+  {
+    "object_id": "anv:dg.ANV0/894bbdfc-8c8e-4b52-8c23-eba0826d1fff",
+    "md5sum": "18cdec22d94b36a344fb670063d115d5",
+    "file_name": "GTEX-1F6IF-0004-SM-7J3AJ.cram",
+    "file_size": 37820138541
+  },
+  {
+    "object_id": "anv:dg.ANV0/e37fe6ca-4ab1-4e94-b023-19252ecd0d37",
+    "md5sum": "50f387a2c57a10334eadc67cd0502e32",
+    "file_name": "GTEX-ZXES-0001-SM-6WBSZ.cram",
+    "file_size": 45216941906
+  },
+  {
+    "object_id": "anv:dg.ANV0/e27dcd4d-0926-4c53-b5ef-6e0caa78e455",
+    "md5sum": "7df6c5e4890d4a099666fbd676363b33",
+    "file_name": "GTEX-1ICG6-0004-SM-DCCZF.cram",
+    "file_size": 46877303548
+  },
+  {
+    "object_id": "anv:dg.ANV0/e2252ef1-f014-4ff5-a6a7-eb82e67751d7",
+    "md5sum": "d734c1a6202c87a627be49b62fab8bf6",
+    "file_name": "GTEX-1CB4I-0002-SM-DLIOJ.cram",
+    "file_size": 40344851288
+  },
+  {
+    "object_id": "anv:dg.ANV0/c3ca9834-dd8a-4f38-a5c5-4dbd327ef467",
+    "md5sum": "9c9ae9373342c1efc74ac2f1fc2cca75",
+    "file_name": "GTEX-18A66-0002-SM-DLIP1.cram",
+    "file_size": 47168892633
+  },
+  {
+    "object_id": "anv:dg.ANV0/aed9225c-52eb-4a26-bc75-3e7bae9500bf",
+    "md5sum": "0385a9874661424c8c506393e4ae9ce5",
+    "file_name": "GTEX-147F4-0003-SM-6WSBG.cram",
+    "file_size": 51499943297
+  },
+  {
+    "object_id": "anv:dg.ANV0/ea3cb39a-9aca-44cb-aa48-842150389e83",
+    "md5sum": "0fbb08c07ec0485adae204f2c1832bf7",
+    "file_name": "GTEX-1QP28-0004-SM-DLIQJ.cram",
+    "file_size": 40718371012
+  },
+  {
+    "object_id": "anv:dg.ANV0/854de882-3d12-4baa-8f4b-b538b66d9709",
+    "md5sum": "67ce8d94ac7deeb8fb2289718146b02e",
+    "file_name": "GTEX-X88G-0003-SM-DLIPW.cram",
+    "file_size": 43796548560
+  },
+  {
+    "object_id": "anv:dg.ANV0/efad4f88-948c-4cde-a42f-86d146d68f4b",
+    "md5sum": "4e81219895cae266e4d098d62519295d",
+    "file_name": "GTEX-1EWIQ-0002-SM-7J3AN.cram",
+    "file_size": 37941662189
+  },
+  {
+    "object_id": "anv:dg.ANV0/18068d79-af43-4cf1-87b5-4099cd31a8d3",
+    "md5sum": "2c7153b8806ae4d2616bd7e2412fa94b",
+    "file_name": "GTEX-ZAK1-0726-SM-DMRPK.cram",
+    "file_size": 51510531754
+  },
+  {
+    "object_id": "anv:dg.ANV0/b1bfd3d1-9e76-43d3-915f-dbaf235ba2ba",
+    "md5sum": "bf4c708e451295bd5e343d5dc9d0d237",
+    "file_name": "GTEX-14PN4-0001-SM-7DRP6.cram",
+    "file_size": 35765972662
+  },
+  {
+    "object_id": "anv:dg.ANV0/75e1e133-1930-4614-a6fc-154b5006cffa",
+    "md5sum": "6c25aa68767f228f9b2c1a64e66955c3",
+    "file_name": "GTEX-1QP66-0002-SM-DLIP7.cram",
+    "file_size": 40547091735
+  },
+  {
+    "object_id": "anv:dg.ANV0/b777a40c-0cd9-4d0d-8af3-7d0d58b4007a",
+    "md5sum": "3ad30daa668f05b8d9a4c443435fa0a0",
+    "file_name": "GTEX-QDVN-0003-SM-5URBU.cram",
+    "file_size": 68414496405
+  },
+  {
+    "object_id": "anv:dg.ANV0/8f712763-1a11-48fd-87a4-2217753e33f9",
+    "md5sum": "2f081e5ec7d8511bcffb1ccd24b7757e",
+    "file_name": "GTEX-1KD4Q-0002-SM-DJWYV.cram",
+    "file_size": 37856166376
+  },
+  {
+    "object_id": "anv:dg.ANV0/695f8777-0a41-4d06-bf5a-b7fc35f5e210",
+    "md5sum": "79d2f3bb52a159487242e49ac3577d34",
+    "file_name": "GTEX-X585-0003-SM-7FG6K.cram",
+    "file_size": 40360465349
+  },
+  {
+    "object_id": "anv:dg.ANV0/359ee8a4-8acc-44eb-9bc5-2a1397fcbe0e",
+    "md5sum": "c56209da89f5ce2be44153ee2e15dcae",
+    "file_name": "GTEX-14DAQ-0004-SM-7DROH.cram",
+    "file_size": 38276151094
+  },
+  {
+    "object_id": "anv:dg.ANV0/c5cf1488-b2d6-4355-88dc-052044c7ba1e",
+    "md5sum": "bc44e3d31b09f80b1877c163c6022624",
+    "file_name": "GTEX-14PJM-0003-SM-7DLG8.cram",
+    "file_size": 35912063161
+  },
+  {
+    "object_id": "anv:dg.ANV0/56cf83d1-4e70-4d33-9959-8ad8b7f6f337",
+    "md5sum": "940038ff0a3148840b9f33637b339cfa",
+    "file_name": "GTEX-11WQK-0003-SM-6WBUB.cram",
+    "file_size": 51676306498
+  },
+  {
+    "object_id": "anv:dg.ANV0/d7290c4f-c6ff-469d-86cf-b8750fae6670",
+    "md5sum": "fd7617817964ce980480c0cf4029c162",
+    "file_name": "GTEX-NFK9-0004-SM-5JK4Y.cram",
+    "file_size": 75189555913
+  },
+  {
+    "object_id": "anv:dg.ANV0/dd67a1c6-3b8b-4044-9c89-12bbaed7da97",
+    "md5sum": "18eb8d6edd1a3ebd6be840e6cbbd96e7",
+    "file_name": "GTEX-1C64O-0003-SM-DJWXT.cram",
+    "file_size": 40492120062
+  },
+  {
+    "object_id": "anv:dg.ANV0/78063f05-2ec0-450f-83ba-8b34586d01f4",
+    "md5sum": "8679c4328a72aa32412b66e36eb17c9a",
+    "file_name": "GTEX-11ZU8-0001-SM-DLIPQ.cram",
+    "file_size": 46885994817
+  },
+  {
+    "object_id": "anv:dg.ANV0/e3e111a6-d849-4e6f-8118-49590dc47749",
+    "md5sum": "84f5936d526aac2ebe541f70c5faf5c6",
+    "file_name": "GTEX-U3ZM-0004-SM-5URC4.cram",
+    "file_size": 60714913400
+  },
+  {
+    "object_id": "anv:dg.ANV0/3fd974e1-ea75-48a0-a495-fc3fda14417c",
+    "md5sum": "204999b55d5acd2a2b3e751702cedf3c",
+    "file_name": "GTEX-Y3I4-0004-SM-6UH1C.cram",
+    "file_size": 46199942206
+  },
+  {
+    "object_id": "anv:dg.ANV0/8f90a145-d34e-4f25-96c7-8294ace63d54",
+    "md5sum": "14a2f1a09552105599d4ad70273f4c3e",
+    "file_name": "GTEX-11GSP-0004-SM-6WBTQ.cram",
+    "file_size": 48445650282
+  },
+  {
+    "object_id": "anv:dg.ANV0/13480cdb-f44f-4982-94f9-6de221eb885d",
+    "md5sum": "77b0930754d8e89049f450438a1d7972",
+    "file_name": "GTEX-13OW5-0003-SM-6WSCR.cram",
+    "file_size": 46398489679
+  },
+  {
+    "object_id": "anv:dg.ANV0/20bffbae-917b-46b8-9d38-ffe970c96854",
+    "md5sum": "fa2223017d2abc170bc20dd1c9e76106",
+    "file_name": "GTEX-14ICL-0004-SM-7DRNX.cram",
+    "file_size": 34107230286
+  },
+  {
+    "object_id": "anv:dg.ANV0/48219e15-5b68-4f9b-a894-2dd34c58f8d2",
+    "md5sum": "bc9a7209f78253211cd30a57316d9f9f",
+    "file_name": "GTEX-17F9E-0003-SM-6UH2B.cram",
+    "file_size": 46269649375
+  },
+  {
+    "object_id": "anv:dg.ANV0/cf5b3118-3191-4d10-af2b-16a794e0b80f",
+    "md5sum": "628675d64f3ee2b5ee800c15ffd56aa6",
+    "file_name": "GTEX-1QP29-0004-SM-DLIQG.cram",
+    "file_size": 41545535156
+  },
+  {
+    "object_id": "anv:dg.ANV0/799f8a75-e7c0-4c82-952f-a6526499c9eb",
+    "md5sum": "278171848132bd83b31c3f99f6580977",
+    "file_name": "GTEX-15DDE-0001-SM-7DLFL.cram",
+    "file_size": 42571316099
+  },
+  {
+    "object_id": "anv:dg.ANV0/13ac88ef-7fe6-424a-a789-9bada9d672e1",
+    "md5sum": "904dd15e4d3052cd990ffe715dee788c",
+    "file_name": "GTEX-15DZA-0004-SM-7DLFX.cram",
+    "file_size": 37810751781
+  },
+  {
+    "object_id": "anv:dg.ANV0/cf689231-4678-47ce-8952-1ff05eb0ab36",
+    "md5sum": "214c8067b168a6d2efc85b38ec6d95c3",
+    "file_name": "GTEX-WHSE-1726-SM-7DRPJ.cram",
+    "file_size": 41050761826
+  },
+  {
+    "object_id": "anv:dg.ANV0/0f33017f-ac94-4bb6-9025-b6b03cf259aa",
+    "md5sum": "4d84a121e62075501c5bc58de7d3c67e",
+    "file_name": "GTEX-YJ8A-0002-SM-6UH3B.cram",
+    "file_size": 50256170909
+  },
+  {
+    "object_id": "anv:dg.ANV0/f2a90753-1339-4379-9bc2-07865c616299",
+    "md5sum": "e2b5173f0fe864c8bcae65e7c8f1d3cd",
+    "file_name": "GTEX-T6MO-0001-SM-5URCH.cram",
+    "file_size": 57292466195
+  },
+  {
+    "object_id": "anv:dg.ANV0/fae605b1-363a-4bed-ae19-898f0579fecf",
+    "md5sum": "a7db97eda4f30ae3c5dbe712e96a0855",
+    "file_name": "GTEX-1EMGI-0004-SM-DLIOK.cram",
+    "file_size": 39214709100
+  },
+  {
+    "object_id": "anv:dg.ANV0/6b61dd0a-7592-49be-8642-0e91e7ad2b8a",
+    "md5sum": "e19bf2e9e5b628f05c61d451da68bebd",
+    "file_name": "GTEX-113IC-0001-SM-DLIPU.cram",
+    "file_size": 43464061464
+  },
+  {
+    "object_id": "anv:dg.ANV0/e09f54b7-2a0e-4837-b754-85b11e425022",
+    "md5sum": "8fbf80b9e0f5bb6ee0cc52473d3f810f",
+    "file_name": "GTEX-YEC3-0004-SM-6UH35.cram",
+    "file_size": 51619575588
+  },
+  {
+    "object_id": "anv:dg.ANV0/ca5a9ddf-0200-446a-918a-3b00cffa3b48",
+    "md5sum": "268762829adec69161cffdd9dc8d0c66",
+    "file_name": "GTEX-S341-0001-SM-5JK33.cram",
+    "file_size": 73151888259
+  },
+  {
+    "object_id": "anv:dg.ANV0/ccda8a91-d0cd-44ac-baf1-86080cfd5d0c",
+    "md5sum": "990a7e6d635c7804ad2ea6c17298f4bb",
+    "file_name": "GTEX-1PBJJ-0004-SM-DJWWY.cram",
+    "file_size": 38530454301
+  },
+  {
+    "object_id": "anv:dg.ANV0/f41b05f0-7a36-417b-a655-81af73e1c841",
+    "md5sum": "32ac8a16dbecbae25f0855d21ed744c4",
+    "file_name": "GTEX-15UF7-0003-SM-6UH2Y.cram",
+    "file_size": 46974948626
+  },
+  {
+    "object_id": "anv:dg.ANV0/91e11487-1d3c-4717-a734-3802793db9dc",
+    "md5sum": "7c15a2d82404983bff432bcedda7cd7f",
+    "file_name": "GTEX-ZVZQ-0002-SM-6WBSK.cram",
+    "file_size": 56639904420
+  },
+  {
+    "object_id": "anv:dg.ANV0/deec3adf-be6a-4cc5-ab9f-342382c809c6",
+    "md5sum": "5a1b49326f1b7d05d6edc14937c042e6",
+    "file_name": "GTEX-1F88F-0003-SM-7J3AI.cram",
+    "file_size": 37095707812
+  },
+  {
+    "object_id": "anv:dg.ANV0/24f3d25f-b975-41e5-92b5-64f5a8c46135",
+    "md5sum": "04adc820f3d5d4b800f30ed5c94dd305",
+    "file_name": "GTEX-Q2AG-0003-SM-5JK4S.cram",
+    "file_size": 86235623141
+  },
+  {
+    "object_id": "anv:dg.ANV0/4c1386d8-3ae7-4a86-ae36-8bbdb1d2dedf",
+    "md5sum": "be42017ac830bbc700ade9cad5e0ef09",
+    "file_name": "GTEX-WHSE-1726-SM-CLTG4.cram",
+    "file_size": 40560811822
+  },
+  {
+    "object_id": "anv:dg.ANV0/2c10b2e8-6109-4164-aef4-d283da4185b0",
+    "md5sum": "eca1a258d2dcc3a4a867558182b34e9f",
+    "file_name": "GTEX-SNMC-0004-SM-5JK4Q.cram",
+    "file_size": 45299629528
+  },
+  {
+    "object_id": "anv:dg.ANV0/403d8a3f-c56a-4ab1-8939-eb4c5f10af6d",
+    "md5sum": "df06fed44b3e517f71397b9391c275e5",
+    "file_name": "GTEX-OIZI-1026-SM-5JK2X.cram",
+    "file_size": 78528679561
+  },
+  {
+    "object_id": "anv:dg.ANV0/934a9833-fa9d-449e-b78f-312beef08387",
+    "md5sum": "1bb0f44b381896dc3d6df4c571658d82",
+    "file_name": "GTEX-16NFA-0003-SM-6UH2Q.cram",
+    "file_size": 48570409587
+  },
+  {
+    "object_id": "anv:dg.ANV0/5446b1da-3790-4ddf-8d6f-e9a3ce75a222",
+    "md5sum": "c57bac3421b0d884d85476df8f88cc6f",
+    "file_name": "GTEX-Q2AI-0003-SM-5JK3F.cram",
+    "file_size": 67211654258
+  },
+  {
+    "object_id": "anv:dg.ANV0/415e456b-aaa0-40de-bc37-ab7d90603a21",
+    "md5sum": "d80c3ff3642f6894aac63ff805a99a0c",
+    "file_name": "GTEX-P4QR-0004-SM-5JK2Q.cram",
+    "file_size": 85398436456
+  },
+  {
+    "object_id": "anv:dg.ANV0/3e84fe72-132d-4b78-82ac-3812c0236bd2",
+    "md5sum": "95aadad760dcdf1704978be0c205cdd9",
+    "file_name": "GTEX-ZVT2-0003-SM-6WBS4.cram",
+    "file_size": 50264275899
+  },
+  {
+    "object_id": "anv:dg.ANV0/e6d04524-6382-46c9-9b3a-3a9a0c676cf9",
+    "md5sum": "d1063cd19fe6b12a663588d81da351c2",
+    "file_name": "GTEX-11DXZ-0003-SM-CLTG6.cram",
+    "file_size": 43768804305
+  },
+  {
+    "object_id": "anv:dg.ANV0/416046ac-3e00-4408-8496-7d9991ab7cd8",
+    "md5sum": "d8cf55c9858afe2e2b532bf458e1ca08",
+    "file_name": "GTEX-T2IS-0002-SM-5SOEK.cram",
+    "file_size": 59177904227
+  },
+  {
+    "object_id": "anv:dg.ANV0/7d1894cb-3cb3-4d1c-91e0-8eebd96e875f",
+    "md5sum": "92c85eecef4be936a6f2f3b251d862d3",
+    "file_name": "GTEX-11EQ8-0001-SM-6WBTP.cram",
+    "file_size": 47049998409
+  },
+  {
+    "object_id": "anv:dg.ANV0/1a6da812-38f3-4bc6-9f91-7ca439883661",
+    "md5sum": "bd1660467ca70da017a4c1674d389b65",
+    "file_name": "GTEX-OIZI-1026-SM-CLTGE.cram",
+    "file_size": 47561026801
+  },
+  {
+    "object_id": "anv:dg.ANV0/a53dee23-09e6-43f1-8fb6-30d889315edd",
+    "md5sum": "d31dc36791daa059be86eb68f9d84ee7",
+    "file_name": "GTEX-1LB8K-0003-SM-DJWWI.cram",
+    "file_size": 39777099809
+  },
+  {
+    "object_id": "anv:dg.ANV0/c35ee35a-2c38-4370-b9c9-43563dc1b4a3",
+    "md5sum": "ee47c7a6a646acbd2eaff98967e33813",
+    "file_name": "GTEX-15EO6-0004-SM-7DLGJ.cram",
+    "file_size": 36102150087
+  },
+  {
+    "object_id": "anv:dg.ANV0/ccdd27bb-6384-4f69-bc51-c82f80b34abe",
+    "md5sum": "03fc22023eb8a021a46fc0b2dc7a8265",
+    "file_name": "GTEX-11P81-0002-SM-6WBTV.cram",
+    "file_size": 75147975438
+  },
+  {
+    "object_id": "anv:dg.ANV0/5fa9619f-6c1c-4612-8fe6-c494d629859c",
+    "md5sum": "8e87aecb7a0c74f8d7019004a6acf872",
+    "file_name": "GTEX-1LVAN-0004-SM-AYROD.cram",
+    "file_size": 39639307016
+  },
+  {
+    "object_id": "anv:dg.ANV0/553141be-e9d0-4e6a-9858-5f1b10cdaa62",
+    "md5sum": "f059ca2c3f5ad6693e54e7f014d17018",
+    "file_name": "GTEX-131XG-0003-SM-7DRPV.cram",
+    "file_size": 40243859414
+  },
+  {
+    "object_id": "anv:dg.ANV0/3c419c2d-0ad5-4af6-a945-132a27a69758",
+    "md5sum": "56d4b9c4e5fd012711d56512b14c43ff",
+    "file_name": "GTEX-POYW-1226-SM-5JK3K.cram",
+    "file_size": 87554295941
+  },
+  {
+    "object_id": "anv:dg.ANV0/77cac2cc-f469-4dfb-9198-d34c6440c156",
+    "md5sum": "ecb03f40c63488067d80d7d3dda467bc",
+    "file_name": "GTEX-WVLH-0001-SM-5SOE6.cram",
+    "file_size": 61382226976
+  },
+  {
+    "object_id": "anv:dg.ANV0/402c5880-c6d0-4133-bfed-bcfae93cbb77",
+    "md5sum": "78cf3c8990fccb127b6a0eb130b1f966",
+    "file_name": "GTEX-WYBS-0126-SM-7DRP7.cram",
+    "file_size": 38632680779
+  },
+  {
+    "object_id": "anv:dg.ANV0/6ad5c7a4-a13b-4f98-bf52-f707a898880b",
+    "md5sum": "cf64ad79f49cddafebb92200e9c748bd",
+    "file_name": "GTEX-Y8E4-0001-SM-6UH33.cram",
+    "file_size": 48581314040
+  },
+  {
+    "object_id": "anv:dg.ANV0/5b142d1d-f227-4fd5-9482-80126750ed93",
+    "md5sum": "3321cf3ff39b21de66d34d1d7f38cfeb",
+    "file_name": "GTEX-1MCC2-0004-SM-DJWWS.cram",
+    "file_size": 38760157076
+  },
+  {
+    "object_id": "anv:dg.ANV0/cdf19513-fe36-4cf9-93b0-b605f0ea4f72",
+    "md5sum": "32755094d16c713dc3629afccc251d89",
+    "file_name": "GTEX-148VI-0002-SM-7DROU.cram",
+    "file_size": 35724045934
+  },
+  {
+    "object_id": "anv:dg.ANV0/de73f75a-fcf1-4f6d-ba8c-e9f1945528c5",
+    "md5sum": "c3cb6d414fef676fdf4afde9060c063e",
+    "file_name": "GTEX-1QAET-1426-SM-DLT2N.cram",
+    "file_size": 44754177964
+  },
+  {
+    "object_id": "anv:dg.ANV0/49e6d11f-c1b3-4daa-bf9b-76836ccb98ed",
+    "md5sum": "c935ed5ce4365308cf168225d435a0f8",
+    "file_name": "GTEX-1212Z-0004-SM-7DRQE.cram",
+    "file_size": 32744144604
+  },
+  {
+    "object_id": "anv:dg.ANV0/e60389cc-baf9-4b3d-a907-7518f4d60483",
+    "md5sum": "ada386591fdfeb6298ed608c2f14a674",
+    "file_name": "GTEX-13O3P-0003-SM-6WSAJ.cram",
+    "file_size": 57082619932
+  },
+  {
+    "object_id": "anv:dg.ANV0/b528df8b-eae3-452f-a017-16d725f40a07",
+    "md5sum": "1e5a3b12d25ef235c5f3337882a6c91a",
+    "file_name": "GTEX-17F98-0003-SM-6UH28.cram",
+    "file_size": 48219283195
+  },
+  {
+    "object_id": "anv:dg.ANV0/6dcaf342-19fc-48f9-ba9f-6d476acbc177",
+    "md5sum": "f9b172f43a506eec99d85f449f2a62e8",
+    "file_name": "GTEX-12BJ1-0001-SM-7DRPO.cram",
+    "file_size": 41644876359
+  },
+  {
+    "object_id": "anv:dg.ANV0/1e80a81b-e85f-448c-8aff-8c5e5df18918",
+    "md5sum": "7efdffef70c0b4a05441b5a40b67ce6f",
+    "file_name": "GTEX-14E7W-0001-SM-7DROS.cram",
+    "file_size": 35405884719
+  },
+  {
+    "object_id": "anv:dg.ANV0/a5545783-a3d9-49c3-8c12-c2a122796fe6",
+    "md5sum": "f24bc1fdf835eb46495bc0b4698adf50",
+    "file_name": "GTEX-15RIE-0004-SM-6UH2C.cram",
+    "file_size": 50246644476
+  },
+  {
+    "object_id": "anv:dg.ANV0/522c2dfc-099b-463f-87fa-e76f5fde591c",
+    "md5sum": "c6bd4a5bb8575b11cc461d9db02b5b2f",
+    "file_name": "GTEX-PSDG-0004-SM-5JK3L.cram",
+    "file_size": 68398750553
+  },
+  {
+    "object_id": "anv:dg.ANV0/f6869658-32c4-461b-bb6c-06d648deb9de",
+    "md5sum": "a779391ecdf3015d0c4506942995c995",
+    "file_name": "GTEX-YFCO-0001-SM-6UH34.cram",
+    "file_size": 50190743165
+  },
+  {
+    "object_id": "anv:dg.ANV0/b6f2e7bc-da79-424c-890d-56a934adb062",
+    "md5sum": "098b9d225985f4f5229129f18b27faa2",
+    "file_name": "GTEX-11XUK-0003-SM-6WBU7.cram",
+    "file_size": 54757574074
+  },
+  {
+    "object_id": "anv:dg.ANV0/5a342489-73c3-4c80-8c21-ec6d538bab62",
+    "md5sum": "4c0877644c508cc817d99650aeb39e1f",
+    "file_name": "GTEX-1399S-2326-SM-DO3X1.cram",
+    "file_size": 50714555629
+  },
+  {
+    "object_id": "anv:dg.ANV0/be6b1938-1e8a-499c-b68a-9659bf35fa2e",
+    "md5sum": "20de07cc0cc67a8d7151a63ccd61ac78",
+    "file_name": "GTEX-WL46-0002-SM-5SOE8.cram",
+    "file_size": 66051069170
+  },
+  {
+    "object_id": "anv:dg.ANV0/ff345cd6-40ea-469d-8f5e-6a83b2850882",
+    "md5sum": "14c51787a420ec4421cc1f7850c08472",
+    "file_name": "GTEX-1AX8Z-0002-SM-7J39U.cram",
+    "file_size": 33652219325
+  },
+  {
+    "object_id": "anv:dg.ANV0/62345ccc-53d1-4536-a39a-355fd91a7306",
+    "md5sum": "3c2da65e698f7b301fb9c30118dc05ea",
+    "file_name": "GTEX-139T4-0426-SM-DLIOF.cram",
+    "file_size": 42623554943
+  },
+  {
+    "object_id": "anv:dg.ANV0/45388fd1-509e-40b9-ac55-7d7a1df6392a",
+    "md5sum": "9e188d3479ff6d7d6ae9599202cd5bcf",
+    "file_name": "GTEX-ZDYS-0005-SM-6UH3G.cram",
+    "file_size": 55386724470
+  },
+  {
+    "object_id": "anv:dg.ANV0/d0bdb4f2-0927-4044-b214-786b21800c81",
+    "md5sum": "1243a12aa94a1e575276caf1a87c9110",
+    "file_name": "GTEX-19HZE-0002-SM-7J39O.cram",
+    "file_size": 36124592668
+  },
+  {
+    "object_id": "anv:dg.ANV0/b6aa074f-ff0e-47da-b3d5-6bfd5cf45928",
+    "md5sum": "01e18ba8925337e2fce2801f2d190b2d",
+    "file_name": "GTEX-14BMV-0002-SM-7DRNQ.cram",
+    "file_size": 33416769530
+  },
+  {
+    "object_id": "anv:dg.ANV0/75a5821c-f8bf-41f5-a4dd-f0d6e825a31e",
+    "md5sum": "b2770396b094ebccf045f510db153a27",
+    "file_name": "GTEX-17F97-0002-SM-6UH2Z.cram",
+    "file_size": 53191808529
+  },
+  {
+    "object_id": "anv:dg.ANV0/f45763f6-6709-4ca1-8c66-a806921c3359",
+    "md5sum": "912a9786ed7cfbcc7c12722bbc29d1a5",
+    "file_name": "GTEX-11NV4-0001-SM-6WBTT.cram",
+    "file_size": 49825856119
+  },
+  {
+    "object_id": "anv:dg.ANV0/cbc4cc45-3e97-434a-9074-ab5526428518",
+    "md5sum": "9b11667b2bbb7607b3143f1cc29b23ce",
+    "file_name": "GTEX-R55D-0926-SM-CLTGD.cram",
+    "file_size": 44221118096
+  },
+  {
+    "object_id": "anv:dg.ANV0/13f44a95-ab9a-40e3-825d-84bbf4b7a4f2",
+    "md5sum": "e03c199a40d9af724ce171f224b28672",
+    "file_name": "GTEX-1192W-0001-SM-6WBTI.cram",
+    "file_size": 48369528870
+  },
+  {
+    "object_id": "anv:dg.ANV0/d9aa8b68-de06-4827-814a-ccd117446082",
+    "md5sum": "42868b910831123158740bc5503cb3a3",
+    "file_name": "GTEX-17F9Y-0004-SM-6UH1O.cram",
+    "file_size": 49686542678
+  },
+  {
+    "object_id": "anv:dg.ANV0/a76cce3f-af03-4568-8657-4534e623d4ed",
+    "md5sum": "20af706721511182eb6203847358f02b",
+    "file_name": "GTEX-1269C-1826-SM-DO3X2.cram",
+    "file_size": 46808018863
+  },
+  {
+    "object_id": "anv:dg.ANV0/62341325-5901-4cb8-80d5-b453c631dcc3",
+    "md5sum": "41198f7902970112cd9427cbad66bc41",
+    "file_name": "GTEX-13SLW-0003-SM-6WSAP.cram",
+    "file_size": 51567705348
+  },
+  {
+    "object_id": "anv:dg.ANV0/4383650b-61fd-445a-9fce-50b099a2eb06",
+    "md5sum": "54366dd5164675b9c499e16f9a771560",
+    "file_name": "GTEX-14JIY-0004-SM-7DRNU.cram",
+    "file_size": 40908064333
+  },
+  {
+    "object_id": "anv:dg.ANV0/14b6dddc-2949-48d5-a011-93699c0e9562",
+    "md5sum": "cdda04210b07d12997ad143eacfa4a58",
+    "file_name": "GTEX-13NYS-0003-SM-6WSB2.cram",
+    "file_size": 72259639088
+  },
+  {
+    "object_id": "anv:dg.ANV0/cf28a938-3875-4983-92a8-69440c4170bb",
+    "md5sum": "c3854f8602e2ba9bc0d2704d68edfda1",
+    "file_name": "GTEX-1F75A-0001-SM-7J3AT.cram",
+    "file_size": 42159271707
+  },
+  {
+    "object_id": "anv:dg.ANV0/dbda645d-2987-444c-93ed-acb7912fe897",
+    "md5sum": "c941dacb70164d83e64751c29270e4c6",
+    "file_name": "GTEX-14AS3-0003-SM-7DRO8.cram",
+    "file_size": 39675622966
+  },
+  {
+    "object_id": "anv:dg.ANV0/eeb9bc51-1443-47cb-9443-72bcc92a6cce",
+    "md5sum": "2b9d6e5358288284cd4b8edcd4b10442",
+    "file_name": "GTEX-111VG-0004-SM-6WBTS.cram",
+    "file_size": 52095952984
+  },
+  {
+    "object_id": "anv:dg.ANV0/afade85e-28f2-4727-8aac-8677f6ec4227",
+    "md5sum": "e7889fde65bfd585996687c4de0b5a15",
+    "file_name": "GTEX-ZF28-0002-SM-6UH3K.cram",
+    "file_size": 48628091651
+  },
+  {
+    "object_id": "anv:dg.ANV0/0de956a9-e80d-43ae-8792-faafa11704fe",
+    "md5sum": "cf6eea43dc0aa4298f7b7d61ff2bbfa3",
+    "file_name": "GTEX-13X6J-0002-SM-6WSAI.cram",
+    "file_size": 47699482019
+  },
+  {
+    "object_id": "anv:dg.ANV0/6cb456e3-2a25-41d3-bd4f-afe12fe7121a",
+    "md5sum": "57b3819f17a1875bd016de5775a7eca8",
+    "file_name": "GTEX-1CB4J-0004-SM-7J38M.cram",
+    "file_size": 36035524926
+  },
+  {
+    "object_id": "anv:dg.ANV0/dc9776ef-bd72-41d2-a2cc-5f8b221187d7",
+    "md5sum": "7870fae1f0b461fc48c64b28e69f6291",
+    "file_name": "GTEX-1AMEY-0004-SM-7J39X.cram",
+    "file_size": 30738713441
+  },
+  {
+    "object_id": "anv:dg.ANV0/611de978-fd13-4c6d-a8d6-8a3e6d5a856d",
+    "md5sum": "3e1cfd6de2b708f7581ebe35dd2f1fab",
+    "file_name": "GTEX-1PPGY-0004-SM-DLIQ8.cram",
+    "file_size": 40138194489
+  },
+  {
+    "object_id": "anv:dg.ANV0/ed6d243c-dc9f-487b-9fd8-ec17bf54e9eb",
+    "md5sum": "6fb0164ed600177a2f27dd42c73f27d8",
+    "file_name": "GTEX-1MJIX-0002-SM-DJWYZ.cram",
+    "file_size": 38470121985
+  },
+  {
+    "object_id": "anv:dg.ANV0/4b653361-3582-48ad-bcdf-213415c398c3",
+    "md5sum": "4f029012303d09af009fe8479b5f01b6",
+    "file_name": "GTEX-1A3MW-0004-SM-7J39Q.cram",
+    "file_size": 41700874324
+  },
+  {
+    "object_id": "anv:dg.ANV0/5371dcc4-7350-4c7d-a1b5-e98a11366539",
+    "md5sum": "c536b7b34e3b011bbc62da4d331e401a",
+    "file_name": "GTEX-12WSL-0003-SM-6WSBO.cram",
+    "file_size": 47255303074
+  },
+  {
+    "object_id": "anv:dg.ANV0/3f407371-ca3a-4781-9867-333ec636c81f",
+    "md5sum": "8209de055d3b9463696b457079707a04",
+    "file_name": "GTEX-1GF9W-0004-SM-7J3AL.cram",
+    "file_size": 31988873523
+  },
+  {
+    "object_id": "anv:dg.ANV0/9054e71b-abda-42ed-9c11-e82dd251a830",
+    "md5sum": "1d00d32a0f5b8186dce6db1cf01bf251",
+    "file_name": "GTEX-ZG7Y-0001-SM-6UH3L.cram",
+    "file_size": 48871499024
+  },
+  {
+    "object_id": "anv:dg.ANV0/61856867-7317-4630-bad1-3ab1426cafbb",
+    "md5sum": "d13cc70ac4f4be431002f90f5f25cefd",
+    "file_name": "GTEX-1K9T9-0004-SM-DJWYM.cram",
+    "file_size": 38343159171
+  },
+  {
+    "object_id": "anv:dg.ANV0/93fad12b-0d41-4973-9a73-ac0404a14e8c",
+    "md5sum": "a453d503185d65335ec94e89d75e3501",
+    "file_name": "GTEX-15D79-0004-SM-7DLH2.cram",
+    "file_size": 34547762928
+  },
+  {
+    "object_id": "anv:dg.ANV0/c8eea071-5a21-49ad-abe8-648f362309fb",
+    "md5sum": "d6f5fce377c93ace058b12705b82b9d4",
+    "file_name": "GTEX-11EMC-0004-SM-6WBUA.cram",
+    "file_size": 54393697454
+  },
+  {
+    "object_id": "anv:dg.ANV0/61567886-bc71-4250-a387-10ef7edee6b0",
+    "md5sum": "875300fcb94fe184e187ad30c5b99145",
+    "file_name": "GTEX-1FIGZ-0003-SM-7J3AX.cram",
+    "file_size": 37902453016
+  },
+  {
+    "object_id": "anv:dg.ANV0/a56b5bb4-33cb-4d72-a8ac-dbd679f7b86b",
+    "md5sum": "605a44a2c37563870ab6d0ed0f1460eb",
+    "file_name": "GTEX-15ETS-0003-SM-7DLGI.cram",
+    "file_size": 33142176430
+  },
+  {
+    "object_id": "anv:dg.ANV0/b2b723cf-036e-409a-833e-6e4328c0bed7",
+    "md5sum": "e43d9a687289bdcecfbe1b4eff5032f9",
+    "file_name": "GTEX-15RJ7-0001-SM-6UH2H.cram",
+    "file_size": 43703914632
+  },
+  {
+    "object_id": "anv:dg.ANV0/21b3de5d-b03e-404d-b40a-6bd117b4eed8",
+    "md5sum": "0d48485594071688d02b786ebdefadad",
+    "file_name": "GTEX-13OVL-0003-SM-6WSD4.cram",
+    "file_size": 46001678200
+  },
+  {
+    "object_id": "anv:dg.ANV0/c15c2eba-1292-481f-86e8-4428ca6bc97f",
+    "md5sum": "ac625675389a661cc8e98170ab3865bc",
+    "file_name": "GTEX-V955-0001-SM-5SOEE.cram",
+    "file_size": 114379767104
+  },
+  {
+    "object_id": "anv:dg.ANV0/09f5c7ad-9c20-4c61-8dc0-fd2c545ff396",
+    "md5sum": "1151b019b1c2a92ffba15630de278c48",
+    "file_name": "GTEX-X261-0002-SM-5URDP.cram",
+    "file_size": 66667894181
+  },
+  {
+    "object_id": "anv:dg.ANV0/36e2d237-7e0e-4a8b-8f86-aca9b78309b3",
+    "md5sum": "7902c9f179a0dc52632cc28e38620d39",
+    "file_name": "GTEX-133LE-0001-SM-7DRPC.cram",
+    "file_size": 42253299764
+  },
+  {
+    "object_id": "anv:dg.ANV0/83c67b7e-dfa6-4711-a249-208caafbb18e",
+    "md5sum": "f461e2620b3013a9e03b1b80176ab172",
+    "file_name": "GTEX-1AX9J-0004-SM-7J38U.cram",
+    "file_size": 40771349153
+  },
+  {
+    "object_id": "anv:dg.ANV0/2dd46bf5-11d6-4cb8-b1b6-7777b66d4d46",
+    "md5sum": "170402a8303a222ce41dacf380d484c4",
+    "file_name": "GTEX-16MTA-0003-SM-6UH2R.cram",
+    "file_size": 47867695517
+  },
+  {
+    "object_id": "anv:dg.ANV0/9c1e9139-6bd6-4313-87d8-13604a768b48",
+    "md5sum": "66cadeaf1b4c2c56ea8820fb0bba6716",
+    "file_name": "GTEX-Y8E5-0001-SM-DLIPY.cram",
+    "file_size": 59698435109
+  },
+  {
+    "object_id": "anv:dg.ANV0/799eefd1-8090-45e5-9add-9b86180c34bb",
+    "md5sum": "f99a7851b1e5a349ba98c4e51e6063bd",
+    "file_name": "GTEX-1CB4H-0004-SM-7J38K.cram",
+    "file_size": 40847025387
+  },
+  {
+    "object_id": "anv:dg.ANV0/832b51e9-d0bc-4cec-bad6-4b0f9a7c4520",
+    "md5sum": "35da931d0ec2184f0790885ad92c2bb5",
+    "file_name": "GTEX-UPIC-0004-SM-5SOEF.cram",
+    "file_size": 59307495228
+  },
+  {
+    "object_id": "anv:dg.ANV0/88b7a3bd-54b0-4fc6-aa80-e6426c573800",
+    "md5sum": "cb8aeb9429f1ea76cf3a9f7f92f15e15",
+    "file_name": "GTEX-14JFF-0002-SM-DLIOQ.cram",
+    "file_size": 42419990934
+  },
+  {
+    "object_id": "anv:dg.ANV0/222c1f0a-9604-48f9-9747-6fda62f9be41",
+    "md5sum": "c74b955cd152f57c56a4db9f576af4ca",
+    "file_name": "GTEX-ZYWO-0004-SM-6WBUE.cram",
+    "file_size": 49723630157
+  },
+  {
+    "object_id": "anv:dg.ANV0/237a6494-5525-4f36-85a4-53c7c122c846",
+    "md5sum": "7a23bd31b19bc38ae92dae77329818b9",
+    "file_name": "GTEX-REY6-0004-SM-5URD2.cram",
+    "file_size": 53867920717
+  },
+  {
+    "object_id": "anv:dg.ANV0/2d017155-4d13-4d70-b038-7a5e9ffbb872",
+    "md5sum": "e6d301354038392563b4d87505f23201",
+    "file_name": "GTEX-YJ8O-1026-SM-DMRPU.cram",
+    "file_size": 47111414482
+  },
+  {
+    "object_id": "anv:dg.ANV0/7107b5b5-1640-443f-a0a3-fa76431a4a50",
+    "md5sum": "1f5c73350ac73d175e7ba23c5d283fad",
+    "file_name": "GTEX-14PHX-0001-SM-7DLGQ.cram",
+    "file_size": 37085921015
+  },
+  {
+    "object_id": "anv:dg.ANV0/8dba9a9e-1367-4cb6-980c-0cfd6e8135b5",
+    "md5sum": "28a9661b9a58bc1d542da3ee4602dd53",
+    "file_name": "GTEX-14753-0003-SM-6WSBF.cram",
+    "file_size": 45855916815
+  },
+  {
+    "object_id": "anv:dg.ANV0/e53bf840-5d39-4472-8b9b-3884c2eacc5c",
+    "md5sum": "1e7b6f7eef1f394b86bed7842bf740d9",
+    "file_name": "GTEX-13CF3-0004-SM-6WSD5.cram",
+    "file_size": 50574613244
+  },
+  {
+    "object_id": "anv:dg.ANV0/decf5de5-1aff-4852-bd95-925c86d18c15",
+    "md5sum": "f5c2c22b95dbdc6dfb76c518e98a878b",
+    "file_name": "GTEX-NPJ8-0004-SM-CLTG5.cram",
+    "file_size": 40343867998
+  },
+  {
+    "object_id": "anv:dg.ANV0/1ad7db6c-2078-4ecc-996b-b19504b5e426",
+    "md5sum": "4e587b1fece2c990756524a2ac5e0b39",
+    "file_name": "GTEX-1PIGE-0001-SM-DJWWW.cram",
+    "file_size": 45876085962
+  },
+  {
+    "object_id": "anv:dg.ANV0/7124ce00-3fd8-4ae8-b180-b0c85ddac977",
+    "md5sum": "6d1efd204811e814809dcf2c09dbce48",
+    "file_name": "GTEX-W5WG-0003-SM-5URC3.cram",
+    "file_size": 66232097722
+  },
+  {
+    "object_id": "anv:dg.ANV0/1167bf36-69cc-4d0f-b05a-8c8c820605e9",
+    "md5sum": "770a7e985d65044ca424fd7ed24edb99",
+    "file_name": "GTEX-OOBJ-0003-SM-5JK45.cram",
+    "file_size": 67087122980
+  },
+  {
+    "object_id": "anv:dg.ANV0/947d5d4f-c586-49f8-aaab-dfa407c4008b",
+    "md5sum": "9f533906e0892a9392e0b232a9cb793f",
+    "file_name": "GTEX-1C6WA-0003-SM-7J39H.cram",
+    "file_size": 37049180512
+  },
+  {
+    "object_id": "anv:dg.ANV0/44c690dd-816f-43b2-997c-8ec196cc7e8d",
+    "md5sum": "16a59d22ee2d8d2608cf17f29ac176aa",
+    "file_name": "GTEX-13FLV-0004-SM-6WSBZ.cram",
+    "file_size": 48067629289
+  },
+  {
+    "object_id": "anv:dg.ANV0/3dd604ed-da14-4ad3-9008-64dba975e9f1",
+    "md5sum": "c44d3616d220ec43b3de959d3c75112c",
+    "file_name": "GTEX-ZXG5-0002-SM-6WBT1.cram",
+    "file_size": 49226510799
+  },
+  {
+    "object_id": "anv:dg.ANV0/459d9929-c29a-4ba0-82f3-0362a03cac40",
+    "md5sum": "bc5fcb0613888d25d5f1a8573b72e415",
+    "file_name": "GTEX-14BMU-0003-SM-7DRNV.cram",
+    "file_size": 36771877939
+  },
+  {
+    "object_id": "anv:dg.ANV0/172f13ce-b38b-46c5-9681-29663f9b0c11",
+    "md5sum": "469a8d6a65a7727f9e07fc9cd69cbb27",
+    "file_name": "GTEX-OOBK-0004-SM-5JK4J.cram",
+    "file_size": 58689685482
+  },
+  {
+    "object_id": "anv:dg.ANV0/f1e77f42-4916-45b4-994c-58ec52b84d63",
+    "md5sum": "cbca2769b7d93a860aa93c33371cfb15",
+    "file_name": "GTEX-1NV88-0926-SM-DLT2P.cram",
+    "file_size": 41845213614
+  },
+  {
+    "object_id": "anv:dg.ANV0/48467bd8-891d-4a39-9749-7069590fddfe",
+    "md5sum": "3371efaf44f907fcc32de4c4d2eb8c54",
+    "file_name": "GTEX-1PFEY-0003-SM-DJWWL.cram",
+    "file_size": 43594004282
+  },
+  {
+    "object_id": "anv:dg.ANV0/0b2393ec-eb97-4d2f-bb87-70d7435f5518",
+    "md5sum": "355f0b3d3ce402c8432dce82a01904b2",
+    "file_name": "GTEX-S4Z8-0003-SM-5JK3I.cram",
+    "file_size": 71653243146
+  },
+  {
+    "object_id": "anv:dg.ANV0/a5d07bec-d8ef-4622-b2c7-1cf8c4885fd9",
+    "md5sum": "da82ed28c2337c306652fcf1789b49c3",
+    "file_name": "GTEX-OXRL-0003-SM-5JK3X.cram",
+    "file_size": 66481922307
+  },
+  {
+    "object_id": "anv:dg.ANV0/d42a0fcb-4f7f-40b5-8994-d312590cf21c",
+    "md5sum": "8468cec12d7c6b855e8c746b3dc7818c",
+    "file_name": "GTEX-1RLM8-0626-SM-DLT2O.cram",
+    "file_size": 40677093230
+  },
+  {
+    "object_id": "anv:dg.ANV0/1d612578-74b2-4cf1-b5b3-2f1f8dd3eec4",
+    "md5sum": "acc0494cf965136cebdd10bbf3c05e2b",
+    "file_name": "GTEX-1399S-2226-SM-DLIPM.cram",
+    "file_size": 43676910807
+  },
+  {
+    "object_id": "anv:dg.ANV0/35014097-0be4-49fe-9d60-8d369cc61140",
+    "md5sum": "832f3d70afebb7bbe19d31384dc0053f",
+    "file_name": "GTEX-UJMC-0002-SM-5SOEI.cram",
+    "file_size": 57170807621
+  },
+  {
+    "object_id": "anv:dg.ANV0/c996813c-0c38-4775-8b14-77b76a0f3a89",
+    "md5sum": "faece3c1e688755f3a4bdf20621cfab7",
+    "file_name": "GTEX-ZQUD-0002-SM-6WBSF.cram",
+    "file_size": 47334698446
+  },
+  {
+    "object_id": "anv:dg.ANV0/00728525-7458-485b-aeb3-536bca425950",
+    "md5sum": "ab946a83a9ef9260ebb75f0731f04a78",
+    "file_name": "GTEX-1MCYP-0003-SM-DJWXA.cram",
+    "file_size": 36528320877
+  },
+  {
+    "object_id": "anv:dg.ANV0/67d37ba8-eb46-422a-817a-089cfd107981",
+    "md5sum": "1b39ebfeea3e9adfe58290c4c5e65616",
+    "file_name": "GTEX-ZPIC-0004-SM-6WBST.cram",
+    "file_size": 49407102010
+  },
+  {
+    "object_id": "anv:dg.ANV0/7af9c090-7620-469b-a08c-f59eaf3fe8d7",
+    "md5sum": "0cce1f2d47f096705ec96c1954001337",
+    "file_name": "GTEX-WHSB-0004-SM-5URDE.cram",
+    "file_size": 61551012647
+  },
+  {
+    "object_id": "anv:dg.ANV0/aef2e03f-fd32-4159-b147-1fd352564cf3",
+    "md5sum": "f0fdf55058693a7d6b1d25384165cc34",
+    "file_name": "GTEX-12WSN-0004-SM-6WSBR.cram",
+    "file_size": 49760691247
+  },
+  {
+    "object_id": "anv:dg.ANV0/58442b4e-709c-4014-a7da-203f157f1534",
+    "md5sum": "d3b22670b287aba0f365747527d12dca",
+    "file_name": "GTEX-PVOW-1026-SM-5JK3V.cram",
+    "file_size": 85029938498
+  },
+  {
+    "object_id": "anv:dg.ANV0/855c074e-f34c-4e51-a099-45af3157122b",
+    "md5sum": "3b54b1cde65ba62418c19da3607020a8",
+    "file_name": "GTEX-14BIN-0004-SM-7DROI.cram",
+    "file_size": 39569277165
+  },
+  {
+    "object_id": "anv:dg.ANV0/b88aa682-3c1d-468b-9701-795a74718edd",
+    "md5sum": "b0d3cd4f2964162e2f25e2b4c0558fd8",
+    "file_name": "GTEX-131XE-0004-SM-7DRP4.cram",
+    "file_size": 34118922811
+  },
+  {
+    "object_id": "anv:dg.ANV0/87190b93-3361-498d-863c-e9b0ad9e0d6f",
+    "md5sum": "67d2b28608e064a76b4f5a9b27398211",
+    "file_name": "GTEX-1LSNL-0004-SM-DJWYH.cram",
+    "file_size": 44159054439
+  },
+  {
+    "object_id": "anv:dg.ANV0/223b9763-cab8-48e3-93e2-0e524d028381",
+    "md5sum": "e51f0873b08b4c3a40faed46fb74a9e4",
+    "file_name": "GTEX-1C6VR-0003-SM-7J39D.cram",
+    "file_size": 34953850755
+  },
+  {
+    "object_id": "anv:dg.ANV0/b0a4a703-00f8-4c95-a7d8-54302643c59e",
+    "md5sum": "58a6c733a8f66d71d5490dcd810f52f5",
+    "file_name": "GTEX-1AYD5-0003-SM-7J39P.cram",
+    "file_size": 41345061169
+  },
+  {
+    "object_id": "anv:dg.ANV0/39a52dc2-f035-4071-9647-c6ee105d6bed",
+    "md5sum": "af236f3e9eeab3a872eac8c8036796b7",
+    "file_name": "GTEX-RWSA-0003-SM-5JK4L.cram",
+    "file_size": 72225629467
+  },
+  {
+    "object_id": "anv:dg.ANV0/795758cb-7027-4ce0-9ce7-38440a359ed4",
+    "md5sum": "b4de7119b339d3416b35aa7a33fd83a6",
+    "file_name": "GTEX-1MCQQ-0002-SM-DJWXD.cram",
+    "file_size": 41167410431
+  },
+  {
+    "object_id": "anv:dg.ANV0/ee5ff347-da49-4387-b09a-eeca2e3a6ae7",
+    "md5sum": "6d55d94d85bdc78003edd55b90b941e2",
+    "file_name": "GTEX-1S83E-0004-SM-DJWXM.cram",
+    "file_size": 42622339754
+  },
+  {
+    "object_id": "anv:dg.ANV0/e2f62b68-ee19-4aa7-ae60-6fe458060de9",
+    "md5sum": "b27409166ef487084a1d6173398672cf",
+    "file_name": "GTEX-ZF2S-0002-SM-6UH39.cram",
+    "file_size": 49543941837
+  },
+  {
+    "object_id": "anv:dg.ANV0/53426919-c75b-4593-bace-1dbb35cdea15",
+    "md5sum": "ad020c55578f9f6a54f6ba03b4563bef",
+    "file_name": "GTEX-ZYY3-0002-SM-6WBUF.cram",
+    "file_size": 53257657898
+  },
+  {
+    "object_id": "anv:dg.ANV0/757dbac3-513f-4b8b-9a87-a6cb496be6ba",
+    "md5sum": "ea330751fc152fd32ce167f28c00c267",
+    "file_name": "GTEX-11UD1-0001-SM-6WBTY.cram",
+    "file_size": 55307863148
+  },
+  {
+    "object_id": "anv:dg.ANV0/a1f4af3f-74a7-4b7d-8ab6-2eb570fbee51",
+    "md5sum": "b4ad1bc08649c71703c05e1d88c05ab7",
+    "file_name": "GTEX-Y5LM-0002-SM-6UH31.cram",
+    "file_size": 50817517069
+  },
+  {
+    "object_id": "anv:dg.ANV0/a70cfa5a-1e90-4364-8bcd-49a718aadc02",
+    "md5sum": "dc3d73dee6efca88b52a5344446c1075",
+    "file_name": "GTEX-1B8KZ-0003-SM-7J39Z.cram",
+    "file_size": 36920622569
+  },
+  {
+    "object_id": "anv:dg.ANV0/3e3c20bc-099c-4fa1-ab37-f562c39cbdd7",
+    "md5sum": "5dda04642eb9de11e5c4620cf80886df",
+    "file_name": "GTEX-132AR-1526-SM-DLIPN.cram",
+    "file_size": 62507478653
+  },
+  {
+    "object_id": "anv:dg.ANV0/2a3a2188-4f15-42b3-9c9f-07d97ba19931",
+    "md5sum": "4fa003d202362f3fd47e99cfee2f7487",
+    "file_name": "GTEX-ZV6S-0002-SM-6WBSV.cram",
+    "file_size": 51687943903
+  },
+  {
+    "object_id": "anv:dg.ANV0/c77b7485-12d6-4532-b1b5-658d290b0dc2",
+    "md5sum": "961cdb555bc754d892c93bef0f715664",
+    "file_name": "GTEX-WOFL-0003-SM-6WBS3.cram",
+    "file_size": 46494802437
+  },
+  {
+    "object_id": "anv:dg.ANV0/3c59093c-5c28-4a12-8511-891f163979f3",
+    "md5sum": "c345f7e54011496e60e33e63782db6c4",
+    "file_name": "GTEX-OXRP-0003-SM-5JK3P.cram",
+    "file_size": 76126574204
+  },
+  {
+    "object_id": "anv:dg.ANV0/d7175f3f-699b-4253-a886-ff305dbf412b",
+    "md5sum": "cc2fdc56dd213d2189aaa3207379638c",
+    "file_name": "GTEX-T5JW-0002-SM-5URDG.cram",
+    "file_size": 71265875787
+  },
+  {
+    "object_id": "anv:dg.ANV0/3dce8687-e125-4d86-80fd-1038566cacbe",
+    "md5sum": "7a1d9226d9524874e4e28a55441ee4a7",
+    "file_name": "GTEX-YFC4-0001-SM-6UH16.cram",
+    "file_size": 49566985294
+  },
+  {
+    "object_id": "anv:dg.ANV0/9ded9710-06e9-41a2-a0f3-d69baff92a6c",
+    "md5sum": "cea16b31ca5c55412d41e65b9703212b",
+    "file_name": "GTEX-SNOS-0004-SM-5SOEL.cram",
+    "file_size": 53109067047
+  },
+  {
+    "object_id": "anv:dg.ANV0/8edb6f50-97ce-4226-8ffd-c4fb7d0f2bc1",
+    "md5sum": "bb6416246e0040d847e77e42145428b8",
+    "file_name": "GTEX-13PVQ-0003-SM-7DRPY.cram",
+    "file_size": 74694464625
+  },
+  {
+    "object_id": "anv:dg.ANV0/a3fb2e51-11cd-408c-b88c-05688691079c",
+    "md5sum": "6e3b0fbc8942a0d2935149d30b97bbaa",
+    "file_name": "GTEX-15SHV-0002-SM-6UH2K.cram",
+    "file_size": 49082920112
+  },
+  {
+    "object_id": "anv:dg.ANV0/6acd7b34-cf6c-4416-a467-c2b89d239278",
+    "md5sum": "dc78ded333af41e1466087a9cb4f4418",
+    "file_name": "GTEX-ZYW4-0002-SM-6WBT8.cram",
+    "file_size": 49962833540
+  },
+  {
+    "object_id": "anv:dg.ANV0/bb8ab831-c78d-48e6-bd62-c2f2429fc0aa",
+    "md5sum": "c554fe5c8527de9c74ef2c85fd664353",
+    "file_name": "GTEX-1211K-0003-SM-7DRPU.cram",
+    "file_size": 37027218903
+  },
+  {
+    "object_id": "anv:dg.ANV0/9d14d5e4-0666-438d-a0b6-54a95207affc",
+    "md5sum": "de55b9239f5a07406ec8f6b05e992e19",
+    "file_name": "GTEX-13OVH-0003-SM-6WSCP.cram",
+    "file_size": 46978446572
+  },
+  {
+    "object_id": "anv:dg.ANV0/40835b0d-b088-49f3-b770-19bccc9185bf",
+    "md5sum": "8a3ec0bc422d84bc9de191d01adc0554",
+    "file_name": "GTEX-PLZ4-0003-SM-5JK4H.cram",
+    "file_size": 110507710584
+  },
+  {
+    "object_id": "anv:dg.ANV0/bfdc98fa-a7b3-436d-b24d-22ca69f07da3",
+    "md5sum": "1c495281a6086227d3cbb15205d21f8a",
+    "file_name": "GTEX-13NZ9-0004-SM-6WSC6.cram",
+    "file_size": 48470004330
+  },
+  {
+    "object_id": "anv:dg.ANV0/3d117901-159e-4109-87c6-a35fbe2f806f",
+    "md5sum": "3c8ea72a86367dd1fd831125ad84e6d2",
+    "file_name": "GTEX-13D11-0003-SM-6WSCK.cram",
+    "file_size": 53194649541
+  },
+  {
+    "object_id": "anv:dg.ANV0/a1999a72-0ac2-40f5-8137-e28d346d8494",
+    "md5sum": "cabaf6ee599529993c13d13b1094a0ce",
+    "file_name": "GTEX-QVJO-0002-SM-5URD6.cram",
+    "file_size": 62262324951
+  },
+  {
+    "object_id": "anv:dg.ANV0/69a47810-706c-41d6-a79c-ecfb23530ea5",
+    "md5sum": "7a58f485664a97ecd3d17c6b30f10932",
+    "file_name": "GTEX-14XAO-0003-SM-7DLF1.cram",
+    "file_size": 38145152547
+  },
+  {
+    "object_id": "anv:dg.ANV0/8d248bd6-4898-4263-9add-ff36c6f27870",
+    "md5sum": "5c2bf7634b953e4709b5e903fe7673e6",
+    "file_name": "GTEX-17HII-0004-SM-6UH1Z.cram",
+    "file_size": 51926753915
+  },
+  {
+    "object_id": "anv:dg.ANV0/761e13f7-e324-46a9-8cd6-ef3a627ac859",
+    "md5sum": "e85de8849a0cc61651c3bba66ce1e78c",
+    "file_name": "GTEX-14PJ3-0004-SM-7DROK.cram",
+    "file_size": 40144410750
+  },
+  {
+    "object_id": "anv:dg.ANV0/4a41a3a0-6ee9-4b6b-ad5a-f5b11bc5de87",
+    "md5sum": "ad3102134a6be3ab29b795d4405aea0c",
+    "file_name": "GTEX-1R9PN-0004-SM-DLIQC.cram",
+    "file_size": 50091284327
+  },
+  {
+    "object_id": "anv:dg.ANV0/a58e0694-b152-47e2-83b1-09636644ca62",
+    "md5sum": "f3be707c07bb708ba03a36b6e01946a5",
+    "file_name": "GTEX-1KXAM-0004-SM-DJWX8.cram",
+    "file_size": 46407242174
+  },
+  {
+    "object_id": "anv:dg.ANV0/aed0a996-14a1-45a3-9140-d29e83d534ba",
+    "md5sum": "708a568be3d4bc7b24545c2c369476db",
+    "file_name": "GTEX-R55E-0003-SM-5URBX.cram",
+    "file_size": 59706890684
+  },
+  {
+    "object_id": "anv:dg.ANV0/35e057c0-0ed6-4569-9b6f-7ea58a82d719",
+    "md5sum": "15959d43c47a3b11e82f5e3f40564f85",
+    "file_name": "GTEX-P44H-1126-SM-5JK39.cram",
+    "file_size": 80537038840
+  },
+  {
+    "object_id": "anv:dg.ANV0/091a65d6-53a5-4a1c-a6f4-2f8f73bcb539",
+    "md5sum": "53104bcb2bfe97d51202b5001c1e63a9",
+    "file_name": "GTEX-1JMQL-0004-SM-DJWX7.cram",
+    "file_size": 39653374333
+  },
+  {
+    "object_id": "anv:dg.ANV0/ff707fdb-efbf-4a4d-9637-5db1a45072bf",
+    "md5sum": "d19610650426ec502d6adb575a248ebc",
+    "file_name": "GTEX-11DXZ-0003-SM-6WBTM.cram",
+    "file_size": 58592508736
+  },
+  {
+    "object_id": "anv:dg.ANV0/b459cc17-3afa-4b2c-8ecc-34acec960f1c",
+    "md5sum": "a0e1f1e51e1584ff7acb11d6e76c4f5c",
+    "file_name": "GTEX-1S82P-0002-SM-DJWXK.cram",
+    "file_size": 54609457548
+  },
+  {
+    "object_id": "anv:dg.ANV0/ab54861d-a38b-4c47-823d-6e110658713a",
+    "md5sum": "fcf64cee4bfe3ac1338d49769f15cf4d",
+    "file_name": "GTEX-P4PP-0004-SM-5JK2S.cram",
+    "file_size": 64093086690
+  },
+  {
+    "object_id": "anv:dg.ANV0/a776f9fa-1005-4b6e-a4c8-bcc968edfd16",
+    "md5sum": "4bfbb5fd59f2a1c48b6a81a55b16beb0",
+    "file_name": "GTEX-O5YV-0004-SM-5JK2N.cram",
+    "file_size": 83474020305
+  },
+  {
+    "object_id": "anv:dg.ANV0/ace8d494-a985-41d8-815f-460e84d6f2a1",
+    "md5sum": "6cbc0eae6db1ebd3ad7674ed9150eeab",
+    "file_name": "GTEX-XBEW-0001-SM-7DLG7.cram",
+    "file_size": 34372803399
+  },
+  {
+    "object_id": "anv:dg.ANV0/1b5f906e-da88-48af-a17e-68d97bbcec3b",
+    "md5sum": "998848f37bda467bd93d8337881def0e",
+    "file_name": "GTEX-12WSG-0001-SM-7DRPL.cram",
+    "file_size": 44818376390
+  },
+  {
+    "object_id": "anv:dg.ANV0/35de3ed4-3878-4bb6-84e3-3986058a05fb",
+    "md5sum": "f88eb01acb06b795f6fed26d916a182e",
+    "file_name": "GTEX-13NZ8-0004-SM-6WSBJ.cram",
+    "file_size": 54330578087
+  },
+  {
+    "object_id": "anv:dg.ANV0/be691977-4424-4e4e-93b9-d789b3449968",
+    "md5sum": "7268380831e4c8db1947af858779ef0d",
+    "file_name": "GTEX-XAJ8-0001-SM-5URBF.cram",
+    "file_size": 64631414235
+  },
+  {
+    "object_id": "anv:dg.ANV0/7e101ace-6954-4495-8849-f6a42fee9460",
+    "md5sum": "249fa32c910704a25c0942dc462a88db",
+    "file_name": "GTEX-R3RS-0001-SM-5URBE.cram",
+    "file_size": 54361795557
+  },
+  {
+    "object_id": "anv:dg.ANV0/dc745e96-574a-4aba-be3f-0aa9843cd475",
+    "md5sum": "88261f23d1b74a5348a0d8c0e9457a5f",
+    "file_name": "GTEX-ZVP2-0002-SM-6WBSN.cram",
+    "file_size": 47588515158
+  },
+  {
+    "object_id": "anv:dg.ANV0/865fbec4-533a-4594-b536-18cedef66ae5",
+    "md5sum": "5bc7a0785d6e4b9b89adb2346f617b3b",
+    "file_name": "GTEX-147JS-0003-SM-7DRO2.cram",
+    "file_size": 34337448762
+  },
+  {
+    "object_id": "anv:dg.ANV0/0fefc46e-e66d-47d0-931f-67a94749a975",
+    "md5sum": "f5e3326da60495fd7213ec404cdd8a6d",
+    "file_name": "GTEX-13NZB-0004-SM-6WSBX.cram",
+    "file_size": 48520725065
+  },
+  {
+    "object_id": "anv:dg.ANV0/48fa3411-87d8-48e0-a7b4-17fd9cc3e0db",
+    "md5sum": "9e7be9c56fd0d5248afb5bfffcd6f082",
+    "file_name": "GTEX-15RJE-0003-SM-6UH2G.cram",
+    "file_size": 47709501345
+  },
+  {
+    "object_id": "anv:dg.ANV0/636da59b-6fab-4287-a992-e74931b33a25",
+    "md5sum": "4beabb3d5719bf53e496f86c0a256131",
+    "file_name": "GTEX-1B996-0003-SM-7J38R.cram",
+    "file_size": 38355004413
+  },
+  {
+    "object_id": "anv:dg.ANV0/bca2115d-01ec-4306-98d4-46f4edd07990",
+    "md5sum": "954b1bb4e21fe6f8e385ce7a695c0966",
+    "file_name": "GTEX-ZY6K-0002-SM-6WBT2.cram",
+    "file_size": 45082001853
+  },
+  {
+    "object_id": "anv:dg.ANV0/c6a52453-5a0f-4790-8179-05a1066c700e",
+    "md5sum": "68e47798df0908dfdf1dc104456e3238",
+    "file_name": "GTEX-1LVAO-0003-SM-DJWXB.cram",
+    "file_size": 38955556083
+  },
+  {
+    "object_id": "anv:dg.ANV0/3fa0ce1d-30cc-4266-b6aa-2b03bdd36c9b",
+    "md5sum": "65138af34cf83893a68dd1a7e473b5ae",
+    "file_name": "GTEX-13FH7-0004-SM-6WSB3.cram",
+    "file_size": 72079942042
+  },
+  {
+    "object_id": "anv:dg.ANV0/f474d350-5264-44bd-83ee-fd93f05c4bb5",
+    "md5sum": "33d5415ff04ce6aa4cf6d23b55482c29",
+    "file_name": "GTEX-1N2EF-0002-SM-DJWYQ.cram",
+    "file_size": 43767510872
+  },
+  {
+    "object_id": "anv:dg.ANV0/126c81d9-f185-4d4b-9bdc-baab41dcbd50",
+    "md5sum": "c9b1b8c8fc0647079695188001b69863",
+    "file_name": "GTEX-1PDJ9-0003-SM-DJWWM.cram",
+    "file_size": 40875422243
+  },
+  {
+    "object_id": "anv:dg.ANV0/5fe26c31-472b-4166-a57c-abdeee0022cb",
+    "md5sum": "dee41e196ff78ceb663ae8ba706d964d",
+    "file_name": "GTEX-X3Y1-0002-SM-5URCV.cram",
+    "file_size": 63208072397
+  },
+  {
+    "object_id": "anv:dg.ANV0/26d7df8b-2e9e-4725-a646-2314a09327be",
+    "md5sum": "5f7d2b33818aff2a27e30fe13e00a5cc",
+    "file_name": "GTEX-1LKK1-0626-SM-DLT2M.cram",
+    "file_size": 47169026828
+  },
+  {
+    "object_id": "anv:dg.ANV0/3a5ad410-b933-48f4-8816-e68d322f68c1",
+    "md5sum": "8185c5be3cf46fe300d102758b41e437",
+    "file_name": "GTEX-11EQ9-0003-SM-6WBTK.cram",
+    "file_size": 48922723814
+  },
+  {
+    "object_id": "anv:dg.ANV0/38480b82-b059-4482-968c-bf79be6b2974",
+    "md5sum": "11e1d96e4f7c34ff688ffc90e1b58678",
+    "file_name": "GTEX-11TT1-0001-SM-6WBTZ.cram",
+    "file_size": 51672088931
+  },
+  {
+    "object_id": "anv:dg.ANV0/3b70fe3b-1b16-4ec4-972d-648c9b5700e8",
+    "md5sum": "a553a9278d9f6cf8f21093138897b39f",
+    "file_name": "GTEX-1S5ZU-0004-SM-DJWX6.cram",
+    "file_size": 43292301743
+  },
+  {
+    "object_id": "anv:dg.ANV0/652dafdb-e502-4674-b917-47575f8da340",
+    "md5sum": "d16ae3b14e459214d45ade8da5bb2400",
+    "file_name": "GTEX-1JKYR-0004-SM-DJWYJ.cram",
+    "file_size": 38730184149
+  },
+  {
+    "object_id": "anv:dg.ANV0/1dd95bce-eb7d-4922-9230-b8e1aec3e6a9",
+    "md5sum": "92f4315b7ca8a998d13999d24e7516d7",
+    "file_name": "GTEX-15EU6-0003-SM-7DLFZ.cram",
+    "file_size": 33382658605
+  },
+  {
+    "object_id": "anv:dg.ANV0/231bf3c7-1fff-49bc-91e8-c1ff4e8b4ed9",
+    "md5sum": "60240b9d92863d360f8acab13556a350",
+    "file_name": "GTEX-1RNSC-0002-SM-DLIQK.cram",
+    "file_size": 46233029511
+  },
+  {
+    "object_id": "anv:dg.ANV0/ebf3ef62-86a3-4097-a536-cebeb6e567c1",
+    "md5sum": "7c455b5d08613fc935957f86342c61af",
+    "file_name": "GTEX-1N5O9-0004-SM-DJWYY.cram",
+    "file_size": 35205220417
+  },
+  {
+    "object_id": "anv:dg.ANV0/9485f0ef-5c8c-4f1d-8513-575aa3d6340f",
+    "md5sum": "cc0666ef059628e3590e14979346bacc",
+    "file_name": "GTEX-WZTO-0002-SM-5URDU.cram",
+    "file_size": 67395355123
+  },
+  {
+    "object_id": "anv:dg.ANV0/e3331da5-dcb3-41ae-a91c-0c14ce58e076",
+    "md5sum": "94ac42f326332ad4ffb0cf7f4c20088b",
+    "file_name": "GTEX-R53T-0003-SM-5URBL.cram",
+    "file_size": 69010698327
+  },
+  {
+    "object_id": "anv:dg.ANV0/5c62f910-8ed4-4409-b919-3e3dd2d3f931",
+    "md5sum": "bcff2cf965413feb01fbca0e2e24cbbb",
+    "file_name": "GTEX-QMRM-0002-SM-5URC1.cram",
+    "file_size": 59413474433
+  },
+  {
+    "object_id": "anv:dg.ANV0/0528e44f-2c39-47c9-b02b-f99e87b744e3",
+    "md5sum": "025b917672feaaa56864850abe2ff8ac",
+    "file_name": "GTEX-17GQL-0003-SM-6UH25.cram",
+    "file_size": 47025441824
+  },
+  {
+    "object_id": "anv:dg.ANV0/5d1bec5a-f522-44c1-b5e4-c1ecda817b44",
+    "md5sum": "bd576b98ac892b1e7036d9916657acbe",
+    "file_name": "GTEX-XQ8I-0001-SM-5JK4O.cram",
+    "file_size": 44476640474
+  },
+  {
+    "object_id": "anv:dg.ANV0/e17b0e60-dee1-4159-bc06-36f0ef4a8670",
+    "md5sum": "90238b27e76a6e1200425a997e6368f1",
+    "file_name": "GTEX-1NV5F-0004-SM-DJWX3.cram",
+    "file_size": 57874535369
+  },
+  {
+    "object_id": "anv:dg.ANV0/dcff33c9-7aa6-465a-b915-81cf3e3e8f62",
+    "md5sum": "7a618d766d456c67eabcd5b66836e8ea",
+    "file_name": "GTEX-ZLFU-0004-SM-7DRPW.cram",
+    "file_size": 39444074590
+  },
+  {
+    "object_id": "anv:dg.ANV0/9c875209-5e61-4103-847e-ac19d9e484ab",
+    "md5sum": "26bc6a28869e8eca41108954a8caa807",
+    "file_name": "GTEX-1M5QR-0003-SM-DJWWP.cram",
+    "file_size": 39762787496
+  },
+  {
+    "object_id": "anv:dg.ANV0/bceb3788-3eaf-43d3-9944-dd2b9476570f",
+    "md5sum": "45230e9747c23afef16425843e0a9e45",
+    "file_name": "GTEX-SE5C-0003-SM-6WBS1.cram",
+    "file_size": 48258011363
+  },
+  {
+    "object_id": "anv:dg.ANV0/c1f5aeab-bc57-410e-a092-cd316f2d7ed7",
+    "md5sum": "9caf2aa12bb301fda09ae86a84272dd2",
+    "file_name": "GTEX-1339X-0226-SM-DLIOH.cram",
+    "file_size": 39544603493
+  },
+  {
+    "object_id": "anv:dg.ANV0/7e7f2fc3-acbb-4fab-a00a-8dbf76dbd301",
+    "md5sum": "32a30809e2079ab55dc49cbe8996512b",
+    "file_name": "GTEX-11ILO-2626-SM-DLIPH.cram",
+    "file_size": 41170925422
+  },
+  {
+    "object_id": "anv:dg.ANV0/a84142ba-7dfe-4e95-9d75-60b9eb542252",
+    "md5sum": "e49d2d3e0f6eb9f4a91e0321fb6f800f",
+    "file_name": "GTEX-U412-0001-SM-5SOEO.cram",
+    "file_size": 65796760170
+  },
+  {
+    "object_id": "anv:dg.ANV0/d8159ba0-090c-44d8-84a6-eb3cea304eb5",
+    "md5sum": "978c5150caca0a0a2235c4a8d8784ef7",
+    "file_name": "GTEX-Y114-0004-SM-6UH1A.cram",
+    "file_size": 47744830179
+  },
+  {
+    "object_id": "anv:dg.ANV0/78eb550c-0736-47d5-ab4d-39924896aba5",
+    "md5sum": "3ff92db8286f8dd919bdc3a3f7ca30a4",
+    "file_name": "GTEX-ZF3C-0002-SM-6UH3H.cram",
+    "file_size": 51811735295
+  },
+  {
+    "object_id": "anv:dg.ANV0/a768b239-a63d-4044-b581-37a667441325",
+    "md5sum": "53232c64dd5328bdf5eb6ab03ab12589",
+    "file_name": "GTEX-TKQ2-0002-SM-5URCO.cram",
+    "file_size": 54054493821
+  },
+  {
+    "object_id": "anv:dg.ANV0/13431268-bf90-46d1-a995-cf2904531a6f",
+    "md5sum": "d569df8f5fde62066a7fa92da75ef06e",
+    "file_name": "GTEX-TML8-0004-SM-5SOEP.cram",
+    "file_size": 58257890450
+  },
+  {
+    "object_id": "anv:dg.ANV0/24f5d0ae-e271-4dd8-b0d8-7a32c1f223ee",
+    "md5sum": "139c029fb36958dea2fd36e79e88aa58",
+    "file_name": "GTEX-1PIEJ-0003-SM-DJWWX.cram",
+    "file_size": 44485189721
+  },
+  {
+    "object_id": "anv:dg.ANV0/5a87b6d9-828d-4fc6-838f-353831b267d4",
+    "md5sum": "cffda088d696e5976c6df0da54f1a60d",
+    "file_name": "GTEX-1JMPY-0003-SM-DJWYO.cram",
+    "file_size": 43314045044
+  },
+  {
+    "object_id": "anv:dg.ANV0/b94771f1-e0a2-48af-bbf0-3055f4b4333f",
+    "md5sum": "bce1980015f32f4fdb536000b914b96e",
+    "file_name": "GTEX-1MA7W-0004-SM-DJWYG.cram",
+    "file_size": 45534480473
+  },
+  {
+    "object_id": "anv:dg.ANV0/967a5870-c998-44fd-9f43-360dc2a726d9",
+    "md5sum": "bc7b5819967a395df913c8f4d2d45f0c",
+    "file_name": "GTEX-1B8SG-0003-SM-7J3A3.cram",
+    "file_size": 35817228976
+  },
+  {
+    "object_id": "anv:dg.ANV0/7df52e12-3025-46d0-a95f-1756fecf1490",
+    "md5sum": "c074d5a071db3f655b12848d17be3e73",
+    "file_name": "GTEX-WI4N-1326-SM-7DRPR.cram",
+    "file_size": 34061082083
+  },
+  {
+    "object_id": "anv:dg.ANV0/52080587-ccbb-47af-a422-9e9a517b9a79",
+    "md5sum": "ecddaa2ed0c2a11af22c96189cace5f7",
+    "file_name": "GTEX-1AYCT-0004-SM-7J39Y.cram",
+    "file_size": 35079801001
+  },
+  {
+    "object_id": "anv:dg.ANV0/deea6b1f-522a-489b-a820-2a76ed6dc3c2",
+    "md5sum": "a7c22667dbacfba2f390084aa957ff0f",
+    "file_name": "GTEX-1RAZQ-0001-SM-DLIQ1.cram",
+    "file_size": 45033542720
+  },
+  {
+    "object_id": "anv:dg.ANV0/b19ff2dd-a916-4de1-aac1-88424cc9f6cf",
+    "md5sum": "c8c48bfa5b0d5ea3c85c26daf6b9081b",
+    "file_name": "GTEX-13N1W-0002-SM-DO3XO.cram",
+    "file_size": 35522944081
+  },
+  {
+    "object_id": "anv:dg.ANV0/1f52c875-a059-4c2a-9a09-96f245d400c2",
+    "md5sum": "b33f74597b9d24c10e717fae146994c6",
+    "file_name": "GTEX-Z93S-0002-SM-6UH3P.cram",
+    "file_size": 49622579728
+  },
+  {
+    "object_id": "anv:dg.ANV0/428255de-e61b-42b1-a590-fb9dfdb77127",
+    "md5sum": "27ffbd7d43cb69a4e67bfd41b45ff68e",
+    "file_name": "GTEX-1JN6P-0001-SM-DJWYE.cram",
+    "file_size": 43577245935
+  },
+  {
+    "object_id": "anv:dg.ANV0/73cd60af-00de-47a8-bb33-4c8d6bf37058",
+    "md5sum": "7de79850152fa8856516e0e2f98240c6",
+    "file_name": "GTEX-17EVQ-0001-SM-6UH1V.cram",
+    "file_size": 47822379983
+  },
+  {
+    "object_id": "anv:dg.ANV0/574dc727-1182-4ca0-b60a-f7dd30b2831c",
+    "md5sum": "1ea2b2da420a5e66ed560664f8ac1b1c",
+    "file_name": "GTEX-1477Z-0003-SM-6WSBA.cram",
+    "file_size": 50944772567
+  },
+  {
+    "object_id": "anv:dg.ANV0/00a81839-b5c0-49c6-92b6-fd0234cf3951",
+    "md5sum": "c534ac5085bcaa18b8b5d0d57fa5bd70",
+    "file_name": "GTEX-PWCY-0001-SM-5JK3J.cram",
+    "file_size": 77532765127
+  },
+  {
+    "object_id": "anv:dg.ANV0/6538e40c-3abe-4d77-ab1e-84eb9e7d5068",
+    "md5sum": "5f9d5394130fda75bd780401f4756979",
+    "file_name": "GTEX-13NYC-0004-SM-6WSB9.cram",
+    "file_size": 47131221117
+  },
+  {
+    "object_id": "anv:dg.ANV0/dae9c671-2b60-48ea-8104-393635c2dba8",
+    "md5sum": "a2ace3927d91ccf7129cee7f6b4a304b",
+    "file_name": "GTEX-1LC47-0002-SM-DJWWJ.cram",
+    "file_size": 42140282512
+  },
+  {
+    "object_id": "anv:dg.ANV0/ee3e3347-5a27-4da9-8616-3447e02bd610",
+    "md5sum": "1d7e2df3723131fd24c1967d90cb2c0e",
+    "file_name": "GTEX-PWO3-0004-SM-5JK3T.cram",
+    "file_size": 91708602636
+  },
+  {
+    "object_id": "anv:dg.ANV0/84b01140-16e5-41a4-90ca-9cb2d190f534",
+    "md5sum": "941f7bfc80e3504e004e367d761805ad",
+    "file_name": "GTEX-WY7C-0002-SM-5URBW.cram",
+    "file_size": 57317390900
+  },
+  {
+    "object_id": "anv:dg.ANV0/cb001f32-556a-4776-9cf4-b063a474504b",
+    "md5sum": "c59f34e431c0c9470b276f51d7f1a107",
+    "file_name": "GTEX-1KANC-0004-SM-DJWYC.cram",
+    "file_size": 44790796008
+  },
+  {
+    "object_id": "anv:dg.ANV0/b8667a8b-00c5-4570-9522-b5408017a979",
+    "md5sum": "360fa8b6bfd6690a5767a102a285ef3a",
+    "file_name": "GTEX-ZZPU-0003-SM-6WBUC.cram",
+    "file_size": 51334431908
+  },
+  {
+    "object_id": "anv:dg.ANV0/74deabde-1302-4a43-8ea4-a9ca7bc81829",
+    "md5sum": "8d29a6f5f71729d4ec970d408478725c",
+    "file_name": "GTEX-1RB15-0004-SM-DLIQB.cram",
+    "file_size": 47711719978
+  },
+  {
+    "object_id": "anv:dg.ANV0/6ec55c3a-9d9f-4059-98e9-1c09d8e74a81",
+    "md5sum": "a51e8baf99c217cd68b3911f3aa86a44",
+    "file_name": "GTEX-Y8DK-0002-SM-6UH1E.cram",
+    "file_size": 46825487436
+  },
+  {
+    "object_id": "anv:dg.ANV0/bcde111a-05a5-4886-863f-0f090885897c",
+    "md5sum": "5152df6a8c5384fd04ec2dfab12498ae",
+    "file_name": "GTEX-1NV8Z-0003-SM-DJWX2.cram",
+    "file_size": 38444152543
+  },
+  {
+    "object_id": "anv:dg.ANV0/dd90e4cf-3167-4dea-8306-c892cd05f284",
+    "md5sum": "dc856b3e47a80ef53a6b6793eb695b1e",
+    "file_name": "GTEX-P44G-0526-SM-DMRPR.cram",
+    "file_size": 56976203968
+  },
+  {
+    "object_id": "anv:dg.ANV0/c19f3845-7bba-4e6a-a145-4b5929ea26f9",
+    "md5sum": "fa7c5263390cdeb3e92ac8832dd552f5",
+    "file_name": "GTEX-XBED-0004-SM-5URD9.cram",
+    "file_size": 57924736017
+  },
+  {
+    "object_id": "anv:dg.ANV0/e1827da8-f8dc-4e95-b97d-47f6d637fed5",
+    "md5sum": "437831f1da36e7a1b1a6b07c43ae0232",
+    "file_name": "GTEX-1LG7Y-0001-SM-DJWYK.cram",
+    "file_size": 36127800234
+  },
+  {
+    "object_id": "anv:dg.ANV0/05c17794-c6d1-41cc-8719-534439f5a681",
+    "md5sum": "f3bc90b16eb46094718b1ef9f6b9b36e",
+    "file_name": "GTEX-11OF3-1326-SM-DLIPK.cram",
+    "file_size": 44248350018
+  },
+  {
+    "object_id": "anv:dg.ANV0/949a12fe-9fe7-4d43-9dc9-3d46e5a1c778",
+    "md5sum": "40021cdbce2971d010bbeda190d0e35c",
+    "file_name": "GTEX-WVJS-0003-SM-DLIOR.cram",
+    "file_size": 55527134673
+  },
+  {
+    "object_id": "anv:dg.ANV0/025fff2f-e69e-4869-9f68-308fb78ab8b6",
+    "md5sum": "956a67b2d3de4028b8ca07c81dcef949",
+    "file_name": "GTEX-14DAR-0004-SM-7DROF.cram",
+    "file_size": 35404635515
+  },
+  {
+    "object_id": "anv:dg.ANV0/dbbdfee7-ba12-4eb5-a73a-5e0994165dcd",
+    "md5sum": "9723db7d5f7f2317ee2ce682f651f773",
+    "file_name": "GTEX-13CF2-0004-SM-6WSB1.cram",
+    "file_size": 46866094658
+  },
+  {
+    "object_id": "anv:dg.ANV0/6d883b1b-8973-4fec-a0a3-86a7eab3cb87",
+    "md5sum": "47b10836b2f0135b7e9f563a6cbf7aaa",
+    "file_name": "GTEX-12WSJ-0003-SM-6WSBN.cram",
+    "file_size": 62670045003
+  },
+  {
+    "object_id": "anv:dg.ANV0/0988f975-0c1f-4abf-a137-92d7f5055303",
+    "md5sum": "6915a57147241d0a6722eeba0cf653a5",
+    "file_name": "GTEX-WFJO-0003-SM-5URBP.cram",
+    "file_size": 54545286354
+  },
+  {
+    "object_id": "anv:dg.ANV0/7ef46d99-4f82-4612-a171-5832abb072ce",
+    "md5sum": "da8380188f5e0f9c15b1f04f76f3666e",
+    "file_name": "GTEX-146FH-0002-SM-6WSBB.cram",
+    "file_size": 42646780594
+  },
+  {
+    "object_id": "anv:dg.ANV0/15fffd47-6c2c-4db3-ad73-430ad787cc5b",
+    "md5sum": "2cbda5c810fc88587e78f3fe722d75e4",
+    "file_name": "GTEX-18QFQ-0003-SM-DLIOZ.cram",
+    "file_size": 37382972049
+  },
+  {
+    "object_id": "anv:dg.ANV0/fc0e5bc4-9966-4ee8-8790-d9a1c3dd90d7",
+    "md5sum": "35dae9d150d7b5b4832ec6052ceeabcd",
+    "file_name": "GTEX-XBEC-0002-SM-5SOEV.cram",
+    "file_size": 57328716446
+  },
+  {
+    "object_id": "anv:dg.ANV0/218e6d81-8b38-45b6-91f0-d8032003dbbb",
+    "md5sum": "a0984a266789ca929edce93d3b22c801",
+    "file_name": "GTEX-X5EB-0001-SM-5URCX.cram",
+    "file_size": 69768727676
+  },
+  {
+    "object_id": "anv:dg.ANV0/ac9ba263-eaf3-4a02-abf4-855afbfb27f1",
+    "md5sum": "e760a4d4567a70cae5788ee8fe19a9d9",
+    "file_name": "GTEX-14LLW-0002-SM-7DRNS.cram",
+    "file_size": 35599643235
+  },
+  {
+    "object_id": "anv:dg.ANV0/9bce141e-d765-402b-9827-6452525cd42a",
+    "md5sum": "942653c41b852be1be028b2d333db087",
+    "file_name": "GTEX-YJ89-0002-SM-6UH1H.cram",
+    "file_size": 49456756918
+  },
+  {
+    "object_id": "anv:dg.ANV0/83897309-ab8c-404e-aa17-bf6515018809",
+    "md5sum": "02a1ea421a8d0ab35730c66bcbf08121",
+    "file_name": "GTEX-16MT8-0002-SM-6UH2U.cram",
+    "file_size": 52134573873
+  },
+  {
+    "object_id": "anv:dg.ANV0/1affd74a-4417-43e7-a94d-040308139b27",
+    "md5sum": "3b4f022f588da6429dbc5661cc488254",
+    "file_name": "GTEX-12ZZZ-0002-SM-6WSCB.cram",
+    "file_size": 49438940793
+  },
+  {
+    "object_id": "anv:dg.ANV0/4f0995c2-2eef-4eb6-8c0c-caf265c7c214",
+    "md5sum": "bde70114dcaab5d4ed3f948558e746a2",
+    "file_name": "GTEX-1F5PK-0003-SM-7J3AQ.cram",
+    "file_size": 36752647623
+  },
+  {
+    "object_id": "anv:dg.ANV0/5f79c843-1c2f-4d81-914d-1ba9cbc0492f",
+    "md5sum": "98fdd89e9a56883566cf3b1fd35da5ef",
+    "file_name": "GTEX-1RQED-0001-SM-DLIP3.cram",
+    "file_size": 38331782642
+  },
+  {
+    "object_id": "anv:dg.ANV0/bdeb9451-2073-48c7-b5cb-03a03f8c7248",
+    "md5sum": "dac2de01ebe35fbf9519c8cf3bfe9dfd",
+    "file_name": "GTEX-1L5NE-0002-SM-DJWXX.cram",
+    "file_size": 49293513247
+  },
+  {
+    "object_id": "anv:dg.ANV0/be4c5e18-4f7a-440f-8c05-692816867451",
+    "md5sum": "5a3c56746a22d51c205942a71fc3c43f",
+    "file_name": "GTEX-WFON-0003-SM-5URD4.cram",
+    "file_size": 61235580465
+  },
+  {
+    "object_id": "anv:dg.ANV0/51a7de38-aec9-4417-8310-2141559e0f53",
+    "md5sum": "e803665b743730fbf28edd09fa0258ff",
+    "file_name": "GTEX-17HGU-0001-SM-6UH1W.cram",
+    "file_size": 47759893371
+  },
+  {
+    "object_id": "anv:dg.ANV0/5d66eeba-02f9-48c3-8f6e-dee66a6bdce9",
+    "md5sum": "8e5db2b301c72e373fa4dbcf85572acf",
+    "file_name": "GTEX-WHWD-0002-SM-5SOEC.cram",
+    "file_size": 102145146119
+  },
+  {
+    "object_id": "anv:dg.ANV0/798b5c86-bac8-4e27-987b-578e6d7c0627",
+    "md5sum": "87b099c8cdc35e2c269c5ce5a2d78ebb",
+    "file_name": "GTEX-1F75I-0004-SM-DLIPB.cram",
+    "file_size": 41809942703
+  },
+  {
+    "object_id": "anv:dg.ANV0/f5197c85-2666-4bac-a426-491c8b5cc542",
+    "md5sum": "d7c0043dff5efd177de4aec2bad75ca0",
+    "file_name": "GTEX-13FTZ-0004-SM-6WSAY.cram",
+    "file_size": 45013233640
+  },
+  {
+    "object_id": "anv:dg.ANV0/0cfcc7c6-1a5f-478b-b912-915f9172436f",
+    "md5sum": "a2aadc295ed607595c7a1f933ea29863",
+    "file_name": "GTEX-1JMQK-0004-SM-DJWWF.cram",
+    "file_size": 35038684945
+  },
+  {
+    "object_id": "anv:dg.ANV0/f8fd8352-4934-4ec5-aeb0-dd8c0dbac96e",
+    "md5sum": "078ad2dda1f0a90390f4a4fef431ab12",
+    "file_name": "GTEX-14C39-0004-SM-7DROE.cram",
+    "file_size": 33859349417
+  },
+  {
+    "object_id": "anv:dg.ANV0/c5958f6d-c932-4028-88e5-533debdd1a33",
+    "md5sum": "d2aeb910c2b519d411e6a7055cca4297",
+    "file_name": "GTEX-1B8L1-0004-SM-7J3AV.cram",
+    "file_size": 37248716170
+  },
+  {
+    "object_id": "anv:dg.ANV0/5e902ed5-bbe9-4f05-b49d-8a56f836ed33",
+    "md5sum": "292fe51c84d0c789d3d027d18f2dd3b7",
+    "file_name": "GTEX-13QIC-0004-SM-6WSCY.cram",
+    "file_size": 52442469965
+  },
+  {
+    "object_id": "anv:dg.ANV0/de92ddb7-5848-4090-aa44-98e03897a1d6",
+    "md5sum": "a8b9e6caa9e60c9e660aae8a06b4bd3d",
+    "file_name": "GTEX-N7MT-0009-SM-5JK4X.cram",
+    "file_size": 74108481104
+  },
+  {
+    "object_id": "anv:dg.ANV0/d7390034-7f2f-45db-8ddb-a0e319d76374",
+    "md5sum": "28167c657fb47a5365d58f3f863d806e",
+    "file_name": "GTEX-X4XY-0002-SM-5URBG.cram",
+    "file_size": 67611417563
+  },
+  {
+    "object_id": "anv:dg.ANV0/1e4c75ae-d9c0-4d8d-9fdf-388482550fea",
+    "md5sum": "daba66bb11316230ff61e4a2b86a9397",
+    "file_name": "GTEX-1M4P7-0004-SM-DJWWT.cram",
+    "file_size": 47622743811
+  },
+  {
+    "object_id": "anv:dg.ANV0/d1d66880-0796-4695-a43e-9f56916aad81",
+    "md5sum": "816c798773dfa1ab091b8371d1454665",
+    "file_name": "GTEX-17EUY-0003-SM-6UH27.cram",
+    "file_size": 50152808765
+  },
+  {
+    "object_id": "anv:dg.ANV0/07324d2d-68aa-427a-b526-f4a360cb8f0f",
+    "md5sum": "4d074da476df83fe8831f1ae72cbca9e",
+    "file_name": "GTEX-14BIL-0004-SM-7DRO6.cram",
+    "file_size": 34326870094
+  },
+  {
+    "object_id": "anv:dg.ANV0/28b4d4dd-097e-4013-b9ad-bd34961b98b7",
+    "md5sum": "e5dacd725f5cbd37078c234868898096",
+    "file_name": "GTEX-13CZV-0003-SM-6WSB7.cram",
+    "file_size": 52368171996
+  },
+  {
+    "object_id": "anv:dg.ANV0/efe11e31-d31b-4c17-866d-e6a6b381a278",
+    "md5sum": "5e2176736eef86a40e5e86cac32e230c",
+    "file_name": "GTEX-1LC46-0001-SM-DJWX9.cram",
+    "file_size": 38954894095
+  },
+  {
+    "object_id": "anv:dg.ANV0/c1279c22-b93c-4354-a01d-d151b9812dd7",
+    "md5sum": "125872863ecef3194354c99f0b01846e",
+    "file_name": "GTEX-Y5V5-0002-SM-6UH3T.cram",
+    "file_size": 52914614356
+  },
+  {
+    "object_id": "anv:dg.ANV0/fa5eb91d-4d00-46ee-9c0b-aca61147eeb5",
+    "md5sum": "8d3d032cfaebb2e3273d64afb2a4bca0",
+    "file_name": "GTEX-1R9K4-0002-SM-DLIQI.cram",
+    "file_size": 41131810887
+  },
+  {
+    "object_id": "anv:dg.ANV0/200f34aa-f491-4843-9533-1a477f9724bf",
+    "md5sum": "7a0423ea83e11241a2eed06abcecd955",
+    "file_name": "GTEX-1IDJC-0003-SM-DCD1A.cram",
+    "file_size": 49701085584
+  },
+  {
+    "object_id": "anv:dg.ANV0/6ef22628-7e66-4aec-b2ff-d4585bbfc8c0",
+    "md5sum": "7d705f4aa6c1a68d6b98645fede9a2c4",
+    "file_name": "GTEX-1ICLY-0003-SM-DCCZE.cram",
+    "file_size": 49066518902
+  },
+  {
+    "object_id": "anv:dg.ANV0/ccb0f667-6d16-4382-a4f7-328b687d4056",
+    "md5sum": "e393c5387d36e0a79ac0c0dbd9fa3653",
+    "file_name": "GTEX-1I4MK-0004-SM-DCCZN.cram",
+    "file_size": 45319328302
+  },
+  {
+    "object_id": "anv:dg.ANV0/4081ca3d-6919-42ef-b149-fb31e9dba041",
+    "md5sum": "d588f6ae104611cd738839d4c17d98d7",
+    "file_name": "GTEX-ZVP2-0002-SM-7FG6C.cram",
+    "file_size": 42666480201
+  },
+  {
+    "object_id": "anv:dg.ANV0/46a35753-2161-4104-9b0d-15bc162e77e3",
+    "md5sum": "53bcd66374f93fef7c44fe4c83240b4f",
+    "file_name": "GTEX-1RQEC-0004-SM-DLIQ2.cram",
+    "file_size": 39417125989
+  },
+  {
+    "object_id": "anv:dg.ANV0/663c8650-8215-4554-9ee8-4ccaeabfa7af",
+    "md5sum": "1f0760c214e2f0798d456f96bc20237e",
+    "file_name": "GTEX-1JMOU-0004-SM-DJWY8.cram",
+    "file_size": 37728836020
+  },
+  {
+    "object_id": "anv:dg.ANV0/83614e0d-9a30-48a1-bdd0-9862a1189e04",
+    "md5sum": "ebcc39be323bb953b506873a32e24ed7",
+    "file_name": "GTEX-13PL7-0003-SM-6WSD3.cram",
+    "file_size": 51678971793
+  },
+  {
+    "object_id": "anv:dg.ANV0/979394ac-18d7-41fb-a3ec-09315e714749",
+    "md5sum": "551a08a46fbd863d87b2e0c3c7e98499",
+    "file_name": "GTEX-X4EO-0003-SM-5URCE.cram",
+    "file_size": 57016710688
+  },
+  {
+    "object_id": "anv:dg.ANV0/d5ab5e4f-745b-440d-b50f-d03f34fb7853",
+    "md5sum": "5598e014982deb6b274a18ef254bead5",
+    "file_name": "GTEX-147GR-0003-SM-6WSBC.cram",
+    "file_size": 53296048561
+  },
+  {
+    "object_id": "anv:dg.ANV0/efe9d38e-f198-43a2-a62b-93e443a32503",
+    "md5sum": "ce2eab7941f69b5c9d318d093b83aa41",
+    "file_name": "GTEX-18464-0004-SM-DJWXS.cram",
+    "file_size": 44376222082
+  },
+  {
+    "object_id": "anv:dg.ANV0/39a4de38-07cb-4b74-b7db-c2ac11f9a9a4",
+    "md5sum": "594c86fdb62dbb7ef1962c740b2d700d",
+    "file_name": "GTEX-11I78-0002-SM-6WBU2.cram",
+    "file_size": 49426054182
+  },
+  {
+    "object_id": "anv:dg.ANV0/8040f005-e76e-4dc2-b1d3-f19024f5d401",
+    "md5sum": "8e095eb645b804df757112549587bf32",
+    "file_name": "GTEX-1KANA-0003-SM-DJWY3.cram",
+    "file_size": 50169674660
+  },
+  {
+    "object_id": "anv:dg.ANV0/79f384f5-c6fe-4877-803a-612d60b209ea",
+    "md5sum": "b1addfaefe4ba9645128ce8bb335ac6a",
+    "file_name": "GTEX-144FL-1126-SM-DLIPL.cram",
+    "file_size": 52672949264
+  },
+  {
+    "object_id": "anv:dg.ANV0/6f189f02-f8c6-49d0-bfa4-65115c3a9d9c",
+    "md5sum": "901432e582cdf9bda667db2776964858",
+    "file_name": "GTEX-1RAZR-0003-SM-DLIQL.cram",
+    "file_size": 47276926864
+  },
+  {
+    "object_id": "anv:dg.ANV0/15f30633-f4a2-4e6b-a95f-f2e3d6b736b4",
+    "md5sum": "f1f2b10fdbb2f93ff084cae4207c6d02",
+    "file_name": "GTEX-1QCLZ-0001-SM-DLIQ3.cram",
+    "file_size": 46446418074
+  },
+  {
+    "object_id": "anv:dg.ANV0/8b6a2c73-b26c-420a-adab-d9854379bdea",
+    "md5sum": "73c27a256b674c44a3dbeba3dd780ff5",
+    "file_name": "GTEX-1AX8Y-0002-SM-7J38S.cram",
+    "file_size": 33226274477
+  },
+  {
+    "object_id": "anv:dg.ANV0/01b5ab5c-98a6-4e3e-a706-9eca56bac01f",
+    "md5sum": "a765636cabbf46d5d84adee49b9817fe",
+    "file_name": "GTEX-18A6Q-0003-SM-DJWXQ.cram",
+    "file_size": 40204361456
+  },
+  {
+    "object_id": "anv:dg.ANV0/674fb83d-19f1-45a9-ba1c-e43022a58328",
+    "md5sum": "cc1d19610cb195e80662c453084fdbf5",
+    "file_name": "GTEX-1JN1M-0004-SM-DJWWG.cram",
+    "file_size": 41570085271
+  },
+  {
+    "object_id": "anv:dg.ANV0/57a31e77-9dd2-4c54-bd37-b74cfda209be",
+    "md5sum": "c262dd4cd36f7218552081df99d63161",
+    "file_name": "GTEX-12KS4-0003-SM-7DRPS.cram",
+    "file_size": 35628651458
+  },
+  {
+    "object_id": "anv:dg.ANV0/b3d6fe6f-94a0-4956-85ae-c6070078ff01",
+    "md5sum": "5a1cb40e8d5489ab30f6d18750c73336",
+    "file_name": "GTEX-R55F-0326-SM-7DRPK.cram",
+    "file_size": 38284997202
+  },
+  {
+    "object_id": "anv:dg.ANV0/649b6b1f-60e5-4408-9d77-845f46e9f1b0",
+    "md5sum": "3d506acbd4c82c14fba4cfda9911c66a",
+    "file_name": "GTEX-ZVZO-0001-SM-DLIPR.cram",
+    "file_size": 37921666535
+  },
+  {
+    "object_id": "anv:dg.ANV0/c8d7459d-2f08-4148-abb3-0a04d22fa175",
+    "md5sum": "5386621002b10fbd6c943a4168bd207a",
+    "file_name": "GTEX-1CB4E-0001-SM-DLIOY.cram",
+    "file_size": 39914481687
+  },
+  {
+    "object_id": "anv:dg.ANV0/64b8dfd1-4a94-4270-92e9-c9237f1c4e2e",
+    "md5sum": "1775b47b9a10eeca1d2cb0a57981b942",
+    "file_name": "GTEX-14PN3-0004-SM-7DLGK.cram",
+    "file_size": 36743594863
+  },
+  {
+    "object_id": "anv:dg.ANV0/c9892829-7fe3-4c5b-97c9-c29daed6f39c",
+    "md5sum": "f7a69ca86a44241ba875a03922740b71",
+    "file_name": "GTEX-ZYT6-0002-SM-6WBS2.cram",
+    "file_size": 51004427454
+  },
+  {
+    "object_id": "anv:dg.ANV0/ff005856-1012-496f-ae39-41a7902fd24e",
+    "md5sum": "cc710ab82aeb87678bf3191ee9ca461d",
+    "file_name": "GTEX-1CAMR-0004-SM-7J3B6.cram",
+    "file_size": 38234370875
+  },
+  {
+    "object_id": "anv:dg.ANV0/d184f54a-5861-4de0-9584-d46da1825f9d",
+    "md5sum": "9d2d8ea6fd531937b395bcdfbe7c52ea",
+    "file_name": "GTEX-1E1VI-0003-SM-7J38L.cram",
+    "file_size": 41990581896
+  },
+  {
+    "object_id": "anv:dg.ANV0/cdfaf26f-fa79-4f0a-b08e-c31fb53a2df5",
+    "md5sum": "aec98ae03db93d449bae7e0238934013",
+    "file_name": "GTEX-16BQI-0003-SM-6UH2O.cram",
+    "file_size": 50808090052
+  },
+  {
+    "object_id": "anv:dg.ANV0/9f86531a-e6a7-45f6-aca7-77d12b12707f",
+    "md5sum": "05e3847d06dcad1bdb5b348fe7e856f0",
+    "file_name": "GTEX-Y111-0001-SM-6UH1B.cram",
+    "file_size": 47113778692
+  },
+  {
+    "object_id": "anv:dg.ANV0/da3485e2-d77e-4ade-9cbc-138db36c005f",
+    "md5sum": "346855b6cfc664c7afabb8040a307b7f",
+    "file_name": "GTEX-1LH75-0626-SM-DLT2J.cram",
+    "file_size": 38301917352
+  },
+  {
+    "object_id": "anv:dg.ANV0/842041bc-ce37-4a8c-b230-2e73705719bf",
+    "md5sum": "9d2d792dd1508267c6609edf9964ef3f",
+    "file_name": "GTEX-145MN-0001-SM-7DROT.cram",
+    "file_size": 37467717958
+  },
+  {
+    "object_id": "anv:dg.ANV0/cbf27a82-4671-49d3-8513-f25901083511",
+    "md5sum": "4a537bf6f2a901d7a424cec9c06e5312",
+    "file_name": "GTEX-1399Q-0004-SM-7DRP9.cram",
+    "file_size": 40432117559
+  },
+  {
+    "object_id": "anv:dg.ANV0/d0188b14-73fc-46b9-a7cf-492ff6a0f795",
+    "md5sum": "48528eb4925c721f36a6a8f681a35677",
+    "file_name": "GTEX-1S82Y-0004-SM-DJWXO.cram",
+    "file_size": 34917085753
+  },
+  {
+    "object_id": "anv:dg.ANV0/59309e77-fd1d-46ff-be97-517aae449d56",
+    "md5sum": "3d75de4ade6fd54dddfa934294ddf9ed",
+    "file_name": "GTEX-16MT9-0004-SM-6UH2T.cram",
+    "file_size": 53774618861
+  },
+  {
+    "object_id": "anv:dg.ANV0/9a08a35b-315a-4dbc-96f6-61f3c8c5ed74",
+    "md5sum": "b13af9aaa8deb1c676b4d8413c66554e",
+    "file_name": "GTEX-13111-0003-SM-6WSCF.cram",
+    "file_size": 49990987951
+  },
+  {
+    "object_id": "anv:dg.ANV0/8cffc00c-42ad-4121-afc6-e663c32070d2",
+    "md5sum": "68ea002b337c515e374cd0b3110ea02a",
+    "file_name": "GTEX-1GMR2-0003-SM-7J3B2.cram",
+    "file_size": 38265108693
+  },
+  {
+    "object_id": "anv:dg.ANV0/ee004959-af8e-4e3d-b080-fe4615f5e8a7",
+    "md5sum": "3da9ea8c5b57b65116d294edb758d2d7",
+    "file_name": "GTEX-1C6VS-0003-SM-DJWWB.cram",
+    "file_size": 52297659502
+  },
+  {
+    "object_id": "anv:dg.ANV0/66870339-1c93-4deb-b2cf-d2dad7de3ab7",
+    "md5sum": "3c9a4f9b972a4a1b45d202dc77fc44de",
+    "file_name": "GTEX-1N2EE-0002-SM-DJWWO.cram",
+    "file_size": 39082563169
+  },
+  {
+    "object_id": "anv:dg.ANV0/0dbfd34a-3017-46be-a8d8-7cd37a99b6d4",
+    "md5sum": "79a6659d2c28b5c0d8c7911f51835dde",
+    "file_name": "GTEX-13QBU-0003-SM-6WSD1.cram",
+    "file_size": 54303772501
+  },
+  {
+    "object_id": "anv:dg.ANV0/7be159e3-b016-417c-a216-d0ec5da51cc4",
+    "md5sum": "2312b98c7eea72eee082e85aa019fb69",
+    "file_name": "GTEX-15DYW-0002-SM-7DLFW.cram",
+    "file_size": 37312474574
+  },
+  {
+    "object_id": "anv:dg.ANV0/6d7fae1c-633c-47c9-bbf3-f2d18d036ef6",
+    "md5sum": "9fc9000c2d80428d3351f0b9af686164",
+    "file_name": "GTEX-13FTY-0004-SM-6WSBL.cram",
+    "file_size": 49671728777
+  },
+  {
+    "object_id": "anv:dg.ANV0/292e4c17-6d7c-4e42-96dd-743d015b847b",
+    "md5sum": "f611d7a267f25372e59819cf16468c07",
+    "file_name": "GTEX-1OJC4-0001-SM-DJWWU.cram",
+    "file_size": 40823197098
+  },
+  {
+    "object_id": "anv:dg.ANV0/e2b10d4e-72e2-4488-9ac5-a86399c99c1a",
+    "md5sum": "036abbdd89b94c364bddc55d0dca3a3d",
+    "file_name": "GTEX-1CAMQ-0003-SM-7J39C.cram",
+    "file_size": 35199991284
+  },
+  {
+    "object_id": "anv:dg.ANV0/83142b56-5cba-4bfc-8cfe-65e76e030322",
+    "md5sum": "2cbe7632af2f68e2f97c64596bf5ac5a",
+    "file_name": "GTEX-13PDP-1026-SM-DLIOB.cram",
+    "file_size": 45405116410
+  },
+  {
+    "object_id": "anv:dg.ANV0/76921edb-8c95-4858-9c2e-44bdd05b2a0e",
+    "md5sum": "aa4f910a3547f94608d8a7664f4165fc",
+    "file_name": "GTEX-139TT-0004-SM-7DRNY.cram",
+    "file_size": 41132550923
+  },
+  {
+    "object_id": "anv:dg.ANV0/aaba150b-5e4c-409c-a017-ae34dee4f2ac",
+    "md5sum": "223d880c215e1c1ff58aefbcee936037",
+    "file_name": "GTEX-OIZF-0004-SM-5JK4C.cram",
+    "file_size": 56250892942
+  },
+  {
+    "object_id": "anv:dg.ANV0/7d0ce240-e75b-4134-9dde-8459f8eaa35c",
+    "md5sum": "85fa094713781596948af7a77dc307da",
+    "file_name": "GTEX-15RIF-0004-SM-6UH2F.cram",
+    "file_size": 48952553640
+  },
+  {
+    "object_id": "anv:dg.ANV0/112090fc-42a3-4e6c-a528-efcbc51bff1c",
+    "md5sum": "6db1a578938b35828c59f4d5058bc5bb",
+    "file_name": "GTEX-ZVT4-0004-SM-6WBSR.cram",
+    "file_size": 50433370434
+  },
+  {
+    "object_id": "anv:dg.ANV0/d5c3960d-cb77-46b3-a047-1cabcfef0e78",
+    "md5sum": "d6dde6970650a44d87b896c57a475bd5",
+    "file_name": "GTEX-11DZ1-0002-SM-6WBTG.cram",
+    "file_size": 55897627446
+  },
+  {
+    "object_id": "anv:dg.ANV0/ce004da5-c332-423a-bc10-0e494311891e",
+    "md5sum": "6bbfa5c433d52009f6f85c6503feb4be",
+    "file_name": "GTEX-ZV7C-0002-SM-6WBSM.cram",
+    "file_size": 49288395814
+  },
+  {
+    "object_id": "anv:dg.ANV0/17d1b1bc-ee71-4a90-8369-a0cb4846df3e",
+    "md5sum": "a97d3a343fa84fa9c96f41d3015fa59d",
+    "file_name": "GTEX-131XF-0004-SM-7DRPB.cram",
+    "file_size": 37680874422
+  },
+  {
+    "object_id": "anv:dg.ANV0/415edbfa-f317-4393-96fb-06c7267393ec",
+    "md5sum": "fdcb0f571fac6f19c9dc7fb9645aa24d",
+    "file_name": "GTEX-13X6H-0001-SM-6WSCM.cram",
+    "file_size": 57621772791
+  },
+  {
+    "object_id": "anv:dg.ANV0/1bcbb1f8-5b33-4a75-83da-4d1c546dd19e",
+    "md5sum": "c1086ef3c145c47055fc42c06ae38973",
+    "file_name": "GTEX-YECK-0002-SM-6UH15.cram",
+    "file_size": 46844358998
+  },
+  {
+    "object_id": "anv:dg.ANV0/26da8366-88bd-43de-880a-99d40332dbf4",
+    "md5sum": "1b7b0776ba0f893f6b18bd46c7595180",
+    "file_name": "GTEX-QCQG-0003-SM-5JK44.cram",
+    "file_size": 43779309504
+  },
+  {
+    "object_id": "anv:dg.ANV0/b8795bb9-7eac-46cd-8192-ab1913409b42",
+    "md5sum": "e36bac235680ae662d3de6b18703c6d0",
+    "file_name": "GTEX-11DZ1-0002-SM-CLTG7.cram",
+    "file_size": 40899367374
+  },
+  {
+    "object_id": "anv:dg.ANV0/f0fff5f3-a93b-4b8f-a34b-f9b247923224",
+    "md5sum": "4635997bfb9950de85a60d25122e18b1",
+    "file_name": "GTEX-RNOR-0001-SM-5URCF.cram",
+    "file_size": 59756011319
+  },
+  {
+    "object_id": "anv:dg.ANV0/744392ec-ded3-436d-9a9b-d45cec00cc59",
+    "md5sum": "0a0fd4ce26abb55912f2edcf8f942ba8",
+    "file_name": "GTEX-11EI6-0004-SM-6WBTC.cram",
+    "file_size": 45451307049
+  },
+  {
+    "object_id": "anv:dg.ANV0/06c44137-4179-4395-8bf2-2dc204e2d13d",
+    "md5sum": "d2c336c81d2fc619eadb20bf2aeea42e",
+    "file_name": "GTEX-X15G-0002-SM-7DRQ4.cram",
+    "file_size": 35794055158
+  },
+  {
+    "object_id": "anv:dg.ANV0/efb4b169-a5c3-4c79-926f-0d0e603902bc",
+    "md5sum": "0a187c2717504714d86cabc50e407d2b",
+    "file_name": "GTEX-YB5E-0003-SM-CLTGF.cram",
+    "file_size": 41171532016
+  },
+  {
+    "object_id": "anv:dg.ANV0/2ed7cb85-dc8f-4b00-bba8-8d291e600deb",
+    "md5sum": "776473071bbf7a68f5b0728e99871d2d",
+    "file_name": "GTEX-13FHO-0003-SM-6WSAZ.cram",
+    "file_size": 63275027112
+  },
+  {
+    "object_id": "anv:dg.ANV0/a7384b04-9267-4aa2-af1b-6f0dd3df9cc5",
+    "md5sum": "a1604100b2ca2a79c07eb23d28fb46ba",
+    "file_name": "GTEX-15SKB-0002-SM-6UH2I.cram",
+    "file_size": 55144944311
+  },
+  {
+    "object_id": "anv:dg.ANV0/7f76103b-eca8-404e-b6ac-7b2e5ed199e8",
+    "md5sum": "3718cfa39803722db797c031458214ac",
+    "file_name": "GTEX-1LVA9-0004-SM-DJWYS.cram",
+    "file_size": 40411383376
+  },
+  {
+    "object_id": "anv:dg.ANV0/33fcb430-f806-4ede-92fc-c091fd6b9efa",
+    "md5sum": "6c9141e7208bd6785d03728e1d96c2dd",
+    "file_name": "GTEX-139YR-0004-SM-6WSC7.cram",
+    "file_size": 47647854535
+  },
+  {
+    "object_id": "anv:dg.ANV0/8fe476d9-26d3-41ed-ba34-d7795d7df4a3",
+    "md5sum": "7950c48c949cbc1ec98deb0a198f31b4",
+    "file_name": "GTEX-1C475-0003-SM-7J3B4.cram",
+    "file_size": 35067863741
+  },
+  {
+    "object_id": "anv:dg.ANV0/ca518511-7102-42f5-94d7-6d6fd2e9117d",
+    "md5sum": "9d91e0df34ff7cf192c3e01e6cc7351e",
+    "file_name": "GTEX-X62O-0001-SM-5URD5.cram",
+    "file_size": 70767434228
+  },
+  {
+    "object_id": "anv:dg.ANV0/95846ea5-8aaf-44d7-8408-4d2ce17af1de",
+    "md5sum": "6053540b902fd297fe7368fe2f832a53",
+    "file_name": "GTEX-WCDI-0001-SM-5SOE7.cram",
+    "file_size": 53746204609
+  },
+  {
+    "object_id": "anv:dg.ANV0/ee44c62b-66c6-4b5d-9977-5e66ef9b08e7",
+    "md5sum": "442617bb58bef744e62896cd5d2b73ca",
+    "file_name": "GTEX-11DYG-0004-SM-6WBTB.cram",
+    "file_size": 58936101944
+  },
+  {
+    "object_id": "anv:dg.ANV0/a5dbe04e-84e9-4933-acde-7420f64bcab5",
+    "md5sum": "0bbb99ad9ea0125efe354c15d61de3df",
+    "file_name": "GTEX-1CAMS-0003-SM-7J3B7.cram",
+    "file_size": 35861964260
+  },
+  {
+    "object_id": "anv:dg.ANV0/8f4dd7bb-8c0c-455a-b54e-1a648e74aa23",
+    "md5sum": "23af114cab536f570dc7fb7719783b83",
+    "file_name": "GTEX-X4EP-0002-SM-5URCA.cram",
+    "file_size": 59920028737
+  },
+  {
+    "object_id": "anv:dg.ANV0/e43715ef-ba03-4eec-ab4f-ff3315a02b75",
+    "md5sum": "7ccbcfd736126d9424ed2ee44dc826a0",
+    "file_name": "GTEX-1QEPI-0001-SM-DLIPF.cram",
+    "file_size": 44573197381
+  },
+  {
+    "object_id": "anv:dg.ANV0/d2e755d0-e29f-4c8d-a03e-a1b36b32fd7f",
+    "md5sum": "9c00d4aff5f3f47e6a5b5369dde623a5",
+    "file_name": "GTEX-1PPH6-2726-SM-DLT2K.cram",
+    "file_size": 40605393291
+  },
+  {
+    "object_id": "anv:dg.ANV0/835b84ef-2650-4fef-bc60-8e59a0bef8ac",
+    "md5sum": "feea69c0d6403bc92764fcdeb2c626b2",
+    "file_name": "GTEX-1KAFJ-0003-SM-DJWYT.cram",
+    "file_size": 51431546384
+  },
+  {
+    "object_id": "anv:dg.ANV0/61c8c1eb-8286-4dcf-817f-156853358486",
+    "md5sum": "7b7418f18bd5dab21bec60b7a4a6bf7e",
+    "file_name": "GTEX-WK11-0002-SM-CLTGB.cram",
+    "file_size": 40149841501
+  },
+  {
+    "object_id": "anv:dg.ANV0/6e12be74-30fd-495f-8d90-2487e0b735bc",
+    "md5sum": "a5dca494aa67d69b0571ed0c9f67107a",
+    "file_name": "GTEX-1OFPY-0004-SM-DJWX5.cram",
+    "file_size": 36042023210
+  },
+  {
+    "object_id": "anv:dg.ANV0/95aca88f-5c1a-4126-9ac4-5ede205cbdef",
+    "md5sum": "1f4b552c48fe32c3bba45e8885c8db78",
+    "file_name": "GTEX-1LGOU-0003-SM-DJWYI.cram",
+    "file_size": 40779826671
+  },
+  {
+    "object_id": "anv:dg.ANV0/94a9562b-cebd-4fc1-b4c2-05b4e8711758",
+    "md5sum": "8a153828cb0713d68ca954ea1fd45420",
+    "file_name": "GTEX-QDT8-0926-SM-7DRQ9.cram",
+    "file_size": 35239127581
+  },
+  {
+    "object_id": "anv:dg.ANV0/95f29888-cd1b-4a4f-b633-5332473ea818",
+    "md5sum": "1558341ca25beda7e50c50860a8fbfdb",
+    "file_name": "GTEX-1C6VQ-2326-SM-DLL3O.cram",
+    "file_size": 41760356735
+  },
+  {
+    "object_id": "anv:dg.ANV0/fe7202c7-9a39-4a7f-a0e1-e4b59aaf3830",
+    "md5sum": "feb38d09003bced760cba81e498fee5e",
+    "file_name": "GTEX-QLQW-0001-SM-5URCU.cram",
+    "file_size": 60181584239
+  },
+  {
+    "object_id": "anv:dg.ANV0/2ae90db4-cf3f-4f5b-b123-194d672a8bbf",
+    "md5sum": "275098cdec344c3c07d0df336dbd32bb",
+    "file_name": "GTEX-15TU5-0004-SM-6UH2D.cram",
+    "file_size": 50344828854
+  },
+  {
+    "object_id": "anv:dg.ANV0/cc190054-52d2-4c97-befd-b7498bbc320c",
+    "md5sum": "8c1e5ca129d89a2a9387d8ad4507ecd9",
+    "file_name": "GTEX-14PKU-0004-SM-7DLF7.cram",
+    "file_size": 34902068283
+  },
+  {
+    "object_id": "anv:dg.ANV0/4fadd022-5228-4b93-83c6-97df6eeacd97",
+    "md5sum": "67c525b592df346b1a18160cedb9532c",
+    "file_name": "GTEX-11ZUS-0003-SM-6WBU3.cram",
+    "file_size": 51188543610
+  },
+  {
+    "object_id": "anv:dg.ANV0/501e35ce-2961-4809-b32d-23434cbfa00a",
+    "md5sum": "0505071b5500585dec5d8d4cd341e893",
+    "file_name": "GTEX-X585-0003-SM-5URCW.cram",
+    "file_size": 59373683047
+  },
+  {
+    "object_id": "anv:dg.ANV0/6a7b06df-32d6-4a20-b3e5-fedfdeae8561",
+    "md5sum": "05ad686e7a778418d090d70cdcba6f7a",
+    "file_name": "GTEX-1A3MX-0002-SM-7J38V.cram",
+    "file_size": 28921852064
+  },
+  {
+    "object_id": "anv:dg.ANV0/e4e11af1-4b5f-4a21-b962-bebc03640474",
+    "md5sum": "e1fbec5ba83526c46d4cc7cdbe474639",
+    "file_name": "GTEX-14PJ2-0002-SM-7DROD.cram",
+    "file_size": 35085456275
+  },
+  {
+    "object_id": "anv:dg.ANV0/4e61ade6-4f92-424d-b78e-d17ff1dfacc4",
+    "md5sum": "7f2cab84713cfb8ecedd31f95f42fa89",
+    "file_name": "GTEX-NL3G-0010-SM-7DRPG.cram",
+    "file_size": 32810217485
+  },
+  {
+    "object_id": "anv:dg.ANV0/16392e9a-eb1f-4d9d-8ac4-9bbca2e0dfb8",
+    "md5sum": "8660b1077186ecc0f788285abf608191",
+    "file_name": "GTEX-1399U-1926-SM-DLIQQ.cram",
+    "file_size": 56658171106
+  },
+  {
+    "object_id": "anv:dg.ANV0/ad47e7be-9ad3-4c84-a16f-88eddebf2334",
+    "md5sum": "9c03de0e181318dd85077d9b6ff9a2f3",
+    "file_name": "GTEX-1OJC3-0003-SM-DJWXZ.cram",
+    "file_size": 42707836661
+  },
+  {
+    "object_id": "anv:dg.ANV0/e961c3dc-6c4b-4ab9-9005-fa6cf97ad333",
+    "md5sum": "71be3ea1dd666fb1acc1f261a1008949",
+    "file_name": "GTEX-15CHR-0002-SM-7DLH5.cram",
+    "file_size": 39991632150
+  },
+  {
+    "object_id": "anv:dg.ANV0/afd84bef-a934-4349-8599-846709098740",
+    "md5sum": "f3269ac11234120a8a412bc3ebf90bdc",
+    "file_name": "GTEX-ZC5H-0003-SM-6UH3C.cram",
+    "file_size": 51539558628
+  },
+  {
+    "object_id": "anv:dg.ANV0/dba329c0-49b3-4f32-bbd6-f588afd5303b",
+    "md5sum": "b52a09215372419261926046eefbd9c5",
+    "file_name": "GTEX-14PHY-0002-SM-7DLFV.cram",
+    "file_size": 33639014666
+  },
+  {
+    "object_id": "anv:dg.ANV0/762e16cf-5def-4f7e-bed5-04b37c38b958",
+    "md5sum": "79a65b31bbdb028041096e758130d4d3",
+    "file_name": "GTEX-ZE7O-0002-SM-6UH3I.cram",
+    "file_size": 49541477046
+  },
+  {
+    "object_id": "anv:dg.ANV0/d452add6-e711-4ffe-a9f4-d15bd93c5ec6",
+    "md5sum": "1b1bc9997361092a7339ecc728419662",
+    "file_name": "GTEX-11NSD-0126-SM-DLIPG.cram",
+    "file_size": 42259287354
+  },
+  {
+    "object_id": "anv:dg.ANV0/3788d091-fc4f-4653-87a2-ab14dc61f3a8",
+    "md5sum": "62f8f2fff7f4ef92e886ea85893ba2ff",
+    "file_name": "GTEX-YB5E-0003-SM-AYKVK.cram",
+    "file_size": 60955848678
+  },
+  {
+    "object_id": "anv:dg.ANV0/53e07ee4-4c6d-40d0-abfe-632f91ffed47",
+    "md5sum": "9bf8be8603e229bdcb44dbf94dbb63ce",
+    "file_name": "GTEX-1GN2E-0003-SM-7J3AB.cram",
+    "file_size": 33943461391
+  },
+  {
+    "object_id": "anv:dg.ANV0/92bdf8d5-46f2-46c1-8d5d-c799d7259031",
+    "md5sum": "db3ae0d851a01d12ac6c583f4d077328",
+    "file_name": "GTEX-XGQ4-0001-SM-5SOEG.cram",
+    "file_size": 95066543457
+  },
+  {
+    "object_id": "anv:dg.ANV0/f73ffeef-3a71-42d0-88f4-3b9ee12ed86c",
+    "md5sum": "1b72d0f9832448de64001a423fe4122f",
+    "file_name": "GTEX-131XW-0002-SM-7DROR.cram",
+    "file_size": 32932833672
+  },
+  {
+    "object_id": "anv:dg.ANV0/e43a74ff-5360-4a22-a4ce-4ef3e9ac65a8",
+    "md5sum": "f5702f357ec619f8f1681ed1d2098134",
+    "file_name": "GTEX-18D9U-0001-SM-DJWXR.cram",
+    "file_size": 39648476918
+  },
+  {
+    "object_id": "anv:dg.ANV0/deac51b7-d834-4706-b394-c9c1675a8f87",
+    "md5sum": "26094112b3247144f4e5edb690fb72ce",
+    "file_name": "GTEX-1F75B-0003-SM-7J3AW.cram",
+    "file_size": 40380001992
+  },
+  {
+    "object_id": "anv:dg.ANV0/3c0dcbfa-815a-45a0-a828-f9e40f1dfc89",
+    "md5sum": "f9b8b723dc5b22a2c1012c4a325f9d49",
+    "file_name": "GTEX-1LVAM-0004-SM-DJWWR.cram",
+    "file_size": 42960539902
+  },
+  {
+    "object_id": "anv:dg.ANV0/8dce008e-c2ba-4076-b220-c8335c89e137",
+    "md5sum": "7aa4a8ecbb8fc81ae0ea0306791985f5",
+    "file_name": "GTEX-11PRG-0004-SM-6WBUN.cram",
+    "file_size": 53214566568
+  },
+  {
+    "object_id": "anv:dg.ANV0/4cc4ee36-d69f-42ad-a527-d451b3f9db28",
+    "md5sum": "aa3f599837cb8b93541d3338d7f3b536",
+    "file_name": "GTEX-S4UY-0003-SM-5JK3Y.cram",
+    "file_size": 69213453893
+  },
+  {
+    "object_id": "anv:dg.ANV0/6f30626f-a7d9-4c14-bf8c-e6610f1f11c7",
+    "md5sum": "f99cfbc88c2d0de0d5bdb5ea5f0aefbe",
+    "file_name": "GTEX-14PJ4-0004-SM-7DROM.cram",
+    "file_size": 39576412052
+  },
+  {
+    "object_id": "anv:dg.ANV0/1f2ee282-60c5-4944-b8ce-2aa4f78b71b9",
+    "md5sum": "1baf978b66d8dc845351948735156573",
+    "file_name": "GTEX-11ZTT-0003-SM-6WBU4.cram",
+    "file_size": 51723541616
+  },
+  {
+    "object_id": "anv:dg.ANV0/faac72c3-45fa-4b2d-b267-39482beebe6b",
+    "md5sum": "f9febb00f1922d1f81239e87c876d198",
+    "file_name": "GTEX-12WSI-0004-SM-6WSCD.cram",
+    "file_size": 66134179236
+  },
+  {
+    "object_id": "anv:dg.ANV0/235b492f-61a8-4144-95fe-ffc275c0774d",
+    "md5sum": "829f81885e3777422c35feeaaaa28448",
+    "file_name": "GTEX-13U4I-0004-SM-6WSAN.cram",
+    "file_size": 51226480779
+  },
+  {
+    "object_id": "anv:dg.ANV0/cc2faadb-fbfd-4a67-be64-14c5118322cb",
+    "md5sum": "6e52ac49154f935d76057104a197f518",
+    "file_name": "GTEX-14H4A-0003-SM-7DRO5.cram",
+    "file_size": 38467867222
+  },
+  {
+    "object_id": "anv:dg.ANV0/ad5c19ff-1c1f-4341-9d87-f0811b40cd51",
+    "md5sum": "e58598968545762b912d50c055ef8e9b",
+    "file_name": "GTEX-PWOO-0004-SM-5JK4A.cram",
+    "file_size": 79616495436
+  },
+  {
+    "object_id": "anv:dg.ANV0/95cac3e6-8d6b-460d-a24f-010a5ee2c4fb",
+    "md5sum": "4dca3900618dc201f82dca46ed1d604b",
+    "file_name": "GTEX-XOT4-0001-SM-5URCM.cram",
+    "file_size": 58994940450
+  },
+  {
+    "object_id": "anv:dg.ANV0/4ff734de-c985-4475-bd39-da1a531b081b",
+    "md5sum": "08844129bdb871e6face99814c3a3e90",
+    "file_name": "GTEX-WQUQ-0002-SM-6WBSD.cram",
+    "file_size": 49152831180
+  },
+  {
+    "object_id": "anv:dg.ANV0/3e4eb95b-53ce-477a-a44c-b8df85c28fb2",
+    "md5sum": "a558375f560ff2f162fb4d31e9cf261d",
+    "file_name": "GTEX-11DXY-0004-SM-6WBTO.cram",
+    "file_size": 62399565628
+  },
+  {
+    "object_id": "anv:dg.ANV0/02003d61-afc9-4696-9102-cfd41e1a4979",
+    "md5sum": "7e966d0479ecc0fe734f6d232d99a8fb",
+    "file_name": "GTEX-S3XE-0003-SM-6WBUO.cram",
+    "file_size": 50202283062
+  },
+  {
+    "object_id": "anv:dg.ANV0/a819c1f4-7aa6-4ea0-873e-139edf54dc57",
+    "md5sum": "e5830a4191d6f8fd02094e0a4865aef1",
+    "file_name": "GTEX-1192X-0004-SM-6WBTF.cram",
+    "file_size": 49879620181
+  },
+  {
+    "object_id": "anv:dg.ANV0/2d2bd9e0-e1a7-4bb5-b747-407e2f4052a2",
+    "md5sum": "e7d2e5151d06c82696cbdc47d34158ac",
+    "file_name": "GTEX-11LCK-0002-SM-6WBSW.cram",
+    "file_size": 53319618124
+  },
+  {
+    "object_id": "anv:dg.ANV0/7c13ca82-2e0a-4941-b4ce-a3f77cc3066e",
+    "md5sum": "430cfb66bc5c08f7e542ae5adc2b07f3",
+    "file_name": "GTEX-ZAJG-0001-SM-6UH3R.cram",
+    "file_size": 51600632458
+  },
+  {
+    "object_id": "anv:dg.ANV0/30caf488-386a-4b59-9cf8-fc7cbd7836c0",
+    "md5sum": "a2ed82a4a5be6eb945008f0e04cb33da",
+    "file_name": "GTEX-13IVO-0004-SM-6WSBI.cram",
+    "file_size": 48612599942
+  },
+  {
+    "object_id": "anv:dg.ANV0/39b2567a-a375-4e06-8dbd-417d40c66037",
+    "md5sum": "0643afa3e27b8325c9125e7ce184686e",
+    "file_name": "GTEX-1GZ4I-0002-SM-7J3AA.cram",
+    "file_size": 38967739330
+  },
+  {
+    "object_id": "anv:dg.ANV0/2e12e3ff-ef06-4230-91cd-fd043412f8d8",
+    "md5sum": "345f7fac5bcd709079ba421e4b206b3c",
+    "file_name": "GTEX-ZLWG-0001-SM-6WBS7.cram",
+    "file_size": 52543878571
+  },
+  {
+    "object_id": "anv:dg.ANV0/e13ca057-68ef-4040-a67c-8372e981e278",
+    "md5sum": "e4593d61fd70c7a152ea5a6fb5d8b798",
+    "file_name": "GTEX-1117F-0003-SM-6WBT7.cram",
+    "file_size": 49755594764
+  },
+  {
+    "object_id": "anv:dg.ANV0/f316940c-cd28-4727-892b-c896eade4740",
+    "md5sum": "5d1386547b859c4bc3619d6760149a4d",
+    "file_name": "GTEX-1IDFM-0003-SM-DCCZO.cram",
+    "file_size": 44821849991
+  },
+  {
+    "object_id": "anv:dg.ANV0/ff8de61b-7f30-40f3-aa7a-41dad80ae026",
+    "md5sum": "3b8e60165a83bbcc192a52098a99252b",
+    "file_name": "GTEX-12ZZW-0003-SM-6WSBT.cram",
+    "file_size": 47078162369
+  },
+  {
+    "object_id": "anv:dg.ANV0/d8eb8ac2-9144-4016-82f7-fdf0abbf6a80",
+    "md5sum": "cdfa923bb25620590d88c031973b14da",
+    "file_name": "GTEX-17JCI-0004-SM-6UH23.cram",
+    "file_size": 49769082732
+  },
+  {
+    "object_id": "anv:dg.ANV0/92c89f03-a237-4a80-bbff-04599089be24",
+    "md5sum": "04e06ba0eaf711bd58626424b6c5d291",
+    "file_name": "GTEX-S7SF-0003-SM-5JK43.cram",
+    "file_size": 39013423254
+  },
+  {
+    "object_id": "anv:dg.ANV0/7e0f6c00-aa92-4f68-a7ac-ba708bb8357c",
+    "md5sum": "955643f5dd0539e0f7d9a05874ea98a8",
+    "file_name": "GTEX-SSA3-0001-SM-5URCI.cram",
+    "file_size": 64206286117
+  },
+  {
+    "object_id": "anv:dg.ANV0/58978f47-aebe-4e9d-af2c-70e4b68abed8",
+    "md5sum": "43a2f38cf28f8ad924bdfaf14be9cf7d",
+    "file_name": "GTEX-1BAJH-0003-SM-7J39G.cram",
+    "file_size": 32822766613
+  },
+  {
+    "object_id": "anv:dg.ANV0/d912e55e-c4d0-44dd-ae9c-fe76774255ab",
+    "md5sum": "2309f8599d273929d50a22b8e667ba5a",
+    "file_name": "GTEX-15UF6-0001-SM-6UH2E.cram",
+    "file_size": 50306430051
+  },
+  {
+    "object_id": "anv:dg.ANV0/2ccd2915-02e3-40c4-815f-dc02288a3f5a",
+    "md5sum": "56500d8cd3c0925f29a49f605de96871",
+    "file_name": "GTEX-13OW8-0002-SM-6WSAW.cram",
+    "file_size": 50955020987
+  },
+  {
+    "object_id": "anv:dg.ANV0/7c12d0af-4d2d-4fa8-b87c-1ad5f5f82327",
+    "md5sum": "d1cca57c5e759dc28ce48b9df3cb9b52",
+    "file_name": "GTEX-183FY-0003-SM-6UH1R.cram",
+    "file_size": 47403924136
+  },
+  {
+    "object_id": "anv:dg.ANV0/e4962860-1d75-411d-85ee-3e9658356f2f",
+    "md5sum": "1c0a8fb73ef36c22cfe7f809bcbb37da",
+    "file_name": "GTEX-18A67-0003-SM-DJWXP.cram",
+    "file_size": 39637524912
+  },
+  {
+    "object_id": "anv:dg.ANV0/dbb9783e-b7b4-4697-b45b-dc43d0b38142",
+    "md5sum": "099e2d02d5513f1b885d71b4c21af296",
+    "file_name": "GTEX-S7PM-0926-SM-5JK36.cram",
+    "file_size": 87922934305
+  },
+  {
+    "object_id": "anv:dg.ANV0/fe42f858-4136-4253-a81e-2f0506320e85",
+    "md5sum": "6ee7030947991bb01fe4eedaf7b019c6",
+    "file_name": "GTEX-139UC-0726-SM-DLIOD.cram",
+    "file_size": 42795598212
+  },
+  {
+    "object_id": "anv:dg.ANV0/35f135f9-015f-44ff-a966-82085c3be848",
+    "md5sum": "922599df1a8a1fbf555394b0c59dc4bb",
+    "file_name": "GTEX-1NT2E-0826-SM-DO3XN.cram",
+    "file_size": 41889126607
+  },
+  {
+    "object_id": "anv:dg.ANV0/78e33713-5e58-407b-8f97-25fafc1aec60",
+    "md5sum": "a261f41dffc0d7feb3fb880bc7e30c61",
+    "file_name": "GTEX-12696-0326-SM-DLIOI.cram",
+    "file_size": 42144519299
+  },
+  {
+    "object_id": "anv:dg.ANV0/b3c86c74-67a9-4b71-9f53-e6a85854825a",
+    "md5sum": "01d9220c1c3265814afa66644d20c588",
+    "file_name": "GTEX-13O1R-0002-SM-6WSB4.cram",
+    "file_size": 87420756340
+  },
+  {
+    "object_id": "anv:dg.ANV0/49a0d2a5-4b7b-48eb-a42b-1814ce63f563",
+    "md5sum": "a6900f499025e0b22e185842540c174e",
+    "file_name": "GTEX-15FZZ-1026-SM-DLL3J.cram",
+    "file_size": 51921069253
+  },
+  {
+    "object_id": "anv:dg.ANV0/9ba5e9bf-e427-4e3c-8843-95fd812a1033",
+    "md5sum": "00ef841444822ba9460884a4f32a2cb3",
+    "file_name": "GTEX-11EI6-0004-SM-7FG6D.cram",
+    "file_size": 42362111036
+  },
+  {
+    "object_id": "anv:dg.ANV0/a8661ce9-4367-4365-8cba-6bffc7cd7023",
+    "md5sum": "3efe1f0b292e96916dcbf9f94af573c5",
+    "file_name": "GTEX-15CHC-0001-SM-7DLH1.cram",
+    "file_size": 35707932072
+  },
+  {
+    "object_id": "anv:dg.ANV0/9eaabe21-39c6-4ab4-9b54-14a30e6ebafe",
+    "md5sum": "c91d569877f1b605516dbb32e1be94c9",
+    "file_name": "GTEX-18D9A-0126-SM-DLL4R.cram",
+    "file_size": 37601722190
+  },
+  {
+    "object_id": "anv:dg.ANV0/53a5ec64-b2ba-4142-8751-bfdf144f05dd",
+    "md5sum": "4d1a0d6309c63279819c887d82e6c486",
+    "file_name": "GTEX-ZT9X-0002-SM-6WBS9.cram",
+    "file_size": 52696742586
+  },
+  {
+    "object_id": "anv:dg.ANV0/ad1cd4ce-76e1-4ffe-8d9d-c3a3eb391626",
+    "md5sum": "dae3669e2cfc34246a27cab498ef565a",
+    "file_name": "GTEX-X4XX-0004-SM-5URCR.cram",
+    "file_size": 58722651710
+  },
+  {
+    "object_id": "anv:dg.ANV0/f2308183-f61b-466c-8101-974c1b03e17f",
+    "md5sum": "6e6de9fb3cfc652adcc208acef8dfc24",
+    "file_name": "GTEX-WXYG-0001-SM-5SOE5.cram",
+    "file_size": 61563273944
+  },
+  {
+    "object_id": "anv:dg.ANV0/f2c6903b-c8ca-4f77-b8a4-39ad4feb7806",
+    "md5sum": "ebceb8c479c33f4b31b87600e54e5bbe",
+    "file_name": "GTEX-WFG8-0004-SM-5URCY.cram",
+    "file_size": 70170074690
+  },
+  {
+    "object_id": "anv:dg.ANV0/be3f474c-3ce7-474f-9f94-3c501adb89c6",
+    "md5sum": "6cbb2f41cebf695f3d4b9addd8a71ccc",
+    "file_name": "GTEX-QEG4-0003-SM-5URCG.cram",
+    "file_size": 56173929651
+  },
+  {
+    "object_id": "anv:dg.ANV0/52ad802e-5b08-480a-902a-5ed1ad8dd4a1",
+    "md5sum": "0564ac261851cc8a71eb0a7a398642bd",
+    "file_name": "GTEX-15CHQ-0002-SM-7DLEY.cram",
+    "file_size": 35968420341
+  },
+  {
+    "object_id": "anv:dg.ANV0/5c6295cc-f647-44b1-bfb1-7c64cea6416f",
+    "md5sum": "4c8cbfd86c6192ade638feda3b753920",
+    "file_name": "GTEX-14B4R-0004-SM-7DRQ2.cram",
+    "file_size": 32946069346
+  },
+  {
+    "object_id": "anv:dg.ANV0/4e5a31e7-4dcd-47ff-8999-16c9dc511475",
+    "md5sum": "cfc0cb2af41608cbfd6af2e9138a95dc",
+    "file_name": "GTEX-16NGA-0004-SM-6UH29.cram",
+    "file_size": 48096129500
+  },
+  {
+    "object_id": "anv:dg.ANV0/a0fd0e9d-15da-4d0a-bae3-8ccce7569898",
+    "md5sum": "93e4c35c081e97a0a17918a329ace5c5",
+    "file_name": "GTEX-OXRK-0004-SM-5JK32.cram",
+    "file_size": 75308806323
+  },
+  {
+    "object_id": "anv:dg.ANV0/6b8f4f01-1748-4ae5-a77c-3d2f6bcbef2c",
+    "md5sum": "e48948a0a25f926c7c49917d988680dd",
+    "file_name": "GTEX-U3ZH-0003-SM-5URBK.cram",
+    "file_size": 55085431296
+  },
+  {
+    "object_id": "anv:dg.ANV0/0063d342-cc47-41b3-9dd5-65be27e7de09",
+    "md5sum": "9b753448dcaf3152b2982692053364b8",
+    "file_name": "GTEX-WWTW-0426-SM-DMRPS.cram",
+    "file_size": 49600157079
+  },
+  {
+    "object_id": "anv:dg.ANV0/0932b0f8-9a82-41db-b0a2-b5f6524de048",
+    "md5sum": "8c38b477f9f148684638055542affc0c",
+    "file_name": "GTEX-1JMPZ-0004-SM-DJWX4.cram",
+    "file_size": 38887550001
+  },
+  {
+    "object_id": "anv:dg.ANV0/871015b0-6044-4335-b85c-d51fdc08b0e8",
+    "md5sum": "e6424ac72f761005929f01b720ac8967",
+    "file_name": "GTEX-14E6E-0001-SM-7DRNZ.cram",
+    "file_size": 32330730847
+  },
+  {
+    "object_id": "anv:dg.ANV0/55172c3d-85c4-42c7-b4b8-46fa816422c8",
+    "md5sum": "38bca4d80ddafdbca09df679615621d0",
+    "file_name": "GTEX-1MJK3-0003-SM-DJWWQ.cram",
+    "file_size": 42563988346
+  },
+  {
+    "object_id": "anv:dg.ANV0/0dc34133-0c9b-44ee-8407-8fc7e8d93c66",
+    "md5sum": "7c3f5faab96754b9cba4dfcc0312e85d",
+    "file_name": "GTEX-16NPV-0003-SM-6UH1Q.cram",
+    "file_size": 51861836604
+  },
+  {
+    "object_id": "anv:dg.ANV0/a71c6f46-fd2c-4f58-9e71-23105dccf1b9",
+    "md5sum": "24f37db602b4566e13748db4b30ee79f",
+    "file_name": "GTEX-14PKV-0002-SM-7DLG9.cram",
+    "file_size": 39082844676
+  },
+  {
+    "object_id": "anv:dg.ANV0/24ee636f-b021-418b-a67d-3c8c37cb4fcd",
+    "md5sum": "bb35ac87ec11833b28966444be0d80be",
+    "file_name": "GTEX-11O72-1726-SM-DLIP2.cram",
+    "file_size": 35491283301
+  },
+  {
+    "object_id": "anv:dg.ANV0/bf2cc54a-a072-44b3-87e5-41e2fad9981a",
+    "md5sum": "8015cefdde1c870ee5ddd5df426d7e22",
+    "file_name": "GTEX-TMZS-0002-SM-5URDR.cram",
+    "file_size": 63486627506
+  },
+  {
+    "object_id": "anv:dg.ANV0/ea3d6320-9c94-4209-bd73-a30b4ddc9190",
+    "md5sum": "839e5830cb4cb6c6be0b4ce069486513",
+    "file_name": "GTEX-WRHU-0003-SM-5JK4F.cram",
+    "file_size": 59570342531
+  },
+  {
+    "object_id": "anv:dg.ANV0/02e710ab-bb4d-44ba-bceb-92c16f0669ad",
+    "md5sum": "fa1b948ced984acd1b4c6d3ce0eb61a0",
+    "file_name": "GTEX-1QL29-0002-SM-DLIPA.cram",
+    "file_size": 40993743900
+  },
+  {
+    "object_id": "anv:dg.ANV0/a05ad16f-1437-4fe8-84dc-95449a7d31b7",
+    "md5sum": "7f276609afa59a40b6cdfb5d75466d11",
+    "file_name": "GTEX-R55G-0003-SM-5URBQ.cram",
+    "file_size": 59975282758
+  },
+  {
+    "object_id": "anv:dg.ANV0/5cbd2e26-db86-401d-af6d-d607e3b0bfcb",
+    "md5sum": "039120a50820fb1d0b8e64b322a331f9",
+    "file_name": "GTEX-VJWN-0003-SM-7DRQA.cram",
+    "file_size": 49721087171
+  },
+  {
+    "object_id": "anv:dg.ANV0/5927cc66-6048-4a23-8f45-26e45fa3de1d",
+    "md5sum": "8b5bb882439b38c4509f878976821f17",
+    "file_name": "GTEX-ZZPT-0002-SM-6WBUG.cram",
+    "file_size": 49247308173
+  },
+  {
+    "object_id": "anv:dg.ANV0/b294021b-195d-461f-a6fc-b97bb6ced810",
+    "md5sum": "0fe1cf7b8d1cf7408c24be1bc222a53a",
+    "file_name": "GTEX-ZPU1-0002-SM-6WBSJ.cram",
+    "file_size": 49284452546
+  },
+  {
+    "object_id": "anv:dg.ANV0/6ea39bf2-6f9a-4761-9fd2-5e900cd0b258",
+    "md5sum": "8222599aefb51c3973e510cb09b96fe7",
+    "file_name": "GTEX-13113-0004-SM-DO3XJ.cram",
+    "file_size": 38823182520
+  },
+  {
+    "object_id": "anv:dg.ANV0/7e570c5e-4403-4e54-a878-854036e631b4",
+    "md5sum": "1446c61700f87ec257c9c175b660b99b",
+    "file_name": "GTEX-ZVZP-0003-SM-6WBSB.cram",
+    "file_size": 48244416294
+  },
+  {
+    "object_id": "anv:dg.ANV0/a1d74a11-1d8d-4670-abd4-8decc624681f",
+    "md5sum": "dcc93e1b6eb3263dbd6b2c3fbd6d218a",
+    "file_name": "GTEX-WRHK-0003-SM-6WBUL.cram",
+    "file_size": 51079539387
+  },
+  {
+    "object_id": "anv:dg.ANV0/0b6427d8-b570-4a3a-8100-3578139ba2aa",
+    "md5sum": "59b42687cb52db3d5107786420ae2e2e",
+    "file_name": "GTEX-1GZ2Q-0002-SM-7J3AK.cram",
+    "file_size": 33969446606
+  },
+  {
+    "object_id": "anv:dg.ANV0/6a86adda-e56a-428c-ba7e-b493569fc322",
+    "md5sum": "8d35116651f1678d1d05cfcca7cd622f",
+    "file_name": "GTEX-13OVJ-0001-SM-6WSAU.cram",
+    "file_size": 51019655382
+  },
+  {
+    "object_id": "anv:dg.ANV0/ca5bf160-d5a4-419c-8b6f-83e4dc7e9b68",
+    "md5sum": "9d832d0e2e71b208a9cd04eff71d6812",
+    "file_name": "GTEX-WEY5-0003-SM-5URDM.cram",
+    "file_size": 75534528556
+  },
+  {
+    "object_id": "anv:dg.ANV0/d2bddf6b-e0d1-4a9d-b80c-f8131f453996",
+    "md5sum": "07af98926f07e93a52a4583f281fb4a7",
+    "file_name": "GTEX-ZV68-0001-SM-6WBS8.cram",
+    "file_size": 50636519533
+  },
+  {
+    "object_id": "anv:dg.ANV0/3da8be3f-a1aa-4af5-b157-db5806c8f4ff",
+    "md5sum": "864f9ed2269544a1094050eb73224fa7",
+    "file_name": "GTEX-1O9I2-0004-SM-DJWWK.cram",
+    "file_size": 35612062273
+  },
+  {
+    "object_id": "anv:dg.ANV0/96e6bd3e-850d-41dd-a2af-9cf688c07d1b",
+    "md5sum": "58d8385eabb687d9127c2dd96ac8bf67",
+    "file_name": "GTEX-1K2DU-0003-SM-DJWWE.cram",
+    "file_size": 37852058284
+  },
+  {
+    "object_id": "anv:dg.ANV0/7b55e4df-15e3-4616-a0ae-f2a640e9ea05",
+    "md5sum": "4ed32dbf6fbcdd8cf2cf42c6b23ca7be",
+    "file_name": "GTEX-1313W-0004-SM-7DRP8.cram",
+    "file_size": 38143751847
+  },
+  {
+    "object_id": "anv:dg.ANV0/a9e29b20-7b3b-41dd-954d-06efd6708baa",
+    "md5sum": "cbbef43b9089958f230a96e7ddb97078",
+    "file_name": "GTEX-16GPK-0003-SM-6UH2S.cram",
+    "file_size": 54500624360
+  },
+  {
+    "object_id": "anv:dg.ANV0/283c578a-0813-4391-9161-e4f71a6310a2",
+    "md5sum": "bb52d98b12b3349f20dbd87867a643cb",
+    "file_name": "GTEX-12WSE-0002-SM-6WSCA.cram",
+    "file_size": 53715885252
+  },
+  {
+    "object_id": "anv:dg.ANV0/a6d62cff-7ae6-4037-a34c-7f88321636b1",
+    "md5sum": "2969f9f2765a867f0bb0595013588686",
+    "file_name": "GTEX-1A32A-0001-SM-7J3A1.cram",
+    "file_size": 36703804835
+  },
+  {
+    "object_id": "anv:dg.ANV0/b13b8dd3-e86b-4ad7-b95e-def0d033de4d",
+    "md5sum": "5433ec32ae365fac52bc4c2da7c1f564",
+    "file_name": "GTEX-1B8KE-0004-SM-7J39M.cram",
+    "file_size": 36201859143
+  },
+  {
+    "object_id": "anv:dg.ANV0/6319874f-75bc-4eb9-af98-00a4636bc16a",
+    "md5sum": "5698627066a90fcd84aa29267244abcb",
+    "file_name": "GTEX-15SZO-0004-SM-6UH2X.cram",
+    "file_size": 50180171154
+  },
+  {
+    "object_id": "anv:dg.ANV0/86f0c565-dcac-4ebd-947f-95cd8f208e00",
+    "md5sum": "23be4d54fbbcc473d750ef5b4fa853de",
+    "file_name": "GTEX-1LBAC-0004-SM-DJWYD.cram",
+    "file_size": 41441506145
+  },
+  {
+    "object_id": "anv:dg.ANV0/ae80be16-e576-415d-8ee6-8b73bdb1c4ac",
+    "md5sum": "ccaaf6d517a3875f34d0d459cbee4e4c",
+    "file_name": "GTEX-S95S-0004-SM-5JK3U.cram",
+    "file_size": 93022622381
+  },
+  {
+    "object_id": "anv:dg.ANV0/41b7dfe5-cb51-4da4-97c0-404a0c9512ef",
+    "md5sum": "22bcf0224b35196da248c22649ab8a65",
+    "file_name": "GTEX-1A8G6-0004-SM-7J39W.cram",
+    "file_size": 43144465883
+  },
+  {
+    "object_id": "anv:dg.ANV0/14464aeb-40df-4f7e-a155-2e662e4d791d",
+    "md5sum": "d61943406e5e8ec7b18432619d98a4ab",
+    "file_name": "GTEX-14PJP-0001-SM-7DLEZ.cram",
+    "file_size": 35854014164
+  },
+  {
+    "object_id": "anv:dg.ANV0/d9640d37-2a26-4c0a-8bd1-b1497c0174b6",
+    "md5sum": "62ba14fe8642eaa82851829aaf2511b9",
+    "file_name": "GTEX-1C4CL-0003-SM-7J39F.cram",
+    "file_size": 32713583437
+  },
+  {
+    "object_id": "anv:dg.ANV0/295eb1ee-6a33-45f8-9684-93acf459f9a4",
+    "md5sum": "de76c5a2d87a373d5f80f85d134f8c09",
+    "file_name": "GTEX-PLZ6-0003-SM-5JK4W.cram",
+    "file_size": 68097748073
+  },
+  {
+    "object_id": "anv:dg.ANV0/d0090f55-18b7-4ca0-9094-17372641f1c9",
+    "md5sum": "f6a492b29db9bbc80b9b5f424ca069d4",
+    "file_name": "GTEX-OXRN-0003-SM-5JK51.cram",
+    "file_size": 57179561274
+  },
+  {
+    "object_id": "anv:dg.ANV0/11229942-8831-41b6-88e1-9b1cd05f5d20",
+    "md5sum": "86d980b7e650bb31c3bb390d6f90eef6",
+    "file_name": "GTEX-1LNCM-0004-SM-DJWYR.cram",
+    "file_size": 41828147316
+  },
+  {
+    "object_id": "anv:dg.ANV0/835fbe5d-ee77-42c8-8d33-e2ead4b3be27",
+    "md5sum": "f449bf18af7dda770ea321fb684e73a2",
+    "file_name": "GTEX-13X6K-0003-SM-6WSAL.cram",
+    "file_size": 50876611021
+  },
+  {
+    "object_id": "anv:dg.ANV0/980c6df4-103d-4d8f-96b5-43df82d5e192",
+    "md5sum": "456a641a753a8dcbf8f038cb4966333a",
+    "file_name": "GTEX-1POEN-0002-SM-DLIPZ.cram",
+    "file_size": 51860763769
+  },
+  {
+    "object_id": "anv:dg.ANV0/d8620fd0-f97f-4547-9c53-26ba2585f141",
+    "md5sum": "c5b5c233590e8cf2635eaa50ded20390",
+    "file_name": "GTEX-ZVT3-0001-SM-6WBS5.cram",
+    "file_size": 48621815631
+  },
+  {
+    "object_id": "anv:dg.ANV0/460e5f90-ae5d-4a6f-8c8f-3eddcf052c35",
+    "md5sum": "cc0f57e11648ea0b9648d29043dddcba",
+    "file_name": "GTEX-16Z82-0004-SM-6UH1S.cram",
+    "file_size": 69185603452
+  },
+  {
+    "object_id": "anv:dg.ANV0/f7cc2277-5f94-4447-a819-dc42ca654b3e",
+    "md5sum": "165deee7d6bd547afb9d925419c71e8c",
+    "file_name": "GTEX-1GPI6-0004-SM-DLION.cram",
+    "file_size": 44686582582
+  },
+  {
+    "object_id": "anv:dg.ANV0/6aad6c7f-8137-4f58-bda9-7b1bc285b405",
+    "md5sum": "372eb201955c194d5aaf33c5b8399a87",
+    "file_name": "GTEX-RM2N-0002-SM-5SOEB.cram",
+    "file_size": 56973220809
+  },
+  {
+    "object_id": "anv:dg.ANV0/4f87e1ba-2c60-4165-b8cd-8f805fb900af",
+    "md5sum": "3d0dc4086a90a41615dc87dd632f0fa2",
+    "file_name": "GTEX-SJXC-0003-SM-5JK2U.cram",
+    "file_size": 42093797935
+  },
+  {
+    "object_id": "anv:dg.ANV0/e154f352-ed81-4449-aa4f-f9229b2340ae",
+    "md5sum": "ae58b752acf903ba524d821af6ac2717",
+    "file_name": "GTEX-14E1K-0003-SM-7DROG.cram",
+    "file_size": 38719886132
+  },
+  {
+    "object_id": "anv:dg.ANV0/9526dc0a-5093-4092-b936-0fb3e64382e4",
+    "md5sum": "470aea479c6e827aded7fb44ca1adfd6",
+    "file_name": "GTEX-Z93T-0002-SM-DLIPS.cram",
+    "file_size": 42087084667
+  },
+  {
+    "object_id": "anv:dg.ANV0/0370c6a8-e343-4028-be0d-ef85a8ab0498",
+    "md5sum": "bbe03f143b38e30c7c7d312c002bf270",
+    "file_name": "GTEX-TMMY-0003-SM-5SOES.cram",
+    "file_size": 57003857416
+  },
+  {
+    "object_id": "anv:dg.ANV0/2d62460e-ebab-48e9-85c3-5fd5878d02b0",
+    "md5sum": "e3da69f44f149826bd79ac53329f2139",
+    "file_name": "GTEX-111FC-0001-SM-6WBTJ.cram",
+    "file_size": 51332177095
+  },
+  {
+    "object_id": "anv:dg.ANV0/82b1a1d2-1980-44c1-8692-2b12df0dc5b8",
+    "md5sum": "f7233671ab7d72c77b9944eaa07236ee",
+    "file_name": "GTEX-O5YT-0010-SM-5JK31.cram",
+    "file_size": 72482503003
+  },
+  {
+    "object_id": "anv:dg.ANV0/1fc855d6-9030-4d0b-b6c0-ba04599076f9",
+    "md5sum": "df04e2dd8a9169875eb6c8939bd80c08",
+    "file_name": "GTEX-XK95-0726-SM-DMRPT.cram",
+    "file_size": 46714196185
+  },
+  {
+    "object_id": "anv:dg.ANV0/054a1397-b615-4b0a-a11d-981821ae6a36",
+    "md5sum": "356534770d2919bd71af52726eb570b2",
+    "file_name": "GTEX-U3ZN-0001-SM-5URBO.cram",
+    "file_size": 53052214062
+  },
+  {
+    "object_id": "anv:dg.ANV0/a758d3d0-2fb1-403c-a94c-3c4d44d118a0",
+    "md5sum": "7ba178e9c7b63a5c986b1c6798be7f27",
+    "file_name": "GTEX-15G19-0001-SM-7J38Q.cram",
+    "file_size": 43024417870
+  },
+  {
+    "object_id": "anv:dg.ANV0/82db04fe-13bb-4c6d-8203-e3ba9dc46a67",
+    "md5sum": "272e763e06bcf5f08196a7befa31ec3d",
+    "file_name": "GTEX-1E2YA-0002-SM-DLIOW.cram",
+    "file_size": 41549401490
+  },
+  {
+    "object_id": "anv:dg.ANV0/77f99ea2-d994-4527-9f11-1f53a9893cff",
+    "md5sum": "a12e8746d4848e1eb889ebc3a4a0b9c8",
+    "file_name": "GTEX-T8EM-0001-SM-5SOEA.cram",
+    "file_size": 50601222619
+  },
+  {
+    "object_id": "anv:dg.ANV0/99e48994-a169-4041-bc52-b807ffc44f09",
+    "md5sum": "3585cc89319002f508559e1cb51dcb35",
+    "file_name": "GTEX-1B932-0003-SM-7J39T.cram",
+    "file_size": 33389400452
+  },
+  {
+    "object_id": "anv:dg.ANV0/9bec2570-8c9e-41c6-98ca-0e52a720f765",
+    "md5sum": "bf8ce5b2d0864cf947b0076abd17eec1",
+    "file_name": "GTEX-S7SE-0004-SM-5JK4E.cram",
+    "file_size": 58112021692
+  },
+  {
+    "object_id": "anv:dg.ANV0/759d38a2-7c9f-44ab-bbc9-d1ab2ac9aee9",
+    "md5sum": "74cf1e922a3f5fdcec41b457b42d46b1",
+    "file_name": "GTEX-ZGAY-0002-SM-6UH3J.cram",
+    "file_size": 50007173971
+  },
+  {
+    "object_id": "anv:dg.ANV0/e892ec1f-49c1-4987-ad08-7e00a0713d2c",
+    "md5sum": "882906f1bc0724d588d0d75887d74d5a",
+    "file_name": "GTEX-U8T8-2026-SM-7DRPP.cram",
+    "file_size": 35159760483
+  },
+  {
+    "object_id": "anv:dg.ANV0/7760fca8-a0b6-4a2d-9aa2-5562fb341bbe",
+    "md5sum": "0101baabb19b206416255abc04d7aa9e",
+    "file_name": "GTEX-1JN76-0004-SM-DJWYP.cram",
+    "file_size": 55362792181
+  },
+  {
+    "object_id": "anv:dg.ANV0/e2302422-b319-47ea-ac69-c1d878ff5141",
+    "md5sum": "bbf84cc47f2e00e514a6f89d2ca186eb",
+    "file_name": "GTEX-145LU-0004-SM-DLIOV.cram",
+    "file_size": 41484861008
+  },
+  {
+    "object_id": "anv:dg.ANV0/056e9fc6-1909-4b68-91f4-2b6ce378cbf1",
+    "md5sum": "285fc00709d16366051e45c32b88630d",
+    "file_name": "GTEX-13RTL-0826-SM-DO3WZ.cram",
+    "file_size": 41540018330
+  },
+  {
+    "object_id": "anv:dg.ANV0/20e8c380-02d4-4d1c-8292-0fbc3cbc1409",
+    "md5sum": "84648f52894c97f8a5912b852a8b8cf1",
+    "file_name": "GTEX-12WSK-0003-SM-6WSBW.cram",
+    "file_size": 52557407673
+  },
+  {
+    "object_id": "anv:dg.ANV0/cb5b2666-f30f-4b64-b0a9-2b77bfa0a9bc",
+    "md5sum": "6bef1fd80211114cda3ed04bcf28ecb1",
+    "file_name": "GTEX-ZAB5-0004-SM-6UH3A.cram",
+    "file_size": 47663443240
+  },
+  {
+    "object_id": "anv:dg.ANV0/9ccd6538-7f80-4c7f-85cf-bffc48704e1f",
+    "md5sum": "c4a520a58986a83d6342257b647cf81c",
+    "file_name": "GTEX-1EU9M-0003-SM-7J3AO.cram",
+    "file_size": 41015788311
+  },
+  {
+    "object_id": "anv:dg.ANV0/50344d37-48d2-41d1-bbe5-d9c9781d3041",
+    "md5sum": "6b69f23cd61d1a0b7812b01d4208c9c5",
+    "file_name": "GTEX-1MUQO-0004-SM-DJWY6.cram",
+    "file_size": 41852813148
+  },
+  {
+    "object_id": "anv:dg.ANV0/c10a5f0c-59c6-4ca3-b10a-428f39949a34",
+    "md5sum": "f46407daae746a2295521c3f03ff4fc1",
+    "file_name": "GTEX-14E6C-0002-SM-7DROW.cram",
+    "file_size": 39516271989
+  },
+  {
+    "object_id": "anv:dg.ANV0/f25a2a56-7bba-4046-aefa-785c7ed5546d",
+    "md5sum": "fb121b36a8686d2fb5b0e99fa78100b2",
+    "file_name": "GTEX-1MJK2-0004-SM-DJWY4.cram",
+    "file_size": 40574547725
+  },
+  {
+    "object_id": "anv:dg.ANV0/67389463-bfd5-473e-bf30-3ff63b90aaa1",
+    "md5sum": "da3f6d8adf15c885ef72822b654adc8b",
+    "file_name": "GTEX-1GN1V-0002-SM-7J3B5.cram",
+    "file_size": 35276564093
+  },
+  {
+    "object_id": "anv:dg.ANV0/2aa52d64-6d61-4e83-b6c9-b06a0b9d2014",
+    "md5sum": "b549f08cc4dc99512a03e19be2490982",
+    "file_name": "GTEX-QLQ7-0003-SM-5URCS.cram",
+    "file_size": 66113948157
+  },
+  {
+    "object_id": "anv:dg.ANV0/ede3b053-1e08-4628-8c55-3f11ab8d7e08",
+    "md5sum": "9e69e0a8fb5e98820ccf2fb7c204b794",
+    "file_name": "GTEX-139TU-0926-SM-DLIOG.cram",
+    "file_size": 43249845996
+  },
+  {
+    "object_id": "anv:dg.ANV0/4249267a-12a1-41d7-87d9-ec0f3c38fc7b",
+    "md5sum": "cfe096e6be3e4ee4410e136a75624be1",
+    "file_name": "GTEX-13112-0004-SM-6WSBQ.cram",
+    "file_size": 56127292253
+  },
+  {
+    "object_id": "anv:dg.ANV0/8a20f3e8-b56b-4cb7-a4e5-17a4984ab5d3",
+    "md5sum": "29d8ef72e89cca4dfa8025dfbd918365",
+    "file_name": "GTEX-1122O-0004-SM-6WBTE.cram",
+    "file_size": 49374726149
+  },
+  {
+    "object_id": "anv:dg.ANV0/854b0053-0750-4968-9bb1-eecbd76b28c2",
+    "md5sum": "dc486c6f54805fe154eabf09ee018b19",
+    "file_name": "GTEX-1N2DW-0003-SM-DJWYX.cram",
+    "file_size": 44526726484
+  },
+  {
+    "object_id": "anv:dg.ANV0/f48b533a-7418-457d-b614-3e9639f205f7",
+    "md5sum": "56a3f3775c45fa7f5ffebcf805d6abd9",
+    "file_name": "GTEX-1C64N-0003-SM-7J3A2.cram",
+    "file_size": 36077988482
+  }
+]
