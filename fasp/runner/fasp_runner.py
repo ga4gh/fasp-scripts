@@ -9,7 +9,7 @@ from fasp.runner.DemoCredits import Creditor
 
 class FASPRunner:
 
-	def __init__(self, pipelineLogFile=None, showCredits=None, pauseSecs=1, program=None, test=None):
+	def __init__(self, pipelineLogFile=None, showCredits=None, pauseSecs=0, program=None, test=None):
 		with open(os.path.expanduser(os.environ['FASP_SETTINGS'])) as json_file:
 			self.settings = json.load(json_file)		
 		self.searchClient = None
