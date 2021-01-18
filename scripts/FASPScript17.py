@@ -1,7 +1,7 @@
 #  IMPORTS
-import sys
+
 import datetime
-import json
+import sys
 
 # a utility 
 from fasp.runner import FASPRunner
@@ -9,35 +9,22 @@ from fasp.runner import FASPRunner
 # The implementations we're using
 from fasp.workflow import GCPLSsamtools
 from fasp.search import BigQuerySearchClient
+from fasp.search import Gen3ManifestClient
 from fasp.loc.drs_metaresolver import crdcDRSClient, anvilDRSClient
 
-class localSearchClient:
 	
-	def __init__(self):
-		# edit the following for your local copy of the manifest file
-		with open('../data/gtex/gtex-cram-manifest.json') as f:
-			self.data = json.load(f)
-			
-	def runQuery(self, query):
-		# return the first three records
-		# edit this once your ready to run this on all the files
-		results = []
-		for f in self.data[20:23]:
-			drsid = 'anv:'+f['object_id']
-			results.append([f['file_name'], drsid ])
-		return  results
 
 def main(argv):
 
 	
-	faspRunner = FASPRunner(pauseSecs=0)
+	faspRunner = FASPRunner()
 	settings = faspRunner.settings
 	
 	# Step 1 - Discovery
 	# query for relevant DRS objects
 	discoveryClients = {
 		"crdc": BigQuerySearchClient(),
-		"anv": localSearchClient()
+		"anv": Gen3ManifestClient('./fasp/data/gtex/gtex-cram-manifest_wCuries.json')
 	}
 
 
@@ -50,12 +37,13 @@ def main(argv):
 		limit 3"""		
 		
 
-	results = discoveryClients['anv'].runQuery('')  # Send the query
+	# Run both queriues abd aggregate results
+	results = discoveryClients['anv'].runQuery(3)  # Send the query
 	results += discoveryClients['crdc'].runQuery(crdcquery) 
 	
 
 	# Step 2 - DRS - set up DRS Clients	
-		# Step 2 - DRS - set up DRS Clients	
+	# TODO Use DRSMetaresolver so we don't have to build our own resolver in this code	
 	drsClients = {
 		"crdc": crdcDRSClient('~/.keys/crdc_credentials.json', 'gs'),
 		"anv": anvilDRSClient('~/.keys/anvil_credentials.json', settings['GCPProject'], 'gs')
@@ -75,12 +63,14 @@ def main(argv):
 		print("subject={}, drsID={}".format(row[0], row[1]))
 		resRow = [row[0], row[1]]
 		# Step 2 - Use DRS to get the URL
+		# This is a local solution to resolve prefixed DRS ids, DRS Metarolver would be better
 		# get the prefix
+
 		prefix, drsid = row[1].split(":", 1)
 		drsClient = drsClients[prefix]
 		print ('Sending id {} to {}'.format(drsid, drsClient.__class__.__name__))
+		
 		url = drsClient.getAccessURL(drsid)
-		print(url)
 		objInfo = drsClient.getObject(drsid)
 		#print (objInfo)
 		fileSize = objInfo['size']

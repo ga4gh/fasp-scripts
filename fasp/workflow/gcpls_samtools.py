@@ -117,7 +117,7 @@ class GCPLSsamtools:
 			}
 		  }
 		}
-		print (run_pipeline_request_body)
+		if self.debug: print ('Pipeline request\n{}'.format(run_pipeline_request_body))
 		request = self.service.projects().locations().pipelines().run(parent=self.projectLocation, body=run_pipeline_request_body)
 		response = request.execute()
 		run_id = response['name'].split('/')[-1]
