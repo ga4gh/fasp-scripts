@@ -1,4 +1,4 @@
-# Resources for the 2020 GA4GH Plenary
+# Resources for the 2020 GA4GH Plenary Horizontal Demo
 
 ## Workflows
 

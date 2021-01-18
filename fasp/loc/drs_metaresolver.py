@@ -7,24 +7,8 @@ from fasp.loc import crdcDRSClient, bdcDRSClient, Gen3DRSClient, anvilDRSClient
 from fasp.loc import sdlDRSClient
 from fasp.loc import sbcgcDRSClient, cavaticaDRSClient
 from fasp.loc import DRSClient
+from fasp.loc import GA4GHRegistryClient
 
-
-class GA4GHRegistry:
-
-	def __init__(self, url='https://registry.ga4gh.org/v1'):
-		self.hostURL = url
-	
-	# Look for registered DRS services
-	def getRegisteredServices(self, type=None):
-		registryURL = "{}/services".format(self.hostURL)
-		if type == None:
-			type = 'all'
-		else:
-			registryURL = 'https://registry.ga4gh.org/v1/services?type={}:*'.format(type)
-		print('Searching the GA4GH registry for {} services'.format(type))
-		response = requests.get(registryURL)
-		services = response.json()
-		return services
 
 
 class DRSMetaResolver(DRSClient):
@@ -121,7 +105,7 @@ class DRSMetaResolver(DRSClient):
 			
 	# Look for registered DRS services
 	def getRegisteredDRSServices(self):
-		reg = GA4GHRegistry()
+		reg = GA4GHRegistryClient()
 		drsServices = reg.getRegisteredServices('org.ga4gh:drs')
 		for service in drsServices:
 			if self.debug:

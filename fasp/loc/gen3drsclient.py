@@ -3,6 +3,7 @@ import json
 import os.path
 
 from fasp.loc import DRSClient
+#from fasp.examples.discoverySearch.getFirstModel import result
 
 
 class Gen3DRSClient(DRSClient):
@@ -56,19 +57,22 @@ class bdcDRSClient(Gen3DRSClient):
 class anvilDRSClient(Gen3DRSClient):
 	
 	
-	def __init__(self, api_key_path, userProject='', access_id=None):
+	def __init__(self, api_key_path, userProject=None, access_id=None):
 		super().__init__('https://gen3.theanvil.io','/user/credentials/api/access_token', api_key_path, access_id)
 		self.userProject = userProject
 
 	# Get a URL for fetching bytes. 
-	# Anvil requires you to provide the userAccount to which charges will be accrued
+	# Anvil GCP resources requires you to provide the userAccount to which charges will be accrued
 	# That user account must grant serviceusage.services.use access to your anvil service account
 	# e.g. to user-123@anvilprod.iam.gserviceaccount.com
 	def getAccessURL(self, object_id, access_id=None):
 		result = super().getAccessURL(object_id, access_id)
 
 		if result != None:
-			return '{}&userProject={}'.format(result, self.userProject)
+			if self.userProject == None:
+				return result
+			else:
+				return '{}&userProject={}'.format(result, self.userProject)
 		else:
 			return None
 

@@ -1,25 +1,26 @@
-import json
 import requests
-import pprint
 import sys, getopt
 
 
 class GA4GHRegistryClient:
 
-	def __init__(self):
-		self.hostURL = 'https://registry.ga4gh.org/v1'
+	def __init__(self, url='https://registry.ga4gh.org/v1'):
+		self.hostURL = url
 	
 	# Look for registered DRS services
-	def getRegisteredServices(self, serviceType=None):
-		servicesURL = "{}/services".format(self.hostURL)
-		if serviceType == None:
-			serviceType = 'all'
+	def getRegisteredServices(self, type=None):
+		registryURL = "{}/services".format(self.hostURL)
+		if type == None:
+			type = 'all'
 		else:
-			servicesURL = '{}/services?type={}:*'.format(self.hostURL, serviceType)
-		print('Searching the GA4GH registry for {} services'.format(serviceType))
-		response = requests.get(servicesURL)
+			registryURL = 'https://registry.ga4gh.org/v1/services?type={}:*'.format(type)
+		print('Searching the GA4GH registry for {} services'.format(type))
+		response = requests.get(registryURL)
 		services = response.json()
 		return services
+
+
+
 
 def usage():
 	print (sys.argv[0] +' -a all -t type')
