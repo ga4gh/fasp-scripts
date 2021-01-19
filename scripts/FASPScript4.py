@@ -22,7 +22,7 @@ def main(argv):
 	drsClient = bdcDRSClient('~/.keys/bdc_credentials.json', 'gs')
 
 	# Step 3 - set up a class that run a compute for us
-	wesClient = DNAStackWESClient('~/.keys/DNAStackWESkey.json')
+	wesClient = DNAStackWESClient('~/.keys/dnastack_wes_credentials.json')
 	
 	faspRunner.configure(searchClient, drsClient, wesClient)
 		

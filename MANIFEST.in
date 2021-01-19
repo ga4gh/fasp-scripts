@@ -1,0 +1,2 @@
+include fasp/workflow/wes/*
+include fasp/workflow/wes/samtools/*
