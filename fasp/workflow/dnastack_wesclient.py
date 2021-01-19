@@ -13,17 +13,39 @@ from fasp.workflow import WESClient
 
 class DNAStackWESClient(WESClient):
 
-	def __init__(self,  access_token_path, debug=False):
-		self.api_url_base = 'https://ddap-wes-service.prod.dnastack.com/ga4gh/wes/v1/runs'
-		full_key_path = os.path.expanduser(access_token_path)
-		with open(full_key_path) as f:
-			self.accessToken = json.load(f)['access_token']
-		self.headers = { 'Authorization': 'Bearer {}'.format(self.accessToken)}
+	def __init__(self, client_credentials_path, debug=False):
+		super(DNAStackWESClient, self).__init__('https://workspaces-wes.prod.dnastack.com/ga4gh/wes/v1/runs')
+		self.tokenUrl = 'https://wallet.prod.dnastack.com/oauth/token'
+		full_credentials_path = os.path.expanduser(client_credentials_path)
+		with open(full_credentials_path) as f:
+			self.credentials = json.load(f)
+			self.__updateAccessToken__()
+		self.headers = {'Authorization': 'Bearer {}'.format(self.accessToken)}
 		self.debug = debug
 		self.modulePath = os.path.dirname(os.path.abspath(__file__))
-		self.wdlPath = self.modulePath + '../../plenary-resources-2020/workflows'
-		
-				
+		self.wdlPath = self.modulePath + '/../../scripts/plenary-resources-2020/workflows'
+
+	def __updateAccessToken__(self):
+		if 'id' not in self.credentials or 'secret' not in self.credentials:
+			raise RuntimeError('Credentials file must have "id" and "secret" values')
+		payload = [
+			('grant_type', 'client_credentials'),
+			('client_id', self.credentials['id']),
+			('client_secret', self.credentials['secret']),
+			('scope', 'read:execution write:execution'),
+			# technically only need one of these
+			# future-proofing against support for DNAstack policy engine
+			('resource', self.api_url_base),
+			('resource', self.api_url_base + '/'),
+		]
+		response = requests.post(self.tokenUrl, payload)
+		if response.status_code == 200:
+			body = response.json()
+			self.accessToken = body['access_token']
+		else:
+			print("error getting token. status=%d, body=%s" % (response.status_code, response.content))
+			raise RuntimeError('unable to get DNAstack access token')
+
 	def runWorkflow(self, fileurl, outfile):
 		# use a temporary file to write out the input file
 		inputJson = {"md5Sum.inputFile":fileurl}
