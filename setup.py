@@ -9,5 +9,5 @@ setup(name='fasp',
                 'fasp.search',
                 'fasp.loc',
                 'fasp.workflow'],
-      package_data={'fasp': ['data/onek_drs.txt']},
+      include_package_data=True,
       )
