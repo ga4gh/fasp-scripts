@@ -1,2 +1,3 @@
 include fasp/workflow/wes/*
 include fasp/workflow/wes/samtools/*
+include fasp/workflow/wes/gwas/*

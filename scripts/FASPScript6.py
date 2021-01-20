@@ -24,7 +24,7 @@ def main(argv):
 	drsClient = sdlDRSClient('~/.keys/prj_11218_D17199.ngc')
 	
 	# Step 3 - set up a class that run a compute for us
-	wesClient = DNAStackWESClient('~/.keys/DNAStackWESkey.json')
+	wesClient = DNAStackWESClient('~/.keys/dnastack_wes_credentials.json')
 	
 	# A log is helpful to keep track of the computes we've submitted
 	faspRunner = FASPRunner()
