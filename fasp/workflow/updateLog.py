@@ -20,7 +20,7 @@ def main(argv):
 	location = 'projects/{}/locations/{}'.format(settings['GCPProject'], settings['GCPPipelineRegion'])
 	gcsam = GCPLSsamtools(location, settings['GCPOutputBucket'])
 	wesClients = { 'samtoolsSBClient':samtoolsSBClient(sbSystem, sbProject),
-					'DNAStackWESClient':DNAStackWESClient('~/.keys/DNAStackWESkey.json'),
+					'DNAStackWESClient':DNAStackWESClient('~/.keys/dnastack_wes_credentials.json'),
 					'GCPLSsamtools': gcsam,
 					'sbWESClient':sbWESClient(sbSystem,sbProject,'~/.keys/sbcgc_key.json')}
 	

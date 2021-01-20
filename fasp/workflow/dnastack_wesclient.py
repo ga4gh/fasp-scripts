@@ -23,7 +23,7 @@ class DNAStackWESClient(WESClient):
 		self.headers = {'Authorization': 'Bearer {}'.format(self.accessToken)}
 		self.debug = debug
 		self.modulePath = os.path.dirname(os.path.abspath(__file__))
-		self.wdlPath = self.modulePath + '/../../scripts/plenary-resources-2020/workflows'
+		self.wdlPath = self.modulePath + '/wes/gwas'
 
 	def __updateAccessToken__(self):
 		if 'id' not in self.credentials or 'secret' not in self.credentials:
@@ -74,7 +74,7 @@ class DNAStackWESClient(WESClient):
 				
 		
 	def runGWASWorkflowTest(self):
-
+		''' run the GWAS workflow by submitting local files '''
 		payload = {'workflow_url': 'gwas.wdl'}
 		files = {
 			'workflow_params': ('inputs.gwas.json', open(self.wdlPath+'/inputs.gwas.json', 'rb'), 'application/json'),
@@ -94,7 +94,7 @@ class DNAStackWESClient(WESClient):
 		return response.json()['run_id']
 
 	def runGWASWorkflow(self, vcfFileurl, csvfileurl):
-
+		''' run the GWAS workflow by using files accessed by DRS'''
 		# use a temporary file to write out the input file
 		inputJson = {"gwas.metadata_csv": csvfileurl, "gwas.vcf": vcfFileurl   }
 		with tempfile.TemporaryFile() as fp:
@@ -165,7 +165,7 @@ class DNAStackWESClient(WESClient):
 
 		
 if __name__ == "__main__":
-	myClient = DNAStackWESClient('~/.keys/DNAStackWESkey.json')
+	myClient = DNAStackWESClient('~/.keys/dnastack_wes_credentials.json')
 
 	res = myClient.runGWASWorkflowTest()
 	#res = myClient.runWorkflow('gs://dnastack-public-bucket/thousand_genomes_meta.csv', '')

@@ -30,7 +30,7 @@ def main(argv):
 	drsClient = sdlDRSClient('~/.keys/prj_14565.ngc', True)
 	
 	# Step 3 - set up a class that run a compute for us
-	wesClient = DNAStackWESClient('~/.keys/DNAStackWESkey.json')
+	wesClient = DNAStackWESClient('~/.keys/dnastack_wes_credentials.json')
 	
 	# repeat steps 2 and 3 for each row of the query
 	for row in query_job:

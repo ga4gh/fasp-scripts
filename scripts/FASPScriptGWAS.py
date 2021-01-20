@@ -31,7 +31,7 @@ def main(argv):
 	drsResolver = DRSMetaResolver()	
 	
 	# Step 3 - set up a class that run a compute for us
-	wesClient = DNAStackWESClient('~/.keys/DNAStackWESkey.json')
+	wesClient = DNAStackWESClient('~/.keys/dnastack_wes_credentials.json')
 	
 	# repeat steps 2 and 3 for each row of the query
 	# this example should find id's for the same file in both BioDataCatalyst and Anvil
