@@ -50,7 +50,7 @@ class DRSClient:
 			headers = self.getHeaders()
 		else:
 			headers ={}
-		headers['Content-Type'] = 'application/json'
+		#headers['Content-Type'] = 'application/json'
 		api_url = '{0}/ga4gh/drs/v1/objects/{1}/access/{2}'.format(self.api_url_base, object_id, access_id)
 		if self.debug:
 			print(api_url)
