@@ -1,17 +1,17 @@
-'''
-Client for DNAStack WES Service
-'''
-
-import requests
-import os
 import json
+import os
 import tempfile
+
 import pandas as pd
-import sys
+import requests
 
 from fasp.workflow import WESClient
 
+
 class DNAStackWESClient(WESClient):
+	"""
+	Client for DNAStack WES Service
+	"""
 
 	def __init__(self, client_credentials_path, debug=False):
 		super(DNAStackWESClient, self).__init__('https://workspaces-wes.prod.dnastack.com/ga4gh/wes/v1/runs')
@@ -19,13 +19,13 @@ class DNAStackWESClient(WESClient):
 		full_credentials_path = os.path.expanduser(client_credentials_path)
 		with open(full_credentials_path) as f:
 			self.credentials = json.load(f)
-			self.__updateAccessToken__()
-		self.headers = {'Authorization': 'Bearer {}'.format(self.accessToken)}
+			self.__updateAccessToken()
+		self.headers['Authorization'] = 'Bearer {}'.format(self.accessToken)
 		self.debug = debug
 		self.modulePath = os.path.dirname(os.path.abspath(__file__))
 		self.wdlPath = self.modulePath + '/wes/gwas'
 
-	def __updateAccessToken__(self):
+	def __updateAccessToken(self):
 		if 'id' not in self.credentials or 'secret' not in self.credentials:
 			raise RuntimeError('Credentials file must have "id" and "secret" values')
 		payload = [
@@ -48,50 +48,23 @@ class DNAStackWESClient(WESClient):
 
 	def runWorkflow(self, fileurl, outfile):
 		# use a temporary file to write out the input file
-		inputJson = {"md5Sum.inputFile":fileurl}
-		with tempfile.TemporaryFile() as fp:
-			fp.write(json.dumps(inputJson).encode('utf-8'))
-			fp.seek(0)
-			payload = {'workflow_url': 'checksum.wdl'} 
-			files = {
-				'workflow_params': ('inputs.json', fp, 'application/json'),
-				'workflow_attachment': ('checksum.wdl', open(self.modulePath+'/wes/checksum.wdl', 'rb'), 'text/plain')
-			}
+		inputs = {"md5Sum.inputFile": fileurl}
 
-		
-			response = requests.request("POST", self.api_url_base, headers=self.headers, data = payload, files = files)
-			if self.debug:
-				print(response)
-			if response.status_code == 200:
-				return response.json()['run_id']
-			elif response.status_code == 401:
-				print("WES server authentication failed")
-				sys.exit(1)
-			else:
-				print("WES run submission failed. Response status:{}".format(response.status_code))
-				sys.exit(1)
-				
-				
-		
+		return self.runGenericWorkflow(
+			workflow_url='checksum.wdl',
+			workflow_params=json.dumps(inputs),
+			workflow_attachment=('checksum.wdl', open(self.modulePath+'/wes/checksum.wdl', 'rb'), 'text/plain')
+		)
+
 	def runGWASWorkflowTest(self):
 		''' run the GWAS workflow by submitting local files '''
-		payload = {'workflow_url': 'gwas.wdl'}
-		files = {
-			'workflow_params': ('inputs.gwas.json', open(self.wdlPath+'/inputs.gwas.json', 'rb'), 'application/json'),
-			'workflow_attachment': ('gwas.wdl', open(self.wdlPath+'/gwas.wdl', 'rb'), 'text/plain')
-		}
 
-		response = requests.request("POST", self.api_url_base, headers=self.headers, data = payload, files = files)
-		if response.status_code == 200:
-			return response.json()['run_id']
-		elif response.status_code == 401:
-			print("WES server authentication failed")
-			sys.exit(1)
-		else:
-			print("WES run submission failed. Response status:{}".format(response.status_code))
-			sys.exit(1)
+		return self.runGenericWorkflow(
+			workflow_url='gwas.wdl',
+			workflow_params=open(self.wdlPath+'/inputs.gwas.json', 'rb'),
+			workflow_attachment=('gwas.wdl', open(self.wdlPath+'/gwas.wdl', 'rb'), 'text/plain')
+		)
 
-		return response.json()['run_id']
 
 	def runGWASWorkflow(self, vcfFileurl, csvfileurl):
 		''' run the GWAS workflow by using files accessed by DRS'''
@@ -100,27 +73,18 @@ class DNAStackWESClient(WESClient):
 		with tempfile.TemporaryFile() as fp:
 			fp.write(json.dumps(inputJson).encode('utf-8'))
 			fp.seek(0)
-			payload = {'workflow_url': 'gwas.wdl'}
-			files = {
+			payload = {
+				'workflow_url': 'gwas.wdl',
 				'workflow_params': ('inputs.gwas.json', fp, 'application/json'),
 				'workflow_attachment': ('gwas.wdl', open(self.wdlPath+'/gwas.wdl', 'rb'), 'text/plain')
 			}
 
-		
-			response = requests.request("POST", self.api_url_base, headers=self.headers, data = payload, files = files)
-			if self.debug:
-				print(response)
-			if response.status_code == 200:
-				return response.json()['run_id']
-			elif response.status_code == 401:
-				print("WES server authentication failed")
-				sys.exit(1)
-			else:
-				print("WES run submission failed. Response status:{}".format(response.status_code))
-				sys.exit(1)
+			return self.runGenericWorkflow(
+				workflow_url='gwas.wdl',
+				workflow_params=fp,
+				workflow_attachment=('gwas.wdl', open(self.wdlPath+'/gwas.wdl', 'rb'), 'text/plain')
+			)
 
-		return response.json()['run_id']
-		
 		
 	def addRun(self, run_id, runsdf):
 		runURL = "{}/{}".format(self.api_url_base, run_id)
@@ -167,8 +131,7 @@ class DNAStackWESClient(WESClient):
 if __name__ == "__main__":
 	myClient = DNAStackWESClient('~/.keys/dnastack_wes_credentials.json')
 
-	res = myClient.runGWASWorkflowTest()
-	#res = myClient.runWorkflow('gs://dnastack-public-bucket/thousand_genomes_meta.csv', '')
-
+	# res = myClient.runGWASWorkflowTest()
+	res = myClient.runWorkflow('gs://dnastack-public-bucket/thousand_genomes_meta.csv', '')
 
 	print(res)
