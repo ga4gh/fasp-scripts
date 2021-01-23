@@ -56,9 +56,13 @@ class FASPRunner:
 		query_job = self.searchClient.runQuery(query)  # Send the query
 		creditor.creditClass(self.searchClient)
 		# repeat steps 2 and 3 for each row of the query
+		runIds = []
 		for row in query_job:
 
-			print("subject={}, drsID={}".format(row[0], row[1]))
+			# To do - get the subject/sample name from the query
+			runKey = 'subject'
+			print("{}={}, drsID={}".format(runKey, row[0], row[1]))
+			
 		
 			# Step 2 - Use DRS to get the URL
 			objInfo = self.drsClient.getObject(row[1])
@@ -72,6 +76,7 @@ class FASPRunner:
 			if self.live:
 				pipeline_id = self.workClient.runWorkflow(url,  outfile)
 				print('workflow submitted, run:{}'.format(pipeline_id))
+				runIds.append({runKey:row[0], 'run_id':pipeline_id})
 			creditor.creditClass(self.workClient)
 			via = 'sh'
 			#pipeline_id = 'paste here'
@@ -80,4 +85,5 @@ class FASPRunner:
 			if self.live:
 				self.pipelineLogger.logRun(time, via, note,  pipeline_id, outfile, str(fileSize),
 					self.searchClient, self.drsClient, self.workClient)
-
+				
+		return runIds
