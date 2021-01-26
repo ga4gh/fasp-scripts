@@ -60,6 +60,7 @@ class DRSClient:
 			resp = response.content.decode('utf-8')
 			return json.loads(resp)['url']
 		if response.status_code == 401:
+			print('Unauthorized for that DRS id')
 			return None
 		else:
 			print (response)

@@ -3,6 +3,7 @@ from fasp.loc.gen3drsclient import Gen3DRSClient
 from fasp.loc.gen3drsclient import bdcDRSClient
 from fasp.loc.gen3drsclient import crdcDRSClient
 from fasp.loc.gen3drsclient import anvilDRSClient
+from fasp.loc.gen3drsclient import kfDRSClient
 
 from fasp.loc.sbdrsclient import sbcgcDRSClient, cavaticaDRSClient, SBDRSClient
 
