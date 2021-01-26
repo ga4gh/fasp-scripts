@@ -43,22 +43,29 @@ class Gen3DRSClient(DRSClient):
 class crdcDRSClient(Gen3DRSClient):
     
     # Mostly done by the Gen3DRSClient, this just deals with url and end point specifics
-    def __init__(self, api_key_path,  access_id=None):
+    def __init__(self, api_key_path,  access_id=None,  debug=False):
         super().__init__('https://nci-crdc.datacommons.io', '/user/credentials/api/access_token',
-            api_key_path, access_id)
+            api_key_path, access_id, debug)
 
 class bdcDRSClient(Gen3DRSClient):
     
     # Mostly done by the Gen3DRSClient, this just deals with url and end point specifics
-    def __init__(self, api_key_path, access_id=None):
+    def __init__(self, api_key_path, access_id=None,  debug=False):
         super().__init__('https://gen3.biodatacatalyst.nhlbi.nih.gov', '/user/credentials/cdis/access_token',
-            api_key_path, access_id)
+            api_key_path, access_id, debug)
+
+class kfDRSClient(Gen3DRSClient):
+    
+    # Mostly done by the Gen3DRSClient, this just deals with url and end point specifics
+    def __init__(self, api_key_path, access_id=None,  debug=False):
+        super().__init__('https://data.kidsfirstdrc.org', '/user/credentials/cdis/access_token',
+            api_key_path, access_id, debug)
 
 class anvilDRSClient(Gen3DRSClient):
 	
 	
-	def __init__(self, api_key_path, userProject=None, access_id=None):
-		super().__init__('https://gen3.theanvil.io','/user/credentials/api/access_token', api_key_path, access_id)
+	def __init__(self, api_key_path, userProject=None, access_id=None,  debug=False):
+		super().__init__('https://gen3.theanvil.io','/user/credentials/api/access_token', api_key_path, access_id, debug)
 		self.userProject = userProject
 
 	# Get a URL for fetching bytes. 

@@ -10,6 +10,14 @@ from fasp.runner.DemoCredits import Creditor
 class FASPRunner:
 
 	def __init__(self, pipelineLogFile=None, showCredits=None, pauseSecs=0, program=None, test=None):
+		"""
+		:param pipelineLogFile: path to file to which run submissions will be written. Overrides value in settings
+		:param showCredits: whether to show or read credits for different APIs or sources used boolean
+		:param pauseSecs: seconds to pause when reading credits number
+		:param program: name of program to log, if None will use inspect to determine calling module string
+		:param test: set to False to run in test mode where runs are not actually submitted boolean
+
+		"""	
 		with open(os.path.expanduser(os.environ['FASP_SETTINGS'])) as json_file:
 			self.settings = json.load(json_file)		
 		self.searchClient = None
