@@ -1,14 +1,21 @@
 import asyncio
+import os
+import json
 from fhirpy import AsyncFHIRClient
 
 
 async def main():
 	
 	endpoint = 'https://ncpi-api-fhir-service-dev.kidsfirstdrc.org'
+	full_cookie_path = os.path.expanduser('~/.keys/kf_cookies.json')
+	print(full_cookie_path)
+	with open(full_cookie_path) as f:
+			cookies = json.load(f)
+			
 	# Create an instance
 	client = AsyncFHIRClient(
         endpoint,
-        authorization='Bearer TOKEN',
+        extra_headers=cookies
     )
 
     # Search for patients

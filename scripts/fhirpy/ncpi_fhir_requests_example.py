@@ -20,10 +20,10 @@ class FHIRSearchClient:
 
 
 		next_url = "{}/Patient?gender={}".format(self.hostURL, query)
-
 		pageCount = 0
 		#resultRows = []
 		print ("_Retrieving the query_")
+		if self.debug: print(self.cookies)
 		while next_url != None :
 			if self.debug:
 				print(next_url)
@@ -95,7 +95,7 @@ def main(argv):
 	print(full_cookie_path)
 	with open(full_cookie_path) as f:
 			cookies = json.load(f)
-	searchClient = FHIRSearchClient(endpoint, cookies, debug=False)
+	searchClient = FHIRSearchClient(endpoint, cookies)
 		
 	try:
 		opts, args = getopt.getopt(argv, "hlr:", ["help", "listResources",  "runQuery"])
