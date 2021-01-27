@@ -5,6 +5,7 @@ import getopt
 
 from fasp.loc import GA4GHRegistryClient
 import pandas as pd
+#from builtins import None
 
 class DiscoverySearchClient:
 
@@ -77,7 +78,7 @@ class DiscoverySearchClient:
 	def listCatalog(self, catalog):
 		self.listTables(catalog)
 
-	def listTableInfo(self, table, verbose=True):
+	def listTableInfo(self, table, verbose=False):
 		url = "{}/table/{}/info".format(self.hostURL,table)
 		response = requests.get(url, headers=self.headers)
 		result = (response.json())
@@ -85,6 +86,24 @@ class DiscoverySearchClient:
 			print ("_Schema for table{}_".format(table))
 			pprint.pprint(result)
 		return result
+			
+	def getMappingTemplate(self, table, propList=None):
+		''' Get an empty template in which to create  mappings for property values 
+		:param table: table for which to generate a mapping template
+		:param propList: optional list of properties to include in the map
+		'''
+		schema = self.listTableInfo(table)
+		template = {}
+		for prop, details in schema['data_model']['properties'].items():
+			if propList == None or prop in propList:
+				if 'oneOf' in details:
+					vList = {}
+					for v in details['oneOf']:
+						vList[v['const']] = 'replaceThis'
+						#if titles:
+						#	vList[v['const']]['title'] = v['title']
+					template[prop] = vList
+		return template
 			
 
 	def runOneTableQuery(self, column_list, table, limit):
