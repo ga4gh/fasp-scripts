@@ -133,6 +133,7 @@ class DiscoverySearchClient:
 				 headers=self.headers, data = query2)
 			else:
 				response = requests.request("GET", next_url)
+			if self.debug: print(response.content)
 			result = (response.json())
 			if self.debug:
 				pprint.pprint(result)
@@ -152,6 +153,9 @@ class DiscoverySearchClient:
 			return df
 		else:
 			return resultRows
+
+	def query2Frame(self, query):
+		return self.runQuery(query, returnType='dataframe')
 
 
 def usage():
