@@ -154,6 +154,9 @@ class DiscoverySearchClient:
 		else:
 			return resultRows
 
+	def query2Frame(self, query):
+		return self.runQuery(query, returnType='dataframe')
+
 
 def usage():
 	print (sys.argv[0] +' -l listTables -c listCatalog -t tableInfo -r registeredServices')
