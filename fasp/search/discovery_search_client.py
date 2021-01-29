@@ -133,6 +133,7 @@ class DiscoverySearchClient:
 				 headers=self.headers, data = query2)
 			else:
 				response = requests.request("GET", next_url)
+			if self.debug: print(response.content)
 			result = (response.json())
 			if self.debug:
 				pprint.pprint(result)
