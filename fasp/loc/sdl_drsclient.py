@@ -9,6 +9,22 @@ import os
 
 from fasp.loc import DRSClient
 
+class SRADRSClient(DRSClient):
+	'''SRA DRS client with ability to convert SRA accessions to DRS ids'''
+	
+	def __init__(self, api_url_base, access_id=None, debug=False, public=False):
+		super().__init__(api_url_base, access_id, debug, public)
+
+
+	def acc2drs(self, accession, verbose=False):
+		''' get a drs id for an SRA accession id'''
+		url = '{}/idx/v1/{}'.format(self.api_url_base, accession)
+		if verbose: print(url)
+		response = requests.get(url)
+		if verbose: print(response)
+		idxResp = json.loads(response.content)
+		return idxResp
+
 class sdlDRSClient(DRSClient):
 
 	def __init__(self, ngc_file, debug=False):
