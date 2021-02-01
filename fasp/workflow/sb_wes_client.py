@@ -17,7 +17,7 @@ class sbWESClient(WESClient):
 		
 		self.project_id = project
 				
-		self.api_url_base = 'https://cgc-ga4gh-api.sbgenomics.com/ga4gh/wes/v1/runs'
+		self.api_url_base = 'https://cgc-ga4gh-api.sbgenomics.com/ga4gh/wes/v1'
 		full_key_path = os.path.expanduser(access_token_path)
 		with open(full_key_path) as f:
 			self.accessToken = json.load(f)['access_token']
@@ -54,7 +54,7 @@ class sbWESClient(WESClient):
 		  "workflow_url": app
 		}
 	
-		response = requests.request("POST", self.api_url_base, headers=self.headers, files = body)
+		response = requests.request("POST", self.api_url_base+'/runs', headers=self.headers, files = body)
 		
 		if self.debug:
 			print(response)
@@ -100,7 +100,7 @@ class sbWESClient(WESClient):
 		
 		
 	def addRun(self, run_id, runsdf):
-		runURL = "{}/{}".format(self.api_url_base, run_id)
+		runURL = "{}/{}".format(self.api_url_base+'/runs', run_id)
 		runResp = requests.get(runURL, headers=self.headers)
 		run = runResp.json()
 		
@@ -128,7 +128,7 @@ class sbWESClient(WESClient):
 				payload = {'page_token': nextPageToken}
 			else:
 				payload = {}
-			response = requests.get(self.api_url_base, headers=self.headers, params=payload)
+			response = requests.get(self.api_url_base+'/runs', headers=self.headers, params=payload)
 			rDict = response.json()
 			if 'next_page_token' in rDict.keys():
 				nextPageToken = rDict['next_page_token']
