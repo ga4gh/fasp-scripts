@@ -4,6 +4,7 @@ import time
 import subprocess, sys
 import random
 import json
+from PIL import Image, ImageDraw
 
 class Creditor():
 	def giveCredit(self, image, credit, speak=False, pauseSecs=0, voice=None):
@@ -15,12 +16,33 @@ class Creditor():
 		if settings == None:
 			with open(os.path.expanduser('./FASPSettings.json')) as json_file:
    				settings = json.load(json_file)		
+   				
 		if showCredits == None:
 			showCredits = (settings['showCredits'])
 		if showCredits:
-			return DemoCredits( speak=True, pauseSecs=pauseSecs)
+			#return DemoCredits( speak=True, pauseSecs=pauseSecs)
+			return EndCreditor()
 		else:
 			return  SilentCreditor()
+
+	def __init__(self):
+		creditsFile = os.path.dirname(os.path.abspath(__file__)) + '/credits/credits.json'
+		with open(creditsFile) as json_file:
+   			 data = json.load(json_file)
+		self.imageDir = data['imageDir']
+		self.credits = data['credits']
+		self.debug = False
+		self.issuedCredits = []
+		
+	def addRun(self):
+		return
+	
+	def closeRun(self):
+		return
+		
+	def creditClass(self, classToCredit):
+		# for now classes will be in the same list
+		self.creditFromList(classToCredit.__class__.__name__)
 
 
 class SilentCreditor(Creditor):
@@ -34,6 +56,70 @@ class SilentCreditor(Creditor):
 		
 	def creditClass(self, classToCredit, voice=None):
 		return
+	
+	def rollCredits(self):
+		return
+	 
+class EndCreditor(Creditor):
+	"""A Creditor to accumulate a list of credits to be rolled at the end"""
+	
+	def __init__(self):
+		super().__init__()
+		self.allCredits = []
+	
+	def creditFromList(self, what):
+		if what not in self.issuedCredits:
+			self.issuedCredits.append(what)
+		
+	def rollCredits(self):
+		''' List the credits '''
+		for c in self.issuedCredits:
+			if c in self.credits:
+				g4ghStd = self.credits[c]['g4ghStd']
+			else:
+				g4ghStd = False
+			print(c, g4ghStd)
+
+	def __iconCell(self, cw=30, ch=20, lw=1, color=None):
+		im = Image.new('RGB', (cw,ch), color=color)
+		draw = ImageDraw.Draw(im) 
+		draw.line((0,ch-lw, cw,ch-lw), fill='white', width=lw)
+		draw.line((cw-lw,0, cw-lw,ch-lw), fill='white', width=lw)
+		return im
+		
+	def getFASPicon(self, filePath):
+		cols = len(self.allCredits)
+		rows = 3
+		ch =20  #cellHeight
+		cw =rows*ch  #cellWidth
+		ga4ghIcon = self.__iconCell(cw, ch, color="blue")
+		nonIcon = self.__iconCell(cw, ch, color="lightgrey")
+		final_im = Image.new('RGB', (cw * cols, ch * rows))
+		x_offset = 0
+		for rn in self.allCredits:
+			y_offset = 0
+			for cr in rn:
+				if cr in self.credits:
+					ga4ghStd = self.credits[cr]['g4ghStd']
+				else:
+					ga4ghStd = False
+				if ga4ghStd:
+					im = ga4ghIcon
+				else:
+					im = nonIcon
+				final_im.paste(im, (x_offset,y_offset))
+				y_offset += im.size[1]
+			x_offset += cw
+
+		final_im.save(filePath)
+		return final_im
+
+	def addRun(self):
+		self.issuedCredits = []
+		
+	def closeRun(self):
+		self.allCredits.append(self.issuedCredits)
+	
 
 class DemoCredits(Creditor):
 	'''Created for Sept 2020 plenary demos. Not written to have any general use beyond that. Dependent on local machine specifics. Beware!
@@ -41,17 +127,11 @@ class DemoCredits(Creditor):
 	'''
 	
 	def __init__(self, voice='Victoria', speak=False, pauseSecs=0):
-		creditsFile = os.path.dirname(os.path.abspath(__file__)) + '/credits/credits.json'
-		with open(creditsFile) as json_file:
-   			 data = json.load(json_file)
-		self.imageDir = data['imageDir']
-		self.credits = data['credits']
+		super().__init__()
 		self.speak = speak
 		self.pauseSecs = pauseSecs
 		self.voice = voice
-		self.debug = False
 		
-		self.issuedCredits = []
 		#self.updateCreditsFile()
 
 	def updateCreditsFile(self):	
@@ -145,9 +225,6 @@ class DemoCredits(Creditor):
 		self.issuedCredits.append(what)
 			
 		
-	def creditClass(self, classToCredit, voice=None):
-		# for now classes will be in the same list
-		self.creditFromList(classToCredit.__class__.__name__, voice)
 
 
 if __name__ == "__main__":
