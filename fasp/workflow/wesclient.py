@@ -8,23 +8,27 @@ class WESClient:
 	api_url_base: str
 	headers: Dict[str, str]
 
+
 	def __init__(self, api_url_base):
 		self.api_url_base = api_url_base
 		self.headers = {}
 
+	@classmethod
+	def _fromRegistryEntry(cls, registryEntry):
+		instance = cls(registryEntry['url'])
+		return instance
 
-	def getServiceInfo(self, verbose=False):
-		infoURL = "{}/service-info".format(self.api_url_base)
-		if verbose: print("Get request sent to: {}".format(infoURL))
-		runResp = requests.get(infoURL)
-		if runResp.status_code == 200:
-			info = runResp.json()
-			if verbose: print(json.dumps(info, indent=2))
-			return runResp
-		
-		
+	@classmethod
+	def fromRegistryByID(cls, regID):
+		'''Get a WES service from details in the GA4GH Registry. 
+		Note: Currently this method has limited utility as it does not yet address how authentication would be passed to the client'''
+		url ='https://registry.ga4gh.org/v1/services/{}'.format(regID)
+		regEntry = requests.get(url)
+		instance = cls._fromRegistryEntry(json.loads(regEntry.content))
+		return instance
+
 	def getTaskStatus(self, run_id, verbose=False):
-		runURL = "{}/runs/{}".format(self.api_url_base, run_id)
+		runURL = "{}/{}".format(self.api_url_base, run_id)
 		if verbose: print("Get request sent to: {}".format(runURL))
 		runResp = requests.get(runURL, headers=self.headers)
 		if runResp.status_code == 200:
@@ -36,7 +40,7 @@ class WESClient:
 		print(runResp)
 		
 	def GetRunLog(self, run_id, verbose=False):
-		runURL = "{}/runs/{}".format(self.api_url_base, run_id)
+		runURL = "{}/{}".format(self.api_url_base, run_id)
 		if verbose: print("Get request sent to: {}".format(runURL))
 		runResp = requests.get(runURL, headers=self.headers)
 		if runResp.status_code == 200:
@@ -58,9 +62,8 @@ class WESClient:
 			workflow_attachment=None,
 			verbose=False
 	):
-		fullURL = self.api_url_base+'/runs'
 		if verbose:
-			print("sending to {}".format(fullURL))
+			print("sending to {}".format( self.api_url_base))
 
 		attachments = {
 			'workflow_url': (None, workflow_url,'text/plain'),
@@ -71,9 +74,8 @@ class WESClient:
 			'tags': (None, tags, 'text/plain'),
 			'workflow_attachment': workflow_attachment,
 		}
-		if verbose: print(attachments)
-			
-		response = requests.request('POST', fullURL , headers=self.headers, files=attachments)
+
+		response = requests.request('POST', self.api_url_base, headers=self.headers, files=attachments)
 		if verbose:
 			print(response.request.body)
 			print(response.text)
