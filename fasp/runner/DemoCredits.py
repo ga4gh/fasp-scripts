@@ -87,7 +87,7 @@ class EndCreditor(Creditor):
 		draw.line((cw-lw,0, cw-lw,ch-lw), fill='white', width=lw)
 		return im
 		
-	def getFASPicon(self, filePath):
+	def getFASPicon(self, filePath=None):
 		cols = len(self.allCredits)
 		rows = 3
 		ch =20  #cellHeight
@@ -111,7 +111,7 @@ class EndCreditor(Creditor):
 				y_offset += im.size[1]
 			x_offset += cw
 
-		final_im.save(filePath)
+		if filePath != None: final_im.save(filePath)
 		return final_im
 
 	def addRun(self):
