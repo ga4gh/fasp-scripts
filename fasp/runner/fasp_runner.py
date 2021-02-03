@@ -104,5 +104,5 @@ class FASPRunner:
 	def rollCredits(self):
 		self.creditor.rollCredits()
 		
-	def getFASPicon(self, filePath):
+	def getFASPicon(self, filePath=None):
 		return self.creditor.getFASPicon(filePath)
