@@ -28,7 +28,7 @@ class WESClient:
 		return instance
 
 	def getTaskStatus(self, run_id, verbose=False):
-		runURL = "{}/{}".format(self.api_url_base, run_id)
+		runURL = "{}/runs/{}".format(self.api_url_base, run_id)
 		if verbose: print("Get request sent to: {}".format(runURL))
 		runResp = requests.get(runURL, headers=self.headers)
 		if runResp.status_code == 200:
@@ -40,7 +40,7 @@ class WESClient:
 		print(runResp)
 		
 	def GetRunLog(self, run_id, verbose=False):
-		runURL = "{}/{}".format(self.api_url_base, run_id)
+		runURL = "{}/runs/{}".format(self.api_url_base, run_id)
 		if verbose: print("Get request sent to: {}".format(runURL))
 		runResp = requests.get(runURL, headers=self.headers)
 		if runResp.status_code == 200:
@@ -62,8 +62,10 @@ class WESClient:
 			workflow_attachment=None,
 			verbose=False
 	):
+
+		runURL = self.api_url_base+'/runs'
 		if verbose:
-			print("sending to {}".format( self.api_url_base))
+			print("sending to {}".format(runURL))
 
 		attachments = {
 			'workflow_url': (None, workflow_url,'text/plain'),
@@ -75,7 +77,7 @@ class WESClient:
 			'workflow_attachment': workflow_attachment,
 		}
 
-		response = requests.request('POST', self.api_url_base, headers=self.headers, files=attachments)
+		response = requests.request('POST', runURL, headers=self.headers, files=attachments)
 		if verbose:
 			print(response.request.body)
 			print(response.text)
