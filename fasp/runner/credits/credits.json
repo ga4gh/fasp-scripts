@@ -116,6 +116,28 @@
                 "Patrick Magee"
             ]
         },
+        "sbcgcWESClient": {
+            "imageFile": "samtoolsSBClient.jpg",
+            "textCredit": "Seven Bridges CGC WES API",
+            "phoneticCredit": "Seven Bridges CGC WES API",
+            "Work Stream": "Cloud",
+            "Implementation": "Seven Bridges WES",
+            "g4ghStd": true,
+            "people": [
+                "Michele Mattioni"
+            ]
+        },        
+        "cavaticaWESClient": {
+            "imageFile": "samtoolsSBClient.jpg",
+            "textCredit": "Seven Bridges Cavatica WES API",
+            "phoneticCredit": "Seven Bridges Cavatica WES API",
+            "Work Stream": "Cloud",
+            "Implementation": "Seven Bridges WES",
+            "g4ghStd": true,
+            "people": [
+                "Michele Mattioni"
+            ]
+        },        
         "sbWESClient": {
             "imageFile": "samtoolsSBClient.jpg",
             "textCredit": "Seven Bridges WES API",
