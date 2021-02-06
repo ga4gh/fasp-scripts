@@ -88,12 +88,19 @@ class DiscoverySearchClient:
 			print(json.dumps(info, indent=3))
 		return info
 			
-	def listTableColumns(self, table, descriptions=False):
+	def listTableColumns(self, table, descriptions=False, enums=False):
 		''' List the columns in a table. More compact and practical for many purposes compared with listTableInfo '''
 		schema = self.listTableInfo(table)
 		for c, v in schema['data_model']['properties'].items():
 			print (c)
-			if descriptions: print (v['$comment'])
+			if descriptions:
+				if 'description' in v: print (v['description'])
+				if '$comment' in v: print (v['$comment'])
+			if enums:
+				if 'oneOf' in v:
+					for c in v['oneOf']:
+						print ('\t\t{}'.format(c['const']))
+				if '$comment' in v: print (v['$comment'])
 			print('_______________________________________')
 			
 	def getMappingTemplate(self, table, propList=None):
