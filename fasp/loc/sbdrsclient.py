@@ -40,17 +40,23 @@ class SBDRSClient(DRSClient):
 
 
 class sbcgcDRSClient(SBDRSClient):
-    '''client for Seven Bridges Cancer Genomics Cloud DRS server'''
+    '''client for Cancer Genomics Cloud Seven Bridges DRS server'''
     
     # Mostly done by the SBDRSClient, this just deals with url and end point specifics
     def __init__(self, api_key_path, access_id, debug=False):
     	super().__init__('https://cgc-ga4gh-api.sbgenomics.com', api_key_path, 'cgc', access_id, debug=debug)
 
 class cavaticaDRSClient(SBDRSClient):
-    '''client for Cavatica DRS Server'''    
+    '''client for Cavatica Seven Bridges DRS Server'''    
     # init mostly done by the SBDRSClient, this just deals with url and end point specifics
     def __init__(self, api_key_path, access_id, debug=False):
     	super().__init__('https://cavatica-ga4gh-api.sbgenomics.com', api_key_path, 'cavatica', access_id, debug=debug)
+
+class sbbdcDRSClient(SBDRSClient):
+    '''client for BioDataCatalyst Seven Bridges DRS Server'''    
+    # init mostly done by the SBDRSClient, this just deals with url and end point specifics
+    def __init__(self, api_key_path, access_id, debug=False):
+    	super().__init__('https://ga4gh-api.sb.biodatacatalyst.nhlbi.nih.gov', api_key_path, 'bdc', access_id, debug=debug)
 
 
 

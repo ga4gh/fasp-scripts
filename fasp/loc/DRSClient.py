@@ -1,5 +1,6 @@
 import requests
 import json
+#from builtins import None
 
 class DRSClient:
 	'''Basic DRS functions, no bundle handling'''    
@@ -66,6 +67,17 @@ class DRSClient:
 			print (response)
 			print (response.content)
 			return None
+	
+
+	def getAccessURLRegion(self, object_id, region):
+		''' get an access url for the object in the specified region'''
+		access_methods = self.getObject(object_id)['access_methods']
+		am = next((sub for sub in access_methods if sub['region'] == 's3.us-east-1'), None)
+		if am == None:
+			print ('object not in region {}'.format(region))
+			return None
+		return self.getAccessURL(object_id, am['access_id'])
+		
 	
 	def getHeaders(self): 
 		return {'Authorization' : 'Bearer {0}'.format(self.access_token) }
