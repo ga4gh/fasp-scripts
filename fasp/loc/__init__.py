@@ -5,9 +5,9 @@ from fasp.loc.gen3drsclient import crdcDRSClient
 from fasp.loc.gen3drsclient import anvilDRSClient
 from fasp.loc.gen3drsclient import kfDRSClient
 
-from fasp.loc.sbdrsclient import sbcgcDRSClient, cavaticaDRSClient, SBDRSClient
+from fasp.loc.sbdrsclient import sbcgcDRSClient, cavaticaDRSClient, sbbdcDRSClient, SBDRSClient
 
-from fasp.loc.sdl_drsclient import sdlDRSClient
+from fasp.loc.sdl_drsclient import sdlDRSClient, SRADRSClient
 
 from fasp.loc.ga4gh_registry_client import GA4GHRegistryClient
 
