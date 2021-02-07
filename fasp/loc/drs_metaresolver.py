@@ -4,7 +4,7 @@ import sys, getopt
 
 from fasp.loc import crdcDRSClient, bdcDRSClient, Gen3DRSClient, anvilDRSClient
 from fasp.loc import sdlDRSClient
-from fasp.loc import sbcgcDRSClient, cavaticaDRSClient
+from fasp.loc import sbcgcDRSClient, cavaticaDRSClient, sbbdcDRSClient
 from fasp.loc import DRSClient
 from fasp.loc import GA4GHRegistryClient
 
@@ -23,7 +23,8 @@ class DRSMetaResolver(DRSClient):
 			"anv": anvilDRSClient('~/.keys/anvil_credentials.json', '', 'gs'),
 			"insdc": sdlDRSClient('~/.keys/prj_11218_D17199.ngc'),
 			"sbcgc": sbcgcDRSClient('~/.keys/sevenbridges_keys.json','s3'),
-			"sbcav": cavaticaDRSClient('~/.keys/sevenbridges_keys.json','s3'),
+			"sbcav": cavaticaDRSClient('~/.keys/sevenbridges_keys.json','gs'),
+			'sbbdc' : sbbdcDRSClient('~/.keys/sevenbridges_keys.json', 's3'),
 			"srapub": DRSClient('https://locate.ncbi.nlm.nih.gov', debug=False)
 		}
 		self.registeredClients = []
@@ -35,7 +36,7 @@ class DRSMetaResolver(DRSClient):
 	def getObject(self, colonPrefixedID):
 		client, id = self.getClient(colonPrefixedID)
 		if client != None:
-			print('sending id {} to: {}'.format(id, client.__class__.__name__))
+			if self.debug: print('sending id {} to: {}'.format(id, client.__class__.__name__))
 			return client.getObject(id)
 		else:
 			return "prefix unrecognized"
