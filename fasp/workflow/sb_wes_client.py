@@ -13,11 +13,13 @@ from fasp.workflow import WESClient
 
 class sbWESClient(WESClient):
 
-	def __init__(self, instance, project, access_token_path, debug=False):
+	def __init__(self, api_url_base, project, access_token_path, instance=None, debug=False):
+		
+		# instance is now redundant - use specific subclasses instead. Left in for legacy compatibility
 		
 		self.project_id = project
 				
-		self.api_url_base = 'https://cgc-ga4gh-api.sbgenomics.com/ga4gh/wes/v1/runs'
+		self.api_url_base = api_url_base
 		full_key_path = os.path.expanduser(access_token_path)
 		with open(full_key_path) as f:
 			self.accessToken = json.load(f)['access_token']
@@ -54,7 +56,7 @@ class sbWESClient(WESClient):
 		  "workflow_url": app
 		}
 	
-		response = requests.request("POST", self.api_url_base, headers=self.headers, files = body)
+		response = requests.request("POST", self.api_url_base+'/runs', headers=self.headers, files = body)
 		
 		if self.debug:
 			print(response)
@@ -100,7 +102,7 @@ class sbWESClient(WESClient):
 		
 		
 	def addRun(self, run_id, runsdf):
-		runURL = "{}/{}".format(self.api_url_base, run_id)
+		runURL = "{}/{}".format(self.api_url_base+'/runs', run_id)
 		runResp = requests.get(runURL, headers=self.headers)
 		run = runResp.json()
 		
@@ -128,7 +130,7 @@ class sbWESClient(WESClient):
 				payload = {'page_token': nextPageToken}
 			else:
 				payload = {}
-			response = requests.get(self.api_url_base, headers=self.headers, params=payload)
+			response = requests.get(self.api_url_base+'/runs', headers=self.headers, params=payload)
 			rDict = response.json()
 			if 'next_page_token' in rDict.keys():
 				nextPageToken = rDict['next_page_token']
@@ -139,6 +141,20 @@ class sbWESClient(WESClient):
 			for r in runs:
 				runsdf = self.addRun(r['run_id'], runsdf)
 		return runsdf
+
+class sbcgcWESClient(sbWESClient):
+	'''client for Seven Bridges Cancer Genomics Cloud WES server'''
+
+	def __init__(self, project, api_key_path=None, debug=False):
+		if api_key_path == None: api_key_path='~/.keys/sbcgc_key.json'
+		super().__init__('https://cgc-ga4gh-api.sbgenomics.com/ga4gh/wes/v1', project, api_key_path, debug=debug)
+
+class cavaticaWESClient(sbWESClient):
+	'''client for Cavatica WES Server'''    
+
+	def __init__(self, project, api_key_path=None, debug=False):
+		if api_key_path == None: api_key_path='~/.keys/sbcav_key.json'
+		super().__init__('https://cavatica-ga4gh-api.sbgenomics.com/ga4gh/wes/v1', project, api_key_path, debug=debug)
 
 		
 if __name__ == "__main__":

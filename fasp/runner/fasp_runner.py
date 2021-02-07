@@ -37,6 +37,8 @@ class FASPRunner:
 		self.pipelineLogger = FASPLogger(self.pipelineLogFile, program)
 		self.creditor = Creditor.creditorFactory(self.settings, pauseSecs=pauseSecs)
 		
+		self.runs = 0
+		
 		if test != None:
 			self.live = not test
 		else:
@@ -58,6 +60,7 @@ class FASPRunner:
 			print ("FASPRunner was not configured")
 			sys.exit()
 		creditor = self.creditor
+		creditor.addRun()
 		# Step 1 - Discovery
 		print("Running query")
 		print(query)
@@ -84,6 +87,7 @@ class FASPRunner:
 			if self.live:
 				pipeline_id = self.workClient.runWorkflow(url,  outfile)
 				print('workflow submitted, run:{}'.format(pipeline_id))
+				print('_' * 60)
 				runIds.append({runKey:row[0], 'run_id':pipeline_id})
 			creditor.creditClass(self.workClient)
 			via = 'sh'
@@ -94,4 +98,11 @@ class FASPRunner:
 				self.pipelineLogger.logRun(time, via, note,  pipeline_id, outfile, str(fileSize),
 					self.searchClient, self.drsClient, self.workClient)
 				
+		creditor.closeRun()
 		return runIds
+	
+	def rollCredits(self):
+		self.creditor.rollCredits()
+		
+	def getFASPicon(self, filePath=None):
+		return self.creditor.getFASPicon(filePath)

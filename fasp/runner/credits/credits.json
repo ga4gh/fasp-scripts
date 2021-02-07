@@ -45,6 +45,15 @@
                 }
             ]
         },
+        "anvilDRSClient": {
+            "imageFile": "Gen3BioDataCatalyst.jpg",
+            "textCredit": "anvilDRSClient Data Repository Service by Alessandro Culotti",
+            "phoneticCredit": "Anvil Data Repository Service ",
+            "Work Stream": "Cloud",
+            "Driver Project": "NHGRI",
+            "Implementation": "Anvil DRS",
+            "g4ghStd": true
+        },
         "bdcDRSClient": {
             "imageFile": "Gen3BioDataCatalyst.jpg",
             "textCredit": "BioDataCatalyst Data Repository Service by Alessandro Culotti",
@@ -85,6 +94,16 @@
             "g4ghStd": true,
             "people": []
         },
+       "DRSMetaResolver": {
+            "imageFile": "IMG_2159.jpg",
+            "textCredit": "DRSMetaresolver class",
+            "phoneticCredit": "DRSMetaresolver class",
+            "Work Stream": "Discovery",
+            "Driver Project": "",
+            "Implementation": "fasp-scripts",
+            "g4ghStd": true,
+            "people": ["Jeremy Adams","Ian Fore"]
+        },
         "DNAStackWESClient": {
             "imageFile": "DNAStackWES.jpg",
             "textCredit": "DNAStack Workflow Execution Service implementation by Max Barkley and Patrick Magee",
@@ -95,6 +114,39 @@
             "people": [
                 "Max Barkley",
                 "Patrick Magee"
+            ]
+        },
+        "sbcgcWESClient": {
+            "imageFile": "samtoolsSBClient.jpg",
+            "textCredit": "Seven Bridges CGC WES API",
+            "phoneticCredit": "Seven Bridges CGC WES API",
+            "Work Stream": "Cloud",
+            "Implementation": "Seven Bridges WES",
+            "g4ghStd": true,
+            "people": [
+                "Michele Mattioni"
+            ]
+        },        
+        "cavaticaWESClient": {
+            "imageFile": "samtoolsSBClient.jpg",
+            "textCredit": "Seven Bridges Cavatica WES API",
+            "phoneticCredit": "Seven Bridges Cavatica WES API",
+            "Work Stream": "Cloud",
+            "Implementation": "Seven Bridges WES",
+            "g4ghStd": true,
+            "people": [
+                "Michele Mattioni"
+            ]
+        },        
+        "sbWESClient": {
+            "imageFile": "samtoolsSBClient.jpg",
+            "textCredit": "Seven Bridges WES API",
+            "phoneticCredit": "Seven Bridges WES API",
+            "Work Stream": "Cloud",
+            "Implementation": "Seven Bridges WES",
+            "g4ghStd": true,
+            "people": [
+                "Michele Mattioni"
             ]
         },
         "samtoolsSBClient": {
@@ -168,7 +220,7 @@
                 "The SRA Team"
             ]
         },
-        "dbGaPFence": {
+         "dbGaPFence": {
             "imageFile": "dbGaPFence.jpg",
             "textCredit": "Access to datasets is authorized by the dbGap database, the respective Data Access Committees, and Gen3 Fence services",
             "phoneticCredit": "Access to datasets is authorized by the dbGap database, the respective Data Access Committees, and Gen3 Fence services",

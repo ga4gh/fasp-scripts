@@ -2,6 +2,7 @@ import requests
 import pprint
 import sys
 import getopt
+import json
 
 from fasp.loc import GA4GHRegistryClient
 import pandas as pd
@@ -81,11 +82,26 @@ class DiscoverySearchClient:
 	def listTableInfo(self, table, verbose=False):
 		url = "{}/table/{}/info".format(self.hostURL,table)
 		response = requests.get(url, headers=self.headers)
-		result = (response.json())
+		info = json.loads(response.text)
 		if verbose:
 			print ("_Schema for table{}_".format(table))
-			pprint.pprint(result)
-		return result
+			print(json.dumps(info, indent=3))
+		return info
+			
+	def listTableColumns(self, table, descriptions=False, enums=False):
+		''' List the columns in a table. More compact and practical for many purposes compared with listTableInfo '''
+		schema = self.listTableInfo(table)
+		for c, v in schema['data_model']['properties'].items():
+			print (c)
+			if descriptions:
+				if 'description' in v: print (v['description'])
+				if '$comment' in v: print (v['$comment'])
+			if enums:
+				if 'oneOf' in v:
+					for c in v['oneOf']:
+						print ('\t\t{}'.format(c['const']))
+				if '$comment' in v: print (v['$comment'])
+			print('_______________________________________')
 			
 	def getMappingTemplate(self, table, propList=None):
 		''' Get an empty template in which to create  mappings for property values 
