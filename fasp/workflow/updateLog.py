@@ -5,7 +5,7 @@ import pandas as pd
 from fasp.workflow import samtoolsSBClient 
 from fasp.workflow import DNAStackWESClient 
 from fasp.workflow import GCPLSsamtools 
-from fasp.workflow import sbWESClient 
+from fasp.workflow import cavaticaWESClient ,sbcgcWESClient
 from fasp.runner import FASPRunner 
 
 
@@ -22,7 +22,9 @@ def main(argv):
 	wesClients = { 'samtoolsSBClient':samtoolsSBClient(sbSystem, sbProject),
 					'DNAStackWESClient':DNAStackWESClient('~/.keys/dnastack_wes_credentials.json'),
 					'GCPLSsamtools': gcsam,
-					'sbWESClient':sbWESClient(sbSystem,sbProject,'~/.keys/sbcgc_key.json')}
+					'sbcgcWESClient':sbcgcWESClient(sbProject),
+					'cavaticaWESClient':cavaticaWESClient(sbProject)
+					}
 	
 	for i, row in logTable.iterrows(): 
 		wesClientClassName = row["wesClient"]

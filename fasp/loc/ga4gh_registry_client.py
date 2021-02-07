@@ -4,9 +4,10 @@ import sys, getopt
 
 class GA4GHRegistryClient:
 
-	def __init__(self, url='https://registry.ga4gh.org/v1'):
+	def __init__(self, url='https://registry.ga4gh.org/v1', verbose=False):
 		self.hostURL = url
-	
+		self.verbose = verbose
+		
 	# Look for registered DRS services
 	def getRegisteredServices(self, type=None):
 		registryURL = "{}/services".format(self.hostURL)
@@ -15,6 +16,7 @@ class GA4GHRegistryClient:
 		else:
 			registryURL = 'https://registry.ga4gh.org/v1/services?type={}:*'.format(type)
 		print('Searching the GA4GH registry for {} services'.format(type))
+		if self.verbose: print('Request url {}'.format(registryURL)) 
 		response = requests.get(registryURL)
 		services = response.json()
 		return services
