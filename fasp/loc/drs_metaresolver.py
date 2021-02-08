@@ -1,11 +1,10 @@
 import json
 import requests
-import pprint
 import sys, getopt
 
 from fasp.loc import crdcDRSClient, bdcDRSClient, Gen3DRSClient, anvilDRSClient
 from fasp.loc import sdlDRSClient
-from fasp.loc import sbcgcDRSClient, cavaticaDRSClient
+from fasp.loc import sbcgcDRSClient, cavaticaDRSClient, sbbdcDRSClient
 from fasp.loc import DRSClient
 from fasp.loc import GA4GHRegistryClient
 
@@ -16,7 +15,7 @@ class DRSMetaResolver(DRSClient):
 	Prefixes used are not official. For demonstration purpposes only'''
 	# Initialize a DRS Client for the service at the specified url base
 	# and with the REST resource to provide an access key 
-	def __init__(self, debug=False):
+	def __init__(self, debug=False, getReg=True):
 		self.drsClients = { 
 			"insdc": sdlDRSClient('~/.keys/prj_11218_D17199.ngc'),
 			"crdc": crdcDRSClient('~/.keys/crdc_credentials.json','s3'),
@@ -24,17 +23,20 @@ class DRSMetaResolver(DRSClient):
 			"anv": anvilDRSClient('~/.keys/anvil_credentials.json', '', 'gs'),
 			"insdc": sdlDRSClient('~/.keys/prj_11218_D17199.ngc'),
 			"sbcgc": sbcgcDRSClient('~/.keys/sevenbridges_keys.json','s3'),
-			"sbcav": cavaticaDRSClient('~/.keys/sevenbridges_keys.json','s3'),
+			"sbcav": cavaticaDRSClient('~/.keys/sevenbridges_keys.json','gs'),
+			'sbbdc' : sbbdcDRSClient('~/.keys/sevenbridges_keys.json', 's3'),
 			"srapub": DRSClient('https://locate.ncbi.nlm.nih.gov', debug=False)
 		}
 		self.registeredClients = []
 		self.hostNameIndex = {}
 		self.debug = debug
+		
+		if getReg: self.getRegisteredDRSServices()
 
 	def getObject(self, colonPrefixedID):
 		client, id = self.getClient(colonPrefixedID)
 		if client != None:
-			print('sending id {} to: {}'.format(id, client.__class__.__name__))
+			if self.debug: print('sending id {} to: {}'.format(id, client.__class__.__name__))
 			return client.getObject(id)
 		else:
 			return "prefix unrecognized"
@@ -65,24 +67,35 @@ class DRSMetaResolver(DRSClient):
 			return None
 			
 	def getClient2(self, hostURID):
+		'''Return a DRS client  to resolve the host name based DRS URI provided, also return the drs_id that needs to be passed to the DRS client.'''
+		if self.debug: print('Resolving {}'.format(hostURID))
 		idParts = hostURID.split("/",3)
+		if self.debug: print(idParts)
 		hostName = idParts[2]
+		drs_id = idParts[3]
 		
 		if hostName in self.hostNameIndex.keys():
-			return self.hostNameIndex[hostName]
+			return self.hostNameIndex[hostName], drs_id
+		
 		else:
 			return None
 			
 	def getObject2(self, hostURID):
-		client = self.getClient2(hostURID)
-		idParts = hostURID.split("/",3)
-		id = idParts[3]
+		client, drs_id = self.getClient2(hostURID)
+
 		
 		if client != None:
-			print ('Prefix:{}'.format(idParts[2]))
-			print ('id:{}'.format(id))
+			print ('id:{}'.format(drs_id))
 			print('sending to: {}'.format(client.__class__.__name__))
-			return client.getObject(id)
+			return client.getObject(drs_id)
+		else:
+			return "host unrecognized"
+	
+	def getAccessURL2(self, hostURID, access_id):
+		client, drs_id  = self.getClient2(hostURID)
+		
+		if client != None:
+			return client.getAccessURL(drs_id, access_id)
 		else:
 			return "host unrecognized"
 	
@@ -109,19 +122,23 @@ class DRSMetaResolver(DRSClient):
 		drsServices = reg.getRegisteredServices('org.ga4gh:drs')
 		for service in drsServices:
 			if self.debug:
-				pprint.pprint(service)
+				json.dumps(service, indent=3)
 			serviceURL = service['url']
-			prefix = service['curiePrefix']
+			if 'curiePrefix' in service:
+				prefix = service['curiePrefix']
+			else:
+				prefix = None
 			drsClient = self.DRSClientFromRegistryEntry(service, prefix)
 			hostname = serviceURL.split("/")[2]
 			self.registeredClients.append(drsClient)
 			self.hostNameIndex[hostname] = drsClient
 			self.drsClients[prefix] = drsClient
-			print('__________________________')
-			print("id:{}".format(service['id']))
-			print (drsClient.id, drsClient.name)
-			print("url:{}".format(serviceURL))
-			print("prefix:{}".format(prefix))
+			if self.debug:
+				print('__________________________')
+				print("id:{}".format(service['id']))
+				print (drsClient.id, drsClient.name)
+				print("url:{}".format(serviceURL))
+				print("prefix:{}".format(prefix))
 		return None
 	
 	def checkResolution(self):

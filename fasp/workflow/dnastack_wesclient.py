@@ -14,7 +14,7 @@ class DNAStackWESClient(WESClient):
 	"""
 
 	def __init__(self, client_credentials_path, debug=False):
-		super(DNAStackWESClient, self).__init__('https://workspaces-wes.prod.dnastack.com/ga4gh/wes/v1/runs')
+		super(DNAStackWESClient, self).__init__('https://workspaces-wes.prod.dnastack.com/ga4gh/wes/v1')
 		self.tokenUrl = 'https://wallet.prod.dnastack.com/oauth/token'
 		full_credentials_path = os.path.expanduser(client_credentials_path)
 		with open(full_credentials_path) as f:

@@ -76,10 +76,9 @@ def main(argv):
 				
 		# Step 3 - Run a pipeline on the file at the drs url
 		outfile = "{}.txt".format(row[0])
-		mysam.runWorkflow(url, outfile)
+		pipeline_id =  mysam.runWorkflow(url, outfile)
 		creditor.creditClass(mysam)
 		via = 'sh'
-		pipeline_id = 'paste here'
 		note = 'Two sources'
 		time = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
 		faspRunner.logRun(time, via, note,  pipeline_id, outfile, fileSize,
