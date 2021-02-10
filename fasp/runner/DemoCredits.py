@@ -73,12 +73,17 @@ class EndCreditor(Creditor):
 		
 	def rollCredits(self):
 		''' List the credits '''
-		for c in self.issuedCredits:
-			if c in self.credits:
-				g4ghStd = self.credits[c]['g4ghStd']
-			else:
-				g4ghStd = False
-			print(c, g4ghStd)
+		#for c in self.allCredits[0]:
+		for r in range(0,3):
+			rowString = ''
+			for runCredits in self.allCredits:
+				c = runCredits[r]
+				if c in self.credits:
+					g4ghStd = self.credits[c]['g4ghStd']
+				else:
+					g4ghStd = False
+				rowString += c.ljust(25)
+			print(rowString)
 
 	def __iconCell(self, cw=30, ch=20, lw=1, color=None):
 		im = Image.new('RGB', (cw,ch), color=color)
