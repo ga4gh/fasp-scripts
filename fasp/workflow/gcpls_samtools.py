@@ -19,9 +19,10 @@ Wrapper to prepare a job to run samtools as a GCP Life Sciences pipeline.
 import tempfile
 import subprocess
 import sys
-import re
+
 
 from googleapiclient import discovery
+from google.cloud import storage
 from oauth2client.client import GoogleCredentials
 
 import json
@@ -58,7 +59,8 @@ class GCPLSsamtools:
 		request = self.service.projects().locations().operations().get(name=name)
 		response = request.execute()
 
-		print(json.dumps(response, indent = 2, ensure_ascii=True))
+		if self.debug: print(json.dumps(response, indent = 2, ensure_ascii=True))
+		return response
 
 	def runStats(self, bamURL, outfile):
 		samtools = {
@@ -126,6 +128,45 @@ class GCPLSsamtools:
 	def runWorkflow(self, bamURL, outfile):
 		run_id = self.runStats(bamURL, outfile)		
 		return run_id
+
+	def getSAMToolsResults(self, run_id, statsRequired):
+		details = self.getTaskDetails(run_id)
+		copyCommand = details['metadata']['pipeline']['actions'][1]['commands'][2]
+		statsURI = copyCommand.split(' ')[-1]
+		parts = statsURI.split('/')
+		bucket_name  = parts[3]
+		fileName = parts[4]
+		print(bucket_name, fileName)
+		storage_client = storage.Client()
+		bucket = storage_client.bucket(bucket_name)
+
+		# Construct a client side representation of a blob.
+		# Note `Bucket.blob` differs from `Bucket.get_blob` as it doesn't retrieve
+		# any content from Google Cloud Storage. As we don't need additional data,
+		# using `Bucket.blob` is preferred here.
+		blob = bucket.blob(fileName)
+		
+		downloaded_blob = blob.download_as_string()
+		print(downloaded_blob)
+
+		#=======================================================================
+		# gcs_file = gcs.open(statsURI)
+  # 		contents = gcs_file.read()
+  #   	gcs_file.close()
+  #    	self.response.write(contents)
+		# retDict = {}
+		# with tempfile.NamedTemporaryFile(mode='r+') as file:
+		# 	response = requests.get(url)
+		# 	file.write(response.text)
+		# 	file.seek(0)
+		# 	for x in file:
+		# 		if x.startswith('SN'):   
+		# 			parts = x.split('\t')
+		# 			statName = parts[1].split(':')[0]
+		# 			if statName in statsRequired:
+		# 				retDict[statName] = parts[2].rstrip()
+		#=======================================================================
+		return statsURI
 
 	''' build a gloud command line to run samtools '''
 	def statsCommandLine(self, bamURL, outfile):

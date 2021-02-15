@@ -6,7 +6,6 @@ import json
 
 from fasp.loc import GA4GHRegistryClient
 import pandas as pd
-#from builtins import None
 
 class DiscoverySearchClient:
 

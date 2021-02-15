@@ -10,6 +10,7 @@ import pandas as pd
 import sys
 
 from fasp.workflow import WESClient
+from fasp.loc import DRSMetaResolver
 
 class sbWESClient(WESClient):
 
@@ -26,6 +27,7 @@ class sbWESClient(WESClient):
 		self.headers = { 'X-SBG-Auth-Token': self.accessToken}
 		self.debug = debug
 		self.modulePath = os.path.dirname(os.path.abspath(__file__))
+		self.mr = None
 
 	def runWorkflow(self, fileurl, outfile):
 		# App I want to use to run a task
@@ -69,8 +71,29 @@ class sbWESClient(WESClient):
 			print("Full response content:\n{}".format(response.content))
 			print("WES run submission failed. Response status:{}".format(response.status_code))
 			sys.exit(1)
+	
+	def __getMR(self):
+		if self.mr is None:
+			self.mr = DRSMetaResolver()
+		return self.mr
 
-					
+
+	def getSAMToolsResults(self, run_id, statsRequired):
+		log = self.GetRunLog(run_id)
+		resultsDRSID = log['outputs']['statistics']['path']
+		url = self.__getMR().getAccessURL2(resultsDRSID,'s3')
+		retDict = {}
+		with tempfile.NamedTemporaryFile(mode='r+') as file:
+			response = requests.get(url)
+			file.write(response.text)
+			file.seek(0)
+			for x in file:
+				if x.startswith('SN'):   
+					parts = x.split('\t')
+					statName = parts[1].split(':')[0]
+					if statName in statsRequired:
+						retDict[statName] = parts[2].rstrip()
+		return retDict
 
 	def runGWASWorkflow(self, vcfFileurl, csvfileurl):
 		''' run the plenary GWAS Workflow '''
