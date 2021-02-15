@@ -50,6 +50,11 @@ class WESClient:
 		if runResp.status_code == 400:
 			return 'task not found'
 		print(runResp)
+		
+	def getOutputs(self, run_id):
+		log = self.GetRunLog(run_id)
+		return log['outputs']
+
 
 	def runGenericWorkflow(
 			self,
