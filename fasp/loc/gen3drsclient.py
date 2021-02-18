@@ -43,7 +43,9 @@ class Gen3DRSClient(DRSClient):
 class crdcDRSClient(Gen3DRSClient):
     
     # Mostly done by the Gen3DRSClient, this just deals with url and end point specifics
-    def __init__(self, api_key_path,  access_id=None,  debug=False):
+    def __init__(self, api_key_path=None,  access_id=None,  debug=False):
+        if api_key_path == None:
+            api_key_path='~/.keys/crdc_credentials.json'
         super().__init__('https://nci-crdc.datacommons.io', '/user/credentials/api/access_token',
             api_key_path, access_id, debug)
 

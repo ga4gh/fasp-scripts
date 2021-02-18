@@ -3,7 +3,7 @@ import requests
 import sys, getopt
 
 from fasp.loc import crdcDRSClient, bdcDRSClient, Gen3DRSClient, anvilDRSClient
-from fasp.loc import sdlDRSClient
+from fasp.loc import sdlDRSClient, SRADRSClient
 from fasp.loc import sbcgcDRSClient, cavaticaDRSClient, sbbdcDRSClient
 from fasp.loc import DRSClient
 from fasp.loc import GA4GHRegistryClient
@@ -25,7 +25,7 @@ class DRSMetaResolver(DRSClient):
 			"sbcgc": sbcgcDRSClient('~/.keys/sevenbridges_keys.json','s3'),
 			"sbcav": cavaticaDRSClient('~/.keys/sevenbridges_keys.json','gs'),
 			'sbbdc' : sbbdcDRSClient('~/.keys/sevenbridges_keys.json', 's3'),
-			"srapub": DRSClient('https://locate.ncbi.nlm.nih.gov', debug=False)
+			"sradrs": SRADRSClient('https://locate.be-md.ncbi.nlm.nih.gov')
 		}
 		self.registeredClients = []
 		self.hostNameIndex = {}

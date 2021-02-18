@@ -17,13 +17,18 @@ class SRADRSClient(DRSClient):
 
 
 	def acc2drs(self, accession, verbose=False):
-		''' get a drs id for an SRA accession id'''
+		''' get an IDX response for an SRA accession id'''
 		url = '{}/idx/v1/{}'.format(self.api_url_base, accession)
 		if verbose: print(url)
 		response = requests.get(url)
 		if verbose: print(response)
 		idxResp = json.loads(response.content)
 		return idxResp
+
+	def acc2drsID(self, accession, verbose=False):
+		''' get a drs id for an SRA accession id'''
+		resp = self.acc2drs(accession, verbose)
+		return resp['response']['drs']
 
 class sdlDRSClient(DRSClient):
 
