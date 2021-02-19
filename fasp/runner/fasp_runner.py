@@ -101,6 +101,42 @@ class FASPRunner:
 		creditor.closeRun()
 		return runIds
 	
+	def runDRSIDs(self, idList, note):
+		creditor = self.creditor
+		creditor.addRun()
+		# Step 1 - Discovery
+		runIds = []
+		for drs_id in idList:
+
+			print("drsID={}".format(drs_id))
+			
+		
+			# Step 2 - Use DRS to get the URL
+			objInfo = self.drsClient.getObject(drs_id)
+			creditor.creditClass(self.drsClient)
+			fileSize = objInfo['size']
+			# we've predetermined we want to use the gs copy in this case
+			url = self.drsClient.getAccessURL(drs_id)
+		
+			# Step 3 - Run a pipeline on the file at the drs url
+			outfile = "{}.txt".format(drs_id)
+			if self.live:
+				pipeline_id = self.workClient.runWorkflow(url,  outfile)
+				print('workflow submitted, run:{}'.format(pipeline_id))
+				print('_' * 60)
+				runIds.append({'drs_id':drs_id, 'run_id':pipeline_id})
+			creditor.creditClass(self.workClient)
+			via = 'sh'
+			#pipeline_id = 'paste here'
+
+			time = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
+			if self.live:
+				self.pipelineLogger.logRun(time, via, note,  pipeline_id, outfile, str(fileSize),
+					self.searchClient, self.drsClient, self.workClient)
+				
+		creditor.closeRun()
+		return runIds
+	
 	def rollCredits(self):
 		self.creditor.rollCredits()
 		
