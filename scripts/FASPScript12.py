@@ -5,30 +5,12 @@ import datetime
 from fasp.runner import FASPRunner
 
 from fasp.search import DiscoverySearchClient
+from fasp.loc import EGAFileClient
 from fasp.workflow import DNAStackWESClient
 from fasp.workflow import GCPLSsamtools
 
 
 import pyega3.pyega3 as ega
-
-class EGAhtsget():
-    
-    def __init__(self, credentialsPath):
-        *credentials, self.key = ega.load_credential(os.path.expanduser(credentialsPath))
-        self.credentials = credentials
-        self.token = ega.get_token(credentials)
-    
-    def getSize(self, identifier):
-        display_file_name, file_name, file_size, check_sum = ega.get_file_name_size_md5(self.token, identifier) 
-        return file_size
-        
-    def htsget(self, identifier, ref, start, end, type, saveTo ):
-        display_file_name, file_name, file_size, check_sum = ega.get_file_name_size_md5(self.token, identifier) 
-        genomic_range_args = (ref, check_sum, start, end, type)
-        print(display_file_name)
-        print(genomic_range_args)
-        ega.download_file_retry(self.credentials, identifier, display_file_name, file_name, file_size, check_sum, 3, self.key,
-        saveTo, genomic_range_args, -1, 10)
 
 
 def main(argv):
@@ -44,7 +26,7 @@ def main(argv):
     query_job = searchClient.runQuery(query)
     
     # Step 2 - Use htsget at EGA
-    htsgetClient = EGAhtsget('~/.keys/ega.credentials')
+    htsgetClient = EGAFileClient('~/.keys/ega.credentials')
     
     # Step 3 - set up a class that run a compute for us
     location = 'projects/{}/locations/{}'.format(settings['GCPProject'], settings['GCPPipelineRegion'])
