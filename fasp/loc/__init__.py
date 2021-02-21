@@ -11,4 +11,6 @@ from fasp.loc.sdl_drsclient import sdlDRSClient, SRADRSClient
 
 from fasp.loc.ga4gh_registry_client import GA4GHRegistryClient
 
+from fasp.loc.ega_file_client import EGAFileClient
+
 from fasp.loc.drs_metaresolver import DRSMetaResolver
