@@ -27,6 +27,25 @@ class WESClient:
 		instance = cls._fromRegistryEntry(json.loads(regEntry.content))
 		return instance
 
+	def getRuns(self):
+		nextPageToken = ''
+		while nextPageToken != 'Done':
+			if nextPageToken != '':
+				payload = {'page_token': nextPageToken}
+			else:
+				payload = {}
+			response = requests.get(self.api_url_base+'/runs', headers=self.headers, params=payload)
+			print(response.json)
+			rDict = response.json()
+			if 'next_page_token' in rDict.keys():
+				nextPageToken = rDict['next_page_token']
+			else:
+				nextPageToken = 'Done'
+			
+			runs = rDict['runs']
+			print (runs)
+
+
 	def getTaskStatus(self, run_id, verbose=False):
 		runURL = "{}/runs/{}".format(self.api_url_base, run_id)
 		if verbose: print("Get request sent to: {}".format(runURL))
@@ -78,7 +97,7 @@ class WESClient:
 			'workflow_engine_params': (None, workflow_engine_params, 'application/json'),
 			'workflow_type': (None, workflow_type, 'text/plain'),
 			'workflow_type_version': (None, workflow_type_version, 'text/plain'),
-			'tags': (None, tags, 'text/plain'),
+			'tags': (None, tags, 'text/plain'), 
 			'workflow_attachment': workflow_attachment,
 		}
 
@@ -94,4 +113,10 @@ class WESClient:
 		else:
 			print("Full response status:\n{}".format(response))
 			print("Full response content:\n{}".format(response.content))
+			print("Full response headers:\n{}".format(response.headers))
 			raise RuntimeError("WES run submission failed. Response status:{}".format(response.status_code))
+		
+	def getInfo(self):
+		url = "{}/service-info".format(self.api_url_base)
+		runResp = requests.get(url)
+		return runResp.json()

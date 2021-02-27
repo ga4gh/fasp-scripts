@@ -57,7 +57,7 @@ class sbWESClient(WESClient):
 		  "workflow_type_version": "sbg:draft-2",
 		  "workflow_url": app
 		}
-	
+		print(self.api_url_base)
 		response = requests.request("POST", self.api_url_base+'/runs', headers=self.headers, files = body)
 		
 		if self.debug:

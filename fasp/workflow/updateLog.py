@@ -4,6 +4,7 @@ import sys
 import pandas as pd
 from fasp.workflow import samtoolsSBClient 
 from fasp.workflow import DNAStackWESClient 
+from fasp.workflow import ElixirWESClient 
 from fasp.workflow import GCPLSsamtools 
 from fasp.workflow import cavaticaWESClient ,sbcgcWESClient
 from fasp.runner import FASPRunner 
@@ -21,6 +22,7 @@ def main(argv):
 	gcsam = GCPLSsamtools(location, settings['GCPOutputBucket'])
 	wesClients = { 'samtoolsSBClient':samtoolsSBClient(sbSystem, sbProject),
 					'DNAStackWESClient':DNAStackWESClient('~/.keys/dnastack_wes_credentials.json'),
+					'ElixirWESClient':ElixirWESClient('~/.keys/elixir_wes_credentials.json'),
 					'GCPLSsamtools': gcsam,
 					'sbcgcWESClient':sbcgcWESClient(sbProject),
 					'cavaticaWESClient':cavaticaWESClient(sbProject)

@@ -104,6 +104,17 @@
             "g4ghStd": true,
             "people": ["Jeremy Adams","Ian Fore"]
         },
+        "ElixirWESClient": {
+            "imageFile": "DNAStackWES.jpg",
+            "textCredit": "Elixir Workflow Execution Service implementation",
+            "phoneticCredit": "Elixir Workflow Execution Service implementation",
+            "Work Stream": "Cloud",
+            "Implementation": "Elixir WES",
+            "g4ghStd": true,
+            "people": [
+                "Alex Kanitz"
+            ]
+        },
         "DNAStackWESClient": {
             "imageFile": "DNAStackWES.jpg",
             "textCredit": "DNAStack Workflow Execution Service implementation by Max Barkley and Patrick Magee",
@@ -215,6 +226,17 @@
             "phoneticCredit": "SRA Data Locator, Kurt Rodarmer and the SRA Team",
             "Work Stream": "Cloud",
             "g4ghStd": false,
+            "people": [
+                "Kurt Rodarmer",
+                "The SRA Team"
+            ]
+        },
+        "SRADRSClient": {
+            "imageFile": "sdlDRSClient.jpg",
+            "textCredit": "SRA DRS Server, Kurt Rodarmer and the SRA Team",
+            "phoneticCredit": "SRA DRS Server, Kurt Rodarmer and the SRA Team",
+            "Work Stream": "Cloud",
+            "g4ghStd": true,
             "people": [
                 "Kurt Rodarmer",
                 "The SRA Team"

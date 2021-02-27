@@ -46,8 +46,88 @@ class crdcDRSClient(Gen3DRSClient):
     def __init__(self, api_key_path=None,  access_id=None,  debug=False):
         if api_key_path == None:
             api_key_path='~/.keys/crdc_credentials.json'
+        self.file_endpt = 'https://api.gdc.cancer.gov/files/'
         super().__init__('https://nci-crdc.datacommons.io', '/user/credentials/api/access_token',
             api_key_path, access_id, debug)
+        
+    def getFileData(self, file_id, expanded=False, linked=False):
+        headers = {'Content-Type': 'application/json'}
+
+        fields = [
+		"file_name",
+		"data_format",
+		"platform",
+		"access",
+		"created_datetime",
+		"data_category",
+		"data_type",
+		"experimental_strategy",
+		"file_size",
+		"origin",
+		"revision",
+		"type",
+		]
+
+        if linked or expanded:
+            fields += [
+			"cases.case_id",
+			"file_name",
+			"data_format",
+			"platform",
+			"metadata_files.file_id",
+			"metadata_files.file_name",
+			"analysis.analysis_id",
+			"annotations.annotation_id",
+			"archive.archive_id",
+			"associated_entities.entity_id",
+			"associated_entities.entity_type",
+			"center.center_id",
+			"metadata_files.file_id",
+			"index_files.file_id",
+			"downstream_analyses.analysis_id"
+			]
+
+        if linked:
+            fields += [
+			"cases.project.disease_type",
+			"cases.demographic.race",
+			"cases.demographic.state",
+			"cases.demographic.submitter_id",
+			"cases.demographic.updated_datetime",
+			"cases.demographic.year_of_birth",
+			"cases.demographic.year_of_death",
+			"cases.diagnoses.age_at_diagnosis",
+			"cases.diagnoses.classification_of_tumor",
+			"cases.diagnoses.created_datetime",
+			"cases.diagnoses.days_to_last_known_disease_status",
+			"cases.diagnoses.days_to_recurrence",
+			"cases.diagnoses.morphology",
+			"cases.diagnoses.primary_diagnosis",
+			"cases.diagnoses.prior_malignancy",
+			"cases.diagnoses.progression_or_recurrence",
+			"cases.diagnoses.site_of_resection_or_biopsy",
+			"cases.diagnoses.tissue_or_organ_of_origin",
+			"cases.diagnoses.tumor_grade",
+			"cases.diagnoses.tumor_stage"
+			]
+
+        fields = ",".join(fields)
+
+        body = {
+			"filters":{
+						"op":"=",
+						"content":{
+							"field":"file_id",
+							"value":file_id
+						}
+				
+			},
+			"fields":fields,
+			"format":"json",
+		}
+
+        resp = requests.post(self.file_endpt, data=json.dumps(body), headers=headers)
+        return resp.json()['data']['hits'][0]
 
 class bdcDRSClient(Gen3DRSClient):
     
@@ -67,8 +147,8 @@ class anvilDRSClient(Gen3DRSClient):
 	
 	
 	def __init__(self, api_key_path, userProject=None, access_id=None,  debug=False):
-		super().__init__('https://gen3.theanvil.io','/user/credentials/api/access_token', api_key_path, access_id, debug)
 		self.userProject = userProject
+		super().__init__('https://gen3.theanvil.io','/user/credentials/api/access_token', api_key_path, access_id, debug)
 
 	# Get a URL for fetching bytes. 
 	# Anvil GCP resources requires you to provide the userAccount to which charges will be accrued

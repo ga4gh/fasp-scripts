@@ -10,7 +10,7 @@ class ElixirWESClient(WESClient):
 	"""
 
 	def __init__(self, client_credentials_path, debug=False):
-		super(ElixirWESClient, self).__init__('https://wes-eu.egci-endpoints.imsi.athenarc.gr/ga4gh/wes/v1/runs')
+		super(ElixirWESClient, self).__init__('https://wes-eu.egci-endpoints.imsi.athenarc.gr/ga4gh/wes/v1')
 		full_credentials_path = os.path.expanduser(client_credentials_path)
 		with open(full_credentials_path) as f:
 			self.credentials = json.load(f)
@@ -21,13 +21,13 @@ class ElixirWESClient(WESClient):
 		self.modulePath = os.path.dirname(os.path.abspath(__file__))
 		self.wdlPath = self.modulePath + '/wes/gwas'
 
-	def runWorkflow(self):
+	def runWorkflow(self, path, outFile):
 		# use a temporary file to write out the input file
 		workflow_url = 'https://github.com/uniqueg/cwl-example-workflows/blob/master/hashsplitter-workflow.cwl'
 		params = {
 			'input': {
 				'class': 'File',
-				'path': 'http://62.217.82.57/test.txt'
+				'path': path
 			}
 		}
 
@@ -35,13 +35,15 @@ class ElixirWESClient(WESClient):
 			workflow_url=workflow_url,
 			workflow_params=json.dumps(params),
 			workflow_type='CWL',
-			workflow_type_version='v1.0'
+			workflow_type_version='v1.0',
+			verbose = self.debug
 		)
 
 
 if __name__ == "__main__":
-	myClient = ElixirWESClient('~/.keys/elixir_wes_credentials.json')
+	myClient = ElixirWESClient('~/.keys/elixir_wes_credentials.json', debug=True)
 
-	res = myClient.runWorkflow()
+	res = myClient.runWorkflow('http://62.217.82.57/test.txt')
+	#res = myClient.getRuns()
 
 	print(res)

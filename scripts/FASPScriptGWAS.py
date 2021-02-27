@@ -28,7 +28,7 @@ def main(argv):
 	creditor.creditClass(searchClient)
 	
 	# Step 2 - DRS - use the MetaResolver send drs ids to the right service
-	drsResolver = DRSMetaResolver()	
+	drsResolver = DRSMetaResolver(getReg=False)	
 	
 	# Step 3 - set up a class that run a compute for us
 	wesClient = DNAStackWESClient('~/.keys/dnastack_wes_credentials.json')
