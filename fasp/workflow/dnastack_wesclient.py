@@ -1,7 +1,7 @@
 import json
 import os
 import tempfile
-
+import sys
 import pandas as pd
 import requests
 
@@ -32,13 +32,15 @@ class DNAStackWESClient(WESClient):
 			('grant_type', 'client_credentials'),
 			('client_id', self.credentials['id']),
 			('client_secret', self.credentials['secret']),
-			('scope', 'read:execution write:execution'),
+			('scope', 'wes'),
 			# technically only need one of these
 			# future-proofing against support for DNAstack policy engine
-			('resource', self.api_url_base),
-			('resource', self.api_url_base + '/'),
+			#('resource', 'https://workspaces-wes.prod.dnastack.com')
+			#('resource', self.api_url_base + '/')
+			('resource', self.api_url_base + '/runs'),
+			('resource', self.api_url_base + '/runs/')
 		]
-		response = requests.post(self.tokenUrl, payload)
+		response = requests.post(self.tokenUrl, data=payload)
 		if response.status_code == 200:
 			body = response.json()
 			self.accessToken = body['access_token']
@@ -53,9 +55,10 @@ class DNAStackWESClient(WESClient):
 		return self.runGenericWorkflow(
 			workflow_url='checksum.wdl',
 			workflow_params=json.dumps(inputs),
-			workflow_attachment=('checksum.wdl', open(self.modulePath+'/wes/checksum.wdl', 'rb'), 'text/plain')
+			workflow_attachment=('checksum.wdl', open(self.modulePath+'/wes/checksum.wdl', 'rb'), 'text/plain'),
+			verbose = self.debug
 		)
-
+		
 	def runGWASWorkflowTest(self):
 		''' run the GWAS workflow by submitting local files '''
 
@@ -87,22 +90,24 @@ class DNAStackWESClient(WESClient):
 
 		
 	def addRun(self, run_id, runsdf):
-		runURL = "{}/{}".format(self.api_url_base, run_id)
+		runURL = "{}/runs/{}".format(self.api_url_base, run_id)
 		runResp = requests.get(runURL, headers=self.headers)
+		if self.debug: print(json.dumps(runResp.json(), indent=3))
 		run = runResp.json()
 		
-		runStart = run['run_log']['start_time']
-		workflowURL = run['request']['workflow_url']
-		params = run['request']['workflow_params']
-		newRow =[run_id,runStart,run['state'], workflowURL]
-		cols= ["run_id", "start", "state","type"]
-		for p, v in params.items():
-			newRow.append(v)
-			cols.append(p)
-		df_row = pd.DataFrame([newRow], columns= cols)
-		runsdf = runsdf.append(df_row)
-		print(run_id, runStart)
-		print (workflowURL, run['state'])
+		if 'run_log' in run:
+			runStart = run['run_log']['start_time']
+			workflowURL = run['request']['workflow_url']
+			params = run['request']['workflow_params']
+			newRow =[run_id,runStart,run['state'], workflowURL]
+			cols= ["run_id", "start", "state","type"]
+			for p, v in params.items():
+				newRow.append(v)
+				cols.append(p)
+			df_row = pd.DataFrame([newRow], columns= cols)
+			runsdf = runsdf.append(df_row)
+			print(run_id, runStart)
+			print (workflowURL, run['state'])
 		return runsdf	
 	
 	def getRuns(self):
@@ -110,12 +115,15 @@ class DNAStackWESClient(WESClient):
 		runsdf = pd.DataFrame(columns = df_columns)
 
 		nextPageToken = ''
+		url = self.api_url_base + '/runs'
+		if self.debug: print(url)
 		while nextPageToken != 'Done':
 			if nextPageToken != '':
 				payload = {'page_token': nextPageToken}
 			else:
 				payload = {}
-			response = requests.get(self.api_url_base, headers=self.headers, params=payload)
+			response = requests.get(url, headers=self.headers, params=payload)
+			if self.debug: print(json.dumps(response.json(), indent=3))
 			rDict = response.json()
 			if 'next_page_token' in rDict.keys():
 				nextPageToken = rDict['next_page_token']

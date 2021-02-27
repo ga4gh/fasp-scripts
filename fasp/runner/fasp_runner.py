@@ -2,10 +2,17 @@
 import sys
 import json
 import datetime
-import os
 import inspect
 from fasp.runner.fasp_logger import FASPLogger
 from fasp.runner.DemoCredits import Creditor
+
+# These are needed for obtaining notebook name
+import os.path
+import re
+import ipykernel
+import requests
+from requests.compat import urljoin
+from notebook.notebookapp import list_running_servers
 
 class FASPRunner:
 
@@ -28,6 +35,10 @@ class FASPRunner:
 			# what module are we running this for?
 			frm = inspect.stack()[1]
 			program = inspect.getsourcefile(frm[0]) 
+			
+			if program.startswith('<ipython'):
+				program = self.get_notebook_name()
+				
 			print("Running {}".format(program))
 			
 		if pipelineLogFile == None:
@@ -142,3 +153,24 @@ class FASPRunner:
 		
 	def getFASPicon(self, filePath=None):
 		return self.creditor.getFASPicon(filePath)
+	
+
+
+	def get_notebook_path(self):
+	    """
+	    Return the full path of the jupyter notebook.
+	    """
+	    kernel_id = re.search('kernel-(.*).json',
+	                          ipykernel.connect.get_connection_file()).group(1)
+	    servers = list_running_servers()
+	    for ss in servers:
+	        response = requests.get(urljoin(ss['url'], 'api/sessions'),
+	                                params={'token': ss.get('token', '')})
+	        for nn in json.loads(response.text):
+	            if nn['kernel']['id'] == kernel_id:
+	                relative_path = nn['notebook']['path']
+	                return os.path.join(ss['notebook_dir'], relative_path)
+	               
+	def get_notebook_name(self):
+		full_path = self.get_notebook_path()
+		return full_path.split("/")[-1]

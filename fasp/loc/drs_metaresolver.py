@@ -51,7 +51,6 @@ class DRSMetaResolver(DRSClient):
 	def getClient(self, colonPrefixedID):
 		idParts = colonPrefixedID.split(":", 1)
 		prefix = idParts[0]
-		
 		if prefix in self.drsClients.keys():
 			return self.drsClients[prefix] , idParts[1]
 		else:

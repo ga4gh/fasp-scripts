@@ -156,8 +156,11 @@ class DiscoverySearchClient:
 				next_url = result['pagination']['next_page_url']
 			else:
 				next_url = None
-			for r in result['data']:
-				resultRows.append([*r.values()])
+			if returnType == 'json':
+				resultRows += result['data']
+			else:
+				for r in result['data']:
+					resultRows.append([*r.values()])
 				
 			if 'data_model' in result:
 				if self.debug: print('found data model')

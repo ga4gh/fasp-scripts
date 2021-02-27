@@ -72,7 +72,7 @@ class DRSClient:
 	def getAccessURLRegion(self, object_id, region):
 		''' get an access url for the object in the specified region'''
 		access_methods = self.getObject(object_id)['access_methods']
-		am = next((sub for sub in access_methods if sub['region'] == 's3.us-east-1'), None)
+		am = next((sub for sub in access_methods if sub['region'] == region), None)
 		if am == None:
 			print ('object not in region {}'.format(region))
 			return None
