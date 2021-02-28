@@ -16,14 +16,15 @@ class localSearchClient:
 	
 	def __init__(self):
 		# edit the following for yuor local copy of the manifest file
-		dataFile = '/users/forei/fasp/gtex/SRR.breast.cram.txt'
+		dataFile = '../data/gtex/SRR.breast.cram.txt'
 		self.dataTable = pd.read_table(dataFile )
 			
 	def runQuery(self, query):
-		# return the first three records
+		n = 1
+		# return the first n records
 		# edit this once your ready to run this on all the files
 		results = []
-		subset = self.dataTable[0:3]
+		subset = self.dataTable[0:n]
 		for index, row in subset.iterrows():
 			results.append([row['acc'],row['acc']+'.cram'])
 		return  results
@@ -31,7 +32,7 @@ class localSearchClient:
 def main(argv):
 
 	# edit the following line for where you put your ngc credentials file from dbGaP
-	credentials_file = '~/.keys/prj_11218_D17199.ngc'
+	credentials_file = '~/.keys/prj_14565.ngc'
 
 	faspRunner = FASPRunner(pauseSecs=0)
 	settings = faspRunner.settings
@@ -40,7 +41,7 @@ def main(argv):
 	searchClient = localSearchClient()
 	query_job = searchClient.runQuery('')
 
-	drsClient =  drsClient = sdlDRSClient(credentials_file)
+	drsClient =  drsClient = sdlDRSClient(credentials_file, debug=True)
 
 	location = 'projects/{}/locations/{}'.format(settings['GCPProject'], settings['GCPPipelineRegion'])
 	mysam = GCPLSsamtools(location, settings['GCPOutputBucket'], debug=True)
