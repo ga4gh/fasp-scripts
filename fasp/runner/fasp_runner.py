@@ -104,7 +104,7 @@ class FASPRunner:
 			via = 'sh'
 			#pipeline_id = 'paste here'
 
-			time = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
+			time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 			if self.live:
 				self.pipelineLogger.logRun(time, via, note,  pipeline_id, outfile, str(fileSize),
 					self.searchClient, self.drsClient, self.workClient)

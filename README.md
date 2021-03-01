@@ -1,5 +1,5 @@
 # fasp-scripts
- Scripts and clients for GA4GH Federated Analysis Systems Project
+ Notebooks and clients for GA4GH Federated Analysis Systems Project
 
 [TOC]
 
@@ -77,6 +77,10 @@ Wrapper to make a WES call. Currently does an MD5 checksum and the plenary GWAS 
 #### sb_wes_client.py
 
 Client to call Seven Bridges WES Servers. The specific features addressed include authentication, setting a project to work within and the use of apps stored in the Seven Bridges environment. For testing and demo purposes this client encapsulates running samtools. 
+
+#### elixir_wes_client.py
+
+Client to call Elixir WES Servers. The specific features addressed include authentication, setting a project to work within and the use of apps stored in the Seven Bridges environment. For testing and demo purposes this client encapsulates running samtools. 
 
 #### WESClient.py
 
