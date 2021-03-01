@@ -1,6 +1,8 @@
 # 
  These are the scripts for GA4GH Federated Analysis Systems Project
 
+Note that as on 1st March 2021 these scripts have been superseded by Jupyter notebooks. Equivalent notebooks have been created in the notebooks folder, with numbering following that used here. A few scripts have not been migrated where newer services were available and the old script is no longer relevant. In the migration to some notebooks services were updated to new services - notably in the case of WES where more services are now available.
+
 [TOC]
 
 

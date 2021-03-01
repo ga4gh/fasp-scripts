@@ -9,8 +9,11 @@ class ElixirWESClient(WESClient):
 	Client for ELIXIR WES Service
 	"""
 
-	def __init__(self, client_credentials_path, debug=False):
-		super(ElixirWESClient, self).__init__('https://wes-eu.egci-endpoints.imsi.athenarc.gr/ga4gh/wes/v1')
+	def __init__(self, api_base_url, client_credentials_path=None, debug=False):
+		self.api_base = api_base_url
+		if client_credentials_path == None:
+			client_credentials_path = '~/.keys/elixir_wes_credentials.json'
+		super(ElixirWESClient, self).__init__(api_base_url)
 		full_credentials_path = os.path.expanduser(client_credentials_path)
 		with open(full_credentials_path) as f:
 			self.credentials = json.load(f)
@@ -41,7 +44,7 @@ class ElixirWESClient(WESClient):
 
 
 if __name__ == "__main__":
-	myClient = ElixirWESClient('~/.keys/elixir_wes_credentials.json', debug=True)
+	myClient = ElixirWESClient(debug=True)
 
 	res = myClient.runWorkflow('http://62.217.82.57/test.txt')
 	#res = myClient.getRuns()
