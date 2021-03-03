@@ -85,8 +85,9 @@ class DiscoverySearchClient:
 		if verbose:
 			print ("_Schema for table{}_".format(table))
 			print(json.dumps(info, indent=3))
-		return info
-			
+		#return info
+		return SearchSchema(info)
+				
 	def listTableColumns(self, table, descriptions=False, enums=False):
 		''' List the columns in a table. More compact and practical for many purposes compared with listTableInfo '''
 		schema = self.listTableInfo(table)
@@ -102,6 +103,15 @@ class DiscoverySearchClient:
 				if '$comment' in v: print (v['$comment'])
 			print('_______________________________________')
 			
+	def listColumnInfo(self, table, verbose=False):
+		url = "{}/table/{}/info".format(self.hostURL,table)
+		response = requests.get(url, headers=self.headers)
+		info = json.loads(response.text)
+		if verbose:
+			print ("_Schema for table{}_".format(table))
+			print(json.dumps(info, indent=3))
+		return info
+
 	def getMappingTemplate(self, table, propList=None):
 		''' Get an empty template in which to create  mappings for property values 
 		:param table: table for which to generate a mapping template
@@ -174,6 +184,39 @@ class DiscoverySearchClient:
 
 	def query2Frame(self, query):
 		return self.runQuery(query, returnType='dataframe')
+	
+class SearchSchema():
+	''' A table schema '''	
+	def __init__(self, table_info ):
+		self.schema = table_info
+	
+	def getCol(self, colName):
+		if colName not in self.schema['data_model']['properties']:
+			print('No column named {}'.format(colName))
+		print(json.dumps(self.schema['data_model']['properties'][colName], indent=3))
+		
+	def getcaDSRDefinition(self, ref):
+		
+		from urllib.request import urlopen
+		from xml.etree.ElementTree import parse
+		metaresolverURL = 'http://identifiers.org/{}'.format(ref)
+		var_url = urlopen(metaresolverURL)
+		xmldoc = parse(var_url)
+
+		root = xmldoc.getroot()
+		requiredFields=['publicID','version','dateCreated','dateModified','longName',
+                'preferredDefinition','preferredName', 'registrationStatus']
+
+		requiredLinks=['valueDomain','dataElementConcept']
+		caDSRrep = {}
+		for item in root.findall('./queryResponse/class/field'):
+			fName = item.get('name')
+			if fName in requiredFields:
+				caDSRrep[fName]=item.text
+			if fName in requiredLinks:
+				caDSRrep[fName]=item.get('{http://www.w3.org/1999/xlink}href')
+
+		return caDSRrep
 
 
 def usage():
