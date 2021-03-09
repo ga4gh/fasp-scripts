@@ -7,17 +7,41 @@
 
 ------
 
-### **Prerequisites
+### **Getting Started
+
+Clone this GitHub repository
+
+- Install fasp package
+
+Install the fasp package from within the fasp-scripts directory
+
+e.g. pip install .
+
+Installation in a virtual python environment is encouraged. Please use the tools you prefer to manage such an environment (e.g. venv, conda, etc.)
+
+
 
 - Settings file
-  - The examples directory contains a template settings file with a number of parameters for the FASP scripts. Place a copy of this file in your file system and set the environment variable FASP_SETTINGS to point to it. Edit the settings as appropriate.
-- Python 3
-  - See the code for the modules required
+  
+  The examples directory contains a template settings file with a number of parameters for the FASP scripts. Place a copy of this file in your file system and set the environment variable FASP_SETTINGS to point to it. Edit the settings as appropriate. Not all settings may be needed immediately> For example the setting for which Seven Bridges system and project to use would not be needed unless you use the Seven Bridges WES service.
+  
 - A folder in your home directory called .keys containing keys for various services. Not all  keys required for all scripts.
+
   - bdc_credentials.json - api_key file [obtained from BioDataCatalyst](https://gen3.biodatacatalyst.nhlbi.nih.gov/identity)
   - crdc_credentials.json - api_key file [obtained from Cancer Research Data Commons](https://nci-crdc.datacommons.io/identity)
   - anvil_credentials.json - api_key file [obtained from Anvil](https://gen3.theanvil.io)
   - sevenbridges_keys.json - keys for cgc and or cavatica
+
+- Check you installation by running the X notebook (X to be identified - preferably a script that requires minimal/no credentials).
+
+  #### Prerequisites
+
+- Python 3
+  
+  - See the code for the modules required
+  
+- - 
+  
 - The following modules are used by different scripts. All scripts are unlikely to be relevant to all users these modules are not installed with the fasp package. Please install those needed for the scripts you will run.
   - BigQuery python libraries - for scripts that use BigQuery
   - [pyega3](https://pypi.org/project/pyega3/) - EGA client libraries for download. See also [EGA documentation for client API](https://ega-archive.org/download/downloader-quickguide-APIv3). 
