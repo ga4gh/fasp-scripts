@@ -6,7 +6,7 @@ prepared to successfully run the scripts within this repo.
 ## Initial setup
 
 If you already have Python, Pip, and Virtualenv installed on your system, skip
-ahead to "Repository setup."
+ahead to [Repository setup](#repository-setup).
 
 `fasp-scripts` requires Python version 3.x or higher with `pip` and `virtualenv`
 to be installed on your system. Download Python and Pip from the
@@ -24,7 +24,7 @@ python3 -m pip install virtualenv
 
 Next, let's setup the `fasp-scripts` repository
 
-## Repository setup
+## Repository setup <a id="repository-setup"></a>
 
 To begin, clone the `fasp-scripts` repository, and navigate to it.
 ```
@@ -58,26 +58,49 @@ know where the setting files is located:
 export FASP_SETTINGS="${HOME}/FASPSettings.json"
 ```
 
-TODO instruct user to modify pipeline log
+We created our own FASP settings file outside the repository so we can modify
+the behavior of certain scripts by changing the parameters. In most cases, the default parameters are enough to get started, however the value of `PipelineLog`
+must point to a real directory. Let's create a new directory to store our
+Pipeline log file.
 
 ```
 mkdir -p ~/.fasp-scripts/logs
 ```
 
-We created our own FASP settings file outside the repository so we can modify
-the behavior of certain scripts by changing the parameters. For now, the default
-parameters are enough to get started.
+Next, let's modify the value of `PipelineLog` in `FASPSettings.json` to
+`${HOME}/.fasp-scripts/logs/pipelineLog.txt` (using the real home directory value
+for ${HOME})
 
-## Google config
+## Google Cloud SDK setup
+
+If you have already installed the Google Cloud SDK on your system, and have logged in and set a default project via the SDK, skip ahead to the [Establishing accounts](#establish-accounts) step.
+
+Some scripts involve connecting directly to instances of Google Cloud services,including BigQuery and Storage. To do this, we will need to setup the Google Cloud SDK, and configure our Google profile on the command line. First, download and install the SDK for your system following the [instructions provided by Google](https://cloud.google.com/sdk/docs/install). Confirm installation of the SDK
+by running
+```
+gcloud
+```
+
+Next, let's configure the SDK with our credentials and other settings that
+need to be accessed at `fasp-script` runtime. First, let's authorize the SDK
+to our preferred Google Account for this project. Each of the following commands
+will start an OAuth flow, asking us to select the Google Account to be used by
+the SDK. Issue each command, selecting the same account.
 
 ```
 gcloud auth login
 gcloud auth application-default login
+```
+
+Next, we need to associate a project with the services accessed during `fasp-scripts`. This can be done by creating a new project called `fasp-scripts`
+and setting it as the default.
+
+```
 gcloud projects create fasp-scripts
 gcloud config set project fasp-scripts
 ```
 
-## Establish relationships with external services, manage API keys
+## Establish accounts with external services, and manage API keys <a id="establish-accounts"></a>
 
 The scripts require the user, acting as a researcher, to have API access
 to web services owned by a number of real-world, genomic data sharing institutes.
@@ -103,9 +126,3 @@ We will place our API key files under this directory. Now, we need to register
 accounts with the data platforms. Let's start with BioDataCatalyst.
 
 ### Register with BioDataCatalyst
-
-
-
-
-
-
