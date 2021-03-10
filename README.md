@@ -3,7 +3,10 @@
 
 [TOC]
 
-
+The scripts within this repo involve connecting to real-world web services
+implementing GA4GH standards across multiple institutions. If you are new to
+FASP, or haven't accessed these services before, please review the
+[Getting Started](./GETTING_STARTED.md) guide.
 
 ------
 
