@@ -2,6 +2,21 @@
 
 from setuptools import setup
 
+install_requires = [
+      'applescript',
+      'google-api-python-client',
+      'google-cloud-bigquery',
+      'google-cloud-storage',
+      'ipykernel',
+      'notebook',
+      'oauth2client',
+      'pandas',
+      'Pillow',
+      'pyega3',
+      'requests',
+      'sevenbridges-python'
+]
+
 setup(name='fasp',
       version='1.1',
       packages=['fasp',
@@ -10,4 +25,5 @@ setup(name='fasp',
                 'fasp.loc',
                 'fasp.workflow'],
       include_package_data=True,
+      install_requires=install_requires
       )
