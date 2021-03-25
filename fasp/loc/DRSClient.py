@@ -26,8 +26,10 @@ class DRSClient:
 
     # Get info about a DrsObject
     # See https://ga4gh.github.io/data-repository-service-schemas/preview/develop/docs/#_getobject
-	def getObject(self, object_id):
+	def getObject(self, object_id, expand=False):
 		api_url = '{0}/ga4gh/drs/v1/objects/{1}'.format(self.api_url_base, object_id)
+		if expand:
+			api_url += '?expand=true'
 		if self.debug:
 			print(api_url)
 		# headers generated error on SRA, doesn't seem to be required by the others
