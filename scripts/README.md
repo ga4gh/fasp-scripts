@@ -43,10 +43,7 @@ The table below indicates for each script where a GA4GH API could be used (blue)
 - Python 3
   - See the code for the modules required
 - A folder in your home directory called .keys containing keys for various services. Not all  keys required for all scripts.
-  - bdc_credentials.json - api_key file [obtained from BioDataCatalyst](https://gen3.biodatacatalyst.nhlbi.nih.gov/identity)
-  - crdc_credentials.json - api_key file [obtained from Cancer Research Data Commons](https://nci-crdc.datacommons.io/identity)
-  - anvil_credentials.json - api_key file [obtained from Anvil](https://gen3.theanvil.io)
-  - sevenbridges_keys.json - keys for cgc and or cavatica
+  - A summary of key naming and where to obtain the keys is [available here](../fasp/docs/access_keys.md).
 - The following modules are used by different scripts. All scripts are unlikely to be relevant to all users these modules are not installed with the fasp package. Please install those needed for the scripts you will run.
   - Google Life Sciences API enabled for your GCP account
   - BigQuery python libraries - for scripts that use BigQuery

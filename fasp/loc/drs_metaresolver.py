@@ -22,9 +22,9 @@ class DRSMetaResolver(DRSClient):
 			"bdc": bdcDRSClient('~/.keys/bdc_credentials.json','gs'),
 			"anv": anvilDRSClient('~/.keys/anvil_credentials.json', '', 'gs'),
 			"insdc": sdlDRSClient('~/.keys/prj_11218_D17199.ngc'),
-			"sbcgc": sbcgcDRSClient('~/.keys/sevenbridges_keys.json','s3'),
-			"sbcav": cavaticaDRSClient('~/.keys/sevenbridges_keys.json','gs'),
-			'sbbdc' : sbbdcDRSClient('~/.keys/sevenbridges_keys.json', 's3'),
+			"sbcgc": sbcgcDRSClient('~/.keys/sbcgc_key.json','s3'),
+			"sbcav": cavaticaDRSClient('~/.keys/sbcav_key.json','gs'),
+			'sbbdc' : sbbdcDRSClient('~/.keys/sbbdc_key.json', 's3'),
 			"sradrs": SRADRSClient('https://locate.be-md.ncbi.nlm.nih.gov')
 		}
 		self.registeredClients = []
@@ -107,9 +107,9 @@ class DRSMetaResolver(DRSClient):
 			elif prefix == "insdc": 
 				drsClient = sdlDRSClient('~/.keys/prj_11218_D17199.ngc')
 			elif prefix == "sbcgc": 
-				drsClient = sbcgcDRSClient('~/.keys/sevenbridges_keys.json','s3')
+				drsClient = sbcgcDRSClient('~/.keys/sbcgc_key.json','s3')
 			elif prefix == "sbcav": 
-				drsClient = cavaticaDRSClient('~/.keys/sevenbridges_keys.json','s3')
+				drsClient = cavaticaDRSClient('~/.keys/sbcav_key.json','s3')
 			else: 
 				drsClient = DRSClient.fromRegistryEntry(service)
 			return drsClient

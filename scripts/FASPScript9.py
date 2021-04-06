@@ -54,7 +54,7 @@ def main(argv):
 
 	# Step 2 - DRS - set up DRS Clients	
 	drsClients = {
-		"sb": sbcgcDRSClient('~/.keys/sevenbridges_keys.json', 's3'),
+		"sb": sbcgcDRSClient('~/.keys/sbcgc_key.json', 's3'),
 		"bdc": bdcDRSClient('~/.keys/bdc_credentials.json', 'gs')
 	}
 	print('setting credentials ')

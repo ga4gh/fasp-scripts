@@ -30,11 +30,8 @@ Installation in a virtual python environment is encouraged. Please use the tools
   
 - A folder in your home directory called .keys containing keys for various services. Not all  keys required for all scripts.
 
-  - bdc_credentials.json - api_key file [obtained from BioDataCatalyst](https://gen3.biodatacatalyst.nhlbi.nih.gov/identity)
-  - crdc_credentials.json - api_key file [obtained from Cancer Research Data Commons](https://nci-crdc.datacommons.io/identity)
-  - anvil_credentials.json - api_key file [obtained from Anvil](https://gen3.theanvil.io)
-  - sevenbridges_keys.json - keys for cgc and or cavatica
-
+  - A summary of key naming and where to obtain the keys is [available here](./fasp/docs/access_keys.md).
+  
 - Check you installation by running the X notebook (X to be identified - preferably a script that requires minimal/no credentials).
 
   #### Prerequisites

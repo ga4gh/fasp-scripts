@@ -17,7 +17,17 @@ In the user interface  go to Profile and click on “create API Key”. You can 
 
 
 
-#### **WES**
+#### Seven Bridges**
+
+| Data Commons                 | Gen3 user interface                               | Rename access key file as |
+| ---------------------------- | ------------------------------------------------- | ------------------------- |
+| BioDataCatalyst              | https://accounts.sb.biodatacatalyst.nhlbi.nih.gov | sbbdc_key.json            |
+| Cancer Research Data Commons | https://cgc.sbgenomics.com                        | sbcgc_key.json            |
+| Cavatica (Kids First)        | https://cavatica.sbgenomics.com                   | sbcav_key.json            |
+
+
+
+#### WES**
 
 | System | Gen3 user interface                                          | Rename access key file as |
 | ------ | ------------------------------------------------------------ | ------------------------- |
