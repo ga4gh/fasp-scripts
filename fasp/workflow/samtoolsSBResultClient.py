@@ -6,7 +6,7 @@ import sys, getopt, os
 from requests import get
 
 import sevenbridges as sbg
-from SBDRSClient import sbcgcDRSClient
+from fasp.loc import sbcgcDRSClient
 
 
 
@@ -31,7 +31,7 @@ def getTaskOutputs(task_id, ddir):
 				print(oitem.id)
 				print(oitem.name)
 				
-				drsClient = sbcgcDRSClient('~/.keys/sevenbridges_keys.json')
+				drsClient = sbcgcDRSClient('~/.keys/sbcgc_key.json')
 				drsResponse = drsClient.getObject(oitem.id)
 				print(drsResponse) 
 				drsURL = drsClient.getAccessURL(oitem.id, 's3')
