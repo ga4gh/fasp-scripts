@@ -29,12 +29,12 @@
             "g4ghStd": true,
             "people": ["Jeremy Adams"]
         },
-        "DiscoverySearchClient": {
+        "DataConnectClient": {
             "imageFile": "DiscoverySearch.jpg",
-            "textCredit": "Discovery Search by Sharvari Kapadia and Jonathan Fuerth",
-            "phoneticCredit": "Discovery Search by Sharvari Kapadia and ",
+            "textCredit": "Data Connect by Sharvari Kapadia and Jonathan Fuerth",
+            "phoneticCredit": "Data Connect by Sharvari Kapadia and ",
             "Work Stream": "Discovery",
-            "Implementation": "DNAStack Search",
+            "Implementation": "DNAStack Data Connect",
             "g4ghStd": true,
             "people": [
                 "Sharvari Kapadia",
