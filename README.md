@@ -28,9 +28,9 @@
 
 ### **Search clients**
 
-#### DiscoverySearchClient.py
+#### DataConnectClient
 
-Wrapper to call Discovery Servers and return results of a query.
+Wrapper to call GA4GH Data Connect Servers and return results of a queries.
 
 #### BigQuerySearchClient
 
