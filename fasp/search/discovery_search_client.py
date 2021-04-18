@@ -90,7 +90,8 @@ class DataConnectClient:
 				
 	def listTableColumns(self, table, descriptions=False, enums=False):
 		''' List the columns in a table. More compact and practical for many purposes compared with listTableInfo '''
-		schema = self.listTableInfo(table)
+		schema = self.listTableInfo(table).schema
+		if self.debug: print(json.dumps(schema, indent=3))
 		for c, v in schema['data_model']['properties'].items():
 			print (c)
 			if descriptions:
@@ -117,7 +118,7 @@ class DataConnectClient:
 		:param table: table for which to generate a mapping template
 		:param propList: optional list of properties to include in the map
 		'''
-		schema = self.listTableInfo(table)
+		schema = self.listTableInfo(table).schema
 		template = {}
 		for prop, details in schema['data_model']['properties'].items():
 			if propList == None or prop in propList:
