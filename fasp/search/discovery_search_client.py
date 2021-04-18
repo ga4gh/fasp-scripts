@@ -7,7 +7,7 @@ import json
 from fasp.loc import GA4GHRegistryClient
 import pandas as pd
 
-class DiscoverySearchClient:
+class DataConnectClient:
 
 	def __init__(self, hostURL, debug=False ):
 		self.hostURL = self._url_format(hostURL)
@@ -223,7 +223,7 @@ def usage():
 	print (sys.argv[0] +' -l listTables -c listCatalog -t tableInfo -r registeredServices')
 
 def main(argv):
-	searchClient = DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com')
+	searchClient = DataConnectClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com')
 
 	catalog = ''
 	table = ''
@@ -246,7 +246,7 @@ def main(argv):
 	    elif opt in ("-a", "--catalogs"):
 	        searchClient.listCatalogs()
 	    elif opt in ("-r", "--registeredServices"):
-	        DiscoverySearchClient.getRegisteredSearchServices()
+	        DataConnectClient.getRegisteredSearchServices()
 
 
 if __name__ == "__main__":

@@ -5,7 +5,7 @@ from fasp.runner import FASPRunner
 
 # The implementations we're using
 from fasp.loc import DRSMetaResolver
-from fasp.search import DiscoverySearchClient
+from fasp.search import DataConnectClient
 from fasp.workflow import DNAStackWESClient
 
 
@@ -18,7 +18,7 @@ def main(argv):
 		
 	# Step 1 - Discovery
 	# query for relevant DRS objects
-	searchClient = DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com/', debug=True)
+	searchClient = DataConnectClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com/', debug=True)
 
 	# Step 2 - DRS - a metaresolver will deal with which drs server is required
 	drsClient = DRSMetaResolver()

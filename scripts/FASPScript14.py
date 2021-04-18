@@ -7,7 +7,7 @@ from fasp.runner import FASPRunner
 # The implementations we're using
 from fasp.loc import DRSClient
 from fasp.workflow import GCPLSsamtools
-from fasp.search import DiscoverySearchClient
+from fasp.search import DataConnectClient
 
 def main(argv):
 
@@ -16,7 +16,7 @@ def main(argv):
 	settings = faspRunner.settings
 	# Step 1 - Discovery
 	# query for relevant DRS objects
-	searchClient = DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com/', debug=True)
+	searchClient = DataConnectClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com/', debug=True)
 
 	query = "SELECT s.su_submitter_id, drs_id FROM thousand_genomes.onek_genomes.ssd_drs s join thousand_genomes.onek_genomes.sra_drs_files f on f.sample_name = s.su_submitter_id where filetype = 'bam' and mapped = 'mapped' and sequencing_type ='exome' and  population = 'JPT' LIMIT 3"
 

@@ -6,7 +6,7 @@ from fasp.runner import FASPRunner
 # The implementations we're using
 from fasp.loc import bdcDRSClient
 from fasp.workflow import GCPLSsamtools
-from fasp.search import DiscoverySearchClient
+from fasp.search import DataConnectClient
 
 def main(argv):
 
@@ -15,7 +15,7 @@ def main(argv):
 	settings =faspRunner.settings
 	# Step 1 - Discovery
 	# query for relevant DRS objects
-	searchClient = DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com/')
+	searchClient = DataConnectClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com/')
 	query = "select submitter_id, read_drs_id drsid from thousand_genomes.onek_genomes.ssd_drs where population = 'BEB' limit 3"
 
 	# Step 2 - DRS - set up a DRS Client
