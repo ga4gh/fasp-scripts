@@ -3,7 +3,7 @@ import sys
 
 
 
-from fasp.search  import DiscoverySearchClient
+from fasp.search  import DataConnectClient
 
 
 
@@ -13,7 +13,7 @@ def main(argv):
 	# Step 1 - Discovery
 	# query for relevant DRS objects
 	
-	searchClient = DiscoverySearchClient('https://search-presto-public-covid19.prod.dnastack.com')
+	searchClient = DataConnectClient('https://search-presto-public-covid19.prod.dnastack.com')
 	
 	# List tables
 	#searchClient.listTables()

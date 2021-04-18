@@ -7,7 +7,7 @@ import json
 from fasp.loc import GA4GHRegistryClient
 import pandas as pd
 
-class DiscoverySearchClient:
+class DataConnectClient:
 
 	def __init__(self, hostURL, debug=False ):
 		self.hostURL = self._url_format(hostURL)
@@ -90,7 +90,8 @@ class DiscoverySearchClient:
 				
 	def listTableColumns(self, table, descriptions=False, enums=False):
 		''' List the columns in a table. More compact and practical for many purposes compared with listTableInfo '''
-		schema = self.listTableInfo(table)
+		schema = self.listTableInfo(table).schema
+		if self.debug: print(json.dumps(schema, indent=3))
 		for c, v in schema['data_model']['properties'].items():
 			print (c)
 			if descriptions:
@@ -117,7 +118,7 @@ class DiscoverySearchClient:
 		:param table: table for which to generate a mapping template
 		:param propList: optional list of properties to include in the map
 		'''
-		schema = self.listTableInfo(table)
+		schema = self.listTableInfo(table).schema
 		template = {}
 		for prop, details in schema['data_model']['properties'].items():
 			if propList == None or prop in propList:
@@ -223,7 +224,7 @@ def usage():
 	print (sys.argv[0] +' -l listTables -c listCatalog -t tableInfo -r registeredServices')
 
 def main(argv):
-	searchClient = DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com')
+	searchClient = DataConnectClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com')
 
 	catalog = ''
 	table = ''
@@ -246,7 +247,7 @@ def main(argv):
 	    elif opt in ("-a", "--catalogs"):
 	        searchClient.listCatalogs()
 	    elif opt in ("-r", "--registeredServices"):
-	        DiscoverySearchClient.getRegisteredSearchServices()
+	        DataConnectClient.getRegisteredSearchServices()
 
 
 if __name__ == "__main__":

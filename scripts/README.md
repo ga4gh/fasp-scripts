@@ -19,7 +19,7 @@ These Python scripts were originally created for the Cross-Platform Demo at the 
 
 They follow a basic three step pattern used throughout FASP. Each step corresponds to a different GA4GH API as outlined here
 
-- Search - to identify subjects and samples of interest based on attrinutes of those subjects and samples
+- Data Connect - to identify subjects and samples of interest based on attrinutes of those subjects and samples
 - Data Repository Service DRS - to obtain authorized access to files (genomic sequences)
 - Workflow Execution Service - WES -  to perform a workflow on those files
 
@@ -84,7 +84,7 @@ Script: [FASPScriptGWAS.py](https://github.com/ga4gh/fasp-scripts/blob/master/fa
 - Resolves which DRS server needs to be called to obtain a URL to access the file.
 - Submits the GWAS WDL workflow to the DNAStack WES Server using the URL provided by DRS.
 
-### Demonstration of Search and compute from multiple sources 
+### Demonstration of search and compute from multiple sources 
 
 Script: [FASPScript2.py](https://github.com/ga4gh/fasp-scripts/blob/master/fasp/scripts//FASPScript2.py)
 
@@ -105,7 +105,7 @@ Script: [FASPScript2.py](https://github.com/ga4gh/fasp-scripts/blob/master/fasp/
 - Possible to do's
 
   - Add additional dbGaP datasets.
-  - Move query to Discovery Search - requires access control on Discovery Search.
+  - Move query to Data Connect  - requires access control on Data Connect.
 
 ### Reproducibility across stacks 
 
@@ -152,7 +152,7 @@ More to be added
 
 ## Other demos and tests
 
-**testSearchPagination.py** - demonstrates how Discovery Seach query results are returned over several pages
+**testSearchPagination.py** - demonstrates how Data Connect query results are returned over several pages
 
 **examples** - examples of using individual APIs used in the main examples 
 

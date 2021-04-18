@@ -4,14 +4,14 @@ import sys
 import json
 
 
-from fasp.search  import DiscoverySearchClient
+from fasp.search  import DataConnectClient
 
 
 
 
 def main(argv):
 	
-	searchClient = DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com')
+	searchClient = DataConnectClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com')
 	
 	query = """select id, patient from kidsfirst.ga4gh_tables.patient 
 	where json_extract_scalar(patient, '$.gender') = 'female' 

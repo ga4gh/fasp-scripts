@@ -1,10 +1,10 @@
 # imports
-from fasp.search  import DiscoverySearchClient
+from fasp.search  import DataConnectClient
 from fasp.search  import mapping as mp
 
 	
 
-searchClient = DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com', debug=False)
+searchClient = DataConnectClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com', debug=False)
 
 table_name = 'search_cloud.cshcodeathon.organoid_profiling_pc_subject_phenotypes_gru'
 map_col = 'sex'
