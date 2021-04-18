@@ -15,7 +15,7 @@ These supersede the scripts used in the FASP-Scripts used at GA4GH Plenary 2020.
 
 The notebooks follow a basic three step pattern used throughout FASP. Each step corresponds to a different GA4GH API as outlined here
 
-- Search - to identify subjects and samples of interest based on attrinutes of those subjects and samples
+- Data Connect - to identify subjects and samples of interest based on attrinutes of those subjects and samples
 - Data Repository Service DRS - to obtain authorized access to files (genomic sequences)
 - Workflow Execution Service - WES -  to perform a workflow on those files
 
