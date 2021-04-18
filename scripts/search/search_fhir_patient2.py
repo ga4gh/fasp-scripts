@@ -4,7 +4,7 @@ import sys
 import json
 
 
-from fasp.search  import DiscoverySearchClient
+from fasp.search  import DataConnectClient
 
 
 
@@ -14,7 +14,7 @@ def main(argv):
 	# Step 1 - Discovery
 	# query for relevant DRS objects
 	
-	searchClient = DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com')
+	searchClient = DataConnectClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com')
 	
 	# List tables
 	#searchClient.listTables()

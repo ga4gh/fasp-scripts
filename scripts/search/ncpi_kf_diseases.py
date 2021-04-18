@@ -5,14 +5,14 @@ import json
 import pandas as pd
 
 
-from fasp.search  import DiscoverySearchClient
+from fasp.search  import DataConnectClient
 
 
 
 
 def main(argv):
 
-	searchClient = DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com')
+	searchClient = DataConnectClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com')
 	
 	query = 'select id, disease from kidsfirst.ga4gh_tables.ncpi_disease'
 	res = searchClient.runQuery(query)
