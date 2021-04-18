@@ -1,9 +1,9 @@
 # imports
-from fasp.search  import DiscoverySearchClient
+from fasp.search  import DataConnectClient
 
 
 
-searchClient = DiscoverySearchClient('https://search-presto-public-covid19.prod.dnastack.com')
+searchClient = DataConnectClient('https://search-presto-public-covid19.prod.dnastack.com')
 
 res = searchClient.runOneTableQuery(column_list=['accession', 'biosample', 'genus', 'species'], 
 									table='coronavirus_dnastack_curated.covid_cloud_production.sequences',

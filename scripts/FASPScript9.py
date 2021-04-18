@@ -9,7 +9,7 @@ from fasp.runner import FASPRunner
 # The implementations we're using
 from fasp.loc import bdcDRSClient,sbcgcDRSClient
 from fasp.workflow import GCPLSsamtools, samtoolsSBClient
-from fasp.search import BigQuerySearchClient, DiscoverySearchClient
+from fasp.search import BigQuerySearchClient, DataConnectClient
 
 
 
@@ -27,7 +27,7 @@ def main(argv):
 	# Step 1 - Discovery
 	# query for relevant DRS objects
 	discoveryClients = {
-		"sb": DiscoverySearchClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com/'),
+		"sb": DataConnectClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com/'),
 		"bdc": BigQuerySearchClient()
 	}
 
