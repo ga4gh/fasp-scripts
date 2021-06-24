@@ -31,7 +31,6 @@ class DNAStackWESClient(WESClient):
 			('grant_type', 'client_credentials'),
 			('client_id', self.credentials['id']),
 			('client_secret', self.credentials['secret']),
-			('scope', 'wes'),
 			# technically only need one of these
 			# future-proofing against support for DNAstack policy engine
 			#('resource', 'https://workspaces-wes.prod.dnastack.com')
