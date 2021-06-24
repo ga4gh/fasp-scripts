@@ -1,6 +1,8 @@
 import json
 import os
 import tempfile
+import time
+
 import pandas as pd
 import requests
 
@@ -127,17 +129,22 @@ class DNAStackWESClient(WESClient):
 				nextPageToken = rDict['next_page_token']
 			else:
 				nextPageToken = 'Done'
-			
+
 			runs = rDict['runs']
 			for r in runs:
 				runsdf = self.addRun(r['run_id'], runsdf)
 		return runsdf
 
-		
+
 if __name__ == "__main__":
 	myClient = DNAStackWESClient('~/.keys/dnastack_wes_credentials.json')
+	run_id = myClient.runWorkflow('gs://dnastack-public-bucket/thousand_genomes_meta.csv', '')
 
-	# res = myClient.runGWASWorkflowTest()
-	res = myClient.runWorkflow('gs://dnastack-public-bucket/thousand_genomes_meta.csv', '')
-
-	print(res)
+	status = myClient.getTaskStatus(run_id)
+	# TODO make sure this is exhaustive
+	while status not in {'RUNNING', 'COMPLETED', 'FAILED'}:
+		time.sleep(5)
+		status = myClient.getTaskStatus(run_id)
+		print('Task Status: ' + status)
+	print('Workflow started successfully')
+	print('Workflow run id: ' + run_id)
