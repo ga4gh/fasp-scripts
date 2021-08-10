@@ -16,20 +16,27 @@ class DRSMetaResolver(DRSClient):
 	# Initialize a DRS Client for the service at the specified url base
 	# and with the REST resource to provide an access key 
 	def __init__(self, debug=False, getReg=True):
+		crdcDRS = crdcDRSClient('~/.keys/crdc_credentials.json','s3')
+		anvilDRS = anvilDRSClient('~/.keys/anvil_credentials.json', '', 'gs')
+		bdcDRS = bdcDRSClient('~/.keys/bdc_credentials.json','gs')
 		self.drsClients = { 
 			"insdc": sdlDRSClient('~/.keys/prj_11218_D17199.ngc'),
-			"crdc": crdcDRSClient('~/.keys/crdc_credentials.json','s3'),
-			"bdc": bdcDRSClient('~/.keys/bdc_credentials.json','gs'),
-			"anv": anvilDRSClient('~/.keys/anvil_credentials.json', '', 'gs'),
+			"crdc": crdcDRS,
+			"dg.4DFC": crdcDRS,
+			"bdc": bdcDRS,
+			"dg.4503": bdcDRS,
+			"anv": anvilDRS,
+			"dg.ANV0": anvilDRS,
 			"insdc": sdlDRSClient('~/.keys/prj_11218_D17199.ngc'),
 			"sbcgc": sbcgcDRSClient('~/.keys/sevenbridges_keys.json','s3'),
 			"sbcav": cavaticaDRSClient('~/.keys/sevenbridges_keys.json','gs'),
 			'sbbdc' : sbbdcDRSClient('~/.keys/sevenbridges_keys.json', 's3'),
 			"sradrs": SRADRSClient('https://locate.be-md.ncbi.nlm.nih.gov')
 		}
+		self.debug = debug
 		self.registeredClients = []
 		self.hostNameIndex = {}
-		self.debug = debug
+
 		
 		if getReg: self.getRegisteredDRSServices()
 
@@ -119,6 +126,11 @@ class DRSMetaResolver(DRSClient):
 	def getRegisteredDRSServices(self):
 		reg = GA4GHRegistryClient()
 		drsServices = reg.getRegisteredServices('org.ga4gh:drs')
+		if ('message', 'Service Unavailable') in drsServices.items():
+			print('GA4GH registry unavailable, cannot get registered DRS services.')
+			print('Continuing with locally known DRS services.')
+			return None
+
 		for service in drsServices:
 			if self.debug:
 				json.dumps(service, indent=3)
@@ -142,19 +154,22 @@ class DRSMetaResolver(DRSClient):
 	
 	def checkResolution(self):
 		mixedIDs = ['insdc:SRR5368359.sra',
-				'bdc:dg.4503/66eeec21-aad0-4a77-8de5-621f05e2d301',
+				'bdc:66eeec21-aad0-4a77-8de5-621f05e2d301',
+				'dg.4503:66eeec21-aad0-4a77-8de5-621f05e2d301',
 				'crdc:f360253c-d7d7-47cb-947a-b26e0b41b800',
+				'dg.4DFC:f360253c-d7d7-47cb-947a-b26e0b41b800',
 				'sbcgc:5baa9d00e4b0abc1388b8ce0',
 				'sbcav:5772b6ed507c1752674486fc',
-				'anv:dg.ANV0/895c5a81-b985-4559-bc8e-cecece550756',
-				'srapub:72ff6ff882ec447f12df018e6183de59']
+				'anv:895c5a81-b985-4559-bc8e-cecece550756',
+				'dg.ANV0:895c5a81-b985-4559-bc8e-cecece550756',
+				'sradrs:72ff6ff882ec447f12df018e6183de59']
 
 	
 		testResults = {}
 		for id in mixedIDs:
 			print('-------------------------------')
 			print('sending: {}'.format(id))
-			res = self.getObject(id),
+			res = self.getObject(id)
 			idParts = id.split(":", 1)
 			if res == 400:
 				testResults[idParts[0]] = 'request error'.format(id)
