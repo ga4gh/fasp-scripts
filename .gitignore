@@ -139,3 +139,6 @@ dmypy.json
 
 # IntelliJ Configuration
 *.iml
+
+# Mac OS X
+.DS_Store
