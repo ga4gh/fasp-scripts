@@ -3,6 +3,7 @@ import requests
 import sys, getopt
 
 from fasp.loc import crdcDRSClient, bdcDRSClient, Gen3DRSClient, anvilDRSClient
+from fasp.loc import kfDRSClient
 from fasp.loc import sdlDRSClient, SRADRSClient
 from fasp.loc import sbcgcDRSClient, cavaticaDRSClient, sbbdcDRSClient
 from fasp.loc import DRSClient
@@ -117,6 +118,8 @@ class DRSMetaResolver(DRSClient):
 				drsClient = sbcgcDRSClient('~/.keys/sevenbridges_keys.json','s3')
 			elif prefix == "sbcav": 
 				drsClient = cavaticaDRSClient('~/.keys/sevenbridges_keys.json','s3')
+			elif service['url'] == "https://data.kidsfirstdrc.org":
+				drsClient = kfDRSClient('~/.keys/kf_credentials.json')				
 			else: 
 				drsClient = DRSClient.fromRegistryEntry(service)
 			return drsClient
@@ -126,7 +129,8 @@ class DRSMetaResolver(DRSClient):
 	def getRegisteredDRSServices(self):
 		reg = GA4GHRegistryClient()
 		drsServices = reg.getRegisteredServices('org.ga4gh:drs')
-		if ('message', 'Service Unavailable') in drsServices.items():
+		#if ('message', 'Service Unavailable') in drsServices.items():
+		if not isinstance(drsServices, list):
 			print('GA4GH registry unavailable, cannot get registered DRS services.')
 			print('Continuing with locally known DRS services.')
 			return None
