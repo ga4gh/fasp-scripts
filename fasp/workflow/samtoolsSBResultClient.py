@@ -6,7 +6,7 @@ import sys, getopt, os
 from requests import get
 
 import sevenbridges as sbg
-from SBDRSClient import sbcgcDRSClient
+from fasp.loc import sbcgcDRSClient
 
 
 

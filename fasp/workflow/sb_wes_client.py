@@ -126,21 +126,34 @@ class sbWESClient(WESClient):
 		
 	def addRun(self, run_id, runsdf):
 		runURL = "{}/{}".format(self.api_url_base+'/runs', run_id)
+		if self.debug:
+			print("sending {}".format(runURL))
 		runResp = requests.get(runURL, headers=self.headers)
 		run = runResp.json()
+		#if self.debug:
+		#	print(json.dumps(run, indent=3))
 		
-		runStart = run['run_log']['start_time']
-		workflowURL = run['request']['workflow_url']
-		params = run['request']['workflow_params']
-		newRow =[run_id,runStart,run['state'], workflowURL]
-		cols= ["run_id", "start", "state","type"]
-		for p, v in params.items():
-			newRow.append(v)
-			cols.append(p)
-		df_row = pd.DataFrame([newRow], columns= cols)
-		runsdf = runsdf.append(df_row)
-		print(run_id, runStart)
-		print (workflowURL, run['state'])
+		try:
+			runStart = run['run_log']['start_time']
+			if 'workflow_url' in run['request']:
+				workflowURL = run['request']['workflow_url']
+			else:
+				workflowURL = 'unknown'
+			params = run['request']['workflow_params']
+			newRow =[run_id,runStart,run['state'], workflowURL]
+			if self.debug:
+				print(newRow)
+			cols= ["run_id", "start", "state","type"]
+			for p, v in params.items():
+				newRow.append(v)
+				cols.append(p)
+			df_row = pd.DataFrame([newRow], columns= cols)
+			runsdf = runsdf.append(df_row)
+		except KeyError as err:
+			print(json.dumps(run, indent=3))
+			print (err)
+		#print(run_id, runStart)
+		#print (workflowURL, run['state'])
 		return runsdf	
 	
 	def getRuns(self):
@@ -148,21 +161,25 @@ class sbWESClient(WESClient):
 		runsdf = pd.DataFrame(columns = df_columns)
 
 		nextPageToken = ''
-		while nextPageToken != 'Done':
+		while nextPageToken != None:
 			if nextPageToken != '':
 				payload = {'page_token': nextPageToken}
 			else:
 				payload = {}
 			response = requests.get(self.api_url_base+'/runs', headers=self.headers, params=payload)
+			if self.debug:
+				print(json.dumps(response.json(), indent=3))
 			rDict = response.json()
 			if 'next_page_token' in rDict.keys():
 				nextPageToken = rDict['next_page_token']
+				if nextPageToken == "":
+					nextPageToken = None
 			else:
-				nextPageToken = 'Done'
+				nextPageToken = None
 			
-			runs = rDict['runs']
-			for r in runs:
-				runsdf = self.addRun(r['run_id'], runsdf)
+			#runs = rDict['workflows']
+			#for r in runs:
+			#	runsdf = self.addRun(r['run_id'], runsdf)
 		return runsdf
 
 class sbcgcWESClient(sbWESClient):
