@@ -6,7 +6,7 @@ The workflow uses tools from this GitHUb repository https://github.com/BRCAChall
 
 
 
-![VUS flow](VUS flow.jpg)
+![VUS flow](./VUS flow.jpg)
 
  
 
