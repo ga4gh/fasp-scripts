@@ -144,26 +144,26 @@ class kfDRSClient(Gen3DRSClient):
             api_key_path, access_id, debug)
 
 class anvilDRSClient(Gen3DRSClient):
-	
-	
-	def __init__(self, api_key_path, userProject=None, access_id=None,  debug=False):
-		self.userProject = userProject
-		super().__init__('https://gen3.theanvil.io','/user/credentials/api/access_token', api_key_path, access_id, debug)
+    
+    
+    def __init__(self, api_key_path, userProject=None, access_id=None,  debug=False):
+        self.userProject = userProject
+        super().__init__('https://gen3.theanvil.io','/user/credentials/api/access_token', api_key_path, access_id, debug)
 
-	# Get a URL for fetching bytes. 
-	# Anvil GCP resources requires you to provide the userAccount to which charges will be accrued
-	# That user account must grant serviceusage.services.use access to your anvil service account
-	# e.g. to user-123@anvilprod.iam.gserviceaccount.com
-	def getAccessURL(self, object_id, access_id=None):
-		result = super().getAccessURL(object_id, access_id)
+    # Get a URL for fetching bytes. 
+    # Anvil GCP resources requires you to provide the userAccount to which charges will be accrued
+    # That user account must grant serviceusage.services.use access to your anvil service account
+    # e.g. to user-123@anvilprod.iam.gserviceaccount.com
+    def getAccessURL(self, object_id, access_id=None):
+        result = super().getAccessURL(object_id, access_id)
 
-		if result != None:
-			if self.userProject == None:
-				return result
-			else:
-				return '{}&userProject={}'.format(result, self.userProject)
-		else:
-			return None
+        if result != None:
+            if self.userProject == None:
+                return result
+            else:
+                return '{}&userProject={}'.format(result, self.userProject)
+        else:
+            return None
 
 if __name__ == "__main__":
     print ('______________________________________')
