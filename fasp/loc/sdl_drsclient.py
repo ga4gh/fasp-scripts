@@ -10,7 +10,7 @@ import os
 from fasp.loc import DRSClient
 
 class SRADRSClient(DRSClient):
-	'''SRA DRS client with ability to convert SRA accessions to DRS ids'''
+	'''SRA DRS client with ability to convert SRA accessions to DRS ids using IDentityeXchange (IDX) service'''
 	
 	def __init__(self, api_url_base, access_id=None, debug=False, public=False):
 		''' use region for access_id for this client '''
