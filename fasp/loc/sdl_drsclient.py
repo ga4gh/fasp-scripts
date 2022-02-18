@@ -31,16 +31,18 @@ class SRADRSClient(DRSClient):
 		resp = self.acc2drs(accession, verbose)
 		return resp['response'][accession]['drs']
 	
-	def getAccessURL(self, object_id, region=None):
-		''' SRA DRS uses random access ids - so getAccess URL uses region in instead '''
-		if region == None:
-			region = self.access_id
-		access_methods = self.getObject(object_id)['access_methods']
-		am = next((sub for sub in access_methods if sub['region'] == region), None)
-		if am == None:
-			print ('object not in region {}'.format(region))
-			return None
-		return super().getAccessURL(object_id, am['access_id'])
+	#===========================================================================
+	# def getAccessURL(self, object_id, region=None):
+	# 	''' SRA DRS uses random access ids - so getAccess URL uses region in instead '''
+	# 	if region == None:
+	# 		region = self.access_id
+	# 	access_methods = self.getObject(object_id)['access_methods']
+	# 	am = next((sub for sub in access_methods if sub['region'] == region), None)
+	# 	if am == None:
+	# 		print ('object not in region {}'.format(region))
+	# 		return None
+	# 	return super().getAccessURL(object_id, am['access_id'])
+	#===========================================================================
 
 
 class sdlDRSClient(DRSClient):
