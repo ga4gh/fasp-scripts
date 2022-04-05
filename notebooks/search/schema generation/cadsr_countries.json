@@ -1,0 +1,545 @@
+
+       [
+        
+        {"const":"Falkland Islands"},
+    
+        {"const":"Faroe Islands"},
+    
+        {"const":"France"},
+    
+        {"const":"France, Metropolitan"},
+    
+        {"const":"Gabon"},
+    
+        {"const":"United Kingdom"},
+    
+        {"const":"Grenada"},
+    
+        {"const":"Georgia"},
+    
+        {"const":"French Guiana"},
+    
+        {"const":"Guernsey"},
+    
+        {"const":"Ghana"},
+    
+        {"const":"Gibraltar"},
+    
+        {"const":"Greenland"},
+    
+        {"const":"Gambia, The"},
+    
+        {"const":"Guinea"},
+    
+        {"const":"Guadeloupe"},
+    
+        {"const":"Equatorial Guinea"},
+    
+        {"const":"Greece"},
+    
+        {"const":"South Georgia and the Islands"},
+    
+        {"const":"Guatemala"},
+    
+        {"const":"Guam"},
+    
+        {"const":"Guinea-Bissau"},
+    
+        {"const":"Guyana"},
+    
+        {"const":"Hong Kong"},
+    
+        {"const":"Heard Island and McDonald Islands"},
+    
+        {"const":"Honduras"},
+    
+        {"const":"Croatia"},
+    
+        {"const":"Haiti"},
+    
+        {"const":"Hungary"},
+    
+        {"const":"Indonesia"},
+    
+        {"const":"Ireland"},
+    
+        {"const":"Israel"},
+    
+        {"const":"Isle of Man"},
+    
+        {"const":"India"},
+    
+        {"const":"British Indian Ocean Territory"},
+    
+        {"const":"Iraq"},
+    
+        {"const":"Iran"},
+    
+        {"const":"Iceland"},
+    
+        {"const":"Italy"},
+    
+        {"const":"Jersey"},
+    
+        {"const":"Jamaica"},
+    
+        {"const":"Jordan"},
+    
+        {"const":"Japan"},
+    
+        {"const":"Kenya"},
+    
+        {"const":"Kyrgyzstan"},
+    
+        {"const":"Cambodia"},
+    
+        {"const":"Kiribati"},
+    
+        {"const":"Comoros"},
+    
+        {"const":"Saint Kitts and Nevis"},
+    
+        {"const":"Korea, North"},
+    
+        {"const":"Korea, South"},
+    
+        {"const":"Kuwait"},
+    
+        {"const":"Cayman Islands"},
+    
+        {"const":"Kazakhstan"},
+    
+        {"const":"Laos"},
+    
+        {"const":"Lebanon"},
+    
+        {"const":"Saint Lucia"},
+    
+        {"const":"Liechtenstein"},
+    
+        {"const":"Sri Lanka"},
+    
+        {"const":"Liberia"},
+    
+        {"const":"Lesotho"},
+    
+        {"const":"Lithuania"},
+    
+        {"const":"Luxembourg"},
+    
+        {"const":"Latvia"},
+    
+        {"const":"Libya"},
+    
+        {"const":"Morocco"},
+    
+        {"const":"Monaco"},
+    
+        {"const":"Moldova"},
+    
+        {"const":"Madagascar"},
+    
+        {"const":"Marshall Islands"},
+    
+        {"const":"Micronesia, Federated States of"},
+    
+        {"const":"Macedonia"},
+    
+        {"const":"Mali"},
+    
+        {"const":"Myanmar"},
+    
+        {"const":"Mongolia"},
+    
+        {"const":"Macau"},
+    
+        {"const":"Northern Mariana Islands"},
+    
+        {"const":"Martinique"},
+    
+        {"const":"Mauritania"},
+    
+        {"const":"Montserrat"},
+    
+        {"const":"Malta"},
+    
+        {"const":"Mauritius"},
+    
+        {"const":"Maldives"},
+    
+        {"const":"Malawi"},
+    
+        {"const":"Mexico"},
+    
+        {"const":"Malaysia"},
+    
+        {"const":"Mozambique"},
+    
+        {"const":"Namibia"},
+    
+        {"const":"New Caledonia"},
+    
+        {"const":"Niger"},
+    
+        {"const":"Norfolk Island"},
+    
+        {"const":"Nigeria"},
+    
+        {"const":"Nicaragua"},
+    
+        {"const":"Netherlands"},
+    
+        {"const":"Norway"},
+    
+        {"const":"Nepal"},
+    
+        {"const":"Nauru"},
+    
+        {"const":"Niue"},
+    
+        {"const":"New Zealand"},
+    
+        {"const":"Oman"},
+    
+        {"const":"Panama"},
+    
+        {"const":"Peru"},
+    
+        {"const":"French Polynesia"},
+    
+        {"const":"Papua New Guinea"},
+    
+        {"const":"Philippines"},
+    
+        {"const":"Pakistan"},
+    
+        {"const":"Poland"},
+    
+        {"const":"Saint Pierre and Miquelon"},
+    
+        {"const":"Pitcairn Islands"},
+    
+        {"const":"Puerto Rico"},
+    
+        {"const":"Portugal"},
+    
+        {"const":"Palau"},
+    
+        {"const":"Paraguay"},
+    
+        {"const":"Qatar"},
+    
+        {"const":"Romania"},
+    
+        {"const":"Russia"},
+    
+        {"const":"Reunion"},
+    
+        {"const":"Rwanda"},
+    
+        {"const":"Saudi Arabia"},
+    
+        {"const":"Solomon Islands"},
+    
+        {"const":"Seychelles"},
+    
+        {"const":"Sudan"},
+    
+        {"const":"Sweden"},
+    
+        {"const":"Singapore"},
+    
+        {"const":"Saint Helena"},
+    
+        {"const":"Slovenia"},
+    
+        {"const":"Svalbard"},
+    
+        {"const":"Slovakia"},
+    
+        {"const":"Sierra Leone"},
+    
+        {"const":"San Marino"},
+    
+        {"const":"Senegal"},
+    
+        {"const":"Timor-Leste"},
+    
+        {"const":"Somalia"},
+    
+        {"const":"Suriname"},
+    
+        {"const":"Sao Tome and Principe"},
+    
+        {"const":"El Salvador"},
+    
+        {"const":"Syria"},
+    
+        {"const":"Swaziland"},
+    
+        {"const":"Chad"},
+    
+        {"const":"French Southern and Antarctic Lands"},
+    
+        {"const":"Togo"},
+    
+        {"const":"Thailand"},
+    
+        {"const":"Tajikistan"},
+    
+        {"const":"Tokelau"},
+    
+        {"const":"Turkmenistan"},
+    
+        {"const":"Tunisia"},
+    
+        {"const":"Tonga"},
+    
+        {"const":"Turkey"},
+    
+        {"const":"Trinidad and Tobago"},
+    
+        {"const":"Tuvalu"},
+    
+        {"const":"Taiwan"},
+    
+        {"const":"Tanzania"},
+    
+        {"const":"Ukraine"},
+    
+        {"const":"Uganda"},
+    
+        {"const":"United States Minor Outlying Islands"},
+    
+        {"const":"United States"},
+    
+        {"const":"Uruguay"},
+    
+        {"const":"Uzbekistan"},
+    
+        {"const":"Holy See (Vatican City)"},
+    
+        {"const":"Saint Vincent and the Grenadines"},
+    
+        {"const":"Virgin Islands (UK)"},
+    
+        {"const":"Virgin Islands (US)"},
+    
+        {"const":"Vietnam"},
+    
+        {"const":"Vanuatu"},
+    
+        {"const":"Wallis and Futuna"},
+    
+        {"const":"Western Samoa"},
+    
+        {"const":"Yemen"},
+    
+        {"const":"Mayotte"},
+    
+        {"const":"South Africa"},
+    
+        {"const":"Zambia"},
+    
+        {"const":"Congo, Democratic Republic of the"},
+    
+        {"const":"Zimbabwe"},
+    
+        {"const":"United Arab Emirates"},
+    
+        {"const":"Afghanistan"},
+    
+        {"const":"Antigua and Barbuda"},
+    
+        {"const":"Anguilla"},
+    
+        {"const":"Albania"},
+    
+        {"const":"Armenia"},
+    
+        {"const":"Netherland Antilles"},
+    
+        {"const":"Angola"},
+    
+        {"const":"Antarctica"},
+    
+        {"const":"Argentina"},
+    
+        {"const":"American Samoa"},
+    
+        {"const":"Austria"},
+    
+        {"const":"Australia"},
+    
+        {"const":"Aruba"},
+    
+        {"const":"Barbados"},
+    
+        {"const":"Bangladesh"},
+    
+        {"const":"Belgium"},
+    
+        {"const":"Burkina Faso"},
+    
+        {"const":"Bulgaria"},
+    
+        {"const":"Bahrain"},
+    
+        {"const":"Burundi"},
+    
+        {"const":"Benin"},
+    
+        {"const":"Palmyra Atoll"},
+    
+        {"const":"Navassa Island"},
+    
+        {"const":"Midway Islands"},
+    
+        {"const":"Kosovo"},
+    
+        {"const":"Kingman Reef"},
+    
+        {"const":"Juan de Nova Island"},
+    
+        {"const":"Jarvis Island"},
+    
+        {"const":"Jan Mayen"},
+    
+        {"const":"Howland Island"},
+    
+        {"const":"Glorioso Islands"},
+    
+        {"const":"Gaza Strip"},
+    
+        {"const":"Europa Island"},
+    
+        {"const":"Coral Sea Islands"},
+    
+        {"const":"Clipperton Island"},
+    
+        {"const":"Burma"},
+    
+        {"const":"Brunei"},
+    
+        {"const":"Bassas da India"},
+    
+        {"const":"Baker Island"},
+    
+        {"const":"Ashmore and Cartier Islands"},
+    
+        {"const":"Congo, Republic of the"},
+    
+        {"const":"Cote d'Ivoire"},
+    
+        {"const":"Zaire"},
+    
+        {"const":"West Bank"},
+    
+        {"const":"Wake Island"},
+    
+        {"const":"Virgin Islands"},
+    
+        {"const":"Spratly Islands"},
+    
+        {"const":"Serbia"},
+    
+        {"const":"Samoa"},
+    
+        {"const":"Saint Martin"},
+    
+        {"const":"Saint Barthelemy"},
+    
+        {"const":"Paracel Islands"},
+    
+        {"const":"Turks and Caicos Islands"},
+    
+        {"const":"Venezuela"},
+    
+        {"const":"Ascension Island"},
+    
+        {"const":"Andorra"},
+    
+        {"const":"Bermuda"},
+    
+        {"const":"Bolivia"},
+    
+        {"const":"Brazil"},
+    
+        {"const":"Bahamas, The"},
+    
+        {"const":"Bhutan"},
+    
+        {"const":"Bouvet Island"},
+    
+        {"const":"Botswana"},
+    
+        {"const":"Belarus"},
+    
+        {"const":"Belize"},
+    
+        {"const":"Canada"},
+    
+        {"const":"Bosnia and Herzegovina"},
+    
+        {"const":"Azerbaijan"},
+    
+        {"const":"Central African Republic"},
+    
+        {"const":"Switzerland"},
+    
+        {"const":"Cook Islands"},
+    
+        {"const":"Chile"},
+    
+        {"const":"Cameroon"},
+    
+        {"const":"China"},
+    
+        {"const":"Colombia"},
+    
+        {"const":"Cocos (Keeling) Islands"},
+    
+        {"const":"Costa Rica"},
+    
+        {"const":"Cuba"},
+    
+        {"const":"Cape Verde"},
+    
+        {"const":"Christmas Island"},
+    
+        {"const":"Cyprus"},
+    
+        {"const":"Czech Republic"},
+    
+        {"const":"Germany"},
+    
+        {"const":"Djibouti"},
+    
+        {"const":"Denmark"},
+    
+        {"const":"Dominica"},
+    
+        {"const":"Dominican Republic"},
+    
+        {"const":"Algeria"},
+    
+        {"const":"Ecuador"},
+    
+        {"const":"Estonia"},
+    
+        {"const":"Egypt"},
+    
+        {"const":"Western Sahara"},
+    
+        {"const":"Eritrea"},
+    
+        {"const":"Spain"},
+    
+        {"const":"Ethiopia"},
+    
+        {"const":"Finland"},
+    
+        {"const":"Fiji"}
+    
+        ]
+    

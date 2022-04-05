@@ -1,0 +1,1958 @@
+{
+        "$id": "",
+        "description": "CINECA synthetic cohort Africa H3ABioNet v1",
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "properties": {
+            "pid": {
+                "description": "Participant ID:",
+                "type": "string"
+            },
+            "height_avg": {
+                "description": "Average height:",
+                "type": "number",
+                "$unit":"cm"
+            },
+            "weight_avg": {
+                "description": "Calculated average weight (kg):",
+                "type": "number",
+                "$unit":"kg"
+            },
+            "hypertension": {
+                "description": "Has a healthcare worker ever said that you have high blood pressure or hypertension? ",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "Yes"
+                    },
+                    {
+                        "const": "No"
+                    },
+                    {
+                        "const": "Don't Know"
+                    }
+                ]
+            },
+            "hypertension_meds": {
+                "description": "Have you ever taken medication for hypertension/high blood pressure?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "Yes now"
+                    },
+                    {
+                        "const": "Yes not now"
+                    },
+                    {
+                        "const": "No"
+                    },
+                    {
+                        "const": "Don't know"
+                    }
+                ]
+            },
+            "bp_systolic1": {
+                "description": "Systolic Pressure measurement 1",
+                "type": "number",
+                "$unit": "mmHg"
+            },
+            "bp_diastolic1": {
+                "description": "Diastolic Pressure measurement 1",
+                "type": "number",
+                "$unit": "mmHg"
+            },
+            "age": {
+                "description": "About how old are you?\n<i>(Only complete when date of birth is unknown)</i>\n",
+                "type": "integer",
+                "$unit": "Enter an integer number and then select unit of measure next."
+            },
+            "sex": {
+                "description": "Are you male or female?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "Male"
+                    },
+                    {
+                        "const": "Female"
+                    },
+                    {
+                        "const": "Other"
+                    },
+                    {
+                        "const": "Refused"
+                    }
+                ]
+            },
+            "birthcountry": {
+            "allOf":[
+                {"description": "In which country were you born?"},
+                {"$ref": "countries.json"}
+                ]
+            },
+            "language": {
+                "description": "What is your native language?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "english"
+                    },
+                    {
+                        "const": "afrikaans"
+                    },
+                    {
+                        "const": "nd?l?isindebele)"
+                    },
+                    {
+                        "const": "xhosa (isixhosa)"
+                    },
+                    {
+                        "const": "zoulou (isizulu)"
+                    },
+                    {
+                        "const": "arabic"
+                    },
+                    {
+                        "const": "Portuguese"
+                    },
+                    {
+                        "const": "frensh"
+                    },
+                    {
+                        "const": "tswana"
+                    },
+                    {
+                        "const": "moray"
+                    },
+                    {
+                        "const": "dioula"
+                    },
+                    {
+                        "const": "peul"
+                    },
+                    {
+                        "const": "kirundi"
+                    },
+                    {
+                        "const": "somali"
+                    },
+                    {
+                        "const": "afar"
+                    },
+                    {
+                        "const": "amharic"
+                    },
+                    {
+                        "const": "espanish"
+                    },
+                    {
+                        "const": "ha?en"
+                    },
+                    {
+                        "const": "swahili"
+                    },
+                    {
+                        "const": "sesotho"
+                    },
+                    {
+                        "const": "malgache"
+                    },
+                    {
+                        "const": "chichewa"
+                    },
+                    {
+                        "const": "bambara"
+                    },
+                    {
+                        "const": "sango"
+                    },
+                    {
+                        "const": "kinyarwanda"
+                    },
+                    {
+                        "const": "creaole seychelle"
+                    },
+                    {
+                        "const": "swati"
+                    },
+                    {
+                        "const": "shona"
+                    },
+                    {
+                        "const": "sindebele"
+                    },
+                    {
+                        "const": "tswana (setswana)"
+                    },
+                    {
+                        "const": "siswati (siSwati)"
+                    },
+                    {
+                        "const": "venda (tshivenda)"
+                    },
+                    {
+                        "const": "tsonga (xitsonga)"
+                    },
+                    {
+                        "const": "Other"
+                    }
+                ]
+            },
+            "ethnicity": {
+                "description": "What is your ethnic or tribal affiliation?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "Berbers"
+                    },
+                    {
+                        "const": "Copts"
+                    },
+                    {
+                        "const": "Egyptians"
+                    },
+                    {
+                        "const": "Fur"
+                    },
+                    {
+                        "const": "Maghrebis"
+                    },
+                    {
+                        "const": "Nubians"
+                    },
+                    {
+                        "const": "Tuareg"
+                    },
+                    {
+                        "const": "Zaghawa"
+                    },
+                    {
+                        "const": "Toubou"
+                    },
+                    {
+                        "const": "Alur"
+                    },
+                    {
+                        "const": "Anuak"
+                    },
+                    {
+                        "const": "Acholi"
+                    },
+                    {
+                        "const": "Banyoro"
+                    },
+                    {
+                        "const": "Chagga"
+                    },
+                    {
+                        "const": "Dinka"
+                    },
+                    {
+                        "const": "Ganda"
+                    },
+                    {
+                        "const": "Langi"
+                    },
+                    {
+                        "const": "Hutu"
+                    },
+                    {
+                        "const": "Kamba"
+                    },
+                    {
+                        "const": "Kalenjin"
+                    },
+                    {
+                        "const": "Kikuyu"
+                    },
+                    {
+                        "const": "Kwama"
+                    },
+                    {
+                        "const": "Lugbara"
+                    },
+                    {
+                        "const": "Luo"
+                    },
+                    {
+                        "const": "Luhya"
+                    },
+                    {
+                        "const": "Maasai"
+                    },
+                    {
+                        "const": "Makonde"
+                    },
+                    {
+                        "const": "Ameru"
+                    },
+                    {
+                        "const": "Nuer"
+                    },
+                    {
+                        "const": "Samburu"
+                    },
+                    {
+                        "const": "Shilluk"
+                    },
+                    {
+                        "const": "Swahili"
+                    },
+                    {
+                        "const": "Tutsi"
+                    },
+                    {
+                        "const": "Twa"
+                    },
+                    {
+                        "const": "Aka"
+                    },
+                    {
+                        "const": "Baka"
+                    },
+                    {
+                        "const": "Banda"
+                    },
+                    {
+                        "const": "Chewa"
+                    },
+                    {
+                        "const": "Chokwe"
+                    },
+                    {
+                        "const": "Ef? 40"
+                    },
+                    {
+                        "const": "Kongo"
+                    },
+                    {
+                        "const": "Kanuri"
+                    },
+                    {
+                        "const": "Lingala"
+                    },
+                    {
+                        "const": "Luba"
+                    },
+                    {
+                        "const": "Kotoko"
+                    },
+                    {
+                        "const": "Mbunda"
+                    },
+                    {
+                        "const": "Mbundu"
+                    },
+                    {
+                        "const": "Moghamo"
+                    },
+                    {
+                        "const": "Mongo"
+                    },
+                    {
+                        "const": "Ngamambo"
+                    },
+                    {
+                        "const": "Ovimbundu"
+                    },
+                    {
+                        "const": "Sara"
+                    },
+                    {
+                        "const": "Sua"
+                    },
+                    {
+                        "const": "Zande"
+                    },
+                    {
+                        "const": "Zaghawa"
+                    },
+                    {
+                        "const": "Akan"
+                    },
+                    {
+                        "const": "Aku"
+                    },
+                    {
+                        "const": "Bambara"
+                    },
+                    {
+                        "const": "Basaa"
+                    },
+                    {
+                        "const": "Bassa"
+                    },
+                    {
+                        "const": "BetiPahuin"
+                    },
+                    {
+                        "const": "Biafada"
+                    },
+                    {
+                        "const": "Mole-Dagbani"
+                    },
+                    {
+                        "const": "Dendi"
+                    },
+                    {
+                        "const": "Edo"
+                    },
+                    {
+                        "const": "Efik"
+                    },
+                    {
+                        "const": "Eket"
+                    },
+                    {
+                        "const": "Esan"
+                    },
+                    {
+                        "const": "Ewe"
+                    },
+                    {
+                        "const": "Fon"
+                    },
+                    {
+                        "const": "Fulani"
+                    },
+                    {
+                        "const": "Ga"
+                    },
+                    {
+                        "const": "Gwari"
+                    },
+                    {
+                        "const": "Hausa"
+                    },
+                    {
+                        "const": "Igbo"
+                    },
+                    {
+                        "const": "Ijaw"
+                    },
+                    {
+                        "const": "Jola"
+                    },
+                    {
+                        "const": "Kanuri"
+                    },
+                    {
+                        "const": "Mandingo"
+                    },
+                    {
+                        "const": "Mande South"
+                    },
+                    {
+                        "const": "Marka"
+                    },
+                    {
+                        "const": "Mende"
+                    },
+                    {
+                        "const": "Papel"
+                    },
+                    {
+                        "const": "Serer"
+                    },
+                    {
+                        "const": "Songhai"
+                    },
+                    {
+                        "const": "Tiv"
+                    },
+                    {
+                        "const": "Urhobo"
+                    },
+                    {
+                        "const": "Wolof"
+                    },
+                    {
+                        "const": "Yoruba"
+                    },
+                    {
+                        "const": "Zarma"
+                    },
+                    {
+                        "const": "Afrikaner"
+                    },
+                    {
+                        "const": "Ovambo"
+                    },
+                    {
+                        "const": "Bemba"
+                    },
+                    {
+                        "const": "CapeColoured"
+                    },
+                    {
+                        "const": "Herero"
+                    },
+                    {
+                        "const": "Himba"
+                    },
+                    {
+                        "const": "Goffal"
+                    },
+                    {
+                        "const": "Kalanga"
+                    },
+                    {
+                        "const": "Khoikhoi"
+                    },
+                    {
+                        "const": "Lemba"
+                    },
+                    {
+                        "const": "Makua"
+                    },
+                    {
+                        "const": "Nambya"
+                    },
+                    {
+                        "const": "North Ndebele"
+                    },
+                    {
+                        "const": "San"
+                    },
+                    {
+                        "const": "South Ndebele"
+                    },
+                    {
+                        "const": "Shona"
+                    },
+                    {
+                        "const": "Sotho"
+                    },
+                    {
+                        "const": "Swazi"
+                    },
+                    {
+                        "const": "Tonga"
+                    },
+                    {
+                        "const": "Tsonga"
+                    },
+                    {
+                        "const": "Tswana"
+                    },
+                    {
+                        "const": "Venda"
+                    },
+                    {
+                        "const": "Xhosa"
+                    },
+                    {
+                        "const": "Yeyi"
+                    },
+                    {
+                        "const": "Zulu"
+                    },
+                    {
+                        "const": "Afar"
+                    },
+                    {
+                        "const": "Agaw"
+                    },
+                    {
+                        "const": "Amhara"
+                    },
+                    {
+                        "const": "Beja"
+                    },
+                    {
+                        "const": "Bilen"
+                    },
+                    {
+                        "const": "Gurage"
+                    },
+                    {
+                        "const": "Oromo"
+                    },
+                    {
+                        "const": "Saho"
+                    },
+                    {
+                        "const": "Sidama"
+                    },
+                    {
+                        "const": "Somali"
+                    },
+                    {
+                        "const": "Tigray-Tigrinya"
+                    },
+                    {
+                        "const": "Tigre"
+                    }
+                ]
+            },
+            "fbirthcountry": {
+            "allOf":[
+                {"description": "In which country were you born?"},
+                {"$ref": "countries.json"}
+                ]
+            },
+            "flanguage": {
+                "description": "What is your father's native language?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "english"
+                    },
+                    {
+                        "const": "afrikaans"
+                    },
+                    {
+                        "const": "nd?l?isindebele)"
+                    },
+                    {
+                        "const": "xhosa (isixhosa)"
+                    },
+                    {
+                        "const": "zoulou (isizulu)"
+                    },
+                    {
+                        "const": "arabic"
+                    },
+                    {
+                        "const": "Portuguese"
+                    },
+                    {
+                        "const": "frensh"
+                    },
+                    {
+                        "const": "tswana"
+                    },
+                    {
+                        "const": "moray"
+                    },
+                    {
+                        "const": "dioula"
+                    },
+                    {
+                        "const": "peul"
+                    },
+                    {
+                        "const": "kirundi"
+                    },
+                    {
+                        "const": "somali"
+                    },
+                    {
+                        "const": "afar"
+                    },
+                    {
+                        "const": "amharic"
+                    },
+                    {
+                        "const": "espanish"
+                    },
+                    {
+                        "const": "ha?en"
+                    },
+                    {
+                        "const": "swahili"
+                    },
+                    {
+                        "const": "sesotho"
+                    },
+                    {
+                        "const": "malgache"
+                    },
+                    {
+                        "const": "chichewa"
+                    },
+                    {
+                        "const": "bambara"
+                    },
+                    {
+                        "const": "sango"
+                    },
+                    {
+                        "const": "kinyarwanda"
+                    },
+                    {
+                        "const": "creaole seychelle"
+                    },
+                    {
+                        "const": "swati"
+                    },
+                    {
+                        "const": "shona"
+                    },
+                    {
+                        "const": "sindebele"
+                    },
+                    {
+                        "const": "tswana (setswana)"
+                    },
+                    {
+                        "const": "siswati (siSwati)"
+                    },
+                    {
+                        "const": "venda (tshivenda)"
+                    },
+                    {
+                        "const": "tsonga (xitsonga)"
+                    }
+                ]
+            },
+            "fethnicity": {
+                "description": "What is your father's ethno-linguistic tribal affiliation?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "Berbers"
+                    },
+                    {
+                        "const": "Copts"
+                    },
+                    {
+                        "const": "Egyptians"
+                    },
+                    {
+                        "const": "Fur"
+                    },
+                    {
+                        "const": "Maghrebis"
+                    },
+                    {
+                        "const": "Nubians"
+                    },
+                    {
+                        "const": "Tuareg"
+                    },
+                    {
+                        "const": "Zaghawa"
+                    },
+                    {
+                        "const": "Toubou"
+                    },
+                    {
+                        "const": "Alur"
+                    },
+                    {
+                        "const": "Anuak"
+                    },
+                    {
+                        "const": "Acholi"
+                    },
+                    {
+                        "const": "Banyoro"
+                    },
+                    {
+                        "const": "Chagga"
+                    },
+                    {
+                        "const": "Dinka"
+                    },
+                    {
+                        "const": "Ganda"
+                    },
+                    {
+                        "const": "Langi"
+                    },
+                    {
+                        "const": "Hutu"
+                    },
+                    {
+                        "const": "Kamba"
+                    },
+                    {
+                        "const": "Kalenjin"
+                    },
+                    {
+                        "const": "Kikuyu"
+                    },
+                    {
+                        "const": "Kwama"
+                    },
+                    {
+                        "const": "Lugbara"
+                    },
+                    {
+                        "const": "Luo"
+                    },
+                    {
+                        "const": "Luhya"
+                    },
+                    {
+                        "const": "Maasai"
+                    },
+                    {
+                        "const": "Makonde"
+                    },
+                    {
+                        "const": "Ameru"
+                    },
+                    {
+                        "const": "Nuer"
+                    },
+                    {
+                        "const": "Samburu"
+                    },
+                    {
+                        "const": "Shilluk"
+                    },
+                    {
+                        "const": "Swahili"
+                    },
+                    {
+                        "const": "Tutsi"
+                    },
+                    {
+                        "const": "Twa"
+                    },
+                    {
+                        "const": "Aka"
+                    },
+                    {
+                        "const": "Baka"
+                    },
+                    {
+                        "const": "Banda"
+                    },
+                    {
+                        "const": "Chewa"
+                    },
+                    {
+                        "const": "Chokwe"
+                    },
+                    {
+                        "const": "Ef? 40"
+                    },
+                    {
+                        "const": "Kongo"
+                    },
+                    {
+                        "const": "Kanuri"
+                    },
+                    {
+                        "const": "Lingala"
+                    },
+                    {
+                        "const": "Luba"
+                    },
+                    {
+                        "const": "Kotoko"
+                    },
+                    {
+                        "const": "Mbunda"
+                    },
+                    {
+                        "const": "Mbundu"
+                    },
+                    {
+                        "const": "Moghamo"
+                    },
+                    {
+                        "const": "Mongo"
+                    },
+                    {
+                        "const": "Ngamambo"
+                    },
+                    {
+                        "const": "Ovimbundu"
+                    },
+                    {
+                        "const": "Sara"
+                    },
+                    {
+                        "const": "Sua"
+                    },
+                    {
+                        "const": "Zande"
+                    },
+                    {
+                        "const": "Zaghawa"
+                    },
+                    {
+                        "const": "Akan"
+                    },
+                    {
+                        "const": "Aku"
+                    },
+                    {
+                        "const": "Bambara"
+                    },
+                    {
+                        "const": "Basaa"
+                    },
+                    {
+                        "const": "Bassa"
+                    },
+                    {
+                        "const": "BetiPahuin"
+                    },
+                    {
+                        "const": "Biafada"
+                    },
+                    {
+                        "const": "Mole-Dagbani"
+                    },
+                    {
+                        "const": "Dendi"
+                    },
+                    {
+                        "const": "Edo"
+                    },
+                    {
+                        "const": "Efik"
+                    },
+                    {
+                        "const": "Eket"
+                    },
+                    {
+                        "const": "Esan"
+                    },
+                    {
+                        "const": "Ewe"
+                    },
+                    {
+                        "const": "Fon"
+                    },
+                    {
+                        "const": "Fulani"
+                    },
+                    {
+                        "const": "Ga"
+                    },
+                    {
+                        "const": "Gwari"
+                    },
+                    {
+                        "const": "Hausa"
+                    },
+                    {
+                        "const": "Igbo"
+                    },
+                    {
+                        "const": "Ijaw"
+                    },
+                    {
+                        "const": "Jola"
+                    },
+                    {
+                        "const": "Kanuri"
+                    },
+                    {
+                        "const": "Mandingo"
+                    },
+                    {
+                        "const": "Mande South"
+                    },
+                    {
+                        "const": "Marka"
+                    },
+                    {
+                        "const": "Mende"
+                    },
+                    {
+                        "const": "Papel"
+                    },
+                    {
+                        "const": "Serer"
+                    },
+                    {
+                        "const": "Songhai"
+                    },
+                    {
+                        "const": "Tiv"
+                    },
+                    {
+                        "const": "Urhobo"
+                    },
+                    {
+                        "const": "Wolof"
+                    },
+                    {
+                        "const": "Yoruba"
+                    },
+                    {
+                        "const": "Zarma"
+                    },
+                    {
+                        "const": "Afrikaner"
+                    },
+                    {
+                        "const": "Ovambo"
+                    },
+                    {
+                        "const": "Bemba"
+                    },
+                    {
+                        "const": "CapeColoured"
+                    },
+                    {
+                        "const": "Herero"
+                    },
+                    {
+                        "const": "Himba"
+                    },
+                    {
+                        "const": "Goffal"
+                    },
+                    {
+                        "const": "Kalanga"
+                    },
+                    {
+                        "const": "Khoikhoi"
+                    },
+                    {
+                        "const": "Lemba"
+                    },
+                    {
+                        "const": "Makua"
+                    },
+                    {
+                        "const": "Nambya"
+                    },
+                    {
+                        "const": "North Ndebele"
+                    },
+                    {
+                        "const": "San"
+                    },
+                    {
+                        "const": "South Ndebele"
+                    },
+                    {
+                        "const": "Shona"
+                    },
+                    {
+                        "const": "Sotho"
+                    },
+                    {
+                        "const": "Swazi"
+                    },
+                    {
+                        "const": "Tonga"
+                    },
+                    {
+                        "const": "Tsonga"
+                    },
+                    {
+                        "const": "Tswana"
+                    },
+                    {
+                        "const": "Venda"
+                    },
+                    {
+                        "const": "Xhosa"
+                    },
+                    {
+                        "const": "Yeyi"
+                    },
+                    {
+                        "const": "Zulu"
+                    },
+                    {
+                        "const": "Afar"
+                    },
+                    {
+                        "const": "Agaw"
+                    },
+                    {
+                        "const": "Amhara"
+                    },
+                    {
+                        "const": "Beja"
+                    },
+                    {
+                        "const": "Bilen"
+                    },
+                    {
+                        "const": "Gurage"
+                    },
+                    {
+                        "const": "Oromo"
+                    },
+                    {
+                        "const": "Saho"
+                    },
+                    {
+                        "const": "Sidama"
+                    },
+                    {
+                        "const": "Somali"
+                    },
+                    {
+                        "const": "Tigray-Tigrinya"
+                    },
+                    {
+                        "const": "Tigre"
+                    }
+                ]
+            },
+            "mbirthcountry": {
+            "allOf":[
+                {"description": "In which country were you born?"},
+                {"$ref": "countries.json"}
+                ]
+            },
+
+            "mlanguage": {
+                "description": "What is your mother's native language?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "english"
+                    },
+                    {
+                        "const": "afrikaans"
+                    },
+                    {
+                        "const": "nd?l?isindebele)"
+                    },
+                    {
+                        "const": "xhosa (isixhosa)"
+                    },
+                    {
+                        "const": "zoulou (isizulu)"
+                    },
+                    {
+                        "const": "arabic"
+                    },
+                    {
+                        "const": "Portuguese"
+                    },
+                    {
+                        "const": "frensh"
+                    },
+                    {
+                        "const": "tswana"
+                    },
+                    {
+                        "const": "moray"
+                    },
+                    {
+                        "const": "dioula"
+                    },
+                    {
+                        "const": "peul"
+                    },
+                    {
+                        "const": "kirundi"
+                    },
+                    {
+                        "const": "somali"
+                    },
+                    {
+                        "const": "afar"
+                    },
+                    {
+                        "const": "amharic"
+                    },
+                    {
+                        "const": "espanish"
+                    },
+                    {
+                        "const": "ha?en"
+                    },
+                    {
+                        "const": "swahili"
+                    },
+                    {
+                        "const": "sesotho"
+                    },
+                    {
+                        "const": "malgache"
+                    },
+                    {
+                        "const": "chichewa"
+                    },
+                    {
+                        "const": "bambara"
+                    },
+                    {
+                        "const": "sango"
+                    },
+                    {
+                        "const": "kinyarwanda"
+                    },
+                    {
+                        "const": "creaole seychelle"
+                    },
+                    {
+                        "const": "swati"
+                    },
+                    {
+                        "const": "shona"
+                    },
+                    {
+                        "const": "sindebele"
+                    },
+                    {
+                        "const": "tswana (setswana)"
+                    },
+                    {
+                        "const": "siswati (siSwati)"
+                    },
+                    {
+                        "const": "venda (tshivenda)"
+                    },
+                    {
+                        "const": "tsonga (xitsonga)"
+                    }
+                ]
+            },
+            "methnicity": {
+                "description": "What is your mother's ethnic or tribal affiliation?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "Berbers"
+                    },
+                    {
+                        "const": "Copts"
+                    },
+                    {
+                        "const": "Egyptians"
+                    },
+                    {
+                        "const": "Fur"
+                    },
+                    {
+                        "const": "Maghrebis"
+                    },
+                    {
+                        "const": "Nubians"
+                    },
+                    {
+                        "const": "Tuareg"
+                    },
+                    {
+                        "const": "Zaghawa"
+                    },
+                    {
+                        "const": "Toubou"
+                    },
+                    {
+                        "const": "Alur"
+                    },
+                    {
+                        "const": "Anuak"
+                    },
+                    {
+                        "const": "Acholi"
+                    },
+                    {
+                        "const": "Banyoro"
+                    },
+                    {
+                        "const": "Chagga"
+                    },
+                    {
+                        "const": "Dinka"
+                    },
+                    {
+                        "const": "Ganda"
+                    },
+                    {
+                        "const": "Langi"
+                    },
+                    {
+                        "const": "Hutu"
+                    },
+                    {
+                        "const": "Kamba"
+                    },
+                    {
+                        "const": "Kalenjin"
+                    },
+                    {
+                        "const": "Kikuyu"
+                    },
+                    {
+                        "const": "Kwama"
+                    },
+                    {
+                        "const": "Lugbara"
+                    },
+                    {
+                        "const": "Luo"
+                    },
+                    {
+                        "const": "Luhya"
+                    },
+                    {
+                        "const": "Maasai"
+                    },
+                    {
+                        "const": "Makonde"
+                    },
+                    {
+                        "const": "Ameru"
+                    },
+                    {
+                        "const": "Nuer"
+                    },
+                    {
+                        "const": "Samburu"
+                    },
+                    {
+                        "const": "Shilluk"
+                    },
+                    {
+                        "const": "Swahili"
+                    },
+                    {
+                        "const": "Tutsi"
+                    },
+                    {
+                        "const": "Twa"
+                    },
+                    {
+                        "const": "Aka"
+                    },
+                    {
+                        "const": "Baka"
+                    },
+                    {
+                        "const": "Banda"
+                    },
+                    {
+                        "const": "Chewa"
+                    },
+                    {
+                        "const": "Chokwe"
+                    },
+                    {
+                        "const": "Ef? 40"
+                    },
+                    {
+                        "const": "Kongo"
+                    },
+                    {
+                        "const": "Kanuri"
+                    },
+                    {
+                        "const": "Lingala"
+                    },
+                    {
+                        "const": "Luba"
+                    },
+                    {
+                        "const": "Kotoko"
+                    },
+                    {
+                        "const": "Mbunda"
+                    },
+                    {
+                        "const": "Mbundu"
+                    },
+                    {
+                        "const": "Moghamo"
+                    },
+                    {
+                        "const": "Mongo"
+                    },
+                    {
+                        "const": "Ngamambo"
+                    },
+                    {
+                        "const": "Ovimbundu"
+                    },
+                    {
+                        "const": "Sara"
+                    },
+                    {
+                        "const": "Sua"
+                    },
+                    {
+                        "const": "Zande"
+                    },
+                    {
+                        "const": "Zaghawa"
+                    },
+                    {
+                        "const": "Akan"
+                    },
+                    {
+                        "const": "Aku"
+                    },
+                    {
+                        "const": "Bambara"
+                    },
+                    {
+                        "const": "Basaa"
+                    },
+                    {
+                        "const": "Bassa"
+                    },
+                    {
+                        "const": "BetiPahuin"
+                    },
+                    {
+                        "const": "Biafada"
+                    },
+                    {
+                        "const": "Mole-Dagbani"
+                    },
+                    {
+                        "const": "Dendi"
+                    },
+                    {
+                        "const": "Edo"
+                    },
+                    {
+                        "const": "Efik"
+                    },
+                    {
+                        "const": "Eket"
+                    },
+                    {
+                        "const": "Esan"
+                    },
+                    {
+                        "const": "Ewe"
+                    },
+                    {
+                        "const": "Fon"
+                    },
+                    {
+                        "const": "Fulani"
+                    },
+                    {
+                        "const": "Ga"
+                    },
+                    {
+                        "const": "Gwari"
+                    },
+                    {
+                        "const": "Hausa"
+                    },
+                    {
+                        "const": "Igbo"
+                    },
+                    {
+                        "const": "Ijaw"
+                    },
+                    {
+                        "const": "Jola"
+                    },
+                    {
+                        "const": "Kanuri"
+                    },
+                    {
+                        "const": "Mandingo"
+                    },
+                    {
+                        "const": "Mande South"
+                    },
+                    {
+                        "const": "Marka"
+                    },
+                    {
+                        "const": "Mende"
+                    },
+                    {
+                        "const": "Papel"
+                    },
+                    {
+                        "const": "Serer"
+                    },
+                    {
+                        "const": "Songhai"
+                    },
+                    {
+                        "const": "Tiv"
+                    },
+                    {
+                        "const": "Urhobo"
+                    },
+                    {
+                        "const": "Wolof"
+                    },
+                    {
+                        "const": "Yoruba"
+                    },
+                    {
+                        "const": "Zarma"
+                    },
+                    {
+                        "const": "Afrikaner"
+                    },
+                    {
+                        "const": "Ovambo"
+                    },
+                    {
+                        "const": "Bemba"
+                    },
+                    {
+                        "const": "CapeColoured"
+                    },
+                    {
+                        "const": "Herero"
+                    },
+                    {
+                        "const": "Himba"
+                    },
+                    {
+                        "const": "Goffal"
+                    },
+                    {
+                        "const": "Kalanga"
+                    },
+                    {
+                        "const": "Khoikhoi"
+                    },
+                    {
+                        "const": "Lemba"
+                    },
+                    {
+                        "const": "Makua"
+                    },
+                    {
+                        "const": "Nambya"
+                    },
+                    {
+                        "const": "North Ndebele"
+                    },
+                    {
+                        "const": "San"
+                    },
+                    {
+                        "const": "South Ndebele"
+                    },
+                    {
+                        "const": "Shona"
+                    },
+                    {
+                        "const": "Sotho"
+                    },
+                    {
+                        "const": "Swazi"
+                    },
+                    {
+                        "const": "Tonga"
+                    },
+                    {
+                        "const": "Tsonga"
+                    },
+                    {
+                        "const": "Tswana"
+                    },
+                    {
+                        "const": "Venda"
+                    },
+                    {
+                        "const": "Xhosa"
+                    },
+                    {
+                        "const": "Yeyi"
+                    },
+                    {
+                        "const": "Zulu"
+                    },
+                    {
+                        "const": "Afar"
+                    },
+                    {
+                        "const": "Agaw"
+                    },
+                    {
+                        "const": "Amhara"
+                    },
+                    {
+                        "const": "Beja"
+                    },
+                    {
+                        "const": "Bilen"
+                    },
+                    {
+                        "const": "Gurage"
+                    },
+                    {
+                        "const": "Oromo"
+                    },
+                    {
+                        "const": "Saho"
+                    },
+                    {
+                        "const": "Sidama"
+                    },
+                    {
+                        "const": "Somali"
+                    },
+                    {
+                        "const": "Tigray-Tigrinya"
+                    },
+                    {
+                        "const": "Tigre"
+                    }
+                ]
+            },
+            "smoke_collectdate": {
+                "description": "Collection date of smoking status information:",
+                "type": "string"
+            },
+            "smoke_100": {
+                "description": "Have you smoked at least 100 cigarettes in your entire life?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "Yes"
+                    },
+                    {
+                        "const": "No"
+                    },
+                    {
+                        "const": "Don't Know"
+                    }
+                ]
+            },
+            "smoke_age": {
+                "description": "How old were you when you first started smoking cigarettes?",
+                "type": "integer",
+                "$unit": "Provide age in years"
+            },
+            "kidney_fail": {
+                "description": "Has a doctor or healthcare worker ever told you that you had kidney failure?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "Yes"
+                    },
+                    {
+                        "const": "No"
+                    },
+                    {
+                        "const": "Don't know"
+                    }
+                ]
+            },
+            "kidneys_well": {
+                "description": "If Yes, are one or both working well now?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "Yes"
+                    },
+                    {
+                        "const": "No"
+                    },
+                    {
+                        "const": "Don't know"
+                    }
+                ]
+            },
+            "renal_dialysis": {
+                "description": "Are you currently on renal dialysis?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "Yes"
+                    },
+                    {
+                        "const": "No"
+                    },
+                    {
+                        "const": "Don't know"
+                    }
+                ]
+            },
+            "smoke_perday": {
+                "description": "On the days that you smoke, on average, how many cigarettes do you smoke?\n<bold><u><i>OR</bold></u></i>\nIf you are a former smoker, on the days that you smoked, on average, how many cigarettes did you smoke?",
+                "type": "integer",
+                "$unit": "Provide average number of cigarettes per day"
+            },
+            "kidney_transplant": {
+                "description": "Have you ever had a kidney transplant?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "Yes"
+                    },
+                    {
+                        "const": "No"
+                    },
+                    {
+                        "const": "Don't know"
+                    }
+                ]
+            },
+            "smoke_dayspermonth": {
+                "description": "Over the past 30 days, on how many <u>days</u> did you smoke?\n<bold><u><i>OR</bold></u></i>\nIf you are a former smoker, on average, on how many <u>days</u> did you smoke in a month?",
+                "type": "integer",
+                "$unit": "<strong>Every</strong> day smokers or former <strong>every</strong> day smokers should complete with '30'."
+            },
+            "kidney_family": {
+                "description": "Has anyone in your family either had kidney disease or died from it?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "Yes"
+                    },
+                    {
+                        "const": "No"
+                    },
+                    {
+                        "const": "Don't know"
+                    }
+                ]
+            },
+            "kidney_lowfunc": {
+                "description": "Has a doctor ever told you that your kidneys have low function?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "Yes"
+                    },
+                    {
+                        "const": "No"
+                    },
+                    {
+                        "const": "Don't know"
+                    }
+                ]
+            },
+            "kidney_disease": {
+                "description": "Has a doctor or healthcare worker told you that you have a kidney disease?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "Yes"
+                    },
+                    {
+                        "const": "No"
+                    },
+                    {
+                        "const": "Don't know"
+                    }
+                ]
+            },
+            "atrial_fib": {
+                "description": "Have you been told you have/had a heart rhythm problem called atrial fibrillation?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "Yes"
+                    },
+                    {
+                        "const": "No"
+                    },
+                    {
+                        "const": "Don't Know"
+                    }
+                ]
+            },
+            "alcohol_any": {
+                "description": "In your entire life, have you had at least 1 drink of any kind of alcohol?\n<i>(not counting small tastes or sips)</i>",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "Yes"
+                    },
+                    {
+                        "const": "No"
+                    }
+                ]
+            },
+            "alcohol_age": {
+                "description": " About how old were you when you first started drinking alcohol?\n<i>(not counting small tastes or sips)</i>",
+                "type": "integer",
+                "$unit": "Provide age in years."
+            },
+            "pacemaker": {
+                "description": "Have you got a permanet pacemaker inserted?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "Yes"
+                    },
+                    {
+                        "const": "No"
+                    },
+                    {
+                        "const": "Don't know"
+                    }
+                ]
+            },
+            "alcohol_30days": {
+                "description": "During the past 30 days, on how <u>many days</u> did you drink one or more drinks of an alcoholic beverage?",
+                "type": "integer",
+                "$unit": "days"
+            },
+            "alcohol_numdrinks": {
+                "description": "On the days that you drank during the past 30 days, how <u>many drinks</u> did you usually have each day? \n\n<i>(Count as a drink a can or bottle of beer; a wine cooler or a glass of wine, champagne, or sherry; a shot of liquor or a mixed drink or cocktail.)</i>",
+                "type": "integer"
+            },
+            "rheumatic_fever": {
+                "description": "Has a doctor ever said you had rheumatic fever (inflammatory rheumatisim)?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "Yes"
+                    },
+                    {
+                        "const": "No"
+                    },
+                    {
+                        "const": "Don't know"
+                    }
+                ]
+            },
+            "stroke": {
+                "description": "Were you ever told by a doctor or healthcare worker you had a stroke?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "Yes"
+                    },
+                    {
+                        "const": "No"
+                    },
+                    {
+                        "const": "Don't know"
+                    }
+                ]
+            },
+            "tia": {
+                "description": "Were you ever told by a doctor or healthcare worker you had a TIA, ministroke, or transient ischemic attack?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "Yes"
+                    },
+                    {
+                        "const": "No"
+                    },
+                    {
+                        "const": "Don't know"
+                    }
+                ]
+            },
+            "hiv_tested": {
+                "description": "Have you ever been tested for HIV?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "Yes"
+                    },
+                    {
+                        "const": "No"
+                    },
+                    {
+                        "const": "Don't know"
+                    },
+                    {
+                        "const": "Refused"
+                    }
+                ]
+            },
+            "hiv_recent": {
+                "description": "When did you have your most recent HIV  test?",
+                "type": "string"
+            },
+            "hiv_tx": {
+                "description": "Are you currently on HIV treatment?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "Yes"
+                    },
+                    {
+                        "const": "No"
+                    },
+                    {
+                        "const": "Don't know"
+                    },
+                    {
+                        "const": "Refused"
+                    }
+                ]
+            },
+            "cancer": {
+                "description": "Have you ever had cancer?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "Yes"
+                    },
+                    {
+                        "const": "No"
+                    }
+                ]
+            },
+            "cancer_surgery1": {
+                "description": "Did you have surgery for this cancer?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "Yes"
+                    },
+                    {
+                        "const": "No"
+                    },
+                    {
+                        "const": "Don't know"
+                    }
+                ]
+            },
+            "cancer_treat1": {
+                "description": "What kind of treatment did you have?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "Chemotherapy"
+                    },
+                    {
+                        "const": "Hormonal Therapy"
+                    },
+                    {
+                        "const": "Radiotherapy"
+                    },
+                    {
+                        "const": "Other therapy"
+                    }
+                ]
+            },
+            "tb": {
+                "description": "Has a doctor or healthworker ever told you that you have tuberculosis (TB)?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "Yes"
+                    },
+                    {
+                        "const": "No"
+                    },
+                    {
+                        "const": "Don't know"
+                    },
+                    {
+                        "const": "Refused"
+                    }
+                ]
+            },
+            "malaria": {
+                "description": "Has a doctor or healthworker ever told you that you have malaria?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "Yes"
+                    },
+                    {
+                        "const": "No"
+                    },
+                    {
+                        "const": "Don't know"
+                    }
+                ]
+            },
+            "sleepingsick": {
+                "description": "Has a doctor or healthworker ever told you that you have sleeping sickness?",
+                "type": "string",
+                "oneOf": [
+                    {
+                        "const": "Yes"
+                    },
+                    {
+                        "const": "No"
+                    },
+                    {
+                        "const": "Don't know"
+                    }
+                ]
+            }
+        }
+    }
