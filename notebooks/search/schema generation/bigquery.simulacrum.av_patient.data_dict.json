@@ -1,0 +1,435 @@
+{
+    "name": "simulacrum_release_v1.2.0.2017_patient",
+    "description": "Patient table from Simulacrum data release, version 1.2.0-2017, 2021-01-19\n\nThis is a package of synthetic data based on cancer registration data from \nthe Cancer Outcomes and Services Dataset (COSD) and the Systemic Anti-Cancer \nTreatment (SACT) dataset collected by the National Cancer Registration and \nAnalysis Service (NCRAS).\n\nAny analysis performed on this synthetic data will not correspond exactly to \nanalysis performed on the real data. The synthetic data does not contain real \npatients but just mimics specific statistical properties of the real data. To \nminimise the potential for confusion with real data, organisational codes in \nthis extract have been obfuscated.\n\n\nFor more information on the Simulacrum and licensing details, please see\n  https://simulacrum.healthdatainsight.org.uk/",
+    "data_model": {
+        "$id": "",
+        "description": "simulacrum_release_v1.2.0.2017",
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "properties": {
+            "PATIENTID": {
+                "description": "Pseudonymised patient ID Note: The format of this field in the Simulacrum is deliberately different from the format of pseudonymised patient id for real individuals. For real individuals PATIENTID, MERGED_PATIENT_ID and other linkage IDs are different and stored in different formats.",
+                "type": "integer"
+            },
+            "SEX": {
+                "description": "Sex",
+                "type": "integer",
+                "oneOf": [
+                    {
+                        "const": "0",
+                        "title": "X NOT KNOWN"
+                    },
+                    {
+                        "const": "1",
+                        "title": "MALE"
+                    },
+                    {
+                        "const": "2",
+                        "title": "FEMALE"
+                    },
+                    {
+                        "const": "4000",
+                        "title": "INDETERMINATE"
+                    },
+                    {
+                        "const": "9",
+                        "title": "NOT SPECIFIED"
+                    }
+                ]
+            },
+            "LINKNUMBER": {
+                "description": "Pseudonymised cross-dataset linkage ID Note: The format of this field in the Simulacrum is deliberately different from the format of the original linkage ID for real individuals. Data is identical to that in AV_PATIENT and the field is present for convenience. For real individuals PATIENTID, MERGED_PATIENT_ID and this ID are different and stored in different formats.",
+                "type": "integer"
+            },
+            "ETHNICITY": {
+                "description": "Ethnicity",
+                "type": "text",
+                "oneOf": [
+                    {
+                        "const": "0",
+                        "title": "WHITE"
+                    },
+                    {
+                        "const": "8",
+                        "title": "8 OTHER"
+                    },
+                    {
+                        "const": "A",
+                        "title": "WHITE BRITISH"
+                    },
+                    {
+                        "const": "B",
+                        "title": "WHITE IRISH"
+                    },
+                    {
+                        "const": "C",
+                        "title": "C ANY OTHER WHITE BACKGROUND"
+                    },
+                    {
+                        "const": "C2",
+                        "title": "Northern Irish"
+                    },
+                    {
+                        "const": "C3",
+                        "title": "Other white, white unspecified"
+                    },
+                    {
+                        "const": "CA",
+                        "title": "English"
+                    },
+                    {
+                        "const": "CB",
+                        "title": "Scottish"
+                    },
+                    {
+                        "const": "CC",
+                        "title": "Welsh"
+                    },
+                    {
+                        "const": "CD",
+                        "title": "Cornish"
+                    },
+                    {
+                        "const": "CE",
+                        "title": "Cypriot (part not stated)"
+                    },
+                    {
+                        "const": "CF",
+                        "title": "Greek"
+                    },
+                    {
+                        "const": "CG",
+                        "title": "Greek Cypriot"
+                    },
+                    {
+                        "const": "CH",
+                        "title": "Turkish"
+                    },
+                    {
+                        "const": "CJ",
+                        "title": "Turkish Cypriot"
+                    },
+                    {
+                        "const": "CK",
+                        "title": "Italian"
+                    },
+                    {
+                        "const": "CL",
+                        "title": "Irish Traveller"
+                    },
+                    {
+                        "const": "CM",
+                        "title": "Traveller"
+                    },
+                    {
+                        "const": "CN",
+                        "title": "Gypsy/Romany"
+                    },
+                    {
+                        "const": "CP",
+                        "title": "Polish"
+                    },
+                    {
+                        "const": "CQ",
+                        "title": "All republics which made up the former USSR"
+                    },
+                    {
+                        "const": "CR",
+                        "title": "Kosovan"
+                    },
+                    {
+                        "const": "CS",
+                        "title": "Albanian"
+                    },
+                    {
+                        "const": "CT",
+                        "title": "Bosnian"
+                    },
+                    {
+                        "const": "CU",
+                        "title": "Croatian"
+                    },
+                    {
+                        "const": "CV",
+                        "title": "Serbian"
+                    },
+                    {
+                        "const": "CW",
+                        "title": "Other republics which made up the former Yugoslavia"
+                    },
+                    {
+                        "const": "CX",
+                        "title": "Mixed white"
+                    },
+                    {
+                        "const": "CY",
+                        "title": "Other white European, European unspecified, European mixed"
+                    },
+                    {
+                        "const": "D",
+                        "title": "WHITE AND BLACK CARIBBEAN"
+                    },
+                    {
+                        "const": "E",
+                        "title": "MIXED WHITE AND BLACK AFRICAN"
+                    },
+                    {
+                        "const": "F",
+                        "title": "MIXED WHITE AND ASIAN"
+                    },
+                    {
+                        "const": "G",
+                        "title": "G ANY OTHER MIXED BACKGROUND"
+                    },
+                    {
+                        "const": "GA",
+                        "title": "Black and Asian"
+                    },
+                    {
+                        "const": "GB",
+                        "title": "Black and Chinese"
+                    },
+                    {
+                        "const": "GC",
+                        "title": "Black and White"
+                    },
+                    {
+                        "const": "GD",
+                        "title": "Chinese and White"
+                    },
+                    {
+                        "const": "GE",
+                        "title": "Asian and Chinese"
+                    },
+                    {
+                        "const": "GF",
+                        "title": "Other Mixed, Mixed Unspecified"
+                    },
+                    {
+                        "const": "H",
+                        "title": "ASIAN INDIAN"
+                    },
+                    {
+                        "const": "J",
+                        "title": "ASIAN PAKISTANI"
+                    },
+                    {
+                        "const": "K",
+                        "title": "ASIAN BANGLADESHI"
+                    },
+                    {
+                        "const": "L",
+                        "title": "L ANY OTHER ASIAN BACKGROUND"
+                    },
+                    {
+                        "const": "LA",
+                        "title": "Mixed Asian"
+                    },
+                    {
+                        "const": "LB",
+                        "title": "Punjabi"
+                    },
+                    {
+                        "const": "LC",
+                        "title": "Kashmiri"
+                    },
+                    {
+                        "const": "LD",
+                        "title": "East African Asian"
+                    },
+                    {
+                        "const": "LE",
+                        "title": "Sri Lanka"
+                    },
+                    {
+                        "const": "LF",
+                        "title": "Tamil"
+                    },
+                    {
+                        "const": "LG",
+                        "title": "Sinhalese"
+                    },
+                    {
+                        "const": "LH",
+                        "title": "British Asian"
+                    },
+                    {
+                        "const": "LJ",
+                        "title": "Caribbean Asian"
+                    },
+                    {
+                        "const": "LK",
+                        "title": "Other Asian, Asian unspecified"
+                    },
+                    {
+                        "const": "M",
+                        "title": "BLACK CARIBBEAN"
+                    },
+                    {
+                        "const": "N",
+                        "title": "BLACK AFRICAN"
+                    },
+                    {
+                        "const": "P",
+                        "title": "P ANY OTHER BLACK BACKGROUND"
+                    },
+                    {
+                        "const": "PA",
+                        "title": "Somali"
+                    },
+                    {
+                        "const": "PB",
+                        "title": "Mixed Black"
+                    },
+                    {
+                        "const": "PC",
+                        "title": "Nigerian"
+                    },
+                    {
+                        "const": "PD",
+                        "title": "Black British"
+                    },
+                    {
+                        "const": "PE",
+                        "title": "Other Black, Black unspecified"
+                    },
+                    {
+                        "const": "R",
+                        "title": "CHINESE"
+                    },
+                    {
+                        "const": "S",
+                        "title": "S ANY OTHER ETHNIC GROUP"
+                    },
+                    {
+                        "const": "SA",
+                        "title": "Vietnamese"
+                    },
+                    {
+                        "const": "SB",
+                        "title": "Japanese"
+                    },
+                    {
+                        "const": "SC",
+                        "title": "Filipino"
+                    },
+                    {
+                        "const": "SD",
+                        "title": "Malaysian"
+                    },
+                    {
+                        "const": "SE",
+                        "title": "Any Other Group"
+                    },
+                    {
+                        "const": "X",
+                        "title": "X NOT KNOWN"
+                    },
+                    {
+                        "const": "Z",
+                        "title": "NOT STATED"
+                    }
+                ]
+            },
+            "DEATHCAUSECODE_1A": {
+                "description": "As provided with death notification Note: Codes are in ICD-10 format, and may be a comma-separated list",
+                "type": "text"
+            },
+            "DEATHCAUSECODE_1B": {
+                "description": "As provided with death notification Note: Codes are in ICD-10 format, and may be a comma-separated list",
+                "type": "text"
+            },
+            "DEATHCAUSECODE_1C": {
+                "description": "As provided with death notification Note: Codes are in ICD-10 format, and may be a comma-separated list",
+                "type": "text"
+            },
+            "DEATHCAUSECODE_2": {
+                "description": "As provided with death notification Note: Codes are in ICD-10 format, and may be a comma-separated list",
+                "type": "text"
+            },
+            "DEATHCAUSECODE_UNDERLYING": {
+                "description": "As provided with death notification Note: Codes are in ICD-10 format, and may be a comma-separated list",
+                "type": "text"
+            },
+            "DEATHLOCATIONCODE": {
+                "description": "Code of the location (type) where the patient died, e.g. patients home, hospice etc.",
+                "type": "text",
+                "oneOf": [
+                    {
+                        "const": "1",
+                        "title": "HOSPITAL"
+                    },
+                    {
+                        "const": "2",
+                        "title": "PRIVATE HOME"
+                    },
+                    {
+                        "const": "3",
+                        "title": "HOSPICE NOS"
+                    },
+                    {
+                        "const": "4",
+                        "title": "NURSING HOME"
+                    },
+                    {
+                        "const": "4077",
+                        "title": "NHS HOSPICE / SPECIALIST PALLIATIVE CARE UNIT"
+                    },
+                    {
+                        "const": "4087",
+                        "title": "VOLUNTARY HOSPICE / SPECIALIST PALLIATIVE CARE UNIT"
+                    },
+                    {
+                        "const": "4097",
+                        "title": "CARE HOME"
+                    },
+                    {
+                        "const": "4107",
+                        "title": "PATIENTS OWN HOME"
+                    },
+                    {
+                        "const": "4117",
+                        "title": "OTHER PRIVATE RESIDENCE (E.G. RELATIVES HOME, CARERS HOME)"
+                    },
+                    {
+                        "const": "4127",
+                        "title": "CARE HOME WITH NURSING"
+                    },
+                    {
+                        "const": "4137",
+                        "title": "CARE HOME WITHOUT NURSING"
+                    },
+                    {
+                        "const": "5",
+                        "title": "OTHER"
+                    },
+                    {
+                        "const": "X",
+                        "title": "UNKNOWN"
+                    }
+                ]
+            },
+            "NEWVITALSTATUS": {
+                "description": "Vital status of the patient",
+                "type": "text",
+                "oneOf": [
+                    {
+                        "const": "A",
+                        "title": "Alive"
+                    },
+                    {
+                        "const": "D",
+                        "title": "Dead"
+                    },
+                    {
+                        "const": "X",
+                        "title": "Exit Posting"
+                    }
+                ]
+            },
+            "VITALSTATUSDATE": {
+                "description": "Date of vital status Note: If the patient has embarked or died, this is the corresponding date. If the patient is alive, this is the last date of follow-up.",
+                "type": "text"
+            }
+        }
+    }
+}
