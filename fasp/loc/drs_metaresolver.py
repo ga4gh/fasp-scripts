@@ -16,7 +16,7 @@ class DRSMetaResolver(DRSClient):
 	Prefixes used are not official. For demonstration purpposes only'''
 	# Initialize a DRS Client for the service at the specified url base
 	# and with the REST resource to provide an access key 
-	def __init__(self, debug=False, getReg=True):
+	def __init__(self, debug=False, getReg=True, meta_resolver=None):
 		crdcDRS = crdcDRSClient('~/.keys/crdc_credentials.json','s3')
 		anvilDRS = anvilDRSClient('~/.keys/anvil_credentials.json', '', 'gs')
 		bdcDRS = bdcDRSClient('~/.keys/bdc_credentials.json','gs')
@@ -35,6 +35,7 @@ class DRSMetaResolver(DRSClient):
 			"sradrs": SRADRSClient('https://locate.be-md.ncbi.nlm.nih.gov')
 		}
 		self.debug = debug
+		self.meta_resolver = meta_resolver
 		self.registeredClients = []
 		self.hostNameIndex = {}
 
@@ -156,11 +157,11 @@ class DRSMetaResolver(DRSClient):
 				print("prefix:{}".format(prefix))
 		return None
 	
-	def checkResolution(self):
+	def checkResolution(self, meta_resolver=None):
 		mixedIDs = ['insdc:SRR5368359.sra',
 				'bdc:66eeec21-aad0-4a77-8de5-621f05e2d301',
 				'dg.4503:66eeec21-aad0-4a77-8de5-621f05e2d301',
-				'crdc:f360253c-d7d7-47cb-947a-b26e0b41b800',
+				'crdc:0e3c5237-6933-4d30-83f8-6ab721096bc7',
 				'dg.4DFC:0e3c5237-6933-4d30-83f8-6ab721096bc7',
 				'sbcgc:5baa8913e4b0db63859e515e',
 				'sbcav:5772b6ed507c1752674486fc',
@@ -173,7 +174,10 @@ class DRSMetaResolver(DRSClient):
 		for id in mixedIDs:
 			print('-------------------------------')
 			print('sending: {}'.format(id))
-			res = self.getObject(id)
+			if meta_resolver:
+				res = self.getObject(id)
+			else:
+				res = self.getObject(id)
 			idParts = id.split(":", 1)
 			if res == 400:
 				testResults[idParts[0]] = 'request error'.format(id)

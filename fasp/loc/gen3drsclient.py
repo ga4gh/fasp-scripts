@@ -46,89 +46,10 @@ class crdcDRSClient(Gen3DRSClient):
     def __init__(self, api_key_path=None,  access_id=None,  debug=False):
         if api_key_path == None:
             api_key_path='~/.keys/crdc_credentials.json'
-        self.file_endpt = 'https://api.gdc.cancer.gov/files/'
         super().__init__('https://nci-crdc.datacommons.io', '/user/credentials/api/access_token',
             api_key_path, access_id, debug)
         
-    def getFileData(self, file_id, expanded=False, linked=False):
-        headers = {'Content-Type': 'application/json'}
-
-        fields = [
-		"file_name",
-		"data_format",
-		"platform",
-		"access",
-		"created_datetime",
-		"data_category",
-		"data_type",
-		"experimental_strategy",
-		"file_size",
-		"origin",
-		"revision",
-		"type",
-		]
-
-        if linked or expanded:
-            fields += [
-			"cases.case_id",
-			"file_name",
-			"data_format",
-			"platform",
-			"metadata_files.file_id",
-			"metadata_files.file_name",
-			"analysis.analysis_id",
-			"annotations.annotation_id",
-			"archive.archive_id",
-			"associated_entities.entity_id",
-			"associated_entities.entity_type",
-			"center.center_id",
-			"metadata_files.file_id",
-			"index_files.file_id",
-			"downstream_analyses.analysis_id"
-			]
-
-        if linked:
-            fields += [
-			"cases.project.disease_type",
-			"cases.demographic.race",
-			"cases.demographic.state",
-			"cases.demographic.submitter_id",
-			"cases.demographic.updated_datetime",
-			"cases.demographic.year_of_birth",
-			"cases.demographic.year_of_death",
-			"cases.diagnoses.age_at_diagnosis",
-			"cases.diagnoses.classification_of_tumor",
-			"cases.diagnoses.created_datetime",
-			"cases.diagnoses.days_to_last_known_disease_status",
-			"cases.diagnoses.days_to_recurrence",
-			"cases.diagnoses.morphology",
-			"cases.diagnoses.primary_diagnosis",
-			"cases.diagnoses.prior_malignancy",
-			"cases.diagnoses.progression_or_recurrence",
-			"cases.diagnoses.site_of_resection_or_biopsy",
-			"cases.diagnoses.tissue_or_organ_of_origin",
-			"cases.diagnoses.tumor_grade",
-			"cases.diagnoses.tumor_stage"
-			]
-
-        fields = ",".join(fields)
-
-        body = {
-			"filters":{
-						"op":"=",
-						"content":{
-							"field":"file_id",
-							"value":file_id
-						}
-				
-			},
-			"fields":fields,
-			"format":"json",
-		}
-
-        resp = requests.post(self.file_endpt, data=json.dumps(body), headers=headers)
-        return resp.json()['data']['hits'][0]
-
+        
 class bdcDRSClient(Gen3DRSClient):
     
     # Mostly done by the Gen3DRSClient, this just deals with url and end point specifics
@@ -166,24 +87,25 @@ class anvilDRSClient(Gen3DRSClient):
             return None
 
 if __name__ == "__main__":
-    print ('______________________________________')
-    print ('BDC')
-    bdcClient = bdcDRSClient('~/.keys/bdc_credentials.json', 'gs')
-    id = 'dg.4503/dbd55e76-1100-40b3-b420-0eaeee478fbc'
-    res = bdcClient.getObject(id)
-    print('GetObject')
-    print (res)
-    print('URL')
-    url = bdcClient.getAccessURL(id)
-    print (url)
-    print ('______________________________________')
-    print ('CRDC')
-    crdcClient = crdcDRSClient('~/.keys/crdc_credentials.json', 's3')
-    id = 'f360253c-d7d7-47cb-947a-b26e0b41b800'
-    res = crdcClient.getObject(id)
-    print('GetObject')
-    print (res)
-    print('URL')
-    url = crdcClient.getAccessURL(id)
-    print (url)
+    
+    test_data = {'BioDataCatalyst' : {'drs_client': bdcDRSClient('~/.keys/bdc_credentials.json', 'gs', debug=True),
+								'drs_ids': ['dbd55e76-1100-40b3-b420-0eaeee478fbc']
+								},
+				'Cancer Research Data Commons': {'drs_client': crdcDRSClient('~/.keys/crdc_credentials.json','s3'),
+								'drs_ids': ['0e3c5237-6933-4d30-83f8-6ab721096bc7']}
+		
+		}
+    
+    for (testname, test) in test_data.items():
+        print ('______________________________________')
+        print (testname)
+        drsClient = test['drs_client']
+        for drs_id in test['drs_ids']:
+            res = drsClient.getObject(drs_id)
+            print(f'GetObject for {drs_id}')
+            print (json.dumps(res,indent=3))
+            print(f'URL for {drs_id}')
+            url = drsClient.getAccessURL(drs_id)
+            print (url)
+
            
