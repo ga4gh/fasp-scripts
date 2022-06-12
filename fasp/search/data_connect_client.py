@@ -5,6 +5,7 @@ import getopt
 import json
 
 from fasp.loc import GA4GHRegistryClient
+from fasp.search.MappingLibrary import MappingLibraryClient
 import pandas as pd
 
 class DataConnectClient:
@@ -45,7 +46,7 @@ class DataConnectClient:
 			next_url = "{}{}{}".format(self.hostURL,'/tables/catalog/',requestedCatalog)
 		pageCount = 0
 		if verbose:
-			print("_Retrieving the table list_")
+			print("Retrieving the table list")
 		while next_url != None :
 			pageCount += 1
 			if verbose:
@@ -67,7 +68,7 @@ class DataConnectClient:
 	def listCatalogs(self):
 		url = self.hostURL + "/tables"
 
-		print ("_Retrieving the catalog list_")
+		print ("Retrieving the catalog list")
 		response = requests.get(url, headers=self.headers)
 		result = (response.json())
 		for t in result['index']:
@@ -76,7 +77,7 @@ class DataConnectClient:
 
 
 	def listCatalog(self, catalog):
-		self.listTables(catalog)
+		return self.listTables(catalog)
 
 	def listTableInfo(self, table, verbose=False):
 		url = "{}/table/{}/info".format(self.hostURL,table)
@@ -132,6 +133,49 @@ class DataConnectClient:
 		return template
 			
 
+	def getDecodeTemplate(self, table, propList=None, numericCodes=True):
+		''' Get a template which maps enumerated codes to their decoded values 
+		:param table: table for which to generate a mapping template
+		:param propList: optional list of properties to include in the map
+		:param numericCodes: return codes as integers - will fail if the codes are not
+		'''
+		schema = self.listTableInfo(table).schema
+		template = {}
+		for prop, details in schema['data_model']['properties'].items():
+			if propList == None or prop in propList:
+				if 'oneOf' in details:
+					vList = {}
+					for v in details['oneOf']:
+						if numericCodes:
+							vList[int(v['const'])] = v['title']
+						else:
+							vList[v['const']] = v['title']
+						#if titles:
+						#	vList[v['const']]['title'] = v['title']
+					template[prop] = vList
+		return template
+			
+	def getMappingsForTable(self, table):
+		modl = self.listTableInfo(table)
+		#varlist = []
+		props = modl.schema['data_model']['properties']
+		vLookUp = {}
+		for p, v in props.items():
+			vLookUp[v['$id']] = p
+		if self.debug:
+			print(vLookUp)
+		#Find the mappings
+		mcl = MappingLibraryClient()
+		varList = mcl.getMappingsForVars(list(vLookUp.keys()))
+		if self.debug:
+			print(varList)
+		# Add column names to the mappings
+		vi = 0
+		for var in varList:
+			varList[vi]['fromCol'] = vLookUp[var['from']]
+			vi += 1
+		return varList
+		
 	def runOneTableQuery(self, column_list, table, limit):
 		col_string = ", ".join(column_list)
 
@@ -140,7 +184,20 @@ class DataConnectClient:
 		res = self.runQuery(query, returnType='dataframe')
 		return res
 
-	def runQuery(self, query, returnType=None):
+	def getDataFrameFromTable(self, table, column_list=[], limit=1000):
+		if isinstance(column_list, list):
+			if len(column_list) == 0:
+				column_list = '*'
+			else:
+				column_list.join(',')
+		query = f"select {column_list} from {table} limit {limit}"
+		print (query)
+		res = self.runQuery(query, returnType='dataframe')
+		if res.shape[0] >= limit:
+			print(f'The number of rows was limited to {limit}. Try setting limit=your_value if you need more data')
+		return res
+
+	def runQuery(self, query, returnType=None, progessIndicator=None):
 
 		query = query.replace("\n", " ").replace("\t", " ")
 		query2 = "{\"query\":\"%s\"}" % query
@@ -150,10 +207,14 @@ class DataConnectClient:
 		pageCount = 0
 		resultRows = []
 		column_list = []
-		print ("_Retrieving the query_")
+		if not progessIndicator:
+			print ("Retrieving the query")
 		while next_url != None :
 			pageCount += 1
-			print ("____Page{}_______________".format(pageCount))
+			if progessIndicator:
+				progessIndicator.value += 1
+			else:
+				print ("____Page{}_______________".format(pageCount))
 			if pageCount == 1:
 				response = requests.request("POST", next_url,
 				 headers=self.headers, data = query2)
@@ -177,6 +238,9 @@ class DataConnectClient:
 				if self.debug: print('found data model')
 				column_list = result['data_model']['properties'].keys()
 
+		if progessIndicator:
+			progessIndicator.value = progessIndicator.max
+		
 		if returnType == 'dataframe':
 			df = pd.DataFrame(resultRows, columns=column_list, index=None)
 			return df

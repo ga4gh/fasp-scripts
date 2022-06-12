@@ -33,7 +33,8 @@ class SBDRSClient(DRSClient):
 			resp = response.content.decode('utf-8')
 			return json.loads(resp)
 		else:
-			return response.status_code
+			print (response.raise_for_status())
+			return None
 
 	def getHeaders(self): 
 		return {'X-SBG-Auth-Token' : self.access_token }
