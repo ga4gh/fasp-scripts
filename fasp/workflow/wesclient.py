@@ -58,7 +58,7 @@ class WESClient:
 			return 'task not found'
 		print(runResp)
 		
-	def GetRunLog(self, run_id, verbose=False):
+	def getRunLog(self, run_id, verbose=False):
 		runURL = "{}/runs/{}".format(self.api_url_base, run_id)
 		if verbose: print("Get request sent to: {}".format(runURL))
 		runResp = requests.get(runURL, headers=self.headers)
