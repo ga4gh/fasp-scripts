@@ -108,7 +108,7 @@ if __name__ == "__main__":
         print (testname)
         drsClient = test['drs_client']
         if drsClient.api_key == None:
-            print("This DRS client is obtained authorization. Check credentials file")
+            print(f"This DRS client failed to obtain authorization. Check credentials file")
             print("Will proceed with /objects calls only.\n")
         for drs_id in test['drs_ids']:
             res = drsClient.getObject(drs_id)

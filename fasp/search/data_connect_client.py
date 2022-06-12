@@ -23,10 +23,10 @@ class DataConnectClient:
 		reg = GA4GHRegistryClient()
 		services = reg.getRegisteredServices('org.ga4gh:search')
 		for service in services:
-			serviceType=service['type']
-			pprint.pprint(service)
-			serviceURL = service['url']
-			hostname = serviceURL.split("/")[2]
+			#serviceType=service['type']
+			print(json.dumps(service, indent=3))
+			#serviceURL = service['url']
+			#hostname = serviceURL.split("/")[2]
 
 		return None
 
@@ -44,6 +44,7 @@ class DataConnectClient:
 			next_url = self.hostURL + "/tables"
 		else:
 			next_url = "{}{}{}".format(self.hostURL,'/tables/catalog/',requestedCatalog)
+
 		pageCount = 0
 		if verbose:
 			print("Retrieving the table list")
@@ -51,9 +52,12 @@ class DataConnectClient:
 			pageCount += 1
 			if verbose:
 				print ("____Page{}_______________".format(pageCount))
+			if self.debug:
+				print(f'Retrieving {next_url}')
 			response = requests.get(next_url, headers=self.headers)
 			result = (response.json())
-			#pprint.pprint(result)
+			if self.debug:
+				print(json.dumps(result, indent=3))
 			if requestedCatalog == None and 'pagination' in result and 'next_page_url' in result['pagination']:
 				next_url = result['pagination']['next_page_url']
 			else:
@@ -223,7 +227,7 @@ class DataConnectClient:
 			if self.debug: print(response.content)
 			result = (response.json())
 			if self.debug:
-				pprint.pprint(result)
+				print(json.dumps(result, indent=3))
 			if 'pagination' in result and 'next_page_url' in result['pagination']:
 				next_url = result['pagination']['next_page_url']
 			else:
@@ -285,29 +289,34 @@ class SearchSchema():
 
 
 def usage():
-	print (sys.argv[0] +' -l listTables -c listCatalog -t tableInfo -r registeredServices')
+	print (sys.argv[0] +' -s service -l listTables -c listCatalog -t tableInfo -r registeredServices')
 
 def main(argv):
-	searchClient = DataConnectClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com')
-
-	catalog = ''
-	table = ''
 
 	try:
-		opts, args = getopt.getopt(argv, "hlc:t:ra", ["help", "listTables", "tableInfo", "registeredServices","catalogs"])
-	except getopt.GetoptError:
+		opts, args = getopt.getopt(argv, "hls:c:t:ra", ["help", "listTables", "service", "tableInfo", "registeredServices","catalogs"])
+	except getopt.GetoptError as err:
+		print(err)
 		usage()
 		sys.exit(2)
+	searchClient = None
+	for opt, arg in opts:
+	    if opt == '-s':
+	    	searchClient = DataConnectClient(arg, debug=True)
+	if searchClient == None:
+		print("-s service must be provided")
+		usage()
+		sys.exit()
 	for opt, arg in opts:
 	    if opt in ("-h", "--help"):
 	        usage()
 	        sys.exit()
 	    elif opt in ("-l", "--listTables"):
-	        searchClient.listTables()
+	        searchClient.listTables(verbose=True)
 	    elif opt in ("-c", "--listCatalog"):
 	        searchClient.listCatalog(arg)
 	    elif opt in ("-t", "--table"):
-	        ti = searchClient.listTableInfo(arg)
+	        ti = searchClient.listTableInfo(arg, verbose=True)
 	    elif opt in ("-a", "--catalogs"):
 	        searchClient.listCatalogs()
 	    elif opt in ("-r", "--registeredServices"):
@@ -317,10 +326,3 @@ def main(argv):
 if __name__ == "__main__":
     main(sys.argv[1:])
 
-
-
-	#query = "select submitter_id, 'bdc:'||read_drs_id drsid from thousand_genomes.onek_genomes.ssd_drs where population = 'BEB' limit 3"
-# 	res = myClient.runQuery(query)
-
-
-	#searchClient.listTables()

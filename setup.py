@@ -10,4 +10,7 @@ setup(name='fasp',
                 'fasp.loc',
                 'fasp.workflow'],
       include_package_data=True,
+      install_requires=['requests',
+					'pandas',
+					'PIL']
       )
