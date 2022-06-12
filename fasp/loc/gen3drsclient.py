@@ -14,17 +14,22 @@ class Gen3DRSClient(DRSClient):
     def __init__(self, api_url_base,  access_token_resource_path, api_key_path,
     access_id=None, debug=False):
         super().__init__(api_url_base, access_id, debug=debug)
+        self.api_key = None
         self.access_token_resource_path = access_token_resource_path
         full_key_path = os.path.expanduser(api_key_path)
-        with open(full_key_path) as f:
-            self.api_key = json.load(f)
-        code = self.updateAccessToken()
-        if code == 401:
-            print('Invalid access token in {}'.format(full_key_path))
-        elif code != 200:
-            print('Error {} getting Access token for {}'.format(code, api_url_base))
-            print('Using {}'.format(full_key_path))
-
+        try:
+            with open(full_key_path) as f:
+                self.api_key = json.load(f)
+            code = self.updateAccessToken()
+            if code == 401:
+                print('Invalid access token in {}'.format(full_key_path))
+                self.api_key = None
+            elif code != 200:
+                print('Error {} getting Access token for {}'.format(code, api_url_base))
+                print('Using {}'.format(full_key_path))
+                self.api_key = None
+        except:
+            self.api_key = None
 
     # Obtain an access_token using the provided Fence API key.
     # The client object will retain the access key for subsequent calls
@@ -36,6 +41,8 @@ class Gen3DRSClient(DRSClient):
         if response.status_code == 200:
             resp = json.loads(response.content.decode('utf-8'))
             self.access_token = resp['access_token']
+        else:
+            self.has_auth = False
         return response.status_code
         
 
@@ -100,12 +107,21 @@ if __name__ == "__main__":
         print ('______________________________________')
         print (testname)
         drsClient = test['drs_client']
+        if drsClient.api_key == None:
+            print("This DRS client is obtained authorization. Check credentials file")
+            print("Will proceed with /objects calls only.\n")
         for drs_id in test['drs_ids']:
             res = drsClient.getObject(drs_id)
             print(f'GetObject for {drs_id}')
             print (json.dumps(res,indent=3))
-            print(f'URL for {drs_id}')
-            url = drsClient.getAccessURL(drs_id)
-            print (url)
-
+            # Get and access URL
+            try:
+                url = drsClient.getAccessURL(drs_id)
+                print(f'URL for {drs_id}')
+                print (url)
+            except:
+                if drsClient.api_key  == None:
+                    print("This DRS client has not obtained authorization and cannot obtain URLs for controlled access objects")
+                else:
+                    print("You may not have authorization for this object")
            
