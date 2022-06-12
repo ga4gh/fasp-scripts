@@ -1,11 +1,10 @@
 import requests
-import pprint
 import sys
 import getopt
 import json
 
 from fasp.loc import GA4GHRegistryClient
-from fasp.search.MappingLibrary import MappingLibraryClient
+#from fasp.search.MappingLibrary import MappingLibraryClient
 import pandas as pd
 
 class DataConnectClient:
@@ -158,27 +157,7 @@ class DataConnectClient:
 						#	vList[v['const']]['title'] = v['title']
 					template[prop] = vList
 		return template
-			
-	def getMappingsForTable(self, table):
-		modl = self.listTableInfo(table)
-		#varlist = []
-		props = modl.schema['data_model']['properties']
-		vLookUp = {}
-		for p, v in props.items():
-			vLookUp[v['$id']] = p
-		if self.debug:
-			print(vLookUp)
-		#Find the mappings
-		mcl = MappingLibraryClient()
-		varList = mcl.getMappingsForVars(list(vLookUp.keys()))
-		if self.debug:
-			print(varList)
-		# Add column names to the mappings
-		vi = 0
-		for var in varList:
-			varList[vi]['fromCol'] = vLookUp[var['from']]
-			vi += 1
-		return varList
+
 		
 	def runOneTableQuery(self, column_list, table, limit):
 		col_string = ", ".join(column_list)
