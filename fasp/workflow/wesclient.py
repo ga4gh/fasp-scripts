@@ -9,9 +9,10 @@ class WESClient:
 	headers: Dict[str, str]
 
 
-	def __init__(self, api_url_base):
+	def __init__(self, api_url_base, debug=False):
 		self.api_url_base = api_url_base
 		self.headers = {}
+		self.debug = debug
 
 	@classmethod
 	def _fromRegistryEntry(cls, registryEntry):
@@ -118,5 +119,7 @@ class WESClient:
 		
 	def getInfo(self):
 		url = "{}/service-info".format(self.api_url_base)
+		if self.debug:
+			print(url)
 		runResp = requests.get(url)
 		return runResp.json()
