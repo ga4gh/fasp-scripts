@@ -11,6 +11,5 @@ setup(name='fasp',
                 'fasp.workflow'],
       include_package_data=True,
       install_requires=['requests',
-					'pandas',
-					'PIL']
+					'pandas']
       )
