@@ -29,71 +29,11 @@ class sbWESClient(WESClient):
 		self.modulePath = os.path.dirname(os.path.abspath(__file__))
 		self.mr = None
 
-	def runWorkflow(self, fileurl, outfile):
-		# App I want to use to run a task
-		
-
-		#app = 'sbg://{}/samtools-stats-1-8/10'.format(self.project_id)
-		app = 'sbg://{}/samtools-stats-1-8-url'.format(self.project_id)
-		if self.debug: print("app:{}".format(app))
-
-		params = {
-		   	"project": self.project_id,
-		    "inputs": {
-		      "alignment_file_url": fileurl,
-		      "reference_file": {
-				"path": "drs://cgc-ga4gh-api.sbgenomics.com/5bad6c83e4b0abc138917143",
-				"name": "references-hs37d5-hs37d5.fasta",
-		        "class": "File"
-		      },
-		      "output_file_path": outfile
-		    }
-		 }
-		
-		
-		body = {
-		  "workflow_params": (None, json.dumps(params), 'application/json'),
-		  "workflow_type": "CWL",
-		  "workflow_type_version": "sbg:draft-2",
-		  "workflow_url": app
-		}
-		print(self.api_url_base)
-		response = requests.request("POST", self.api_url_base+'/runs', headers=self.headers, files = body)
-		
-		if self.debug:
-			print(response)
-		if response.status_code == 200:
-			return response.json()['run_id']
-		elif response.status_code == 401:
-			print("WES server authentication failed")
-			sys.exit(1)
-		else:
-			print("Full response content:\n{}".format(response.content))
-			print("WES run submission failed. Response status:{}".format(response.status_code))
-			sys.exit(1)
 	
 	def __getMR(self):
 		if self.mr is None:
 			self.mr = DRSMetaResolver()
 		return self.mr
-
-
-	def getSAMToolsResults(self, run_id, statsRequired):
-		log = self.GetRunLog(run_id)
-		resultsDRSID = log['outputs']['statistics']['path']
-		url = self.__getMR().getAccessURL2(resultsDRSID,'s3')
-		retDict = {}
-		with tempfile.NamedTemporaryFile(mode='r+') as file:
-			response = requests.get(url)
-			file.write(response.text)
-			file.seek(0)
-			for x in file:
-				if x.startswith('SN'):   
-					parts = x.split('\t')
-					statName = parts[1].split(':')[0]
-					if statName in statsRequired:
-						retDict[statName] = parts[2].rstrip()
-		return retDict
 
 	def runGWASWorkflow(self, vcfFileurl, csvfileurl):
 		''' run the plenary GWAS Workflow '''
@@ -177,7 +117,9 @@ class sbWESClient(WESClient):
 			else:
 				nextPageToken = None
 			
-			#runs = rDict['workflows']
+			for r in rDict['runs']:
+				print(r['run_id'],r['state'])
+			#runs = rDict['runs']
 			#for r in runs:
 			#	runsdf = self.addRun(r['run_id'], runsdf)
 		return runsdf
@@ -198,10 +140,6 @@ class cavaticaWESClient(sbWESClient):
 
 		
 if __name__ == "__main__":
-	myClient = sbWESClient('cgc','forei/gecco','~/.keys/sbcgc_key.json')
-	res = myClient.getTaskStatus('7c35c271-6916-4215-8942-9e0977342fbc', verbose=True)
-	#res = myClient.runGWASWorkflowTest()
-	#res = myClient.runWorkflow('gs://dnastack-public-bucket/thousand_genomes_meta.csv', '')
-
-
+	myClient = sbWESClient('https://cgc-ga4gh-api.sbgenomics.com/ga4gh/wes/v1','user/project','~/.keys/sbcgc_key.json')
+	res = myClient.getRuns()
 	print(res)
