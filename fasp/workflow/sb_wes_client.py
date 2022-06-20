@@ -23,7 +23,7 @@ class sbWESClient(WESClient):
 		self.api_url_base = api_url_base
 		full_key_path = os.path.expanduser(access_token_path)
 		with open(full_key_path) as f:
-			self.accessToken = json.load(f)['access_token']
+			self.accessToken = json.load(f)['auth_token']
 		self.headers = { 'X-SBG-Auth-Token': self.accessToken}
 		self.debug = debug
 		self.modulePath = os.path.dirname(os.path.abspath(__file__))

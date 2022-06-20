@@ -13,12 +13,12 @@ class SBDRSClient(DRSClient):
 
     # Initialize a DRS Client for the service at the specified url base
     # and with the REST resource to provide an access key 
-	def __init__(self, api_url_base, api_key_path, instance, access_id, debug=False):
+	def __init__(self, api_url_base, api_key_path, access_id, debug=False):
 		super().__init__(api_url_base, access_id, debug=debug)
 		full_key_path = os.path.expanduser(api_key_path)
 		with open(full_key_path) as f:
 			auth_content = json.load(f)
-		self.access_token = auth_content[instance]['auth_token']
+		self.access_token = auth_content['auth_token']
 
     # Need to override this method as Get object requires auth on Seven Bridges services
     # Get info about a DrsObject
@@ -45,25 +45,25 @@ class sbcgcDRSClient(SBDRSClient):
     
     # Mostly done by the SBDRSClient, this just deals with url and end point specifics
     def __init__(self, api_key_path, access_id, debug=False):
-    	super().__init__('https://cgc-ga4gh-api.sbgenomics.com', api_key_path, 'cgc', access_id, debug=debug)
+    	super().__init__('https://cgc-ga4gh-api.sbgenomics.com', api_key_path, access_id, debug=debug)
 
 class cavaticaDRSClient(SBDRSClient):
     '''client for Cavatica Seven Bridges DRS Server'''    
     # init mostly done by the SBDRSClient, this just deals with url and end point specifics
     def __init__(self, api_key_path, access_id, debug=False):
-    	super().__init__('https://cavatica-ga4gh-api.sbgenomics.com', api_key_path, 'cavatica', access_id, debug=debug)
+    	super().__init__('https://cavatica-ga4gh-api.sbgenomics.com', api_key_path, access_id, debug=debug)
 
 class sbbdcDRSClient(SBDRSClient):
     '''client for BioDataCatalyst Seven Bridges DRS Server'''    
     # init mostly done by the SBDRSClient, this just deals with url and end point specifics
     def __init__(self, api_key_path, access_id, debug=False):
-    	super().__init__('https://ga4gh-api.sb.biodatacatalyst.nhlbi.nih.gov', api_key_path, 'bdc', access_id, debug=debug)
+    	super().__init__('https://ga4gh-api.sb.biodatacatalyst.nhlbi.nih.gov', api_key_path, access_id, debug=debug)
 
 
 
 if __name__ == "__main__":
 	print ("Cancer Genomics Cloud")
-	sbClient = sbcgcDRSClient('~/.keys/sevenbridges_keys.json', 's3')
+	sbClient = sbcgcDRSClient('~/.keys/sbcgc_key.json', 's3')
 	#res = sbClient.getObject('5bb22646e4b0db6385b3a119')
 	#res = sbClient.getObject('5ba0025ce4b0f7470b2289bc')
 	res = sbClient.getObject('5ba0025ce4b0f7470b228a9a')
@@ -74,7 +74,7 @@ if __name__ == "__main__":
 
 	print ("______________________")
 	print ("Cavatica")
-	sbClient = cavaticaDRSClient('~/.keys/sevenbridges_keys.json', 'gs')
+	sbClient = cavaticaDRSClient('~/.keys/sbcav_key.json', 'gs')
 	res = sbClient.getObject('578cf947507c17681a3117d1')
 
 	print (res)
