@@ -9,8 +9,9 @@ class WESClient:
 	headers: Dict[str, str]
 
 
-	def __init__(self, api_url_base):
+	def __init__(self, api_url_base, debug=False):
 		self.api_url_base = api_url_base
+		self.debug = debug
 		self.headers = {}
 
 	@classmethod
@@ -27,7 +28,7 @@ class WESClient:
 		instance = cls._fromRegistryEntry(json.loads(regEntry.content))
 		return instance
 
-	def getRuns(self):
+	def get_runs(self):
 		nextPageToken = ''
 		while nextPageToken != 'Done':
 			if nextPageToken != '':
@@ -46,9 +47,10 @@ class WESClient:
 			print (runs)
 
 
-	def getTaskStatus(self, run_id, verbose=False):
+	def get_task_status(self, run_id, verbose=False):
 		runURL = "{}/runs/{}".format(self.api_url_base, run_id)
-		if verbose: print("Get request sent to: {}".format(runURL))
+		if verbose or self.debug:
+			print("Get request sent to: {}".format(runURL))
 		runResp = requests.get(runURL, headers=self.headers)
 		if runResp.status_code == 200:
 			run = runResp.json()
@@ -58,9 +60,10 @@ class WESClient:
 			return 'task not found'
 		print(runResp)
 		
-	def getRunLog(self, run_id, verbose=False):
+	def get_run_log(self, run_id, verbose=False):
 		runURL = "{}/runs/{}".format(self.api_url_base, run_id)
-		if verbose: print("Get request sent to: {}".format(runURL))
+		if verbose or self.debug:
+			print("Get request sent to: {}".format(runURL))
 		runResp = requests.get(runURL, headers=self.headers)
 		if runResp.status_code == 200:
 			run = runResp.json()
@@ -70,12 +73,12 @@ class WESClient:
 			return 'task not found'
 		print(runResp)
 		
-	def getOutputs(self, run_id):
+	def get_outputs(self, run_id):
 		log = self.GetRunLog(run_id)
 		return log['outputs']
 
 
-	def runGenericWorkflow(
+	def run_generic_workflow(
 			self,
 			workflow_url: str,
 			workflow_params: Union[str, IO[bytes], None] = None,
@@ -88,8 +91,6 @@ class WESClient:
 	):
 
 		runURL = self.api_url_base+'/runs'
-		if verbose:
-			print("sending to {}".format(runURL))
 
 		attachments = {
 			'workflow_url': (None, workflow_url,'text/plain'),
@@ -100,6 +101,13 @@ class WESClient:
 			'tags': (None, tags, 'text/plain'), 
 			'workflow_attachment': workflow_attachment,
 		}
+
+		if verbose or self.debug:
+			print("sending to {}".format(runURL))
+			print("Workflow Parameters")
+			print(json.dumps(workflow_params, indent=3))
+			print("BODY")
+			print(json.dumps(attachments, indent=3))
 
 		response = requests.request('POST', runURL, headers=self.headers, files=attachments)
 		if verbose:
@@ -118,5 +126,7 @@ class WESClient:
 		
 	def getInfo(self):
 		url = "{}/service-info".format(self.api_url_base)
+		if self.debug:
+			print(url)
 		runResp = requests.get(url)
 		return runResp.json()

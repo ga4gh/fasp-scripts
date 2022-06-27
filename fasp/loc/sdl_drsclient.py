@@ -32,16 +32,16 @@ class SRADRSClient(DRSClient):
 		return resp['response'][accession]['drs']
 	
 	#===========================================================================
-	# def getAccessURL(self, object_id, region=None):
+	# def get_access_url(self, object_id, region=None):
 	# 	''' SRA DRS uses random access ids - so getAccess URL uses region in instead '''
 	# 	if region == None:
 	# 		region = self.access_id
-	# 	access_methods = self.getObject(object_id)['access_methods']
+	# 	access_methods = self.get_object(object_id)['access_methods']
 	# 	am = next((sub for sub in access_methods if sub['region'] == region), None)
 	# 	if am == None:
 	# 		print ('object not in region {}'.format(region))
 	# 		return None
-	# 	return super().getAccessURL(object_id, am['access_id'])
+	# 	return super().get_access_url(object_id, am['access_id'])
 	#===========================================================================
 
 
@@ -125,7 +125,7 @@ class sdlDRSClient(DRSClient):
 			
     # Get info about a DrsObject
     # See https://ga4gh.github.io/data-repository-service-schemas/preview/develop/docs/#_getobject
-	def getObject(self, object_id):		
+	def get_object(self, object_id):		
 		p = object_id.split('.')
 		accession = p[0]
 		fileext = p[-1]
@@ -149,7 +149,7 @@ class sdlDRSClient(DRSClient):
 
     # Get a URL for fetching bytes. 
     # See https://ga4gh.github.io/data-repository-service-schemas/preview/develop/docs/#_getaccessurl
-	def getAccessURL(self, object_id, access_id):
+	def get_access_url(self, object_id, access_id):
 		p = object_id.split('.')
 		accession = p[0]
 		fileext = p[-1]
@@ -172,19 +172,19 @@ class sdlDRSClient(DRSClient):
 
 if __name__ == "__main__":
 # 	client1 = sdlDRSClient('~/.keys/prj_14565.ngc')
-# 	res = client1.getObject('SRR1999478.bam')
+# 	res = client1.get_object('SRR1999478.bam')
 # 	print('--Get Info--')
 # 	print (res)
 # 	print('--Get a URL--')
-# 	res = client1.getAccessURL('SRR1999478.bam','gs.us')
+# 	res = client1.get_access_url('SRR1999478.bam','gs.us')
 # 	print (res)
 # 	print ('-----------------')
 	client2 = sdlDRSClient('~/.keys/prj_11218_D17199.ngc', debug=False)
-	res = client2.getObject('SRR5368359.sra')
+	res = client2.get_object('SRR5368359.sra')
 	print('--Get Info--')
 	print (res)
 	print('--Get a URL--')
-	res = client2.getAccessURL('SRR5368359.sra','gs.us')
+	res = client2.get_access_url('SRR5368359.sra','gs.us')
 	#print (json.dumps(res, indent=2))
 	print (res['url'])
 

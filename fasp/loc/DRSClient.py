@@ -25,8 +25,8 @@ class DRSClient:
 			
 
     # Get info about a DrsObject
-    # See https://ga4gh.github.io/data-repository-service-schemas/preview/develop/docs/#_getobject
-	def getObject(self, object_id, expand=False):
+    # See https://ga4gh.github.io/data-repository-service-schemas/preview/develop/docs/#_get_object
+	def get_object(self, object_id, expand=False):
 		api_url = '{0}/ga4gh/drs/v1/objects/{1}'.format(self.api_url_base, object_id)
 		if expand:
 			api_url += '?expand=true'
@@ -44,8 +44,8 @@ class DRSClient:
 			return response.status_code
 
 	# Get a URL for fetching bytes. 
-	# See https://ga4gh.github.io/data-repository-service-schemas/preview/develop/docs/#_getaccessurl
-	def getAccessURL(self, object_id, access_id=None):
+	# See https://ga4gh.github.io/data-repository-service-schemas/preview/develop/docs/#_get_access_url
+	def get_access_url(self, object_id, access_id=None):
 		if access_id == None:
 			access_id = self.access_id
 		
@@ -71,14 +71,14 @@ class DRSClient:
 			return None
 	
 
-	def getAccessURLRegion(self, object_id, region):
+	def get_url_for_region(self, object_id, region):
 		''' get an access url for the object in the specified region'''
-		access_methods = self.getObject(object_id)['access_methods']
-		am = next((sub for sub in access_methods if sub['region'] == region), None)
+		access_methods = self.get_object(object_id)['access_methods']
+		am = next((sub for sub in access_methods if 'region' in sub and sub['region'] == region), None)
 		if am == None:
 			print ('object not in region {}'.format(region))
 			return None
-		return self.getAccessURL(object_id, am['access_id'])
+		return self.get_access_url(object_id, am['access_id'])
 		
 	
 	def getHeaders(self): 

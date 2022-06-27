@@ -96,7 +96,7 @@ class sbWESClient(WESClient):
 		#print (workflowURL, run['state'])
 		return runsdf	
 	
-	def getRuns(self):
+	def get_runs(self):
 		df_columns = ["run_id", "start", "state","type"]
 		runsdf = pd.DataFrame(columns = df_columns)
 
@@ -141,5 +141,5 @@ class cavaticaWESClient(sbWESClient):
 		
 if __name__ == "__main__":
 	myClient = sbWESClient('https://cgc-ga4gh-api.sbgenomics.com/ga4gh/wes/v1','user/project','~/.keys/sbcgc_key.json')
-	res = myClient.getRuns()
+	res = myClient.get_runs()
 	print(res)

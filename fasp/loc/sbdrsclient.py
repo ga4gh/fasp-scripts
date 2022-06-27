@@ -23,7 +23,7 @@ class SBDRSClient(DRSClient):
     # Need to override this method as Get object requires auth on Seven Bridges services
     # Get info about a DrsObject
     # See https://ga4gh.github.io/data-repository-service-schemas/preview/develop/docs/#_getobject
-	def getObject(self, object_id):
+	def get_object(self, object_id):
 		headers = self.getHeaders()
 		headers['Content-Type'] = 'application/json'
 
@@ -64,18 +64,18 @@ class sbbdcDRSClient(SBDRSClient):
 if __name__ == "__main__":
 	print ("Cancer Genomics Cloud")
 	sbClient = sbcgcDRSClient('~/.keys/sbcgc_key.json', 's3')
-	#res = sbClient.getObject('5bb22646e4b0db6385b3a119')
-	#res = sbClient.getObject('5ba0025ce4b0f7470b2289bc')
-	res = sbClient.getObject('5ba0025ce4b0f7470b228a9a')
-	#res = sbClient.getAccessURL('5ba0025ce4b0f7470b2289bc')
+	#res = sbClient.get_object('5bb22646e4b0db6385b3a119')
+	#res = sbClient.get_object('5ba0025ce4b0f7470b2289bc')
+	res = sbClient.get_object('5ba0025ce4b0f7470b228a9a')
+	#res = sbClient.get_access_url('5ba0025ce4b0f7470b2289bc')
 	print(res)
 	# Thousand Genomes meta csv file - no guarantee this will be there in future!
-	#res = sbClient.getObject('5f404097e4b0bf4ad1323012')
+	#res = sbClient.get_object('5f404097e4b0bf4ad1323012')
 
 	print ("______________________")
 	print ("Cavatica")
 	sbClient = cavaticaDRSClient('~/.keys/sbcav_key.json', 'gs')
-	res = sbClient.getObject('578cf947507c17681a3117d1')
+	res = sbClient.get_object('578cf947507c17681a3117d1')
 
 	print (res)
 

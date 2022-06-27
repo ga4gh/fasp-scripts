@@ -42,18 +42,18 @@ class DRSMetaResolver(DRSClient):
 		
 		if getReg: self.getRegisteredDRSServices()
 
-	def getObject(self, colonPrefixedID):
+	def get_object(self, colonPrefixedID):
 		client, id = self.getClient(colonPrefixedID)
 		if client != None:
 			if self.debug: print('sending id {} to: {}'.format(id, client.__class__.__name__))
-			return client.getObject(id)
+			return client.get_object(id)
 		else:
 			return "prefix unrecognized"
 
-	def getAccessURL(self, colonPrefixedID, access_id=None):
+	def get_access_url(self, colonPrefixedID, access_id=None):
 		client, id = self.getClient(colonPrefixedID)
 		if client != None:
-			return client.getAccessURL(id, access_id)
+			return client.get_access_url(id, access_id)
 		else:
 			return "prefix unrecognized"
 							
@@ -95,7 +95,7 @@ class DRSMetaResolver(DRSClient):
 		if client != None:
 			print ('id:{}'.format(drs_id))
 			print('sending to: {}'.format(client.__class__.__name__))
-			return client.getObject(drs_id)
+			return client.get_object(drs_id)
 		else:
 			return "host unrecognized"
 	
@@ -103,7 +103,7 @@ class DRSMetaResolver(DRSClient):
 		client, drs_id  = self.getClient2(hostURID)
 		
 		if client != None:
-			return client.getAccessURL(drs_id, access_id)
+			return client.get_access_url(drs_id, access_id)
 		else:
 			return "host unrecognized"
 	
@@ -175,9 +175,9 @@ class DRSMetaResolver(DRSClient):
 			print('-------------------------------')
 			print('sending: {}'.format(id))
 			if meta_resolver:
-				res = self.getObject(id)
+				res = self.get_object(id)
 			else:
-				res = self.getObject(id)
+				res = self.get_object(id)
 			idParts = id.split(":", 1)
 			if res == 400:
 				testResults[idParts[0]] = 'request error'.format(id)

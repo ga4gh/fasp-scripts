@@ -7,7 +7,7 @@ class Gen3ManifestClient:
 		with open(filepath) as f:
 			self.data = json.load(f)
 			
-	def runQuery(self, limit):
+	def run_query(self, limit):
 		''' expects an integer as query to limit the rows from the file to return'''
 		# return the first limit records
 		results = []

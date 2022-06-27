@@ -47,11 +47,11 @@ class DNAStackWESClient(WESClient):
 			print("error getting token. status=%d, body=%s" % (response.status_code, response.content))
 			raise RuntimeError('unable to get DNAstack access token')
 
-	def runWorkflow(self, fileurl, outfile):
+	def run_workflow(self, fileurl, outfile):
 		# use a temporary file to write out the input file
 		inputs = {"md5Sum.inputFile": fileurl}
 
-		return self.runGenericWorkflow(
+		return self.run_generic_workflow(
 			workflow_url='checksum.wdl',
 			workflow_params=json.dumps(inputs),
 			workflow_attachment=('checksum.wdl', open(self.modulePath+'/wes/checksum.wdl', 'rb'), 'text/plain'),
@@ -61,7 +61,7 @@ class DNAStackWESClient(WESClient):
 	def runGWASWorkflowTest(self):
 		''' run the GWAS workflow by submitting local files '''
 
-		return self.runGenericWorkflow(
+		return self.run_generic_workflow(
 			workflow_url='gwas.wdl',
 			workflow_params=open(self.wdlPath+'/inputs.gwas.json', 'rb'),
 			workflow_attachment=('gwas.wdl', open(self.wdlPath+'/gwas.wdl', 'rb'), 'text/plain')
@@ -81,7 +81,7 @@ class DNAStackWESClient(WESClient):
 				'workflow_attachment': ('gwas.wdl', open(self.wdlPath+'/gwas.wdl', 'rb'), 'text/plain')
 			}
 
-			return self.runGenericWorkflow(
+			return self.run_generic_workflow(
 				workflow_url='gwas.wdl',
 				workflow_params=fp,
 				workflow_attachment=('gwas.wdl', open(self.wdlPath+'/gwas.wdl', 'rb'), 'text/plain')
@@ -109,7 +109,7 @@ class DNAStackWESClient(WESClient):
 			print (workflowURL, run['state'])
 		return runsdf	
 	
-	def getRuns(self):
+	def get_runs(self):
 		df_columns = ["run_id", "start", "state","type"]
 		runsdf = pd.DataFrame(columns = df_columns)
 
@@ -139,6 +139,6 @@ if __name__ == "__main__":
 	myClient = DNAStackWESClient('~/.keys/dnastack_wes_credentials.json')
 
 	# res = myClient.runGWASWorkflowTest()
-	res = myClient.runWorkflow('gs://dnastack-public-bucket/thousand_genomes_meta.csv', '')
+	res = myClient.run_workflow('gs://dnastack-public-bucket/thousand_genomes_meta.csv', '')
 
 	print(res)

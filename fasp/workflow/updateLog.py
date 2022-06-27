@@ -36,7 +36,7 @@ def main(argv):
 		else:
 			if pd.isna(row["status"]) or row["status"].lower() in ['running','initializing']:
 				wc = wesClients[wesClientClassName]
-				status = wc.getTaskStatus(row["pipeline_id"])
+				status = wc.get_task_status(row["pipeline_id"])
 				print('Updated run:{} status:{}'.format(run_id, status))
 				logTable.at[i, 'status'] = status
 			

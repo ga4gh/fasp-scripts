@@ -14,7 +14,7 @@ class EGAFileClient():
         display_file_name, file_name, file_size, check_sum = ega.get_file_name_size_md5(self.token, identifier)
         return file_size
        
-    def getObject(self, identifier):
+    def get_object(self, identifier):
         ''' DRS formatted details of an EGA file '''
         display_file_name, file_name, file_size, check_sum = ega.get_file_name_size_md5(self.token, identifier)
 

@@ -24,7 +24,7 @@ class ElixirWESClient(WESClient):
 		self.modulePath = os.path.dirname(os.path.abspath(__file__))
 		self.wdlPath = self.modulePath + '/wes/gwas'
 
-	def runWorkflow(self, path, outFile):
+	def run_workflow(self, path, outFile):
 		# use a temporary file to write out the input file
 		workflow_url = 'https://github.com/uniqueg/cwl-example-workflows/blob/master/hashsplitter-workflow.cwl'
 		params = {
@@ -34,7 +34,7 @@ class ElixirWESClient(WESClient):
 			}
 		}
 
-		return self.runGenericWorkflow(
+		return self.run_generic_workflow(
 			workflow_url=workflow_url,
 			workflow_params=json.dumps(params),
 			workflow_type='CWL',
@@ -46,7 +46,7 @@ class ElixirWESClient(WESClient):
 if __name__ == "__main__":
 	myClient = ElixirWESClient(debug=True)
 
-	res = myClient.runWorkflow('http://62.217.82.57/test.txt')
-	#res = myClient.getRuns()
+	res = myClient.run_workflow('http://62.217.82.57/test.txt')
+	#res = myClient.get_runs()
 
 	print(res)

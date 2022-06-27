@@ -82,8 +82,8 @@ class anvilDRSClient(Gen3DRSClient):
     # Anvil GCP resources requires you to provide the userAccount to which charges will be accrued
     # That user account must grant serviceusage.services.use access to your anvil service account
     # e.g. to user-123@anvilprod.iam.gserviceaccount.com
-    def getAccessURL(self, object_id, access_id=None):
-        result = super().getAccessURL(object_id, access_id)
+    def get_access_url(self, object_id, access_id=None):
+        result = super().get_access_url(object_id, access_id)
 
         if result != None:
             if self.userProject == None:
@@ -111,12 +111,12 @@ if __name__ == "__main__":
             print(f"This DRS client failed to obtain authorization. Check credentials file")
             print("Will proceed with /objects calls only.\n")
         for drs_id in test['drs_ids']:
-            res = drsClient.getObject(drs_id)
+            res = drsClient.get_object(drs_id)
             print(f'GetObject for {drs_id}')
             print (json.dumps(res,indent=3))
             # Get and access URL
             try:
-                url = drsClient.getAccessURL(drs_id)
+                url = drsClient.get_access_url(drs_id)
                 print(f'URL for {drs_id}')
                 print (url)
             except:
