@@ -1,0 +1,33 @@
+{
+    "dg.4DFC": {
+        "drs_class": "crdcDRSClient",
+        "keys": "~/.keys/crdc_credentials.json",
+        "default_access_id": "s3"
+    },
+    "dg.4503": {
+        "drs_class": "bdcDRSClient",
+        "keys": "~/.keys/bdc_credentials.json",
+        "default_access_id": "s3"
+    },
+    "dg.ANV0": {
+        "drs_class": "anvilDRSClient",
+        "keys": "~/.keys/anvil_credentials.json",
+        "default_access_id": "s3"
+    },
+    "sbcgc": {
+        "drs_class": "sbcgcDRSClient",
+        "keys": "~/.keys/sbcgc_key.json",
+        "default_access_id": "s3"
+    },
+    "sbcav": {
+        "drs_class": "cavaticaDRSClient",
+        "keys": "~/.keys/sbcav_key.json",
+        "default_access_id": "s3"
+    },
+    "sbbdc": {
+        "drs_class": "sbbdcDRSClient",
+        "keys": "~/.keys/sbbdc_key.json",
+        "default_access_id": "s3"
+    },
+    "sradrs": {"drs_class": "SRADRSClient"}
+}

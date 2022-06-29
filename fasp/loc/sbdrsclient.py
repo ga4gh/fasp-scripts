@@ -15,16 +15,25 @@ class SBDRSClient(DRSClient):
     # and with the REST resource to provide an access key 
 	def __init__(self, api_url_base, api_key_path, access_id, debug=False):
 		super().__init__(api_url_base, access_id, debug=debug)
-		full_key_path = os.path.expanduser(api_key_path)
+		self.api_key_path = api_key_path
+
+
+	def authorize(self):
+		full_key_path = os.path.expanduser(self.api_key_path)
 		with open(full_key_path) as f:
 			auth_content = json.load(f)
-		self.access_token = auth_content['auth_token']
+		self.auth_token = auth_content['auth_token']
+		self.authorized = True
 
     # Need to override this method as Get object requires auth on Seven Bridges services
     # Get info about a DrsObject
     # See https://ga4gh.github.io/data-repository-service-schemas/preview/develop/docs/#_getobject
 	def get_object(self, object_id):
+		if not self.authorized:
+			self.authorize()
+
 		headers = self.getHeaders()
+		
 		headers['Content-Type'] = 'application/json'
 
 		api_url = '{0}/ga4gh/drs/v1/objects/{1}'.format(self.api_url_base, object_id)
@@ -36,8 +45,13 @@ class SBDRSClient(DRSClient):
 			print (response.raise_for_status())
 			return None
 
+	def get_access_url(self, object_id, access_id=None):
+		if not self.authorized:
+			self.authorize()
+		return DRSClient.get_access_url(self, object_id, access_id=access_id)
+
 	def getHeaders(self): 
-		return {'X-SBG-Auth-Token' : self.access_token }
+		return {'X-SBG-Auth-Token' : self.auth_token }
 
 
 class sbcgcDRSClient(SBDRSClient):

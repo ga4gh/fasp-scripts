@@ -16,7 +16,11 @@ class Gen3DRSClient(DRSClient):
         super().__init__(api_url_base, access_id, debug=debug)
         self.api_key = None
         self.access_token_resource_path = access_token_resource_path
-        full_key_path = os.path.expanduser(api_key_path)
+        self.api_key_path = api_key_path
+        #self.authorize()
+
+    def authorize(self):
+        full_key_path = os.path.expanduser(self.api_key_path)
         try:
             with open(full_key_path) as f:
                 self.api_key = json.load(f)
@@ -25,9 +29,10 @@ class Gen3DRSClient(DRSClient):
                 print('Invalid access token in {}'.format(full_key_path))
                 self.api_key = None
             elif code != 200:
-                print('Error {} getting Access token for {}'.format(code, api_url_base))
+                print('Error {} getting Access token for {}'.format(code, self.api_url_base))
                 print('Using {}'.format(full_key_path))
                 self.api_key = None
+                
         except:
             self.api_key = None
 
@@ -41,10 +46,15 @@ class Gen3DRSClient(DRSClient):
         if response.status_code == 200:
             resp = json.loads(response.content.decode('utf-8'))
             self.access_token = resp['access_token']
+            self.authorized = True
         else:
             self.has_auth = False
         return response.status_code
-        
+       
+    def get_access_url(self, object_id, access_id=None):
+        if not self.authorized:
+            self.authorize()
+        return DRSClient.get_access_url(self, object_id, access_id=access_id)
 
 
 class crdcDRSClient(Gen3DRSClient):

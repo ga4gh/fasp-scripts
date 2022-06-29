@@ -1,5 +1,6 @@
 import requests
 import json
+import re
 #from builtins import None
 
 class DRSClient:
@@ -14,6 +15,9 @@ class DRSClient:
 		self.version = None
 		self.debug = debug
 		self.public = public
+		self.authorized = False
+		
+		
 
 	@classmethod
 	def fromRegistryEntry(cls, registryEntry):
@@ -79,6 +83,12 @@ class DRSClient:
 			print ('object not in region {}'.format(region))
 			return None
 		return self.get_access_url(object_id, am['access_id'])
+		
+	def get_host(self):
+		''' get the host for DRS Server'''
+		p = re.compile("http[s]?://(.*)")
+		m = p.match(self.api_url_base)
+		return m.group(1)
 		
 	
 	def getHeaders(self): 

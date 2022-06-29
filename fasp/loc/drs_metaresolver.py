@@ -16,54 +16,98 @@ class DRSMetaResolver(DRSClient):
 	Prefixes used are not official. For demonstration purpposes only'''
 	# Initialize a DRS Client for the service at the specified url base
 	# and with the REST resource to provide an access key 
-	def __init__(self, debug=False, getReg=True, meta_resolver=None):
+	def __init__(self, debug=False, getReg=False, meta_resolver=None):
 		crdcDRS = crdcDRSClient('~/.keys/crdc_credentials.json','s3')
 		anvilDRS = anvilDRSClient('~/.keys/anvil_credentials.json', '', 'gs')
 		bdcDRS = bdcDRSClient('~/.keys/bdc_credentials.json','gs')
+
 		self.drsClients = { 
-			"insdc": sdlDRSClient('~/.keys/prj_11218_D17199.ngc'),
 			"crdc": crdcDRS,
 			"dg.4DFC": crdcDRS,
 			"bdc": bdcDRS,
 			"dg.4503": bdcDRS,
 			"anv": anvilDRS,
 			"dg.ANV0": anvilDRS,
-			"insdc": sdlDRSClient('~/.keys/prj_11218_D17199.ngc'),
-			"sbcgc": sbcgcDRSClient('~/.keys/sevenbridges_keys.json','s3'),
-			"sbcav": cavaticaDRSClient('~/.keys/sevenbridges_keys.json','gs'),
-			'sbbdc' : sbbdcDRSClient('~/.keys/sevenbridges_keys.json', 's3'),
+			"sbcgc": sbcgcDRSClient('~/.keys/sbcgc_key.json','s3'),
+			"sbcav": cavaticaDRSClient('~/.keys/sbcav_key.json','gs'),
+			'sbbdc' : sbbdcDRSClient('~/.keys/sbbdc_key.json', 's3'),
 			"sradrs": SRADRSClient('https://locate.be-md.ncbi.nlm.nih.gov')
 		}
+			
 		self.debug = debug
 		self.meta_resolver = meta_resolver
 		self.registeredClients = []
-		self.hostNameIndex = {}
 
-		
+		self.hostNameIndex = {}		
+		for k, cl in self.drsClients.items():
+			host_name = cl.get_host()
+			if self.debug: print(host_name)
+			self.hostNameIndex[host_name] = cl
+			
 		if getReg: self.getRegisteredDRSServices()
+		
 
+
+	def strip_schema(self, did):
+		schema = "drs://"
+		if did.startswith(schema):
+			return did[len(schema):]
+		return did  # or whatever
+		
 	def get_object(self, colonPrefixedID):
-		client, id = self.getClient(colonPrefixedID)
+		client, did = self.get_client_robust(colonPrefixedID)
 		if client != None:
-			if self.debug: print('sending id {} to: {}'.format(id, client.__class__.__name__))
-			return client.get_object(id)
+			#if self.debug: print('sending id {} to: {}'.format(id, client.__class__.__name__))
+			if self.debug:
+				print('sending id {} to: {}'.format(did, client.get_host()))
+			return client.get_object(did)
 		else:
 			return "prefix unrecognized"
 
 	def get_access_url(self, colonPrefixedID, access_id=None):
-		client, id = self.getClient(colonPrefixedID)
+		client, did = self.get_client_robust(colonPrefixedID)
+		#client, id = self.getClient(colonPrefixedID)
 		if client != None:
-			return client.get_access_url(id, access_id)
+			return client.get_access_url(did, access_id)
 		else:
 			return "prefix unrecognized"
 							
-	def getClient(self, colonPrefixedID):
+	def getClient(self, submittedID):
+		
+		colonPrefixedID = self.strip_schema(submittedID)
+		
 		idParts = colonPrefixedID.split(":", 1)
 		prefix = idParts[0]
 		if prefix in self.drsClients.keys():
 			return self.drsClients[prefix] , idParts[1]
 		else:
 			return None
+			
+	def get_client_robust(self, submittedID):
+		''' find the DRS client for any kind of id we might be sent  '''
+		
+		stripped_id = self.strip_schema(submittedID)
+		# is it compact or host based?
+		if ":" in stripped_id:
+			# It could still be host:port - let's check
+			idParts = stripped_id.split(":", 1)
+			prefix = idParts[0]
+			if prefix in self.drsClients.keys():
+				# known prefix - get the client
+				return self.drsClients[prefix] , idParts[1]
+			else:
+				if self.debug: print(f"Not a recognized prefix")
+		
+		# Deal with host based ids
+		idParts = stripped_id.split("/")
+		host = idParts[0]
+		if host in self.hostNameIndex:
+			return self.hostNameIndex[host], idParts[1]
+		else:
+			host_url =f"http://{host}"
+			if self.debug: print(f"Adding  DRS client for {host}")
+			self.hostNameIndex[host] = DRSClient(host_url)
+			return self.hostNameIndex[host], idParts[1]
 			
 	def getRegisteredClient(self, colonPrefixedID):
 		idParts = colonPrefixedID.split(":", 1)
@@ -128,7 +172,7 @@ class DRSMetaResolver(DRSClient):
 			
 	# Look for registered DRS services
 	def getRegisteredDRSServices(self):
-		reg = GA4GHRegistryClient()
+		reg = GA4GHRegistryClient(debug=self.debug)
 		drsServices = reg.getRegisteredServices('org.ga4gh:drs')
 		#if ('message', 'Service Unavailable') in drsServices.items():
 		if not isinstance(drsServices, list):
