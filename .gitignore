@@ -142,3 +142,4 @@ dmypy.json
 
 # Mac OS X
 .DS_Store
+*.dcm

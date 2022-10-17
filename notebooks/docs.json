@@ -1,0 +1,908 @@
+[
+   {
+      "resourceType": "DocumentReference",
+      "id": "404584",
+      "meta": {
+         "versionId": "3",
+         "lastUpdated": "2022-01-18T23:08:59.247+00:00",
+         "source": "#yZghTbV0tZG7jrxe",
+         "profile": [
+            "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/drs-document-reference"
+         ],
+         "tag": [
+            {
+               "code": "SD_DZTB5HRR"
+            }
+         ]
+      },
+      "identifier": [
+         {
+            "system": "https://kf-api-dataservice.kidsfirstdrc.org/genomic-files/",
+            "value": "GF_BBTDTHGN"
+         },
+         {
+            "system": "urn:kids-first:unique-string",
+            "value": "DocumentReference-SD_DZTB5HRR-GF_BBTDTHGN"
+         }
+      ],
+      "status": "current",
+      "docStatus": "final",
+      "type": {
+         "text": "Aligned Reads Index"
+      },
+      "subject": {
+         "reference": "Patient/54528"
+      },
+      "securityLabel": [
+         {
+            "coding": [
+               {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+                  "code": "R",
+                  "display": "restricted"
+               }
+            ],
+            "text": "True"
+         },
+         {
+            "coding": [
+               {
+                  "code": "c999"
+               }
+            ],
+            "text": "phs001247.c999"
+         },
+         {
+            "text": "SD_DZTB5HRR"
+         }
+      ],
+      "content": [
+         {
+            "attachment": {
+               "url": "drs://data.kidsfirstdrc.org/e358fe83-0f4b-433d-b57b-2f654420580c"
+            }
+         },
+         {
+            "attachment": {
+               "extension": [
+                  {
+                     "url": "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/file-size",
+                     "valueDecimal": 1522138
+                  },
+                  {
+                     "url": "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/hashes",
+                     "valueCodeableConcept": {
+                        "coding": [
+                           {
+                              "display": "etag"
+                           }
+                        ],
+                        "text": "9d507e1342c86433652d298c3d00b469"
+                     }
+                  }
+               ],
+               "url": "s3://kf-study-us-east-1-prd-sd-dztb5hrr/harmonized/cram/508c836c-bc93-4a9a-9136-4cf4cba76ab1.cram.crai",
+               "title": "508c836c-bc93-4a9a-9136-4cf4cba76ab1.cram.crai"
+            },
+            "format": {
+               "display": "crai"
+            }
+         }
+      ]
+   },
+   {
+      "resourceType": "DocumentReference",
+      "id": "404583",
+      "meta": {
+         "versionId": "3",
+         "lastUpdated": "2022-01-18T23:08:59.241+00:00",
+         "source": "#tfVKb6lLj6fp71eJ",
+         "profile": [
+            "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/drs-document-reference"
+         ],
+         "tag": [
+            {
+               "code": "SD_DZTB5HRR"
+            }
+         ]
+      },
+      "identifier": [
+         {
+            "system": "https://kf-api-dataservice.kidsfirstdrc.org/genomic-files/",
+            "value": "GF_W4DWQ8CZ"
+         },
+         {
+            "system": "urn:kids-first:unique-string",
+            "value": "DocumentReference-SD_DZTB5HRR-GF_W4DWQ8CZ"
+         }
+      ],
+      "status": "current",
+      "docStatus": "final",
+      "type": {
+         "text": "Aligned Reads"
+      },
+      "subject": {
+         "reference": "Patient/54528"
+      },
+      "securityLabel": [
+         {
+            "coding": [
+               {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+                  "code": "R",
+                  "display": "restricted"
+               }
+            ],
+            "text": "True"
+         },
+         {
+            "coding": [
+               {
+                  "code": "c999"
+               }
+            ],
+            "text": "phs001247.c999"
+         },
+         {
+            "text": "SD_DZTB5HRR"
+         }
+      ],
+      "content": [
+         {
+            "attachment": {
+               "url": "drs://data.kidsfirstdrc.org/de8eff74-5794-4067-b10a-ff14e6f7cb2c"
+            }
+         },
+         {
+            "attachment": {
+               "extension": [
+                  {
+                     "url": "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/file-size",
+                     "valueDecimal": 19461276447
+                  },
+                  {
+                     "url": "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/hashes",
+                     "valueCodeableConcept": {
+                        "coding": [
+                           {
+                              "display": "etag"
+                           }
+                        ],
+                        "text": "4e6400c32b5de63da50a6299b5d68614-73"
+                     }
+                  }
+               ],
+               "url": "s3://kf-study-us-east-1-prd-sd-dztb5hrr/harmonized/cram/508c836c-bc93-4a9a-9136-4cf4cba76ab1.cram",
+               "title": "508c836c-bc93-4a9a-9136-4cf4cba76ab1.cram"
+            },
+            "format": {
+               "display": "cram"
+            }
+         }
+      ]
+   },
+   {
+      "resourceType": "DocumentReference",
+      "id": "404582",
+      "meta": {
+         "versionId": "3",
+         "lastUpdated": "2022-01-18T23:08:59.246+00:00",
+         "source": "#sf4gw32UCuGBLSsa",
+         "profile": [
+            "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/drs-document-reference"
+         ],
+         "tag": [
+            {
+               "code": "SD_DZTB5HRR"
+            }
+         ]
+      },
+      "identifier": [
+         {
+            "system": "https://kf-api-dataservice.kidsfirstdrc.org/genomic-files/",
+            "value": "GF_JD7R8AQP"
+         },
+         {
+            "system": "urn:kids-first:unique-string",
+            "value": "DocumentReference-SD_DZTB5HRR-GF_JD7R8AQP"
+         }
+      ],
+      "status": "current",
+      "docStatus": "final",
+      "type": {
+         "text": "gVCF"
+      },
+      "subject": {
+         "reference": "Patient/54528"
+      },
+      "securityLabel": [
+         {
+            "coding": [
+               {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+                  "code": "R",
+                  "display": "restricted"
+               }
+            ],
+            "text": "True"
+         },
+         {
+            "coding": [
+               {
+                  "code": "c999"
+               }
+            ],
+            "text": "phs001247.c999"
+         },
+         {
+            "text": "SD_DZTB5HRR"
+         }
+      ],
+      "content": [
+         {
+            "attachment": {
+               "url": "drs://data.kidsfirstdrc.org/fbc7cbcd-ed39-4080-933b-0ba6363f7f7a"
+            }
+         },
+         {
+            "attachment": {
+               "extension": [
+                  {
+                     "url": "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/file-size",
+                     "valueDecimal": 5608655952
+                  },
+                  {
+                     "url": "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/hashes",
+                     "valueCodeableConcept": {
+                        "coding": [
+                           {
+                              "display": "etag"
+                           }
+                        ],
+                        "text": "63b8a5630a49004bf2cb8df36be0adb4-21"
+                     }
+                  }
+               ],
+               "url": "s3://kf-study-us-east-1-prd-sd-dztb5hrr/harmonized/gvcf/508c836c-bc93-4a9a-9136-4cf4cba76ab1.g.vcf.gz",
+               "title": "508c836c-bc93-4a9a-9136-4cf4cba76ab1.g.vcf.gz"
+            },
+            "format": {
+               "display": "gVCF"
+            }
+         }
+      ]
+   },
+   {
+      "resourceType": "DocumentReference",
+      "id": "404581",
+      "meta": {
+         "versionId": "3",
+         "lastUpdated": "2022-01-18T23:08:59.177+00:00",
+         "source": "#01nX6OtiI9TZjMoX",
+         "profile": [
+            "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/drs-document-reference"
+         ],
+         "tag": [
+            {
+               "code": "SD_DZTB5HRR"
+            }
+         ]
+      },
+      "identifier": [
+         {
+            "system": "https://kf-api-dataservice.kidsfirstdrc.org/genomic-files/",
+            "value": "GF_QD8W749P"
+         },
+         {
+            "system": "urn:kids-first:unique-string",
+            "value": "DocumentReference-SD_DZTB5HRR-GF_QD8W749P"
+         }
+      ],
+      "status": "current",
+      "docStatus": "final",
+      "type": {
+         "text": "Aligned Reads"
+      },
+      "subject": {
+         "reference": "Patient/54528"
+      },
+      "securityLabel": [
+         {
+            "coding": [
+               {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+                  "code": "R",
+                  "display": "restricted"
+               }
+            ],
+            "text": "True"
+         },
+         {
+            "coding": [
+               {
+                  "code": "c999"
+               }
+            ],
+            "text": "phs001247.c999"
+         },
+         {
+            "text": "SD_DZTB5HRR"
+         }
+      ],
+      "content": [
+         {
+            "attachment": {
+               "url": "drs://data.kidsfirstdrc.org/59621e4f-f61c-48a1-b91e-63764b88f59b"
+            }
+         },
+         {
+            "attachment": {
+               "extension": [
+                  {
+                     "url": "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/file-size",
+                     "valueDecimal": 64713876367
+                  },
+                  {
+                     "url": "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/hashes",
+                     "valueCodeableConcept": {
+                        "coding": [
+                           {
+                              "display": "md5"
+                           }
+                        ],
+                        "text": "13474f22b631163f95f203c9a04e9c4c"
+                     }
+                  },
+                  {
+                     "url": "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/hashes",
+                     "valueCodeableConcept": {
+                        "coding": [
+                           {
+                              "display": "sha256"
+                           }
+                        ],
+                        "text": "5098238ef7d33ad37d8e7b451926d8961dff12152bb1717ea0e32bec2914e906"
+                     }
+                  }
+               ],
+               "url": "s3://kf-seq-data-bcm/engle/HTMN3CCXX-7.hgv.bam",
+               "title": "HTMN3CCXX-7.hgv.bam"
+            },
+            "format": {
+               "display": "bam"
+            }
+         }
+      ]
+   },
+   {
+      "resourceType": "DocumentReference",
+      "id": "404576",
+      "meta": {
+         "versionId": "3",
+         "lastUpdated": "2022-01-18T23:08:59.404+00:00",
+         "source": "#xvWQUlAWDjZiR5YV",
+         "profile": [
+            "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/drs-document-reference"
+         ],
+         "tag": [
+            {
+               "code": "SD_DZTB5HRR"
+            }
+         ]
+      },
+      "identifier": [
+         {
+            "system": "https://kf-api-dataservice.kidsfirstdrc.org/genomic-files/",
+            "value": "GF_HEP3Y071"
+         },
+         {
+            "system": "urn:kids-first:unique-string",
+            "value": "DocumentReference-SD_DZTB5HRR-GF_HEP3Y071"
+         }
+      ],
+      "status": "current",
+      "docStatus": "final",
+      "type": {
+         "text": "Aligned Reads Index"
+      },
+      "subject": {
+         "reference": "Patient/54528"
+      },
+      "securityLabel": [
+         {
+            "coding": [
+               {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+                  "code": "R",
+                  "display": "restricted"
+               }
+            ],
+            "text": "True"
+         },
+         {
+            "coding": [
+               {
+                  "code": "c999"
+               }
+            ],
+            "text": "phs001247.c999"
+         },
+         {
+            "text": "SD_DZTB5HRR"
+         },
+         {
+            "coding": [
+               {
+                  "code": "c3"
+               }
+            ],
+            "text": "phs001247.c3"
+         }
+      ],
+      "content": [
+         {
+            "attachment": {
+               "url": "drs://data.kidsfirstdrc.org/850094b7-7c57-4582-95df-e36fb3e31bb7"
+            }
+         },
+         {
+            "attachment": {
+               "extension": [
+                  {
+                     "url": "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/file-size",
+                     "valueDecimal": 1643558
+                  },
+                  {
+                     "url": "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/hashes",
+                     "valueCodeableConcept": {
+                        "coding": [
+                           {
+                              "display": "md5"
+                           }
+                        ],
+                        "text": "85d3c3670a3d7597b7db6de9677b9cf2"
+                     }
+                  },
+                  {
+                     "url": "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/hashes",
+                     "valueCodeableConcept": {
+                        "coding": [
+                           {
+                              "display": "sha256"
+                           }
+                        ],
+                        "text": "0c8e344658392cef873779fbc70cdf204e713ff29f866d78797de3dbc6fba86d"
+                     }
+                  }
+               ],
+               "url": "s3://kf-study-us-east-1-prd-sd-dztb5hrr/harmonized/cram/364f4bcf-b50a-4e33-8f28-685226d488a3.cram.crai",
+               "title": "364f4bcf-b50a-4e33-8f28-685226d488a3.cram.crai"
+            },
+            "format": {
+               "display": "crai"
+            }
+         }
+      ]
+   },
+   {
+      "resourceType": "DocumentReference",
+      "id": "404574",
+      "meta": {
+         "versionId": "3",
+         "lastUpdated": "2022-01-18T23:08:59.117+00:00",
+         "source": "#p1DqdceRJK9ar2Qw",
+         "profile": [
+            "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/drs-document-reference"
+         ],
+         "tag": [
+            {
+               "code": "SD_DZTB5HRR"
+            }
+         ]
+      },
+      "identifier": [
+         {
+            "system": "https://kf-api-dataservice.kidsfirstdrc.org/genomic-files/",
+            "value": "GF_PV0J8EZW"
+         },
+         {
+            "system": "urn:kids-first:unique-string",
+            "value": "DocumentReference-SD_DZTB5HRR-GF_PV0J8EZW"
+         }
+      ],
+      "status": "current",
+      "docStatus": "final",
+      "type": {
+         "text": "Aligned Reads"
+      },
+      "subject": {
+         "reference": "Patient/54528"
+      },
+      "securityLabel": [
+         {
+            "coding": [
+               {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+                  "code": "R",
+                  "display": "restricted"
+               }
+            ],
+            "text": "True"
+         },
+         {
+            "coding": [
+               {
+                  "code": "c999"
+               }
+            ],
+            "text": "phs001247.c999"
+         },
+         {
+            "coding": [
+               {
+                  "code": "c3"
+               }
+            ],
+            "text": "phs001247.c3"
+         },
+         {
+            "text": "SD_DZTB5HRR"
+         }
+      ],
+      "content": [
+         {
+            "attachment": {
+               "url": "drs://data.kidsfirstdrc.org/2749b3d2-e8a9-4b95-b440-ad49b4f8c0da"
+            }
+         },
+         {
+            "attachment": {
+               "extension": [
+                  {
+                     "url": "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/file-size",
+                     "valueDecimal": 22877787208
+                  },
+                  {
+                     "url": "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/hashes",
+                     "valueCodeableConcept": {
+                        "coding": [
+                           {
+                              "display": "md5"
+                           }
+                        ],
+                        "text": "c267954e377e5ed7484a2318900d963c"
+                     }
+                  },
+                  {
+                     "url": "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/hashes",
+                     "valueCodeableConcept": {
+                        "coding": [
+                           {
+                              "display": "sha256"
+                           }
+                        ],
+                        "text": "3c9d6380784c1bda7fa3c7b88c7472475679f0d543e17099f31ded78b455b449"
+                     }
+                  }
+               ],
+               "url": "s3://kf-study-us-east-1-prd-sd-dztb5hrr/harmonized/cram/364f4bcf-b50a-4e33-8f28-685226d488a3.cram",
+               "title": "364f4bcf-b50a-4e33-8f28-685226d488a3.cram"
+            },
+            "format": {
+               "display": "cram"
+            }
+         }
+      ]
+   },
+   {
+      "resourceType": "DocumentReference",
+      "id": "404572",
+      "meta": {
+         "versionId": "3",
+         "lastUpdated": "2022-01-18T23:08:59.182+00:00",
+         "source": "#ECtfzRqDNAawXafy",
+         "profile": [
+            "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/drs-document-reference"
+         ],
+         "tag": [
+            {
+               "code": "SD_DZTB5HRR"
+            }
+         ]
+      },
+      "identifier": [
+         {
+            "system": "https://kf-api-dataservice.kidsfirstdrc.org/genomic-files/",
+            "value": "GF_8WXRGPYX"
+         },
+         {
+            "system": "urn:kids-first:unique-string",
+            "value": "DocumentReference-SD_DZTB5HRR-GF_8WXRGPYX"
+         }
+      ],
+      "status": "current",
+      "docStatus": "final",
+      "type": {
+         "text": "gVCF Index"
+      },
+      "subject": {
+         "reference": "Patient/54528"
+      },
+      "securityLabel": [
+         {
+            "coding": [
+               {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+                  "code": "R",
+                  "display": "restricted"
+               }
+            ],
+            "text": "True"
+         },
+         {
+            "coding": [
+               {
+                  "code": "c999"
+               }
+            ],
+            "text": "phs001247.c999"
+         },
+         {
+            "coding": [
+               {
+                  "code": "c3"
+               }
+            ],
+            "text": "phs001247.c3"
+         },
+         {
+            "text": "SD_DZTB5HRR"
+         }
+      ],
+      "content": [
+         {
+            "attachment": {
+               "url": "drs://data.kidsfirstdrc.org/dfd91e25-3474-4807-b1bc-ff2d9c7ee342"
+            }
+         },
+         {
+            "attachment": {
+               "extension": [
+                  {
+                     "url": "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/file-size",
+                     "valueDecimal": 4201298
+                  },
+                  {
+                     "url": "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/hashes",
+                     "valueCodeableConcept": {
+                        "coding": [
+                           {
+                              "display": "md5"
+                           }
+                        ],
+                        "text": "148ed3c58278b76137b1cc3057d93c12"
+                     }
+                  },
+                  {
+                     "url": "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/hashes",
+                     "valueCodeableConcept": {
+                        "coding": [
+                           {
+                              "display": "sha256"
+                           }
+                        ],
+                        "text": "2dcca2d2181f55f522a4c4a9fd3fb9a18ad7ffed09b02c206c4d82bec749b427"
+                     }
+                  }
+               ],
+               "url": "s3://kf-study-us-east-1-prd-sd-dztb5hrr/harmonized/gvcf/364f4bcf-b50a-4e33-8f28-685226d488a3.g.vcf.gz.tbi",
+               "title": "364f4bcf-b50a-4e33-8f28-685226d488a3.g.vcf.gz.tbi"
+            },
+            "format": {
+               "display": "tbi"
+            }
+         }
+      ]
+   },
+   {
+      "resourceType": "DocumentReference",
+      "id": "404571",
+      "meta": {
+         "versionId": "3",
+         "lastUpdated": "2022-01-18T23:08:59.176+00:00",
+         "source": "#4Lx94DjK3RN4TsV0",
+         "profile": [
+            "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/drs-document-reference"
+         ],
+         "tag": [
+            {
+               "code": "SD_DZTB5HRR"
+            }
+         ]
+      },
+      "identifier": [
+         {
+            "system": "https://kf-api-dataservice.kidsfirstdrc.org/genomic-files/",
+            "value": "GF_739Y6TH0"
+         },
+         {
+            "system": "urn:kids-first:unique-string",
+            "value": "DocumentReference-SD_DZTB5HRR-GF_739Y6TH0"
+         }
+      ],
+      "status": "current",
+      "docStatus": "final",
+      "type": {
+         "text": "gVCF Index"
+      },
+      "subject": {
+         "reference": "Patient/54528"
+      },
+      "securityLabel": [
+         {
+            "coding": [
+               {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+                  "code": "R",
+                  "display": "restricted"
+               }
+            ],
+            "text": "True"
+         },
+         {
+            "coding": [
+               {
+                  "code": "c999"
+               }
+            ],
+            "text": "phs001247.c999"
+         },
+         {
+            "text": "SD_DZTB5HRR"
+         }
+      ],
+      "content": [
+         {
+            "attachment": {
+               "url": "drs://data.kidsfirstdrc.org/5d024b38-a3c5-472a-a69c-0063cb5f9e28"
+            }
+         },
+         {
+            "attachment": {
+               "extension": [
+                  {
+                     "url": "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/file-size",
+                     "valueDecimal": 4105725
+                  },
+                  {
+                     "url": "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/hashes",
+                     "valueCodeableConcept": {
+                        "coding": [
+                           {
+                              "display": "etag"
+                           }
+                        ],
+                        "text": "657ccad21c77e671fd77a4dfe5b36789"
+                     }
+                  }
+               ],
+               "url": "s3://kf-study-us-east-1-prd-sd-dztb5hrr/harmonized/gvcf/508c836c-bc93-4a9a-9136-4cf4cba76ab1.g.vcf.gz.tbi",
+               "title": "508c836c-bc93-4a9a-9136-4cf4cba76ab1.g.vcf.gz.tbi"
+            },
+            "format": {
+               "display": "tbi"
+            }
+         }
+      ]
+   },
+   {
+      "resourceType": "DocumentReference",
+      "id": "404569",
+      "meta": {
+         "versionId": "3",
+         "lastUpdated": "2022-01-18T23:08:59.181+00:00",
+         "source": "#YtXYvHU1YCu6J8KC",
+         "profile": [
+            "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/drs-document-reference"
+         ],
+         "tag": [
+            {
+               "code": "SD_DZTB5HRR"
+            }
+         ]
+      },
+      "identifier": [
+         {
+            "system": "https://kf-api-dataservice.kidsfirstdrc.org/genomic-files/",
+            "value": "GF_STXJQGX7"
+         },
+         {
+            "system": "urn:kids-first:unique-string",
+            "value": "DocumentReference-SD_DZTB5HRR-GF_STXJQGX7"
+         }
+      ],
+      "status": "current",
+      "docStatus": "final",
+      "type": {
+         "text": "gVCF"
+      },
+      "subject": {
+         "reference": "Patient/54528"
+      },
+      "securityLabel": [
+         {
+            "coding": [
+               {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+                  "code": "R",
+                  "display": "restricted"
+               }
+            ],
+            "text": "True"
+         },
+         {
+            "coding": [
+               {
+                  "code": "c999"
+               }
+            ],
+            "text": "phs001247.c999"
+         },
+         {
+            "text": "SD_DZTB5HRR"
+         },
+         {
+            "coding": [
+               {
+                  "code": "c3"
+               }
+            ],
+            "text": "phs001247.c3"
+         }
+      ],
+      "content": [
+         {
+            "attachment": {
+               "url": "drs://data.kidsfirstdrc.org/d5c3bd74-ac45-414b-a7e3-75c75007095a"
+            }
+         },
+         {
+            "attachment": {
+               "extension": [
+                  {
+                     "url": "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/file-size",
+                     "valueDecimal": 5843907184
+                  },
+                  {
+                     "url": "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/hashes",
+                     "valueCodeableConcept": {
+                        "coding": [
+                           {
+                              "display": "md5"
+                           }
+                        ],
+                        "text": "ffd8abbbe44d1009efb40ebee2bda657"
+                     }
+                  },
+                  {
+                     "url": "https://nih-ncpi.github.io/ncpi-fhir-ig/StructureDefinition/hashes",
+                     "valueCodeableConcept": {
+                        "coding": [
+                           {
+                              "display": "sha256"
+                           }
+                        ],
+                        "text": "4f0593d7027261ab3011e6509aa461c7422aa3f97932025e13e0f38edaa4b396"
+                     }
+                  }
+               ],
+               "url": "s3://kf-study-us-east-1-prd-sd-dztb5hrr/harmonized/gvcf/364f4bcf-b50a-4e33-8f28-685226d488a3.g.vcf.gz",
+               "title": "364f4bcf-b50a-4e33-8f28-685226d488a3.g.vcf.gz"
+            },
+            "format": {
+               "display": "gVCF"
+            }
+         }
+      ]
+   }
+]
