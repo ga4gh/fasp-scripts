@@ -6,7 +6,7 @@ from fasp.search  import mapping as mp
 
 searchClient = DataConnectClient('https://publisher-data.publisher.dnastack.com/data-connect/', debug=False)
 
-table_name = 'search_cloud.cshcodeathon.organoid_profiling_pc_subject_phenotypes_gru'  # FIXME https://www.pivotaltracker.com/story/show/183941400
+table_name = 'collections.public_datasets.organoid_profiling_pc_subject_phenotypes_gru'
 map_col = 'sex'
 mapping = mp.getMapping(searchClient, table_name, map_col)
 print(mapping)
