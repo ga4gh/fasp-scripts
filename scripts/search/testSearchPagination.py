@@ -1,7 +1,8 @@
 import requests
 import pprint
 
-# FIXME https://www.pivotaltracker.com/story/show/184043487
+# This query does not appear to be used. However, in case of any uses, please note that the backend has a bug dealing
+# with collections.public_datasets.v32. The said bug should be resolved by the end of 2023 Q1.
 #query = "{\"query\":\"with brca_genes as (select gene_symbol, count(*) as brca_count from collections.public_datasets.v32 group by gene_symbol) select bg.*, cv.* from brca_genes bg inner join collections.public_datasets.allele_gene cv on bg.gene_symbol=cv.symbol limit 1000\"}"
 
 query = "{\"query\":\"select submitter_id, 'bdc:'||read_drs_id drsid from collections.public_datasets.ssd_drs where population = 'BEB' limit 3\"}"
