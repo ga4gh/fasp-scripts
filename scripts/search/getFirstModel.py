@@ -5,16 +5,20 @@
 import requests
 import pprint
 
+# FIXME https://www.pivotaltracker.com/story/show/184043487
+query = """
+	{
+		"query": "with brca_genes as (select gene_symbol, count(*) as brca_count from collections.public_datasets.v32 group by gene_symbol) select bg.*, cv.* from brca_genes bg inner join collections.public_datasets.allele_gene cv on bg.gene_symbol=cv.symbol limit 1000"
+	}
+"""
 
-query = "{\"query\":\"with brca_genes as (select gene_symbol, count(*) as brca_count from search_cloud.brca_exchange.v32 group by gene_symbol) select bg.*, cv.* from brca_genes bg inner join search_cloud.clinvar.allele_gene cv on bg.gene_symbol=cv.symbol limit 1000\"}"
-
-query = "{\"query\":\"select id, population, read_drs_id from thousand_genomes.onek_genomes.ssd_drs limit 1000\"}"
+query = "{\"query\":\"select id, population, read_drs_id from collections.public_datasets.ssd_drs limit 1000\"}"
 
 headers = {
   'content-type': 'application/json'
 }
 
-next_url = "https://ga4gh-search-adapter-presto-public.prod.dnastack.com/search"
+next_url = "https://publisher-data.publisher.dnastack.com/data-connect/search"
 
 pageCount = 0
 done = False
@@ -29,4 +33,4 @@ while next_url != None and not done:
 	if "properties" in result['data_model']:
 		pprint.pprint(result['data_model'])
 		done = True
-			
+

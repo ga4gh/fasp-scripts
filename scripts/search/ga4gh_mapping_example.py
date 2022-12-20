@@ -2,16 +2,16 @@
 from fasp.search  import DataConnectClient
 from fasp.search  import mapping as mp
 
-	
 
-searchClient = DataConnectClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com', debug=False)
 
-table_name = 'search_cloud.cshcodeathon.organoid_profiling_pc_subject_phenotypes_gru'
+searchClient = DataConnectClient('https://publisher-data.publisher.dnastack.com/data-connect/', debug=False)
+
+table_name = 'search_cloud.cshcodeathon.organoid_profiling_pc_subject_phenotypes_gru'  # FIXME https://www.pivotaltracker.com/story/show/183941400
 map_col = 'sex'
 mapping = mp.getMapping(searchClient, table_name, map_col)
 print(mapping)
 
-res = searchClient.runOneTableQuery(column_list=['dbgap_subject_id', 'age', 'race', 'sex'], 
+res = searchClient.runOneTableQuery(column_list=['dbgap_subject_id', 'age', 'race', 'sex'],
 									table=table_name,
 						  			limit=100)
 print(res)
