@@ -2,7 +2,7 @@
 #  IMPORTS
 import sys, getopt, os
 import json
-import collections 
+import collections
 
 
 from fasp.search import BigQuerySearchClient
@@ -13,10 +13,10 @@ from fasp.search import DataConnectClient
 def main(argv):
 
 
-	searchClient = DataConnectClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com/')
+	searchClient = DataConnectClient('https://publisher-data.publisher.dnastack.com/data-connect/')
 	#query = "select id, phenopacket from sample_phenopackets.ga4gh_tables.gecco_phenopackets limit 10"
 	query = "select id from sample_phenopackets.ga4gh_tables.gecco_phenopackets where json_extract_scalar(phenopacket, '$.subject.sex') = 'MALE'"
-	
+
 	bqSearchClient = BigQuerySearchClient()
 	#query = "select id, phenopacket from sample_phenopackets.ga4gh_tables.gecco_phenopackets limit 10"
 
@@ -29,7 +29,7 @@ def main(argv):
 
 	dbList = []
 	results = bqSearchClient.runQuery(crdcquery)
-	print(len(results))	
+	print(len(results))
 	for r in results:
 		dbList.append(r['id'])
 	ppList = []
@@ -37,30 +37,30 @@ def main(argv):
 	print(len(query_job))
 	for r in query_job:
 		ppList.append(r[0])
-		
+
 	# compare the lists
-	dbList.sort() 
-	ppList.sort() 
-	if dbList == ppList: 
-		print ("The lists dbList and ppList are the same") 
-	else: 
-		print ("The lists dbList and ppList are not the same") 
-    
+	dbList.sort()
+	ppList.sort()
+	if dbList == ppList:
+		print ("The lists dbList and ppList are the same")
+	else:
+		print ("The lists dbList and ppList are not the same")
+
 # 	for row in query_job:
 # 		sex = row[1]
 # 		print("id={} sex={}".format(row[0],sex))
 
-    
+
 if __name__ == "__main__":
     main(sys.argv[1:])
-    
 
 
-	
-	
 
-	
-	
+
+
+
+
+
 
 
 

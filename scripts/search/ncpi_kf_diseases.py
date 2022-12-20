@@ -1,6 +1,6 @@
 ''' Basic query on NCPI FHIR server Patient resource via DNAStack Search test implementation'''
 #  IMPORTS
-import sys 
+import sys
 import json
 import pandas as pd
 
@@ -12,30 +12,27 @@ from fasp.search  import DataConnectClient
 
 def main(argv):
 
-	searchClient = DataConnectClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com')
-	
-	query = 'select id, disease from kidsfirst.ga4gh_tables.ncpi_disease'
+	searchClient = DataConnectClient('https://publisher-data.publisher.dnastack.com/data-connect/')
+
+	query = """
+		SELECT
+			json_extract_scalar(ncpi_disease, '$.code.coding[0].code') AS code,
+			json_extract_scalar(ncpi_disease, '$.code.text') AS text
+		FROM collections.public_datasets.public_ncpi_disease
+		ORDER BY code
+	"""
 	res = searchClient.runQuery(query)
 
-	diseases = {}
-	for r in res:
-		disease = r[1]
-		dName = disease['identifier'][0]['value']
-		code = disease['code']['coding'][0]['code']
-		text = disease['code']['text']
-		diseases[code] = text
-
+	diseases = { row['code']: row['text'] for row in res }
 	disease_df = pd.DataFrame.from_dict(diseases, orient='index', columns=[ 'Term'])
-	
 
 	for k,v in diseases.items():
 		print(k,v)
 
-		
 	print("found {} disease records".format(len(res)))
 	print("There were {} disease codes used".format(len(diseases)))
-	
+
 	disease_df.to_csv('~/ncpi_kf_disease_terms.tsv', sep = '\t')
-	
+
 if __name__ == "__main__":
 	main(sys.argv[1:])
