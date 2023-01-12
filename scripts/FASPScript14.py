@@ -16,7 +16,7 @@ def main(argv):
 	settings = faspRunner.settings
 	# Step 1 - Discovery
 	# query for relevant DRS objects
-	searchClient = DataConnectClient('https://publisher-data.publisher.dnastack.com/data-connect/', debug=True)
+	searchClient = DataConnectClient('https://data.publisher.dnastack.com/data-connect/', debug=True)
 
 	query = "SELECT s.su_submitter_id, drs_id FROM collections.public_datasets.ssd_drs s join collections.public_datasets.sra_drs_files f on f.sample_name = s.su_submitter_id where filetype = 'bam' and mapped = 'mapped' and sequencing_type ='exome' and  population = 'JPT' LIMIT 3"
 
