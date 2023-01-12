@@ -8,7 +8,7 @@ from fasp.search  import DataConnectClient
 
 def main(argv):
 
-	searchClient = DataConnectClient('https://publisher-data.publisher.dnastack.com/data-connect/')
+	searchClient = DataConnectClient('https://data.publisher.dnastack.com/data-connect/')
 
 	query = 'select id, patient from collections.public_datasets.public_patient limit 3'
 	res = searchClient.runQuery(query)

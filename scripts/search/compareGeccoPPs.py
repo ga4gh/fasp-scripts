@@ -13,7 +13,7 @@ from fasp.search import DataConnectClient
 def main(argv):
 
 
-	searchClient = DataConnectClient('https://publisher-data.publisher.dnastack.com/data-connect/')
+	searchClient = DataConnectClient('https://data.publisher.dnastack.com/data-connect/')
 	#query = "select id, phenopacket from sample_phenopackets.ga4gh_tables.gecco_phenopackets limit 10"
 	query = "select id from sample_phenopackets.ga4gh_tables.gecco_phenopackets where json_extract_scalar(phenopacket, '$.subject.sex') = 'MALE'"
 

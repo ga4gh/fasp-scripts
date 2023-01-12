@@ -27,7 +27,7 @@ def main(argv):
 	# Step 1 - Discovery
 	# query for relevant DRS objects
 	discoveryClients = {
-		"sb": DataConnectClient('https://publisher-data.publisher.dnastack.com/data-connect/'),
+		"sb": DataConnectClient('https://data.publisher.dnastack.com/data-connect/'),
 		"bdc": BigQuerySearchClient()
 	}
 

@@ -15,7 +15,7 @@ def main(argv):
 
 	# Step 1 - Discovery
 	# query for relevant DRS objects
-	searchClient = DataConnectClient('https://publisher-data.publisher.dnastack.com/data-connect/')
+	searchClient = DataConnectClient('https://data.publisher.dnastack.com/data-connect/')
 	query = "select submitter_id, read_drs_id drsid from collections.public_datasets.ssd_drs where population = 'ACB' limit 1"
 	query_job = searchClient.runQuery(query)
 
