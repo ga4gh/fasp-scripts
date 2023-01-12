@@ -18,7 +18,7 @@ def main(argv):
 
 	# Step 1 - Discovery
 	# query for relevant DRS objects
-	searchClient = DataConnectClient('https://publisher-data.publisher.dnastack.com/data-connect/', debug=True)
+	searchClient = DataConnectClient('https://data.publisher.dnastack.com/data-connect/', debug=True)
 
 	# Step 2 - DRS - a metaresolver will deal with which drs server is required
 	drsClient = DRSMetaResolver()

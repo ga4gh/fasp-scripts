@@ -10,7 +10,7 @@ headers = {
   'content-type': 'application/json'
 }
 
-next_url = "https://publisher-data.publisher.dnastack.com/data-connect/search"
+next_url = "https://data.publisher.dnastack.com/data-connect/search"
 
 pageCount = 0
 while next_url != None :

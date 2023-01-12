@@ -7,7 +7,7 @@ headers = {
   'content-type': 'application/json'
 }
 
-next_url = "https://publisher-data.publisher.dnastack.com/data-connect/table/search_cloud.clinvar.allele_gene/data"
+next_url = "https://data.publisher.dnastack.com/data-connect/table/search_cloud.clinvar.allele_gene/data"
 
 pageCount = 0
 while next_url != None :

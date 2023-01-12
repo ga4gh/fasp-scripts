@@ -14,7 +14,7 @@ def main(argv):
 	# Step 1 - Discovery
 	# query for relevant DRS objects
 
-	searchClient = DataConnectClient('https://publisher-data.publisher.dnastack.com/data-connect/')
+	searchClient = DataConnectClient('https://data.publisher.dnastack.com/data-connect/')
 
 	# List tables
 	#searchClient.listTables()
