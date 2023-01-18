@@ -18,7 +18,7 @@ def main(argv):
 		SELECT
 			json_extract_scalar(ncpi_disease, '$.code.coding[0].code') AS code,
 			json_extract_scalar(ncpi_disease, '$.code.text') AS text
-		FROM collections.public_datasets.public_ncpi_disease
+		FROM collections.public_datasets.ncpi_disease
 		ORDER BY code
 	"""
 	res = searchClient.runQuery(query)

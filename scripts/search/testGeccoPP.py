@@ -1,7 +1,7 @@
 import requests
 import pprint
 
-query = "select id from collections.public_datasets.public_gecco_phenopackets where json_extract_scalar(phenopacket, '$.subject.sex') = 'MALE' limit 3"
+query = "select id from collections.public_datasets.gecco_phenopackets where json_extract_scalar(phenopacket, '$.subject.sex') = 'MALE' limit 3"
 
 payload = "{\"query\":\"" + query + "\"}"
 payload = {'query':query}
