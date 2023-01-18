@@ -13,7 +13,7 @@ def main(argv):
 
 	searchClient = DataConnectClient('https://data.publisher.dnastack.com/data-connect/')
 
-	query = """select id, patient from collections.public_datasets.public_patient
+	query = """select id, patient from collections.public_datasets.patient
 	where json_extract_scalar(patient, '$.extension[0].url') = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity'
 	limit 3"""
 	#TODO query on the value of ethnicity

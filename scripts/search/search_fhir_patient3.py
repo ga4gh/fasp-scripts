@@ -13,7 +13,7 @@ def main(argv):
 
 	searchClient = DataConnectClient('https://data.publisher.dnastack.com/data-connect/')
 
-	query = """select id, patient from collections.public_datasets.public_patient
+	query = """select id, patient from collections.public_datasets.patient
 	where json_extract_scalar(patient, '$.gender') = 'female'
 	limit 3"""
 
