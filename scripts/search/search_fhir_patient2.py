@@ -23,7 +23,7 @@ def main(argv):
 	#searchClient.listTableInfo('coronavirus_dnastack_curated.covid_cloud_production.sequences')
 
 
-	query = """select id, patient from collections.public_datasets.public_patient
+	query = """select id, patient from collections.public_datasets.patient
 	where json_extract_scalar(patient, '$.id') = '451133' limit 3"""
 
 
