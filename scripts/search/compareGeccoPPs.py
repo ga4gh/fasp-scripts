@@ -14,17 +14,18 @@ def main(argv):
 
 
 	searchClient = DataConnectClient('https://data.publisher.dnastack.com/data-connect/')
-	#query = "select id, phenopacket from sample_phenopackets.ga4gh_tables.gecco_phenopackets limit 10"
-	query = "select id from sample_phenopackets.ga4gh_tables.gecco_phenopackets where json_extract_scalar(phenopacket, '$.subject.sex') = 'MALE'"
+	#query = "select id, phenopacket from collections.public_datasets.sample_phenopackets_gecco_phenopackets limit 10"
+	query = "select id from collections.public_datasets.sample_phenopackets_gecco_phenopackets where json_extract_scalar(phenopacket, '$.subject.sex') = 'MALE'"
 
 	bqSearchClient = BigQuerySearchClient()
-	#query = "select id, phenopacket from sample_phenopackets.ga4gh_tables.gecco_phenopackets limit 10"
+	#query = "select id, phenopacket from collections.public_datasets.sample_phenopackets_gecco_phenopackets limit 10"
 
 	crdcquery = """
 		SELECT BioSample_Accession id
 		FROM `isbcgc-216220.GECCO_CRC_Susceptibility.Subject_Phenotypes` sp
-		join `isbcgc-216220.GECCO_CRC_Susceptibility.Sample_MULTI` sm on sm.dbgap_subject_id = sp.dbgap_subject_id
-		and sex = 'Male'
+		JOIN `isbcgc-216220.GECCO_CRC_Susceptibility.Sample_MULTI` sm
+			ON sm.dbgap_subject_id = sp.dbgap_subject_id
+				AND sex = 'Male'
 		"""
 
 	dbList = []
