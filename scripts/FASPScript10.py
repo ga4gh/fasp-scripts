@@ -14,7 +14,21 @@ def main(argv):
 	faspRunner = FASPRunner(pauseSecs=0)
 
 
-	pp_dbgap_join = "SELECT sp.dbGaP_Subject_ID,  'sbcgc:'||sb_drs_id FROM collections.public_datasets.subject_phenotypes_multi sp join collections.public_datasets.sample_multi sm on sm.dbgap_subject_id = sp.dbgap_subject_id join collections.public_datasets.sb_drs_index di on di.sample_id = sm.sample_id join sample_phenopackets.ga4gh_tables.gecco_phenopackets pp on pp.id = sm.biosample_accession where  json_extract_scalar(pp.phenopacket, '$.subject.sex') = 'MALE' and file_type = 'cram' limit 3"
+	pp_dbgap_join = """
+	SELECT
+		sp.dbGaP_Subject_ID,
+		'sbcgc:' || sb_drs_id
+	FROM collections.public_datasets.subject_phenotypes_multi sp
+	JOIN collections.public_datasets.sample_multi sm
+		ON sm.dbgap_subject_id = sp.dbgap_subject_id
+	JOIN collections.public_datasets.sb_drs_index di
+		ON di.sample_id = sm.sample_id
+	JOIN collections.public_datasets.sample_phenopackets_gecco_phenopackets pp
+		ON pp.id = sm.biosample_accession
+	WHERE json_extract_scalar(pp.phenopacket, '$.subject.sex') = 'MALE'
+		AND file_type = 'cram'
+	LIMIT 3
+	"""
 
 	# Step 1 - Discovery
 	# query for relevant DRS objects
