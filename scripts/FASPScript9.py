@@ -27,11 +27,19 @@ def main(argv):
 	# Step 1 - Discovery
 	# query for relevant DRS objects
 	discoveryClients = {
-		"sb": DataConnectClient('https://data.publisher.dnastack.com/data-connect/'),
+		"sb": DataConnectClient('https://publisher-data.publisher.dnastack.com/data-connect/'),
 		"bdc": BigQuerySearchClient()
 	}
 
-	crdcquery = "SELECT sp.dbGaP_Subject_ID,  'sb:'||sb_drs_id FROM collections.public_datasets.subject_phenotypes_multi sp join collections.public_datasets.sample_multi sm on sm.dbgap_subject_id = sp.dbgap_subject_id join collections.public_datasets.sb_drs_index di on di.sample_id = sm.sample_id where AGE between 45 and 55 and sex = 'Female' and file_type = 'cram' limit 3"
+	crdcquery = """
+		SELECT sp.dbGaP_Subject_ID, 'sb:'||sb_drs_id
+		FROM collections.public_datasets.dbgap_scr_gecco_susceptibility_subject_phenotypes_multi sp
+		join collections.public_datasets.dbgap_scr_gecco_susceptibility_sample_multi sm
+			on sm.dbgap_subject_id = sp.dbgap_subject_id
+		join collections.public_datasets.dbgap_scr_gecco_susceptibility_sb_drs_index di
+			on di.sample_id = sm.sample_id
+		where AGE between 45 and 55 and sex = 'Female'
+			and file_type = 'cram' limit 3"""
 
 
 

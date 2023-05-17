@@ -1,7 +1,7 @@
 
 def getMapping(searchClient, table, column):
 
-    query = "select valueString, maptoValue from collections.public_datasets.md_value_map where table_name = '{}' and column_name='{}'".format(table,column)
+    query = "select valueString, maptoValue from collections.public_datasets.cshcodeathon_md_value_map where table_name = '{}' and column_name='{}'".format(table,column)
 
     mapping = searchClient.runQuery(query)
     mapDict = {}

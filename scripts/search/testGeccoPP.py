@@ -1,7 +1,7 @@
 import requests
 import pprint
 
-query = "select id from collections.public_datasets.gecco_phenopackets where json_extract_scalar(phenopacket, '$.subject.sex') = 'MALE' limit 3"
+query = "select id from collections.public_datasets.sample_phenopackets_gecco_phenopackets where json_extract_scalar(phenopacket, '$.subject.sex') = 'MALE' limit 3"
 
 payload = "{\"query\":\"" + query + "\"}"
 payload = {'query':query}
@@ -10,7 +10,7 @@ headers = {
   'content-type': 'application/json'
 }
 
-next_url = "https://data.publisher.dnastack.com/data-connect/search"
+next_url = "https://publisher-data.publisher.dnastack.com/data-connect/search"
 
 pageCount = 0
 while next_url != None :

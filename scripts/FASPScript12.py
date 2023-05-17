@@ -21,8 +21,8 @@ def main(argv):
 
 	# Step 1 - Discovery
     # query for relevant files
-    searchClient = DataConnectClient('https://data.publisher.dnastack.com/data-connect/')
-    query = "SELECT sample_submitter_id, fileid, filename FROM collections.public_datasets.scr_egapancreatic_sample_multi p join collections.public_datasets.scr_egapancreatic_files f on f.sample_primary_id = p.sample_primary_id where phenotype = 'pancreatic adenocarcinoma' limit 3"
+    searchClient = DataConnectClient('https://publisher-data.publisher.dnastack.com/data-connect/')
+    query = "SELECT sample_submitter_id, fileid, filename FROM collections.public_datasets.dbgap_scr_ega_scr_egapancreatic_sample_multi p join collections.public_datasets.dbgap_scr_ega_scr_egapancreatic_files f on f.sample_primary_id = p.sample_primary_id where phenotype = 'pancreatic adenocarcinoma' limit 3"
     query_job = searchClient.runQuery(query)
 
     # Step 2 - Use htsget at EGA

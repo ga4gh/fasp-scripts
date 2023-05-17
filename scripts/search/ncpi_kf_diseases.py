@@ -12,13 +12,13 @@ from fasp.search  import DataConnectClient
 
 def main(argv):
 
-	searchClient = DataConnectClient('https://data.publisher.dnastack.com/data-connect/')
+	searchClient = DataConnectClient('https://publisher-data.publisher.dnastack.com/data-connect/')
 
 	query = """
 		SELECT
 			json_extract_scalar(ncpi_disease, '$.code.coding[0].code') AS code,
 			json_extract_scalar(ncpi_disease, '$.code.text') AS text
-		FROM collections.public_datasets.ncpi_disease
+		FROM collections.public_datasets.kidsfirst_ncpi_disease
 		ORDER BY code
 	"""
 	res = searchClient.runQuery(query)

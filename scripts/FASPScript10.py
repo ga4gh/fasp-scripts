@@ -18,10 +18,10 @@ def main(argv):
 	SELECT
 		sp.dbGaP_Subject_ID,
 		'sbcgc:' || sb_drs_id
-	FROM collections.public_datasets.subject_phenotypes_multi sp
-	JOIN collections.public_datasets.sample_multi sm
+	FROM collections.public_datasets.dbgap_scr_gecco_susceptibility_subject_phenotypes_multi sp
+	JOIN collections.public_datasets.dbgap_scr_gecco_susceptibility_sample_multi sm
 		ON sm.dbgap_subject_id = sp.dbgap_subject_id
-	JOIN collections.public_datasets.sb_drs_index di
+	JOIN collections.public_datasets.dbgap_scr_gecco_susceptibility_sb_drs_index di
 		ON di.sample_id = sm.sample_id
 	JOIN collections.public_datasets.sample_phenopackets_gecco_phenopackets pp
 		ON pp.id = sm.biosample_accession
@@ -32,7 +32,7 @@ def main(argv):
 
 	# Step 1 - Discovery
 	# query for relevant DRS objects
-	searchClient = DataConnectClient('https://data.publisher.dnastack.com/data-connect/', debug=True)
+	searchClient = DataConnectClient('https://publisher-data.publisher.dnastack.com/data-connect/', debug=True)
 
 	# Step 2 - DRS - a metaresolver will deal with which drs server is required
 	drsClient = DRSMetaResolver()

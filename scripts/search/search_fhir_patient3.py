@@ -11,9 +11,9 @@ from fasp.search  import DataConnectClient
 
 def main(argv):
 
-	searchClient = DataConnectClient('https://data.publisher.dnastack.com/data-connect/')
+	searchClient = DataConnectClient('https://publisher-data.publisher.dnastack.com/data-connect/')
 
-	query = """select id, patient from collections.public_datasets.patient
+	query = """select id, patient from collections.public_datasets.kidsfirst_patient
 	where json_extract_scalar(patient, '$.gender') = 'female'
 	limit 3"""
 
