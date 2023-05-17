@@ -2,7 +2,7 @@
    "name": "collections.public_datasets.cshcodeathon_cda_mvp_v3",
    "description": "Automatically generated schema",
    "data_model": {
-      "$id": "https://data.publisher.dnastack.com/table/collections.public_datasets.cshcodeathon_cda_mvp_v3/info",
+      "$id": "https://publisher-data.publisher.dnastack.com/table/collections.public_datasets.cshcodeathon_cda_mvp_v3/info",
       "description": "Automatically generated schema",
       "$schema": "http://json-schema.org/draft-07/schema#",
       "properties": {

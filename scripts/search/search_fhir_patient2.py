@@ -14,7 +14,7 @@ def main(argv):
 	# Step 1 - Discovery
 	# query for relevant DRS objects
 
-	searchClient = DataConnectClient('https://data.publisher.dnastack.com/data-connect/')
+	searchClient = DataConnectClient('https://publisher-data.publisher.dnastack.com/data-connect/')
 
 	# List tables
 	#searchClient.listTables()
@@ -23,7 +23,7 @@ def main(argv):
 	#searchClient.listTableInfo('coronavirus_dnastack_curated.covid_cloud_production.sequences')
 
 
-	query = """select id, patient from collections.public_datasets.patient
+	query = """select id, patient from collections.public_datasets.kidsfirst_patient
 	where json_extract_scalar(patient, '$.id') = '451133' limit 3"""
 
 
