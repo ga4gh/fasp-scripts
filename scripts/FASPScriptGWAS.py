@@ -19,9 +19,9 @@ def main(argv):
 
 	# Step 1 - Discovery
 	# query for relevant DRS objects
-	searchClient = DataConnectClient('https://data.publisher.dnastack.com/data-connect/', debug=False)
+	searchClient = DataConnectClient('https://publisher-data.publisher.dnastack.com/data-connect/', debug=False)
 
-	query = "SELECT file_name, compact_drs_id, hostbased_drs_id, drs_id from collections.public_datasets.onek_recal_variants_drs where chromosome = 'chr21' and annotated = false"
+	query = "SELECT file_name, compact_drs_id, hostbased_drs_id, drs_id from collections.public_datasets.onek_genomes_onek_recal_variants_drs where chromosome = 'chr21' and annotated = false"
 	print(query)
 
 	query_job = searchClient.runQuery(query)  # Send the query

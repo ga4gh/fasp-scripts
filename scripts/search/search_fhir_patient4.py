@@ -11,9 +11,9 @@ from fasp.search  import DataConnectClient
 
 def main(argv):
 
-	searchClient = DataConnectClient('https://data.publisher.dnastack.com/data-connect/')
+	searchClient = DataConnectClient('https://publisher-data.publisher.dnastack.com/data-connect/')
 
-	query = """select id, patient from collections.public_datasets.patient
+	query = """select id, patient from collections.public_datasets.kidsfirst_patient
 	where json_extract_scalar(patient, '$.extension[0].url') = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity'
 	limit 3"""
 	#TODO query on the value of ethnicity
