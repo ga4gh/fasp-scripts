@@ -1,5 +1,5 @@
 #  IMPORTS
-import sys 
+import sys
 
 from fasp.runner import FASPRunner
 
@@ -15,29 +15,29 @@ def main(argv):
 
 	# Step 1 - Discovery
 	# query for relevant DRS objects
-	searchClient = DataConnectClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com/')
-	query = "select submitter_id, read_drs_id drsid from thousand_genomes.onek_genomes.ssd_drs where population = 'ACB' limit 3"
-	
+	searchClient = DataConnectClient('https://publisher-data.publisher.dnastack.com/data-connect/')
+	query = "select submitter_id, read_drs_id drsid from collections.public_datasets.onek_genomes_ssd_drs where population = 'ACB' limit 3"
+
 	# Step 2 - DRS - set up a DRS Client
 	drsClient = bdcDRSClient('~/.keys/bdc_credentials.json', 'gs')
 
 	# Step 3 - set up a class that run a compute for us
 	wesClient = DNAStackWESClient('~/.keys/dnastack_wes_credentials.json')
-	
+
 	faspRunner.configure(searchClient, drsClient, wesClient)
-		
+
 	faspRunner.runQuery(query, 'One k query using Search and WES')
-    
+
 if __name__ == "__main__":
     main(sys.argv[1:])
-    
 
 
-	
-	
 
-	
-	
+
+
+
+
+
 
 
 
