@@ -1,0 +1,7 @@
+task id,log,samtools,compute cloud,file cloud,file GB,strategy,filename,file,note,transfer,tool load,compute
+fecfc61a-c652-4ac5-bace-1f1563c348c3,Y,index,GCP,GCP,8.6,DRS https,HG00096.mapped.ILLUMINA.bwa.GBR.exome.20120522.bam,1k file,,108,35,185
+transferJobs/14784584213263572564,,,GCP hot,GCP hot,8.6,GCP copy hot,HG00096.mapped.ILLUMINA.bwa.GBR.exome.20120522.bam,,,20,,
+transferJobs/14784584213263572564,,,GCP archive,GCP hot,8.6,GCP copy cold,HG00096.mapped.ILLUMINA.bwa.GBR.exome.20120522.bam,,,313,,
+ed9b3bf6-b850-46c9-b140-0acc6cf27f53,Y,view,GCP,GCP,8.6,DRS https,HG00096.mapped.ILLUMINA.bwa.GBR.exome.20120522.bam,,,100,17,189
+4c93bc9c-cf43-4bfe-b81e-8fb79b90ba8f,Y,view,GCP,GCP,8.6,Volume - hot,HG00096.mapped.ILLUMINA.bwa.GBR.exome.20120522.bam,,,81,17,186
+e9ced041-2044-4971-ba51-81de6116c2b1,Y,view,GCP,GCP cold,8.6,Volume - cold,HG00096.mapped.ILLUMINA.bwa.GBR.exome.20120522.bam,,,76,15,176
