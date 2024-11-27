@@ -1,0 +1,20 @@
+﻿task id,log,samtools,compute cloud,file cloud,file GB,strategy,filename,file,note
+8c043b3f-7c2d-4f56-85bc-c0852557c3b8,Y,view,AWS,AWS,15.4,,d868593b-a60a-4686-9a9f-3086cc67b1a3.bam,UDN bam,
+66db4fc1-23eb-499a-83ea-3ede2b3d920c,Y,index,GCP,AWS,16.8,,2ac4_41fa.cram,ICAC cram,
+16c0e503-8abd-48b5-af8d-7273b0b2ce72,Y,index,GCP,AWS,16.5,,2379_477e.cram,ICAC cram,
+3ec5aeb4-bd25-4aa8-83a1-96c228ec435b,Y,view,GCP,AWS,16.5,,2379_477e.cram,ICAC cram,crai available
+8b237708-2822-4b5a-b48f-c94681c8a1a3,Y,index,AWS,AWS,16.8,,2ac4_41fa.cram,ICAC cram,
+cec3faa5-fdc5-46a5-bea1-547589855155,Y,view,GCP,AWS,16.5,,2379_477e.cram,ICAC cram,crai hidden
+fecfc61a-c652-4ac5-bace-1f1563c348c3,Y,index,GCP,GCP,8.6,,HG00096.mapped.ILLUMINA.bwa.GBR.exome.20120522.bam,1k file,
+80a09c08-3f41-4f4c-921c-ecce00ff698b,Y,index,GCP,AWS,15.4,,d868593b-a60a-4686-9a9f-3086cc67b1a3.bam,UDN bam,
+b0496543-59d3-4a68-b5a9-2be76226edda,Y,index,AWS,AWS,16.8,,2ac4_41fa.cram,,
+d8f9a984-4ef6-43a3-bb92-cc708e52dbcc,Y,index,AWS,AWS,16.5,,2379_477e.cram,,
+eed6c669-e911-4456-8f90-b35019fd976c,Y,index,AWS,AWS,15.4,,d868593b-a60a-4686-9a9f-3086cc67b1a3.bam,UDN bam,
+36ac91fe-d3df-4b87-b3cf-39f4ff81a670,Y,view,AWS,AWS,15.4,,d868593b-a60a-4686-9a9f-3086cc67b1a3.bam,UDN bam,
+953de605-c9bf-43bf-a67a-f038fb124e0b,Y,view,AWS,AWS,16.5,,2379_477e.cram,,
+ed9b3bf6-b850-46c9-b140-0acc6cf27f53,Y,view,GCP,GCP,8.6,,HG00096.mapped.ILLUMINA.bwa.GBR.exome.20120522.bam,,
+4c93bc9c-cf43-4bfe-b81e-8fb79b90ba8f,Y,view,GCP,GCP,8.6,volume,HG00096.mapped.ILLUMINA.bwa.GBR.exome.20120522.bam,,
+e9ced041-2044-4971-ba51-81de6116c2b1,Y,view,GCP,GCP cold,8.6,volume,HG00096.mapped.ILLUMINA.bwa.GBR.exome.20120522.bam,,
+c1a31267-364c-4d91-bf0d-afe4202c7788,Y,view,GCP,GCP,8.6,,HG00096.mapped.ILLUMINA.bwa.GBR.exome.20120522.bam,,
+fd13ae7a-05c9-4590-b479-e02e564b4f93,Y,view,GCP,GCP cold,8.6,volume,HG00096.mapped.ILLUMINA.bwa.GBR.exome.20120522.bam,,
+6a8eee90-f539-4225-820f-fec1dccd7c71,Y,view,GCP,GCP,8.6,volume,HG00096.mapped.ILLUMINA.bwa.GBR.exome.20120522.bam,,

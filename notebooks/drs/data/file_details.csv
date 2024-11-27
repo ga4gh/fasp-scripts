@@ -1,0 +1,5 @@
+filename,filesize_GB,file_desc,drs_uri,id
+2379_477e.cram,16.5,ICAC cram 2,drs://locate.be-md.ncbi.nlm.nih.gov/0938b4090295dd767a4cb696ba4e9a1f,0938b4090295dd767a4cb696ba4e9a1f
+2ac4_41fa.cram,16.8,ICAC cram 1,drs://locate.be-md.ncbi.nlm.nih.gov/75b91e3f88039194af5b846821bc84b7,75b91e3f88039194af5b846821bc84b7
+d868593b-a60a-4686-9a9f-3086cc67b1a3.bam,15.4,UDN bam,drs://locate.be-md.ncbi.nlm.nih.gov/3f64ace941c440718c43e9edd64928a2,3f64ace941c440718c43e9edd64928a2
+HG00096.mapped.ILLUMINA.bwa.GBR.exome.20120522.bam,8.6,1k bam,drs://locate.be-md.ncbi.nlm.nih.gov/5d4ae7a46d470036d99429c363498965,5d4ae7a46d470036d99429c363498965
