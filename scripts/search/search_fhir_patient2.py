@@ -1,6 +1,6 @@
 ''' Simple example query within a FHIR resource. Query on id'''
 #  IMPORTS
-import sys 
+import sys
 import json
 
 
@@ -13,26 +13,26 @@ def main(argv):
 
 	# Step 1 - Discovery
 	# query for relevant DRS objects
-	
-	searchClient = DataConnectClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com')
-	
+
+	searchClient = DataConnectClient('https://publisher-data.publisher.dnastack.com/data-connect/')
+
 	# List tables
 	#searchClient.listTables()
-	
+
 	# List table schema
 	#searchClient.listTableInfo('coronavirus_dnastack_curated.covid_cloud_production.sequences')
-	
-	
-	query = """select id, patient from kidsfirst.ga4gh_tables.patient 
+
+
+	query = """select id, patient from collections.public_datasets.kidsfirst_patient
 	where json_extract_scalar(patient, '$.id') = '451133' limit 3"""
-	
-	
-	
+
+
+
 	res = searchClient.runQuery(query)
 
 	print(json.dumps(res, indent=2))
 
-	
+
 
 if __name__ == "__main__":
 	main(sys.argv[1:])

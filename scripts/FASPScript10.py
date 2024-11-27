@@ -1,5 +1,5 @@
 #  IMPORTS
-import sys 
+import sys
 
 from fasp.runner import FASPRunner
 
@@ -14,20 +14,34 @@ def main(argv):
 	faspRunner = FASPRunner(pauseSecs=0)
 
 
-	pp_dbgap_join = "SELECT sp.dbGaP_Subject_ID,  'sbcgc:'||sb_drs_id FROM dbgap_demo.scr_gecco_susceptibility.subject_phenotypes_multi sp join dbgap_demo.scr_gecco_susceptibility.sample_multi sm on sm.dbgap_subject_id = sp.dbgap_subject_id join dbgap_demo.scr_gecco_susceptibility.sb_drs_index di on di.sample_id = sm.sample_id join sample_phenopackets.ga4gh_tables.gecco_phenopackets pp on pp.id = sm.biosample_accession where  json_extract_scalar(pp.phenopacket, '$.subject.sex') = 'MALE' and file_type = 'cram' limit 3"
-		
+	pp_dbgap_join = """
+	SELECT
+		sp.dbGaP_Subject_ID,
+		'sbcgc:' || sb_drs_id
+	FROM collections.public_datasets.dbgap_scr_gecco_susceptibility_subject_phenotypes_multi sp
+	JOIN collections.public_datasets.dbgap_scr_gecco_susceptibility_sample_multi sm
+		ON sm.dbgap_subject_id = sp.dbgap_subject_id
+	JOIN collections.public_datasets.dbgap_scr_gecco_susceptibility_sb_drs_index di
+		ON di.sample_id = sm.sample_id
+	JOIN collections.public_datasets.sample_phenopackets_gecco_phenopackets pp
+		ON pp.id = sm.biosample_accession
+	WHERE json_extract_scalar(pp.phenopacket, '$.subject.sex') = 'MALE'
+		AND file_type = 'cram'
+	LIMIT 3
+	"""
+
 	# Step 1 - Discovery
 	# query for relevant DRS objects
-	searchClient = DataConnectClient('https://ga4gh-search-adapter-presto-public.prod.dnastack.com/', debug=True)
+	searchClient = DataConnectClient('https://publisher-data.publisher.dnastack.com/data-connect/', debug=True)
 
 	# Step 2 - DRS - a metaresolver will deal with which drs server is required
 	drsClient = DRSMetaResolver()
 
 	# Step 3 - set up a class that run a compute for us
 	wesClient = DNAStackWESClient('~/.keys/dnastack_wes_credentials.json')
-	
+
 	faspRunner.configure(searchClient, drsClient, wesClient)
-		
+
 	faspRunner.runQuery(pp_dbgap_join, 'Phenopacket Gecco')
 
 if __name__ == "__main__":

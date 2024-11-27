@@ -1,8 +1,8 @@
 {
-   "name": "search_cloud.cshcodeathon.cda_mvp_v3",
+   "name": "collections.public_datasets.cshcodeathon_cda_mvp_v3",
    "description": "Automatically generated schema",
    "data_model": {
-      "$id": "https://ga4gh-search-adapter-presto-public.prod.dnastack.com/table/search_cloud.cshcodeathon.cda_mvp_v3/info",
+      "$id": "https://publisher-data.publisher.dnastack.com/table/collections.public_datasets.cshcodeathon_cda_mvp_v3/info",
       "description": "Automatically generated schema",
       "$schema": "http://json-schema.org/draft-07/schema#",
       "properties": {
@@ -214,7 +214,7 @@
                               "format": "varchar",
                               "type": "string",
                               "$comment": "varchar",
-                              "description": "Per GDC Dictionary, the text term that represents the name of the primary disease site of the submitted tumor sample; recommend dropping tumor; biospecimen_anatomic_site."            
+                              "description": "Per GDC Dictionary, the text term that represents the name of the primary disease site of the submitted tumor sample; recommend dropping tumor; biospecimen_anatomic_site."
                            },
                            "source_material_type": {
                               "format": "varchar",
