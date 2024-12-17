@@ -1,6 +1,8 @@
 
 examples/workflow/SBsamtools.py
 examples/workflow/Dockerfile
+notebooks/search/logs/*
+notebooks/search/GECCO*frequency*distributions.ipynb
 workaround.sh
 output/pipelineLog.txt
 .project

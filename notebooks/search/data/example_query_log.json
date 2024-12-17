@@ -1,0 +1,66 @@
+[
+   {
+      "time": "2024-12-17T11:59:52.291038",
+      "server": "https://cgc-ga4gh-api.sbgenomics.com",
+      "method": "drs",
+      "query": "/object/675c7dd64116992ffe2b84a8/access/s3",
+      "dataset": "udn_phenotype_code",
+      "bytes": 2414751,
+      "elapsed_secs": 1.7896
+   },
+   {
+      "time": "2024-12-17T12:01:48.564572",
+      "server": "http://localhost:8089",
+      "method": "data_connect",
+      "query": "/table/tutorial.scr_udn_v5.udn_phenotype_code/data",
+      "dataset": "udn_phenotype_code",
+      "records": 40320,
+      "bytes": 5602500,
+      "pages": 4,
+      "elapsed_secs": 6.1073
+   },
+   {
+      "time": "2024-12-10T14:41:07.416676",
+      "server": "https://dbgap-api.ncbi.nlm.nih.gov/fhir-jpa-pilot/x1",
+      "method": "fhir",
+      "query": "Condition",
+      "records": 40320,
+      "bytes": 39385045,
+      "pages": 404,
+      "requested_page_size": 0,
+      "elapsed_secs": 758.3329,
+      "dataset": "udn_phenotype_code"
+   },   
+   {
+      "time": "2024-12-17T12:30:03.270167",
+      "server": "https://cgc-ga4gh-api.sbgenomics.com",
+      "method": "drs",
+      "query": "/object/6759dfe8b1d2472def5713e5/access/s3",
+      "dataset": "udn_subject_phenotypes",
+      "bytes": 430048,
+      "elapsed_secs": 1.642
+   },
+   {
+      "time": "2024-12-17T12:30:12.610647",
+      "server": "http://localhost:8089",
+      "method": "data_connect",
+      "query": "/table/tutorial.scr_udn_v5.udn_subject_phenotypes/data",
+      "dataset": "udn_subject_phenotypes",
+      "records": 5138,
+      "bytes": 1098533,
+      "pages": 2,
+      "elapsed_secs": 4.836
+   },
+   {
+      "time": "2024-12-10T14:25:08.247174",
+      "server": "https://dbgap-api.ncbi.nlm.nih.gov/fhir-jpa-pilot/x1",
+      "method": "fhir",
+      "query": "Observation?code=phv00278118.v5.p2,phv00278119.v5.p2,phv00278120.v5.p2,phv00278121.v5.p2,phv00278122.v5.p2",
+      "records": 25690,
+      "bytes": 24129385,
+      "pages": 257,
+      "requested_page_size": 0,
+      "elapsed_secs": 460.6179,
+      "dataset": "udn_subject_phenotypes"
+   }
+]
