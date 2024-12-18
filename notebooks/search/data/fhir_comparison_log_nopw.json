@@ -1,0 +1,121 @@
+[
+   {
+      "time": "2024-12-10T09:06:08.998362",
+      "server": "https://dbgap-api.ncbi.nlm.nih.gov/fhir-jpa-pilot/x1",
+      "method": "fhir-1000",
+      "dataset": "udn_phenotype_code",
+      "query": "Condition?_count=1000",
+      "records": 40320,
+      "bytes": 39075070,
+      "pages": 41,
+      "requested_page_size": 1000,
+      "elapsed_secs": 140.7841
+   },
+   {
+      "time": "2024-12-10T09:20:32.654874",
+      "server": "https://dbgap-api.ncbi.nlm.nih.gov/fhir-jpa-pilot/x1",
+      "method": "fhir-1000",
+      "dataset": "udn_subject_phenotypes",
+      "query": "Observation?code=phv00278118.v5.p2,phv00278119.v5.p2,phv00278120.v5.p2,phv00278121.v5.p2,phv00278122.v5.p2&_count=1000",
+      "records": 25690,
+      "bytes": 23932357,
+      "pages": 26,
+      "requested_page_size": 1000,
+      "elapsed_secs": 82.1946
+   },
+   {
+      "time": "2024-12-10T09:26:08.434161",
+      "server": "http://localhost:8089",
+      "method": "data_connect",
+      "query": "/table/tutorial.scr_udn_v5.udn_subject_phenotypes/data",
+      "dataset": "udn_subject_phenotypes",
+      "records": 5138,
+      "bytes": 1098533,
+      "pages": 2,
+      "elapsed_secs": 3.0495
+   },
+   {
+      "time": "2024-12-10T10:14:12.487009",
+      "server": "https://dbgap-api.ncbi.nlm.nih.gov/fhir-jpa-pilot/x1",
+      "method": "fhir",
+      "dataset": "udn_subject_phenotypes",
+      "query": "Observation?code=phv00278118.v5.p2,phv00278119.v5.p2,phv00278120.v5.p2,phv00278121.v5.p2,phv00278122.v5.p2&_count=100",
+      "records": 25690,
+      "bytes": 24129396,
+      "pages": 257,
+      "requested_page_size": 100,
+      "elapsed_secs": 485.4767
+   },
+   {
+      "time": "2024-12-10T10:27:11.384258",
+      "server": "https://dbgap-api.ncbi.nlm.nih.gov/fhir-jpa-pilot/x1",
+      "method": "fhir",
+      "dataset": "udn_phenotype_code",
+      "query": "Condition?_count=100",
+      "records": 40320,
+      "bytes": 39385056,
+      "pages": 404,
+      "requested_page_size": 100,
+      "elapsed_secs": 756.4901
+   },
+   {
+      "time": "2024-12-13T10:47:43.515057",
+      "server": "https://dbgap-api.ncbi.nlm.nih.gov/fhir-jpa-pilot/x1",
+      "method": "fhir-nopassport",
+      "query": "Condition",
+      "records": 40320,
+      "bytes": 39385045,
+      "pages": 404,
+      "requested_page_size": 0,
+      "elapsed_secs": 72.0335,
+      "dataset": "udn_phenotype_code"
+   },
+   {
+      "time": "2024-12-13T10:50:42.701120",
+      "server": "https://dbgap-api.ncbi.nlm.nih.gov/fhir-jpa-pilot/x1",
+      "method": "fhir-nopassport",
+      "query": "Observation?code=phv00278118.v5.p2,phv00278119.v5.p2,phv00278120.v5.p2,phv00278121.v5.p2,phv00278122.v5.p2",
+      "records": 25690,
+      "bytes": 24129385,
+      "pages": 257,
+      "requested_page_size": 0,
+      "elapsed_secs": 43.9872,
+      "dataset": "udn_subject_phenotypes"
+   },
+   {
+      "time": "2024-12-10T15:07:39.254770",
+      "server": "http://localhost:8089",
+      "method": "data_connect",
+      "query": "/table/tutorial.scr_udn_v5.udn_phenotype_code/data",
+      "dataset": "udn_phenotype_code",
+      "records": 40320,
+      "bytes": 5602500,
+      "pages": 4,
+      "elapsed_secs": 3.2178
+   },
+   {
+      "time": "2024-12-13T11:20:31.318349",
+      "server": "https://dbgap-api.ncbi.nlm.nih.gov/fhir-jpa-pilot/x1",
+      "method": "fhir-1000-nopassport",
+      "query": "Condition?_count=1000",
+      "records": 40320,
+      "bytes": 39075070,
+      "pages": 41,
+      "requested_page_size": 1000,
+      "elapsed_secs": 50.8658,
+      "dataset": "udn_phenotype_code"
+   },
+   {
+      "time": "2024-12-13T11:21:16.484717",
+      "server": "https://dbgap-api.ncbi.nlm.nih.gov/fhir-jpa-pilot/x1",
+      "method": "fhir-1000-nopassport",
+      "query": "Observation?_count=1000&code=phv00278118.v5.p2,phv00278119.v5.p2,phv00278120.v5.p2,phv00278121.v5.p2,phv00278122.v5.p2",
+      "records": 25690,
+      "bytes": 23932357,
+      "pages": 26,
+      "requested_page_size": 1000,
+      "elapsed_secs": 30.8728,
+      "dataset": "udn_subject_phenotypes"
+   }
+
+]

@@ -1,0 +1,151 @@
+[
+   {
+      "time": "2024-12-17T11:59:52.291038",
+      "server": "https://cgc-ga4gh-api.sbgenomics.com",
+      "method": "drs",
+      "query": "/object/675c7dd64116992ffe2b84a8/access/s3",
+      "dataset": "udn_phenotype_code",
+      "bytes": 2414751,
+      "elapsed_secs": 1.7896
+   },
+   {
+      "time": "2024-12-17T12:30:03.270167",
+      "server": "https://cgc-ga4gh-api.sbgenomics.com",
+      "method": "drs",
+      "query": "/object/6759dfe8b1d2472def5713e5/access/s3",
+      "dataset": "udn_subject_phenotypes",
+      "bytes": 430048,
+      "elapsed_secs": 1.642
+   },
+   {
+      "time": "2024-12-10T09:06:08.998362",
+      "server": "https://dbgap-api.ncbi.nlm.nih.gov/fhir-jpa-pilot/x1",
+      "method": "fhir",
+      "dataset": "udn_phenotype_code",
+      "query": "Condition?_count=1000",
+      "records": 40320,
+      "bytes": 39075070,
+      "pages": 41,
+      "requested_page_size": 1000,
+      "elapsed_secs": 140.7841
+   },
+   {
+      "time": "2024-12-10T09:10:23.866075",
+      "server": "https://dbgap-api.ncbi.nlm.nih.gov/fhir-jpa-pilot/x1",
+      "method": "fhir",
+      "dataset": "udn_phenotype_code",
+      "query": "Condition?_count=5000",
+      "records": 40320,
+      "bytes": 39047624,
+      "pages": 9,
+      "requested_page_size": 5000,
+      "elapsed_secs": 66.6753
+   },
+   {
+      "time": "2024-12-10T09:16:05.872500",
+      "server": "https://dbgap-api.ncbi.nlm.nih.gov/fhir-jpa-pilot/x1",
+      "method": "fhir",
+      "dataset": "udn_phenotype_code",
+      "query": "Condition?_count=2000",
+      "records": 40320,
+      "bytes": 39057923,
+      "pages": 21,
+      "requested_page_size": 2000,
+      "elapsed_secs": 88.1209
+   },
+   {
+      "time": "2024-12-10T09:17:29.436502",
+      "server": "https://dbgap-api.ncbi.nlm.nih.gov/fhir-jpa-pilot/x1",
+      "method": "fhir",
+      "dataset": "udn_subject_phenotypes",
+      "query": "Observation?code=phv00278118.v5.p2,phv00278119.v5.p2,phv00278120.v5.p2,phv00278121.v5.p2,phv00278122.v5.p2&_count=5000",
+      "records": 25690,
+      "bytes": 23915219,
+      "pages": 6,
+      "requested_page_size": 5000,
+      "elapsed_secs": 41.4723
+   },
+   {
+      "time": "2024-12-10T09:19:01.156648",
+      "server": "https://dbgap-api.ncbi.nlm.nih.gov/fhir-jpa-pilot/x1",
+      "method": "fhir",
+      "dataset": "udn_subject_phenotypes",
+      "query": "Observation?code=phv00278118.v5.p2,phv00278119.v5.p2,phv00278120.v5.p2,phv00278121.v5.p2,phv00278122.v5.p2&_count=2000",
+      "records": 25690,
+      "bytes": 23921223,
+      "pages": 13,
+      "requested_page_size": 2000,
+      "elapsed_secs": 54.6031
+   },
+   {
+      "time": "2024-12-10T09:20:32.654874",
+      "server": "https://dbgap-api.ncbi.nlm.nih.gov/fhir-jpa-pilot/x1",
+      "method": "fhir",
+      "dataset": "udn_subject_phenotypes",
+      "query": "Observation?code=phv00278118.v5.p2,phv00278119.v5.p2,phv00278120.v5.p2,phv00278121.v5.p2,phv00278122.v5.p2&_count=1000",
+      "records": 25690,
+      "bytes": 23932357,
+      "pages": 26,
+      "requested_page_size": 1000,
+      "elapsed_secs": 82.1946
+   },
+   {
+      "time": "2024-12-10T09:26:08.434161",
+      "server": "http://localhost:8089",
+      "method": "data_connect",
+      "query": "/table/tutorial.scr_udn_v5.udn_subject_phenotypes/data",
+      "dataset": "udn_subject_phenotypes",
+      "records": 5138,
+      "bytes": 1098533,
+      "pages": 2,
+      "elapsed_secs": 3.0495
+   },
+   {
+      "time": "2024-12-10T10:14:12.487009",
+      "server": "https://dbgap-api.ncbi.nlm.nih.gov/fhir-jpa-pilot/x1",
+      "method": "fhir",
+      "dataset": "udn_subject_phenotypes",
+      "query": "Observation?code=phv00278118.v5.p2,phv00278119.v5.p2,phv00278120.v5.p2,phv00278121.v5.p2,phv00278122.v5.p2&_count=100",
+      "records": 25690,
+      "bytes": 24129396,
+      "pages": 257,
+      "requested_page_size": 100,
+      "elapsed_secs": 485.4767
+   },
+   {
+      "time": "2024-12-10T10:27:11.384258",
+      "server": "https://dbgap-api.ncbi.nlm.nih.gov/fhir-jpa-pilot/x1",
+      "method": "fhir",
+      "dataset": "udn_phenotype_code",
+      "query": "Condition?_count=100",
+      "records": 40320,
+      "bytes": 39385056,
+      "pages": 404,
+      "requested_page_size": 100,
+      "elapsed_secs": 756.4901
+   },
+   {
+      "time": "2024-12-10T15:07:39.254770",
+      "server": "http://localhost:8089",
+      "method": "data_connect",
+      "query": "/table/tutorial.scr_udn_v5.udn_phenotype_code/data",
+      "dataset": "udn_phenotype_code",
+      "records": 40320,
+      "bytes": 5602500,
+      "pages": 4,
+      "elapsed_secs": 3.2178
+   },
+   {
+      "time": "2024-12-10T15:42:55.519499",
+      "server": "https://dbgap-api.ncbi.nlm.nih.gov/fhir-jpa-pilot/x1",
+      "method": "fhir",
+      "query": "Condition?_elements:exclude=*.meta&_count=2000",
+      "records": 40320,
+      "bytes": 26115302,
+      "pages": 21,
+      "requested_page_size": 2000,
+      "elapsed_secs": 94.8214,
+      "dataset": "udn_phenotype_code",
+      "exclude_meta": true
+   }
+]
