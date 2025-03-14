@@ -11,7 +11,7 @@ import pandas as pd
 class DataConnectClient:
 
     def __init__(self, hostURL, return_type=None, row_limit=10000, debug=False,
-                query_log = None, passport = None):
+                query_log = None, passport = None, remove_port=False):
         """Initialize a DataConnectClient
 
         Parameters:
@@ -32,21 +32,25 @@ class DataConnectClient:
         self.row_limit = row_limit
         self.query_log = query_log
         #self.passport = passport
+        self.passportFile = passport
         self.passport = self.__get_passport(passport)
         self.headers = {
             'content-type': 'application/json'
         }
+        self.remove_port = remove_port
 
+        
     def __get_passport(self, passportFile=None):
         '''Adds Passport/TST to session header'''
         if passportFile != None:
+            self.passportFile = passportFile
             full_key_path = os.path.expanduser(passportFile)
             file_content = ""
             if self.debug: print(f"passport path {full_key_path}")
             try:
                 with open(full_key_path) as f:
                     file_content = f.read()
-                if self.debug: print(f"content of passport file {file_content}")
+                #if self.debug: print(f"content of passport file {file_content}")
                 return(file_content)
             except:
                 print("Could not find passport file")
@@ -54,11 +58,20 @@ class DataConnectClient:
         else:
             return None
                 
+    def set_passport(self, passport):
+        self.passport = self.__get_passport(passport)
+
+    def reload_passport(self):
+        self.passport = self.__get_passport(self.passportFile)
+
     def set_row_limit(self, row_limit):
         self.row_limit = row_limit
 
     def set_return_type(self, return_type):
         self.return_type = return_type
+
+    def set_debug(self, debug):
+        self.debug = debug
 
         # Look for registered search services
     @classmethod
@@ -97,7 +110,10 @@ class DataConnectClient:
             next_url = self.hostURL + "/tables"
         else:
             next_url = "{}{}{}".format(self.hostURL,'/tables/catalog/',requestedCatalog)
-
+        if self.debug: print(next_url)
+        headers = self.headers
+        if self.passport:
+            headers['GA4GH-Search-Authorization'] = f"ga4gh-passport={self.passport}"
         pageCount = 0
         if verbose:
             print("Retrieving the table list")
@@ -113,6 +129,8 @@ class DataConnectClient:
                 print(json.dumps(result, indent=3))
             if requestedCatalog == None and 'pagination' in result and 'next_page_url' in result['pagination']:
                 next_url = result['pagination']['next_page_url']
+                # temp fix to remove port when running under https
+                if self.remove_port: next_url = next_url.replace(':8089', '')
             else:
                 next_url = None
             for t in result['tables']:
@@ -295,6 +313,7 @@ class DataConnectClient:
             sys.exit(1)
 
         url = self.hostURL + "/search"
+        if self.debug: print(url)
         query = query.replace("\n", " ").replace("\t", " ")
         query = query.strip()
         query_dict = {"query":query}        
@@ -304,7 +323,8 @@ class DataConnectClient:
         query2 = json.dumps(query_dict)
         #query2 = f'\{\"query\":\{query}\", \"parameters\":[]\}'
         if self.debug:
-            print(f"Query: {query2}")
+            # print only the query - not the passport
+            print(f"Query: {query_dict['query']}")
 
         response = requests.request("POST", url,
             headers=self.headers, data = query2)
@@ -366,6 +386,7 @@ class DataConnectClient:
         column_list = []
         if not progessIndicator:
             print ("Retrieving the query")
+        current_state = "Waiting"
         done = False
         bytes_retrieved = 0
         while not done :
@@ -373,20 +394,26 @@ class DataConnectClient:
             if progessIndicator:
                 progessIndicator.value += 1
             else:
-                print ("____Page{}_______________".format(total_pageCount))
+                print (f"____{current_state}{total_pageCount}_______________")           
 
             if self.debug: print(response.content)
             result = (response.json())
-            
+            if "errors" in result:
+                for e in result["errors"]:
+                    print(e["title"])
+                    return None
             if self.debug:
                 print(json.dumps(result, indent=3))
             if 'pagination' in result and 'next_page_url' in result['pagination']:
                 next_url = result['pagination']['next_page_url']
+                # temp fix to remove port when running under https
+                if self.remove_port: next_url = next_url.replace(':8089', '')
             else:
                 next_url = None
                 done = True
             # only count pages with data
             if len(result['data']) > 0:
+                current_state = "Data page"
                 pageCount += 1
                 bytes_retrieved += len(response.content)
             resultRows += result['data']

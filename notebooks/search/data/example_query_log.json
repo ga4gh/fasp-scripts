@@ -9,18 +9,7 @@
       "elapsed_secs": 1.7896
    },
    {
-      "time": "2024-12-17T12:01:48.564572",
-      "server": "http://localhost:8089",
-      "method": "data_connect",
-      "query": "/table/tutorial.scr_udn_v5.udn_phenotype_code/data",
-      "dataset": "udn_phenotype_code",
-      "records": 40320,
-      "bytes": 5602500,
-      "pages": 4,
-      "elapsed_secs": 6.1073
-   },
-   {
-      "time": "2024-12-10T14:41:07.416676",
+      "time": "2024-12-17T12:29:19.190781",
       "server": "https://dbgap-api.ncbi.nlm.nih.gov/fhir-jpa-pilot/x1",
       "method": "fhir",
       "query": "Condition",
@@ -28,9 +17,9 @@
       "bytes": 39385045,
       "pages": 404,
       "requested_page_size": 0,
-      "elapsed_secs": 758.3329,
+      "elapsed_secs": 1355.3497,
       "dataset": "udn_phenotype_code"
-   },   
+   },
    {
       "time": "2024-12-17T12:30:03.270167",
       "server": "https://cgc-ga4gh-api.sbgenomics.com",
@@ -41,18 +30,7 @@
       "elapsed_secs": 1.642
    },
    {
-      "time": "2024-12-17T12:30:12.610647",
-      "server": "http://localhost:8089",
-      "method": "data_connect",
-      "query": "/table/tutorial.scr_udn_v5.udn_subject_phenotypes/data",
-      "dataset": "udn_subject_phenotypes",
-      "records": 5138,
-      "bytes": 1098533,
-      "pages": 2,
-      "elapsed_secs": 4.836
-   },
-   {
-      "time": "2024-12-10T14:25:08.247174",
+      "time": "2024-12-17T12:44:25.815516",
       "server": "https://dbgap-api.ncbi.nlm.nih.gov/fhir-jpa-pilot/x1",
       "method": "fhir",
       "query": "Observation?code=phv00278118.v5.p2,phv00278119.v5.p2,phv00278120.v5.p2,phv00278121.v5.p2,phv00278122.v5.p2",
@@ -60,7 +38,29 @@
       "bytes": 24129385,
       "pages": 257,
       "requested_page_size": 0,
-      "elapsed_secs": 460.6179,
+      "elapsed_secs": 842.9803,
       "dataset": "udn_subject_phenotypes"
+   },
+   {
+      "time": "2025-01-30T16:14:07.093463",
+      "server": "https://data-connect.local",
+      "method": "data_connect",
+      "query": "/table/tutorial.scr_udn_v5.udn_phenotype_code/data",
+      "dataset": "udn_phenotype_code",
+      "records": 40320,
+      "bytes": 6830540,
+      "pages": 4,
+      "elapsed_secs": 5.394
+   },
+   {
+      "time": "2025-01-30T16:14:42.477004",
+      "server": "https://data-connect.local",
+      "method": "data_connect",
+      "query": "/table/tutorial.scr_udn_v5.udn_subject_phenotypes/data",
+      "dataset": "udn_subject_phenotypes",
+      "records": 5138,
+      "bytes": 1098553,
+      "pages": 2,
+      "elapsed_secs": 3.858
    }
 ]
